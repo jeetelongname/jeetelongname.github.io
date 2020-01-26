@@ -1,0 +1,11 @@
+body{
+    background-color: aquamarine;
+}
+p.intro{
+    border: 4px solid green;
+
+}
+
+div.dog{
+    border: 4px solid green;
+}
