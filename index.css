@@ -1,6 +1,10 @@
 body{
     background-color: aquamarine;
 }
+
+h1{
+    background-color: blue;
+}
 p.intro{
     border: 4px solid green;
 
