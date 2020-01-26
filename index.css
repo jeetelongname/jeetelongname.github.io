@@ -1,15 +1,16 @@
 body{
+    background-image:url("https://raw.githubusercontent.com/jeetelongname/jeetelongname.github.io/dev/Fishguard-Landscape.jpg") ;
     background-color: aquamarine;
 }
 
 h1{
-    background-color: blue;
+    background-image:url("https://raw.githubusercontent.com/jeetelongname/jeetelongname.github.io/dev/Fishguard-Landscape.jpg") ;
 }
 p.intro{
     border: 4px solid green;
 
 }
 
-div.dog{
+div{
     border: 4px solid green;
 }
