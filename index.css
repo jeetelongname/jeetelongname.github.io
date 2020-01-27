@@ -1,6 +1,9 @@
 body{
-    background-image:url("/images/St-David-Landscape") ;
-    background-color: aquamarine;
+    background-image:url("images/St-David-Landscape.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#0C4A60;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 h1{
@@ -8,11 +11,11 @@ h1{
     border :1px ;
     background-color: antiquewhite;
     color: black;
-    padding: 10px ;
+    padding: 1px ;
     text-decoration: double;
     margin: auto;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 300px ;
+    margin-right:300px;
 }
 p{
     text-align: center;
@@ -21,4 +24,11 @@ p{
 
 div{
     text-align: center;
+    
+}
+
+.yeet{
+    text-align: right;
+    border-style: solid;
+    
 }
