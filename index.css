@@ -17,7 +17,7 @@ ul {
   width: 100px;
   background-color: #f1f1f1;
   height: 100%; /* Full height */
-  position: fixed; /* Make it stick, even on scroll */
+  position: auto; /* Make it stick, even on scroll */
   overflow: auto; 
 }
 li a{
@@ -54,8 +54,7 @@ div{
 .hits{
     text-align: left;
 }
-.yeet{
-    text-align: right;
+#NotDone{
+    text-align: center;
     border-style: solid;
-    
 }
