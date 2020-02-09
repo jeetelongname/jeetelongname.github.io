@@ -1,35 +1,71 @@
 body{
-    background-image:url("images/St-David-Landscape.jpg") ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color:#0C4A60;
-    font-family: 'Courier New', Courier, monospace;
+    font-family:Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to bottom right, purple, red);
+    background-image:cover;
+    background-color:aqua;
+    background-repeat:no-repeat;
+    background-position: 100% 100%;
+    background-size: 100%;
+    margin: 0px;
+    height: auto;
+    width: auto;
+  }
+div.container{
+  display: block;
+  height:15px;
+  width:auto;
+}
+div#content-container{
+  display: block;
+  height:auto;
+  width:auto;
+  text-align:center;
+  padding: 5px;
+}
+#header {
+  background-color:transparent ;
+  text-align: center;
+  padding: 10px;
+}
+#HomeTitle{
+  text-align: center;
+}
+.intro{
+  text-align: center;
+  float: center;
+}
+/*menu bar*/
+.active {
+  background-color:transparent;
+  color: white;
+  float: left;
 }
 
-h1{
-    text-align: center;
-    border :1px ;
-    background-color: antiquewhite;
-    color: black;
-    padding: 1px ;
-    text-decoration: double;
-    margin: auto;
-    margin-left: 300px ;
-    margin-right:300px;
+.right{
+  float: right;
 }
-p{
-    text-align: center;
-
+ul {
+  list-style-type: none;
+  margin: 0;
+  display: block;
+  background-color:transparent;
 }
-
-div{
-    text-align: center;
-    
+li {
+  color: #000;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-.hits{
-    text-align: left;
+a{
+  display: block;
+  color:black;
+  text-decoration: none;
 }
 .yeet{
     text-align: right;
     border-style: solid;
 }
+
+a:hover{
+  color:grey;
+}
+/*menu bar*
