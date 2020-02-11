@@ -67,3 +67,6 @@ a.icons{
 a.icons:hover{
   color:grey;
 }
+.cool{
+  display: block;
+}
