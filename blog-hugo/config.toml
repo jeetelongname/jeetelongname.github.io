@@ -1,0 +1,5 @@
+baseURL = "http://jeetelongname.github.io/blog/"
+theme = "HugoTeX"
+languageCode = "en-gb"
+title = "My New Hugo Site"
+author = "jeetaditya chatterjee"
