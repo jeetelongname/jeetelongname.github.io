@@ -1,5 +1,14 @@
 baseURL = "https://jeetelongname.github.io/blog/"
 theme = "HugoTeX"
 languageCode = "en-gb"
+
 title = "A pretty bad blog at the moment"
-author = "jeetaditya chatterjee"
+[author]
+name = "jeetaditya chatterjee"
+abstract = "I am a Student studying computer science at UTC Reading. I have a passion for linux cooking and a bunch of other stuff that i will probably put on here!"
+
+[taxonomies]
+
+catagory = "categories"
+tag = "tags"
+series = "series"
