@@ -87,7 +87,7 @@ li a:hover{
 .blog-link a,.blog-link a:visited{
     color: #000000
 }
-@media only screen and (min-width: 480px) and (max-width: 965px){
+@media only screen and (min-width: 660px) and (max-width: 965px){
     .landing.page .info .name{
         color: #FFF;
         font-size: 6em;
@@ -104,7 +104,7 @@ li a:hover{
     }
 }
 
-@media only screen and (min-width: 200px) and (max-width: 480px){
+@media only screen and (min-width: 200px) and (max-width: 660px){
 
     .landing.page .info .name{
         color: #FFF;
@@ -122,16 +122,16 @@ li a:hover{
     }
 }
 
-@media only screen and (min-width: 480px) and (max-width: 965px){
+@media only screen and (min-width: 570px) and (max-width: 965px){
 
 }
-@media only screen and (min-width: 200px) and (max-width: 480px){
+@media only screen and (min-width: 200px) and (max-width: 570px){
 
 }
 
-@media only screen and (min-width: 480px) and (max-width: 965px){
+@media only screen and (min-width: 570px) and (max-width: 965px){
 
 }
-@media only screen and (min-width: 200px) and (max-width: 480px){
+@media only screen and (min-width: 200px) and (max-width: 570px){
 
 }
