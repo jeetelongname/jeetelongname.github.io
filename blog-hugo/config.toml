@@ -1,14 +1,34 @@
+
 baseURL = "https://jeetelongname.github.io/blog/"
-theme = "HugoTeX"
+theme = "hugo-theme-tokiwa"
 languageCode = "en-gb"
+DefaultContentLanguage = "en"
+copyright = "© Jeetaditya Chatterjee 2020-2020"
+title = "A blog about stuff"
 
-title = "A pretty bad blog at the moment"
-[author]
-name = "jeetaditya chatterjee"
-abstract = "I am a Student studying computer science at UTC Reading. I have a passion for linux cooking and a bunch of other stuff that i will probably put on here!"
+# name = "jeetaditya chatterjee"
 
-[taxonomies]
+[params]
+description = """
+Hi I am Jeet. I am a Student studying computer science at UTC Reading.
+I have a passion for linux, cooking and a bunch of other stuff that i will probably put on here!
+"""
 
-catagory = "categories"
-tag = "tags"
-series = "series"
+[menu]
+    [[menu.main]]
+    name = "Home"
+    weight = 1
+    url = "https://jeetelongname.github.io"
+
+    [[menu.main]]
+    name = "Tech Stuff"
+    weight = 1
+
+    [[menu.main]]
+    name = "My Recipie"
+    weight = 1
+
+[social]
+twitter="http://twitter.com/jeetaditya3"
+github="http://github.com/jeetelongname"
+linkedin="https://www.linkedin.com/in/jeetaditya-chatterjee-138792192/"
