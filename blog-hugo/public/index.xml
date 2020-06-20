@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>A pretty bad blog at the moment</title>
+    <title>A blog about stuff</title>
     <link>https://jeetelongname.github.io/blog/</link>
-    <description>Recent content on A pretty bad blog at the moment</description>
+    <description>Recent content on A blog about stuff</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
+    <copyright>© Jeetaditya Chatterjee 2020-2020</copyright>
     
 	<atom:link href="https://jeetelongname.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
