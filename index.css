@@ -17,7 +17,7 @@ body{
     height:100%;
 }
 .landing.page{
-    background-image: linear-gradient(to bottom right, purple, red);
+    background-image: linear-gradient(to bottom right, #508C7D, #D394BD);
 }
 
 .landing.page .info{
@@ -43,12 +43,12 @@ body{
 
 a {
     text-decoration:none;
-    color:grey;
+    color:#e7d5e5;
 }
 
 a:hover {
     text-decoration:none;
-    color:#FFF;
+    color:#97c5ba;
 }
 .icons{
     position:absolute;

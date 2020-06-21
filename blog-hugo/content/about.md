@@ -1,12 +1,11 @@
 +++
 title = "About"
-description = "Hugo, the world’s fastest framework for building websites"
 date = "2019-02-28"
 aliases = ["about-us","about-hugo","contact"]
-author = "Hugo Authors"
+author = "Jeetaditya"
 +++
-
-# Document Title
-
-this is a **test**
-
+# Hi I am Jeet!
+I am a Student that is studying computer science at UTC Reading.
+This is my Blog!
+## Linux and Tech
+I fell in love with linux back in April of 2019 when my Dad gave me an old computer I cared for it and it runs to this day!

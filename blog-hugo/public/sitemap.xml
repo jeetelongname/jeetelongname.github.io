@@ -23,10 +23,6 @@
   </url>
   
   <url>
-    <loc>https://jeetelongname.github.io/blog/about/test/</loc>
-  </url>
-  
-  <url>
     <loc>https://jeetelongname.github.io/blog/categories/</loc>
   </url>
   
@@ -36,6 +32,10 @@
   
   <url>
     <loc>https://jeetelongname.github.io/blog/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jeetelongname.github.io/blog/tech/</loc>
   </url>
   
 </urlset>

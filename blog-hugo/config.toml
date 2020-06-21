@@ -15,39 +15,38 @@ I have a passion for linux, cooking and a bunch of other stuff that i will proba
 """
 
 [menu]
-    [[menu.main]]
-    name = "Home"
-    weight = 1
-    url = "https://jeetelongname.github.io"
 
     [[menu.main]]
     name = "Tech Stuff"
-    weight = 2
-    url = "tech"
+    weight = 1
+    url = "/tech/"
 
     [[menu.main]]
     name = "My Recipie"
-    weight = 3
-    url = "cooking"
+    weight = 2
+    url = "/cooking/"
 
     [[menu.main]]
     name = "About"
-    weight = 4
+    weight = 3
     identifier = "about"
-    url = "about"
+    url = "/about/"
 
    [[menu.main]]
     name = "Tags"
-    pre = "<i class='fa fa-tags fa-fw'></i>"
     url = "/tags/"
-    weight = 5
+    weight = 4
 
   [[menu.main]]
     name = "Categories"
     pre = "<i class='fa fa-folder fa-fw'></i>"
     url = "/categories/"
-    weight = 6
+    weight = 5
 
+    [[menu.main]]
+    name = "Back"
+    weight = 6
+    url = "https://jeetelongname.github.io"
 [taxonomies]
 category = "categories"
 tag = "tags"

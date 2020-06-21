@@ -12,16 +12,5 @@
 	<atom:link href="https://jeetelongname.github.io/blog/about/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title></title>
-      <link>https://jeetelongname.github.io/blog/about/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jeetelongname.github.io/blog/about/test/</guid>
-      <description>&lt;h1 id=&#34;document-title&#34;&gt;Document Title&lt;/h1&gt;
-&lt;p&gt;this is a document&lt;/p&gt;
-</description>
-    </item>
-    
   </channel>
 </rss>
