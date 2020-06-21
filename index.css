@@ -26,7 +26,7 @@ body{
     width:100%;
 }
 .landing.page .info .name{
-    color: #FFF;
+    color: ##f7fafc;
     font-size: 9em;
     font-weight: 200;
     text-align: center;
@@ -89,7 +89,7 @@ li a:hover{
 }
 @media only screen and (min-width: 660px) and (max-width: 965px){
     .landing.page .info .name{
-        color: #FFF;
+        color: ##f7fafc;
         font-size: 6em;
         font-weight: 200;
         text-align: center;
@@ -107,7 +107,7 @@ li a:hover{
 @media only screen and (min-width: 200px) and (max-width: 660px){
 
     .landing.page .info .name{
-        color: #FFF;
+        color: ##f7fafc;
         font-size: 3em;
         font-weight: 200;
         text-align: center;
