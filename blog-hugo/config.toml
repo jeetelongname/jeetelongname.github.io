@@ -1,57 +1,66 @@
 
 baseURL = "https://jeetelongname.github.io/blog/"
 theme = "hugo-theme-tokiwa"
+
 languageCode = "en-gb"
 DefaultContentLanguage = "en"
-copyright = "copyright © Jeetaditya Chatterjee 2020-2020"
-title = "A blog about stuff"
 
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+
+title = "Stuff"
+author = "Jeetaditya Chatterjee"
+copyright = "copyright © Jeetaditya Chatterjee 2020-2020"
 # name = "jeetaditya chatterjee"
+
+[indexes]
+  tag = "tags"
+  topic = "categories"
 
 [params]
 description = """
 Hi I am Jeet. I am a Student studying computer science at UTC Reading.
 I have a passion for linux, cooking and a bunch of other stuff that i will probably put on here!
 """
+# favicon = "img/favicon-32x32.png"
+math = true # for introducing $KaTEX$
+bannerFont = "fonts/exampleFont"
 
+[markup.goldmark.renderer]
+  unsafe= true
 [menu]
 
-    [[menu.main]]
-    name = "Tech Stuff"
+  [[menu.main]]
+    name = "Posts"
     weight = 1
-    url = "/tech/"
+    identifier = "post"
+    url = "/Posts/"
 
-    [[menu.main]]
-    name = "My Recipie"
+  [[menu.main]]
+    name = "Categories"
+    url = "/categories/"
     weight = 2
-    url = "/cooking/"
 
-    [[menu.main]]
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 2
+
+  [[menu.main]]
     name = "About"
     weight = 3
     identifier = "about"
     url = "/about/"
 
-   [[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 4
-
   [[menu.main]]
-    name = "Categories"
-    pre = "<i class='fa fa-folder fa-fw'></i>"
-    url = "/categories/"
-    weight = 5
-
-    [[menu.main]]
     name = "Back"
-    weight = 6
+    weight = 4
     url = "https://jeetelongname.github.io"
+
 [taxonomies]
 category = "categories"
 tag = "tags"
 series = "series"
-
 [social]
 twitter="http://twitter.com/jeetaditya3"
 github="http://github.com/jeetelongname"

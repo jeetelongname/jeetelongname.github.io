@@ -3,39 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jeetelongname.github.io/blog/</loc>
-    <lastmod>2019-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jeetelongname.github.io/blog/about/</loc>
-    <lastmod>2019-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jeetelongname.github.io/blog/about/</loc>
-    <lastmod>2018-07-07T18:23:33+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jeetelongname.github.io/blog/cooking/</loc>
-    <lastmod>2018-07-07T18:23:33+06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://jeetelongname.github.io/blog/categories/</loc>
+    <lastmod>2020-06-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jeetelongname.github.io/blog/series/</loc>
+    <loc>https://jeetelongname.github.io/blog/posts/</loc>
+    <lastmod>2020-06-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jeetelongname.github.io/blog/tags/something/</loc>
+    <lastmod>2020-06-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://jeetelongname.github.io/blog/tags/</loc>
+    <lastmod>2020-06-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jeetelongname.github.io/blog/tech/</loc>
+    <loc>https://jeetelongname.github.io/blog/posts/test/</loc>
+    <lastmod>2020-06-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jeetelongname.github.io/blog/categories/tests/</loc>
+    <lastmod>2020-06-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jeetelongname.github.io/blog/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jeetelongname.github.io/blog/archives/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jeetelongname.github.io/blog/about/</loc>
+    <lastmod>2019-02-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jeetelongname.github.io/blog/tags/index/</loc>
   </url>
   
 </urlset>
