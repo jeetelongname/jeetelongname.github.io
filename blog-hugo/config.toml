@@ -1,6 +1,6 @@
 baseURL = "https://jeetelongname.github.io/blog/"
 languageCode = "en-gb"
-title = "Jeetaditya's Blog"
+title = "Jeet's Blog"
 theme ="hugo-ink"
 paginate = 5
 copyright = "copyright © Jeetaditya Chatterjee 2020-2020"
@@ -9,7 +9,7 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 [params]
-    subtitle = "Half Decent Cook - Linux Enthusiast - Probably a little crazy"
+    subtitle = "Half Decent Cook - Linux Enthusiast - A little crazy"
     featherIconsCDN = true
     mode = "auto"
     avatar = "https://avatars1.githubusercontent.com/u/49886197?s=460&u=c72546bdc6260023241f7a8c204b78fcca5ca20a&v=4"
@@ -33,9 +33,6 @@ name = "Tags"
 url = "/tags"
 weight = 4
 
-[[menu.main]]
-name = "Catagorys"
-url = "/categories"
 [[params.social]]
 name = "Github"
 icon = "github"
