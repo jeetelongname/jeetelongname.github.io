@@ -1,6 +1,0 @@
-[submodule "blog-hugo/themes/hugo-ink"]
-	path = blog-hugo/themes/hugo-ink
-	url = https://github.com/knadh/hugo-ink
-[submodule "blog-hugo/themes/ezhil"]
-	path = blog-hugo/themes/ezhil
-	url = https://github.com/vividvilla/ezhil
