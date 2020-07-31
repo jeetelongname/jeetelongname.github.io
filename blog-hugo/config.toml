@@ -1,67 +1,58 @@
-
-baseURL = "https://jeetelongname.github.io/blog/"
-theme = "hugo-theme-tokiwa"
-
+baseURL = "https://jeetelongname.github.io/blog"
 languageCode = "en-gb"
-DefaultContentLanguage = "en"
-
-enableInlineShortcodes = true
-footnoteReturnLinkContents = "^"
-
-title = "Stuff"
-author = "Jeetaditya Chatterjee"
+title = "Jeetaditya's Blog"
+theme ="hugo-ink"
+paginate = 5
 copyright = "copyright © Jeetaditya Chatterjee 2020-2020"
-# name = "jeetaditya chatterjee"
-
-[indexes]
-  tag = "tags"
-  topic = "categories"
+pygmentsstyle = "vs"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
 
 [params]
-description = """
-Hi I am Jeet. I am a Student studying computer science at UTC Reading.
-I have a passion for linux, cooking and a bunch of other stuff that i will probably put on here!
-"""
-# favicon = "img/favicon-32x32.png"
-math = true # for introducing $KaTEX$
-bannerFont = "fonts/exampleFont"
+    subtitle = "Half Decent Cook - Linux Enthusiast - Probably a little crazy"
+    featherIconsCDN = true
+    mode = "auto"
+    avatar = "https://avatars1.githubusercontent.com/u/49886197?s=460&u=c72546bdc6260023241f7a8c204b78fcca5ca20a&v=4"
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
 
-[markup.goldmark.renderer]
-  unsafe= true
-[menu]
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2
 
-  [[menu.main]]
-    name = "Posts"
-    weight = 1
-    identifier = "post"
-    url = "/Posts/"
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
 
-  [[menu.main]]
-    name = "Categories"
-    url = "/categories/"
-    weight = 2
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
 
-  [[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 2
-
-  [[menu.main]]
-    name = "About"
-    weight = 3
-    identifier = "about"
-    url = "/about/"
-
-  [[menu.main]]
-    name = "Back"
-    weight = 4
-    url = "https://jeetelongname.github.io"
+[[menu.main]]
+name = "Catagorys"
+url = "/categories"
+[[params.social]]
+name = "Github"
+icon = "github"
+url = "https://github.com/jeetelongname"
+[[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "http://twitter.com/jeetaditya3"
+[[params.social]]
+name = "linkedin"
+icon = "linkedin"
+url = "https://www.linkedin.com/in/jeetaditya-chatterjee-138792192/"
+[[params.social]]
+name = "RSS"
+icon = "rss"
+url = "/index.xml"
 
 [taxonomies]
-category = "categories"
-tag = "tags"
-series = "series"
-[social]
-twitter="http://twitter.com/jeetaditya3"
-github="http://github.com/jeetelongname"
-linkedin="https://www.linkedin.com/in/jeetaditya-chatterjee-138792192/"
+   tag = "tags"
+   category = "categories"
