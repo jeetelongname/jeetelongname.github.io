@@ -7,7 +7,6 @@ copyright = "copyright © Jeetaditya Chatterjee 2020-2020"
 pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
-
 [params]
     subtitle = "Half Decent Cook - Linux Enthusiast - A little crazy"
     featherIconsCDN = true
@@ -48,7 +47,7 @@ url = "https://www.linkedin.com/in/jeetaditya-chatterjee-138792192/"
 [[params.social]]
 name = "RSS"
 icon = "rss"
-url = "/index.xml"
+url = "/posts/index.xml"
 
 [taxonomies]
    tag = "tags"

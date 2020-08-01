@@ -3,8 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jeetelongname.github.io/blog/posts/post1/</loc>
+    <lastmod>2020-07-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jeetelongname.github.io/blog/tags/hugo/</loc>
+    <lastmod>2020-07-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jeetelongname.github.io/blog/</loc>
+    <lastmod>2020-07-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jeetelongname.github.io/blog/posts/</loc>
-    <priority>0</priority>
+    <lastmod>2020-07-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jeetelongname.github.io/blog/tags/</loc>
+    <lastmod>2020-07-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jeetelongname.github.io/blog/tags/tech/</loc>
+    <lastmod>2020-07-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -13,14 +38,6 @@
   
   <url>
     <loc>https://jeetelongname.github.io/blog/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jeetelongname.github.io/blog/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jeetelongname.github.io/blog/tags/</loc>
   </url>
   
 </urlset>
