@@ -7,9 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>copyright © Jeetaditya Chatterjee 2020-2020</copyright>
+    <lastBuildDate>Fri, 31 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jeetelongname.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blogs</title>
+      <link>https://jeetelongname.github.io/blog/tags/blogs/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jeetelongname.github.io/blog/tags/blogs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Guides</title>
+      <link>https://jeetelongname.github.io/blog/tags/guides/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jeetelongname.github.io/blog/tags/guides/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://jeetelongname.github.io/blog/tags/hugo/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jeetelongname.github.io/blog/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tech</title>
+      <link>https://jeetelongname.github.io/blog/tags/tech/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jeetelongname.github.io/blog/tags/tech/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
