@@ -32,8 +32,22 @@ We also need some dependency's
 - GNU tls 
 
 ## Cloning
+You can get the source code by either cloning the repository or getting a tar
+file. the steps are mostly the same but the way you get them and the
+pre-processing you will need to do is not 
+
+### Tar file
+
+### Git cloning 
 ## Configuration
 ## Building
 ## Installing
+ after you have built it and verified it is working then you can do a `sudo make
+ install` this will copy over all the files into your path and essentially
+ install emacs. You should be done after this!
+ 
 ## Troubleshooting
+If you have run the `make clean` command then you won't be able to use that
+repository to build emacs there may be a way to restore it but i dont know what
+it is. I recommend not using the `make clean` command and just rebuilding on top
 ## Finishing up
