@@ -86,18 +86,6 @@ li a:hover{
     color: var(--text-1);
 }
 
-.blog-link{
-    font-family: 'Roboto';
-    position: absolute;
-    color: #FFF;
-    bottom: 30px;
-    right: 20px;
-    padding:5px;
-    font-size: 1.3em;
-    font-weight:300;
-}
-
-
 @media only screen and (min-width: 660px) and (max-width: 965px){
     .landing.page .info .name{
         font-size: 6em;
@@ -114,7 +102,7 @@ li a:hover{
 @media only screen and (min-width: 200px) and (max-width: 660px){
 
     .landing.page .info .name{
-        font-size: 4em;
+        font-size: 3em;
         font-weight: 200;
     }
     .landing.page .info .email {
@@ -123,5 +111,49 @@ li a:hover{
         unicode-bidi: bidi-override;
         letter-spacing: 0.07em;
     }
+    .icons{
+        position:absolute;
+        bottom:10px;
+        /* left:10px; */
+        background-color:transparent;
+        width:20%;
+        text-align:left;
+        margin:10px;
+        padding:5px;
+        font-size: 1.3em;
+    }
+
+    li{
+        display:block;
+    }
 }
 
+
+@media only screen and (max-width: 812px) and (max-height: 375px){
+
+    .landing.page .info .name{
+        font-size: 3em;
+        font-weight: 200;
+    }
+    .landing.page .info .email {
+        font-weight: 100;
+        font-size: 1.5em;
+        unicode-bidi: bidi-override;
+        letter-spacing: 0.07em;
+    }
+    .icons{
+        position:absolute;
+        bottom:10px;
+        /* left:10px; */
+        background-color:transparent;
+        width:20%;
+        text-align:left;
+        margin:10px;
+        padding:5px;
+        font-size: 1.3em;
+    }
+
+    li{
+        display:block;
+    }
+}
