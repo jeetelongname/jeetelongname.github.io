@@ -35,13 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 function dark(themeStylesheet, themeToggle) {
     themeStylesheet.href = 'css/dark.css';
-    themeToggle.innerHTML = '<i data-feather="sun" class="far fa-sun"></i>';
+    themeToggle.innerHTML = '<i data-feather="sun" alt="light" title="Switch to light mode"></i>';
     feather.replace()
     localStorage.setItem('theme', themeStylesheet.href)
 }
 function light(themeStylesheet, themeToggle) {
     themeStylesheet.href = 'css/light.css';
-    themeToggle.innerHTML = '<i data-feather="moon" class="far fa-moon"></i>';
+    themeToggle.innerHTML ='<i data-feather="moon" alt="Dark" title="Switch to dark mode"></i>';
     feather.replace()
     localStorage.setItem('theme', themeStylesheet.href)
 }
