@@ -1,41 +1,6 @@
-
+/* light theme */
 :root{
-    --back-light:#fffdd0;
-    --text-main-light: #ab4b2e;
-    --text-alt-light: #4b2eab;
-}
-.landing.page{
-    /* background-image: linear-gradient(to bottom right, var(--main-1), var(--main-2)); */
-    background: var(--back-light);
-}
-
-.landing.page .info .name{
-    color: var(--text-main-light);
-}
-
-a {
-    color: var(--text-alt-light);
-}
-
-a:hover{
-    color: var(--text-main-light);
-}
-
-li a {
-    color: var(--text-alt-light);
-}
-
-li a:hover{
-    color: var(--text-main-light);
-}
-#theme-toggle{
-    color: var(--text-main-light);
-}
-#toggle div {
-  background: var(--text-main-light);
-}
-
-#menu {
-  color: var(--text-main-light);
-  border: 1px solid var(--text-alt-light);
+    --back:#fffdd0;
+    --text-main: #ab4b2e;
+    --text-alt: #4b2eab;
 }

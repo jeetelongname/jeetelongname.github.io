@@ -1,3 +1,4 @@
+/* https://codepen.io/jaflo/pen/hjuai */
 #toggle {
   width: 28px;
   height: 30px;
@@ -15,6 +16,7 @@
   margin: 4px auto;
   transition: all 0.1s;
   backface-visibility: hidden;
+  background: var(--text-main);
 }
 
 #toggle.on .one {
@@ -49,6 +51,9 @@
   padding:5px;
   font-size: 1.3em;
   font-weight:300;
+
+  color: var(--text-main);
+  border: 1px solid var(--text-alt);
 }
 #menu ul{
   padding:0;

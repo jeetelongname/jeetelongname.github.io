@@ -19,6 +19,11 @@ body{
     height:100%;
 }
 
+.landing.page{
+    /* background-image: linear-gradient(to bottom right, var(--main-1), var(--main-2)); */
+    background: var(--back);
+}
+
 .landing.page .info{
     position:absolute;
     top:30%;
@@ -30,6 +35,7 @@ body{
     font-weight: 200;
     text-align: center;
     text-transform: uppercase;
+    color: var(--text-main);
 }
 
 .landing.page .info .email {
@@ -48,10 +54,12 @@ body{
 }
 a {
     text-decoration:none;
+    color: var(--text-alt);
 }
 
 a:hover {
     text-decoration:none;
+    color: var(--text-main);
 }
 .icons{
     position:absolute;
@@ -71,9 +79,16 @@ li{
 
 li a {
     padding:5px
+    color: var(--text-alt);
 }
 
+li a:hover{
+    color: var(--text-main);
+}
 
+#theme-toggle{
+    color: var(--text-main);
+}
 @media only screen and (min-width: 660px) and (max-width: 965px){
     .landing.page .info .name{
         font-size: 6em;

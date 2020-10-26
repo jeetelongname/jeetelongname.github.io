@@ -2,29 +2,46 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const themeStylesheet = document.getElementById('theme');
-    const storedTheme = localStorage.getItem('theme');
-    // const storedIcon  = localStorage.getItem('theme-toggle')
-    if(storedTheme){
-        themeStylesheet.href = storedTheme;
-    }
-    // if(storedIcon){
-    //     themeToggle.innerHTML= storedIcon
-    // }
     const themeToggle = document.getElementById('theme-toggle');
-    themeToggle.addEventListener('click', () => {
-        // if it's light -> go dark
-        if(themeStylesheet.href.includes('light')){
-            themeStylesheet.href = 'css/dark.css';
-            themeToggle.innerHTML= '<i data-feather="sun" class="far fa-sun"></i>';
+    const storedTheme = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    
+
+    if (storedTheme) {
+        if (themeStylesheet.href.includes('light')) {
+            // if it's light -> go dark
+            dark(themeStylesheet, themeToggle)
         } else {
             // if it's dark -> go light
-            themeStylesheet.href = 'css/light.css';
-            themeToggle.innerHTML = '<i data-feather="moon" class="far fa-moon"></i>';
+            light(themeStylesheet, themeToggle)
+        }
+        localStorage.setItem('theme', themeStylesheet.href)
+    }
+
+    if (prefersDark) {
+        dark(themeStylesheet, themeToggle)
+    }
+
+    themeToggle.addEventListener('click', () => {
+        if (themeStylesheet.href.includes('light')) {
+            // if it's light -> go dark
+            dark(themeStylesheet, themeToggle)
+        } else {
+            // if it's dark -> go light
+            light(themeStylesheet, themeToggle)
         }
         // save the preference to localStorage
-        localStorage.setItem('theme',themeStylesheet.href)  
-        feather.replace()
-        // localStorage.setItem('theme-toggle',themeToggle.innerHTML)
-        
     })
 })
+function dark(themeStylesheet, themeToggle) {
+    themeStylesheet.href = 'css/dark.css';
+    themeToggle.innerHTML = '<i data-feather="sun" class="far fa-sun"></i>';
+    feather.replace()
+    localStorage.setItem('theme', themeStylesheet.href)
+}
+function light(themeStylesheet, themeToggle) {
+    themeStylesheet.href = 'css/light.css';
+    themeToggle.innerHTML = '<i data-feather="moon" class="far fa-moon"></i>';
+    feather.replace()
+    localStorage.setItem('theme', themeStylesheet.href)
+}
