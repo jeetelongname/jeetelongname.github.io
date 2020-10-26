@@ -15,14 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // if it's light -> go dark
         if(themeStylesheet.href.includes('light')){
             themeStylesheet.href = 'css/dark.css';
-            themeToggle.innerHTML= '<i class="far fa-sun"></i>';
+            themeToggle.innerHTML= '<i data-feather="sun" class="far fa-sun"></i>';
         } else {
             // if it's dark -> go light
             themeStylesheet.href = 'css/light.css';
-            themeToggle.innerHTML = '<i class="far fa-moon"></i>';
+            themeToggle.innerHTML = '<i data-feather="moon" class="far fa-moon"></i>';
         }
         // save the preference to localStorage
         localStorage.setItem('theme',themeStylesheet.href)  
-        // localStorage.setItem('theme-toggle',themeToggle.innerHTML)  
+        feather.replace()
+        // localStorage.setItem('theme-toggle',themeToggle.innerHTML)
+        
     })
 })
