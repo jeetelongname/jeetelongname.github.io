@@ -1,0 +1,41 @@
+:root{
+    --back-dark:#0c0b00;
+    --text-main-dark: #5476d1;
+    --text-alt-dark: #d1af54;
+}
+.landing.page{
+    /* background-image: linear-gradient(to bottom right, var(--main-1), var(--main-2)); */
+    background: var(--back-dark);
+}
+
+.landing.page .info .name{
+    color: var(--text-main-dark);
+}
+
+a {
+    color: var(--text-alt-dark);
+}
+
+a:hover{
+    color: var(--text-main-dark);
+}
+
+li a {
+    color: var(--text-alt-dark);
+}
+
+li a:hover{
+    color: var(--text-main-dark);
+}
+
+#theme-toggle{
+    color: var(--text-main-dark);
+}
+#toggle div {
+  background: var(--text-main-dark);
+}
+
+#menu {
+  color: var(--text-main-dark);
+  border: 1px solid var(--text-alt-dark);
+}

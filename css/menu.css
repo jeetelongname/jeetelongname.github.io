@@ -11,7 +11,6 @@
 #toggle div {
   width: 100%;
   height: 5px;
-  background: var(--text-2);
   padding: 0px;
   margin: 4px auto;
   transition: all 0.1s;
@@ -31,8 +30,6 @@
 }
 
 #menu {
-  color: var(--text-2);
-  border: 1px solid var(--text-1);
   width: 150px;
   height: 100px;
   padding: 5px;
@@ -49,7 +46,6 @@
 
   font-family: 'Roboto';
   position: absolute;
-  color: #FFF;
   padding:5px;
   font-size: 1.3em;
   font-weight:300;
