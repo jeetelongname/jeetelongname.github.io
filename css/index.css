@@ -1,162 +1,170 @@
-@import url('//fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
-@import url('//fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+@import url("//fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap");
+@import url("//fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
 
-body{
-    margin: 0;
-    padding: 0;
-}
-#viewport{
-    position:absolute;
-    top:0;
-    left:0;
-    bottom:0;
-    right:0;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.page{
-    position:relative;
-    width:100%;
-    height:100%;
+#viewport {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
-.landing.page{
-    /* background-image: linear-gradient(to bottom right, var(--main-1), var(--main-2)); */
-    background: var(--back);
+.page {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.landing.page .info{
-    position:absolute;
-    top:30%;
-    width:100%;
+.landing.page {
+  /* background-image: linear-gradient(to bottom right, var(--main-1), var(--main-2)); */
+  background: var(--back);
 }
-.landing.page .info .name{
-    font-family:'Montserrat' , 'Helvetica';
-    font-size: 8em;
-    font-weight: 200;
-    text-align: center;
-    text-transform: uppercase;
-    color: var(--text-main);
+
+.landing.page .info {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+}
+
+.landing.page .info .name {
+  font-family: "Helvetica", serif;
+  font-size: 8em;
+  font-weight: 200;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--text-main);
 }
 
 .landing.page .info .email {
-    font-family: 'Roboto', 'Helvetica';
-    font-weight: 150;
-    font-size: 3em;
-    text-align: center;
-    unicode-bidi: bidi-override;
-    letter-spacing: 0.12em;
-}
-#theme-toggle{
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 1.3em;
-}
-a {
-    text-decoration:none;
-    color: var(--text-alt);
+  font-family: "Helvetica", serif;
+  font-weight: 150;
+  font-size: 3em;
+  text-align: center;
+  unicode-bidi: bidi-override;
+  letter-spacing: 0.12em;
 }
 
-a:hover {
-    text-decoration:none;
-    color: var(--text-main);
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 1.3em;
+  color: var(--text-main);
 }
-.icons{
-    position:absolute;
-    bottom:20px;
-    list-style-type: none;
-    display:block;
-    background-color:transparent;
-    width:100%;
-    text-align:center;
-    margin:0px;
-    padding:0;
-    font-size: 1.3em;
+
+.icons {
+  position: absolute;
+  bottom: 20px;
+  list-style-type: none;
+  display: block;
+  background-color: transparent;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 1.3em;
 }
-li{
-    display:inline-block;
+
+a {
+  text-decoration: none;
+  color: var(--text-alt);
+}
+
+li {
+  display: inline-block;
 }
 
 li a {
-    padding:5px
-    color: var(--text-alt);
+  padding: 5px;
+  color: var(--text-alt);
 }
 
-li a:hover{
-    color: var(--text-main);
+a:hover {
+  text-decoration: none;
+  color: var(--text-main);
 }
 
-#theme-toggle{
-    color: var(--text-main);
-}
-@media only screen and (min-width: 660px) and (max-width: 965px){
-    .landing.page .info .name{
-        font-size: 6em;
-        font-weight: 200;
-    }
-    .landing.page .info .email {
-        font-weight: 100;
-        font-size: 3em;
-        unicode-bidi: bidi-override;
-        letter-spacing: 0.07em;
-    }
+li a:hover {
+  color: var(--text-main);
 }
 
-@media only screen and (min-width: 200px) and (max-width: 660px){
+@media only screen and (min-width: 660px) and (max-width: 965px) {
+  .landing.page .info .name {
+    font-size: 6em;
+    font-weight: 200;
+  }
 
-    .landing.page .info .name{
-        font-size: 3em;
-        font-weight: 200;
-    }
-    .landing.page .info .email {
-        font-weight: 100;
-        font-size: 1.5em;
-        unicode-bidi: bidi-override;
-        letter-spacing: 0.07em;
-    }
-    .icons{
-        position:absolute;
-        bottom:10px;
-        /* left:10px; */
-        background-color:transparent;
-        width:20%;
-        text-align:left;
-        margin:10px;
-        padding:5px;
-        font-size: 1.3em;
-    }
-
-    li{
-        display:block;
-    }
+  .landing.page .info .email {
+    font-weight: 100;
+    font-size: 3em;
+    unicode-bidi: bidi-override;
+    letter-spacing: 0.07em;
+  }
 }
 
+@media only screen and (min-width: 200px) and (max-width: 660px) {
+  .landing.page .info .name {
+    font-size: 3em;
+    font-weight: 200;
+  }
 
-@media only screen and (max-width: 812px) and (max-height: 375px){
+  .landing.page .info .email {
+    font-weight: 100;
+    font-size: 1.5em;
+    unicode-bidi: bidi-override;
+    letter-spacing: 0.07em;
+  }
 
-    .landing.page .info .name{
-        font-size: 3em;
-        font-weight: 200;
-    }
-    .landing.page .info .email {
-        font-weight: 100;
-        font-size: 1.5em;
-        unicode-bidi: bidi-override;
-        letter-spacing: 0.07em;
-    }
-    .icons{
-        position:absolute;
-        bottom:10px;
-        /* left:10px; */
-        background-color:transparent;
-        width:20%;
-        text-align:left;
-        margin:10px;
-        padding:5px;
-        font-size: 1.3em;
-    }
+  .icons {
+    position: absolute;
+    bottom: 10px;
 
-    li{
-        display:block;
-    }
+    /* left:10px; */
+    background-color: transparent;
+    width: 20%;
+    text-align: left;
+    margin: 10px;
+    padding: 5px;
+    font-size: 1.3em;
+  }
+
+  li {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 812px) and (max-height: 375px) {
+  .landing.page .info .name {
+    font-size: 3em;
+    font-weight: 200;
+  }
+
+  .landing.page .info .email {
+    font-weight: 100;
+    font-size: 1.5em;
+    unicode-bidi: bidi-override;
+    letter-spacing: 0.07em;
+  }
+
+  .icons {
+    position: absolute;
+    bottom: 10px;
+
+    /* left:10px; */
+    background-color: transparent;
+    width: 20%;
+    text-align: left;
+    margin: 10px;
+    padding: 5px;
+    font-size: 1.3em;
+  }
+
+  li {
+    display: block;
+  }
 }
