@@ -1,9 +1,8 @@
 ---
 title: "Roasted vegetables. A retrospective"
-date: 2020-11-07
+date: 2020-12-15T22:01:11+00:00
 description: "This is how I roast vegetables. Its not pretty but its pretty tasty"
 tags: [cooking, vegetables, simple, quick]
-draft: true
 ---
 
 ---
@@ -57,12 +56,13 @@ grilled.
   industrial grade acid I question that you would need this disclaimer
 
 - **Salt** Its the universal spice. I like it course and flaky for a bit more
-  heterogeneity but table salt would also work but you would probably have to
+  [heterogeneity]( but table salt would also work but you would probably have to
   pre mix it
 
 - **A fat** I like a melting fat such as butter or ghee but I have also done
   this with olive oil and that works really quite well! any sort of oil or fat
   could and should work. use what you like and more importantly have on hand.
+  Coconut oil is great if you want a vegan saturated fat
 
 You could also do some herbs and stuff. Go wild and give it a go!
 
@@ -78,5 +78,13 @@ get the inside cooked. That can leave you with a really nice crust and a soft
 inside.
 
 I don't peel my vegetables as I like the flavor contrast the skins add but you
-can peel them. you may need to dry your vegetables afterwards though as moisture
-inhibits browning
+can peel them. you may need to dry your vegetables afterwards though as
+moisture that the veg will output will inhibit browning.
+
+## What now?
+
+You have a bunch of roasted vegetables and you don't know what to do with them?
+well now you have a no nonsense side dish that you did not have to nurse or
+really spend any time on. You could also eat it as is, as it its a great snack!
+Really the world is your oyster in this regard. go wild! If you have any
+suggestions do [mail me!](mailto:jeetelongname@gmail.com)

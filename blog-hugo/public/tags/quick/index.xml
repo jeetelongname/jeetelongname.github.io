@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Jeet&#39;s Blog</title>
-    <link>https://jeetelongname.github.io/blog/posts/</link>
-    <description>Recent content in Posts on Jeet&#39;s Blog</description>
+    <title>quick on Jeet&#39;s Blog</title>
+    <link>https://jeetelongname.github.io/blog/tags/quick/</link>
+    <description>Recent content in quick on Jeet&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>copyright © Jeetaditya Chatterjee 2020-2020</copyright>
     <lastBuildDate>Tue, 15 Dec 2020 22:01:11 +0000</lastBuildDate>
     
-	<atom:link href="https://jeetelongname.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jeetelongname.github.io/blog/tags/quick/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -21,15 +21,6 @@
       <description>Roasting Vegetables is great! its a great way to get rid of those lingering vegetables and its simple and quick to do! I see it as a fridge cleaner and an easy way to make a simple side. (but i end up eating them on its own!)
 Prerequisites There are no hard and fast rules when it comes to this. But i like to add in
   At least one onion like vegetables.</description>
-    </item>
-    
-    <item>
-      <title>How to get started with Hugo and GitHub</title>
-      <link>https://jeetelongname.github.io/blog/posts/post1/</link>
-      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jeetelongname.github.io/blog/posts/post1/</guid>
-      <description>I am no expert I should start this by saying I started this website a good year ago and did nothing with it. I was adamant that I would do everything in wrought HTML ,lets just say that was a massive mistake. I ended up settling on a simple home page with a hugo blog to power the back-end. After multiple hiccups with finding a theme i had settled on Tokiwa for a while and all was well&amp;hellip; that was until i tried blogging.</description>
     </item>
     
   </channel>
