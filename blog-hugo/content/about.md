@@ -6,7 +6,7 @@ type: "page"
 
 ## Hi I am Jeet!
 
-I am a Student that is studying computer science at UTC Reading.
+I am a Student that is studying computer science at 6th form
 This is my Blog!
 
 ## Thats well and good but whats it about?
