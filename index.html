@@ -1,68 +1,69 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset="UTF-8">
+    <title>Jeet's Website</title>
+    <meta name="viewport" content=
+    "initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/light.css" id="theme">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <!-- jquery for the menu -->
 
-    <head>
-        <title>Jeet's Website</title>
+    <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><!-- feather.js for the nice icons  https://feathericons.com/ -->
 
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
-        <meta charset="UTF-8">
-
-        <link rel="stylesheet" href ="css/light.css" id="theme">
-        <link rel="stylesheet" href ="css/index.css">
-        <link rel="stylesheet" href ="css/menu.css">
-
-        <!-- jquery for the menu -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <!-- feather.js for the nice icons  https://feathericons.com/ -->
-        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.js"></script>
-    </head>
-    <!-- https://codepen.io/GeoffreyCrofte/details/oCBxz Look into this -->
-    <body>
-        <div id="viewport">
-
-            <div class="landing page">
-
-                <!-- info -->
-                <div class="info">
-                    <div class="name">Jeetaditya Chatterjee</div>
-                    <div class="email"><a href="mailto:jeetelongname@gmail.com">jeetelongname@gmail.com</a></div>
+    <script src=
+    "https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.js"></script>
+</head>
+<!-- https://codepen.io/GeoffreyCrofte/details/oCBxz Look into this -->
+<body>
+    <div id="viewport">
+        <div class="landing page">
+            <!-- info -->
+            <div class="info">
+                <div class="name">
+                    Jeetaditya Chatterjee
                 </div>
-                <!-- /info -->
-
-                <!-- icons -->
-                <div class="icons">
-                    <ul class="icons">
-                        <li><a href="https://www.github.com/jeetelongname">
-                            <i data-feather="github" alt="Github" title="Github"></i></a></li>
-
-                        <li><a href="https://twitter.com/jeetaditya3">
-                            <i data-feather="twitter" alt="Twitter" title="Twitter"></i></a></li>
-
-                        <li><a href="https://www.linkedin.com/in/jeetaditya-chatterjee-138792192/">
-                            <i data-feather="linkedin" alt="Linkedin" title="Linkedin"></i></a></li>
-                    </ul>
+                <div class="email">
+                    <a href=
+                    "mailto:jeetelongname@gmail.com">jeetelongname@gmail.com</a>
                 </div>
-                <!-- /icons -->
-
-                <!-- theme toggle -->
-                <div id='theme-toggle'><i data-feather="moon" alt="Dark" title="Switch to dark mode"></i></div>
-
-                <div id="toggle">
-                    <div class="one"></div>
-                    <div class="two"></div>
-                    <div class="three"></div>
-                </div>
-
-                <div id="menu">
-                    <ul>
-                        <li><a href="/blog">To the blog!</a></li>
-                    </ul>
-                </div>
-                <!-- /theme-toggle -->
-            </div> <!-- /landing page -->
-        </div> <!-- /Viewport -->
-    </body>
+            </div><!-- /info -->
+            <!-- icons -->
+            <div class="icons">
+                <ul class="icons">
+                    <li> <a href= "https://www.github.com/jeetelongname">
+                            <i data-feather="github" alt="Github" title="Github"></i></a>
+                    </li>
+                    <li> <a href= "https://twitter.com/jeetaditya3"><i data-feather="twitter"
+                        alt="Twitter" title="Twitter"></i></a>
+                    </li>
+                    <li> <a href= "https://www.linkedin.com/in/jeetaditya-chatterjee-138792192/">
+                        <i data-feather="linkedin" alt="Linkedin" title="Linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /icons -->
+            <!-- theme toggle -->
+            <div id='theme-toggle'>
+                <i data-feather="moon" alt="Dark" title="Switch to dark mode"></i>
+            </div>
+            <!-- /theme-toggle -->
+            <nav id="nav">
+                <button class="nav-icon" id= "nav-icon"><span></span></button>
+                <ul>
+                    <li> <a href="#about">about</a> </li>
+                    <li> <a href="https://jeetelongname.github.io/blog">blog</a> </li>
+                    <li> <a href="#contact">contact</a> </li>
+                </ul>
+            </nav>
+        </div><!-- /landing page -->
+    </div><!-- /Viewport -->
     <script src="js/menu.js"></script>
     <script src="js/theme.js"></script>
-    <script>feather.replace()</script>
+    <script>
+    feather.replace()
+    </script>
+</body>
 </html>

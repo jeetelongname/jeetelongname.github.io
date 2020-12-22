@@ -21,7 +21,6 @@ body {
 }
 
 .landing.page {
-  /* background-image: linear-gradient(to bottom right, var(--main-1), var(--main-2)); */
   background: var(--back);
 }
 
@@ -52,7 +51,7 @@ body {
 #theme-toggle {
   position: absolute;
   top: 20px;
-  right: 30px;
+  left: 30px;
   font-size: 1.3em;
   color: var(--text-main);
 }
@@ -123,11 +122,10 @@ li a:hover {
   .icons {
     position: absolute;
     bottom: 10px;
-
-    /* left:10px; */
+    right: 10px;
     background-color: transparent;
     width: 20%;
-    text-align: left;
+    text-align: right;
     margin: 10px;
     padding: 5px;
     font-size: 1.3em;
@@ -154,11 +152,10 @@ li a:hover {
   .icons {
     position: absolute;
     bottom: 10px;
-
-    /* left:10px; */
+    right: 10px;
     background-color: transparent;
     width: 20%;
-    text-align: left;
+    text-align: right;
     margin: 10px;
     padding: 5px;
     font-size: 1.3em;
