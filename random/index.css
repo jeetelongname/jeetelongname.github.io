@@ -11,6 +11,28 @@
   --red: #ff5555;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: radial-gradient(
+    var(--secondary) 30%,
+    var(--background) 30%
+  );
+  background-size: 2px 3px;
+  color: var(--primary);
+  text-align: center;
+  font-family: "Helvetica", monospace;
+}
+
 div {
   background-color: var(--background);
   display: block;
@@ -21,8 +43,8 @@ div {
     0 0 0 -3px var(--background), 0 0 0 0 var(--yellow),
     0 0 0 -3px var(--background), 0 0 0 0 var(--orange),
     0 0 0 -3px var(--background), 0 0 0 0 var(--red);
-  /* margin: calc(40vh - 70px) auto 0 auto; */
-  margin: 50px auto 0 auto;
+  margin: calc(16vh - 30px) auto 0 auto; /* FIXME with a media query */
+  /* margin: 50px auto 0 auto; */
   transition: box-shadow 1s, top 1s, left 1s;
   position: relative;
   top: 0;
@@ -37,23 +59,6 @@ div:hover {
     20px -20px 0 -3px var(--background), 20px -20px var(--yellow),
     30px -30px 0 -3px var(--background), 30px -30px var(--orange),
     40px -40px 0 -3px var(--background), 40px -40px var(--red);
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-image: radial-gradient(
-    var(--secondary) 30%,
-    var(--background) 30%
-  );
-  background-size: 2px 3px;
-  color: var(--primary);
-  text-align: center;
-  font-family: "Helvetica", monospace;
 }
 
 p {
@@ -72,4 +77,7 @@ h2 {
 
 a {
   text-decoration: none;
+}
+@media only screen and (max-height: 1000px) {
+  margin: calc(16vh - 100px) auto 0 auto;
 }
