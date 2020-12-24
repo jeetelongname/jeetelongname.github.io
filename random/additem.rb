@@ -22,7 +22,7 @@ lines.each_with_index do |i, j|
   end
 end
 # line_to_add = "         <div><p>#{ARGV[0]}</p><a href='#{ARGV[1]}'>#{ARGV[2]}</a></div>\n"
-line_to_add = "        <a href='#{ARGV[1]}'><div><p>#{ARGV[0]}</p></div></a>\n"
+line_to_add = "        <a href='#{ARGV[1]}'><div><h2>#{ARGV[0]}</h2></div></a>\n"
 lines.insert($line_above + 1, line_to_add)
 open("index.html", "r+") do |f|
   lines.each do |line|
