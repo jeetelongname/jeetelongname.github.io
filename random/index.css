@@ -15,6 +15,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scrollbar-width: none;
 }
 
 body {
@@ -32,6 +33,14 @@ body {
   font-family: "Helvetica", monospace;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+div:last-child {
+  margin-bottom: 50px;
+}
+
 div {
   background-color: var(--background);
   display: block;
@@ -42,7 +51,7 @@ div {
     0 0 0 -3px var(--background), 0 0 0 0 var(--yellow),
     0 0 0 -3px var(--background), 0 0 0 0 var(--orange),
     0 0 0 -3px var(--background), 0 0 0 0 var(--red);
-  margin: calc(16vh - 30px) auto 0 auto; /* FIXME with a media query */
+  margin: calc(16vh - 30px) auto auto auto; /* FIXME with a media query */
   transition: box-shadow 1s, top 1s, left 1s;
   position: relative;
   top: 0;
