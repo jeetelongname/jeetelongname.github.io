@@ -8,13 +8,13 @@ pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 [params]
-    subtitle = "Half Decent Cook - Linux Enthusiast - A little crazy"
+    subtitle = "Ramblings on linux and cooking (and other stuff)"
     featherIconsCDN = true
     mode = "auto"
     avatar = "https://avatars1.githubusercontent.com/u/49886197?s=460&u=c72546bdc6260023241f7a8c204b78fcca5ca20a&v=4"
 [[menu.main]]
 name = "Home"
-url = "/"
+url = ".."
 weight = 1
 
 [[menu.main]]
