@@ -1,0 +1,19 @@
+body {
+  background-color: #fffdd0;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+}
+
+p.card,
+h2.card {
+  text-decoration: none;
+}
+div.card {
+  margin: auto;
+  width: 200px;
+  height: auto;
+  padding: 10px;
+  background: white;
+  border: 1px solid white;
+  border-radius: 10px;
+}
