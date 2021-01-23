@@ -1,53 +1,37 @@
 ---
-title: "Compiling Emacs from source"
-date: 2020-09-10T21:06:45+01:00 
-description: "I did not have a fun time hand rolling my own build of emacs. So I am writing this guide to remind my self what to do"
-tags: [Emacs,Tech,Guides,]
+title: "'Deconstructed hot-dog'. A riff on croque-monsieur"
+date: 2021-01-23
+description: "The next evolution of fried bread"
+tags: [cooking, simple, quick, bread]
 draft: true
 ---
----
-## Compiling emacs is not all that bad...
-Emacs is one of those things that you can use for a lifetime. But you can't use
-the same version for a lifetime. One day you will have to upgrade your version.
-Whether that be because of nessity or curoisity is not up to me. I am just  guy
-who wants to make this ordeal go a heck of a lot faster
 
-## Prereqisites
+# My evolution of the Grilled cheese.
 
-To compile emacs you will need...
+So I was making a grilled cheese and had the fun idea of adding ham. I had made
+a croque monsieur but more importantly I had made my breakfast at 3pm. My mum ,who
+has come home from work by now, had the idea of adding onions and chillies to
+it. This sounded a lot like a hot-dog but i like hot-dogs so I preceded to try
+and make it here is my recipe
 
-- a set of build tools. This will include
-  - make
-  - the gcc compiler (or any c compiler)
-  - libc6 
-  - git
-  - the gnu coreutils
-  - autoconf and automake
-  
-On debian based systems this is as easy as a `sudo apt install build-essential`
-I don't really use any other systems you will need to install them but If you
-know the packages [mail me!](mailto:jeetelongname@gmail.com) 
-We also need some dependency's
+# Ingredient's
 
-- GNU tls 
+Weights and measures prepare to be ignored!
 
-## Cloning
-You can get the source code by either cloning the repository or getting a tar
-file. the steps are mostly the same but the way you get them and the
-pre-processing you will need to do is not 
+- **Bread. Two slices per sandwich**
+  Any kind will do but I prefer white baguette or tiger bread. the crust is
+  crunchy by default and its just a blank canvas. but any bread will do.
+- **Butter. Enough to cover two sides of bread** Margarine also works really
+  well
+- [**Cheese**](https://www.youtube.com/watch?v=XC3CjYCGEro) I use edam but any
+  smooth melting cheese (cheddar, processed, gouda) will work fine.
+- **Ham** Whatever you have to hand. Meat substitutes should also work
 
-### Tar file
+# Method
 
-### Git cloning 
-## Configuration
-## Building
-## Installing
- after you have built it and verified it is working then you can do a `sudo make
- install` this will copy over all the files into your path and essentially
- install emacs. You should be done after this!
- 
-## Troubleshooting
-If you have run the `make clean` command then you won't be able to use that
-repository to build emacs there may be a way to restore it but i dont know what
-it is. I recommend not using the `make clean` command and just rebuilding on top
-## Finishing up
+1. Slather the butter onto the bread. It should be T H I C C. the butter will
+   brown the bread and soak into it making it soft and lovely.
+2. In a cold pan place half the buttered bread, butter side down, and turn on
+   the burner some of the butter will melt out as
+3. Put on the Cheese, Ham, Onions and the other slice of bread ,butter side up,
+   into the bread and try to flip the sandwich
