@@ -5,7 +5,7 @@
 #+REVEAL_THEME: black
 #+REVEAL_TRANS: slide
 #+REVEAL_HLEVEL: 4
-#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3>🎵 Its time to get functional 🎵</h3><p>Press s for speaker note</p>
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3>🎵 Its time to get functional 🎵</h3><p>Press s for speaker notes</p>
 
 * What is functional programming
 functional programming is a paradigm where the entire system is modeled as a
