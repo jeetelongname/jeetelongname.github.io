@@ -1,0 +1,272 @@
+#+TITLE: Functional
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+#+REVEAL_HLEVEL: 4
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3>🎵 Its time to get functional 🎵</h3><p>Press s for speaker note</p>
+
+* What is functional programming
+functional programming is a paradigm where the entire system is modeled as a
+function of its inputs and outputs
+
+.. what does this mean?
+** What that means
+
+when you call a function you give it a set of inputs and it returns an output.
+
+#+begin_src python
+def function(input):
+    output = input + 1
+    return output
+#+end_src
+
+this is in essence how the entire program is modeled
+
+** I just wanna code bro
+
+This means a couple things.
+
+- Programs are stateless
+- All functions have to be pure (No side effects)
+- functions are first class
+- some more we will get too
+
+*** Statelessness
+  #+begin_notes
+  When you are coding a procedural or an object oriented language as you are trucking along memory will
+  be changed as you change the variable or objects. In essence the code is not
+  reliant on the starting parameters eg
+
+  if you notice the elixer code does not manipulae the users age. thats because
+  that value is fixed. also known as imutable You would need to allocate a new space for the return
+  value.
+  #+end_notes
+
+  #+begin_src ruby
+  class User
+    def initialize(first_name, last_name, age)
+      @first_name = first_name
+      @last_name = last_name
+      @age = age
+    end
+
+    # Create reader methods to get the age
+    attr_reader :age
+
+    def make_older(number_of_years)
+      @age += number_of_years
+    end
+  end
+
+  user = User.new("Bernhard", "Støcker", 31)
+  # => #<User:0x007fd2cb0e6cf8 @first_name="Bernhard", @last_name="Støcker", @age=31>
+
+  user.age
+  # => 31
+
+  user.make_older(5)
+  # => 36
+
+  user.age
+  # => 36
+  #+end_src
+
+  #+RESULTS:
+
+#+REVEAL: split
+
+#+begin_src elixir
+defmodule User do
+  defstruct first_name: nil,
+            last_name: nil,
+            age: nil
+
+  def age(user)
+    user.age
+  end
+
+  def make_older(user, number_of_years)
+    Map.put(user, :age, number_of_years)
+  end
+end
+
+user = %User{first_name: "Bernhard", last_name: "Støcker", age: 31}
+# => %User{first_name: "Bernhard", last_name: "Støcker", age: 31}
+
+user.age
+# => 31
+
+make_older(user, 5)
+# => %User{first_name: "Bernhard", last_name: "Støcker", age: 36}
+
+user.age(user)
+# => 31
+#+end_src
+*** Function purity
+#+begin_notes
+function purity or no side effect programing basically means no function can
+change the global state. this function is not pure. It manipulates the global
+state. this is a side effect of this function. In haskell and other functional
+languages this is moved from frowned upon to enforced. this makes side effects a
+non issue. if we wanted to rewrite the example as pure it would look like this
+#+end_notes
+
+#+begin_src python
+x = 10
+
+
+def add(num):
+    x = x + 1
+
+print(x)
+# => 11
+#+end_src
+
+#+REVEAL: split
+
+#+begin_src python
+x = 10
+
+
+def add(num1, num2):
+    return num1 + num2
+
+
+y = add(x, 1)
+#+end_src
+
+*** first class functions
+#+begin_notes
+If you have been paying atention you would have noticed that we have not seen
+any haskell code. up untill now. this is because in haskell functions are
+another value. they can be passed around and played with like any other data
+type. In other words the distiction between variable and function is non
+existant. they are one in the same
+
+this is useful for renaming functions
+
+It also allows functions to be passed as arguments
+#+end_notes
+
+#+begin_src haskell
+var x = 10 + x
+
+function x =  if x > 10 do stuff.. -- probably no valid
+#+end_src
+
+#+begin_src haskell
+someReallyLongFunctionName = ...
+
+name = someReallyLongFunctionName
+#+end_src
+
+*** Higher order functions
+#+begin_notes
+Higher order functions takes a function as an argument. this is really useful
+for things like filtering and mapping to a list.
+
+Here the map method here is taking what is known as a block. it will then run
+the code in the block on all the elements in an array. This code is actually
+taken from my NEA and its is how I parse all the lines of code and remove comments
+#+end_notes
+
+#+begin_src ruby
+output = (input).map do |s|
+  s.sub("\n", "").sub(/,/, "").gsub(/;.+/, "").strip.split
+end
+#+end_src
+
+#+RESULTS:
+
+*** function composition
+
+#+begin_notes
+function composition is combining 2 functions to create a new one.
+This is similar to function composition in maths where we nest one function in
+another
+
+In this example we nest g into f
+
+if we wanted to do this in haskell we could use this notation
+#+end_notes
+
+#+ATTR_REVEAL: :frag (roll-in) :frag_idx (1 2)
+- f(x) = x + 2
+  g(x) = x - 8
+
+- f(g(x)) = (x - 8) + 2
+
+ #+REVEAL: split
+
+ #+begin_src haskell
+ f x = x + 2
+ g x = x - 8
+
+ (f.g) 10 -- composition
+ -- => 4
+
+ #+end_src
+** What have I missed
+#+begin_notes
+There are some details that I have had to gloss over
+for time and for my sanity these will incude
+
+All this means is that for this function it will take two types and return one.
+As a function will return another function if not all the arguments are set it
+may explain the arrow (its called partial function application)
+
+As we can parse in arguments as functuons we can also partlialy apply a function
+inside another function. basically any argument passed to addSix will then also
+be passed to add
+
+There are a couple of other higher order functions that you can use
+
+#+end_notes
+
+- types and type classes
+  Haskell is a static language so you have to define types. but this also means
+  you have to give functions types..
+
+  #+begin_src haskell
+  function :: Integer -> Integer -> Integer
+
+  function x y = x + y
+  #+end_src
+
+#+REVEAL: split
+- partial function application
+
+  #+begin_src haskell
+  add :: Integer -> Integer -> Integer
+  addSix :: Integer -> Integer
+  addSix = add 6
+  x = addSix 3
+  -- x = 9
+  #+end_src
+
+ #+reveal: split
+
+  - other higher order funtuons
+    - filter (filter an array acording to some check)
+      #+begin_src haskell
+filter (>6)[2,5,6,8,9]
+-- => [8,9]
+      
+
+      #+end_src
+
+    - fold / reduce (use recursion to reduce a list)
+      you can do it from the left or the right
+   
+      #+begin_src haskell
+foldl (+) 0 [2, 3, 4, 5]
+  -- => basically sum down an array from the left most side
+      #+end_src
+
+#+reveal: split
+
+- lists
+   this is an entire chapter. and i am tired
+** I am done now
