@@ -19,11 +19,11 @@
         <h3></h3>
         <h2>By Jeetaditya Chatterjee</h2>
         <h3>🎵 Its time to get functional 🎵</h3>
-        <p>Press s for speaker note</p>
+        <p>Press s for speaker notes</p>
       </section>
       <section>
-        <section id="slide-org5e491a0">
-          <h2 id="org5e491a0">What is functional programming</h2>
+        <section id="slide-org53f01cc">
+          <h2 id="org53f01cc">What is functional programming</h2>
           <p>functional programming is a paradigm where the entire
           system is modeled as a function of its inputs and
           outputs</p>
@@ -31,8 +31,8 @@
         </section>
       </section>
       <section>
-        <section id="slide-org25f73d9">
-          <h3 id="org25f73d9">What that means</h3>
+        <section id="slide-org264f44d">
+          <h3 id="org264f44d">What that means</h3>
           <p>when you call a function you give it a set of inputs
           and it returns an output.</p>
           <div class="org-src-container">
@@ -52,8 +52,8 @@
         </section>
       </section>
       <section>
-        <section id="slide-org30672fe">
-          <h3 id="org30672fe">I just wanna code bro</h3>
+        <section id="slide-orgb484bca">
+          <h3 id="orgb484bca">I just wanna code bro</h3>
           <p>This means a couple things.</p>
           <ul>
             <li>Programs are stateless</li>
@@ -65,8 +65,8 @@
         </section>
       </section>
       <section>
-        <section id="slide-org2050968">
-          <h4 id="org2050968">Statelessness</h4>
+        <section id="slide-orgd258614">
+          <h4 id="orgd258614">Statelessness</h4>
           <aside class="notes">
             <p>When you are coding a procedural or an object
             oriented language as you are trucking along memory will
@@ -86,7 +86,6 @@
 "color: #b877db; font-style: italic;">def</span> <span style=
 "color: #21bfc2;">initialize</span>(first_name, last_name, age)
       <span style="color: #e95678;">@first_name</span> = first_name
-      <span style="color: #e95678;">@last_name</span> = last_name
       <span style="color: #e95678;">@age</span> = age
     <span style="color: #b877db; font-style: italic;">end</span>
 
@@ -104,10 +103,9 @@
 
   user = <span style="color: #21bfc2;">User</span>.new(<span style=
 "color: #fab795;">"Bernhard"</span>, <span style=
-"color: #fab795;">"Støcker"</span>, <span style=
 "color: #f09383; font-weight: bold;">31</span>)
   <span style=
-"color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; #&lt;User:0x007fd2cb0e6cf8 @first_name="Bernhard", @last_name="Støcker", @age=31&gt;</span>
+"color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; #&lt;User:0x007fd2cb0e6cf8 @first_name="Bernhard", @age=31&gt;</span>
 
   user.age
   <span style=
@@ -182,8 +180,8 @@ user.age(user)
         </section>
       </section>
       <section>
-        <section id="slide-orge62a3f7">
-          <h4 id="orge62a3f7">Function purity</h4>
+        <section id="slide-orgbe4a0e5">
+          <h4 id="orgbe4a0e5">Function purity</h4>
           <aside class="notes">
             <p>function purity or no side effect programing
             basically means no function can change the global
@@ -233,8 +231,8 @@ user.age(user)
         </section>
       </section>
       <section>
-        <section id="slide-orgf90c522">
-          <h4 id="orgf90c522">first class functions</h4>
+        <section id="slide-orgc5eebfa">
+          <h4 id="orgc5eebfa">first class functions</h4>
           <aside class="notes">
             <p>If you have been paying atention you would have
             noticed that we have not seen any haskell code. up
@@ -277,8 +275,8 @@ user.age(user)
         </section>
       </section>
       <section>
-        <section id="slide-org099fcf8">
-          <h4 id="org099fcf8">Higher order functions</h4>
+        <section id="slide-org5873a04">
+          <h4 id="org5873a04">Higher order functions</h4>
           <aside class="notes">
             <p>Higher order functions takes a function as an
             argument. this is really useful for things like
@@ -305,8 +303,8 @@ user.age(user)
         </section>
       </section>
       <section>
-        <section id="slide-org51c8f80">
-          <h4 id="org51c8f80">function composition</h4>
+        <section id="slide-orgd348b71">
+          <h4 id="orgd348b71">function composition</h4>
           <aside class="notes">
             <p>function composition is combining 2 functions to
             create a new one. This is similar to function
@@ -318,8 +316,10 @@ user.age(user)
           </aside>
           <ul>
             <li data-fragment-index="1" class="fragment roll-in">
-            f(x) = x + 2 g(x) = x - 8</li>
+            f(x) = x + 2</li>
             <li data-fragment-index="2" class="fragment roll-in">
+            g(x) = x - 8</li>
+            <li>
               <p>f(g(x)) = (x - 8) + 2</p>
             </li>
           </ul>
@@ -345,8 +345,8 @@ user.age(user)
         </section>
       </section>
       <section>
-        <section id="slide-orgafcbd0e">
-          <h3 id="orgafcbd0e">What have I missed</h3>
+        <section id="slide-orge4e08a7">
+          <h3 id="orge4e08a7">What have I missed</h3>
           <aside class="notes">
             <p>There are some details that I have had to gloss over
             for time and for my sanity these will incude</p>
@@ -463,8 +463,8 @@ user.age(user)
         </section>
       </section>
       <section>
-        <section id="slide-orgc72de02">
-          <h3 id="orgc72de02">I am done now</h3>
+        <section id="slide-org1827ae7">
+          <h3 id="org1827ae7">I am done now</h3>
         </section>
       </section>
     </div>

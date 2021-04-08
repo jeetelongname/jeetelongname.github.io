@@ -7,6 +7,10 @@
 #+REVEAL_HLEVEL: 4
 #+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3>🎵 Its time to get functional 🎵</h3><p>Press s for speaker notes</p>
 
+
+
+
+
 * What is functional programming
 functional programming is a paradigm where the entire system is modeled as a
 function of its inputs and outputs
@@ -46,9 +50,8 @@ This means a couple things.
 
   #+begin_src ruby
   class User
-    def initialize(first_name, last_name, age)
+    def initialize(first_name, age)
       @first_name = first_name
-      @last_name = last_name
       @age = age
     end
 
@@ -60,8 +63,8 @@ This means a couple things.
     end
   end
 
-  user = User.new("Bernhard", "Støcker", 31)
-  # => #<User:0x007fd2cb0e6cf8 @first_name="Bernhard", @last_name="Støcker", @age=31>
+  user = User.new("Bernhard", 31)
+  # => #<User:0x007fd2cb0e6cf8 @first_name="Bernhard", @age=31>
 
   user.age
   # => 31
@@ -80,7 +83,6 @@ This means a couple things.
 #+begin_src elixir
 defmodule User do
   defstruct first_name: nil,
-            last_name: nil,
             age: nil
 
   def age(user)
@@ -92,14 +94,14 @@ defmodule User do
   end
 end
 
-user = %User{first_name: "Bernhard", last_name: "Støcker", age: 31}
-# => %User{first_name: "Bernhard", last_name: "Støcker", age: 31}
+user = %User{first_name: "Bernhard", age: 31}
+# => %User{first_name: "Bernhard", age: 31}
 
 user.age
 # => 31
 
 make_older(user, 5)
-# => %User{first_name: "Bernhard", last_name: "Støcker", age: 36}
+# => %User{first_name: "Bernhard", age: 36}
 
 user.age(user)
 # => 31
@@ -194,7 +196,7 @@ if we wanted to do this in haskell we could use this notation
 
 #+ATTR_REVEAL: :frag (roll-in) :frag_idx (1 2)
 - f(x) = x + 2
-  g(x) = x - 8
+- g(x) = x - 8
 
 - f(g(x)) = (x - 8) + 2
 
