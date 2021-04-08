@@ -3,7 +3,7 @@ title: "List manipulation into madness"
 date: 2021-04-07
 description: "mind.map { |n| n.append 'Ruby this Ruby that' }"
 tags: [programming, lists, python, ruby]
-draft: true
+draft: false
 ---
 
 # It all started from a joke..

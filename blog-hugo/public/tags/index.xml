@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>copyright © Jeetaditya Chatterjee 2020-2020</copyright>
-    <lastBuildDate>Tue, 15 Dec 2020 22:01:11 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Apr 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jeetelongname.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>lists</title>
+      <link>https://jeetelongname.github.io/blog/tags/lists/</link>
+      <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jeetelongname.github.io/blog/tags/lists/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://jeetelongname.github.io/blog/tags/programming/</link>
+      <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jeetelongname.github.io/blog/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://jeetelongname.github.io/blog/tags/python/</link>
+      <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jeetelongname.github.io/blog/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ruby</title>
+      <link>https://jeetelongname.github.io/blog/tags/ruby/</link>
+      <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jeetelongname.github.io/blog/tags/ruby/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>cooking</title>
