@@ -180,7 +180,7 @@ touch!](mailto:jeetelongname@gmail.com)
 
 oh and the link my friend was encoding can [be found here](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
-## Apendix (new solutions)
+## Appendix (new solutions)
 
 Going back to the python map solution one way we could shrink it is by using
 `lambda` to bring the function inline (Thanks Dan for coming up with what is in
