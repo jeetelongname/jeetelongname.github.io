@@ -1,33 +1,62 @@
+$background-color: #fffdd0;
+$accent-color: black;
+$hover-color: teal;
+
 body {
-  background-color: #fffdd0;
+  background-color: $background-color;
   text-align: center;
   font-family: Helvetica, sans-serif;
+  margin: 0px;
 }
 
-div.header {
-  border-bottom: 1px solid black;
+div.line {
+  border-bottom: 1px solid $accent-color;
   padding: 5px 20px 5xp 10px;
   margin: 10px 50px 10px 50px;
 }
 
-a,
-a:visited {
-  text-decoration: none;
-  color: black;
-  /* wow */
+header {
+  display: inline-block;
+  margin: 0.5em 1em 0.5em 1em;
+
+  a {
+    position: relative;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: $accent-color;
+    margin: 0em 0em 1em 1em;
+    transition: color 0.1s;
+  }
+
+  a:hover {
+    color: $hover-color;
+  }
 }
 
-a:hover {
-  background-color: grey;
+ul {
+  list-style: none;
+  padding: 0px;
 }
 
-div.card {
-  margin: 10px 25% 10px 25%;
-  height: auto;
-  padding: 10px 20px 10px 20px;
-  border-radius: 10px;
+p {
+  font-size: 1.5em;
 }
 
-div.card:hover {
-  background-color: grey;
+li {
+  a,
+  a:visited {
+    text-decoration: none;
+    color: $accent-color;
+  }
+
+  div {
+    // margin: 10px 25% 10px 25%;
+    height: auto;
+    padding: 10px 20px 10px 20px;
+    transition: background 0.1s;
+  }
+
+  div:hover {
+    background: $hover-color;
+  }
 }

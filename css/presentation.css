@@ -2,34 +2,52 @@ body {
   background-color: #fffdd0;
   text-align: center;
   font-family: Helvetica, sans-serif;
+  margin: 0px;
 }
 
-div.header {
+div.line {
   border-bottom: 1px solid black;
   padding: 5px 20px 5xp 10px;
   margin: 10px 50px 10px 50px;
 }
 
-a,
-a:visited {
+header {
+  display: inline-block;
+  margin: 0.5em 1em 0.5em 1em;
+}
+header a {
+  position: relative;
+  text-decoration: none;
+  font-size: 1.5em;
+  color: black;
+  margin: 0em 0em 1em 1em;
+  transition: color 0.1s;
+}
+header a:hover {
+  color: teal;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+li a,
+li a:visited {
   text-decoration: none;
   color: black;
-  /* wow */
 }
-
-a:hover {
-  background-color: grey;
-}
-
-div.card {
-  margin: 10px 25% 10px 25%;
+li div {
   height: auto;
   padding: 10px 20px 10px 20px;
-  border-radius: 10px;
+  transition: background 0.1s;
 }
-
-div.card:hover {
-  background-color: grey;
+li div:hover {
+  background: teal;
 }
 
 /*# sourceMappingURL=presentation.css.map */
