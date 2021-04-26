@@ -1,512 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Functional</title>
-  <meta name="author" content="Jeetaditya Chatterjee">
-  <style type="text/css">
-  .underline { text-decoration: underline; }
-  </style>
-  <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
-  <link rel="stylesheet" href="../reveal.js/dist/theme/black.css"
-  id="theme">
+<meta charset="utf-8"/>
+<title>Functional</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
 </head>
 <body>
-  <div class="reveal">
-    <div class="slides">
-      <section id="sec-title-slide">
-        <h1>Functional</h1>
-        <h3></h3>
-        <h2>By Jeetaditya Chatterjee</h2>
-        <h3>🎵 Its time to get functional 🎵</h3>
-        <p>Press s for speaker notes</p>
-      </section>
-      <section>
-        <section id="slide-org53f01cc">
-          <h2 id="org53f01cc">What is functional programming</h2>
-          <p>functional programming is a paradigm where the entire
-          system is modeled as a function of its inputs and
-          outputs</p>
-          <p>.. what does this mean?</p>
-        </section>
-      </section>
-      <section>
-        <section id="slide-org264f44d">
-          <h3 id="org264f44d">What that means</h3>
-          <p>when you call a function you give it a set of inputs
-          and it returns an output.</p>
-          <div class="org-src-container">
-            <pre class="src src-python"><span style=
-            "color: #b877db; font-style: italic;">def</span> <span style=
-            "color: #21bfc2;">function</span>(<span style=
-            "color: #b877db;">input</span>):
-    <span style="color: #e95678;">output</span> = <span style=
-"color: #b877db;">input</span> + <span style=
-"color: #f09383; font-weight: bold;">1</span>
-    <span style=
-"color: #b877db; font-style: italic;">return</span> output
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Functional</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3>🎵 Its time to get functional 🎵</h3><p>Press s for speaker notes</p>
+</section>
+
+
+<section>
+<section id="slide-org679072c">
+<h2 id="org679072c">What is functional programming</h2>
+<p>
+functional programming is a paradigm where the entire system is modeled as a
+function of its inputs and outputs
+</p>
+
+<p>
+.. what does this mean?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org339d29e">
+<h3 id="org339d29e">What that means</h3>
+<p>
+when you call a function you give it a set of inputs and it returns an output.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #21bfc2;">function</span>(<span style="color: #b877db;">input</span>):
+    <span style="color: #e95678;">output</span> = <span style="color: #b877db;">input</span> + <span style="color: #f09383; font-weight: bold;">1</span>
+    <span style="color: #b877db; font-style: italic;">return</span> output
 </pre>
-          </div>
-          <p>this is in essence how the entire program is
-          modeled</p>
-        </section>
-      </section>
-      <section>
-        <section id="slide-orgb484bca">
-          <h3 id="orgb484bca">I just wanna code bro</h3>
-          <p>This means a couple things.</p>
-          <ul>
-            <li>Programs are stateless</li>
-            <li>All functions have to be pure (No side
-            effects)</li>
-            <li>functions are first class</li>
-            <li>some more we will get too</li>
-          </ul>
-        </section>
-      </section>
-      <section>
-        <section id="slide-orgd258614">
-          <h4 id="orgd258614">Statelessness</h4>
-          <aside class="notes">
-            <p>When you are coding a procedural or an object
-            oriented language as you are trucking along memory will
-            be changed as you change the variable or objects. In
-            essence the code is not reliant on the starting
-            parameters eg</p>
-            <p>if you notice the elixer code does not manipulae the
-            users age. thats because that value is fixed. also
-            known as imutable You would need to allocate a new
-            space for the return value.</p>
-          </aside>
-          <div class="org-src-container">
-            <pre class="src src-ruby">  <span style=
-            "color: #b877db; font-style: italic;">class</span> <span style=
-            "color: #21bfc2;">User</span>
-    <span style=
-"color: #b877db; font-style: italic;">def</span> <span style=
-"color: #21bfc2;">initialize</span>(first_name, last_name, age)
+</div>
+
+<p>
+this is in essence how the entire program is modeled
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org7e2d498">
+<h3 id="org7e2d498">I just wanna code bro</h3>
+<p>
+This means a couple things.
+</p>
+
+<ul>
+<li>Programs are stateless</li>
+<li>All functions have to be pure (No side effects)</li>
+<li>functions are first class</li>
+<li>some more we will get too</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org57a2001">
+<h4 id="org57a2001">Statelessness</h4>
+<aside class="notes">
+<p>
+When you are coding a procedural or an object oriented language as you are trucking along memory will
+be changed as you change the variable or objects. In essence the code is not
+reliant on the starting parameters eg
+</p>
+
+<p>
+if you notice the elixer code does not manipulae the users age. thats because
+that value is fixed. also known as imutable You would need to allocate a new space for the return
+value.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby">  <span style="color: #b877db; font-style: italic;">class</span> <span style="color: #21bfc2;">User</span>
+    <span style="color: #b877db; font-style: italic;">def</span> <span style="color: #21bfc2;">initialize</span>(first_name, age)
       <span style="color: #e95678;">@first_name</span> = first_name
       <span style="color: #e95678;">@age</span> = age
     <span style="color: #b877db; font-style: italic;">end</span>
 
-    <span style=
-"color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">Create reader methods to get the age</span>
-    <span style="color: #b877db;">attr_reader</span> <span style=
-"color: #f09383;">:age</span>
+    <span style="color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">Create reader methods to get the age</span>
+    <span style="color: #b877db;">attr_reader</span> <span style="color: #f09383;">:age</span>
 
-    <span style=
-"color: #b877db; font-style: italic;">def</span> <span style=
-"color: #21bfc2;">make_older</span>(number_of_years)
+    <span style="color: #b877db; font-style: italic;">def</span> <span style="color: #21bfc2;">make_older</span>(number_of_years)
       <span style="color: #e95678;">@age</span> += number_of_years
     <span style="color: #b877db; font-style: italic;">end</span>
   <span style="color: #b877db; font-style: italic;">end</span>
 
-  user = <span style="color: #21bfc2;">User</span>.new(<span style=
-"color: #fab795;">"Bernhard"</span>, <span style=
-"color: #f09383; font-weight: bold;">31</span>)
-  <span style=
-"color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; #&lt;User:0x007fd2cb0e6cf8 @first_name="Bernhard", @age=31&gt;</span>
+  user = <span style="color: #21bfc2;">User</span>.new(<span style="color: #fab795;">"Bernhard"</span>, <span style="color: #f09383; font-weight: bold;">31</span>)
+  <span style="color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; #&lt;User:0x007fd2cb0e6cf8 @first_name="Bernhard", @age=31&gt;</span>
 
   user.age
-  <span style=
-"color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; 31</span>
+  <span style="color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; 31</span>
 
-  user.make_older(<span style=
-"color: #f09383; font-weight: bold;">5</span>)
-  <span style=
-"color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; 36</span>
+  user.make_older(<span style="color: #f09383; font-weight: bold;">5</span>)
+  <span style="color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; 36</span>
 
   user.age
-  <span style=
-"color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; 36</span>
+  <span style="color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; 36</span>
 </pre>
-          </div>
-        </section>
-        <section>
-          <div class="org-src-container">
-            <pre class="src src-elixir"><span style=
-            "color: #b877db; font-style: italic;">defmodule</span> <span style=
-            "color: #21bfc2;">User</span> <span style=
-            "color: #b877db; font-style: italic;">do</span>
-  <span style=
-"color: #b877db; font-style: italic;">defstruct</span> <span style=
-"color: #59e3e3;">first_name:</span> <span style=
-"color: #59e3e3;">nil</span>,
-            <span style=
-"color: #59e3e3;">last_name:</span> <span style=
-"color: #59e3e3;">nil</span>,
-            <span style="color: #59e3e3;">age:</span> <span style=
-"color: #59e3e3;">nil</span>
+</div>
 
-  <span style=
-"color: #b877db; font-style: italic;">def</span> <span style=
-"color: #21bfc2;">age</span>(user)
+</section>
+<section>
+
+<div class="org-src-container">
+
+<pre class="src src-elixir">defmodule User do
+  defstruct first_name: nil,
+            age: nil
+
+  def age(user)
     user.age
-  <span style="color: #b877db; font-style: italic;">end</span>
+  end
 
-  <span style=
-"color: #b877db; font-style: italic;">def</span> <span style=
-"color: #21bfc2;">make_older</span>(user, number_of_years)
-    <span style="color: #21bfc2;">Map</span>.put(user, <span style=
-"color: #59e3e3;">:age</span>, number_of_years)
-  <span style="color: #b877db; font-style: italic;">end</span>
-<span style="color: #b877db; font-style: italic;">end</span>
+  def make_older(user, number_of_years)
+    Map.put(user, :age, number_of_years)
+  end
+end
 
-<span style="color: #e95678;">user</span> = <span style=
-"color: #21bfc2;">%User</span>{<span style=
-"color: #59e3e3;">first_name:</span> <span style=
-"color: #fab795;">"Bernhard"</span>, <span style=
-"color: #59e3e3;">last_name:</span> <span style=
-"color: #fab795;">"Støcker"</span>, <span style=
-"color: #59e3e3;">age:</span> <span style=
-"color: #f09383; font-weight: bold;">31</span>}
-<span style=
-"color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; %User{first_name: "Bernhard", last_name: "Støcker", age: 31}</span>
+user = %User{first_name: "Bernhard", age: 31}
+# =&gt; %User{first_name: "Bernhard", age: 31}
 
 user.age
-<span style=
-"color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; 31</span>
+# =&gt; 31
 
-make_older(user, <span style=
-"color: #f09383; font-weight: bold;">5</span>)
-<span style=
-"color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; %User{first_name: "Bernhard", last_name: "Støcker", age: 36}</span>
+make_older(user, 5)
+# =&gt; %User{first_name: "Bernhard", age: 36}
 
 user.age(user)
-<span style=
-"color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; 31</span>
+# =&gt; 31
 </pre>
-          </div>
-        </section>
-      </section>
-      <section>
-        <section id="slide-orgbe4a0e5">
-          <h4 id="orgbe4a0e5">Function purity</h4>
-          <aside class="notes">
-            <p>function purity or no side effect programing
-            basically means no function can change the global
-            state. this function is not pure. It manipulates the
-            global state. this is a side effect of this function.
-            In haskell and other functional languages this is moved
-            from frowned upon to enforced. this makes side effects
-            a non issue. if we wanted to rewrite the example as
-            pure it would look like this</p>
-          </aside>
-          <div class="org-src-container">
-            <pre class="src src-python"><span style=
-            "color: #e95678;">x</span> = <span style=
-            "color: #f09383; font-weight: bold;">10</span>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgc480f14">
+<h4 id="orgc480f14">Function purity</h4>
+<aside class="notes">
+<p>
+function purity or no side effect programing basically means no function can
+change the global state. this function is not pure. It manipulates the global
+state. this is a side effect of this function. In haskell and other functional
+languages this is moved from frowned upon to enforced. this makes side effects a
+non issue. if we wanted to rewrite the example as pure it would look like this
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">x</span> = <span style="color: #f09383; font-weight: bold;">10</span>
 
 
-<span style=
-"color: #b877db; font-style: italic;">def</span> <span style=
-"color: #21bfc2;">add</span>(num):
-    <span style="color: #e95678;">x</span> = x + <span style=
-"color: #f09383; font-weight: bold;">1</span>
+<span style="color: #b877db; font-style: italic;">def</span> <span style="color: #21bfc2;">add</span>(num):
+    <span style="color: #e95678;">x</span> = x + <span style="color: #f09383; font-weight: bold;">1</span>
 
 <span style="color: #b877db; font-style: italic;">print</span>(x)
-<span style=
-"color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; 11</span>
+<span style="color: #6c6f93; background-color: #22242c; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; 11</span>
 </pre>
-          </div>
-        </section>
-        <section>
-          <div class="org-src-container">
-            <pre class="src src-python"><span style=
-            "color: #e95678;">x</span> = <span style=
-            "color: #f09383; font-weight: bold;">10</span>
+</div>
+
+</section>
+<section>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">x</span> = <span style="color: #f09383; font-weight: bold;">10</span>
 
 
-<span style=
-"color: #b877db; font-style: italic;">def</span> <span style=
-"color: #21bfc2;">add</span>(num1, num2):
-    <span style=
-"color: #b877db; font-style: italic;">return</span> num1 + num2
+<span style="color: #b877db; font-style: italic;">def</span> <span style="color: #21bfc2;">add</span>(num1, num2):
+    <span style="color: #b877db; font-style: italic;">return</span> num1 + num2
 
 
-<span style="color: #e95678;">y</span> = add(x, <span style=
-"color: #f09383; font-weight: bold;">1</span>)
+<span style="color: #e95678;">y</span> = add(x, <span style="color: #f09383; font-weight: bold;">1</span>)
 </pre>
-          </div>
-        </section>
-      </section>
-      <section>
-        <section id="slide-orgc5eebfa">
-          <h4 id="orgc5eebfa">first class functions</h4>
-          <aside class="notes">
-            <p>If you have been paying atention you would have
-            noticed that we have not seen any haskell code. up
-            untill now. this is because in haskell functions are
-            another value. they can be passed around and played
-            with like any other data type. In other words the
-            distiction between variable and function is non
-            existant. they are one in the same</p>
-            <p>this is useful for renaming functions</p>
-            <p>It also allows functions to be passed as
-            arguments</p>
-          </aside>
-          <div class="org-src-container">
-            <pre class="src src-haskell"><span style=
-            "color: #21bfc2;">var</span> x <span style=
-            "color: #c7c9cb;">=</span> <span style=
-            "color: #f09383; font-weight: bold;">10</span> <span style=
-            "color: #c7c9cb;">+</span> x
+</div>
 
-<span style="color: #21bfc2;">function</span> x <span style=
-"color: #c7c9cb;">=</span>  <span style=
-"color: #b877db; font-style: italic;">if</span> x <span style=
-"color: #c7c9cb;">&gt;</span> <span style=
-"color: #f09383; font-weight: bold;">10</span> <span style=
-"color: #b877db; font-style: italic;">do</span> stuff<span style=
-"color: #c7c9cb;">..</span> <span style=
-"color: #6c6f93; background-color: #22242c; font-style: italic;">-- </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">probably no valid</span>
-</pre>
-          </div>
-          <div class="org-src-container">
-            <pre class="src src-haskell"><span style=
-            "color: #21bfc2;">someReallyLongFunctionName</span> <span style=
-            "color: #c7c9cb;">=</span> <span style=
-            "color: #c7c9cb;">...</span>
+</section>
+</section>
+<section>
+<section id="slide-org57a0914">
+<h4 id="org57a0914">first class functions</h4>
+<aside class="notes">
+<p>
+If you have been paying atention you would have noticed that we have not seen
+any haskell code. up untill now. this is because in haskell functions are
+another value. they can be passed around and played with like any other data
+type. In other words the distiction between variable and function is non
+existant. they are one in the same
+</p>
 
-<span style="color: #21bfc2;">name</span> <span style=
-"color: #c7c9cb;">=</span> someReallyLongFunctionName
+<p>
+this is useful for renaming functions
+</p>
+
+<p>
+It also allows functions to be passed as arguments
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-haskell"><span style="color: #21bfc2;">var</span> x <span style="color: #c7c9cb;">=</span> <span style="color: #f09383; font-weight: bold;">10</span> <span style="color: #c7c9cb;">+</span> x
+
+<span style="color: #21bfc2;">function</span> x <span style="color: #c7c9cb;">=</span>  <span style="color: #b877db; font-style: italic;">if</span> x <span style="color: #c7c9cb;">&gt;</span> <span style="color: #f09383; font-weight: bold;">10</span> <span style="color: #b877db; font-style: italic;">do</span> stuff<span style="color: #c7c9cb;">..</span> <span style="color: #6c6f93; background-color: #22242c; font-style: italic;">-- </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">probably no valid</span>
 </pre>
-          </div>
-        </section>
-      </section>
-      <section>
-        <section id="slide-org5873a04">
-          <h4 id="org5873a04">Higher order functions</h4>
-          <aside class="notes">
-            <p>Higher order functions takes a function as an
-            argument. this is really useful for things like
-            filtering and mapping to a list.</p>
-            <p>Here the map method here is taking what is known as
-            a block. it will then run the code in the block on all
-            the elements in an array. This code is actually taken
-            from my NEA and its is how I parse all the lines of
-            code and remove comments</p>
-          </aside>
-          <div class="org-src-container">
-            <pre class=
-            "src src-ruby">output = (input).map <span style=
-            "color: #b877db; font-style: italic;">do</span> |s|
-  s.sub(<span style="color: #fab795;">"\n"</span>, <span style=
-"color: #fab795;">""</span>).sub(<span style=
-"color: #fab795;">/,/</span>, <span style=
-"color: #fab795;">""</span>).gsub(<span style=
-"color: #fab795;">/;.+/</span>, <span style=
-"color: #fab795;">""</span>).strip.split
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-haskell"><span style="color: #21bfc2;">someReallyLongFunctionName</span> <span style="color: #c7c9cb;">=</span> <span style="color: #c7c9cb;">...</span>
+
+<span style="color: #21bfc2;">name</span> <span style="color: #c7c9cb;">=</span> someReallyLongFunctionName
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org6b7909c">
+<h4 id="org6b7909c">Higher order functions</h4>
+<aside class="notes">
+<p>
+Higher order functions takes a function as an argument. this is really useful
+for things like filtering and mapping to a list.
+</p>
+
+<p>
+Here the map method here is taking what is known as a block. it will then run
+the code in the block on all the elements in an array. This code is actually
+taken from my NEA and its is how I parse all the lines of code and remove comments
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby">output = (input).map <span style="color: #b877db; font-style: italic;">do</span> |s|
+  s.sub(<span style="color: #fab795;">"\n"</span>, <span style="color: #fab795;">""</span>).sub(<span style="color: #fab795;">/,/</span>, <span style="color: #fab795;">""</span>).gsub(<span style="color: #fab795;">/;.+/</span>, <span style="color: #fab795;">""</span>).strip.split
 <span style="color: #b877db; font-style: italic;">end</span>
 </pre>
-          </div>
-        </section>
-      </section>
-      <section>
-        <section id="slide-orgd348b71">
-          <h4 id="orgd348b71">function composition</h4>
-          <aside class="notes">
-            <p>function composition is combining 2 functions to
-            create a new one. This is similar to function
-            composition in maths where we nest one function in
-            another</p>
-            <p>In this example we nest g into f</p>
-            <p>if we wanted to do this in haskell we could use this
-            notation</p>
-          </aside>
-          <ul>
-            <li data-fragment-index="1" class="fragment roll-in">
-            f(x) = x + 2</li>
-            <li data-fragment-index="2" class="fragment roll-in">
-            g(x) = x - 8</li>
-            <li>
-              <p>f(g(x)) = (x - 8) + 2</p>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <div class="org-src-container">
-            <pre class="src src-haskell"> f x <span style=
-            "color: #c7c9cb;">=</span> x <span style=
-            "color: #c7c9cb;">+</span> <span style=
-            "color: #f09383; font-weight: bold;">2</span>
- g x <span style="color: #c7c9cb;">=</span> x <span style=
-"color: #c7c9cb;">-</span> <span style=
-"color: #f09383; font-weight: bold;">8</span>
+</div>
 
- (f<span style="color: #c7c9cb;">.</span>g) <span style=
-"color: #f09383; font-weight: bold;">10</span> <span style=
-"color: #6c6f93; background-color: #22242c; font-style: italic;">-- </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">composition</span>
- <span style=
-"color: #6c6f93; background-color: #22242c; font-style: italic;">-- </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; 4</span>
+</section>
+</section>
+<section>
+<section id="slide-orgc1c81f0">
+<h4 id="orgc1c81f0">function composition</h4>
+<aside class="notes">
+<p>
+function composition is combining 2 functions to create a new one.
+This is similar to function composition in maths where we nest one function in
+another
+</p>
+
+<p>
+In this example we nest g into f
+</p>
+
+<p>
+if we wanted to do this in haskell we could use this notation
+</p>
+
+</aside>
+
+<ul>
+<li data-fragment-index="1" class="fragment roll-in">f(x) = x + 2</li>
+<li data-fragment-index="2" class="fragment roll-in">g(x) = x - 8</li>
+
+<li data-fragment-index="3" class="fragment roll-in"><p>
+f(g(x)) = (x - 8) + 2
+</p>
+
+</section>
+<section>
+
+<div class="org-src-container">
+
+<pre class="src src-haskell"> f x <span style="color: #c7c9cb;">=</span> x <span style="color: #c7c9cb;">+</span> <span style="color: #f09383; font-weight: bold;">2</span>
+ g x <span style="color: #c7c9cb;">=</span> x <span style="color: #c7c9cb;">-</span> <span style="color: #f09383; font-weight: bold;">8</span>
+
+ (f<span style="color: #c7c9cb;">.</span>g) <span style="color: #f09383; font-weight: bold;">10</span> <span style="color: #6c6f93; background-color: #22242c; font-style: italic;">-- </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">composition</span>
+ <span style="color: #6c6f93; background-color: #22242c; font-style: italic;">-- </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; 4</span>
 
 </pre>
-          </div>
-        </section>
-      </section>
-      <section>
-        <section id="slide-orge4e08a7">
-          <h3 id="orge4e08a7">What have I missed</h3>
-          <aside class="notes">
-            <p>There are some details that I have had to gloss over
-            for time and for my sanity these will incude</p>
-            <p>All this means is that for this function it will
-            take two types and return one. As a function will
-            return another function if not all the arguments are
-            set it may explain the arrow (its called partial
-            function application)</p>
-            <p>As we can parse in arguments as functuons we can
-            also partlialy apply a function inside another
-            function. basically any argument passed to addSix will
-            then also be passed to add</p>
-            <p>There are a couple of other higher order functions
-            that you can use</p>
-          </aside>
-          <ul>
-            <li>
-              <p>types and type classes Haskell is a static
-              language so you have to define types. but this also
-              means you have to give functions types..</p>
-              <div class="org-src-container">
-                <pre class="src src-haskell">  function <span style=
-                "color: #c7c9cb;">::</span> <span style=
-                "color: #b877db;">Integer</span> <span style=
-                "color: #c7c9cb;">-&gt;</span> <span style=
-                "color: #b877db;">Integer</span> <span style=
-                "color: #c7c9cb;">-&gt;</span> <span style=
-                "color: #b877db;">Integer</span>
+</div></li>
 
-  function x y <span style=
-"color: #c7c9cb;">=</span> x <span style="color: #c7c9cb;">+</span> y
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org5cddf3e">
+<h3 id="org5cddf3e">What have I missed</h3>
+<aside class="notes">
+<p>
+There are some details that I have had to gloss over
+for time and for my sanity these will incude
+</p>
+
+<p>
+All this means is that for this function it will take two types and return one.
+As a function will return another function if not all the arguments are set it
+may explain the arrow (its called partial function application)
+</p>
+
+<p>
+As we can parse in arguments as functuons we can also partlialy apply a function
+inside another function. basically any argument passed to addSix will then also
+be passed to add
+</p>
+
+<p>
+There are a couple of other higher order functions that you can use
+</p>
+
+</aside>
+
+<ul>
+<li><p>
+types and type classes
+Haskell is a static language so you have to define types. but this also means
+you have to give functions types..
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-haskell">  function <span style="color: #c7c9cb;">::</span> <span style="color: #b877db;">Integer</span> <span style="color: #c7c9cb;">-&gt;</span> <span style="color: #b877db;">Integer</span> <span style="color: #c7c9cb;">-&gt;</span> <span style="color: #b877db;">Integer</span>
+
+  function x y <span style="color: #c7c9cb;">=</span> x <span style="color: #c7c9cb;">+</span> y
 </pre>
-              </div>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <ul>
-            <li>
-              <p>partial function application</p>
-              <div class="org-src-container">
-                <pre class="src src-haskell">  add <span style=
-                "color: #c7c9cb;">::</span> <span style=
-                "color: #b877db;">Integer</span> <span style=
-                "color: #c7c9cb;">-&gt;</span> <span style=
-                "color: #b877db;">Integer</span> <span style=
-                "color: #c7c9cb;">-&gt;</span> <span style=
-                "color: #b877db;">Integer</span>
-  addSix <span style="color: #c7c9cb;">::</span> <span style=
-"color: #b877db;">Integer</span> <span style=
-"color: #c7c9cb;">-&gt;</span> <span style=
-"color: #b877db;">Integer</span>
-  addSix <span style="color: #c7c9cb;">=</span> add <span style=
-"color: #f09383; font-weight: bold;">6</span>
-  x <span style="color: #c7c9cb;">=</span> addSix <span style=
-"color: #f09383; font-weight: bold;">3</span>
-  <span style=
-"color: #6c6f93; background-color: #22242c; font-style: italic;">-- </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">x = 9</span>
+</div></li>
+
+</ul>
+
+</section>
+<section>
+<ul>
+<li><p>
+partial function application
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-haskell">  add <span style="color: #c7c9cb;">::</span> <span style="color: #b877db;">Integer</span> <span style="color: #c7c9cb;">-&gt;</span> <span style="color: #b877db;">Integer</span> <span style="color: #c7c9cb;">-&gt;</span> <span style="color: #b877db;">Integer</span>
+  addSix <span style="color: #c7c9cb;">::</span> <span style="color: #b877db;">Integer</span> <span style="color: #c7c9cb;">-&gt;</span> <span style="color: #b877db;">Integer</span>
+  addSix <span style="color: #c7c9cb;">=</span> add <span style="color: #f09383; font-weight: bold;">6</span>
+  x <span style="color: #c7c9cb;">=</span> addSix <span style="color: #f09383; font-weight: bold;">3</span>
+  <span style="color: #6c6f93; background-color: #22242c; font-style: italic;">-- </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">x = 9</span>
 </pre>
-              </div>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <ul>
-            <li>other higher order funtuons
-              <ul>
-                <li>
-                  <p>filter (filter an array acording to some
-                  check)</p>
-                  <div class="org-src-container">
-                    <pre class="src src-haskell"><span style=
-                    "color: #21bfc2;">filter</span> (<span style=
-                    "color: #c7c9cb;">&gt;</span><span style=
-                    "color: #f09383; font-weight: bold;">6</span>)[<span style=
-                    "color: #f09383; font-weight: bold;">2</span>,<span style=
-                    "color: #f09383; font-weight: bold;">5</span>,<span style=
-                    "color: #f09383; font-weight: bold;">6</span>,<span style=
-                    "color: #f09383; font-weight: bold;">8</span>,<span style=
-                    "color: #f09383; font-weight: bold;">9</span>]
-<span style=
-"color: #6c6f93; background-color: #22242c; font-style: italic;">-- </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; [8,9]</span>
+</div>
+
+</section>
+<section>
+
+<ul>
+<li>other higher order funtuons
+<ul>
+<li><p>
+filter (filter an array acording to some check)
+</p>
+<div class="org-src-container">
+
+<pre class="src src-haskell"><span style="color: #21bfc2;">filter</span> (<span style="color: #c7c9cb;">&gt;</span><span style="color: #f09383; font-weight: bold;">6</span>)[<span style="color: #f09383; font-weight: bold;">2</span>,<span style="color: #f09383; font-weight: bold;">5</span>,<span style="color: #f09383; font-weight: bold;">6</span>,<span style="color: #f09383; font-weight: bold;">8</span>,<span style="color: #f09383; font-weight: bold;">9</span>]
+<span style="color: #6c6f93; background-color: #22242c; font-style: italic;">-- </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; [8,9]</span>
       
 
 </pre>
-                  </div>
-                </li>
-                <li>
-                  <p>fold / reduce (use recursion to reduce a list)
-                  you can do it from the left or the right</p>
-                  <div class="org-src-container">
-                    <pre class="src src-haskell"><span style=
-                    "color: #21bfc2;">foldl</span> (<span style=
-                    "color: #c7c9cb;">+</span>) <span style=
-                    "color: #f09383; font-weight: bold;">0</span> [<span style=
-                    "color: #f09383; font-weight: bold;">2</span>, <span style=
-                    "color: #f09383; font-weight: bold;">3</span>, <span style=
-                    "color: #f09383; font-weight: bold;">4</span>, <span style=
-                    "color: #f09383; font-weight: bold;">5</span>]
-  <span style=
-"color: #6c6f93; background-color: #22242c; font-style: italic;">-- </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; basically sum down an array from the left most side</span>
+</div></li>
+
+<li><p>
+fold / reduce (use recursion to reduce a list)
+you can do it from the left or the right
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-haskell"><span style="color: #21bfc2;">foldl</span> (<span style="color: #c7c9cb;">+</span>) <span style="color: #f09383; font-weight: bold;">0</span> [<span style="color: #f09383; font-weight: bold;">2</span>, <span style="color: #f09383; font-weight: bold;">3</span>, <span style="color: #f09383; font-weight: bold;">4</span>, <span style="color: #f09383; font-weight: bold;">5</span>]
+  <span style="color: #6c6f93; background-color: #22242c; font-style: italic;">-- </span><span style="color: #6c6f93; background-color: #22242c; font-style: italic;">=&gt; basically sum down an array from the left most side</span>
 </pre>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <ul>
-            <li>lists this is an entire chapter. and i am
-            tired</li>
-          </ul>
-        </section>
-      </section>
-      <section>
-        <section id="slide-org1827ae7">
-          <h3 id="org1827ae7">I am done now</h3>
-        </section>
-      </section>
-    </div>
-  </div>
-  <script src="../reveal.js/dist/reveal.js"></script> 
-  <script src="../reveal.js/plugin/markdown/markdown.js"></script> 
-  <script src="../reveal.js/plugin/notes/notes.js"></script> 
-  <script src="../reveal.js/plugin/search/search.js"></script> 
-  <script src="../reveal.js/plugin/zoom/zoom.js"></script> 
-  <script>
+</div></li>
 
-  // Full list of configuration options available here:
-  // https://github.com/hakimel/reveal.js#configuration
-  Reveal.initialize({
+</ul></li>
 
-  controls: true,
-  progress: true,
-  history: false,
-  center: true,
-  slideNumber: 'c',
-  rollingLinks: false,
-  keyboard: true,
-  mouseWheel: false,
-  fragmentInURL: false,
-  hashOneBasedIndex: false,
-  pdfSeparateFragments: true,
+</ul></li>
 
-  overview: true,
-  width: 1200,
-  height: 1080,
+</ul>
 
-  transition: 'slide',
-  transitionSpeed: 'default',
+</section>
+<section>
 
-  // Plugins with reveal.js 4.x
-  plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+<ul>
+<li>lists
+this is an entire chapter. and i am tired</li>
 
-  // Optional libraries used to extend reveal.js
-  dependencies: [
-  ]
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgecd0c98">
+<h3 id="orgecd0c98">I am done now</h3>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
 
-  });
-  </script>
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
 </body>
 </html>

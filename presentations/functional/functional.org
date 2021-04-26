@@ -8,9 +8,6 @@
 #+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3>🎵 Its time to get functional 🎵</h3><p>Press s for speaker notes</p>
 
 
-
-
-
 * What is functional programming
 functional programming is a paradigm where the entire system is modeled as a
 function of its inputs and outputs
@@ -194,7 +191,7 @@ In this example we nest g into f
 if we wanted to do this in haskell we could use this notation
 #+end_notes
 
-#+ATTR_REVEAL: :frag (roll-in) :frag_idx (1 2)
+#+ATTR_REVEAL: :frag (roll-in) :frag_idx (1 2 3)
 - f(x) = x + 2
 - g(x) = x - 8
 
