@@ -1,0 +1,87 @@
+#+TITLE: The Unix Commandline
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+* What is the Unix commandline?
+
+* Why do I need to know the Unix command line?
+
+* What do I need too know then?
+** A little bit of syntax
+*** Variables
+* The main commands
+** moving around
+*** pwd
+Prints the current directory
+#+begin_notes
+pwd prints the current working directory
+It stands for print working directory
+#+end_notes
+#+begin_src bash
+$ pwd
+#+end_src
+*** cd
+change directory
+#+begin_notes
+Change the current directory
+#+end_notes
+
+#+begin_src bash
+$ cd ~/your/directory
+#+end_src
+*** ls
+list the current directory's contents
+#+begin_src bash
+$ ls
+$ ls -a
+$ ls -l
+$ ls -la
+#+end_src
+#+begin_notes
+The ls command lists the current directory
+the -a flag will show hidden files
+these are denoted with a dot infront of there name
+the -l flag will list all files in the long format
+#+end_notes
+** files
+*** mv
+*** cp
+*** ln
+*** rm
+*** mkdir
+** Reading and writing files
+*** cat
+*** head
+*** tail
+*** less
+*** touch
+*** chmod
+** Transforming text
+*** grep
+*** sed
+*** awk
+*** sort
+*** uniq
+*** wc
+** User management
+*** sudo
+*** usrmod
+*** useradd
+*** passwd
+*** w
+*** who
+*** whoami
+** Process management
+*** ps
+*** pgrep
+*** pkill
+** Others
+*** man
+*** curl
+** Honorable mentions
+- nc :: The networking swiss army knife
+- lp :: Have you ever needed too print something?
+
+* Pipes

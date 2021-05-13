@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>The Unix Commandline</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">The Unix Commandline</h1><h2 class="author">Jeetaditya Chatterjee</h2><p class="date">Created: 2021-05-14 Fri 00:10</p>
+</section>
+
+<section>
+<section id="slide-orgdf69667">
+<h2 id="orgdf69667">What is the Unix commandline?</h2>
+
+</section>
+</section>
+<section>
+<section id="slide-org196ec67">
+<h2 id="org196ec67">Why do I need to know the Unix command line?</h2>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf7a1c41">
+<h2 id="orgf7a1c41">What do I need too know then?</h2>
+<div class="outline-text-2" id="text-orgf7a1c41">
+</div>
+</section>
+<section id="slide-org5bfdac1">
+<h3 id="org5bfdac1">A little bit of syntax</h3>
+<div class="outline-text-3" id="text-org5bfdac1">
+</div>
+</section>
+<section id="slide-org65e447e">
+<h4 id="org65e447e">Variables</h4>
+</section>
+</section>
+<section>
+<section id="slide-org19db946">
+<h2 id="org19db946">The main commands</h2>
+<div class="outline-text-2" id="text-org19db946">
+</div>
+</section>
+<section id="slide-orgf152fac">
+<h3 id="orgf152fac">moving around</h3>
+<div class="outline-text-3" id="text-orgf152fac">
+</div>
+</section>
+<section id="slide-org598010a">
+<h4 id="org598010a">pwd</h4>
+<p>
+Prints the current directory
+</p>
+<aside class="notes">
+<p>
+pwd prints the current working directory
+It stands for print working directory
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre class="src src-bash">$ <span style="color: #21bfc2;">pwd</span>
+</pre>
+</div>
+</section>
+<section id="slide-org4da88d8">
+<h4 id="org4da88d8">cd</h4>
+<p>
+change directory
+</p>
+<aside class="notes">
+<p>
+Change the current directory
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">$ <span style="color: #21bfc2;">cd</span> ~/your/directory
+</pre>
+</div>
+</section>
+<section id="slide-org5f13567">
+<h4 id="org5f13567">ls</h4>
+<p>
+list the current directory&rsquo;s contents
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">$ <span style="color: #21bfc2;">ls</span>
+$ <span style="color: #21bfc2;">ls</span> -a
+$ <span style="color: #21bfc2;">ls</span> -l
+$ <span style="color: #21bfc2;">ls</span> -la
+</pre>
+</div>
+<aside class="notes">
+<p>
+The ls command lists the current directory
+the -a flag will show hidden files
+these are denoted with a dot infront of there name
+the -l flag will list all files in the long format
+</p>
+
+</aside>
+</section>
+<section id="slide-org60f5a00">
+<h3 id="org60f5a00">files</h3>
+<div class="outline-text-3" id="text-org60f5a00">
+</div>
+</section>
+<section id="slide-org92db03d">
+<h4 id="org92db03d">mv</h4>
+</section>
+<section id="slide-orgaf8c973">
+<h4 id="orgaf8c973">cp</h4>
+</section>
+<section id="slide-org3f698b1">
+<h4 id="org3f698b1">ln</h4>
+</section>
+<section id="slide-orgff8f625">
+<h4 id="orgff8f625">rm</h4>
+</section>
+<section id="slide-org5ce45e1">
+<h4 id="org5ce45e1">mkdir</h4>
+</section>
+<section id="slide-org0b9169a">
+<h3 id="org0b9169a">Reading and writing files</h3>
+<div class="outline-text-3" id="text-org0b9169a">
+</div>
+</section>
+<section id="slide-org29ce791">
+<h4 id="org29ce791">cat</h4>
+</section>
+<section id="slide-org457b3f7">
+<h4 id="org457b3f7">head</h4>
+</section>
+<section id="slide-org124179c">
+<h4 id="org124179c">tail</h4>
+</section>
+<section id="slide-org3d9dd6e">
+<h4 id="org3d9dd6e">less</h4>
+</section>
+<section id="slide-org9ecc2f6">
+<h4 id="org9ecc2f6">touch</h4>
+</section>
+<section id="slide-org6a5b53d">
+<h4 id="org6a5b53d">chmod</h4>
+</section>
+<section id="slide-org30cc8aa">
+<h3 id="org30cc8aa">Transforming text</h3>
+<div class="outline-text-3" id="text-org30cc8aa">
+</div>
+</section>
+<section id="slide-orga1e82c7">
+<h4 id="orga1e82c7">grep</h4>
+</section>
+<section id="slide-org194eec6">
+<h4 id="org194eec6">sed</h4>
+</section>
+<section id="slide-orge2ca22b">
+<h4 id="orge2ca22b">awk</h4>
+</section>
+<section id="slide-org4e3c2dc">
+<h4 id="org4e3c2dc">sort</h4>
+</section>
+<section id="slide-org65bc763">
+<h4 id="org65bc763">uniq</h4>
+</section>
+<section id="slide-org0447a60">
+<h4 id="org0447a60">wc</h4>
+</section>
+<section id="slide-orgcbaecfe">
+<h3 id="orgcbaecfe">User management</h3>
+<div class="outline-text-3" id="text-orgcbaecfe">
+</div>
+</section>
+<section id="slide-org851554f">
+<h4 id="org851554f">sudo</h4>
+</section>
+<section id="slide-org63a75f4">
+<h4 id="org63a75f4">usrmod</h4>
+</section>
+<section id="slide-org4a3f23f">
+<h4 id="org4a3f23f">useradd</h4>
+</section>
+<section id="slide-orgd638827">
+<h4 id="orgd638827">passwd</h4>
+</section>
+<section id="slide-org5baf991">
+<h4 id="org5baf991">w</h4>
+</section>
+<section id="slide-orgb43d036">
+<h4 id="orgb43d036">who</h4>
+</section>
+<section id="slide-org39cf91a">
+<h4 id="org39cf91a">whoami</h4>
+</section>
+<section id="slide-org9b93c53">
+<h3 id="org9b93c53">Process management</h3>
+<div class="outline-text-3" id="text-org9b93c53">
+</div>
+</section>
+<section id="slide-org2c9e2fa">
+<h4 id="org2c9e2fa">ps</h4>
+</section>
+<section id="slide-org3a8d951">
+<h4 id="org3a8d951">pgrep</h4>
+</section>
+<section id="slide-org7c2c51f">
+<h4 id="org7c2c51f">pkill</h4>
+</section>
+<section id="slide-org26a3430">
+<h3 id="org26a3430">Others</h3>
+<div class="outline-text-3" id="text-org26a3430">
+</div>
+</section>
+<section id="slide-org2cabe89">
+<h4 id="org2cabe89">man</h4>
+</section>
+<section id="slide-org1f3720d">
+<h4 id="org1f3720d">curl</h4>
+</section>
+<section id="slide-orgea811b8">
+<h3 id="orgea811b8">Honorable mentions</h3>
+<dl>
+<dt>nc</dt><dd>The networking swiss army knife</dd>
+<dt>lp</dt><dd>Have you ever needed too print something?</dd>
+
+</dl>
+
+</section>
+</section>
+<section>
+<section id="slide-org4a4a13c">
+<h2 id="org4a4a13c">Pipes</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
