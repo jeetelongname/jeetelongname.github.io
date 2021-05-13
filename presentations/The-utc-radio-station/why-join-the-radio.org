@@ -1,2 +1,13 @@
-#+TITLE: Why Join The Radio
+#+TITLE: UTCR Live Needs you!
 #+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><p>The radio compels you</p>
+
+* What is UTCR Live?
+
+#+begin_notes
+Utcr live is a student run and student lead radio station and journalistic
+organisation. We run interviews, have shows with a wide variety of music and
+discussions
+#+end_notes
+
+* What does this mean
