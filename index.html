@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/menu.css">
     <link rel="icon" href="favicon4.png">
     <script src=
-    "https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.js"></script><!-- feather.js for the nice icons  https://feathericons.com/ -->
+    "https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <div id="viewport">
@@ -29,30 +29,30 @@
                 <ul class="icons">
                     <li>
                         <a href=
-                        "https://www.github.com/jeetelongname"><i data-feather="github"
+                        "https://www.github.com/jeetelongname"><i icon-name="github"
                         title="Github"></i></a>
                     </li>
                     <li>
                         <a href=
-                        "https://twitter.com/jeetaditya3"><i data-feather="twitter"
+                        "https://twitter.com/jeetaditya3"><i icon-name="twitter"
                         title="Twitter"></i></a>
                     </li>
                     <li>
                         <a href=
-                        "https://www.twitch.tv/jeetelongname"><i data-feather="twitch"
+                        "https://www.twitch.tv/jeetelongname"><i icon-name="twitch"
                         title="Twitch"></i></a>
                     </li>
                     <li>
                         <a href=
                         "https://www.linkedin.com/in/jeetaditya-chatterjee-138792192/">
-                        <i data-feather="linkedin" title=
+                        <i icon-name="linkedin" title=
                         "Linkedin"></i></a>
                     </li>
                 </ul>
             </div><!-- /icons -->
             <!-- theme toggle -->
             <div id='theme-toggle'>
-                <i data-feather="moon" title=
+                <i icon-name="moon" title=
                 "Switch to dark mode"></i>
             </div><!-- /theme-toggle -->
             <!-- nav bar
@@ -84,11 +84,7 @@
     <script src="js/menu.js"></script>
     <script src="js/theme.js"></script>
     <script>
-
-
-
-
-         feather.replace()
+     lucide.createIcons();
     </script>
 </body>
 </html>
