@@ -4,44 +4,59 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.getElementById("theme-toggle");
   const storedTheme = localStorage.getItem("theme");
   var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  var themeToToggle = light(themeStylesheet, themeToggle);
 
   if (storedTheme) {
     if (themeStylesheet.href.includes("light")) {
       // if it's light -> go dark
-      dark(themeStylesheet, themeToggle);
+      themeToToggle = dark(themeStylesheet, themeToggle);
     } else {
       // if it's dark -> go light
-      light(themeStylesheet, themeToggle);
+      themeToToggle = light(themeStylesheet, themeToggle);
     }
     localStorage.setItem("theme", themeStylesheet.href);
   }
 
   if (prefersDark) {
-    dark(themeStylesheet, themeToggle);
+    themeToToggle = dark(themeStylesheet, themeToggle);
   }
 
   themeToggle.addEventListener("click", () => {
     if (themeStylesheet.href.includes("light")) {
       // if it's light -> go dark
-      dark(themeStylesheet, themeToggle);
+      themeToToggle = dark(themeStylesheet, themeToggle);
     } else {
       // if it's dark -> go light
-      light(themeStylesheet, themeToggle);
+      themeToToggle = light(themeStylesheet, themeToggle);
     }
     // save the preference to localStorage
   });
+  themeToToggle; // now its only one function call
 });
-function dark(themeStylesheet, themeToggle) {
-  themeStylesheet.href = "css/dark.css";
-  themeToggle.innerHTML =
-    '<i icon-name="sun" alt="light" title="Switch to light mode"></i>';
+
+function toggleTheme(themeStylesheet, themeToggle, style, icon, message) {
+  themeStylesheet.href = style;
+  themeToggle.innerHTML = `<i icon-name="${icon}" alt="light" title="${message}"></i>`;
   lucide.createIcons();
   localStorage.setItem("theme", themeStylesheet.href);
 }
+
+function dark(themeStylesheet, themeToggle) {
+  toggleTheme(
+    themeStylesheet,
+    themeToggle,
+    "css/dark.css",
+    "sun",
+    "switch to light theme"
+  );
+}
+
 function light(themeStylesheet, themeToggle) {
-  themeStylesheet.href = "css/light.css";
-  themeToggle.innerHTML =
-    '<i icon-name="moon" alt="Dark" title="Switch to dark mode"></i>';
-  lucide.createIcons();
-  localStorage.setItem("theme", themeStylesheet.href);
+  toggleTheme(
+    themeStylesheet,
+    themeToggle,
+    "css/light.css",
+    "moon",
+    "switch to dark theme"
+  );
 }
