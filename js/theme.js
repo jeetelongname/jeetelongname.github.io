@@ -1,4 +1,3 @@
-// this one is jut to wait for the page to load
 document.addEventListener("DOMContentLoaded", () => {
   const themeStylesheet = document.getElementById("theme");
   const themeToggle = document.getElementById("theme-toggle");
@@ -7,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   var themeToToggle = light(themeStylesheet, themeToggle);
 
   if (storedTheme) {
-    if (themeStylesheet.href.includes("light")) {
+    if (themeStylesheet.href.includes("light") || prefersDark) {
       // if it's light -> go dark
       themeToToggle = dark(themeStylesheet, themeToggle);
     } else {
@@ -15,10 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
       themeToToggle = light(themeStylesheet, themeToggle);
     }
     localStorage.setItem("theme", themeStylesheet.href);
-  }
-
-  if (prefersDark) {
-    themeToToggle = dark(themeStylesheet, themeToggle);
   }
 
   themeToggle.addEventListener("click", () => {
@@ -29,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // if it's dark -> go light
       themeToToggle = light(themeStylesheet, themeToggle);
     }
-    // save the preference to localStorage
   });
   themeToToggle; // now its only one function call
 });
