@@ -5,8 +5,22 @@
 #+REVEAL_TRANS: slide
 
 * What is the Unix commandline?
+#+begin_notes
+The unix commandline is an interpreter known as the shell and a set of tools that come together to
+form a functional operating system. Not only do you call a command but you can
+chain them to form larger and more complex programs from simple building blocks
+#+end_notes
 
 * Why do I need to know the Unix command line?
+#+begin_notes
+It is a good skill to have for many reasons
+- Linux is the biggest and largest form of Unix like OS used today and its used
+  on most servers. If you ever need to ssh into a server to fix something and
+  you don't know the basics then you will be F*ucked
+- The commandline unlike in windows is much more direct and powerful. This means
+  that a lot of guides in linux land will use it over a gui tool you may be used to
+  - chaining commands together feels a lot more satisfying than /python/
+    #+end_notes
 
 * What do I need too know then?
 ** A little bit of syntax
@@ -41,11 +55,12 @@ $ ls -la
 #+end_src
 #+begin_notes
 The ls command lists the current directory
-the -a flag will show hidden files
+the -a flag will show hidden files (all files)
 these are denoted with a dot infront of there name
 the -l flag will list all files in the long format
 #+end_notes
 ** files
+*** touch
 *** mv
 *** cp
 *** ln
@@ -59,6 +74,7 @@ the -l flag will list all files in the long format
 *** touch
 *** chmod
 ** Transforming text
+*** echo
 *** grep
 *** sed
 *** awk

@@ -15,49 +15,75 @@
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h1 class="title">The Unix Commandline</h1><h2 class="author">Jeetaditya Chatterjee</h2><p class="date">Created: 2021-05-14 Fri 00:10</p>
+<h1 class="title">The Unix Commandline</h1><h2 class="author">Jeetaditya Chatterjee</h2><p class="date">Created: 2021-05-19 Wed 10:54</p>
 </section>
 
 <section>
-<section id="slide-orgdf69667">
-<h2 id="orgdf69667">What is the Unix commandline?</h2>
+<section id="slide-orga7f19d4">
+<h2 id="orga7f19d4">What is the Unix commandline?</h2>
+<aside class="notes">
+<p>
+The unix commandline is an interpreter known as the shell and a set of tools that come together to
+form a functional operating system. Not only do you call a command but you can
+chain them to form larger and more complex programs from simple building blocks
+</p>
+
+</aside>
 
 </section>
 </section>
 <section>
-<section id="slide-org196ec67">
-<h2 id="org196ec67">Why do I need to know the Unix command line?</h2>
+<section id="slide-org74b1fb3">
+<h2 id="org74b1fb3">Why do I need to know the Unix command line?</h2>
+<aside class="notes">
+<p>
+It is a good skill to have for many reasons
+</p>
+<ul>
+<li>Linux is the biggest and largest form of Unix like OS used today and its used
+on most servers. If you ever need to ssh into a server to fix something and
+you don&rsquo;t know the basics then you will be F*ucked</li>
+<li>The commandline unlike in windows is much more direct and powerful. This means
+that a lot of guides in linux land will use it over a gui tool you may be used to
+<ul>
+<li>chaining commands together feels a lot more satisfying than <i>python</i></li>
+
+</ul></li>
+
+</ul>
+
+</aside>
 
 </section>
 </section>
 <section>
-<section id="slide-orgf7a1c41">
-<h2 id="orgf7a1c41">What do I need too know then?</h2>
-<div class="outline-text-2" id="text-orgf7a1c41">
+<section id="slide-org9072c9e">
+<h2 id="org9072c9e">What do I need too know then?</h2>
+<div class="outline-text-2" id="text-org9072c9e">
 </div>
 </section>
-<section id="slide-org5bfdac1">
-<h3 id="org5bfdac1">A little bit of syntax</h3>
-<div class="outline-text-3" id="text-org5bfdac1">
+<section id="slide-org2084ed1">
+<h3 id="org2084ed1">A little bit of syntax</h3>
+<div class="outline-text-3" id="text-org2084ed1">
 </div>
 </section>
-<section id="slide-org65e447e">
-<h4 id="org65e447e">Variables</h4>
+<section id="slide-org62ce34b">
+<h4 id="org62ce34b">Variables</h4>
 </section>
 </section>
 <section>
-<section id="slide-org19db946">
-<h2 id="org19db946">The main commands</h2>
-<div class="outline-text-2" id="text-org19db946">
+<section id="slide-org215a37e">
+<h2 id="org215a37e">The main commands</h2>
+<div class="outline-text-2" id="text-org215a37e">
 </div>
 </section>
-<section id="slide-orgf152fac">
-<h3 id="orgf152fac">moving around</h3>
-<div class="outline-text-3" id="text-orgf152fac">
+<section id="slide-orgc514742">
+<h3 id="orgc514742">moving around</h3>
+<div class="outline-text-3" id="text-orgc514742">
 </div>
 </section>
-<section id="slide-org598010a">
-<h4 id="org598010a">pwd</h4>
+<section id="slide-org34b8284">
+<h4 id="org34b8284">pwd</h4>
 <p>
 Prints the current directory
 </p>
@@ -74,8 +100,8 @@ It stands for print working directory
 </pre>
 </div>
 </section>
-<section id="slide-org4da88d8">
-<h4 id="org4da88d8">cd</h4>
+<section id="slide-orgf79910a">
+<h4 id="orgf79910a">cd</h4>
 <p>
 change directory
 </p>
@@ -92,8 +118,8 @@ Change the current directory
 </pre>
 </div>
 </section>
-<section id="slide-org5f13567">
-<h4 id="org5f13567">ls</h4>
+<section id="slide-org0007e3c">
+<h4 id="org0007e3c">ls</h4>
 <p>
 list the current directory&rsquo;s contents
 </p>
@@ -108,132 +134,138 @@ $ <span style="color: #21bfc2;">ls</span> -la
 <aside class="notes">
 <p>
 The ls command lists the current directory
-the -a flag will show hidden files
+the -a flag will show hidden files (all files)
 these are denoted with a dot infront of there name
 the -l flag will list all files in the long format
 </p>
 
 </aside>
 </section>
-<section id="slide-org60f5a00">
-<h3 id="org60f5a00">files</h3>
-<div class="outline-text-3" id="text-org60f5a00">
+<section id="slide-org3ae3f80">
+<h3 id="org3ae3f80">files</h3>
+<div class="outline-text-3" id="text-org3ae3f80">
 </div>
 </section>
-<section id="slide-org92db03d">
-<h4 id="org92db03d">mv</h4>
+<section id="slide-orgd4ca9d2">
+<h4 id="orgd4ca9d2">touch</h4>
 </section>
-<section id="slide-orgaf8c973">
-<h4 id="orgaf8c973">cp</h4>
+<section id="slide-org106ea0e">
+<h4 id="org106ea0e">mv</h4>
 </section>
-<section id="slide-org3f698b1">
-<h4 id="org3f698b1">ln</h4>
+<section id="slide-org534f2d6">
+<h4 id="org534f2d6">cp</h4>
 </section>
-<section id="slide-orgff8f625">
-<h4 id="orgff8f625">rm</h4>
+<section id="slide-org474a92d">
+<h4 id="org474a92d">ln</h4>
 </section>
-<section id="slide-org5ce45e1">
-<h4 id="org5ce45e1">mkdir</h4>
+<section id="slide-org4479919">
+<h4 id="org4479919">rm</h4>
 </section>
-<section id="slide-org0b9169a">
-<h3 id="org0b9169a">Reading and writing files</h3>
-<div class="outline-text-3" id="text-org0b9169a">
+<section id="slide-orgfa0d33b">
+<h4 id="orgfa0d33b">mkdir</h4>
+</section>
+<section id="slide-org15868e0">
+<h3 id="org15868e0">Reading and writing files</h3>
+<div class="outline-text-3" id="text-org15868e0">
 </div>
 </section>
-<section id="slide-org29ce791">
-<h4 id="org29ce791">cat</h4>
+<section id="slide-orgc7e6dfb">
+<h4 id="orgc7e6dfb">cat</h4>
 </section>
-<section id="slide-org457b3f7">
-<h4 id="org457b3f7">head</h4>
+<section id="slide-org8b6a9dd">
+<h4 id="org8b6a9dd">head</h4>
 </section>
-<section id="slide-org124179c">
-<h4 id="org124179c">tail</h4>
+<section id="slide-org981640b">
+<h4 id="org981640b">tail</h4>
 </section>
-<section id="slide-org3d9dd6e">
-<h4 id="org3d9dd6e">less</h4>
+<section id="slide-org2947c54">
+<h4 id="org2947c54">less</h4>
 </section>
-<section id="slide-org9ecc2f6">
-<h4 id="org9ecc2f6">touch</h4>
+<section id="slide-org24317f4">
+<h4 id="org24317f4">touch</h4>
 </section>
-<section id="slide-org6a5b53d">
-<h4 id="org6a5b53d">chmod</h4>
+<section id="slide-orga0867ee">
+<h4 id="orga0867ee">chmod</h4>
 </section>
-<section id="slide-org30cc8aa">
-<h3 id="org30cc8aa">Transforming text</h3>
-<div class="outline-text-3" id="text-org30cc8aa">
+<section id="slide-org6d0770e">
+<h3 id="org6d0770e">Transforming text</h3>
+<div class="outline-text-3" id="text-org6d0770e">
 </div>
 </section>
-<section id="slide-orga1e82c7">
-<h4 id="orga1e82c7">grep</h4>
+<section id="slide-org97a0b22">
+<h4 id="org97a0b22">echo</h4>
 </section>
-<section id="slide-org194eec6">
-<h4 id="org194eec6">sed</h4>
+<section id="slide-org5b2d7a6">
+<h4 id="org5b2d7a6">grep</h4>
 </section>
-<section id="slide-orge2ca22b">
-<h4 id="orge2ca22b">awk</h4>
+<section id="slide-org70e6858">
+<h4 id="org70e6858">sed</h4>
 </section>
-<section id="slide-org4e3c2dc">
-<h4 id="org4e3c2dc">sort</h4>
+<section id="slide-orgcab3d18">
+<h4 id="orgcab3d18">awk</h4>
 </section>
-<section id="slide-org65bc763">
-<h4 id="org65bc763">uniq</h4>
+<section id="slide-orgec50fd9">
+<h4 id="orgec50fd9">sort</h4>
 </section>
-<section id="slide-org0447a60">
-<h4 id="org0447a60">wc</h4>
+<section id="slide-orgdbacc20">
+<h4 id="orgdbacc20">uniq</h4>
 </section>
-<section id="slide-orgcbaecfe">
-<h3 id="orgcbaecfe">User management</h3>
-<div class="outline-text-3" id="text-orgcbaecfe">
+<section id="slide-org90f0371">
+<h4 id="org90f0371">wc</h4>
+</section>
+<section id="slide-orgf3ea2d8">
+<h3 id="orgf3ea2d8">User management</h3>
+<div class="outline-text-3" id="text-orgf3ea2d8">
 </div>
 </section>
-<section id="slide-org851554f">
-<h4 id="org851554f">sudo</h4>
+<section id="slide-orgc31a141">
+<h4 id="orgc31a141">sudo</h4>
 </section>
-<section id="slide-org63a75f4">
-<h4 id="org63a75f4">usrmod</h4>
+<section id="slide-org1c4aac1">
+<h4 id="org1c4aac1">usrmod</h4>
 </section>
-<section id="slide-org4a3f23f">
-<h4 id="org4a3f23f">useradd</h4>
+<section id="slide-orgb032509">
+<h4 id="orgb032509">useradd</h4>
 </section>
-<section id="slide-orgd638827">
-<h4 id="orgd638827">passwd</h4>
+<section id="slide-orgd4c131e">
+<h4 id="orgd4c131e">passwd</h4>
 </section>
-<section id="slide-org5baf991">
-<h4 id="org5baf991">w</h4>
+<section id="slide-org31bd0f8">
+<h4 id="org31bd0f8">w</h4>
 </section>
-<section id="slide-orgb43d036">
-<h4 id="orgb43d036">who</h4>
+<section id="slide-org705a4ab">
+<h4 id="org705a4ab">who</h4>
 </section>
-<section id="slide-org39cf91a">
-<h4 id="org39cf91a">whoami</h4>
+<section id="slide-org5f66272">
+<h4 id="org5f66272">whoami</h4>
 </section>
-<section id="slide-org9b93c53">
-<h3 id="org9b93c53">Process management</h3>
-<div class="outline-text-3" id="text-org9b93c53">
+<section id="slide-org3da92a4">
+<h3 id="org3da92a4">Process management</h3>
+<div class="outline-text-3" id="text-org3da92a4">
 </div>
 </section>
-<section id="slide-org2c9e2fa">
-<h4 id="org2c9e2fa">ps</h4>
+<section id="slide-org6a2b0ac">
+<h4 id="org6a2b0ac">ps</h4>
 </section>
-<section id="slide-org3a8d951">
-<h4 id="org3a8d951">pgrep</h4>
+<section id="slide-org59f5726">
+<h4 id="org59f5726">pgrep</h4>
 </section>
-<section id="slide-org7c2c51f">
-<h4 id="org7c2c51f">pkill</h4>
+<section id="slide-orge8dedb1">
+<h4 id="orge8dedb1">pkill</h4>
 </section>
-<section id="slide-org26a3430">
-<h3 id="org26a3430">Others</h3>
-<div class="outline-text-3" id="text-org26a3430">
+<section id="slide-org70fb447">
+<h3 id="org70fb447">Others</h3>
+<div class="outline-text-3" id="text-org70fb447">
 </div>
 </section>
-<section id="slide-org2cabe89">
-<h4 id="org2cabe89">man</h4>
+<section id="slide-org33a82d5">
+<h4 id="org33a82d5">man</h4>
 </section>
-<section id="slide-org1f3720d">
-<h4 id="org1f3720d">curl</h4>
+<section id="slide-org15fd71a">
+<h4 id="org15fd71a">curl</h4>
 </section>
-<section id="slide-orgea811b8">
-<h3 id="orgea811b8">Honorable mentions</h3>
+<section id="slide-org1eaa5ed">
+<h3 id="org1eaa5ed">Honorable mentions</h3>
 <dl>
 <dt>nc</dt><dd>The networking swiss army knife</dd>
 <dt>lp</dt><dd>Have you ever needed too print something?</dd>
@@ -243,8 +275,8 @@ the -l flag will list all files in the long format
 </section>
 </section>
 <section>
-<section id="slide-org4a4a13c">
-<h2 id="org4a4a13c">Pipes</h2>
+<section id="slide-orgd0d0eaa">
+<h2 id="orgd0d0eaa">Pipes</h2>
 </section>
 </section>
 </div>
