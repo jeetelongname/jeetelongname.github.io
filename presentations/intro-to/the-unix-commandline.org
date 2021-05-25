@@ -25,6 +25,36 @@ It is a good skill to have for many reasons
 * What do I need too know then?
 ** A little bit of syntax
 *** Variables
+#+begin_notes
+Shell is not a very nice language so syntax is important
+To set a variable you would set it like any other language but you can't have a
+space between the variable symbol and the equals sign
+
+To call it you need to prepend the $ sign
+
+Environment variables are global variables to set them you need to prepend export
+#+end_notes
+#+begin_src shell
+var="some value"
+export ENVAR="some global value"
+echo $VAR
+echo $ENVAR
+#+end_src
+*** flags
+#+begin_notes
+A flag is an optional argument provided to a command to provide it with some
+sort of structured input or to tell it to do something they are usually denoted
+with a - hyphen and a single letter or 2 hyphens and a word you can usually
+string together multiple short form commands
+#+end_notes
+
+#+begin_src shell
+command -l # short form flags
+command -la # 2 short form flags
+command --long # long form flags
+command --input INPUT # example of input
+#+end_src
+
 * The main commands
 ** moving around
 *** pwd
@@ -40,11 +70,25 @@ $ pwd
 change directory
 #+begin_notes
 Change the current directory
+
+Some sybols that are helpful
+~ which is a shortcut to your home dir
+. is the current directory
+.. is the previous directory
 #+end_notes
 
 #+begin_src bash
 $ cd ~/your/directory
+$ pwd
+/home/$USER/your/directory
+$ cd ~ # cd /home/$USER
+$ pwd
+/home/jeet
+$ cd ..
+$ pwd
+/home
 #+end_src
+
 *** ls
 list the current directory's contents
 #+begin_src bash
@@ -53,6 +97,7 @@ $ ls -a
 $ ls -l
 $ ls -la
 #+end_src
+
 #+begin_notes
 The ls command lists the current directory
 the -a flag will show hidden files (all files)
@@ -61,17 +106,67 @@ the -l flag will list all files in the long format
 #+end_notes
 ** files
 *** touch
+#+begin_notes
+touch is used to create an empty file. Its actually used to change the time
+stamp on the file but thats not used as much. if at all
+
+you have to provide the date in the disgusting order of month day year
+#+end_notes
+
+#+begin_src shell
+$ touch file
+
+$ touch existing-file -d month/day/year
+#+end_src
+
+
 *** mv
+#+begin_notes
+mv is used to move files around the filesystem. It takes the file to move and
+the destination of that file.
+#+end_notes
 *** cp
+#+begin_notes
+cp copys a file leaving the source file intacted
+#+end_notes
 *** ln
+#+begin_notes
+ln creates a symbolic link between two files. a symbolic link is reference to
+another file it does not actually copy the file and is very useful for a lot of
+different senarios. some being storing files spread out over the file system in
+a central location.
+
+it take the arguments of source and destination and an optional flag -s which
+makes the link soft. by default the symbolic link will not look like a link but
+another file. if you want it to show up as a link you need to add the -s flag
+#+end_notes
+#+begin_src bash
+$ ln source-file dest-file
+$ ls -l
+-rw-rw-r-- jeet jeet ... source-file
+-rw-rw-r-- jeet jeet ... dest-file
+
+$ ln source-file dest-file -s
+$ ls -l
+-rw-rw-r-- jeet jeet ... source-file
+lrwxrwxrwx jeet jeet ... dest-file -> source-file
+#+end_src
 *** rm
+#+begin_notes
+delete a file
+#+end_notes
 *** mkdir
+#+begin_notes
+make a directory
+#+end_notes
 ** Reading and writing files
 *** cat
+#+begin_notes
+output and concat multiple files
+#+end_notes
 *** head
 *** tail
 *** less
-*** touch
 *** chmod
 ** Transforming text
 *** echo
@@ -87,8 +182,6 @@ the -l flag will list all files in the long format
 *** useradd
 *** passwd
 *** w
-*** who
-*** whoami
 ** Process management
 *** ps
 *** pgrep
@@ -96,6 +189,7 @@ the -l flag will list all files in the long format
 ** Others
 *** man
 *** curl
+*** ping
 ** Honorable mentions
 - nc :: The networking swiss army knife
 - lp :: Have you ever needed too print something?

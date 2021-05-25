@@ -15,12 +15,12 @@
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h1 class="title">The Unix Commandline</h1><h2 class="author">Jeetaditya Chatterjee</h2><p class="date">Created: 2021-05-19 Wed 10:54</p>
+<h1 class="title">The Unix Commandline</h1><h2 class="author">Jeetaditya Chatterjee</h2><p class="date">Created: 2021-05-26 Wed 00:11</p>
 </section>
 
 <section>
-<section id="slide-orga7f19d4">
-<h2 id="orga7f19d4">What is the Unix commandline?</h2>
+<section id="slide-org79ce299">
+<h2 id="org79ce299">What is the Unix commandline?</h2>
 <aside class="notes">
 <p>
 The unix commandline is an interpreter known as the shell and a set of tools that come together to
@@ -33,8 +33,8 @@ chain them to form larger and more complex programs from simple building blocks
 </section>
 </section>
 <section>
-<section id="slide-org74b1fb3">
-<h2 id="org74b1fb3">Why do I need to know the Unix command line?</h2>
+<section id="slide-org2db74a4">
+<h2 id="org2db74a4">Why do I need to know the Unix command line?</h2>
 <aside class="notes">
 <p>
 It is a good skill to have for many reasons
@@ -57,33 +57,79 @@ that a lot of guides in linux land will use it over a gui tool you may be used t
 </section>
 </section>
 <section>
-<section id="slide-org9072c9e">
-<h2 id="org9072c9e">What do I need too know then?</h2>
-<div class="outline-text-2" id="text-org9072c9e">
+<section id="slide-orgfb080eb">
+<h2 id="orgfb080eb">What do I need too know then?</h2>
+<div class="outline-text-2" id="text-orgfb080eb">
 </div>
 </section>
-<section id="slide-org2084ed1">
-<h3 id="org2084ed1">A little bit of syntax</h3>
-<div class="outline-text-3" id="text-org2084ed1">
+<section id="slide-org66a6daa">
+<h3 id="org66a6daa">A little bit of syntax</h3>
+<div class="outline-text-3" id="text-org66a6daa">
 </div>
 </section>
-<section id="slide-org62ce34b">
-<h4 id="org62ce34b">Variables</h4>
+<section id="slide-orge01a4d8">
+<h4 id="orge01a4d8">Variables</h4>
+<aside class="notes">
+<p>
+Shell is not a very nice language so syntax is important
+To set a variable you would set it like any other language but you can&rsquo;t have a
+space between the variable symbol and the equals sign
+</p>
+
+<p>
+To call it you need to prepend the $ sign
+</p>
+
+<p>
+Environment variables are global variables to set them you need to prepend export
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre class="src src-shell"><span style="color: #e95678;">var</span>=<span style="color: #fab795;">"some value"</span>
+<span style="color: #b877db;">export</span> <span style="color: #e95678;">ENVAR</span>=<span style="color: #fab795;">"some global value"</span>
+<span style="color: #21bfc2;">echo</span> $<span style="color: #e95678;">VAR</span>
+<span style="color: #21bfc2;">echo</span> $<span style="color: #e95678;">ENVAR</span>
+</pre>
+</div>
+</section>
+<section id="slide-orgf334edc">
+<h4 id="orgf334edc">flags</h4>
+<aside class="notes">
+<p>
+A flag is an optional argument provided to a command to provide it with some
+sort of structured input or to tell it to do something they are usually denoted
+with a - hyphen and a single letter or 2 hyphens and a word you can usually
+string together multiple short form commands
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-shell">command -l <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">short form flags</span>
+command -la <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">2 short form flags</span>
+command --long <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">long form flags</span>
+command --input INPUT <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">example of input</span>
+</pre>
+</div>
+
 </section>
 </section>
 <section>
-<section id="slide-org215a37e">
-<h2 id="org215a37e">The main commands</h2>
-<div class="outline-text-2" id="text-org215a37e">
+<section id="slide-org9ace0fb">
+<h2 id="org9ace0fb">The main commands</h2>
+<div class="outline-text-2" id="text-org9ace0fb">
 </div>
 </section>
-<section id="slide-orgc514742">
-<h3 id="orgc514742">moving around</h3>
-<div class="outline-text-3" id="text-orgc514742">
+<section id="slide-orga7dfa39">
+<h3 id="orga7dfa39">moving around</h3>
+<div class="outline-text-3" id="text-orga7dfa39">
 </div>
 </section>
-<section id="slide-org34b8284">
-<h4 id="org34b8284">pwd</h4>
+<section id="slide-orgc65e541">
+<h4 id="orgc65e541">pwd</h4>
 <p>
 Prints the current directory
 </p>
@@ -100,8 +146,8 @@ It stands for print working directory
 </pre>
 </div>
 </section>
-<section id="slide-orgf79910a">
-<h4 id="orgf79910a">cd</h4>
+<section id="slide-org0a14913">
+<h4 id="org0a14913">cd</h4>
 <p>
 change directory
 </p>
@@ -110,16 +156,32 @@ change directory
 Change the current directory
 </p>
 
+<p>
+Some sybols that are helpful
+~ which is a shortcut to your home dir
+. is the current directory
+.. is the previous directory
+</p>
+
 </aside>
 
 <div class="org-src-container">
 
 <pre class="src src-bash">$ <span style="color: #21bfc2;">cd</span> ~/your/directory
+$ <span style="color: #21bfc2;">pwd</span>
+/home/$<span style="color: #e95678;">USER</span>/your/directory
+$ <span style="color: #21bfc2;">cd</span> ~ <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">cd</span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;"> /home/$USER</span>
+$ <span style="color: #21bfc2;">pwd</span>
+/home/jeet
+$ <span style="color: #21bfc2;">cd</span> ..
+$ <span style="color: #21bfc2;">pwd</span>
+/home
 </pre>
 </div>
+
 </section>
-<section id="slide-org0007e3c">
-<h4 id="org0007e3c">ls</h4>
+<section id="slide-org949a54e">
+<h4 id="org949a54e">ls</h4>
 <p>
 list the current directory&rsquo;s contents
 </p>
@@ -131,6 +193,7 @@ $ <span style="color: #21bfc2;">ls</span> -l
 $ <span style="color: #21bfc2;">ls</span> -la
 </pre>
 </div>
+
 <aside class="notes">
 <p>
 The ls command lists the current directory
@@ -141,131 +204,205 @@ the -l flag will list all files in the long format
 
 </aside>
 </section>
-<section id="slide-org3ae3f80">
-<h3 id="org3ae3f80">files</h3>
-<div class="outline-text-3" id="text-org3ae3f80">
+<section id="slide-org11d1244">
+<h3 id="org11d1244">files</h3>
+<div class="outline-text-3" id="text-org11d1244">
 </div>
 </section>
-<section id="slide-orgd4ca9d2">
-<h4 id="orgd4ca9d2">touch</h4>
+<section id="slide-orgb30bd63">
+<h4 id="orgb30bd63">touch</h4>
+<aside class="notes">
+<p>
+touch is used to create an empty file. Its actually used to change the time
+stamp on the file but thats not used as much. if at all
+</p>
+
+<p>
+you have to provide the date in the disgusting order of month day year
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-shell">$ <span style="color: #21bfc2;">touch</span> file
+
+$ <span style="color: #21bfc2;">touch</span> existing-file -d month/day/year
+</pre>
+</div>
+
+
 </section>
-<section id="slide-org106ea0e">
-<h4 id="org106ea0e">mv</h4>
+<section id="slide-orgcc1a5e5">
+<h4 id="orgcc1a5e5">mv</h4>
+<aside class="notes">
+<p>
+mv is used to move files around the filesystem. It takes the file to move and
+the destination of that file.
+</p>
+
+</aside>
 </section>
-<section id="slide-org534f2d6">
-<h4 id="org534f2d6">cp</h4>
+<section id="slide-org3aab410">
+<h4 id="org3aab410">cp</h4>
+<aside class="notes">
+<p>
+cp copys a file leaving the source file intacted
+</p>
+
+</aside>
 </section>
-<section id="slide-org474a92d">
-<h4 id="org474a92d">ln</h4>
-</section>
-<section id="slide-org4479919">
-<h4 id="org4479919">rm</h4>
-</section>
-<section id="slide-orgfa0d33b">
-<h4 id="orgfa0d33b">mkdir</h4>
-</section>
-<section id="slide-org15868e0">
-<h3 id="org15868e0">Reading and writing files</h3>
-<div class="outline-text-3" id="text-org15868e0">
+<section id="slide-org0015e3e">
+<h4 id="org0015e3e">ln</h4>
+<aside class="notes">
+<p>
+ln creates a symbolic link between two files. a symbolic link is reference to
+another file it does not actually copy the file and is very useful for a lot of
+different senarios. some being storing files spread out over the file system in
+a central location.
+</p>
+
+<p>
+it take the arguments of source and destination and an optional flag -s which
+makes the link soft. by default the symbolic link will not look like a link but
+another file. if you want it to show up as a link you need to add the -s flag
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre class="src src-bash">$ <span style="color: #21bfc2;">ln</span> source-file dest-file
+$ <span style="color: #21bfc2;">ls</span> -l
+-rw-rw-r-- jeet jeet ... source-file
+-rw-rw-r-- jeet jeet ... dest-file
+
+$ <span style="color: #21bfc2;">ln</span> source-file dest-file -s
+$ <span style="color: #21bfc2;">ls</span> -l
+-rw-rw-r-- jeet jeet ... source-file
+lrwxrwxrwx jeet jeet ... dest-file -&gt; source-file
+</pre>
 </div>
 </section>
-<section id="slide-orgc7e6dfb">
-<h4 id="orgc7e6dfb">cat</h4>
+<section id="slide-orgcfcd178">
+<h4 id="orgcfcd178">rm</h4>
+<aside class="notes">
+<p>
+delete a file
+</p>
+
+</aside>
 </section>
-<section id="slide-org8b6a9dd">
-<h4 id="org8b6a9dd">head</h4>
+<section id="slide-org053fb4e">
+<h4 id="org053fb4e">mkdir</h4>
+<aside class="notes">
+<p>
+make a directory
+</p>
+
+</aside>
 </section>
-<section id="slide-org981640b">
-<h4 id="org981640b">tail</h4>
-</section>
-<section id="slide-org2947c54">
-<h4 id="org2947c54">less</h4>
-</section>
-<section id="slide-org24317f4">
-<h4 id="org24317f4">touch</h4>
-</section>
-<section id="slide-orga0867ee">
-<h4 id="orga0867ee">chmod</h4>
-</section>
-<section id="slide-org6d0770e">
-<h3 id="org6d0770e">Transforming text</h3>
-<div class="outline-text-3" id="text-org6d0770e">
+<section id="slide-org01063b5">
+<h3 id="org01063b5">Reading and writing files</h3>
+<div class="outline-text-3" id="text-org01063b5">
 </div>
 </section>
-<section id="slide-org97a0b22">
-<h4 id="org97a0b22">echo</h4>
+<section id="slide-orgd50d088">
+<h4 id="orgd50d088">cat</h4>
+<aside class="notes">
+<p>
+output and concat multiple files
+</p>
+
+</aside>
 </section>
-<section id="slide-org5b2d7a6">
-<h4 id="org5b2d7a6">grep</h4>
+<section id="slide-org14311b3">
+<h4 id="org14311b3">head</h4>
 </section>
-<section id="slide-org70e6858">
-<h4 id="org70e6858">sed</h4>
+<section id="slide-org1feecab">
+<h4 id="org1feecab">tail</h4>
 </section>
-<section id="slide-orgcab3d18">
-<h4 id="orgcab3d18">awk</h4>
+<section id="slide-org1f80318">
+<h4 id="org1f80318">less</h4>
 </section>
-<section id="slide-orgec50fd9">
-<h4 id="orgec50fd9">sort</h4>
+<section id="slide-org35575c7">
+<h4 id="org35575c7">chmod</h4>
 </section>
-<section id="slide-orgdbacc20">
-<h4 id="orgdbacc20">uniq</h4>
-</section>
-<section id="slide-org90f0371">
-<h4 id="org90f0371">wc</h4>
-</section>
-<section id="slide-orgf3ea2d8">
-<h3 id="orgf3ea2d8">User management</h3>
-<div class="outline-text-3" id="text-orgf3ea2d8">
+<section id="slide-orgfcfc0db">
+<h3 id="orgfcfc0db">Transforming text</h3>
+<div class="outline-text-3" id="text-orgfcfc0db">
 </div>
 </section>
-<section id="slide-orgc31a141">
-<h4 id="orgc31a141">sudo</h4>
+<section id="slide-orgf3274a0">
+<h4 id="orgf3274a0">echo</h4>
 </section>
-<section id="slide-org1c4aac1">
-<h4 id="org1c4aac1">usrmod</h4>
+<section id="slide-org8e9a8cc">
+<h4 id="org8e9a8cc">grep</h4>
 </section>
-<section id="slide-orgb032509">
-<h4 id="orgb032509">useradd</h4>
+<section id="slide-orgd4960e8">
+<h4 id="orgd4960e8">sed</h4>
 </section>
-<section id="slide-orgd4c131e">
-<h4 id="orgd4c131e">passwd</h4>
+<section id="slide-org06397bd">
+<h4 id="org06397bd">awk</h4>
 </section>
-<section id="slide-org31bd0f8">
-<h4 id="org31bd0f8">w</h4>
+<section id="slide-org9e779a4">
+<h4 id="org9e779a4">sort</h4>
 </section>
-<section id="slide-org705a4ab">
-<h4 id="org705a4ab">who</h4>
+<section id="slide-org9a86d71">
+<h4 id="org9a86d71">uniq</h4>
 </section>
-<section id="slide-org5f66272">
-<h4 id="org5f66272">whoami</h4>
+<section id="slide-org05ab9e5">
+<h4 id="org05ab9e5">wc</h4>
 </section>
-<section id="slide-org3da92a4">
-<h3 id="org3da92a4">Process management</h3>
-<div class="outline-text-3" id="text-org3da92a4">
+<section id="slide-org3814eb5">
+<h3 id="org3814eb5">User management</h3>
+<div class="outline-text-3" id="text-org3814eb5">
 </div>
 </section>
-<section id="slide-org6a2b0ac">
-<h4 id="org6a2b0ac">ps</h4>
+<section id="slide-orgced9d35">
+<h4 id="orgced9d35">sudo</h4>
 </section>
-<section id="slide-org59f5726">
-<h4 id="org59f5726">pgrep</h4>
+<section id="slide-org113c508">
+<h4 id="org113c508">usrmod</h4>
 </section>
-<section id="slide-orge8dedb1">
-<h4 id="orge8dedb1">pkill</h4>
+<section id="slide-org30174a8">
+<h4 id="org30174a8">useradd</h4>
 </section>
-<section id="slide-org70fb447">
-<h3 id="org70fb447">Others</h3>
-<div class="outline-text-3" id="text-org70fb447">
+<section id="slide-org89d9d01">
+<h4 id="org89d9d01">passwd</h4>
+</section>
+<section id="slide-org85607ab">
+<h4 id="org85607ab">w</h4>
+</section>
+<section id="slide-org66b7cf9">
+<h3 id="org66b7cf9">Process management</h3>
+<div class="outline-text-3" id="text-org66b7cf9">
 </div>
 </section>
-<section id="slide-org33a82d5">
-<h4 id="org33a82d5">man</h4>
+<section id="slide-org4db205a">
+<h4 id="org4db205a">ps</h4>
 </section>
-<section id="slide-org15fd71a">
-<h4 id="org15fd71a">curl</h4>
+<section id="slide-org8d172d7">
+<h4 id="org8d172d7">pgrep</h4>
 </section>
-<section id="slide-org1eaa5ed">
-<h3 id="org1eaa5ed">Honorable mentions</h3>
+<section id="slide-orgf5008af">
+<h4 id="orgf5008af">pkill</h4>
+</section>
+<section id="slide-orge95b15d">
+<h3 id="orge95b15d">Others</h3>
+<div class="outline-text-3" id="text-orge95b15d">
+</div>
+</section>
+<section id="slide-orgd5a1c1a">
+<h4 id="orgd5a1c1a">man</h4>
+</section>
+<section id="slide-orgf8cec90">
+<h4 id="orgf8cec90">curl</h4>
+</section>
+<section id="slide-org8337847">
+<h4 id="org8337847">ping</h4>
+</section>
+<section id="slide-org990d9da">
+<h3 id="org990d9da">Honorable mentions</h3>
 <dl>
 <dt>nc</dt><dd>The networking swiss army knife</dd>
 <dt>lp</dt><dd>Have you ever needed too print something?</dd>
@@ -275,8 +412,8 @@ the -l flag will list all files in the long format
 </section>
 </section>
 <section>
-<section id="slide-orgd0d0eaa">
-<h2 id="orgd0d0eaa">Pipes</h2>
+<section id="slide-org658c281">
+<h2 id="org658c281">Pipes</h2>
 </section>
 </section>
 </div>
