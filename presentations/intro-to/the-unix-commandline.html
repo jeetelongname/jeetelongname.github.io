@@ -15,12 +15,12 @@
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h1 class="title">The Unix Commandline</h1><h2 class="author">Jeetaditya Chatterjee</h2><p class="date">Created: 2021-05-26 Wed 00:11</p>
+<h1>The Unix Commandline</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>Your inner hacker will be released today</i></h3><p>Press s for speaker notes</p>
 </section>
 
 <section>
-<section id="slide-org79ce299">
-<h2 id="org79ce299">What is the Unix commandline?</h2>
+<section id="slide-orga223b31">
+<h2 id="orga223b31">What is the Unix commandline?</h2>
 <aside class="notes">
 <p>
 The unix commandline is an interpreter known as the shell and a set of tools that come together to
@@ -33,8 +33,8 @@ chain them to form larger and more complex programs from simple building blocks
 </section>
 </section>
 <section>
-<section id="slide-org2db74a4">
-<h2 id="org2db74a4">Why do I need to know the Unix command line?</h2>
+<section id="slide-org6c73c55">
+<h2 id="org6c73c55">Why do I need to know the Unix command line?</h2>
 <aside class="notes">
 <p>
 It is a good skill to have for many reasons
@@ -57,18 +57,18 @@ that a lot of guides in linux land will use it over a gui tool you may be used t
 </section>
 </section>
 <section>
-<section id="slide-orgfb080eb">
-<h2 id="orgfb080eb">What do I need too know then?</h2>
-<div class="outline-text-2" id="text-orgfb080eb">
+<section id="slide-org3227d26">
+<h2 id="org3227d26">What do I need too know then?</h2>
+<div class="outline-text-2" id="text-org3227d26">
 </div>
 </section>
-<section id="slide-org66a6daa">
-<h3 id="org66a6daa">A little bit of syntax</h3>
-<div class="outline-text-3" id="text-org66a6daa">
+<section id="slide-org342b7cd">
+<h3 id="org342b7cd">A little bit of syntax</h3>
+<div class="outline-text-3" id="text-org342b7cd">
 </div>
 </section>
-<section id="slide-orge01a4d8">
-<h4 id="orge01a4d8">Variables</h4>
+<section id="slide-org7ffff83">
+<h4 id="org7ffff83">Variables</h4>
 <aside class="notes">
 <p>
 Shell is not a very nice language so syntax is important
@@ -94,8 +94,8 @@ Environment variables are global variables to set them you need to prepend expor
 </pre>
 </div>
 </section>
-<section id="slide-orgf334edc">
-<h4 id="orgf334edc">flags</h4>
+<section id="slide-orgc1a2b70">
+<h4 id="orgc1a2b70">flags</h4>
 <aside class="notes">
 <p>
 A flag is an optional argument provided to a command to provide it with some
@@ -118,18 +118,18 @@ command --input INPUT <span style="color: #6c6f93; background-color: #292b36; fo
 </section>
 </section>
 <section>
-<section id="slide-org9ace0fb">
-<h2 id="org9ace0fb">The main commands</h2>
-<div class="outline-text-2" id="text-org9ace0fb">
+<section id="slide-org613ccbb">
+<h2 id="org613ccbb">The main commands</h2>
+<div class="outline-text-2" id="text-org613ccbb">
 </div>
 </section>
-<section id="slide-orga7dfa39">
-<h3 id="orga7dfa39">moving around</h3>
-<div class="outline-text-3" id="text-orga7dfa39">
+<section id="slide-org571f26d">
+<h3 id="org571f26d">Moving around</h3>
+<div class="outline-text-3" id="text-org571f26d">
 </div>
 </section>
-<section id="slide-orgc65e541">
-<h4 id="orgc65e541">pwd</h4>
+<section id="slide-org1187238">
+<h4 id="org1187238">pwd</h4>
 <p>
 Prints the current directory
 </p>
@@ -146,8 +146,8 @@ It stands for print working directory
 </pre>
 </div>
 </section>
-<section id="slide-org0a14913">
-<h4 id="org0a14913">cd</h4>
+<section id="slide-orgc7adeb3">
+<h4 id="orgc7adeb3">cd</h4>
 <p>
 change directory
 </p>
@@ -180,8 +180,8 @@ $ <span style="color: #21bfc2;">pwd</span>
 </div>
 
 </section>
-<section id="slide-org949a54e">
-<h4 id="org949a54e">ls</h4>
+<section id="slide-org1f19a23">
+<h4 id="org1f19a23">ls</h4>
 <p>
 list the current directory&rsquo;s contents
 </p>
@@ -204,13 +204,13 @@ the -l flag will list all files in the long format
 
 </aside>
 </section>
-<section id="slide-org11d1244">
-<h3 id="org11d1244">files</h3>
-<div class="outline-text-3" id="text-org11d1244">
+<section id="slide-org76e8daf">
+<h3 id="org76e8daf">Files</h3>
+<div class="outline-text-3" id="text-org76e8daf">
 </div>
 </section>
-<section id="slide-orgb30bd63">
-<h4 id="orgb30bd63">touch</h4>
+<section id="slide-org421ee95">
+<h4 id="org421ee95">touch</h4>
 <aside class="notes">
 <p>
 touch is used to create an empty file. Its actually used to change the time
@@ -231,29 +231,69 @@ $ <span style="color: #21bfc2;">touch</span> existing-file -d month/day/year
 </pre>
 </div>
 
-
 </section>
-<section id="slide-orgcc1a5e5">
-<h4 id="orgcc1a5e5">mv</h4>
+<section id="slide-org371ee68">
+<h4 id="org371ee68">mv</h4>
 <aside class="notes">
 <p>
 mv is used to move files around the filesystem. It takes the file to move and
-the destination of that file.
+the destination of that file. It is also used to rename a file
+</p>
+
+<p>
+If you need to move directorys then you need to make sure that the names are
+unique. mv will not move that file by default but if you provide the -f then you
+will overwrite the previous directory
+There also the -i flag that will ask you to confirm
 </p>
 
 </aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">$ <span style="color: #21bfc2;">mv</span> SOURCE DESTINATION
+
+$ <span style="color: #21bfc2;">ls</span>
+file1
+$ <span style="color: #21bfc2;">mv</span> file1 file2
+$ <span style="color: #21bfc2;">ls</span>
+file2
+
+$ <span style="color: #21bfc2;">ls</span>
+dir1 dir2
+$ <span style="color: #21bfc2;">mv</span> dir1 dir2
+mv: cannot move <span style="color: #fab795;">'dir1'</span> ro <span style="color: #fab795;">'dir2'</span> : Directory not empy
+$ <span style="color: #21bfc2;">mv</span> dir1 dir2 -f
+$ <span style="color: #21bfc2;">ls</span>
+dir2
+</pre>
+</div>
 </section>
-<section id="slide-org3aab410">
-<h4 id="org3aab410">cp</h4>
+<section id="slide-orgcb706b2">
+<h4 id="orgcb706b2">cp</h4>
 <aside class="notes">
 <p>
-cp copys a file leaving the source file intacted
+cp copys a file leaving the source file intact It can overwite the destination
+file tho so be careful with your names you can use the -f and -i flag like you
+would for mv
 </p>
 
 </aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">$ <span style="color: #21bfc2;">cp</span> SOURCE DEST
+
+$ <span style="color: #21bfc2;">ls</span>
+file1
+$ <span style="color: #21bfc2;">cp</span> file1 file2
+$ <span style="color: #21bfc2;">ls</span>
+file1 file2
+</pre>
+</div>
 </section>
-<section id="slide-org0015e3e">
-<h4 id="org0015e3e">ln</h4>
+<section id="slide-org0f67e35">
+<h4 id="org0f67e35">ln</h4>
 <aside class="notes">
 <p>
 ln creates a symbolic link between two files. a symbolic link is reference to
@@ -283,137 +323,396 @@ lrwxrwxrwx jeet jeet ... dest-file -&gt; source-file
 </pre>
 </div>
 </section>
-<section id="slide-orgcfcd178">
-<h4 id="orgcfcd178">rm</h4>
+<section id="slide-org5607376">
+<h4 id="org5607376">rm</h4>
 <aside class="notes">
 <p>
-delete a file
+delete a file. add the -i flag to ask for your confirmation. If you need to
+delete a directory then you need to add the -r (recursive) flag and if the file
+cannot be written to then you can use the -f option
 </p>
 
 </aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">$ <span style="color: #21bfc2;">rm</span> file -i
+rm: remove regular file <span style="color: #fab795;">'file'</span>? <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">your input here</span>
+<span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">no more file</span>
+$ <span style="color: #21bfc2;">rm</span> dir
+rm: cannot remove <span style="color: #fab795;">'dir'</span> : Is a directory
+$ <span style="color: #21bfc2;">rm</span> dir -r
+<span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">all good</span>
+</pre>
+</div>
+
 </section>
-<section id="slide-org053fb4e">
-<h4 id="org053fb4e">mkdir</h4>
+<section id="slide-orgfc5fd5e">
+<h4 id="orgfc5fd5e">mkdir</h4>
 <aside class="notes">
 <p>
-make a directory
+make a directory.. use the -p flag to make a lot of child directorys quickly
 </p>
 
 </aside>
-</section>
-<section id="slide-org01063b5">
-<h3 id="org01063b5">Reading and writing files</h3>
-<div class="outline-text-3" id="text-org01063b5">
+
+<div class="org-src-container">
+
+<pre class="src src-bash">$ <span style="color: #21bfc2;">mkdir</span> dir
+
+$ <span style="color: #21bfc2;">mkdir</span> dir1/dir2/dir2
+mkdir: cannot create directory <span style="color: #fab795;">'dir1/dir2/dir3'</span>: No such file or directory
+$ <span style="color: #21bfc2;">mkdir</span> dir1/dir2/dir2 -p
+</pre>
 </div>
 </section>
-<section id="slide-orgd50d088">
-<h4 id="orgd50d088">cat</h4>
+<section id="slide-org169deb2">
+<h3 id="org169deb2">Reading and writing files</h3>
+<div class="outline-text-3" id="text-org169deb2">
+</div>
+</section>
+<section id="slide-org9e4b6c4">
+<h4 id="org9e4b6c4">cat</h4>
 <aside class="notes">
 <p>
-output and concat multiple files
+output and concatenate multiple files.
 </p>
 
 </aside>
-</section>
-<section id="slide-org14311b3">
-<h4 id="org14311b3">head</h4>
-</section>
-<section id="slide-org1feecab">
-<h4 id="org1feecab">tail</h4>
-</section>
-<section id="slide-org1f80318">
-<h4 id="org1f80318">less</h4>
-</section>
-<section id="slide-org35575c7">
-<h4 id="org35575c7">chmod</h4>
-</section>
-<section id="slide-orgfcfc0db">
-<h3 id="orgfcfc0db">Transforming text</h3>
-<div class="outline-text-3" id="text-orgfcfc0db">
+
+<div class="org-src-container">
+
+<pre class="src src-shell">$ <span style="color: #21bfc2;">cat</span> file
+<span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">contense of file</span>
+$ <span style="color: #21bfc2;">cat</span> file1 file2
+<span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">contense of both files</span>
+</pre>
 </div>
 </section>
-<section id="slide-orgf3274a0">
-<h4 id="orgf3274a0">echo</h4>
-</section>
-<section id="slide-org8e9a8cc">
-<h4 id="org8e9a8cc">grep</h4>
-</section>
-<section id="slide-orgd4960e8">
-<h4 id="orgd4960e8">sed</h4>
-</section>
-<section id="slide-org06397bd">
-<h4 id="org06397bd">awk</h4>
-</section>
-<section id="slide-org9e779a4">
-<h4 id="org9e779a4">sort</h4>
-</section>
-<section id="slide-org9a86d71">
-<h4 id="org9a86d71">uniq</h4>
-</section>
-<section id="slide-org05ab9e5">
-<h4 id="org05ab9e5">wc</h4>
-</section>
-<section id="slide-org3814eb5">
-<h3 id="org3814eb5">User management</h3>
-<div class="outline-text-3" id="text-org3814eb5">
+<section id="slide-orga8aa524">
+<h4 id="orga8aa524">head</h4>
+<aside class="notes">
+<p>
+Output the first 10 lines of a file
+the -n flag allows you to specify the amount of lines you want to print out
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-shell">$ head file -n <span style="color: #f09383; font-weight: bold;">20</span>
+</pre>
 </div>
 </section>
-<section id="slide-orgced9d35">
-<h4 id="orgced9d35">sudo</h4>
-</section>
-<section id="slide-org113c508">
-<h4 id="org113c508">usrmod</h4>
-</section>
-<section id="slide-org30174a8">
-<h4 id="org30174a8">useradd</h4>
-</section>
-<section id="slide-org89d9d01">
-<h4 id="org89d9d01">passwd</h4>
-</section>
-<section id="slide-org85607ab">
-<h4 id="org85607ab">w</h4>
-</section>
-<section id="slide-org66b7cf9">
-<h3 id="org66b7cf9">Process management</h3>
-<div class="outline-text-3" id="text-org66b7cf9">
+<section id="slide-org47d6fc6">
+<h4 id="org47d6fc6">tail</h4>
+<aside class="notes">
+<p>
+Same as head but for the last 10 lines
+again -n will allow you to specify the amount of lines
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">$ tail file -n <span style="color: #f09383; font-weight: bold;">20</span>
+</pre>
 </div>
 </section>
-<section id="slide-org4db205a">
-<h4 id="org4db205a">ps</h4>
-</section>
-<section id="slide-org8d172d7">
-<h4 id="org8d172d7">pgrep</h4>
-</section>
-<section id="slide-orgf5008af">
-<h4 id="orgf5008af">pkill</h4>
-</section>
-<section id="slide-orge95b15d">
-<h3 id="orge95b15d">Others</h3>
-<div class="outline-text-3" id="text-orge95b15d">
+<section id="slide-orgd175aa1">
+<h4 id="orgd175aa1">chmod</h4>
+<aside class="notes">
+<p>
+Change the file permissions. In linux files do not need extensions. instead
+attached to each and every file is a set of permissions. You saw them when we
+discussed ln. chmod changes those permissions. if you want to add a permission
+then do + followed by r w x or remove them replace the + with a minus
+</p>
+
+<p>
+Notice the different groups. the first symbol is the type it can be d for
+directory l for link or - for file
+the first set of 3 is what root can do. root is the main user and they have free
+reign over the system. the second triple is the user permissions and the last one
+is other peoples permissions
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">$ <span style="color: #21bfc2;">ls</span> -l
+-rw-rw-r-- ... file
+$ <span style="color: #21bfc2;">chmod</span> +x file
+$ <span style="color: #21bfc2;">ls</span> -l
+-rwxrwxr-x ... file
+
+$ <span style="color: #21bfc2;">chmod</span> -rwx file
+---------- ... file
+</pre>
 </div>
 </section>
-<section id="slide-orgd5a1c1a">
-<h4 id="orgd5a1c1a">man</h4>
+<section id="slide-orga123960">
+<h3 id="orga123960">Transforming text</h3>
+<div class="outline-text-3" id="text-orga123960">
+</div>
 </section>
-<section id="slide-orgf8cec90">
-<h4 id="orgf8cec90">curl</h4>
+<section id="slide-orga7b965a">
+<h4 id="orga7b965a">echo</h4>
+<aside class="notes">
+<p>
+shell print statement. It will print out a string of text. If you use
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #21bfc2;">echo</span> <span style="color: #fab795;">"a string"</span>
+a string
+<span style="color: #21bfc2;">echo</span> -e <span style="color: #fab795;">"this is a \n multiline string "</span>
+this is a
+ multiline string
+<span style="color: #21bfc2;">echo</span> $<span style="color: #e95678;">VAR</span>
+<span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">contense of VAR</span>
+</pre>
+</div>
 </section>
-<section id="slide-org8337847">
-<h4 id="org8337847">ping</h4>
+<section id="slide-org75fb638">
+<h4 id="org75fb638">grep</h4>
+<aside class="notes">
+<p>
+grep is a commandline regex matcher. It takes the arguments of a string (usually
+with a regular expression) and a file.
+some useful flags are -v which returns all of the lines that do not match -i
+which ignores case and -c which counts the number of occurrences
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">$ <span style="color: #21bfc2;">cat</span> file
+fox
+fax
+fex
+$ <span style="color: #21bfc2;">grep</span> <span style="color: #fab795;">"fox"</span> file
+fox
+$ <span style="color: #21bfc2;">grep</span> <span style="color: #fab795;">"f.x"</span> file
+
+$ <span style="color: #21bfc2;">grep</span> <span style="color: #fab795;">"fox"</span> file -v
+fax
+fex
+</pre>
+</div>
 </section>
-<section id="slide-org990d9da">
-<h3 id="org990d9da">Honorable mentions</h3>
+<section id="slide-orgec61099">
+<h4 id="orgec61099">sed</h4>
+<aside class="notes">
+<p>
+sed is used to make substutions in text it takes the arguments of a command and
+a file It has a little bit of a werid syntax so bear with me
+</p>
+
+<p>
+in the string we start it with s this tells sed we are performing a substitution
+we then provide it with a regex this is what will be substituted then you
+provide the substitution. There is more syntax here but these are the basics
+</p>
+
+<p>
+Now by default sed will only perform 1 substitution to tell it to replace all
+you need to add g to the end this is called a flag
+</p>
+
+<p>
+You can add the -i flag to change the file in place. if you add an argument to
+it will create a backup of the file you are about to change
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">$ sed <span style="color: #fab795;">'s/REGEX/REPLACEMENT/FLAG'</span> file
+
+$ <span style="color: #21bfc2;">cat</span> file
+the fox did fox things to say fox you to big fox
+$ sed <span style="color: #fab795;">'s/fox/wolf/'</span> file
+the wolf did fox things to say fox you to big fox
+
+$ sed <span style="color: #fab795;">'s/fox/wolf/g'</span> file
+the wolf did wolf things to say wolf you to big wolf
+
+$ sed <span style="color: #fab795;">'s/fox/wolf/g'</span> file -i
+
+$ <span style="color: #21bfc2;">cat</span> file
+the wolf did wolf things to say wolf you to big wolf
+</pre>
+</div>
+
+</section>
+<section id="slide-org35978b1">
+<h4 id="org35978b1">awk</h4>
+<aside class="notes">
+<p>
+awk is a swiss a text processing swiss army knife. it is its own language and
+can pretty much replace all of the text processing commands. Now do I recommend
+that? welll probably not. but its pretty cool. Now that being said most people
+use awk to get out column&rsquo;s of data.
+</p>
+
+<p>
+Awk first splits your files into lines and then into fields and then store those
+fields in variables. they are denoted by a $ sign and the number of the field
+note that $0 holds the whole file and $NF holds the last. If you want the first
+field you would call $1 second so on
+</p>
+
+<p>
+Now this can be useful but it may be more useful for a csv file. To change the
+field seperatior you need to use the -F flag
+</p>
+
+<p>
+In this example we are restructuring a csv to make it into a nicer format
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">$ <span style="color: #21bfc2;">cat</span> file
+this file is has space seperated words
+it has multiple lines
+
+$ awk <span style="color: #fab795;">'{print $0}'</span> file <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">we just made a slower </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">less</span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;"> convenient cat!</span>
+this file is has space seperated words
+$ awk <span style="color: #fab795;">'{print $1}'</span> file <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">print the first element of each line</span>
+this
+it
+$ <span style="color: #21bfc2;">cat</span> file.csv
+name,age,job
+Jeet,18,Being a Nerd
+
+$ awk -F, <span style="color: #fab795;">'{printf("name:%s job:%s age:%s", $1, $3, $2)}'</span> file.csv
+name:Jeet job:Being a nerd age:18
+</pre>
+</div>
+</section>
+<section id="slide-org8de0265">
+<h4 id="org8de0265">sort</h4>
+<aside class="notes">
+<p>
+sort sorts a file. You can tell it to sort using a numeric sort -n a dictionary
+sort (whch is also known as alphanumeric) as well as others
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">$ <span style="color: #21bfc2;">cat</span> file-o-numbers
+<span style="color: #f09383; font-weight: bold;">1</span>
+<span style="color: #f09383; font-weight: bold;">15</span>
+<span style="color: #f09383; font-weight: bold;">2</span>
+<span style="color: #f09383; font-weight: bold;">30</span>
+$ sort -n file-o-numbers
+<span style="color: #f09383; font-weight: bold;">1</span>
+<span style="color: #f09383; font-weight: bold;">2</span>
+<span style="color: #f09383; font-weight: bold;">15</span>
+<span style="color: #f09383; font-weight: bold;">30</span>
+</pre>
+</div>
+</section>
+<section id="slide-org9d78c2a">
+<h4 id="org9d78c2a">uniq</h4>
+<aside class="notes">
+<p>
+uniq removes dupicates from a file. Nothing really more to say
+</p>
+
+</aside>
+
+<pre class="example">
+$ cat file
+this
+this
+has
+some
+some
+duplicates
+
+$ uniq file
+this
+has
+some
+duplicates
+</pre>
+</section>
+<section id="slide-orgb2b399a">
+<h4 id="orgb2b399a">wc</h4>
+</section>
+<section id="slide-org2182bec">
+<h3 id="org2182bec">User management</h3>
+<div class="outline-text-3" id="text-org2182bec">
+</div>
+</section>
+<section id="slide-org2b996de">
+<h4 id="org2b996de">sudo</h4>
+</section>
+<section id="slide-org6c85493">
+<h4 id="org6c85493">passwd</h4>
+</section>
+<section id="slide-org7d4816c">
+<h4 id="org7d4816c">w</h4>
+</section>
+<section id="slide-org7dd2754">
+<h3 id="org7dd2754">Process management</h3>
+<div class="outline-text-3" id="text-org7dd2754">
+</div>
+</section>
+<section id="slide-org68643f9">
+<h4 id="org68643f9">ps</h4>
+</section>
+<section id="slide-org9419a54">
+<h4 id="org9419a54">pgrep</h4>
+</section>
+<section id="slide-org23c30a0">
+<h4 id="org23c30a0">pkill</h4>
+</section>
+<section id="slide-orgea0cdc6">
+<h3 id="orgea0cdc6">Others</h3>
+<div class="outline-text-3" id="text-orgea0cdc6">
+</div>
+</section>
+<section id="slide-org7a0f38d">
+<h4 id="org7a0f38d">man</h4>
+</section>
+<section id="slide-org6718373">
+<h3 id="org6718373">Honorable mentions</h3>
 <dl>
 <dt>nc</dt><dd>The networking swiss army knife</dd>
 <dt>lp</dt><dd>Have you ever needed too print something?</dd>
+<dt>less</dt><dd>Read files at your pleasure</dd>
 
 </dl>
 
 </section>
 </section>
 <section>
-<section id="slide-org658c281">
-<h2 id="org658c281">Pipes</h2>
+<section id="slide-org2fbee43">
+<h2 id="org2fbee43">Pipes</h2>
+<div class="outline-text-2" id="text-org2fbee43">
+</div>
+</section>
+<section id="slide-org0b59a94">
+<h3 id="org0b59a94">Output redirection</h3>
+</section>
+<section id="slide-orgd1042ae">
+<h3 id="orgd1042ae">Pipes</h3>
 </section>
 </section>
 </div>

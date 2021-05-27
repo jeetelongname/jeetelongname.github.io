@@ -1,6 +1,7 @@
 #+TITLE: The Unix Commandline
 #+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
 #+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>Your inner hacker will be released today</i></h3><p>Press s for speaker notes</p>
 #+REVEAL_THEME: black
 #+REVEAL_TRANS: slide
 
@@ -56,7 +57,7 @@ command --input INPUT # example of input
 #+end_src
 
 * The main commands
-** moving around
+** Moving around
 *** pwd
 Prints the current directory
 #+begin_notes
@@ -104,7 +105,7 @@ the -a flag will show hidden files (all files)
 these are denoted with a dot infront of there name
 the -l flag will list all files in the long format
 #+end_notes
-** files
+** Files
 *** touch
 #+begin_notes
 touch is used to create an empty file. Its actually used to change the time
@@ -119,16 +120,50 @@ $ touch file
 $ touch existing-file -d month/day/year
 #+end_src
 
-
 *** mv
 #+begin_notes
 mv is used to move files around the filesystem. It takes the file to move and
-the destination of that file.
+the destination of that file. It is also used to rename a file
+
+If you need to move directorys then you need to make sure that the names are
+unique. mv will not move that file by default but if you provide the -f then you
+will overwrite the previous directory
+There also the -i flag that will ask you to confirm
 #+end_notes
+
+#+begin_src bash
+$ mv SOURCE DESTINATION
+
+$ ls
+file1
+$ mv file1 file2
+$ ls
+file2
+
+$ ls
+dir1 dir2
+$ mv dir1 dir2
+mv: cannot move 'dir1' ro 'dir2' : Directory not empy
+$ mv dir1 dir2 -f
+$ ls
+dir2
+#+end_src
 *** cp
 #+begin_notes
-cp copys a file leaving the source file intacted
+cp copys a file leaving the source file intact It can overwite the destination
+file tho so be careful with your names you can use the -f and -i flag like you
+would for mv
 #+end_notes
+
+#+begin_src bash
+$ cp SOURCE DEST
+
+$ ls
+file1
+$ cp file1 file2
+$ ls
+file1 file2
+#+end_src
 *** ln
 #+begin_notes
 ln creates a symbolic link between two files. a symbolic link is reference to
@@ -153,33 +188,234 @@ lrwxrwxrwx jeet jeet ... dest-file -> source-file
 #+end_src
 *** rm
 #+begin_notes
-delete a file
+delete a file. add the -i flag to ask for your confirmation. If you need to
+delete a directory then you need to add the -r (recursive) flag and if the file
+cannot be written to then you can use the -f option
 #+end_notes
+
+#+begin_src bash
+$ rm file -i
+rm: remove regular file 'file'? # your input here
+# no more file
+$ rm dir
+rm: cannot remove 'dir' : Is a directory
+$ rm dir -r
+# all good
+#+end_src
+
+#+RESULTS:
+
 *** mkdir
 #+begin_notes
-make a directory
+make a directory.. use the -p flag to make a lot of child directorys quickly
 #+end_notes
+
+#+begin_src bash
+$ mkdir dir
+
+$ mkdir dir1/dir2/dir2
+mkdir: cannot create directory 'dir1/dir2/dir3': No such file or directory
+$ mkdir dir1/dir2/dir2 -p
+#+end_src
 ** Reading and writing files
 *** cat
 #+begin_notes
-output and concat multiple files
+output and concatenate multiple files.
 #+end_notes
+
+#+begin_src shell
+$ cat file
+# contense of file
+$ cat file1 file2
+# contense of both files
+#+end_src
 *** head
+#+begin_notes
+Output the first 10 lines of a file
+the -n flag allows you to specify the amount of lines you want to print out
+#+end_notes
+
+#+begin_src shell
+$ head file -n 20
+#+end_src
 *** tail
-*** less
+#+begin_notes
+Same as head but for the last 10 lines
+again -n will allow you to specify the amount of lines
+#+end_notes
+
+#+begin_src bash
+$ tail file -n 20
+#+end_src
 *** chmod
+#+begin_notes
+Change the file permissions. In linux files do not need extensions. instead
+attached to each and every file is a set of permissions. You saw them when we
+discussed ln. chmod changes those permissions. if you want to add a permission
+then do + followed by r w x or remove them replace the + with a minus
+
+Notice the different groups. the first symbol is the type it can be d for
+directory l for link or - for file
+the first set of 3 is what root can do. root is the main user and they have free
+reign over the system. the second triple is the user permissions and the last one
+is other peoples permissions
+#+end_notes
+
+#+begin_src bash
+$ ls -l
+-rw-rw-r-- ... file
+$ chmod +x file
+$ ls -l
+-rwxrwxr-x ... file
+
+$ chmod -rwx file
+---------- ... file
+#+end_src
 ** Transforming text
 *** echo
+#+begin_notes
+shell print statement. It will print out a string of text. If you use
+#+end_notes
+
+#+begin_src bash
+echo "a string"
+a string
+echo -e "this is a \n multiline string "
+this is a
+ multiline string
+echo $VAR
+# contense of VAR
+#+end_src
 *** grep
+#+begin_notes
+grep is a commandline regex matcher. It takes the arguments of a string (usually
+with a regular expression) and a file.
+some useful flags are -v which returns all of the lines that do not match -i
+which ignores case and -c which counts the number of occurrences
+#+end_notes
+
+#+begin_src bash
+$ cat file
+fox
+fax
+fex
+$ grep "fox" file
+fox
+$ grep "f.x" file
+
+$ grep "fox" file -v
+fax
+fex
+#+end_src
 *** sed
+#+begin_notes
+sed is used to make substutions in text it takes the arguments of a command and
+a file It has a little bit of a werid syntax so bear with me
+
+in the string we start it with s this tells sed we are performing a substitution
+we then provide it with a regex this is what will be substituted then you
+provide the substitution. There is more syntax here but these are the basics
+
+Now by default sed will only perform 1 substitution to tell it to replace all
+you need to add g to the end this is called a flag
+
+You can add the -i flag to change the file in place. if you add an argument to
+it will create a backup of the file you are about to change
+#+end_notes
+
+#+begin_src bash
+$ sed 's/REGEX/REPLACEMENT/FLAG' file
+
+$ cat file
+the fox did fox things to say fox you to big fox
+$ sed 's/fox/wolf/' file
+the wolf did fox things to say fox you to big fox
+
+$ sed 's/fox/wolf/g' file
+the wolf did wolf things to say wolf you to big wolf
+
+$ sed 's/fox/wolf/g' file -i
+
+$ cat file
+the wolf did wolf things to say wolf you to big wolf
+#+end_src
+
 *** awk
+#+begin_notes
+awk is a swiss a text processing swiss army knife. it is its own language and
+can pretty much replace all of the text processing commands. Now do I recommend
+that? welll probably not. but its pretty cool. Now that being said most people
+use awk to get out column's of data.
+
+Awk first splits your files into lines and then into fields and then store those
+fields in variables. they are denoted by a $ sign and the number of the field
+note that $0 holds the whole file and $NF holds the last. If you want the first
+field you would call $1 second so on
+
+Now this can be useful but it may be more useful for a csv file. To change the
+field seperatior you need to use the -F flag
+
+In this example we are restructuring a csv to make it into a nicer format
+#+end_notes
+
+#+begin_src bash
+$ cat file
+this file is has space seperated words
+it has multiple lines
+
+$ awk '{print $0}' file # we just made a slower less convenient cat!
+this file is has space seperated words
+$ awk '{print $1}' file # print the first element of each line
+this
+it
+$ cat file.csv
+name,age,job
+Jeet,18,Being a Nerd
+
+$ awk -F, '{printf("name:%s job:%s age:%s", $1, $3, $2)}' file.csv
+name:Jeet job:Being a nerd age:18
+#+end_src
 *** sort
+#+begin_notes
+sort sorts a file. You can tell it to sort using a numeric sort -n a dictionary
+sort (whch is also known as alphanumeric) as well as others
+#+end_notes
+
+#+begin_src bash
+$ cat file-o-numbers
+1
+15
+2
+30
+$ sort -n file-o-numbers
+1
+2
+15
+30
+#+end_src
 *** uniq
+#+begin_notes
+uniq removes dupicates from a file. Nothing really more to say
+#+end_notes
+
+#+begin_src
+$ cat file
+this
+this
+has
+some
+some
+duplicates
+
+$ uniq file
+this
+has
+some
+duplicates
+#+end_src
 *** wc
 ** User management
 *** sudo
-*** usrmod
-*** useradd
 *** passwd
 *** w
 ** Process management
@@ -188,10 +424,11 @@ output and concat multiple files
 *** pkill
 ** Others
 *** man
-*** curl
-*** ping
 ** Honorable mentions
 - nc :: The networking swiss army knife
 - lp :: Have you ever needed too print something?
+- less :: Read files at your pleasure
 
 * Pipes
+** Output redirection
+** Pipes
