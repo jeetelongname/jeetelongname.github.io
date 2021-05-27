@@ -3,3 +3,4 @@
 =======
 >>>>>>> 835cc8f... adding blog-hugo file
 *.map
+/presentations/intro-to/.auctex-auto/
