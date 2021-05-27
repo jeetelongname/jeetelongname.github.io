@@ -4,6 +4,9 @@
 #+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>Your inner hacker will be released today</i></h3><p>Press s for speaker notes</p>
 #+REVEAL_THEME: black
 #+REVEAL_TRANS: slide
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
 
 * What is the Unix commandline?
 #+begin_notes

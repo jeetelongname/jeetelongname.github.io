@@ -1,0 +1,721 @@
+% Created 2021-05-27 Thu 03:04
+% Intended LaTeX compiler: pdflatex
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+\author{Jeetaditya Chatterjee}
+\date{\today}
+\title{The Unix Commandline}
+\hypersetup{
+	pdfauthor={Jeetaditya Chatterjee},
+	pdftitle={The Unix Commandline},
+	pdfkeywords={},
+	pdfsubject={},
+	pdfcreator={Emacs 28.0.50 (Org mode 9.5)},
+	pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\section*{What is the Unix commandline?}
+\label{sec:orge4c6621}
+\begin{notes}
+	The unix commandline is an interpreter known as the shell and a set of tools that come together to
+	form a functional operating system. It is a central part of unix and for a very
+	long time the only way to interact with unix. Not only do you call a command but you can
+	chain them to form larger and more complex programs from simple building blocks.
+	This is called pipelining and will be discussed later
+\end{notes}
+
+\section*{Why do I need to know the Unix command line?}
+\label{sec:orgcf02e17}
+\begin{notes}
+	It is a good skill to have for many reasons
+	\begin{itemize}
+		\item Linux is the biggest and largest form of Unix like OS used today and its used
+		      on most servers. If you ever need to ssh into a server to fix something and
+		      you don't know the basics then you will be F*ucked
+		\item The commandline unlike in windows is much more direct and powerful. This means
+		      that a lot of guides in linux land will use it over a gui tool you may be used to
+		      \begin{itemize}
+			      \item chaining commands together feels a lot more satisfying than \emph{python}
+		      \end{itemize}
+	\end{itemize}
+\end{notes}
+
+\section*{What do I need too know then?}
+\label{sec:org6a91b3b}
+\subsection*{A little bit of syntax}
+\label{sec:org9bddc09}
+\subsubsection*{Variables}
+\label{sec:orgdb870cc}
+\begin{notes}
+	Shell is not a very nice language so syntax is important
+	To set a variable you would set it like any other language but you can't have a
+	space between the variable symbol and the equals sign
+
+	To call it you need to prepend the \$ sign
+
+	Environment variables are global variables to set them you need to prepend export
+
+	You can also asign the output of commands to variables
+\end{notes}
+\begin{verbatim}
+var="some value"
+export ENVAR="some global value"
+
+command_out=$(some command)
+echo $var
+echo $ENVAR
+echo $command_out
+\end{verbatim}
+\subsubsection*{flags}
+\label{sec:orge36456b}
+\begin{notes}
+	A flag is an optional argument provided to a command to provide it with some
+	sort of structured input or to tell it to do something they are usually denoted
+	with a - hyphen and a single letter or 2 hyphens and a word you can usually
+	string together multiple short form commands
+\end{notes}
+
+\begin{verbatim}
+command -l # short form flags
+command -la # 2 short form flags
+command --long # long form flags
+command --input INPUT # example of input
+\end{verbatim}
+
+\section*{The main commands}
+\label{sec:orgeb1bf18}
+\begin{notes}
+	These are all of the commands that are kind of essential. I don't expect you to
+	remember them all and this is not an exaustive list. This should give you a
+	starting place. That being said there are quite a few
+\end{notes}
+\subsection*{Moving around}
+\label{sec:org08c2231}
+\subsubsection*{pwd}
+\label{sec:orge814c84}
+Prints the current directory
+\begin{notes}
+	pwd prints the current working directory
+	It stands for print working directory
+\end{notes}
+\begin{verbatim}
+$ pwd
+\end{verbatim}
+\subsubsection*{cd}
+\label{sec:org5142c60}
+change directory
+\begin{notes}
+	Change the current directory
+
+	Some sybols that are helpful
+	\textasciitilde{} which is a shortcut to your home dir
+	. is the current directory
+	.. is the previous directory
+\end{notes}
+
+\begin{verbatim}
+$ cd ~/your/directory
+$ pwd
+/home/$USER/your/directory
+$ cd ~ # cd /home/$USER
+$ pwd
+/home/jeet
+$ cd ..
+$ pwd
+/home
+\end{verbatim}
+
+\subsubsection*{ls}
+\label{sec:org4d2b9af}
+list the current directory's contents
+\begin{verbatim}
+$ ls
+$ ls -a
+$ ls -l
+$ ls -la
+\end{verbatim}
+
+\begin{notes}
+	The ls command lists the current directory
+	the -a flag will show hidden files (all files)
+	these are denoted with a dot infront of there name
+	the -l flag will list all files in the long format
+\end{notes}
+\subsection*{Files}
+\label{sec:org2b3e2c6}
+\subsubsection*{touch}
+\label{sec:org281b4f8}
+\begin{notes}
+	touch is used to create an empty file. Its actually used to change the time
+	stamp on the file but thats not used as much. if at all
+
+	you have to provide the date in the disgusting order of month day year
+\end{notes}
+
+\begin{verbatim}
+$ touch file
+
+$ touch existing-file -d month/day/year
+\end{verbatim}
+
+\subsubsection*{mv}
+\label{sec:org147eb5c}
+\begin{notes}
+	mv is used to move files around the filesystem. It takes the file to move and
+	the destination of that file. It is also used to rename a file
+
+	If you need to move directorys then you need to make sure that the names are
+	unique. mv will not move that file by default but if you provide the -f then you
+	will overwrite the previous directory
+	There also the -i flag that will ask you to confirm
+\end{notes}
+
+\begin{verbatim}
+$ mv SOURCE DESTINATION
+
+$ ls
+file1
+$ mv file1 file2
+$ ls
+file2
+
+$ ls
+dir1 dir2
+$ mv dir1 dir2
+mv: cannot move 'dir1' ro 'dir2' : Directory not empy
+$ mv dir1 dir2 -f
+$ ls
+dir2
+\end{verbatim}
+\subsubsection*{cp}
+\label{sec:orgee3f4c1}
+\begin{notes}
+	cp copys a file leaving the source file intact It can overwite the destination
+	file tho so be careful with your names you can use the -f and -i flag like you
+	would for mv
+\end{notes}
+
+\begin{verbatim}
+$ cp SOURCE DEST
+
+$ ls
+file1
+$ cp file1 file2
+$ ls
+file1 file2
+\end{verbatim}
+\subsubsection*{ln}
+\label{sec:org3883214}
+\begin{notes}
+	ln creates a symbolic link between two files. a symbolic link is reference to
+	another file it does not actually copy the file and is very useful for a lot of
+	different senarios. some being storing files spread out over the file system in
+	a central location.
+
+	it take the arguments of source and destination and an optional flag -s which
+	makes the link soft. by default the symbolic link will not look like a link but
+	another file. if you want it to show up as a link you need to add the -s flag
+\end{notes}
+\begin{verbatim}
+$ ln source-file dest-file
+$ ls -l
+-rw-rw-r-- jeet jeet ... source-file
+-rw-rw-r-- jeet jeet ... dest-file
+
+$ ln source-file dest-file -s
+$ ls -l
+-rw-rw-r-- jeet jeet ... source-file
+lrwxrwxrwx jeet jeet ... dest-file -> source-file
+\end{verbatim}
+\subsubsection*{rm}
+\label{sec:org6ff3a26}
+\begin{notes}
+	delete a file. add the -i flag to ask for your confirmation. If you need to
+	delete a directory then you need to add the -r (recursive) flag and if the file
+	cannot be written to then you can use the -f option
+\end{notes}
+
+\begin{verbatim}
+$ rm file -i
+rm: remove regular file 'file'? # your input here
+# no more file
+$ rm dir
+rm: cannot remove 'dir' : Is a directory
+$ rm dir -r
+# all good
+\end{verbatim}
+
+\subsubsection*{mkdir}
+\label{sec:org9cd4f19}
+\begin{notes}
+	make a directory.. use the -p flag to make a lot of child directorys quickly
+\end{notes}
+
+\begin{verbatim}
+$ mkdir dir
+
+$ mkdir dir1/dir2/dir2
+mkdir: cannot create directory 'dir1/dir2/dir3': No such file or directory
+$ mkdir dir1/dir2/dir2 -p
+\end{verbatim}
+\subsection*{Reading and writing files}
+\label{sec:org7628cc0}
+\subsubsection*{cat}
+\label{sec:org41b191a}
+\begin{notes}
+	output and concatenate multiple files.
+\end{notes}
+
+\begin{verbatim}
+$ cat file
+# contense of file
+$ cat file1 file2
+# contense of both files
+\end{verbatim}
+\subsubsection*{head}
+\label{sec:org2138524}
+\begin{notes}
+	Output the first 10 lines of a file
+	the -n flag allows you to specify the amount of lines you want to print out
+\end{notes}
+
+\begin{verbatim}
+$ head file -n 20
+\end{verbatim}
+\subsubsection*{tail}
+\label{sec:org7e4d07c}
+\begin{notes}
+	Same as head but for the last 10 lines
+	again -n will allow you to specify the amount of lines
+\end{notes}
+
+\begin{verbatim}
+$ tail file -n 20
+\end{verbatim}
+\subsubsection*{chmod}
+\label{sec:org269a6da}
+\begin{notes}
+	Change the file permissions. In linux files do not need extensions. instead
+	attached to each and every file is a set of permissions. You saw them when we
+	discussed ln. chmod changes those permissions. if you want to add a permission
+	then do + followed by r w x or remove them replace the + with a minus
+
+	Notice the different groups. the first symbol is the type it can be d for
+	directory l for link or - for file
+	the first set of 3 is what root can do. root is the main user and they have free
+	reign over the system. the second triple is the user permissions and the last one
+	is other peoples permissions
+\end{notes}
+
+\begin{verbatim}
+$ ls -l
+-rw-rw-r-- ... file
+$ chmod +x file
+$ ls -l
+-rwxrwxr-x ... file
+
+$ chmod -rwx file
+---------- ... file
+\end{verbatim}
+\subsection*{Transforming text}
+\label{sec:org9446d6e}
+\subsubsection*{echo}
+\label{sec:orgff253cb}
+\begin{notes}
+	shell print statement. It will print out a string of text. If you use
+\end{notes}
+
+\begin{verbatim}
+echo "a string"
+a string
+echo -e "this is a \n multiline string "
+this is a
+ multiline string
+echo $VAR
+# contense of VAR
+\end{verbatim}
+\subsubsection*{grep}
+\label{sec:org24fb0b4}
+\begin{notes}
+	grep is a commandline regex matcher. It takes the arguments of a string (usually
+	with a regular expression) and a file.
+	some useful flags are -v which returns all of the lines that do not match -i
+	which ignores case and -c which counts the number of occurrences
+\end{notes}
+
+\begin{verbatim}
+$ cat file
+fox
+fax
+fex
+$ grep "fox" file
+fox
+$ grep "f.x" file
+
+$ grep "fox" file -v
+fax
+fex
+\end{verbatim}
+\subsubsection*{sed}
+\label{sec:org6ca8ac3}
+\begin{notes}
+	sed is used to make substutions in text it takes the arguments of a command and
+	a file It has a little bit of a werid syntax so bear with me
+
+	in the string we start it with s this tells sed we are performing a substitution
+	we then provide it with a regex this is what will be substituted then you
+	provide the substitution. There is more syntax here but these are the basics
+
+	Now by default sed will only perform 1 substitution to tell it to replace all
+	you need to add g to the end this is called a flag
+
+	You can add the -i flag to change the file in place. if you add an argument to
+	it will create a backup of the file you are about to change
+\end{notes}
+
+\begin{verbatim}
+$ sed 's/REGEX/REPLACEMENT/FLAG' file
+
+$ cat file
+the fox did fox things to say fox you to big fox
+$ sed 's/fox/wolf/' file
+the wolf did fox things to say fox you to big fox
+
+$ sed 's/fox/wolf/g' file
+the wolf did wolf things to say wolf you to big wolf
+
+$ sed 's/fox/wolf/g' file -i
+
+$ cat file
+the wolf did wolf things to say wolf you to big wolf
+\end{verbatim}
+
+\subsubsection*{awk}
+\label{sec:orgf55722d}
+\begin{notes}
+	awk is a swiss a text processing swiss army knife. it is its own language and
+	can pretty much replace all of the text processing commands. Now do I recommend
+	that? welll probably not. but its pretty cool. Now that being said most people
+	use awk to get out column's of data.
+
+	awk programs are constructed from a set of pattern and actions.
+
+	Awk first splits your files into lines and then into fields and then store those
+	fields in variables. they are denoted by a \$ sign and the number of the field
+	note that \$0 holds the whole file and \$NF holds the last. If you want the first
+	field you would call \$1 second so on
+
+	Now this can be useful but it may be more useful for a csv file. To change the
+	field seperatior you need to use the -F flag
+
+	In this example we are restructuring a csv to make it into a nicer format
+\end{notes}
+
+\begin{verbatim}
+some-pattern { some action }
+another-pattern { a different action }
+{ all lines match this action }
+
+$0 ~ /some regex/ {
+    print $1, $2 # for example
+}
+
+$1 == 18 {
+    print $2, $1
+}
+\end{verbatim}
+
+\begin{verbatim}
+$ cat file
+this file is has space seperated words
+it has multiple lines
+$ awk '{print $0}' file # we just made a slower less convenient cat!
+this file is has space seperated words
+$ awk '{print $1}' file # print the first element of each line
+this
+it
+$ cat file.csv
+name,age,job
+Jeet,18,Being a Nerd
+
+$ awk -F, '{printf("name:%s job:%s age:%s", $1, $3, $2)}' file.csv
+name:Jeet job:Being a nerd age:18
+\end{verbatim}
+
+\subsubsection*{sort}
+\label{sec:org8df4a92}
+\begin{notes}
+	sort sorts a file. You can tell it to sort using a numeric sort -n a dictionary
+	sort (whch is also known as alphanumeric) as well as others
+\end{notes}
+
+\begin{verbatim}
+$ cat file-o-numbers
+1
+15
+2
+30
+$ sort -n file-o-numbers
+1
+2
+15
+30
+\end{verbatim}
+\subsubsection*{uniq}
+\label{sec:orgbda7936}
+\begin{notes}
+	uniq removes dupicates from a file. Nothing really more to say
+\end{notes}
+
+\begin{verbatim}
+$ cat file
+this
+this
+has
+some
+some
+duplicates
+
+$ uniq file
+this
+has
+some
+duplicates
+\end{verbatim}
+\subsubsection*{wc}
+\label{sec:orgcaccd9d}
+\begin{notes}
+	wc stands for word count. it will count the amount of lines words and bytes in
+	that order you can add -l flag to get the line count -w to get the word count or
+	-c for the byte count
+\end{notes}
+
+\begin{verbatim}
+$ cat file
+line 1
+line 2
+line 3
+
+$ wc file
+3 6 24
+$ wc -l
+3
+$ wc -w
+6
+$ wc -c
+24
+\end{verbatim}
+\subsection*{User management}
+\label{sec:org056730c}
+\subsubsection*{sudo}
+\label{sec:org5faebfc}
+\begin{notes}
+	sudo stands for super user do. it allows you to execute commands as another user
+	(usually root). This is used all over the place as root is the only one allowed
+	to do certain things like installing system programs and changing files outside
+	of your home directory. sudo allows you to execute one command like that as a
+	sort of security mesure.
+\end{notes}
+
+\begin{verbatim}
+$ apt update
+Permission denied
+$ sudo apt update
+# works
+\end{verbatim}
+\subsubsection*{w}
+\label{sec:orgd9ed30a}
+\begin{notes}
+	w shows you who is logged on and what they are doing
+	it will give you information on who is logged on where there are logged in from
+	and what they are doing.
+\end{notes}
+
+\begin{verbatim}
+$ w
+
+ 02:26:18 up  8:52,  2 users,  load average: 0.94, 1.29, 1.15
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+jeet     :1       :1               17:34   ?xdm?   4:07m  0.01s /usr/libexec/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=pop /usr/bin/gnome-session --session=pop
+root     tty4     -                02:24    1:52   0.02s  0.01s -bash
+\end{verbatim}
+
+\subsection*{Process management}
+\label{sec:orga51c226}
+\subsubsection*{pgrep}
+\label{sec:org1a0549d}
+\begin{notes}
+	pgrep will give you the process id's that match the a string they give you
+\end{notes}
+\begin{verbatim}
+$ pgrep emacs
+23878
+23878
+
+$ pgrep firefox
+6997
+\end{verbatim}
+\subsubsection*{pkill}
+\label{sec:orgf9ea4f2}
+\begin{notes}
+	pkill kills the process or processs given to it. You can give it a process id or
+	the string you were going to give to pgrep anyway. use the -9 flag to kill the
+	process instantly
+\end{notes}
+
+\begin{verbatim}
+$ pkill emacs # waits for emacs to finish
+
+$ pkill 23878 -9 # kills emacs instantly
+
+\end{verbatim}
+\subsubsection*{htop}
+\label{sec:org4cb0dc7}
+\begin{notes}
+	htop is probably not installed by default but it makes all of this manual work
+	interactive. Its better if I show you
+\end{notes}
+
+\begin{verbatim}
+$ htop
+\end{verbatim}
+\subsection*{Others}
+\label{sec:org41c1523}
+\subsubsection*{man}
+\label{sec:orgaa08c40}
+\begin{notes}
+	man is the inbuilt unix documentation. I did not need the internet to find out
+	about all of the commands I just bored you with. I just typed in man command and
+	it gave me everything the command can do in a semi nice to read format
+
+	man uses a pager by default so you can scroll and have a look at your leasure
+\end{notes}
+
+\begin{verbatim}
+$ man command
+\end{verbatim}
+\subsection*{Honorable mentions}
+\label{sec:orgec3dc3d}
+\begin{description}
+	\item[{nc}] The networking swiss army knife
+	\item[{calc}] like awk for numbers
+	\item[{lp}] Have you ever needed too print something? well now you can on the
+		command line!
+	\item[{less}] Read files at your pleasure
+\end{description}
+
+\section*{Pipes}
+\label{sec:org9b6c5c5}
+\subsection*{Output redirection}
+\label{sec:org21f893d}
+\begin{notes}
+	for the most part we have just been outputing all of our data onto the
+	proverbial floor and we should really be putting it into a file. we can use
+	output redirection to put the stdout into a file
+
+	Nothing will be outputed onto the screen and all of the output will be put
+	into the file. This is great. but now we have over written the file.. maybe we
+	just want to append to the file.
+
+	There are also some special places you can redirect to and some special outputs
+	you can get.
+
+	/dev/null is a black hole. when you send data there it will never be saved this
+	is useful when you have a program that sends out a lot of error output you don't
+	need. This is also a good time to mention that errors are sent out on a
+	different stream of text. called stderr You can redirect the errors from it by
+	simply adding a 2 in front
+\end{notes}
+
+\begin{verbatim}
+$ cat file1 file2 > file1+file2
+
+$ cat non-existant-file 2> /dev/null # no errors and no output
+\end{verbatim}
+
+\subsection*{Output appendation?}
+\label{sec:org89ed338}
+\begin{notes}
+	To append we use double the ammount of more than signs. This is usefull for when
+	you have a log file. Just be careful to make sure the amount of more than signs
+	are correct
+\end{notes}
+
+\begin{verbatim}
+$ some-output >> some-log-file
+\end{verbatim}
+
+\subsection*{Pipes}
+\label{sec:orgbe6df64}
+\begin{notes}
+	Pipes are a very powerful concept in unix. It allows you to build bigger
+	programs from smaller ones. The way it works is you chain the std output of one
+	command into the std input of the next. the command will do its work and pass it
+	onto the next. Whenerver you use a print statement in python you are outputing
+	to std output and its what these programs are doing. Lets take an example. I
+	have a csv full of names and ages. I want to get the age of all the people who
+	are over the age of 18 and have a name beginning with J
+
+	Now this example is not all to revolutinary but you can create very complex
+	programms from simpler blocks. This way of thinking can help you frame code
+	problems in a different way. As a set of transformations of an input instead of
+	a set of instructions. This is actually a tennant of functional programming
+\end{notes}
+
+\begin{verbatim}
+$ cat file
+Jeet,18
+Jen,19
+Mark,17
+
+$ cat file | grep -i "j." | awk -F, '$2 >= 18 {print "name:", $1, "age:", $2}'
+name: Jeet age: 18
+name: Jen age: 19
+\end{verbatim}
+
+\subsection*{An actual example}
+\label{sec:orgfe2c9e5}
+\begin{notes}
+	This is an actual script I wrote to solve my needs. \textbf{show gh gist list}
+	I use the github cli to handle some thinsga and github gists are just one of
+	them. For the purposes of today they are just small code files with a hash
+	attactched to them and to edit them you need to paste in the hash. I could do
+	that manually but thats a pain so I automated
+
+	\textbf{walk through the script}
+\end{notes}
+
+\begin{verbatim}
+gist_list=$(gh gist list)
+gist_to_find=$(echo "$gist_list" | awk '{print $2}' | fzf --layout=reverse)
+
+gh gist edit $(echo "$gist_list" | grep $gist_to_find | awk '{print $1}')
+
+\end{verbatim}
+\section*{What to do from here?}
+\label{sec:org0a0b3a8}
+\begin{notes}
+	Well now you have this introduction you need to use it.
+	You can practice with the linux environments I hope you now have. Have a play
+	with it and have fun with it. Wrote memorisation like this will probably not
+	help but apply these skills will help you a lot
+\end{notes}
+
+\section*{Any Questions?}
+\label{sec:orgedcfefc}
+\end{document}
