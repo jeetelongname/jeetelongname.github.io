@@ -8,8 +8,10 @@
 * What is the Unix commandline?
 #+begin_notes
 The unix commandline is an interpreter known as the shell and a set of tools that come together to
-form a functional operating system. Not only do you call a command but you can
-chain them to form larger and more complex programs from simple building blocks
+form a functional operating system. It is a central part of unix and for a very
+long time the only way to interact with unix. Not only do you call a command but you can
+chain them to form larger and more complex programs from simple building blocks.
+This is called pipelining and will be discussed later
 #+end_notes
 
 * Why do I need to know the Unix command line?
@@ -34,12 +36,17 @@ space between the variable symbol and the equals sign
 To call it you need to prepend the $ sign
 
 Environment variables are global variables to set them you need to prepend export
+
+You can also asign the output of commands to variables
 #+end_notes
 #+begin_src shell
 var="some value"
 export ENVAR="some global value"
-echo $VAR
+
+command_out=$(some command)
+echo $var
 echo $ENVAR
+echo $command_out
 #+end_src
 *** flags
 #+begin_notes
@@ -57,6 +64,11 @@ command --input INPUT # example of input
 #+end_src
 
 * The main commands
+#+begin_notes
+These are all of the commands that are kind of essential. I don't expect you to
+remember them all and this is not an exaustive list. This should give you a
+starting place. That being said there are quite a few
+#+end_notes
 ** Moving around
 *** pwd
 Prints the current directory
@@ -347,6 +359,8 @@ can pretty much replace all of the text processing commands. Now do I recommend
 that? welll probably not. but its pretty cool. Now that being said most people
 use awk to get out column's of data.
 
+awk programs are constructed from a set of pattern and actions.
+
 Awk first splits your files into lines and then into fields and then store those
 fields in variables. they are denoted by a $ sign and the number of the field
 note that $0 holds the whole file and $NF holds the last. If you want the first
@@ -358,11 +372,24 @@ field seperatior you need to use the -F flag
 In this example we are restructuring a csv to make it into a nicer format
 #+end_notes
 
+#+begin_src awk
+some-pattern { some action }
+another-pattern { a different action }
+{ all lines match this action }
+
+$0 ~ /some regex/ {
+    print $1, $2 # for example
+}
+
+$1 == 18 {
+    print $2, $1
+}
+#+end_src
+
 #+begin_src bash
 $ cat file
 this file is has space seperated words
 it has multiple lines
-
 $ awk '{print $0}' file # we just made a slower less convenient cat!
 this file is has space seperated words
 $ awk '{print $1}' file # print the first element of each line
@@ -375,6 +402,7 @@ Jeet,18,Being a Nerd
 $ awk -F, '{printf("name:%s job:%s age:%s", $1, $3, $2)}' file.csv
 name:Jeet job:Being a nerd age:18
 #+end_src
+
 *** sort
 #+begin_notes
 sort sorts a file. You can tell it to sort using a numeric sort -n a dictionary
@@ -414,21 +442,204 @@ some
 duplicates
 #+end_src
 *** wc
+#+begin_notes
+wc stands for word count. it will count the amount of lines words and bytes in
+that order you can add -l flag to get the line count -w to get the word count or
+-c for the byte count
+#+end_notes
+
+#+begin_src bash
+$ cat file
+line 1
+line 2
+line 3
+
+$ wc file
+3 6 24
+$ wc -l
+3
+$ wc -w
+6
+$ wc -c
+24
+#+end_src
 ** User management
 *** sudo
-*** passwd
+#+begin_notes
+sudo stands for super user do. it allows you to execute commands as another user
+(usually root). This is used all over the place as root is the only one allowed
+to do certain things like installing system programs and changing files outside
+of your home directory. sudo allows you to execute one command like that as a
+sort of security mesure.
+#+end_notes
+
+#+begin_src bash
+$ apt update
+Permission denied
+$ sudo apt update
+# works
+#+end_src
 *** w
+#+begin_notes
+w shows you who is logged on and what they are doing
+it will give you information on who is logged on where there are logged in from
+and what they are doing.
+#+end_notes
+
+#+begin_src bash
+$ w
+
+ 02:26:18 up  8:52,  2 users,  load average: 0.94, 1.29, 1.15
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+jeet     :1       :1               17:34   ?xdm?   4:07m  0.01s /usr/libexec/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=pop /usr/bin/gnome-session --session=pop
+root     tty4     -                02:24    1:52   0.02s  0.01s -bash
+#+end_src
+
 ** Process management
-*** ps
 *** pgrep
+#+begin_notes
+pgrep will give you the process id's that match the a string they give you
+#+end_notes
+#+begin_src bash
+$ pgrep emacs
+23878
+23878
+
+$ pgrep firefox
+6997
+#+end_src
 *** pkill
+#+begin_notes
+pkill kills the process or processs given to it. You can give it a process id or
+the string you were going to give to pgrep anyway. use the -9 flag to kill the
+process instantly
+#+end_notes
+
+#+begin_src bash
+$ pkill emacs # waits for emacs to finish
+
+$ pkill 23878 -9 # kills emacs instantly
+
+#+end_src
+*** htop
+#+begin_notes
+htop is probably not installed by default but it makes all of this manual work
+interactive. Its better if I show you
+#+end_notes
+
+#+begin_src
+$ htop
+#+end_src
 ** Others
 *** man
+#+begin_notes
+man is the inbuilt unix documentation. I did not need the internet to find out
+about all of the commands I just bored you with. I just typed in man command and
+it gave me everything the command can do in a semi nice to read format
+
+man uses a pager by default so you can scroll and have a look at your leasure
+#+end_notes
+
+#+begin_src bash
+$ man command
+#+end_src
 ** Honorable mentions
 - nc :: The networking swiss army knife
-- lp :: Have you ever needed too print something?
+- calc :: like awk for numbers
+- lp :: Have you ever needed too print something? well now you can on the
+  command line!
 - less :: Read files at your pleasure
 
 * Pipes
 ** Output redirection
+#+begin_notes
+for the most part we have just been outputing all of our data onto the
+proverbial floor and we should really be putting it into a file. we can use
+output redirection to put the stdout into a file
+
+Nothing will be outputed onto the screen and all of the output will be put
+into the file. This is great. but now we have over written the file.. maybe we
+just want to append to the file.
+
+There are also some special places you can redirect to and some special outputs
+you can get.
+
+/dev/null is a black hole. when you send data there it will never be saved this
+is useful when you have a program that sends out a lot of error output you don't
+need. This is also a good time to mention that errors are sent out on a
+different stream of text. called stderr You can redirect the errors from it by
+simply adding a 2 in front
+#+end_notes
+
+#+begin_src bash
+$ cat file1 file2 > file1+file2
+
+$ cat non-existant-file 2> /dev/null # no errors and no output
+#+end_src
+
+** Output appendation?
+#+begin_notes
+To append we use double the ammount of more than signs. This is usefull for when
+you have a log file. Just be careful to make sure the amount of more than signs
+are correct
+#+end_notes
+
+#+begin_src bash
+$ some-output >> some-log-file
+#+end_src
+
 ** Pipes
+#+begin_notes
+Pipes are a very powerful concept in unix. It allows you to build bigger
+programs from smaller ones. The way it works is you chain the std output of one
+command into the std input of the next. the command will do its work and pass it
+onto the next. Whenerver you use a print statement in python you are outputing
+to std output and its what these programs are doing. Lets take an example. I
+have a csv full of names and ages. I want to get the age of all the people who
+are over the age of 18 and have a name beginning with J
+
+Now this example is not all to revolutinary but you can create very complex
+programms from simpler blocks. This way of thinking can help you frame code
+problems in a different way. As a set of transformations of an input instead of
+a set of instructions. This is actually a tennant of functional programming
+#+end_notes
+
+#+begin_src bash
+$ cat file
+Jeet,18
+Jen,19
+Mark,17
+
+$ cat file | grep -i "j." | awk -F, '$2 >= 18 {print "name:", $1, "age:", $2}'
+name: Jeet age: 18
+name: Jen age: 19
+#+end_src
+
+** An actual example
+#+begin_notes
+This is an actual script I wrote to solve my needs. *show gh gist list*
+I use the github cli to handle some thinsga and github gists are just one of
+them. For the purposes of today they are just small code files with a hash
+attactched to them and to edit them you need to paste in the hash. I could do
+that manually but thats a pain so I automated
+
+*walk through the script*
+
+#+end_notes
+
+#+begin_src bash
+gist_list=$(gh gist list)
+gist_to_find=$(echo "$gist_list" | awk '{print $2}' | fzf --layout=reverse)
+
+gh gist edit $(echo "$gist_list" | grep $gist_to_find | awk '{print $1}')
+
+#+end_src
+* What to do from here?
+#+begin_notes
+Well now you have this introduction you need to use it.
+You can practice with the linux environments I hope you now have. Have a play
+with it and have fun with it. Wrote memorisation like this will probably not
+help but apply these skills will help you a lot
+#+end_notes
+
+* Any Questions?
