@@ -1,7 +1,7 @@
 #+TITLE: UTCR Live Needs you!
 #+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
 #+REVEAL_ROOT: ../reveal.js
-#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><p>The radio compels you</p>
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><p><i>The radio compels you</i></p>
 #+REVEAL_TRANS: slide
 
 * What is UTCR Live?
