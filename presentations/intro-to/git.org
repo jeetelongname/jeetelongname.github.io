@@ -1,1 +1,78 @@
-#+TITLE: Git
+#+TITLE:The Git version control system
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>git commit -am "Totally a profesional developer"</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: simple
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* What is version control?
+#+begin_notes
+version control is a way to manage and back up source code
+It is the industry standard practice to keep code under some kind of version
+control and the most widly used VCS is called git. you have probably heard of it
+from services such as github and gitlab.
+
+- breaking code changes into revisions or "commits" each identifyable using a
+  uniqe hash.
+- allowing for people to non destructivly make copys of the code and merge them
+  in when developed
+- facilitating the ability to checkout and roll back commits
+- push the source code to a remote for backups
+#+end_notes
+
+#+ATTR_REVEAL: :frag (roll-in)
+- *Some features of Version control:*
+- breaking code changes into revisions or "commits" each identifiable using a
+  unique hash.
+- allowing for people to non destructively make copies of the code and merge them
+  in when developed.
+- facilitating the ability to checkout and roll back commits thorughout gits
+  history
+- push the source code to a remote for backups and easy sharing of the source
+  code.
+
+* Why use Version control? (git)
+#+begin_notes
+other than it being the industry standard it also has a lot of benefits such as
+- Breaking up code revisions into smaller chunks called "commits"
+  which makes it easier to see how the code base changed over time
+- Allowing you to roll back commits for whatever reason
+  git also provides tools to find the last good commit called bisecting
+- Allowing you to change your code base without affecting a master copy of your
+  code
+  Meaning you can add features and merge them in when they are ready while also
+  shipping a stable version
+- making it easier to collaborate and scale your code base to include more people
+- as well as other benefits
+#+end_notes
+
+#+ATTR_REVEAL: :frag (roll-in)
+- Breaking up code revisions into smaller chunks called "commits"
+- Allowing you to roll back commits for whatever reason
+- Allowing you to change your code base without affecting a master copy of your
+- Making it easier to collaborate and scale your code base to include more people
+
+* Some concepts
+** Commits
+** Staging
+** Branches
+** Remotes
+
+* The commands you need to know
+** add
+** rm
+** commit
+** branch
+** checkout
+** remote
+** log
+** push
+** pull
+** fetch
+** merge
+** rebase
+** revert

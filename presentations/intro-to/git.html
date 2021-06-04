@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>The Git version control system</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/simple.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>The Git version control system</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>git commit -am "Totally a profesional developer"</i></h3><p>Press s for speaker notes</p>
+</section>
+
+<section>
+<section id="slide-org3a1f986">
+<h2 id="org3a1f986">What is version control?</h2>
+<aside class="notes">
+<p>
+version control is a way to manage and back up source code
+It is the industry standard practice to keep code under some kind of version
+control and the most widly used VCS is called git. you have probably heard of it
+from services such as github and gitlab.
+</p>
+
+<ul>
+<li>breaking code changes into revisions or &ldquo;commits&rdquo; each identifyable using a
+uniqe hash.</li>
+<li>allowing for people to non destructivly make copys of the code and merge them
+in when developed</li>
+<li>facilitating the ability to checkout and roll back commits</li>
+<li>push the source code to a remote for backups</li>
+
+</ul>
+
+</aside>
+
+<ul>
+<li class="fragment roll-in"><b>Some features of Version control:</b></li>
+<li class="fragment roll-in">breaking code changes into revisions or &ldquo;commits&rdquo; each identifiable using a
+unique hash.</li>
+<li class="fragment roll-in">allowing for people to non destructively make copies of the code and merge them
+in when developed.</li>
+<li class="fragment roll-in">facilitating the ability to checkout and roll back commits thorughout gits
+history</li>
+<li class="fragment roll-in">push the source code to a remote for backups and easy sharing of the source
+code.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orga633026">
+<h2 id="orga633026">Why use Version control? (git)</h2>
+<aside class="notes">
+<p>
+other than it being the industry standard it also has a lot of benefits such as
+</p>
+<ul>
+<li>Breaking up code revisions into smaller chunks called &ldquo;commits&rdquo;
+which makes it easier to see how the code base changed over time</li>
+<li>Allowing you to roll back commits for whatever reason
+git also provides tools to find the last good commit called bisecting</li>
+<li>Allowing you to change your code base without affecting a master copy of your
+code
+Meaning you can add features and merge them in when they are ready while also
+shipping a stable version</li>
+<li>making it easier to collaborate and scale your code base to include more people</li>
+<li>as well as other benefits</li>
+
+</ul>
+
+</aside>
+
+<ul>
+<li class="fragment roll-in">Breaking up code revisions into smaller chunks called &ldquo;commits&rdquo;</li>
+<li class="fragment roll-in">Allowing you to roll back commits for whatever reason</li>
+<li class="fragment roll-in">Allowing you to change your code base without affecting a master copy of your</li>
+<li class="fragment roll-in">Making it easier to collaborate and scale your code base to include more people</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
