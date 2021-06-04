@@ -4,6 +4,7 @@
 #+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>Your inner hacker will be released today</i></h3><p>Press s for speaker notes</p>
 #+REVEAL_THEME: black
 #+REVEAL_TRANS: slide
+
 #+LATEX_CLASS: article
 #+LATEX_CLASS_OPTIONS: [a4paper]
 #+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
@@ -611,11 +612,15 @@ a set of instructions. This is actually a tennant of functional programming
 $ cat file
 Jeet,18
 Jen,19
+Jeff,20
+Jerome,16
+Dan,18
 Mark,17
 
-$ cat file | grep -i "j." | awk -F, '$2 >= 18 {print "name:", $1, "age:", $2}'
+$ cat file | grep -i "j." | sort -d | awk -F, '$2 >= 18 {print "name:", $1, "age:", $2}'
 name: Jeet age: 18
 name: Jen age: 19
+name: Jeff age: 20
 #+end_src
 
 ** An actual example
