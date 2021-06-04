@@ -40,12 +40,12 @@ for everyone
 
 #+ATTR_REVEAL: :frag (roll-in)
 - Radio Hosts
-- audio engineers
+- Audio Engineers
 - Writers
 - Producers
 - Journalists
 - Web Developers
-- Social Media managers
+- Social Media Managers
 
 * What will happen after we join?
 #+begin_notes
