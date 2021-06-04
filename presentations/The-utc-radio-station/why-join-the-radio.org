@@ -1,13 +1,60 @@
 #+TITLE: UTCR Live Needs you!
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
 #+REVEAL_ROOT: ../reveal.js
 #+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><p>The radio compels you</p>
+#+REVEAL_TRANS: slide
 
 * What is UTCR Live?
 
 #+begin_notes
 Utcr live is a student run and student lead radio station and journalistic
 organisation. We run interviews, have shows with a wide variety of music and
-discussions
+discussions. as well as post articals and other pieces on our news site (which
+needs some love)
 #+end_notes
 
-* What does this mean
+* Ok... So what does that mean?
+#+begin_notes
+if you choose to join us you will get to come and learn a lot of skills and get
+to play with professional audio equipment. You will also get to work with other people
+in the radio and make it your own with full control over the UTCR live socials
+accounts website and radio schedule. You will also get a chance to work in a team to organise events
+debates and interviews and pick up valuable skills along the way.
+
+to summerise you will get to pick up skills and experiences while having control
+over direction and outreach of this orgainsiation. This is a pretty unique offer
+and as someone who has been involved with it for 2 years a lot of fun!
+#+end_notes
+
+* Who are we looking for?
+#+begin_notes
+Really we are looking for people who are wanting to learn and are willing to
+give the radio the effort it needs. You won't really need much experience before
+hand but it won't hurt.
+We are looking to hire people to fill the roles of
+
+And do note these are not static rolls if you want to sub into another role for
+a day that's also cool and a lot of these roles can overlap so there is plenty
+for everyone
+#+end_notes
+
+#+ATTR_REVEAL: :frag (roll-in)
+- Radio Hosts
+- audio engineers
+- Writers
+- Producers
+- Journalists
+- Web Developers
+- Social Media managers
+
+* What will happen after we join?
+#+begin_notes
+In short you will take over. That is not to say we will be throwing you in head
+first with no guidance. We will be coming in every friday during enrichment to
+help you and "train you" but you will have a lot of control and hopefully have
+a lot of fun! A lot of the Leavers are happy to come in an help and If you have
+a question outside of school you can message us over the discord server we use
+to organise and collaborate in
+#+end_notes
+
+* Any Questions?
