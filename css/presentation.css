@@ -41,6 +41,13 @@ li a:visited {
   text-decoration: none;
   color: black;
 }
+li a.inner {
+  text-decoration: underline;
+  color: teal;
+}
+li a.inner:hover {
+  color: black;
+}
 li div {
   height: auto;
   padding: 10px 20px 10px 20px;

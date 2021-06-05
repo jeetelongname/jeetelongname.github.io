@@ -63,6 +63,8 @@ other than it being the industry standard it also has a lot of benefits such as
 ** Remotes
 
 * The commands you need to know
+** init
+** clone
 ** add
 ** rm
 ** commit

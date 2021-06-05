@@ -1,17 +1,28 @@
 #!/usr/bin/env ruby
-#                     __
-#    __  _____  ___  / /______
-#   / / / / _ \/ _ \/ __/ ___/
-#  / /_/ /  __/  __/ /_(__  )
-#  \__, /\___/\___/\__/____/
-# /____/
-#                    _       __
-#    _______________(_)___  / /_
-#   / ___/ ___/ ___/ / __ \/ __/
-#  (__  ) /__/ /  / / /_/ / /_
-# /____/\___/_/  /_/ .___/\__/
-#                 /_/
-#                 for stuff
+
+require 'getoptlong'
+
+opts = GetoptLong.new(
+  ['-l', GetoptLong::REQUIRED_ARGUMENT],
+  ['-t', GetoptLong::REQUIRED_ARGUMENT],
+  ['-d', GetoptLong::REQUIRED_ARGUMENT],
+  ['-p', GetoptLong::OPTIONAL_ARGUMENT]
+)
+
+link, title, description = nil
+pdf = false
+opts.each do |opt, arg|
+  case opt
+  when '-l'
+    link = arg
+  when '-t'
+    title = arg
+  when '-d'
+    description = arg
+  when '-p'
+    pdf = true
+  end
+end
 
 lines = IO.readlines('index.html')
 line_above = 0
@@ -19,21 +30,29 @@ lines.each_with_index do |i, j|
   next unless i =~ /<!-- this/
 
   line_above = j
-  puts line_above
   break
 end
-# line_to_add = "         <div><p>#{ARGV[0]}</p><a href='#{ARGV[1]}'>#{ARGV[2]}</a></div>\n"
+
+pdf_link_tag = "<a href=#{link.sub(/\..+/, '.pdf')}><u>PDF Version</u></a>" if pdf
+
 line_to_add = <<~HTML
   <li>
-        <a href='#{ARGV[0]}'>
+        <a href='#{link}'>
         <div>
-            <h2>#{ARGV[1]}</h2>
-            <p>#{ARGV[2]}</p>
-        </div></a>
+            <h2>#{title}</h2>
+            <p>#{description}</p>
+            #{pdf ? pdf_link_tag : ''}
+        </div>
+        </a>
   </li>
 HTML
 
 lines.insert(line_above + 1, line_to_add)
+
+# lines.each do |line|
+#   puts line
+# end
+
 open('index.html', 'r+') do |f|
   lines.each do |line|
     f << line
