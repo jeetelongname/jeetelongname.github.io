@@ -57,24 +57,46 @@ other than it being the industry standard it also has a lot of benefits such as
 - Making it easier to collaborate and scale your code base to include more people
 
 * Some concepts
-** Commits
-** Staging
-** Branches
-** Remotes
+** Starting off
+*** init
+#+begin_notes
+Lets say you need to start a project you can just do a git init to initialise an
+empty git repository
+#+end_notes
+#+begin_src bash
+$ git init
+#+end_src
+*** clone
+#+begin_notes
+If you need to work on some other project or reclone one you have already
+started then you can use the clone command
+#+end_notes
 
-* The commands you need to know
-** init
-** clone
-** add
-** rm
-** commit
-** branch
-** checkout
-** remote
-** log
-** push
-** pull
-** fetch
-** merge
-** rebase
-** revert
+#+begin_src bash
+$ git clone https://some.website/repo.git
+# eg
+$ git clone https://github.com/jeetelongname/website.git
+#+end_src
+** Commits
+*** commit
+** Staging
+*** add
+*** rm
+** Branches
+*** branch
+*** checkout
+** Merging
+*** merge
+*** rebase
+** Remotes
+*** remote
+*** push
+*** pull
+*** fetch
+** Reverting
+*** revert
+** Others
+*** log
+
+
+* Any Questions?
