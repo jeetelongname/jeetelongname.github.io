@@ -9,6 +9,7 @@
 #+LATEX_CLASS_OPTIONS: [a4paper]
 #+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
 
+
 * What is version control?
 #+begin_notes
 version control is a way to manage and back up source code
@@ -108,18 +109,29 @@ git add file
 git add .
 #+end_src
 
-*** reset
+*** restore
 #+begin_notes
-To remove a file you can use the reset command. provide it with a file and it
-will unstage the file. to unstage all files you just don't provide it with an
-argument
+To remove a file you can use the restore command. provide it with a file and it
+will unstage the file. to unstage all files you use dot like before. be careful
+as without the --staged flag you would delete your changes which is not fun. You
+can set an alias for it tho which would probably make your life easier to make a
+git alias
 #+end_notes
 
 #+begin_src bash
-git revert file # removes file from the stage
+git restore --staged file # removes file from the stage
 
-git revert # removes all staged changes
+git restore --staged . # removes all staged changes
+
+git reset # also works
+
+git config --global alias.unstage 'restore --staged'
+
+git unstage file
 #+end_src
+
+#+RESULTS:
+
 ** Commits
 #+begin_notes
 We have discussed the precursor to commiting so now we need to actually commit

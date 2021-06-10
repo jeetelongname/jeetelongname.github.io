@@ -18,9 +18,10 @@
 <h1>The Git version control system</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>git commit -am "Totally a profesional developer"</i></h3><p>Press s for speaker notes</p>
 </section>
 
+
 <section>
-<section id="slide-org8ad0e52">
-<h2 id="org8ad0e52">What is version control?</h2>
+<section id="slide-org5e16e80">
+<h2 id="org5e16e80">What is version control?</h2>
 <aside class="notes">
 <p>
 version control is a way to manage and back up source code
@@ -57,8 +58,8 @@ code.</li>
 </section>
 </section>
 <section>
-<section id="slide-orgdd729d3">
-<h2 id="orgdd729d3">Why use Version control? (git)</h2>
+<section id="slide-org91525ef">
+<h2 id="org91525ef">Why use Version control? (git)</h2>
 <aside class="notes">
 <p>
 other than it being the industry standard it also has a lot of benefits such as
@@ -90,18 +91,18 @@ shipping a stable version</li>
 </section>
 </section>
 <section>
-<section id="slide-orgd1425ef">
-<h2 id="orgd1425ef">Some concepts</h2>
-<div class="outline-text-2" id="text-orgd1425ef">
+<section id="slide-org5970919">
+<h2 id="org5970919">Some concepts</h2>
+<div class="outline-text-2" id="text-org5970919">
 </div>
 </section>
-<section id="slide-orgfbc341d">
-<h3 id="orgfbc341d">Starting off</h3>
-<div class="outline-text-3" id="text-orgfbc341d">
+<section id="slide-org299d74c">
+<h3 id="org299d74c">Starting off</h3>
+<div class="outline-text-3" id="text-org299d74c">
 </div>
 </section>
-<section id="slide-org41f7980">
-<h4 id="org41f7980">init</h4>
+<section id="slide-org1ffd6f4">
+<h4 id="org1ffd6f4">init</h4>
 <aside class="notes">
 <p>
 Lets say you need to start a project you can just do a git init to initialise an
@@ -115,8 +116,8 @@ empty git repository
 </pre>
 </div>
 </section>
-<section id="slide-org8ccdf4d">
-<h4 id="org8ccdf4d">clone</h4>
+<section id="slide-org9c3c4cf">
+<h4 id="org9c3c4cf">clone</h4>
 <aside class="notes">
 <p>
 If you need to work on some other project or reclone one you have already
@@ -133,8 +134,8 @@ $ <span style="color: #21bfc2;">git</span> clone https://github.com/jeetelongnam
 </pre>
 </div>
 </section>
-<section id="slide-org2505063">
-<h4 id="org2505063">status</h4>
+<section id="slide-org52d2536">
+<h4 id="org52d2536">status</h4>
 <aside class="notes">
 <p>
 git status tells you what is happening in your repository. it will tell you what
@@ -150,8 +151,8 @@ is staged what needs commiting and so on
 </div>
 
 </section>
-<section id="slide-org137c9f9">
-<h3 id="org137c9f9">Staging</h3>
+<section id="slide-org75ccc58">
+<h3 id="org75ccc58">Staging</h3>
 <aside class="notes">
 <p>
 Staging is the git term for getting files ready for commits. When you need to
@@ -162,8 +163,8 @@ and commit based on the task you are completing.
 
 </aside>
 </section>
-<section id="slide-orgfd7c7f1">
-<h4 id="orgfd7c7f1">add</h4>
+<section id="slide-orga4b97b1">
+<h4 id="orga4b97b1">add</h4>
 <aside class="notes">
 <p>
 To add a file / your changes to a file you use the git add command you specify
@@ -185,27 +186,36 @@ current directory as we discussed from our last lesson)
 </div>
 
 </section>
-<section id="slide-org208afe5">
-<h4 id="org208afe5">reset</h4>
+<section id="slide-orga693a43">
+<h4 id="orga693a43">restore</h4>
 <aside class="notes">
 <p>
-To remove a file you can use the reset command. provide it with a file and it
-will unstage the file. to unstage all files you just don&rsquo;t provide it with an
-argument
+To remove a file you can use the restore command. provide it with a file and it
+will unstage the file. to unstage all files you use dot like before. be careful
+as without the &#x2013;staged flag you would delete your changes which is not fun. You
+can set an alias for it tho which would probably make your life easier to make a
+git alias
 </p>
 
 </aside>
 
 <div class="org-src-container">
 
-<pre class="src src-bash"><span style="color: #21bfc2;">git</span> revert file <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">removes file from the stage</span>
+<pre class="src src-bash"><span style="color: #21bfc2;">git</span> restore --staged file <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">removes file from the stage</span>
 
-<span style="color: #21bfc2;">git</span> revert <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">removes all staged changes</span>
+<span style="color: #21bfc2;">git</span> restore --staged . <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">removes all staged changes</span>
+
+<span style="color: #21bfc2;">git</span> reset <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">also works</span>
+
+<span style="color: #21bfc2;">git</span> config --global alias.unstage <span style="color: #fab795;">'restore --staged'</span>
+
+<span style="color: #21bfc2;">git</span> unstage file
 </pre>
 </div>
+
 </section>
-<section id="slide-org58484eb">
-<h3 id="org58484eb">Commits</h3>
+<section id="slide-orgfe35a65">
+<h3 id="orgfe35a65">Commits</h3>
 <aside class="notes">
 <p>
 We have discussed the precursor to commiting so now we need to actually commit
@@ -223,8 +233,8 @@ function)
 
 </aside>
 </section>
-<section id="slide-org9c5553f">
-<h4 id="org9c5553f">commit</h4>
+<section id="slide-org37de26f">
+<h4 id="org37de26f">commit</h4>
 <aside class="notes">
 <p>
 To create a commit you call the <code>commit</code> command. this will open up an editor for
@@ -251,8 +261,8 @@ editor.
 </pre>
 </div>
 </section>
-<section id="slide-org6ecfc5f">
-<h3 id="org6ecfc5f">Branches</h3>
+<section id="slide-orge072634">
+<h3 id="orge072634">Branches</h3>
 <aside class="notes">
 <p>
 Branching is another really powerful feature of git. It allows you to make
@@ -272,8 +282,8 @@ damaging your main copy
 
 </aside>
 </section>
-<section id="slide-org598c805">
-<h4 id="org598c805">branch</h4>
+<section id="slide-orge5dbd06">
+<h4 id="orge5dbd06">branch</h4>
 <aside class="notes">
 <p>
 creating branches is quite easy. you just call the branch command and it will
@@ -305,8 +315,8 @@ force git by using the -D flag
 </pre>
 </div>
 </section>
-<section id="slide-orgee6ee3b">
-<h4 id="orgee6ee3b">checkout</h4>
+<section id="slide-org7c6a667">
+<h4 id="org7c6a667">checkout</h4>
 <aside class="notes">
 <p>
 We have created branches but now we need to use them so we use the checkout
@@ -328,8 +338,8 @@ the -b flag to the checkout command you can create a new branch there and then
 </pre>
 </div>
 </section>
-<section id="slide-orgf9b5ff0">
-<h3 id="orgf9b5ff0">Merging</h3>
+<section id="slide-orgfd34e0a">
+<h3 id="orgfd34e0a">Merging</h3>
 <aside class="notes">
 <p>
 Now that we have these branches we need to actually do somthing with them.. we
@@ -339,8 +349,8 @@ and update them as time goes on
 
 </aside>
 </section>
-<section id="slide-org8ad5728">
-<h4 id="org8ad5728">merge</h4>
+<section id="slide-org1de975a">
+<h4 id="org1de975a">merge</h4>
 <aside class="notes">
 <p>
 merging takes the commits of the provided beach and <i>merges</i> them into the current
@@ -368,8 +378,8 @@ the next kind of merging comes into play
 </div>
 
 </section>
-<section id="slide-orgddd350d">
-<h4 id="orgddd350d">rebase</h4>
+<section id="slide-org298d9ab">
+<h4 id="org298d9ab">rebase</h4>
 <aside class="notes">
 <p>
 rebasing rewrites the history of the current branch to incorporate the changes
@@ -404,8 +414,8 @@ a hard and fast rule
 </div>
 
 </section>
-<section id="slide-org0326aff">
-<h3 id="org0326aff">Remotes</h3>
+<section id="slide-org8f8d09c">
+<h3 id="org8f8d09c">Remotes</h3>
 <aside class="notes">
 <p>
 We have reached another conundrum all of this code is local. We need a way to
@@ -416,8 +426,8 @@ to do that
 
 </aside>
 </section>
-<section id="slide-orgeb70ffc">
-<h4 id="orgeb70ffc">remote</h4>
+<section id="slide-org7245b50">
+<h4 id="org7245b50">remote</h4>
 <aside class="notes">
 <p>
 A remote is an online location for your code. people upload there code to github
@@ -454,8 +464,8 @@ and then rename and remove are self explanatory
 </div>
 
 </section>
-<section id="slide-org4c88be6">
-<h4 id="org4c88be6">push</h4>
+<section id="slide-orgaddf639">
+<h4 id="orgaddf639">push</h4>
 <aside class="notes">
 <p>
 To send your changes to your new fangled remote you use the push command. it
@@ -479,8 +489,8 @@ could lose work other people push.
 </div>
 
 </section>
-<section id="slide-org2618867">
-<h4 id="org2618867">fetch</h4>
+<section id="slide-org903995c">
+<h4 id="org903995c">fetch</h4>
 <aside class="notes">
 <p>
 git fetch will download the files from a remote without doing anything with
@@ -505,8 +515,8 @@ means that you can edit all of this and it will not affect your history
 </pre>
 </div>
 </section>
-<section id="slide-orgefa69b8">
-<h4 id="orgefa69b8">pull</h4>
+<section id="slide-orge823607">
+<h4 id="orge823607">pull</h4>
 <aside class="notes">
 <p>
 pull is used to update your local branch with the changes of upstream. this is
@@ -525,8 +535,8 @@ want to rebase instead of merge you can use -r.
 </div>
 
 </section>
-<section id="slide-orga171a53">
-<h3 id="orga171a53">Reverting</h3>
+<section id="slide-org6b4f80f">
+<h3 id="org6b4f80f">Reverting</h3>
 <aside class="notes">
 <p>
 Oh no we made a mistake in one of our commits and now we have angered all of the
@@ -536,8 +546,8 @@ commit and then revert back to it
 
 </aside>
 </section>
-<section id="slide-orgbc2f83a">
-<h4 id="orgbc2f83a">log</h4>
+<section id="slide-org52c63e3">
+<h4 id="org52c63e3">log</h4>
 <aside class="notes">
 <p>
 the log command shows you a timeline of your code on the commit level you can
@@ -551,8 +561,8 @@ the -p flag provides a &ldquo;diff&rdquo; which shows you the changes in each co
 
 </aside>
 </section>
-<section id="slide-org2986184">
-<h4 id="org2986184">revert</h4>
+<section id="slide-org320f338">
+<h4 id="org320f338">revert</h4>
 <aside class="notes">
 <p>
 revert takes a hash (or the amount of commits you want to go back from) and will
@@ -586,8 +596,8 @@ but its not really a good solution if you need to go back to a specific commit
 </section>
 </section>
 <section>
-<section id="slide-org196207f">
-<h2 id="org196207f">What do you do now?</h2>
+<section id="slide-org3047263">
+<h2 id="org3047263">What do you do now?</h2>
 <aside class="notes">
 <p>
 Well you need to use git. I recommend you try and use git with any and every one
@@ -606,8 +616,8 @@ make using git much nicer and faster.
 </section>
 </section>
 <section>
-<section id="slide-orgf714dcb">
-<h2 id="orgf714dcb">Any Questions?</h2>
+<section id="slide-org643f040">
+<h2 id="org643f040">Any Questions?</h2>
 </section>
 </section>
 </div>
