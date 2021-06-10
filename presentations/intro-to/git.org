@@ -82,6 +82,11 @@ $ git clone https://github.com/jeetelongname/example.git # you can actually clon
 git status tells you what is happening in your repository. it will tell you what
 is staged what needs commiting and so on
 #+end_notes
+
+#+begin_src bash
+git status
+#+end_src
+
 ** Staging
 #+begin_notes
 Staging is the git term for getting files ready for commits. When you need to
