@@ -9,7 +9,7 @@
 </style>
 <link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
 
-<link rel="stylesheet" href="../reveal.js/dist/theme/simple.css" id="theme"/>
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
 </head>
 <body>
 <div class="reveal">
@@ -19,8 +19,8 @@
 </section>
 
 <section>
-<section id="slide-orgc6bb1b8">
-<h2 id="orgc6bb1b8">What is version control?</h2>
+<section id="slide-orge0df069">
+<h2 id="orge0df069">What is version control?</h2>
 <aside class="notes">
 <p>
 version control is a way to manage and back up source code
@@ -57,8 +57,8 @@ code.</li>
 </section>
 </section>
 <section>
-<section id="slide-orgadc6dfd">
-<h2 id="orgadc6dfd">Why use Version control? (git)</h2>
+<section id="slide-org520b5d3">
+<h2 id="org520b5d3">Why use Version control? (git)</h2>
 <aside class="notes">
 <p>
 other than it being the industry standard it also has a lot of benefits such as
@@ -90,18 +90,18 @@ shipping a stable version</li>
 </section>
 </section>
 <section>
-<section id="slide-org7f9d9bd">
-<h2 id="org7f9d9bd">Some concepts</h2>
-<div class="outline-text-2" id="text-org7f9d9bd">
+<section id="slide-orga870e05">
+<h2 id="orga870e05">Some concepts</h2>
+<div class="outline-text-2" id="text-orga870e05">
 </div>
 </section>
-<section id="slide-org04ee74c">
-<h3 id="org04ee74c">Starting off</h3>
-<div class="outline-text-3" id="text-org04ee74c">
+<section id="slide-orge0ca7fd">
+<h3 id="orge0ca7fd">Starting off</h3>
+<div class="outline-text-3" id="text-orge0ca7fd">
 </div>
 </section>
-<section id="slide-orge6efdc4">
-<h4 id="orge6efdc4">init</h4>
+<section id="slide-org1a56573">
+<h4 id="org1a56573">init</h4>
 <aside class="notes">
 <p>
 Lets say you need to start a project you can just do a git init to initialise an
@@ -115,8 +115,8 @@ empty git repository
 </pre>
 </div>
 </section>
-<section id="slide-orgc302eaf">
-<h4 id="orgc302eaf">clone</h4>
+<section id="slide-orgaef5116">
+<h4 id="orgaef5116">clone</h4>
 <aside class="notes">
 <p>
 If you need to work on some other project or reclone one you have already
@@ -129,90 +129,478 @@ started then you can use the clone command
 
 <pre class="src src-bash">$ <span style="color: #21bfc2;">git</span> clone https://some.website/repo.git
 <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">eg</span>
-$ <span style="color: #21bfc2;">git</span> clone https://github.com/jeetelongname/website.git
+$ <span style="color: #21bfc2;">git</span> clone https://github.com/jeetelongname/example.git <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">you can actually clone this</span>
 </pre>
 </div>
 </section>
-<section id="slide-org91bf259">
-<h3 id="org91bf259">Commits</h3>
-<div class="outline-text-3" id="text-org91bf259">
-</div>
-</section>
-<section id="slide-org1c8e9ad">
-<h4 id="org1c8e9ad">commit</h4>
-</section>
-<section id="slide-orgd9c87b0">
-<h3 id="orgd9c87b0">Staging</h3>
-<div class="outline-text-3" id="text-orgd9c87b0">
-</div>
-</section>
-<section id="slide-orgfbd30a1">
-<h4 id="orgfbd30a1">add</h4>
-</section>
-<section id="slide-org601c7f6">
-<h4 id="org601c7f6">rm</h4>
-</section>
-<section id="slide-org302600e">
-<h3 id="org302600e">Branches</h3>
-<div class="outline-text-3" id="text-org302600e">
-</div>
-</section>
-<section id="slide-org4eebc2e">
-<h4 id="org4eebc2e">branch</h4>
-</section>
-<section id="slide-orgfa2c484">
-<h4 id="orgfa2c484">checkout</h4>
-</section>
-<section id="slide-org92061e8">
-<h3 id="org92061e8">Merging</h3>
-<div class="outline-text-3" id="text-org92061e8">
-</div>
-</section>
-<section id="slide-org2a2e50f">
-<h4 id="org2a2e50f">merge</h4>
-</section>
-<section id="slide-orga596eef">
-<h4 id="orga596eef">rebase</h4>
-</section>
-<section id="slide-orgc984082">
-<h3 id="orgc984082">Remotes</h3>
-<div class="outline-text-3" id="text-orgc984082">
-</div>
-</section>
-<section id="slide-orgd1b6095">
-<h4 id="orgd1b6095">remote</h4>
-</section>
-<section id="slide-org5cb054f">
-<h4 id="org5cb054f">push</h4>
-</section>
-<section id="slide-org0294131">
-<h4 id="org0294131">pull</h4>
-</section>
-<section id="slide-org272248e">
-<h4 id="org272248e">fetch</h4>
-</section>
-<section id="slide-org1b7fa39">
-<h3 id="org1b7fa39">Reverting</h3>
-<div class="outline-text-3" id="text-org1b7fa39">
-</div>
-</section>
-<section id="slide-orga9fa12e">
-<h4 id="orga9fa12e">revert</h4>
-</section>
-<section id="slide-org2d639b2">
-<h3 id="org2d639b2">Others</h3>
-<div class="outline-text-3" id="text-org2d639b2">
-</div>
-</section>
-<section id="slide-org0cc0c42">
-<h4 id="org0cc0c42">log</h4>
+<section id="slide-orgb6268ff">
+<h4 id="orgb6268ff">status</h4>
+<aside class="notes">
+<p>
+git status tells you what is happening in your repository. it will tell you what
+is staged what needs commiting and so on
+</p>
 
+</aside>
+</section>
+<section id="slide-org31de312">
+<h3 id="org31de312">Staging</h3>
+<aside class="notes">
+<p>
+Staging is the git term for getting files ready for commits. When you need to
+add new changes you need to add the file to the stage before commiting it. This
+may seem tedios but means you don&rsquo;t need to commit all of your changes by one go
+and commit based on the task you are completing.
+</p>
+
+</aside>
+</section>
+<section id="slide-org55a7443">
+<h4 id="org55a7443">add</h4>
+<aside class="notes">
+<p>
+To add a file / your changes to a file you use the git add command you specify
+the file you want to add.
+</p>
+
+<p>
+too add all of your changes you can use the . symbol (which stands for the
+current directory as we discussed from our last lesson)
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #21bfc2;">git</span> add file
+
+<span style="color: #21bfc2;">git</span> add .
+</pre>
+</div>
+
+</section>
+<section id="slide-org9f6a5e9">
+<h4 id="org9f6a5e9">reset</h4>
+<aside class="notes">
+<p>
+To remove a file you can use the reset command. provide it with a file and it
+will unstage the file. to unstage all files you just don&rsquo;t provide it with an
+argument
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #21bfc2;">git</span> revert file <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">removes file from the stage</span>
+
+<span style="color: #21bfc2;">git</span> revert <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">removes all staged changes</span>
+</pre>
+</div>
+</section>
+<section id="slide-orgb17cc13">
+<h3 id="orgb17cc13">Commits</h3>
+<aside class="notes">
+<p>
+We have discussed the precursor to commiting so now we need to actually commit
+to it
+</p>
+
+<p>
+A git commit is a collection of changes that will be added to your git history.
+commits represent the backbone of git and its important you make your commits
+small and to the point. don&rsquo;t try and stuff too many features into one commit as
+you lose a lot of the benefits of git. (as a rule of thumb try and keep each
+commit down to one fix or feature. eg a small bug fix or the addition of a
+function)
+</p>
+
+</aside>
+</section>
+<section id="slide-org045814a">
+<h4 id="org045814a">commit</h4>
+<aside class="notes">
+<p>
+To create a commit you call the <code>commit</code> command. this will open up an editor for
+you to then type in a commit message. I won&rsquo;t go deep into commit etiquette but I
+recommend you search conventional commits as it provides a good framework for
+commit messages
+</p>
+
+<p>
+There are 2 flags that are useful but not recommended for proper projects
+the -a flag which commits all changes in the current directory
+and the -m flag which will allow you to type a message inline without using an
+editor.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #21bfc2;">git</span> commit <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">opens an editor where you type a message</span>
+
+<span style="color: #21bfc2;">git</span> commit -a <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">commit all changes</span>
+<span style="color: #21bfc2;">git</span> commit -m <span style="color: #fab795;">"commit message provided here"</span>
+</pre>
+</div>
+</section>
+<section id="slide-orgb711de2">
+<h3 id="orgb711de2">Branches</h3>
+<aside class="notes">
+<p>
+Branching is another really powerful feature of git. It allows you to make
+sweeping changes to your code without damaging the master copy of your code.
+</p>
+
+<p>
+Branches are cheap to make (taking up very little space) meaning you have no
+reason to use them!
+</p>
+
+<p>
+The main use of branches is to separate stable code from new features or bug
+fixes. This allows you to change the code to your hearts content without
+damaging your main copy
+</p>
+
+</aside>
+</section>
+<section id="slide-org329dc4d">
+<h4 id="org329dc4d">branch</h4>
+<aside class="notes">
+<p>
+creating branches is quite easy. you just call the branch command and it will
+create a branch starting at the current branch. You can speify a different
+branch by providing it
+</p>
+
+<p>
+to delete a branch you add the -d flag
+</p>
+
+<p>
+If there are unmerged changes and the branch is not backed up you will need to
+force git by using the -D flag
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #21bfc2;">git</span> branch &lt;branch_name&gt;
+
+<span style="color: #21bfc2;">git</span> branch &lt;branch_name&gt; &lt;base_branch_name&gt;
+
+
+<span style="color: #21bfc2;">git</span> branch -d &lt;branch_name&gt;
+
+<span style="color: #21bfc2;">git</span> branch -D &lt;branch_name&gt;
+</pre>
+</div>
+</section>
+<section id="slide-org0227b9e">
+<h4 id="org0227b9e">checkout</h4>
+<aside class="notes">
+<p>
+We have created branches but now we need to use them so we use the checkout
+command
+</p>
+
+<p>
+git actually has a shortcut to create a new branch and switch to it. by adding
+the -b flag to the checkout command you can create a new branch there and then
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #21bfc2;">git</span> checkout &lt;branch_name&gt; <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">switch to that branch</span>
+
+<span style="color: #21bfc2;">git</span> checkout -b &lt;new_branch_name&gt;
+</pre>
+</div>
+</section>
+<section id="slide-org1047663">
+<h3 id="org1047663">Merging</h3>
+<aside class="notes">
+<p>
+Now that we have these branches we need to actually do somthing with them.. we
+discussed deleting them but thats not that useful. We need a way to merge them
+and update them as time goes on
+</p>
+
+</aside>
+</section>
+<section id="slide-org346d651">
+<h4 id="org346d651">merge</h4>
+<aside class="notes">
+<p>
+merging takes the commits of the provided beach and <i>merges</i> them into the current
+branch by making a merge commit. this tells git what commits have been merged
+into the current branch. As its a commit if you are not happy with the merge you
+can rollback the commit like any other. This is also known as non destructive
+merging
+</p>
+
+<p>
+the problem here is that there will be a commit everytime you merge the branch
+which can make the history of the branch messy and not that great. that is where
+the next kind of merging comes into play
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #21bfc2;">git</span> checkout master
+<span style="color: #21bfc2;">git</span> merge feature <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">merge feature into master</span>
+
+<span style="color: #21bfc2;">git</span> merge master feature <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">merge feature into master</span>
+</pre>
+</div>
+
+</section>
+<section id="slide-orgbb32220">
+<h4 id="orgbb32220">rebase</h4>
+<aside class="notes">
+<p>
+rebasing rewrites the history of the current branch to incorporate the changes
+of the merging branch. this changes the history of the branch which is pretty
+dangerous that being said it also makes the code history much more readable
+and makes the project history linear. there are no forks to contend with making
+it much easier to follow a projects history.
+</p>
+
+<p>
+This comes at the cost of safety you are rewriting your history which every time
+travel show I have watched has said is a really dangerous thing to do. You also
+lose some context provided by the merge commit
+</p>
+
+<p>
+as for where to use which. I
+reccomend you rebase your main branch onto your feature branches and merge your
+feature branches into your main. This is what I see happen a lot but this is not
+a hard and fast rule
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #21bfc2;">git</span> checkout feature
+<span style="color: #21bfc2;">git</span> rebase master <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">rebase master onto feature</span>
+
+<span style="color: #21bfc2;">git</span> rebase feature master <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">samething but one line</span>
+</pre>
+</div>
+
+</section>
+<section id="slide-org8bd9b97">
+<h3 id="org8bd9b97">Remotes</h3>
+<aside class="notes">
+<p>
+We have reached another conundrum all of this code is local. We need a way to
+get it out into the world. We could put all of this code in a drop box folder
+and share that but I think you know that i am going to show you how to use git
+to do that
+</p>
+
+</aside>
+</section>
+<section id="slide-orgc040933">
+<h4 id="orgc040933">remote</h4>
+<aside class="notes">
+<p>
+A remote is an online location for your code. people upload there code to github
+or gitlab some people even host there own server. but all are valid remotes
+</p>
+
+<p>
+to add one you call the remote add command and provide it with a name and the
+url
+</p>
+
+<p>
+to change the url call the set-url command
+</p>
+
+<p>
+and then rename and remove are self explanatory
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #21bfc2;">git</span> remote add &lt;remote_name&gt; https://your.url.here/repo.git
+
+<span style="color: #21bfc2;">git</span> remote add origin https://github.com/jeetelongname/example.git
+
+<span style="color: #21bfc2;">git</span> remote set-url origin https://git.sr.ht/~jeetelongnamr/example.git <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">not real</span>
+
+<span style="color: #21bfc2;">git</span> remote rename orign upstream
+
+<span style="color: #21bfc2;">git</span> remote remove upstream
+</pre>
+</div>
+
+</section>
+<section id="slide-org4ff622d">
+<h4 id="org4ff622d">push</h4>
+<aside class="notes">
+<p>
+To send your changes to your new fangled remote you use the push command. it
+takes the argument of the remote and the branch to push. when pushing the branch
+for the first time you should add the -u flag which tracks the branch
+</p>
+
+<p>
+You may need to also overwirte the remote for some reason this is risky as you
+could lose work other people push.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #21bfc2;">git</span> push origin master
+<span style="color: #21bfc2;">git</span> push -u origin devel <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">pusing for the first time</span>
+<span style="color: #21bfc2;">git</span> push origin master --force <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">overwrite the remote</span>
+</pre>
+</div>
+
+</section>
+<section id="slide-org95ee17b">
+<h4 id="org95ee17b">fetch</h4>
+<aside class="notes">
+<p>
+git fetch will download the files from a remote without doing anything with
+them. This allows you to look at what other people are doing without
+affecting your local copy. you can then merge it into your local copy later if
+you wish.
+</p>
+
+<p>
+note when you check out <code>some-branch</code> you will be in a detached head state which
+means that you can edit all of this and it will not affect your history
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #21bfc2;">git</span> fetch origin <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">fetch all of the branches named origin</span>
+<span style="color: #21bfc2;">git</span> fetch origin some-branch
+
+<span style="color: #21bfc2;">git</span> checkout some-branch
+</pre>
+</div>
+</section>
+<section id="slide-org3a303a4">
+<h4 id="org3a303a4">pull</h4>
+<aside class="notes">
+<p>
+pull is used to update your local branch with the changes of upstream. this is
+used a lot when working in a group and you need to get the changes from
+upstream. It fetches from upstream and then merges it into your code. If you
+want to rebase instead of merge you can use -r.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #21bfc2;">git</span> pull origin master <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">merges</span>
+<span style="color: #21bfc2;">git</span> pull -r origin master <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">rebases</span>
+</pre>
+</div>
+
+</section>
+<section id="slide-orgdfe0910">
+<h3 id="orgdfe0910">Reverting</h3>
+<aside class="notes">
+<p>
+Oh no we made a mistake in one of our commits and now we have angered all of the
+customers. We need to get back to a working commit. first we need to find the
+commit and then revert back to it
+</p>
+
+</aside>
+</section>
+<section id="slide-orgcf048c3">
+<h4 id="orgcf048c3">log</h4>
+<aside class="notes">
+<p>
+the log command shows you a timeline of your code on the commit level you can
+then look through and get the unique hash for you to then pass onto the next
+command
+</p>
+
+<p>
+the -p flag provides a &ldquo;diff&rdquo; which shows you the changes in each commit
+</p>
+
+</aside>
+</section>
+<section id="slide-orgf2a61f0">
+<h4 id="orgf2a61f0">revert</h4>
+<aside class="notes">
+<p>
+revert takes a hash (or the amount of commits you want to go back from) and will
+make a new commit with those changes applied. essentially rolling back to that
+commit.
+</p>
+
+<p>
+also note you don&rsquo;t need to paste in the entire commit hash you can get away
+with the first 5 terms and git will figure out the rest
+</p>
+
+<p>
+If that is still too much work you can then use some special syntax to roll back
+a certain amount of commits from the current one or the HEAD commit
+All its saying is roll back one commit behind head. we can put any number there
+but its not really a good solution if you need to go back to a specific commit
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #21bfc2;">git</span> revert b4e73eef1e7a1620... <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">full hash works</span>
+
+<span style="color: #21bfc2;">git</span> revert b4e73 <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">also works</span>
+
+<span style="color: #21bfc2;">git</span> revert HEAD~1 <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">roll back one commit</span>
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgc097517">
+<h2 id="orgc097517">What do you do now?</h2>
+<aside class="notes">
+<p>
+Well you need to use git. I recommend you try and use git with any and every one
+of your projects. I actually used git for my NEA and it helped keep a record of
+what I have done and how long it took.
+</p>
+
+<p>
+And this is not the only way to use git. most text editors worth there salt have
+some sort of git integration and there are usually 3rd party front ends that can
+make using git much nicer and faster.
+</p>
+
+</aside>
 
 </section>
 </section>
 <section>
-<section id="slide-org3cc43ff">
-<h2 id="org3cc43ff">Any Questions?</h2>
+<section id="slide-orge9d07ec">
+<h2 id="orge9d07ec">Any Questions?</h2>
 </section>
 </section>
 </div>

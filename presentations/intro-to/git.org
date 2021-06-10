@@ -2,7 +2,7 @@
 #+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
 #+REVEAL_ROOT: ../reveal.js
 #+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>git commit -am "Totally a profesional developer"</i></h3><p>Press s for speaker notes</p>
-#+REVEAL_THEME: simple
+#+REVEAL_THEME: black
 #+REVEAL_TRANS: slide
 
 #+LATEX_CLASS: article
@@ -75,28 +75,299 @@ started then you can use the clone command
 #+begin_src bash
 $ git clone https://some.website/repo.git
 # eg
-$ git clone https://github.com/jeetelongname/website.git
+$ git clone https://github.com/jeetelongname/example.git # you can actually clone this
+#+end_src
+*** status
+#+begin_notes
+git status tells you what is happening in your repository. it will tell you what
+is staged what needs commiting and so on
+#+end_notes
+** Staging
+#+begin_notes
+Staging is the git term for getting files ready for commits. When you need to
+add new changes you need to add the file to the stage before commiting it. This
+may seem tedios but means you don't need to commit all of your changes by one go
+and commit based on the task you are completing.
+#+end_notes
+*** add
+#+begin_notes
+To add a file / your changes to a file you use the git add command you specify
+the file you want to add.
+
+too add all of your changes you can use the . symbol (which stands for the
+current directory as we discussed from our last lesson)
+#+end_notes
+#+begin_src bash
+git add file
+
+git add .
+#+end_src
+
+*** reset
+#+begin_notes
+To remove a file you can use the reset command. provide it with a file and it
+will unstage the file. to unstage all files you just don't provide it with an
+argument
+#+end_notes
+
+#+begin_src bash
+git revert file # removes file from the stage
+
+git revert # removes all staged changes
 #+end_src
 ** Commits
-*** commit
-** Staging
-*** add
-*** rm
-** Branches
-*** branch
-*** checkout
-** Merging
-*** merge
-*** rebase
-** Remotes
-*** remote
-*** push
-*** pull
-*** fetch
-** Reverting
-*** revert
-** Others
-*** log
+#+begin_notes
+We have discussed the precursor to commiting so now we need to actually commit
+to it
 
+A git commit is a collection of changes that will be added to your git history.
+commits represent the backbone of git and its important you make your commits
+small and to the point. don't try and stuff too many features into one commit as
+you lose a lot of the benefits of git. (as a rule of thumb try and keep each
+commit down to one fix or feature. eg a small bug fix or the addition of a
+function)
+#+end_notes
+*** commit
+#+begin_notes
+To create a commit you call the ~commit~ command. this will open up an editor for
+you to then type in a commit message. I won't go deep into commit etiquette but I
+recommend you search conventional commits as it provides a good framework for
+commit messages
+
+There are 2 flags that are useful but not recommended for proper projects
+the -a flag which commits all changes in the current directory
+and the -m flag which will allow you to type a message inline without using an
+editor.
+#+end_notes
+
+#+begin_src bash
+git commit # opens an editor where you type a message
+
+git commit -a # commit all changes
+git commit -m "commit message provided here"
+#+end_src
+** Branches
+#+begin_notes
+Branching is another really powerful feature of git. It allows you to make
+sweeping changes to your code without damaging the master copy of your code.
+
+Branches are cheap to make (taking up very little space) meaning you have no
+reason to use them!
+
+The main use of branches is to separate stable code from new features or bug
+fixes. This allows you to change the code to your hearts content without
+damaging your main copy
+#+end_notes
+*** branch
+#+begin_notes
+creating branches is quite easy. you just call the branch command and it will
+create a branch starting at the current branch. You can speify a different
+branch by providing it
+
+to delete a branch you add the -d flag
+
+If there are unmerged changes and the branch is not backed up you will need to
+force git by using the -D flag
+#+end_notes
+
+#+begin_src bash
+git branch <branch_name>
+
+git branch <branch_name> <base_branch_name>
+
+
+git branch -d <branch_name>
+
+git branch -D <branch_name>
+#+end_src
+*** checkout
+#+begin_notes
+We have created branches but now we need to use them so we use the checkout
+command
+
+git actually has a shortcut to create a new branch and switch to it. by adding
+the -b flag to the checkout command you can create a new branch there and then
+#+end_notes
+
+#+begin_src bash
+git checkout <branch_name> # switch to that branch
+
+git checkout -b <new_branch_name>
+#+end_src
+** Merging
+#+begin_notes
+Now that we have these branches we need to actually do somthing with them.. we
+discussed deleting them but thats not that useful. We need a way to merge them
+and update them as time goes on
+#+end_notes
+*** merge
+#+begin_notes
+merging takes the commits of the provided beach and /merges/ them into the current
+branch by making a merge commit. this tells git what commits have been merged
+into the current branch. As its a commit if you are not happy with the merge you
+can rollback the commit like any other. This is also known as non destructive
+merging
+
+the problem here is that there will be a commit everytime you merge the branch
+which can make the history of the branch messy and not that great. that is where
+the next kind of merging comes into play
+#+end_notes
+
+#+begin_src bash
+git checkout master
+git merge feature # merge feature into master
+
+git merge master feature # merge feature into master
+#+end_src
+
+*** rebase
+#+begin_notes
+rebasing rewrites the history of the current branch to incorporate the changes
+of the merging branch. this changes the history of the branch which is pretty
+dangerous that being said it also makes the code history much more readable
+and makes the project history linear. there are no forks to contend with making
+it much easier to follow a projects history.
+
+This comes at the cost of safety you are rewriting your history which every time
+travel show I have watched has said is a really dangerous thing to do. You also
+lose some context provided by the merge commit
+
+as for where to use which. I
+reccomend you rebase your main branch onto your feature branches and merge your
+feature branches into your main. This is what I see happen a lot but this is not
+a hard and fast rule
+#+end_notes
+
+#+begin_src bash
+git checkout feature
+git rebase master # rebase master onto feature
+
+git rebase feature master # samething but one line
+#+end_src
+
+** Remotes
+#+begin_notes
+We have reached another conundrum all of this code is local. We need a way to
+get it out into the world. We could put all of this code in a drop box folder
+and share that but I think you know that i am going to show you how to use git
+to do that
+#+end_notes
+*** remote
+#+begin_notes
+A remote is an online location for your code. people upload there code to github
+or gitlab some people even host there own server. but all are valid remotes
+
+to add one you call the remote add command and provide it with a name and the
+url
+
+to change the url call the set-url command
+
+and then rename and remove are self explanatory
+#+end_notes
+
+#+begin_src bash
+git remote add <remote_name> https://your.url.here/repo.git
+
+git remote add origin https://github.com/jeetelongname/example.git
+
+git remote set-url origin https://git.sr.ht/~jeetelongnamr/example.git # not real
+
+git remote rename orign upstream
+
+git remote remove upstream
+#+end_src
+
+*** push
+#+begin_notes
+To send your changes to your new fangled remote you use the push command. it
+takes the argument of the remote and the branch to push. when pushing the branch
+for the first time you should add the -u flag which tracks the branch
+
+You may need to also overwirte the remote for some reason this is risky as you
+could lose work other people push.
+#+end_notes
+
+#+begin_src bash
+git push origin master
+git push -u origin devel # pusing for the first time
+git push origin master --force # overwrite the remote
+#+end_src
+
+*** fetch
+#+begin_notes
+git fetch will download the files from a remote without doing anything with
+them. This allows you to look at what other people are doing without
+affecting your local copy. you can then merge it into your local copy later if
+you wish.
+
+note when you check out =some-branch= you will be in a detached head state which
+means that you can edit all of this and it will not affect your history
+#+end_notes
+
+#+begin_src bash
+git fetch origin # fetch all of the branches named origin
+git fetch origin some-branch
+
+git checkout some-branch
+#+end_src
+*** pull
+#+begin_notes
+pull is used to update your local branch with the changes of upstream. this is
+used a lot when working in a group and you need to get the changes from
+upstream. It fetches from upstream and then merges it into your code. If you
+want to rebase instead of merge you can use -r.
+#+end_notes
+
+#+begin_src bash
+git pull origin master # merges
+git pull -r origin master # rebases
+#+end_src
+
+** Reverting
+#+begin_notes
+Oh no we made a mistake in one of our commits and now we have angered all of the
+customers. We need to get back to a working commit. first we need to find the
+commit and then revert back to it
+#+end_notes
+*** log
+#+begin_notes
+the log command shows you a timeline of your code on the commit level you can
+then look through and get the unique hash for you to then pass onto the next
+command
+
+the -p flag provides a "diff" which shows you the changes in each commit
+#+end_notes
+*** revert
+#+begin_notes
+revert takes a hash (or the amount of commits you want to go back from) and will
+make a new commit with those changes applied. essentially rolling back to that
+commit.
+
+also note you don't need to paste in the entire commit hash you can get away
+with the first 5 terms and git will figure out the rest
+
+If that is still too much work you can then use some special syntax to roll back
+a certain amount of commits from the current one or the HEAD commit
+All its saying is roll back one commit behind head. we can put any number there
+but its not really a good solution if you need to go back to a specific commit
+#+end_notes
+
+#+begin_src bash
+git revert b4e73eef1e7a1620... # full hash works
+
+git revert b4e73 # also works
+
+git revert HEAD~1 # roll back one commit
+#+end_src
+* What do you do now?
+#+begin_notes
+Well you need to use git. I recommend you try and use git with any and every one
+of your projects. I actually used git for my NEA and it helped keep a record of
+what I have done and how long it took.
+
+And this is not the only way to use git. most text editors worth there salt have
+some sort of git integration and there are usually 3rd party front ends that can
+make using git much nicer and faster.
+#+end_notes
 
 * Any Questions?
