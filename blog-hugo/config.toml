@@ -47,7 +47,7 @@ url = "https://www.linkedin.com/in/jeetaditya-chatterjee-138792192/"
 [[params.social]]
 name = "RSS"
 icon = "rss"
-url = "/posts/index.xml"
+url = "/blog/posts/index.xml"
 
 [taxonomies]
    tag = "tags"
