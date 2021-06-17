@@ -1,1 +1,73 @@
 #+TITLE: Vim
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>Help I opend vim and I can't get out</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* What is vim?
+#+begin_notes
+Vim is a terminal and Modal text editor. it is known as the editor no one can
+exit out of. as well as being very extendable and having a learning curve
+#+end_notes
+* Why use vim?
+#+begin_notes
+vim is found as the default editor on a lot of linux distros and the basic
+ability to use it effectively will come in handy when you need to change a
+configuration file
+
+on a mroe philosophical note. vim adds a grammer to your editing which can make
+your editing fit more in line with the way you think. the additions of key
+commands can make your workflow faster and make your editing more smooth.
+
+plus you get all the bragging rights and eliteism that comes with vim ;)
+#+end_notes
+* The prerequisites
+** What are Modes?
+#+begin_notes
+Modes are a concept birthed from vim. they tell the keyboard how to process a
+key press. it can be processed as a simple character entry or a command of some
+kind.
+
+for our purposes there are 4 modes we need to worry about
+
+- normal mode
+  which is the default and the main one we will discuss
+- Insert mode which is very similar to the kind of editing you are used to
+- Command mode its very similar to the vscode command pallet if you have used
+  that
+- and Visual mode which is used to make visual selections
+#+end_notes
+#+ATTR_REVEAL: :frag (roll-in)
+- normal mode
+-
+* Basic Movements
+
+#+begin_notes
+
+#+end_notes
+* The Basics Of Command mode
+* Actually Inserting Text
+* Deleting Our Mistakes
+* The Basics Of Text Objects
+* Other Text Object Modifier's
+** Number Modifiers
+* Visual Mode
+* Larger Movements
+** Move page
+** Move Cursor
+** Move to the start / end
+** Move to a specific line
+*** Using an Ex command
+*** Using a key command
+* Some Other EX Commands
+** search
+** substute
+** r
+* What Can you do with this?
+** Plugins
+* Any Questions?
