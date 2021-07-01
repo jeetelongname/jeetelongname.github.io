@@ -201,27 +201,6 @@ else:
 #+RESULTS:
 : two
 
-#+reveal: split
-#+begin_src scheme
-(define lst '(23 3 1 4 2 4 69 420) )
-
-(define (function input)
-  (cond
-    ((or (null? input)
-         (null? (cdr input)))
-     input)
-    (else
-      (let ((pivot (car input))
-            (rest (cdr input)))
-        (append
-          (function
-            (filter (lambda (x) (< x pivot)) rest))
-          (list pivot)
-          (function
-            (filter (lambda (x) (>= x pivot)) rest)))))))
-
-(function lst)
-#+end_src
 ** or?
 #+begin_notes
 ~Or~ takes a list of symbolic expressions that evaluate to true or false and
@@ -265,15 +244,18 @@ multiple let bindings in the same function and the names and values won't clash.
 
 #+begin_src python
 
+x = 6
 def func():
     x = 5
 
 return x
 #+end_src
 
-: x is not defined
+: 6
 
 #+begin_src scheme
+
+(define x 6)
 
 (define (func)
   (let ((x 5))
@@ -282,25 +264,33 @@ return x
 x
 #+end_src
 
-: Unbound variable x
+: 6
 
 ** the actual body of this function
 #+begin_notes
 now we can discuss how the function actually works
+*try and guide them and not tell them*
 - we first check if the input is empty or the tail (every element except the
   first) of the input is empty. if so
   we return the input. something I did not discuss is that the last expression
   to be evaluated will be returned.
+
 - if the ~Or~ function returns false then the cond moves to the else clause
+
 - let binds the car (the first value of the array) to the name pivot and the
   name rest to the tail or everything but the first element
+
 - we then move into the body of the let expression.
   we use the append function to append multiple arrays.
+
 - we then apply the function to every element less than the pivot using the
   filter function.
+
 - filter takes a function that returns true and false (called a predicate) and a
   list and keeps all of the values that make the function evaluate to true
+
 - we then turn the pivot into a list
+
 - and apply function to all the elements that are more than or equal to the
   pivot
   as the append function is the last thing to be evaluated in the let expression
@@ -338,9 +328,15 @@ want to show you the same algorithm in some other languages
 #+end_notes
 ** haskell
 #+begin_notes
-Haskell is a purly functional langauge it is closer to maths in its notation
-mainly because it usses a different form of computation theory called lambda
-calculus
+Haskell is a purly functional langauge. it is very much different from any other
+language many people have seen and thats because it kind of is. It emulates a
+system of mathamatics called lambda calculus but thats a little out of scope for
+today.
+in a word haskell is an
+- imutables (meaning variables cannot change)
+- static (the type of the input can't change and is known when compiled
+- and lazy language (that means that it will only evaluate code if it *reallly*
+  needs to)
 
 here is the quicksort algorytm in haskell.
 other than the type signatures and the weird argument syntax you should be able
@@ -370,13 +366,14 @@ quicksort (p:xs) = (quicksort lesser) ++ [p] ++ (quicksort greater)
 
 ** ruby
 #+begin_notes
-ruby is a purely oop langauge where everything is an object. it have influences
+ruby is a purely oop langauge where everything is an object including primitives
+such as ints floats and chars. it have influences
 from python lisp smalltalk and probably some other languages. its used a lot of
-for web dev tho its slowly dieing
+for web dev and shell scripting.
 
-this ruby code is very similar to the lisp one. again the last form is the one
-that is returned though. return is used to exit early from a function. so we
-return if arr is empty
+the scheme influence is kinda big in ruby. like in scheme the last form is the one
+that is returned though return is used to exit early from a function. In this
+case we return if arr is empty
 
 then we destructure the input like we did in haskell or scheme. we put the first
 element in the var pivot and the rest in rest. the *star tells the interpreter
@@ -385,9 +382,9 @@ rest and use the appedn method to create the new list.
 #+end_notes
 #+begin_src ruby
 def quicksort (arr)
-  return arr if arr.empty?
+  return arr if arr.empty? # this if statement syntax can be used in python
 
-  pivot, *rest = arr
+  pivot, *rest = arr # this also works in python!
 
   (quicksort rest.filter { |x| x < pivot }).append(
     [pivot].append(
@@ -401,6 +398,14 @@ quicksort([2,3,1])
 
 * learning to learn
 #+begin_notes
+Now the question becomes why learn another language?
+well there are a couple of good reasons
+- It makes you more flexible
+- As we have seen in the ruby code a lot of skills and techniques can carry over
+  between languages
+- it can be fun!
+- sometimes a language can be the only way to code on a platform
+
 This brings me into my final point. When you want to learn a language you not
 only need to learn the language but learn how to learn.
 
@@ -411,11 +416,15 @@ for some its practical usage in this context a code project searching as you go
  in other words you fully embrace the stack overflow meme.
  I do this a lot when I want to learn a language. for example when I wanted to learn ruby I
 implemented aqa assembly. this turned into my nea. When I wanted to learn c I
-did a simliar thing with a language called brainf*uck. The other way could be to find a course.
+did a similar thing with a language called brainf*uck. The other way could be to find a course.
 I am learning haskell this way as it can be very theory heavy. and if you want
  to brush up on your python w3schools has a great course.
 
+ another resource I use is [[https://learnxinyminutes.com/]] which can and does
+ provide a great primer on languages and tools
+
  its just a matter of finding what works for you and using it so you can cement
  that knowledge
+
 #+end_notes
 * any questions?
