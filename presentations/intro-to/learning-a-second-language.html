@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Learning A Second Language</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Learning A Second Language</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i></i></h3><p>Press s for speaker notes</p>
+</section>
+
+
+<section>
+<section id="slide-orgf7a44e6">
+<h2 id="orgf7a44e6">How many people have used a language other than python in the within the last decade?</h2>
+<aside class="notes">
+<p>
+If your hand has gone up then I applaud you. You have passed the second barrier
+that comes to programmers (the first being learning your first language). you have broken that barrier of locking your
+programming thinking into the language you are using. If you have not we will
+break that barrier today and hopefully you should be more equipped to walk out
+into the world of programming languages and see them not a monolith but a medium
+to have a conversation with your computer
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org55741e4">
+<h2 id="org55741e4">so I presume that this code snippet will make little sense to people</h2>
+<aside class="notes">
+<p>
+so unless you are familiar with obscure academic languages then I will presume
+that you can&rsquo;t read this code all that well
+</p>
+
+<p>
+does anyone want to guess what this code does?
+</p>
+
+<p>
+<b>give hints</b>
+</p>
+<ul>
+<li>well we can probably say that lst is a list and that function is a function</li>
+<li><p>
+we can probably presume that the last line calls the function function.
+</p>
+
+<p>
+other than that we will probably struggle to read more without some sort of indepth
+ look at this languages semantics
+</p></li>
+
+</ul>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">define</span> <span style="color: #21bfc2;">lst</span> '<span style="color: #6c6f93;">(</span><span style="color: #f09383; font-weight: bold;">23</span> <span style="color: #f09383; font-weight: bold;">3</span> <span style="color: #f09383; font-weight: bold;">1</span> <span style="color: #f09383; font-weight: bold;">4</span> <span style="color: #f09383; font-weight: bold;">2</span> <span style="color: #f09383; font-weight: bold;">4</span> <span style="color: #f09383; font-weight: bold;">69</span> <span style="color: #f09383; font-weight: bold;">420</span><span style="color: #6c6f93;">)</span> <span style="color: #21bfc2;">)</span>
+
+<span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">define</span> <span style="color: #6c6f93;">(</span><span style="color: #21bfc2;">function</span> input<span style="color: #6c6f93;">)</span>
+  <span style="color: #6c6f93;">(</span><span style="color: #b877db; font-style: italic;">cond</span>
+    <span style="color: #09f7a0;">(</span><span style="color: #b877db;">(</span><span style="color: #b877db; font-style: italic;">or</span> <span style="color: #21bfc2;">(</span>null? input<span style="color: #21bfc2;">)</span>
+         <span style="color: #21bfc2;">(</span>null? <span style="color: #6c6f93;">(</span>cdr input<span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span>
+     input<span style="color: #09f7a0;">)</span>
+    <span style="color: #09f7a0;">(</span><span style="color: #b877db; font-style: italic;">else</span>
+      <span style="color: #b877db;">(</span><span style="color: #b877db; font-style: italic;">let</span> <span style="color: #21bfc2;">(</span><span style="color: #6c6f93;">(</span>pivot <span style="color: #09f7a0;">(</span>car input<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span>
+            <span style="color: #6c6f93;">(</span>rest <span style="color: #09f7a0;">(</span>cdr input<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span>
+        <span style="color: #21bfc2;">(</span>append
+          <span style="color: #6c6f93;">(</span>function
+            <span style="color: #09f7a0;">(</span>filter <span style="color: #b877db;">(</span><span style="color: #b877db; font-style: italic;">lambda</span> <span style="color: #21bfc2;">(</span>x<span style="color: #21bfc2;">)</span> <span style="color: #21bfc2;">(</span>&lt; x pivot<span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span> rest<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span>
+          <span style="color: #6c6f93;">(</span>list pivot<span style="color: #6c6f93;">)</span>
+          <span style="color: #6c6f93;">(</span>function
+            <span style="color: #09f7a0;">(</span>filter <span style="color: #b877db;">(</span><span style="color: #b877db; font-style: italic;">lambda</span> <span style="color: #21bfc2;">(</span>x<span style="color: #21bfc2;">)</span> <span style="color: #21bfc2;">(</span>&gt;= x pivot<span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span> rest<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span><span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span>
+
+<span style="color: #21bfc2;">(</span>function lst<span style="color: #21bfc2;">)</span>
+</pre>
+</div>
+
+
+<ul>
+<li class="fragment roll-in"><p>
+Our Output:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">3</td>
+<td class="org-right">4</td>
+<td class="org-right">4</td>
+<td class="org-right">23</td>
+<td class="org-right">69</td>
+<td class="org-right">420</td>
+</tr>
+</tbody>
+</table></li>
+
+</ul>
+</section>
+<section id="slide-org5ea7a4b">
+<h3 id="org5ea7a4b">the basic syntax</h3>
+<aside class="notes">
+<p>
+Now while syntax is important its is just a medium and you should know how to
+use and exploit and once understood is the easiest part of learning a language
+the syntax of scheme is very simple being comprised of 2 major forms in scheme.
+atomic forms and s-expressions atomic forms are things like Numbers Strings
+Symbols Booleans values and Characters.
+</p>
+
+<p>
+s-expression&rsquo;s or symbolic expression&rsquo;s are a combinations of these atoms to form
+larger structures. usually the first form after the first paren is the function
+call then the next form is an argument to that function.
+</p>
+
+<p>
+if you use a single quote before the start of a paren or before a symbol as
+shown in the atom then it will be treated literally the first construct is how
+we construct lists in scheme. the second is useful for passing around functions
+and variables without having to resort to some weird string conversion hacks
+</p>
+
+</aside>
+<ul>
+<li class="fragment roll-in"><p>
+atoms
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">    <span style="color: #f09383; font-weight: bold;">1</span> <span style="color: #6c6f93; background-color: #292b36; font-style: italic;">; </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">numbers</span>
+    <span style="color: #fab795;">"string"</span>
+    'sym <span style="color: #6c6f93; background-color: #292b36; font-style: italic;">; </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">symbols</span>
+    #t #f <span style="color: #6c6f93; background-color: #292b36; font-style: italic;">;; </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">booleans</span>
+    #\c <span style="color: #6c6f93; background-color: #292b36; font-style: italic;">; </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">harcters</span>
+</pre>
+</div></li>
+
+<li class="fragment roll-in"><p>
+s-exps
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">    <span style="color: #21bfc2;">(</span>some-function arg1 arg2 arg3...<span style="color: #21bfc2;">)</span>
+    <span style="color: #21bfc2;">(</span>some-function '<span style="color: #6c6f93;">(</span><span style="color: #fab795;">"a"</span> <span style="color: #fab795;">"list"</span> <span style="color: #fab795;">"of"</span> <span style="color: #fab795;">"strings"</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span> <span style="color: #6c6f93; background-color: #292b36; font-style: italic;">; </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">an example of a string list</span>
+    <span style="color: #21bfc2;">(</span>some-function 'some-symbol<span style="color: #21bfc2;">)</span>
+</pre>
+</div></li>
+
+</ul>
+
+</section>
+<section id="slide-orgce8e68b">
+<h3 id="orgce8e68b">that weird define keyword</h3>
+<aside class="notes">
+<p>
+in python there is a keyword to define functions. def you then provide it with a
+name and a set of arguments so on. variables are even simpler you just name it
+and use the asignment operator (also known as =) to name a value.
+</p>
+
+<p>
+but notice how we use the same keyword in a very similar way.
+so lets have a look at what it does.
+<a href="https://www.gnu.org/software/guile/manual/html_node/Definition.html">https://www.gnu.org/software/guile/manual/html_node/Definition.html</a> <b>use website</b>
+</p>
+
+<p>
+this explains variables but not the function.. or does it. a concept in lisp is
+that functions are first class citizens this means we can pass them around like
+any other value. scheme takes this further by making you define them in the same
+way.
+</p>
+
+<p>
+here all we are doing is binding the lambda or anonymous functions to the name
+func. the syntax you saw before provides a nicer syntax to do the same thing
+</p>
+
+<p>
+we actually have a similar thing in python with the <code>lambda</code> keyword
+</p>
+
+</aside>
+
+<ul>
+<li class="fragment roll-in"><p>
+the actual way to define functions
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">define</span> <span style="color: #21bfc2;">func</span>
+  <span style="color: #6c6f93;">(</span><span style="color: #b877db; font-style: italic;">lambda</span> <span style="color: #09f7a0;">(</span>x<span style="color: #09f7a0;">)</span> <span style="color: #09f7a0;">(</span>* x <span style="color: #f09383; font-weight: bold;">2</span><span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span>
+
+<span style="color: #21bfc2;">(</span>func <span style="color: #f09383; font-weight: bold;">2</span><span style="color: #21bfc2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+4
+</pre></li>
+
+<li class="fragment roll-in"><p>
+python lambdas
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">func</span> = <span style="color: #b877db; font-style: italic;">lambda</span> x: x * <span style="color: #f09383; font-weight: bold;">2</span>
+<span style="color: #b877db; font-style: italic;">return</span> func(<span style="color: #f09383; font-weight: bold;">2</span>)
+</pre>
+</div>
+
+<pre class="example">
+4
+</pre></li>
+
+</ul>
+
+</section>
+<section>
+
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">define</span> <span style="color: #21bfc2;">lst</span> '<span style="color: #6c6f93;">(</span><span style="color: #f09383; font-weight: bold;">23</span> <span style="color: #f09383; font-weight: bold;">3</span> <span style="color: #f09383; font-weight: bold;">1</span> <span style="color: #f09383; font-weight: bold;">4</span> <span style="color: #f09383; font-weight: bold;">2</span> <span style="color: #f09383; font-weight: bold;">4</span> <span style="color: #f09383; font-weight: bold;">69</span> <span style="color: #f09383; font-weight: bold;">420</span><span style="color: #6c6f93;">)</span> <span style="color: #21bfc2;">)</span>
+
+<span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">define</span> <span style="color: #6c6f93;">(</span><span style="color: #21bfc2;">function</span> input<span style="color: #6c6f93;">)</span>
+  <span style="color: #6c6f93;">(</span><span style="color: #b877db; font-style: italic;">cond</span>
+    <span style="color: #09f7a0;">(</span><span style="color: #b877db;">(</span><span style="color: #b877db; font-style: italic;">or</span> <span style="color: #21bfc2;">(</span>null? input<span style="color: #21bfc2;">)</span>
+         <span style="color: #21bfc2;">(</span>null? <span style="color: #6c6f93;">(</span>cdr input<span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span>
+     input<span style="color: #09f7a0;">)</span>
+    <span style="color: #09f7a0;">(</span><span style="color: #b877db; font-style: italic;">else</span>
+      <span style="color: #b877db;">(</span><span style="color: #b877db; font-style: italic;">let</span> <span style="color: #21bfc2;">(</span><span style="color: #6c6f93;">(</span>pivot <span style="color: #09f7a0;">(</span>car input<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span>
+            <span style="color: #6c6f93;">(</span>rest <span style="color: #09f7a0;">(</span>cdr input<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span>
+        <span style="color: #21bfc2;">(</span>append
+          <span style="color: #6c6f93;">(</span>function
+            <span style="color: #09f7a0;">(</span>filter <span style="color: #b877db;">(</span><span style="color: #b877db; font-style: italic;">lambda</span> <span style="color: #21bfc2;">(</span>x<span style="color: #21bfc2;">)</span> <span style="color: #21bfc2;">(</span>&lt; x pivot<span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span> rest<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span>
+          <span style="color: #6c6f93;">(</span>list pivot<span style="color: #6c6f93;">)</span>
+          <span style="color: #6c6f93;">(</span>function
+            <span style="color: #09f7a0;">(</span>filter <span style="color: #b877db;">(</span><span style="color: #b877db; font-style: italic;">lambda</span> <span style="color: #21bfc2;">(</span>x<span style="color: #21bfc2;">)</span> <span style="color: #21bfc2;">(</span>&gt;= x pivot<span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span> rest<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span><span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span>
+
+<span style="color: #21bfc2;">(</span>function lst<span style="color: #21bfc2;">)</span>
+</pre>
+</div>
+</section>
+<section id="slide-org8b9a96a">
+<h3 id="org8b9a96a">Whats cond?</h3>
+<aside class="notes">
+<p>
+cond takes multiple tests and an associated action and performs the first action
+which is true. its very similar to the if elif else tree but has much less
+syntax asociated with it.
+</p>
+
+<p>
+notice that last element. that else clause. it looks like any other symbol or
+call. thats because for the most part it is. This meta programming aspect of
+scheme is not something we will discuss today but if you are interested I would
+recommend looking up scheme macros. in a word its a way of defining syntactic
+structures like the ones we see here within the language itself
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">x</span> = <span style="color: #f09383; font-weight: bold;">2</span>
+<span style="color: #b877db; font-style: italic;">if</span> x == <span style="color: #f09383; font-weight: bold;">0</span>:
+    <span style="color: #b877db; font-style: italic;">return</span> <span style="color: #fab795;">"zero"</span>
+<span style="color: #b877db; font-style: italic;">elif</span> x == <span style="color: #f09383; font-weight: bold;">1</span>:
+    <span style="color: #b877db; font-style: italic;">return</span> <span style="color: #fab795;">"one"</span>
+<span style="color: #b877db; font-style: italic;">elif</span> x == <span style="color: #f09383; font-weight: bold;">2</span>:
+    <span style="color: #b877db; font-style: italic;">return</span> <span style="color: #fab795;">"two"</span>
+<span style="color: #b877db; font-style: italic;">else</span>:
+    <span style="color: #b877db; font-style: italic;">return</span> <span style="color: #fab795;">"you do a lot of counting"</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">define</span> <span style="color: #21bfc2;">x</span> <span style="color: #f09383; font-weight: bold;">2</span><span style="color: #21bfc2;">)</span>
+
+<span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">cond</span> <span style="color: #6c6f93;">(</span><span style="color: #09f7a0;">(</span>= x <span style="color: #f09383; font-weight: bold;">0</span><span style="color: #09f7a0;">)</span>
+       <span style="color: #fab795;">"zero"</span><span style="color: #6c6f93;">)</span>
+      <span style="color: #6c6f93;">(</span><span style="color: #09f7a0;">(</span>= x <span style="color: #f09383; font-weight: bold;">1</span><span style="color: #09f7a0;">)</span>
+       <span style="color: #fab795;">"one"</span><span style="color: #6c6f93;">)</span>
+      <span style="color: #6c6f93;">(</span><span style="color: #09f7a0;">(</span>= x <span style="color: #f09383; font-weight: bold;">2</span><span style="color: #09f7a0;">)</span>
+       <span style="color: #fab795;">"two"</span><span style="color: #6c6f93;">)</span>
+      <span style="color: #6c6f93;">(</span><span style="color: #b877db; font-style: italic;">else</span> <span style="color: #6c6f93; background-color: #292b36; font-style: italic;">;; </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">always evaluates to true</span>
+       <span style="color: #fab795;">"you do a lot of counting"</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span>
+</pre>
+</div>
+
+</section>
+<section>
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">define</span> <span style="color: #21bfc2;">lst</span> '<span style="color: #6c6f93;">(</span><span style="color: #f09383; font-weight: bold;">23</span> <span style="color: #f09383; font-weight: bold;">3</span> <span style="color: #f09383; font-weight: bold;">1</span> <span style="color: #f09383; font-weight: bold;">4</span> <span style="color: #f09383; font-weight: bold;">2</span> <span style="color: #f09383; font-weight: bold;">4</span> <span style="color: #f09383; font-weight: bold;">69</span> <span style="color: #f09383; font-weight: bold;">420</span><span style="color: #6c6f93;">)</span> <span style="color: #21bfc2;">)</span>
+
+<span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">define</span> <span style="color: #6c6f93;">(</span><span style="color: #21bfc2;">function</span> input<span style="color: #6c6f93;">)</span>
+  <span style="color: #6c6f93;">(</span><span style="color: #b877db; font-style: italic;">cond</span>
+    <span style="color: #09f7a0;">(</span><span style="color: #b877db;">(</span><span style="color: #b877db; font-style: italic;">or</span> <span style="color: #21bfc2;">(</span>null? input<span style="color: #21bfc2;">)</span>
+         <span style="color: #21bfc2;">(</span>null? <span style="color: #6c6f93;">(</span>cdr input<span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span>
+     input<span style="color: #09f7a0;">)</span>
+    <span style="color: #09f7a0;">(</span><span style="color: #b877db; font-style: italic;">else</span>
+      <span style="color: #b877db;">(</span><span style="color: #b877db; font-style: italic;">let</span> <span style="color: #21bfc2;">(</span><span style="color: #6c6f93;">(</span>pivot <span style="color: #09f7a0;">(</span>car input<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span>
+            <span style="color: #6c6f93;">(</span>rest <span style="color: #09f7a0;">(</span>cdr input<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span>
+        <span style="color: #21bfc2;">(</span>append
+          <span style="color: #6c6f93;">(</span>function
+            <span style="color: #09f7a0;">(</span>filter <span style="color: #b877db;">(</span><span style="color: #b877db; font-style: italic;">lambda</span> <span style="color: #21bfc2;">(</span>x<span style="color: #21bfc2;">)</span> <span style="color: #21bfc2;">(</span>&lt; x pivot<span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span> rest<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span>
+          <span style="color: #6c6f93;">(</span>list pivot<span style="color: #6c6f93;">)</span>
+          <span style="color: #6c6f93;">(</span>function
+            <span style="color: #09f7a0;">(</span>filter <span style="color: #b877db;">(</span><span style="color: #b877db; font-style: italic;">lambda</span> <span style="color: #21bfc2;">(</span>x<span style="color: #21bfc2;">)</span> <span style="color: #21bfc2;">(</span>&gt;= x pivot<span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span> rest<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span><span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span>
+
+<span style="color: #21bfc2;">(</span>function lst<span style="color: #21bfc2;">)</span>
+</pre>
+</div>
+</section>
+<section id="slide-orgb5d0fef">
+<h3 id="orgb5d0fef">or?</h3>
+<aside class="notes">
+<p>
+or takes a list of symbolic expressions that evaluate to true or false and
+returns true if one of them returns true. this is like the or keyword in python
+but means you don&rsquo;t need to chain a lot of or calls to do the same thing.
+there is another function called and which will return false if any of the
+functions return false.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">return</span> <span style="color: #f09383;">False</span> <span style="color: #b877db; font-style: italic;">or</span> <span style="color: #f09383;">False</span> <span style="color: #b877db; font-style: italic;">or</span> <span style="color: #f09383;">True</span>
+</pre>
+</div>
+
+<pre class="example">
+True
+</pre>
+
+
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">or</span> #f #f #t<span style="color: #21bfc2;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+#t
+</pre>
+
+</section>
+<section id="slide-orgc686ce9">
+<h3 id="orgc686ce9">let</h3>
+<aside class="notes">
+<p>
+this is the final scheme construct we will be discussing
+let allows us to bind values to names within the binding itself.
+this is like creating a variable in a function in python. it can only be accessed
+in that function. its the same for let bindings. they can only be accessed in
+the body of the binding. this is useful for a few reasons. one it makes
+</p>
+
+</aside>
+</section>
+<section id="slide-orgabb6993">
+<h3 id="orgabb6993">the actual body of this function</h3>
+</section>
+</section>
+<section>
+<section id="slide-orgf9e1f16">
+<h2 id="orgf9e1f16">the same code in other languages</h2>
+<div class="outline-text-2" id="text-orgf9e1f16">
+</div>
+</section>
+<section id="slide-org5adfdee">
+<h3 id="org5adfdee">haskell</h3>
+<div class="org-src-container">
+
+<pre class="src src-haskell"><span style="color: #21bfc2;">quicksort</span> <span style="color: #c7c9cb;">::</span> <span style="color: #b877db;">Ord</span> a <span style="color: #c7c9cb;">=&gt;</span> [a] <span style="color: #c7c9cb;">-&gt;</span> [a] <span style="color: #6c6f93; background-color: #292b36; font-style: italic;">-- </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">take any type that can be ordered</span>
+<span style="color: #21bfc2;">quicksort</span> <span style="color: #fab795;">[]</span>     <span style="color: #c7c9cb;">=</span> <span style="color: #fab795;">[]</span>
+<span style="color: #21bfc2;">quicksort</span> (p<span style="color: #fab795;">:</span>xs) <span style="color: #c7c9cb;">=</span> (quicksort lesser) <span style="color: #c7c9cb;">++</span> [p] <span style="color: #c7c9cb;">++</span> (quicksort greater)
+    <span style="color: #b877db; font-style: italic;">where</span>
+        lesser  <span style="color: #c7c9cb;">=</span> filter (<span style="color: #c7c9cb;">&lt;</span> p) xs
+        greater <span style="color: #c7c9cb;">=</span> filter (<span style="color: #c7c9cb;">&gt;=</span> p) xs
+
+<span style="color: #6c6f93; background-color: #292b36; font-style: italic;">-- </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">quicksort [2,3,1]</span>
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">3</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section id="slide-org821ff93">
+<h3 id="org821ff93">ruby</h3>
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #21bfc2;">quicksort</span> (arr)
+  <span style="color: #b877db; font-style: italic;">return</span> arr <span style="color: #b877db; font-style: italic;">if</span> arr.empty?
+
+  pivot, *rest = arr
+
+  (quicksort (rest.filter { |x| x &lt; pivot })).append(
+    [pivot].append(
+      quicksort (rest.filter { |x| x &gt;= pivot }))).flatten
+<span style="color: #b877db; font-style: italic;">end</span>
+
+quicksort([<span style="color: #f09383; font-weight: bold;">2</span>,<span style="color: #f09383; font-weight: bold;">3</span>,<span style="color: #f09383; font-weight: bold;">1</span>])
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">3</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+</section>
+<section>
+<section id="slide-org78e2077">
+<h2 id="org78e2077">learning to learn</h2>
+</section>
+</section>
+<section>
+<section id="slide-org3a9029c">
+<h2 id="org3a9029c">any questions</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
