@@ -331,10 +331,33 @@ now we can discuss how the function actually works
 | 1 | 2 | 3 | 4 | 4 | 23 | 69 | 420 |
 
 * the same code in other languages
+#+begin_notes
+Congrats you have picked up a little scheme! you now know the basics. tho my I
+don't want you to come away with only this weird parenthasis filled language. I
+want to show you the same algorithm in some other languages
+#+end_notes
 ** haskell
+#+begin_notes
+Haskell is a purly functional langauge it is closer to maths in its notation
+mainly because it usses a different form of computation theory called lambda
+calculus
+
+here is the quicksort algorytm in haskell.
+other than the type signatures and the weird argument syntax you should be able
+to understand the gist of what it does.
+
+that input syntax is called pattern matching. is can summerise down to taking a
+data structure and then checking if it conforms to a pattern (in this case the
+pattern of the first element of a list and then the rest of the list) and then
+binding it to a name. its like the let expression before where we bindied the
+names to the car and cdr of a list
+we then join the arrays using the ++ operator which works like the append
+function. we append to another function call which is just recalling the
+function on all the values less than the pivot
+#+end_notes
 #+begin_src haskell
 quicksort :: Ord a => [a] -> [a] -- take any type that can be ordered
-quicksort []     = []
+quicksort []     = [] -- if the input is an empty list return an empty list
 quicksort (p:xs) = (quicksort lesser) ++ [p] ++ (quicksort greater)
     where
         lesser  = filter (< p) xs
@@ -346,6 +369,20 @@ quicksort (p:xs) = (quicksort lesser) ++ [p] ++ (quicksort greater)
 | 1 | 2 | 3 |
 
 ** ruby
+#+begin_notes
+ruby is a purely oop langauge where everything is an object. it have influences
+from python lisp smalltalk and probably some other languages. its used a lot of
+for web dev tho its slowly dieing
+
+this ruby code is very similar to the lisp one. again the last form is the one
+that is returned though. return is used to exit early from a function. so we
+return if arr is empty
+
+then we destructure the input like we did in haskell or scheme. we put the first
+element in the var pivot and the rest in rest. the *star tells the interpreter
+to dump the rest into that rest var. we then quicksort the filtered output of
+rest and use the appedn method to create the new list.
+#+end_notes
 #+begin_src ruby
 def quicksort (arr)
   return arr if arr.empty?
@@ -363,4 +400,22 @@ quicksort([2,3,1])
 | 1 | 2 | 3 |
 
 * learning to learn
-* any questions
+#+begin_notes
+This brings me into my final point. When you want to learn a language you not
+only need to learn the language but learn how to learn.
+
+learning to learn mean you have to spend some time and find out how you pick up
+knowledge.
+
+for some its practical usage in this context a code project searching as you go
+ in other words you fully embrace the stack overflow meme.
+ I do this a lot when I want to learn a language. for example when I wanted to learn ruby I
+implemented aqa assembly. this turned into my nea. When I wanted to learn c I
+did a simliar thing with a language called brainf*uck. The other way could be to find a course.
+I am learning haskell this way as it can be very theory heavy. and if you want
+ to brush up on your python w3schools has a great course.
+
+ its just a matter of finding what works for you and using it so you can cement
+ that knowledge
+#+end_notes
+* any questions?

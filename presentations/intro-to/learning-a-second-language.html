@@ -20,8 +20,8 @@
 
 
 <section>
-<section id="slide-org991a794">
-<h2 id="org991a794">How many people have used a language other than python in the within the last decade?</h2>
+<section id="slide-org01407be">
+<h2 id="org01407be">How many people have used a language other than python in the within the last decade?</h2>
 <aside class="notes">
 <p>
 If your hand has gone up then I applaud you. You have passed the second barrier
@@ -37,8 +37,8 @@ to have a conversation with your computer.
 </section>
 </section>
 <section>
-<section id="slide-orgd4ae836">
-<h2 id="orgd4ae836">so I presume that this code snippet will make little sense to people</h2>
+<section id="slide-org0e4c7ad">
+<h2 id="org0e4c7ad">so I presume that this code snippet will make little sense to people</h2>
 <aside class="notes">
 <p>
 so unless you are familiar with obscure academic languages then I will presume
@@ -131,8 +131,8 @@ Our Output:
 
 </ul>
 </section>
-<section id="slide-orgd5c6c3e">
-<h3 id="orgd5c6c3e">the basic syntax</h3>
+<section id="slide-org7eecd20">
+<h3 id="org7eecd20">the basic syntax</h3>
 <aside class="notes">
 <p>
 Syntax, whilst important, is just the basics. To draw a comparison towards learning a spoken
@@ -185,8 +185,8 @@ s-exps
 </ul>
 
 </section>
-<section id="slide-org03b233d">
-<h3 id="org03b233d">that weird define keyword</h3>
+<section id="slide-org023b684">
+<h3 id="org023b684">that weird define keyword</h3>
 <aside class="notes">
 <p>
 in python there is a keyword to define functions. def you then provide it with a
@@ -277,8 +277,8 @@ python lambdas
 </pre>
 </div>
 </section>
-<section id="slide-org2ea724a">
-<h3 id="org2ea724a">Whats cond?</h3>
+<section id="slide-orga3c219f">
+<h3 id="orga3c219f">Whats cond?</h3>
 <aside class="notes">
 <p>
 cond takes multiple tests and an associated action and performs the first action
@@ -350,8 +350,8 @@ structures like the ones we see here within the language itself
 </pre>
 </div>
 </section>
-<section id="slide-orgba71254">
-<h3 id="orgba71254">or?</h3>
+<section id="slide-org0d14e48">
+<h3 id="org0d14e48">or?</h3>
 <aside class="notes">
 <p>
 <code>Or</code> takes a list of symbolic expressions that evaluate to true or false and
@@ -389,8 +389,8 @@ True
 </pre>
 
 </section>
-<section id="slide-org86e7eee">
-<h3 id="org86e7eee">let</h3>
+<section id="slide-org54361bb">
+<h3 id="org54361bb">let</h3>
 <aside class="notes">
 <p>
 this is the final scheme construct we will be discussing
@@ -450,8 +450,8 @@ Unbound variable x
 </pre>
 
 </section>
-<section id="slide-orge7d7a42">
-<h3 id="orge7d7a42">the actual body of this function</h3>
+<section id="slide-org32bfa0f">
+<h3 id="org32bfa0f">the actual body of this function</h3>
 <aside class="notes">
 <p>
 now we can discuss how the function actually works
@@ -474,7 +474,7 @@ list and keeps all of the values that make the function evaluate to true</li>
 <li>and apply function to all the elements that are more than or equal to the
 pivot
 as the append function is the last thing to be evaluated in the let expression
-it will be returned</li>
+we will return what it evaluates</li>
 
 </ul>
 
@@ -540,17 +540,48 @@ it will be returned</li>
 </section>
 </section>
 <section>
-<section id="slide-org7ad7e0b">
-<h2 id="org7ad7e0b">the same code in other languages</h2>
-<div class="outline-text-2" id="text-org7ad7e0b">
-</div>
+<section id="slide-org90f6386">
+<h2 id="org90f6386">the same code in other languages</h2>
+<aside class="notes">
+<p>
+Congrats you have picked up a little scheme! you now know the basics. tho my I
+don&rsquo;t want you to come away with only this weird parenthasis filled language. I
+want to show you the same algorithm in some other languages
+</p>
+
+</aside>
 </section>
-<section id="slide-org87fbc38">
-<h3 id="org87fbc38">haskell</h3>
+<section id="slide-orgd987aa7">
+<h3 id="orgd987aa7">haskell</h3>
+<aside class="notes">
+<p>
+Haskell is a purly functional langauge it is closer to maths in its notation
+mainly because it usses a different form of computation theory called lambda
+calculus
+</p>
+
+<p>
+here is the quicksort algorytm in haskell.
+other than the type signatures and the weird argument syntax you should be able
+to understand the gist of what it does.
+</p>
+
+<p>
+that input syntax is called pattern matching. is can summerise down to taking a
+data structure and then checking if it conforms to a pattern (in this case the
+pattern of the first element of a list and then the rest of the list) and then
+binding it to a name. its like the let expression before where we bindied the
+names to the car and cdr of a list
+we then join the arrays using the ++ operator which works like the append
+function. we append to another function call which is just recalling the
+function on all the values less than the pivot
+</p>
+
+</aside>
 <div class="org-src-container">
 
 <pre class="src src-haskell"><span style="color: #21bfc2;">quicksort</span> <span style="color: #c7c9cb;">::</span> <span style="color: #b877db;">Ord</span> a <span style="color: #c7c9cb;">=&gt;</span> [a] <span style="color: #c7c9cb;">-&gt;</span> [a] <span style="color: #6c6f93; background-color: #292b36; font-style: italic;">-- </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">take any type that can be ordered</span>
-<span style="color: #21bfc2;">quicksort</span> <span style="color: #fab795;">[]</span>     <span style="color: #c7c9cb;">=</span> <span style="color: #fab795;">[]</span>
+<span style="color: #21bfc2;">quicksort</span> <span style="color: #fab795;">[]</span>     <span style="color: #c7c9cb;">=</span> <span style="color: #fab795;">[]</span> <span style="color: #6c6f93; background-color: #292b36; font-style: italic;">-- </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">if the input is an empty list return an empty list</span>
 <span style="color: #21bfc2;">quicksort</span> (p<span style="color: #fab795;">:</span>xs) <span style="color: #c7c9cb;">=</span> (quicksort lesser) <span style="color: #c7c9cb;">++</span> [p] <span style="color: #c7c9cb;">++</span> (quicksort greater)
     <span style="color: #b877db; font-style: italic;">where</span>
         lesser  <span style="color: #c7c9cb;">=</span> filter (<span style="color: #c7c9cb;">&lt;</span> p) xs
@@ -580,8 +611,29 @@ it will be returned</li>
 </table>
 
 </section>
-<section id="slide-org36e6109">
-<h3 id="org36e6109">ruby</h3>
+<section id="slide-org07790e5">
+<h3 id="org07790e5">ruby</h3>
+<aside class="notes">
+<p>
+ruby is a purely oop langauge where everything is an object. it have influences
+from python lisp smalltalk and probably some other languages. its used a lot of
+for web dev tho its slowly dieing
+</p>
+
+<p>
+this ruby code is very similar to the lisp one. again the last form is the one
+that is returned though. return is used to exit early from a function. so we
+return if arr is empty
+</p>
+
+<p>
+then we destructure the input like we did in haskell or scheme. we put the first
+element in the var pivot and the rest in rest. the *star tells the interpreter
+to dump the rest into that rest var. we then quicksort the filtered output of
+rest and use the appedn method to create the new list.
+</p>
+
+</aside>
 <div class="org-src-container">
 
 <pre class="src src-ruby"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #21bfc2;">quicksort</span> (arr)
@@ -620,13 +672,40 @@ quicksort([<span style="color: #f09383; font-weight: bold;">2</span>,<span style
 </section>
 </section>
 <section>
-<section id="slide-org41d2084">
-<h2 id="org41d2084">learning to learn</h2>
+<section id="slide-org2f0d1f5">
+<h2 id="org2f0d1f5">learning to learn</h2>
+<aside class="notes">
+<p>
+This brings me into my final point. When you want to learn a language you not
+only need to learn the language but learn how to learn.
+</p>
+
+<p>
+learning to learn mean you have to spend some time and find out how you pick up
+knowledge.
+</p>
+
+<p>
+for some its practical usage in this context a code project searching as you go
+ in other words you fully embrace the stack overflow meme.
+ I do this a lot when I want to learn a language. for example when I wanted to learn ruby I
+implemented aqa assembly. this turned into my nea. When I wanted to learn c I
+did a simliar thing with a language called brainf*uck. The other way could be to find a course.
+I am learning haskell this way as it can be very theory heavy. and if you want
+ to brush up on your python w3schools has a great course.
+</p>
+
+<p>
+its just a matter of finding what works for you and using it so you can cement
+that knowledge
+</p>
+
+</aside>
 </section>
 </section>
 <section>
-<section id="slide-orgdf6ed49">
-<h2 id="orgdf6ed49">any questions</h2>
+<section id="slide-org666cd1f">
+<h2 id="org666cd1f">any questions?</h2>
 </section>
 </section>
 </div>
