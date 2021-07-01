@@ -396,7 +396,7 @@ quicksort([2,3,1])
 
 | 1 | 2 | 3 |
 
-* learning to learn
+* Why learn a second language
 #+begin_notes
 Now the question becomes why learn another language?
 well there are a couple of good reasons
@@ -405,6 +405,17 @@ well there are a couple of good reasons
   between languages
 - it can be fun!
 - sometimes a language can be the only way to code on a platform
+#+end_notes
+
+#+ATTR_REVEAL: :frag (roll-in)
+- It makes you more flexible
+- As we have seen in the ruby code a lot of skills and techniques can carry over
+  between languages
+- it can be fun!
+- sometimes a language can be the only way to code on a platform
+
+* learning to learn
+#+begin_notes
 
 This brings me into my final point. When you want to learn a language you not
 only need to learn the language but learn how to learn.
