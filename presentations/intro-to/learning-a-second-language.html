@@ -15,13 +15,13 @@
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h1>Learning A Second Language</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i></i></h3><p>Press s for speaker notes</p>
+<h1>Learning A Second Language</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>if you know how to do hello world you are sorted</i></h3><p>Press s for speaker notes</p>
 </section>
 
 
 <section>
-<section id="slide-orgf7a44e6">
-<h2 id="orgf7a44e6">How many people have used a language other than python in the within the last decade?</h2>
+<section id="slide-org991a794">
+<h2 id="org991a794">How many people have used a language other than python in the within the last decade?</h2>
 <aside class="notes">
 <p>
 If your hand has gone up then I applaud you. You have passed the second barrier
@@ -29,7 +29,7 @@ that comes to programmers (the first being learning your first language). you ha
 programming thinking into the language you are using. If you have not we will
 break that barrier today and hopefully you should be more equipped to walk out
 into the world of programming languages and see them not a monolith but a medium
-to have a conversation with your computer
+to have a conversation with your computer.
 </p>
 
 </aside>
@@ -37,8 +37,8 @@ to have a conversation with your computer
 </section>
 </section>
 <section>
-<section id="slide-org55741e4">
-<h2 id="org55741e4">so I presume that this code snippet will make little sense to people</h2>
+<section id="slide-orgd4ae836">
+<h2 id="orgd4ae836">so I presume that this code snippet will make little sense to people</h2>
 <aside class="notes">
 <p>
 so unless you are familiar with obscure academic languages then I will presume
@@ -131,13 +131,14 @@ Our Output:
 
 </ul>
 </section>
-<section id="slide-org5ea7a4b">
-<h3 id="org5ea7a4b">the basic syntax</h3>
+<section id="slide-orgd5c6c3e">
+<h3 id="orgd5c6c3e">the basic syntax</h3>
 <aside class="notes">
 <p>
-Now while syntax is important its is just a medium and you should know how to
-use and exploit and once understood is the easiest part of learning a language
-the syntax of scheme is very simple being comprised of 2 major forms in scheme.
+Syntax, whilst important, is just the basics. To draw a comparison towards learning a spoken
+language its like learning the grammar without knowing a single word. That being
+said, syntax is usually the easy part and should come after a while if you have
+spent enough time with it. The syntax of scheme is very simple being comprised of 2 major forms in scheme.
 atomic forms and s-expressions atomic forms are things like Numbers Strings
 Symbols Booleans values and Characters.
 </p>
@@ -184,8 +185,8 @@ s-exps
 </ul>
 
 </section>
-<section id="slide-orgce8e68b">
-<h3 id="orgce8e68b">that weird define keyword</h3>
+<section id="slide-org03b233d">
+<h3 id="org03b233d">that weird define keyword</h3>
 <aside class="notes">
 <p>
 in python there is a keyword to define functions. def you then provide it with a
@@ -276,8 +277,8 @@ python lambdas
 </pre>
 </div>
 </section>
-<section id="slide-org8b9a96a">
-<h3 id="org8b9a96a">Whats cond?</h3>
+<section id="slide-org2ea724a">
+<h3 id="org2ea724a">Whats cond?</h3>
 <aside class="notes">
 <p>
 cond takes multiple tests and an associated action and performs the first action
@@ -287,7 +288,7 @@ syntax asociated with it.
 
 <p>
 notice that last element. that else clause. it looks like any other symbol or
-call. thats because for the most part it is. This meta programming aspect of
+call which is because for the most part it is. This meta programming aspect of
 scheme is not something we will discuss today but if you are interested I would
 recommend looking up scheme macros. in a word its a way of defining syntactic
 structures like the ones we see here within the language itself
@@ -349,15 +350,19 @@ structures like the ones we see here within the language itself
 </pre>
 </div>
 </section>
-<section id="slide-orgb5d0fef">
-<h3 id="orgb5d0fef">or?</h3>
+<section id="slide-orgba71254">
+<h3 id="orgba71254">or?</h3>
 <aside class="notes">
 <p>
-or takes a list of symbolic expressions that evaluate to true or false and
-returns true if one of them returns true. this is like the or keyword in python
-but means you don&rsquo;t need to chain a lot of or calls to do the same thing.
-there is another function called and which will return false if any of the
-functions return false.
+<code>Or</code> takes a list of symbolic expressions that evaluate to true or false and
+returns true if one of them returns true. this is like the <code>Or</code> keyword in python
+but means you don&rsquo;t need to chain a lot of <code>Or</code> calls to check against multiple
+statements
+</p>
+
+<p>
+there is another function called <code>And</code> which will return false if any of the
+functions return false. (the opposite of or like the boolean gates)
 </p>
 
 </aside>
@@ -384,31 +389,164 @@ True
 </pre>
 
 </section>
-<section id="slide-orgc686ce9">
-<h3 id="orgc686ce9">let</h3>
+<section id="slide-org86e7eee">
+<h3 id="org86e7eee">let</h3>
 <aside class="notes">
 <p>
 this is the final scheme construct we will be discussing
-let allows us to bind values to names within the binding itself.
-this is like creating a variable in a function in python. it can only be accessed
-in that function. its the same for let bindings. they can only be accessed in
-the body of the binding. this is useful for a few reasons. one it makes
+</p>
+
+<p>
+let allows us to bind values to names within the let structure itself.
+</p>
+
+<p>
+this is like creating a variable in a function in python. it is only accesable
+in the scope of the function.
+its the same for let bindings. the variables bound can only be accessed in the body of the binding.
+this is useful for a few reasons.
+</p>
+
+<p>
+one it allows us to bind names to valuse without creating a variable. using
+define is seen as bad form and let allows us to skirt round that.
+</p>
+
+<p>
+second it scopes the bindings to a specific part meaning you can have
+multiple let bindings in the same function and the names and values won&rsquo;t clash.
 </p>
 
 </aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python">
+<span style="color: #b877db; font-style: italic;">def</span> <span style="color: #21bfc2;">func</span>():
+    <span style="color: #e95678;">x</span> = <span style="color: #f09383; font-weight: bold;">5</span>
+
+<span style="color: #b877db; font-style: italic;">return</span> x
+</pre>
+</div>
+
+<pre class="example">
+x is not defined
+</pre>
+
+
+<div class="org-src-container">
+
+<pre class="src src-scheme">
+<span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">define</span> <span style="color: #6c6f93;">(</span><span style="color: #21bfc2;">func</span><span style="color: #6c6f93;">)</span>
+  <span style="color: #6c6f93;">(</span><span style="color: #b877db; font-style: italic;">let</span> <span style="color: #09f7a0;">(</span><span style="color: #b877db;">(</span>x <span style="color: #f09383; font-weight: bold;">5</span><span style="color: #b877db;">)</span><span style="color: #09f7a0;">)</span>
+    x * <span style="color: #f09383; font-weight: bold;">2</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span> <span style="color: #6c6f93; background-color: #292b36; font-style: italic;">;; </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">or some other processing of x</span>
+
+x
+</pre>
+</div>
+
+<pre class="example">
+Unbound variable x
+</pre>
+
 </section>
-<section id="slide-orgabb6993">
-<h3 id="orgabb6993">the actual body of this function</h3>
+<section id="slide-orge7d7a42">
+<h3 id="orge7d7a42">the actual body of this function</h3>
+<aside class="notes">
+<p>
+now we can discuss how the function actually works
+</p>
+<ul>
+<li>we first check if the input is empty or the tail (every element except the
+first) of the input is empty. if so
+we return the input. something I did not discuss is that the last expression
+to be evaluated will be returned.</li>
+<li>if the <code>Or</code> function returns false then the cond moves to the else clause</li>
+<li>let binds the car (the first value of the array) to the name pivot and the
+name rest to the tail or everything but the first element</li>
+<li>we then move into the body of the let expression.
+we use the append function to append multiple arrays.</li>
+<li>we then apply the function to every element less than the pivot using the
+filter function.</li>
+<li>filter takes a function that returns true and false (called a predicate) and a
+list and keeps all of the values that make the function evaluate to true</li>
+<li>we then turn the pivot into a list</li>
+<li>and apply function to all the elements that are more than or equal to the
+pivot
+as the append function is the last thing to be evaluated in the let expression
+it will be returned</li>
+
+</ul>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-scheme"><span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">define</span> <span style="color: #21bfc2;">lst</span> '<span style="color: #6c6f93;">(</span><span style="color: #f09383; font-weight: bold;">23</span> <span style="color: #f09383; font-weight: bold;">3</span> <span style="color: #f09383; font-weight: bold;">1</span> <span style="color: #f09383; font-weight: bold;">4</span> <span style="color: #f09383; font-weight: bold;">2</span> <span style="color: #f09383; font-weight: bold;">4</span> <span style="color: #f09383; font-weight: bold;">69</span> <span style="color: #f09383; font-weight: bold;">420</span><span style="color: #6c6f93;">)</span> <span style="color: #21bfc2;">)</span>
+
+<span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">define</span> <span style="color: #6c6f93;">(</span><span style="color: #21bfc2;">function</span> input<span style="color: #6c6f93;">)</span>
+  <span style="color: #6c6f93;">(</span><span style="color: #b877db; font-style: italic;">cond</span>
+    <span style="color: #09f7a0;">(</span><span style="color: #b877db;">(</span><span style="color: #b877db; font-style: italic;">or</span> <span style="color: #21bfc2;">(</span>null? input<span style="color: #21bfc2;">)</span>
+         <span style="color: #21bfc2;">(</span>null? <span style="color: #6c6f93;">(</span>cdr input<span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span>
+     input<span style="color: #09f7a0;">)</span>
+    <span style="color: #09f7a0;">(</span><span style="color: #b877db; font-style: italic;">else</span>
+      <span style="color: #b877db;">(</span><span style="color: #b877db; font-style: italic;">let</span> <span style="color: #21bfc2;">(</span><span style="color: #6c6f93;">(</span>pivot <span style="color: #09f7a0;">(</span>car input<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span>
+            <span style="color: #6c6f93;">(</span>rest <span style="color: #09f7a0;">(</span>cdr input<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span>
+        <span style="color: #21bfc2;">(</span>append
+          <span style="color: #6c6f93;">(</span>function
+            <span style="color: #09f7a0;">(</span>filter <span style="color: #b877db;">(</span><span style="color: #b877db; font-style: italic;">lambda</span> <span style="color: #21bfc2;">(</span>x<span style="color: #21bfc2;">)</span> <span style="color: #21bfc2;">(</span>&lt; x pivot<span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span> rest<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span>
+          <span style="color: #6c6f93;">(</span>list pivot<span style="color: #6c6f93;">)</span>
+          <span style="color: #6c6f93;">(</span>function
+            <span style="color: #09f7a0;">(</span>filter <span style="color: #b877db;">(</span><span style="color: #b877db; font-style: italic;">lambda</span> <span style="color: #21bfc2;">(</span>x<span style="color: #21bfc2;">)</span> <span style="color: #21bfc2;">(</span>&gt;= x pivot<span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span> rest<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span><span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span>
+
+<span style="color: #21bfc2;">(</span>function lst<span style="color: #21bfc2;">)</span>
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">3</td>
+<td class="org-right">4</td>
+<td class="org-right">4</td>
+<td class="org-right">23</td>
+<td class="org-right">69</td>
+<td class="org-right">420</td>
+</tr>
+</tbody>
+</table>
+
 </section>
 </section>
 <section>
-<section id="slide-orgf9e1f16">
-<h2 id="orgf9e1f16">the same code in other languages</h2>
-<div class="outline-text-2" id="text-orgf9e1f16">
+<section id="slide-org7ad7e0b">
+<h2 id="org7ad7e0b">the same code in other languages</h2>
+<div class="outline-text-2" id="text-org7ad7e0b">
 </div>
 </section>
-<section id="slide-org5adfdee">
-<h3 id="org5adfdee">haskell</h3>
+<section id="slide-org87fbc38">
+<h3 id="org87fbc38">haskell</h3>
 <div class="org-src-container">
 
 <pre class="src src-haskell"><span style="color: #21bfc2;">quicksort</span> <span style="color: #c7c9cb;">::</span> <span style="color: #b877db;">Ord</span> a <span style="color: #c7c9cb;">=&gt;</span> [a] <span style="color: #c7c9cb;">-&gt;</span> [a] <span style="color: #6c6f93; background-color: #292b36; font-style: italic;">-- </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">take any type that can be ordered</span>
@@ -442,8 +580,8 @@ the body of the binding. this is useful for a few reasons. one it makes
 </table>
 
 </section>
-<section id="slide-org821ff93">
-<h3 id="org821ff93">ruby</h3>
+<section id="slide-org36e6109">
+<h3 id="org36e6109">ruby</h3>
 <div class="org-src-container">
 
 <pre class="src src-ruby"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #21bfc2;">quicksort</span> (arr)
@@ -451,9 +589,9 @@ the body of the binding. this is useful for a few reasons. one it makes
 
   pivot, *rest = arr
 
-  (quicksort (rest.filter { |x| x &lt; pivot })).append(
+  (quicksort rest.filter { |x| x &lt; pivot }).append(
     [pivot].append(
-      quicksort (rest.filter { |x| x &gt;= pivot }))).flatten
+      quicksort rest.filter { |x| x &gt;= pivot })).flatten
 <span style="color: #b877db; font-style: italic;">end</span>
 
 quicksort([<span style="color: #f09383; font-weight: bold;">2</span>,<span style="color: #f09383; font-weight: bold;">3</span>,<span style="color: #f09383; font-weight: bold;">1</span>])
@@ -482,13 +620,13 @@ quicksort([<span style="color: #f09383; font-weight: bold;">2</span>,<span style
 </section>
 </section>
 <section>
-<section id="slide-org78e2077">
-<h2 id="org78e2077">learning to learn</h2>
+<section id="slide-org41d2084">
+<h2 id="org41d2084">learning to learn</h2>
 </section>
 </section>
 <section>
-<section id="slide-org3a9029c">
-<h2 id="org3a9029c">any questions</h2>
+<section id="slide-orgdf6ed49">
+<h2 id="orgdf6ed49">any questions</h2>
 </section>
 </section>
 </div>

@@ -1,7 +1,7 @@
 #+TITLE: Learning A Second Language
 #+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
 #+REVEAL_ROOT: ../reveal.js
-#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i></i></h3><p>Press s for speaker notes</p>
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>if you know how to do hello world you are sorted</i></h3><p>Press s for speaker notes</p>
 #+REVEAL_THEME: black
 #+REVEAL_TRANS: slide
 
@@ -17,7 +17,7 @@ that comes to programmers (the first being learning your first language). you ha
 programming thinking into the language you are using. If you have not we will
 break that barrier today and hopefully you should be more equipped to walk out
 into the world of programming languages and see them not a monolith but a medium
-to have a conversation with your computer
+to have a conversation with your computer.
 #+end_notes
 
 * so I presume that this code snippet will make little sense to people
@@ -62,9 +62,10 @@ does anyone want to guess what this code does?
  | 1 | 2 | 3 | 4 | 4 | 23 | 69 | 420 |
 ** the basic syntax
 #+begin_notes
-Now while syntax is important its is just a medium and you should know how to
-use and exploit and once understood is the easiest part of learning a language
-the syntax of scheme is very simple being comprised of 2 major forms in scheme.
+Syntax, whilst important, is just the basics. To draw a comparison towards learning a spoken
+language its like learning the grammar without knowing a single word. That being
+said, syntax is usually the easy part and should come after a while if you have
+spent enough time with it. The syntax of scheme is very simple being comprised of 2 major forms in scheme.
 atomic forms and s-expressions atomic forms are things like Numbers Strings
 Symbols Booleans values and Characters.
 
@@ -163,7 +164,7 @@ which is true. its very similar to the if elif else tree but has much less
 syntax asociated with it.
 
 notice that last element. that else clause. it looks like any other symbol or
-call. thats because for the most part it is. This meta programming aspect of
+call which is because for the most part it is. This meta programming aspect of
 scheme is not something we will discuss today but if you are interested I would
 recommend looking up scheme macros. in a word its a way of defining syntactic
 structures like the ones we see here within the language itself
@@ -223,11 +224,13 @@ else:
 #+end_src
 ** or?
 #+begin_notes
-or takes a list of symbolic expressions that evaluate to true or false and
-returns true if one of them returns true. this is like the or keyword in python
-but means you don't need to chain a lot of or calls to do the same thing.
-there is another function called and which will return false if any of the
-functions return false.
+~Or~ takes a list of symbolic expressions that evaluate to true or false and
+returns true if one of them returns true. this is like the ~Or~ keyword in python
+but means you don't need to chain a lot of ~Or~ calls to check against multiple
+statements
+
+there is another function called ~And~ which will return false if any of the
+functions return false. (the opposite of or like the boolean gates)
 #+end_notes
 
 #+begin_src python
@@ -245,12 +248,88 @@ return False or False or True
 ** let
 #+begin_notes
 this is the final scheme construct we will be discussing
-let allows us to bind values to names within the binding itself.
-this is like creating a variable in a function in python. it can only be accessed
-in that function. its the same for let bindings. they can only be accessed in
-the body of the binding. this is useful for a few reasons. one it makes
+
+let allows us to bind values to names within the let structure itself.
+
+this is like creating a variable in a function in python. it is only accesable
+in the scope of the function.
+its the same for let bindings. the variables bound can only be accessed in the body of the binding.
+this is useful for a few reasons.
+
+one it allows us to bind names to valuse without creating a variable. using
+define is seen as bad form and let allows us to skirt round that.
+
+second it scopes the bindings to a specific part meaning you can have
+multiple let bindings in the same function and the names and values won't clash.
 #+end_notes
+
+#+begin_src python
+
+def func():
+    x = 5
+
+return x
+#+end_src
+
+: x is not defined
+
+#+begin_src scheme
+
+(define (func)
+  (let ((x 5))
+    x * 2)) ;; or some other processing of x
+
+x
+#+end_src
+
+: Unbound variable x
+
 ** the actual body of this function
+#+begin_notes
+now we can discuss how the function actually works
+- we first check if the input is empty or the tail (every element except the
+  first) of the input is empty. if so
+  we return the input. something I did not discuss is that the last expression
+  to be evaluated will be returned.
+- if the ~Or~ function returns false then the cond moves to the else clause
+- let binds the car (the first value of the array) to the name pivot and the
+  name rest to the tail or everything but the first element
+- we then move into the body of the let expression.
+  we use the append function to append multiple arrays.
+- we then apply the function to every element less than the pivot using the
+  filter function.
+- filter takes a function that returns true and false (called a predicate) and a
+  list and keeps all of the values that make the function evaluate to true
+- we then turn the pivot into a list
+- and apply function to all the elements that are more than or equal to the
+  pivot
+  as the append function is the last thing to be evaluated in the let expression
+  we will return what it evaluates
+#+end_notes
+
+#+begin_src scheme
+(define lst '(23 3 1 4 2 4 69 420) )
+
+(define (function input)
+  (cond
+    ((or (null? input)
+         (null? (cdr input)))
+     input)
+    (else
+      (let ((pivot (car input))
+            (rest (cdr input)))
+        (append
+          (function
+            (filter (lambda (x) (< x pivot)) rest))
+          (list pivot)
+          (function
+            (filter (lambda (x) (>= x pivot)) rest)))))))
+
+(function lst)
+#+end_src
+
+| 1 | 2 | 3 | 4 | 4 | 23 | 69 | 420 |
+
 * the same code in other languages
 ** haskell
 #+begin_src haskell
@@ -273,9 +352,9 @@ def quicksort (arr)
 
   pivot, *rest = arr
 
-  (quicksort (rest.filter { |x| x < pivot })).append(
+  (quicksort rest.filter { |x| x < pivot }).append(
     [pivot].append(
-      quicksort (rest.filter { |x| x >= pivot }))).flatten
+      quicksort rest.filter { |x| x >= pivot })).flatten
 end
 
 quicksort([2,3,1])
