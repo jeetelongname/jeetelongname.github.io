@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>A full project life cycle in python</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>A full project life cycle in python</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>Turn your catapiler of an idea into a beautiful code butterfly</i></h3><p>Press s for speaker notes</p>
+</section>
+
+<section>
+<section id="slide-org2194ef5">
+<h2 id="org2194ef5">Lets make a python project!</h2>
+<aside class="notes">
+<p>
+Today we are going to get the basic infrastructre down for a python project and
+use what we have learned to get us started not only on a python project but in
+the ways of the developer
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org72a4ae8">
+<h2 id="org72a4ae8">poetry new</h2>
+<aside class="notes">
+<p>
+poetry is a dependency managment and project lifecycle tool that makes managing
+dependencys and virtual enviroments a very easy experience.
+</p>
+
+<p>
+you should have it installed so that you can follow along and get a feel for it
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd47bef2">
+<h2 id="orgd47bef2">initalising git</h2>
+<aside class="notes">
+<p>
+we are now going to make an empty git repo
+who knows the command to do that?
+</p>
+
+<p>
+we will then add and commit all of these files to our history. we will come back
+to git in a bit when we want to back up our code
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org17af9bd">
+<h2 id="org17af9bd">poetry add</h2>
+<aside class="notes">
+<p>
+How many people here plan on using a library that does not come with python?
+</p>
+
+<p>
+Poetry makes managing these librarys much easier. you can add them to your
+pyproject.toml file yourself or you can just use the poetry add command which
+does it for you
+</p>
+
+<p>
+install ropes and antigravity
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc8e38ec">
+<h2 id="orgc8e38ec">poetry install</h2>
+<aside class="notes">
+<p>
+We have added them to our config but now we need to install them. poetry install
+to the rescue! it will just install the depenencys. do notes that it won&rsquo;t
+install it globablly but just for this project. This is by design and means you
+can have multiple versions of the same dependency installed at the same time.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org7380159">
+<h2 id="org7380159">Now for some actual code</h2>
+<div class="outline-text-2" id="text-org7380159">
+</div>
+</section>
+<section id="slide-orgfc056d1">
+<h3 id="orgfc056d1"><code>__init__.py</code></h3>
+<aside class="notes">
+<p>
+the init.py is used to tell python that the code in this directory is a module.
+You can think of it as the <span class="underline"><span class="underline">init</span></span> function when you make a class.
+</p>
+
+</aside>
+</section>
+<section id="slide-org6017431">
+<h3 id="org6017431"><code>__main__.py</code></h3>
+<aside class="notes">
+<p>
+The main.py tells python that out of all the files in a folder to run. run
+this one first. its useful for many reasons one of them being it allows you to
+run a directory!. It also makes your module a standalone application that python
+can just sort of run
+</p>
+
+<p>
+python -m http.server 8080
+</p>
+
+</aside>
+</section>
+<section id="slide-orgc0a1017">
+<h3 id="orgc0a1017">quick sidenote on your own modules</h3>
+<aside class="notes">
+<p>
+You can seperate your code into its own files by making a file and then
+importing it in your main document with the name of the file without the .py
+extension
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-orgfb1e015">
+<h2 id="orgfb1e015">Now we upload to github!</h2>
+<aside class="notes">
+<p>
+So we have added some code and we have remembered to commit it now we have to
+upload it to github. first we make the repo on github so that our remote exists
+then we can create it
+</p>
+
+<p>
+git remote add origin url
+</p>
+
+<p>
+git push -u origin senpai
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-orgcd0343d">
+<h2 id="orgcd0343d">Rinse and repeat.</h2>
+<aside class="notes">
+<p>
+we keep on going untill our project is done
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-orgb6107a4">
+<h2 id="orgb6107a4">Now we have discussed the code now we are going to discuss the documentation</h2>
+<aside class="notes">
+<p>
+who has used a markup language
+An intro to latex
+</p>
+
+<p>
+latex is a declarative document preperation language. It is used to write papers
+letters, books and any other document you could want. If you really want to get
+into it you can pick up the fundementals in an afternoon
+</p>
+
+<p>
+If you don&rsquo;t want to install latex you can use the website overleaf.com which
+provides web interface to do all of the editing. kind of like google docs
+</p>
+
+<p>
+Its a markup language used for scientific literature books and even NEA&rsquo;s
+</p>
+
+<p>
+It can be a bit of a pain to set up your document but after it is done you don&rsquo;t
+have to touch your formatting ever again
+</p>
+
+</aside>
+
+<aside class="notes">
+<p>
+A basic document
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org1d45c08">
+<h2 id="org1d45c08">Thanks for dealing with me!</h2>
+<aside class="notes">
+<p>
+I hope this has been educatonal and I hope you have had a bit of fun! I know I
+have.
+</p>
+
+<p>
+If anything I really hope you have picked up that spending some time learning
+and getting out of your comfort zone can be a boon to your productivity and that
+computer science is not just stacks and queues
+</p>
+
+<p>
+I would have wanted to cover latex in more detail and I also wanted to cover vim
+but I will leave that to you to look into if your so enclined
+</p>
+
+<p>
+Thanks for listening
+</p>
+
+</aside>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

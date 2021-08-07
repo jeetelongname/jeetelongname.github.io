@@ -1,0 +1,128 @@
+#+TITLE: A full project life cycle in python
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>Turn your catapiler of an idea into a beautiful code butterfly</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* Lets make a python project!
+#+begin_notes
+Today we are going to get the basic infrastructre down for a python project and
+use what we have learned to get us started not only on a python project but in
+the ways of the developer
+#+end_notes
+
+* poetry new
+#+begin_notes
+poetry is a dependency managment and project lifecycle tool that makes managing
+dependencys and virtual enviroments a very easy experience.
+
+you should have it installed so that you can follow along and get a feel for it
+#+end_notes
+
+* initalising git
+#+begin_notes
+we are now going to make an empty git repo
+who knows the command to do that?
+
+we will then add and commit all of these files to our history. we will come back
+to git in a bit when we want to back up our code
+#+end_notes
+
+* poetry add
+#+begin_notes
+How many people here plan on using a library that does not come with python?
+
+Poetry makes managing these librarys much easier. you can add them to your
+pyproject.toml file yourself or you can just use the poetry add command which
+does it for you
+
+install ropes and antigravity
+#+end_notes
+
+* poetry install
+#+begin_notes
+We have added them to our config but now we need to install them. poetry install
+to the rescue! it will just install the depenencys. do notes that it won't
+install it globablly but just for this project. This is by design and means you
+can have multiple versions of the same dependency installed at the same time.
+#+end_notes
+
+* Now for some actual code
+** =__init__.py=
+#+begin_notes
+the init.py is used to tell python that the code in this directory is a module.
+You can think of it as the __init__ function when you make a class.
+#+end_notes
+** =__main__.py=
+#+begin_notes
+The main.py tells python that out of all the files in a folder to run. run
+this one first. its useful for many reasons one of them being it allows you to
+run a directory!. It also makes your module a standalone application that python
+can just sort of run
+
+python -m http.server 8080
+#+end_notes
+** quick sidenote on your own modules
+#+begin_notes
+You can seperate your code into its own files by making a file and then
+importing it in your main document with the name of the file without the .py
+extension
+
+
+#+end_notes
+* Now we upload to github!
+#+begin_notes
+So we have added some code and we have remembered to commit it now we have to
+upload it to github. first we make the repo on github so that our remote exists
+then we can create it
+
+git remote add origin url
+
+git push -u origin senpai
+#+end_notes
+* Rinse and repeat.
+#+begin_notes
+we keep on going untill our project is done
+#+end_notes
+* Now we have discussed the code now we are going to discuss the documentation
+#+begin_notes
+who has used a markup language
+An intro to latex
+
+latex is a declarative document preperation language. It is used to write papers
+letters, books and any other document you could want. If you really want to get
+into it you can pick up the fundementals in an afternoon
+
+If you don't want to install latex you can use the website overleaf.com which
+provides web interface to do all of the editing. kind of like google docs
+
+Its a markup language used for scientific literature books and even NEA's
+
+It can be a bit of a pain to set up your document but after it is done you don't
+have to touch your formatting ever again
+#+end_notes
+
+#+begin_notes
+A basic document
+#+end_notes
+
+* Thanks for dealing with me!
+
+#+begin_notes
+I hope this has been educatonal and I hope you have had a bit of fun! I know I
+have.
+
+If anything I really hope you have picked up that spending some time learning
+and getting out of your comfort zone can be a boon to your productivity and that
+computer science is not just stacks and queues
+
+I would have wanted to cover latex in more detail and I also wanted to cover vim
+but I will leave that to you to look into if your so enclined
+
+Thanks for listening
+#+end_notes
