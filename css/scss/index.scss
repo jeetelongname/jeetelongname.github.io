@@ -1,3 +1,5 @@
+@use 'base';
+
 body {
   margin: 0;
   padding: 0;
@@ -25,29 +27,32 @@ body {
   position: absolute;
   top: 27%;
   width: 100%;
-}
-.landing.page .info .name {
-  font-family: "Montserrat", sans-serif;
-  font-size: 8em;
-  font-weight: 400;
-  text-align: center;
-  text-transform: uppercase;
-  color: var(--text-main);
-}
-.landing.page .info .email {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-size: 3em;
-  text-align: center;
-  unicode-bidi: bidi-override;
-  letter-spacing: 0.12em;
-}
-.landing.page .info #theme-toggle {
-  position: absolute;
-  top: 20px;
-  left: 30px;
-  font-size: 1.3em;
-  color: var(--text-main);
+
+  .name {
+    font-family: base.$font-main;
+    font-size: 8em;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--text-main);
+  }
+
+  .email {
+    font-family: base.$font-second;
+    font-weight: 300;
+    font-size: 3em;
+    text-align: center;
+    unicode-bidi: bidi-override;
+    letter-spacing: 0.12em;
+  }
+
+  #theme-toggle {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 1.3em;
+    color: var(--text-main);
+  }
 }
 
 .icons {
@@ -75,37 +80,45 @@ a:hover {
 
 li {
   display: inline-block;
-}
-li a {
-  padding: 5px;
-  color: var(--text-alt);
-}
-li a:hover {
-  color: var(--text-main);
+
+  a {
+    padding: 5px;
+    color: var(--text-alt);
+  }
+
+  a:hover {
+    color: var(--text-main);
+  }
 }
 
 @media only screen and (min-width: 660px) and (max-width: 965px) {
-  .landing.page .info .name {
+  .landing.page .info {
+  .name {
     font-size: 6em;
     font-weight: 200;
   }
-  .landing.page .info .email {
+  .email {
     font-weight: 100;
     font-size: 3em;
     unicode-bidi: bidi-override;
     letter-spacing: 0.07em;
   }
+ }
 }
+
 @media only screen and (min-width: 200px) and (max-width: 660px) {
-  .landing.page .info .name {
-    font-size: 3em;
-    font-weight: 200;
-  }
-  .landing.page .info .email {
-    font-weight: 100;
-    font-size: 1.5em;
-    unicode-bidi: bidi-override;
-    letter-spacing: 0.07em;
+  .landing.page .info {
+    .name {
+      font-size: 3em;
+      font-weight: 200;
+    }
+
+    .email {
+      font-weight: 100;
+      font-size: 1.5em;
+      unicode-bidi: bidi-override;
+      letter-spacing: 0.07em;
+    }
   }
 
   .icons {
@@ -124,17 +137,21 @@ li a:hover {
     display: block;
   }
 }
+
 @media only screen and (max-width: 812px) and (max-height: 375px) {
-  .landing.page .info .name {
-    font-size: 3em;
-    font-weight: 200;
-  }
-  .landing.page .info .email {
-    font-weight: 100;
-    font-size: 1.5em;
-    unicode-bidi: bidi-override;
-    letter-spacing: 0.07em;
-  }
+    .landing.page .info {
+      .name {
+        font-size: 3em;
+        font-weight: 200;
+      }
+
+      .email {
+        font-weight: 100;
+        font-size: 1.5em;
+        unicode-bidi: bidi-override;
+        letter-spacing: 0.07em;
+      }
+    }
 
   .icons {
     position: absolute;
@@ -152,5 +169,3 @@ li a:hover {
     display: block;
   }
 }
-
-/*# sourceMappingURL=index.css.map */

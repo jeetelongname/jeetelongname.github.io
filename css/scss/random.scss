@@ -1,4 +1,6 @@
 /* not mine */
+@use 'base';
+
 /* https://codepen.io/fossheim/pen/MWwOBwx */
 :root {
   --primary: #22d2a0;
@@ -23,10 +25,13 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  background-image: radial-gradient(var(--secondary) 30%, var(--background) 30%);
+  background-image: radial-gradient(
+    var(--secondary) 30%,
+    var(--background) 30%
+  );
   background-size: 2px 3px;
   color: var(--primary);
-  font-family: "Montserrat", sans-serif;
+  font-family: base.$font-main;
 }
 
 body::-webkit-scrollbar {
@@ -43,9 +48,11 @@ div {
   width: 300px;
   border: 3px solid var(--primary);
   padding: 15px;
-  box-shadow: 0 0 0 -3px var(--background), 0 0 0 0 var(--green), 0 0 0 -3px var(--background), 0 0 0 0 var(--yellow), 0 0 0 -3px var(--background), 0 0 0 0 var(--orange), 0 0 0 -3px var(--background), 0 0 0 0 var(--red);
-  margin: calc(16vh - 30px) auto auto auto;
-  /* FIXME with a media query */
+  box-shadow: 0 0 0 -3px var(--background), 0 0 0 0 var(--green),
+    0 0 0 -3px var(--background), 0 0 0 0 var(--yellow),
+    0 0 0 -3px var(--background), 0 0 0 0 var(--orange),
+    0 0 0 -3px var(--background), 0 0 0 0 var(--red);
+  margin: calc(16vh - 30px) auto auto auto; /* FIXME with a media query */
   transition: box-shadow 1s, top 1s, left 1s;
   position: relative;
   top: 0;
@@ -56,7 +63,10 @@ div {
 div:hover {
   top: 40px;
   left: -40px;
-  box-shadow: 10px -10px 0 -3px var(--background), 10px -10px var(--green), 20px -20px 0 -3px var(--background), 20px -20px var(--yellow), 30px -30px 0 -3px var(--background), 30px -30px var(--orange), 40px -40px 0 -3px var(--background), 40px -40px var(--red);
+  box-shadow: 10px -10px 0 -3px var(--background), 10px -10px var(--green),
+    20px -20px 0 -3px var(--background), 20px -20px var(--yellow),
+    30px -30px 0 -3px var(--background), 30px -30px var(--orange),
+    40px -40px 0 -3px var(--background), 40px -40px var(--red);
 }
 
 p {
@@ -70,7 +80,7 @@ p {
 
 h2 {
   font-size: 14px;
-  font-family: "Montserrat", sans-serif;
+  font-family: base.$font-main;
   font-weight: bold;
   color: var(--primary);
 }
@@ -92,5 +102,3 @@ a {
     margin: calc(16vh - 100px) auto 0 auto;
   }
 }
-
-/*# sourceMappingURL=random.css.map */

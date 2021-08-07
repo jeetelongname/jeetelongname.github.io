@@ -1,3 +1,5 @@
+@use 'base';
+
 $background-color: #fffdd0;
 $accent-color: black;
 $hover-color: teal;
@@ -5,7 +7,7 @@ $hover-color: teal;
 body {
   background-color: $background-color;
   text-align: center;
-  font-family: Helvetica, sans-serif;
+  font-family: base.$font-main;
   margin: 0px;
 }
 
