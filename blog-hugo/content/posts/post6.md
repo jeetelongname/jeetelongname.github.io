@@ -54,7 +54,7 @@ real world hitting bottom can be really destructive. for some people its
 reveling in the mess they have gotten into. for others its suicide. You can
 always get help at any point and it should not be seen as some sort of reset.
 
-Fight club disagree's.
+Fight club disagrees.
 Fight club embraces the spiral and uses bottom as a way continue the narrative.
 Its ending uses the idea of hitting bottom as a justification to blow up credit
 card companies and wipe out all of the debt associated with it.
