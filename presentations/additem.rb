@@ -2,6 +2,15 @@
 
 require 'getoptlong'
 
+if ARGV.length < 2
+  abort <<~MSG
+    -l: file path :: string
+    -t: title :: string
+    -d: description :: string
+    -p: pdf? :: bool
+  MSG
+end
+
 opts = GetoptLong.new(
   ['-l', GetoptLong::REQUIRED_ARGUMENT],
   ['-t', GetoptLong::REQUIRED_ARGUMENT],
@@ -47,6 +56,10 @@ line_to_add = <<~HTML
   </li>
 HTML
 
+puts line_to_add
+
+abort 'aborting' unless gets.chomp == 'y'
+
 lines.insert(line_above + 1, line_to_add)
 
 # lines.each do |line|
@@ -58,3 +71,5 @@ open('index.html', 'r+') do |f|
     f << line
   end
 end
+
+puts 'done'
