@@ -46,13 +46,14 @@ body {
     letter-spacing: 0.12em;
   }
 
-  #theme-toggle {
-    position: absolute;
-    top: 20px;
-    left: 30px;
-    font-size: 1.3em;
-    color: var(--text-main);
-  }
+}
+
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 1.3em;
+  color: var(--text-main);
 }
 
 .icons {

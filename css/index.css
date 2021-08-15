@@ -42,7 +42,8 @@ body {
   unicode-bidi: bidi-override;
   letter-spacing: 0.12em;
 }
-.landing.page .info #theme-toggle {
+
+#theme-toggle {
   position: absolute;
   top: 20px;
   left: 30px;
