@@ -9,7 +9,7 @@
 #+LATEX_CLASS_OPTIONS: [a4paper]
 #+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
 
-* This is me before
+* This was me before
 #+begin_notes
 This was me before I found doom emacs. I was happy there was a zest for life!. I had it all! friends, my
 grandpas glasses... that's about it
@@ -58,14 +58,76 @@ then that infamous distrotube video came out and just like with linux I fell in 
 It ticked all of my boxes. It was fate.
 #+end_notes
 
-* How doom sucked me in
+#+ATTR_REVEAL: :frag (roll-in)
+- gnome builder
+- gedit
+- vim
+- vscodium
+- pycharm
+** How doom sucked me in
 #+begin_notes
 doom checked all of the boxes when all the other editors only could tick one or two
 
 - It was fast (mostly)
 - clean
 - easy to extend and hack on
-- and the community was great (this is a surprise we will use later on!)
+- and the community is great (this is a surprise we will use later on!)
 Add to that the legends around emacs and some of the best vim emulation I have
 seen and I was hooked. /like a fish on a line/
 #+end_notes
+
+#+ATTR_REVEAL: :frag (roll-in)
+- It was fast
+- clean
+- easy to extend and hack on
+- and the community is great (this is a surprise we will use later on!)
+* My descent begins in the init.el
+#+begin_notes
+Being new to this entire world seeing all of those tools and languages in the
+init.el felt like chistmas. for a while it felt like shopping when I opened that
+file and it gave me a lot of bread crumbs to go and explore. and explore I did!
+from the little witisms I read about the languages and tools doom had set up and
+worked my way through some of them. This alone was not enough to turn me into
+the mad man I am now tho. I needed a place to talk about them and boi did the
+doom community help with that.
+#+end_notes
+* The doom community's deep rabbit holes
+#+begin_notes
+while doom itself helped facilitate my bike shedding somewhat. It was the people
+that really drove me to learn more. I spent a lot of time lurking in the sub
+watching as Tecosaur did some really cool stuff with latex and org. tools I knew
+of but had not used for anything more than a small document. Monad showed me the
+way of the haskeller reciting spells I wish I understood (and kindof do now). I
+had reached the mouth of the rabbit hole and it was you guys who pulled me in.
+
+From there on out I was now not only hooked on doom but all of the stuff that
+the doom community had showed me.
+#+end_notes
+* Where are we now?
+#+begin_notes
+so we have charted my path to where we are now. but where is that?
+well..
+
+- I now use org for all of my document preparation except for large documents
+which I then use latex. meaning all of my friends hate my pdf's
+- email, rss, irc are all in emacs with the last two only ever being used in emacs
+- I have now got a dotfiles repo that is tied into nix. I don't think I can ever
+leave now. (you could call it Stockholm syndrome).
+- I have tried many new
+languages. some of which have come to be my favorites
+- and because of the stuff this server has shown me I was able to give a set of
+lessons to a set of students on topics like the shell, git, latex and scheme.
+Without this community showing me the way I would not have known about half of
+these let alone teach them.
+#+end_notes
+
+#+ATTR_REVEAL: :frag (roll-in)
+- I now use org for all of my document preparation
+- email, rss, irc are now all in Emacs
+- my dotfiles are tied to nix
+- I have tried many new languages
+- I was able to give lessons on everything I had learned
+
+* The end
+Thanks for listening
+[[file:assets/end.jpg]]
