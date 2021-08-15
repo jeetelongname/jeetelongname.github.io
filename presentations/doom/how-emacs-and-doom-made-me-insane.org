@@ -1,0 +1,71 @@
+#+TITLE: How Doom facilitated my decent into madness
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>you could say I was doomed from the start</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* This is me before
+#+begin_notes
+This was me before I found doom emacs. I was happy there was a zest for life!. I had it all! friends, my
+grandpas glasses... that's about it
+#+end_notes
+[[file:assets/before.jpg]]
+* This is me after
+#+begin_notes
+compare him to this guy
+this guy has no soul left. he sacrificed it all to satan to make sure his
+dotfiles are reproducible (which is still not entirely true). We are going to
+chart the path I took as a warning but also a guide to all the weary travellers
+looking for the sweet embrace of a comfy system
+#+end_notes
+[[file:assets/after.jpg]]
+
+* the beginning
+#+begin_notes
+Its a pretty good place to start.
+
+I have been using linux for about two years. I started just before my GCSES
+(which is a set of final exams for 16 year olds). It became a hobby to fiddle
+with my os and learn about the different programs in it and there interactions.
+This hobby only grew with the time a post exam summer gives you and before I
+knew it I was heading into 6th form (the final 2 years where we specialse into 3
+subjects). I got a new laptop and used windows for a while then christmas break
+came around and I wiped my drive trying to dual boot. this was actually a good
+thing as I could give linux half of my drive and from that day on I started
+daily driving linux. It was also around this time I started to look for vscode
+replacements.
+#+end_notes
+** Vscode replacements
+#+begin_notes
+I was tired of vscode. I mainly used it as it had a monopoly in my comp sci
+class. but it always felt like an incomplete solution. It was opaque, hard to
+extend and a pain to integrate into my growing dotfile collection.
+I tried a lot of different editors.
+- gnome builder
+- gedit
+- vim
+- vscodium
+- pycharm
+I think there was even a point where I was considering libre office writer.
+all of them had there problems and non of them really stuck.
+
+then that infamous distrotube video came out and just like with linux I fell in love.
+It ticked all of my boxes. It was fate.
+#+end_notes
+
+* How doom sucked me in
+#+begin_notes
+doom checked all of the boxes when all the other editors only could tick one or two
+
+- It was fast (mostly)
+- clean
+- easy to extend and hack on
+- and the community was great (this is a surprise we will use later on!)
+Add to that the legends around emacs and some of the best vim emulation I have
+seen and I was hooked. /like a fish on a line/
+#+end_notes
