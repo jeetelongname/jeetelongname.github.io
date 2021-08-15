@@ -1,35 +1,35 @@
 body {
   background-color: #fffdd0;
-  text-align: center;
   font-family: "Montserrat", sans-serif;
-  margin: 0px;
+  margin: 0;
+  text-align: center;
 }
 
 div.line {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #000;
+  margin: 10px 50px;
   padding: 5px 20px 5xp 10px;
-  margin: 10px 50px 10px 50px;
 }
 
 header {
   display: inline-block;
-  margin: 0.5em 1em 0.5em 1em;
+  margin: 0.5em 1em;
 }
 header a {
+  color: #000;
+  font-size: 1.5em;
+  margin: 0 0 1em 1em;
   position: relative;
   text-decoration: none;
-  font-size: 1.5em;
-  color: black;
-  margin: 0em 0em 1em 1em;
   transition: color 0.1s;
 }
 header a:hover {
-  color: teal;
+  color: #008080;
 }
 
 ul {
   list-style: none;
-  padding: 0px;
+  padding: 0;
 }
 
 p {
@@ -38,16 +38,16 @@ p {
 
 li a,
 li a:visited {
+  color: #000;
   text-decoration: none;
-  color: black;
 }
 li div {
   height: auto;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px;
   transition: background 0.1s;
 }
 li div:hover {
-  background: teal;
+  background: #008080;
 }
 
 /*# sourceMappingURL=presentation.css.map */

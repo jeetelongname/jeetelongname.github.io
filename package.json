@@ -1,0 +1,14 @@
+{
+    "name": "website",
+    "description": "really nothing to see here",
+    "version": "1.0.0",
+    "author": "Jeetaditya Chatterjee <jeetelongname@gmail.com>",
+    "license": "MIT",
+    "main": "does/not/exist",
+    "scripts": {},
+    "dependencies": {},
+    "devDependencies": {
+        "stylelint": "^13.13.1",
+        "stylelint-config-sass-guidelines": "^8.0.0"
+    }
+}
