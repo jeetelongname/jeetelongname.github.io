@@ -5,3 +5,4 @@
 *.map
 /presentations/intro-to/.auctex-auto/
 /presentations/intro-to/indent.log
+/node_modules/
