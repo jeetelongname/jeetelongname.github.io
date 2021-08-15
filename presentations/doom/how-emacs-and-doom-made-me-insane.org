@@ -55,7 +55,7 @@ I think there was even a point where I was considering libre office writer.
 all of them had there problems and non of them really stuck.
 
 then that infamous distrotube video came out and just like with linux I fell in love.
-It ticked all of my boxes. It was fate.
+It ticked all of my boxes.
 #+end_notes
 
 #+ATTR_REVEAL: :frag (roll-in)
@@ -101,7 +101,8 @@ way of the haskeller reciting spells I wish I understood (and kindof do now). I
 had reached the mouth of the rabbit hole and it was you guys who pulled me in.
 
 From there on out I was now not only hooked on doom but all of the stuff that
-the doom community had showed me.
+the doom community had showed me. This was the tipping point. so to speak and
+add a global pandemic on top and you had a recipie for a whole lot of procrastination
 #+end_notes
 * Where are we now?
 #+begin_notes
