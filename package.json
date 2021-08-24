@@ -8,6 +8,7 @@
     "scripts": {},
     "dependencies": {},
     "devDependencies": {
+        "prettier": "2.3.2",
         "stylelint": "^13.13.1",
         "stylelint-config-sass-guidelines": "^8.0.0"
     }
