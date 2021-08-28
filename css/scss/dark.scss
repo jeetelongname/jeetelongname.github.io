@@ -1,8 +1,12 @@
 /* dark theme */
 @use 'base';
 
+/*
+ * FIXME: go back to css variables
+ */
+
 :root {
-  --back: base.$dark-back;
-  --text-main: base.$dark-text-main;
-  --text-alt: base.$text-alt;
+  --back: #0c0b00;
+  --text-main: #5476d1;
+  --text-alt: #d1af54;
 }
