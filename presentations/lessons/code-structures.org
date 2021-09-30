@@ -1,0 +1,235 @@
+#+TITLE: Code Structures
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>The basic building blocks</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+
+* Variables
+#+begin_notes
+Vaiables are a way to store values that can then be accessed later using the
+name given to them. They can be
+passed around like any other value and can be changed as the program is run
+(meaning they are /variable/)
+#+end_notes
+
+Puts is just print in this context
+#+begin_src ruby :results output
+x = 10
+
+puts(10)
+x = 20
+
+puts(x)
+#+end_src
+
+: 10
+: 20
+
+* Flow control
+#+begin_notes
+flow control is a way to
+#+end_notes
+** If statements
+#+begin_notes
+if statements allow you to run a certain set of code if a boolean expression
+returns true. otherwise it will move on (if an else case is not provided) or it
+will run the else case.
+#+end_notes
+
+#+begin_src ruby
+something = false
+if something == true
+  "something is true"
+else
+  "something is false"
+end
+#+end_src
+
+: something is false
+
+#+begin_notes
+You can also add an else if clause that checks against a different boolean
+expression
+#+end_notes
+
+#+begin_src ruby
+something = false
+if something == true
+  "soemthing is true"
+elsif something == nil
+  "soemthing is nil"
+else
+  "something is false"
+end
+#+end_src
+
+: something is false
+
+** Switch statements
+#+begin_notes
+switch statements are like big if else blocks but they check a variable is equal
+to a certain condition.
+
+you can also add an else clause
+#+end_notes
+
+#+begin_src ruby
+something = 3
+case something
+when 1
+  "something = 1"
+when 2
+  "something = 2"
+when 3
+  "something = 3"
+end
+#+end_src
+
+: something = 3
+
+** Conditional loops
+#+begin_notes
+there are 2 kinds of conditional loops a while loop and a do while loop.
+they both only exit if a condition is met but the do while loop will check the
+condition at the end of execution while the regular while loop checks at the
+beginning. this may seem like a small difference but means the do while loop will
+run the body at least once
+
+in this example count is never incremented as condtion is already true.
+#+end_notes
+
+#+begin_src c
+condition = true;
+count = 0;
+
+while condition != true {  // this loop will never run
+  if (count != 10) {
+    count += 1;
+  } else
+    condition = true;
+}
+
+print("count =", count)
+#+end_src
+
+: count = 0
+
+#+begin_src c
+do {
+  if (count != 10) {
+    count += 1;
+  } else
+    condition = true;
+} while condition != true;
+
+print("count =", count)
+#+end_src
+
+: count = 1
+** for loops
+#+begin_notes
+A for loop is a defined loop. It will run for a set amount of iterations before
+exiting.
+
+note there are 2 variations. that can be used. a definite one that iterates for
+a set number of iterations and an array loop which itterates through every
+element of an array
+#+end_notes
+
+#+begin_src ruby :results output
+lst = [1, 2, 3]
+for i in 0..3
+  puts lst[i]
+end
+
+for i in lst
+  puts i
+end
+#+end_src
+
+: 1
+: 2
+: 3
+:
+: 1
+: 2
+: 3
+
+* A side note on the difference between expressions and statements
+#+begin_notes
+an expression in simple terms is a set of code that returns a value. you can
+think of this intuitvly by thinking of if you can store the output in a variable
+
+some examples of expressions include (but are not limited too)
+- use of mathamatical operators (plus/minus/multiply and divide) they return a
+  number
+- comparison operators (==, !=, <, >) and so on. they will return true or false
+- functions that will return a value
+
+there are some other examples (that start to dive into language theory and such) but for the most part these are the ones you will
+be covering.
+#+end_notes
+
+#+begin_src ruby
+x = 1 + 1
+y = 2 > 1
+z = Math.sqrt(4)
+
+[x, y, z]
+#+end_src
+
+| 2 | true | 2.0 |
+
+* procedures and functions
+#+begin_notes
+procedures and functions are two types of sub programs.
+
+a function returns a value while a procedure does not a is more like copy and
+paste (talk a little about side effects)
+
+They are a way to call a set of
+code multiple times with different arguments each time. essentially creating an
+abstraction and meaning you do not repeat code (which is a bad practice all
+around)
+#+end_notes
+
+#+begin_src ruby
+def in_array?(array, to_find)
+  for i in array
+    if i == to_find
+      return true
+    end
+  end
+  return false
+end
+lst = [1,2,3]
+x = in_array?(lst, 3)
+y = in_array?(lst, 4)
+
+[x, y]
+#+end_src
+
+| true | false |
+
+* Questions
+#+begin_notes
+Most of the questions will ask you to read psudo code or like some of these
+identify code constructs. It will also ask you to write some of your own
+psudocode so keep that in mind
+#+end_notes
+** Tell me the code structures
+*** What loop should you use when you need to loop through an array?
+*** What structure decides which path to take depending on a boolean expression?
+*** What structure should you use when you need to check a variable against multiple expressions
+** Question 1
+[[file:code-structures1.png]]
+** Question 2
+[[file:code-structures2.png]]
+** Question 3
+[[file:code-structures3.png]]

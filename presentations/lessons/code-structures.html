@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Code Structures</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Code Structures</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>The basic building blocks</i></h3><p>Press s for speaker notes</p>
+</section>
+
+
+<section>
+<section id="slide-orga15898c">
+<h2 id="orga15898c">Variables</h2>
+<aside class="notes">
+<p>
+Vaiables are a way to store values that can then be accessed later using the
+name given to them. They can be
+passed around like any other value and can be changed as the program is run
+(meaning they are <i>variable</i>)
+</p>
+
+</aside>
+
+<p>
+Puts is just print in this context
+</p>
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #e95678;">x</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">10</span>
+
+<span style="color: #21bfc2;">puts</span><span style="color: #c7c9cb; background-color: #232530;">(</span><span style="color: #f09383;">10</span><span style="color: #c7c9cb; background-color: #232530;">)</span>
+<span style="color: #e95678;">x</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">20</span>
+
+<span style="color: #21bfc2;">puts</span><span style="color: #c7c9cb; background-color: #232530;">(</span>x<span style="color: #c7c9cb; background-color: #232530;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+10
+20
+</pre>
+
+</section>
+</section>
+<section>
+<section id="slide-org92cf471">
+<h2 id="org92cf471">Flow control</h2>
+<aside class="notes">
+<p>
+flow control is a way to
+</p>
+
+</aside>
+</section>
+<section id="slide-orga10d184">
+<h3 id="orga10d184">If statements</h3>
+<aside class="notes">
+<p>
+if statements allow you to run a certain set of code if a boolean expression
+returns true. otherwise it will move on (if an else case is not provided) or it
+will run the else case.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #e95678;">something</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">false</span>
+<span style="color: #b877db; font-style: italic;">if</span> something == <span style="color: #f09383;">true</span>
+  <span style="color: #fab795;">"something is true"</span>
+<span style="color: #b877db; font-style: italic;">else</span>
+  <span style="color: #fab795;">"something is false"</span>
+<span style="color: #b877db; font-style: italic;">end</span>
+</pre>
+</div>
+
+<pre class="example">
+something is false
+</pre>
+
+
+<aside class="notes">
+<p>
+You can also add an else if clause that checks against a different boolean
+expression
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #e95678;">something</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">false</span>
+<span style="color: #b877db; font-style: italic;">if</span> something == <span style="color: #f09383;">true</span>
+  <span style="color: #fab795;">"soemthing is true"</span>
+<span style="color: #b877db; font-style: italic;">elsif</span> something == <span style="color: #f09383;">nil</span>
+  <span style="color: #fab795;">"soemthing is nil"</span>
+<span style="color: #b877db; font-style: italic;">else</span>
+  <span style="color: #fab795;">"something is false"</span>
+<span style="color: #b877db; font-style: italic;">end</span>
+</pre>
+</div>
+
+<pre class="example">
+something is false
+</pre>
+
+</section>
+<section id="slide-org7d7164f">
+<h3 id="org7d7164f">Switch statements</h3>
+<aside class="notes">
+<p>
+switch statements are like big if else blocks but they check a variable is equal
+to a certain condition.
+</p>
+
+<p>
+you can also add an else clause
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #e95678;">something</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">3</span>
+<span style="color: #b877db; font-style: italic;">case</span> something
+<span style="color: #b877db; font-style: italic;">when</span> <span style="color: #f09383;">1</span>
+  <span style="color: #fab795;">"something = 1"</span>
+<span style="color: #b877db; font-style: italic;">when</span> <span style="color: #f09383;">2</span>
+  <span style="color: #fab795;">"something = 2"</span>
+<span style="color: #b877db; font-style: italic;">when</span> <span style="color: #f09383;">3</span>
+  <span style="color: #fab795;">"something = 3"</span>
+<span style="color: #b877db; font-style: italic;">end</span>
+</pre>
+</div>
+
+<pre class="example">
+something = 3
+</pre>
+
+</section>
+<section id="slide-orgcc758d5">
+<h3 id="orgcc758d5">Conditional loops</h3>
+<aside class="notes">
+<p>
+there are 2 kinds of conditional loops a while loop and a do while loop.
+they both only exit if a condition is met but the do while loop will check the
+condition at the end of execution while the regular while loop checks at the
+beginning. this may seem like a small difference but means the do while loop will
+run the body at least once
+</p>
+
+<p>
+in this example count is never incremented as condtion is already true.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #e95678;">condition</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #b877db;">true</span><span style="color: #c7c9cb; background-color: #232530;">;</span>
+<span style="color: #e95678;">count</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">0</span><span style="color: #c7c9cb; background-color: #232530;">;</span>
+
+<span style="color: #b877db; font-style: italic;">while</span> condition <span style="color: #b877db; font-style: italic;">!=</span> <span style="color: #b877db;">true</span> <span style="color: #21bfc2; background-color: #232530;">{</span>  <span style="color: #6c6f93; background-color: #292b36; font-style: italic;">// this loop will never run</span>
+  <span style="color: #b877db; font-style: italic;">if</span> <span style="color: #6c6f93; background-color: #232530;">(</span>count <span style="color: #b877db; font-style: italic;">!=</span> <span style="color: #f09383;">10</span><span style="color: #6c6f93; background-color: #232530;">)</span> <span style="color: #6c6f93; background-color: #232530;">{</span>
+    <span style="color: #e95678;">count</span> <span style="color: #b877db; font-style: italic;">+=</span> <span style="color: #f09383;">1</span><span style="color: #c7c9cb; background-color: #232530;">;</span>
+  <span style="color: #6c6f93; background-color: #232530;">}</span> <span style="color: #b877db; font-style: italic;">else</span>
+    <span style="color: #e95678;">condition</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #b877db;">true</span><span style="color: #c7c9cb; background-color: #232530;">;</span>
+<span style="color: #21bfc2; background-color: #232530;">}</span>
+
+<span style="color: #21bfc2;">print</span><span style="color: #21bfc2; background-color: #232530;">(</span><span style="color: #fab795;">"count ="</span><span style="color: #c7c9cb; background-color: #232530;">,</span> count<span style="color: #21bfc2; background-color: #232530;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+count = 0
+</pre>
+
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #b877db; font-style: italic;">do</span> <span style="color: #21bfc2; background-color: #232530;">{</span>
+  <span style="color: #b877db; font-style: italic;">if</span> <span style="color: #6c6f93; background-color: #232530;">(</span>count <span style="color: #b877db; font-style: italic;">!=</span> <span style="color: #f09383;">10</span><span style="color: #6c6f93; background-color: #232530;">)</span> <span style="color: #6c6f93; background-color: #232530;">{</span>
+    <span style="color: #e95678;">count</span> <span style="color: #b877db; font-style: italic;">+=</span> <span style="color: #f09383;">1</span><span style="color: #c7c9cb; background-color: #232530;">;</span>
+  <span style="color: #6c6f93; background-color: #232530;">}</span> <span style="color: #b877db; font-style: italic;">else</span>
+    <span style="color: #e95678;">condition</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #b877db;">true</span><span style="color: #c7c9cb; background-color: #232530;">;</span>
+<span style="color: #21bfc2; background-color: #232530;">}</span> <span style="color: #b877db; font-style: italic;">while</span> condition <span style="color: #b877db; font-style: italic;">!=</span> <span style="color: #b877db;">true</span><span style="color: #c7c9cb; background-color: #232530;">;</span>
+
+<span style="color: #21bfc2;">print</span><span style="color: #21bfc2; background-color: #232530;">(</span><span style="color: #fab795;">"count ="</span><span style="color: #c7c9cb; background-color: #232530;">,</span> count<span style="color: #21bfc2; background-color: #232530;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+count = 1
+</pre>
+</section>
+<section id="slide-org1a4d935">
+<h3 id="org1a4d935">for loops</h3>
+<aside class="notes">
+<p>
+A for loop is a defined loop. It will run for a set amount of iterations before
+exiting.
+</p>
+
+<p>
+note there are 2 variations. that can be used. a definite one that iterates for
+a set number of iterations and an array loop which itterates through every
+element of an array
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #c7c9cb; background-color: #232530;">[</span><span style="color: #f09383;">1</span><span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #f09383;">2</span><span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #f09383;">3</span><span style="color: #c7c9cb; background-color: #232530;">]</span>
+<span style="color: #b877db; font-style: italic;">for</span> i <span style="color: #b877db; font-style: italic;">in</span> <span style="color: #f09383;">0</span>..<span style="color: #f09383;">3</span>
+  <span style="color: #21bfc2;">puts</span> lst<span style="color: #c7c9cb; background-color: #232530;">[</span>i<span style="color: #c7c9cb; background-color: #232530;">]</span>
+<span style="color: #b877db; font-style: italic;">end</span>
+
+<span style="color: #b877db; font-style: italic;">for</span> i <span style="color: #b877db; font-style: italic;">in</span> lst
+  <span style="color: #21bfc2;">puts</span> i
+<span style="color: #b877db; font-style: italic;">end</span>
+</pre>
+</div>
+
+<pre class="example">
+1
+2
+3
+
+1
+2
+3
+</pre>
+
+</section>
+</section>
+<section>
+<section id="slide-orgca64197">
+<h2 id="orgca64197">A side note on the difference between expressions and statements</h2>
+<aside class="notes">
+<p>
+an expression in simple terms is a set of code that returns a value. you can
+think of this intuitvly by thinking of if you can store the output in a variable
+</p>
+
+<p>
+some examples of expressions include (but are not limited too)
+</p>
+<ul>
+<li>use of mathamatical operators (plus/minus/multiply and divide) they return a
+number</li>
+<li>comparison operators (<code>=, !</code>, &lt;, &gt;) and so on. they will return true or false</li>
+<li>functions that will return a value</li>
+
+</ul>
+
+<p>
+there are some other examples (that start to dive into language theory and such) but for the most part these are the ones you will
+be covering.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #e95678;">x</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">1</span> <span style="color: #b877db; font-style: italic;">+</span> <span style="color: #f09383;">1</span>
+<span style="color: #e95678;">y</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">2</span> &gt; <span style="color: #f09383;">1</span>
+<span style="color: #e95678;">z</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #87ceeb;">Math</span><span style="color: #c7c9cb; background-color: #232530;">.</span><span style="color: #21bfc2;">sqrt</span><span style="color: #c7c9cb; background-color: #232530;">(</span><span style="color: #f09383;">4</span><span style="color: #c7c9cb; background-color: #232530;">)</span>
+
+<span style="color: #c7c9cb; background-color: #232530;">[</span>x<span style="color: #c7c9cb; background-color: #232530;">,</span> y<span style="color: #c7c9cb; background-color: #232530;">,</span> z<span style="color: #c7c9cb; background-color: #232530;">]</span>
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">true</td>
+<td class="org-right">2.0</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+</section>
+<section>
+<section id="slide-orgce29d92">
+<h2 id="orgce29d92">procedures and functions</h2>
+<aside class="notes">
+<p>
+procedures and functions are two types of sub programs.
+</p>
+
+<p>
+a function returns a value while a procedure does not a is more like copy and
+paste (talk a little about side effects)
+</p>
+
+<p>
+They are a way to call a set of
+code multiple times with different arguments each time. essentially creating an
+abstraction and meaning you do not repeat code (which is a bad practice all
+around)
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">in_array?</span><span style="color: #c7c9cb; background-color: #232530;">(</span><span style="color: #e95678;">array</span><span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #e95678;">to_find</span><span style="color: #c7c9cb; background-color: #232530;">)</span>
+  <span style="color: #b877db; font-style: italic;">for</span> i <span style="color: #b877db; font-style: italic;">in</span> array
+    <span style="color: #b877db; font-style: italic;">if</span> i == to_find
+      <span style="color: #b877db; font-style: italic;">return</span> <span style="color: #f09383;">true</span>
+    <span style="color: #b877db; font-style: italic;">end</span>
+  <span style="color: #b877db; font-style: italic;">end</span>
+  <span style="color: #b877db; font-style: italic;">return</span> <span style="color: #f09383;">false</span>
+<span style="color: #b877db; font-style: italic;">end</span>
+<span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #c7c9cb; background-color: #232530;">[</span><span style="color: #f09383;">1</span><span style="color: #c7c9cb; background-color: #232530;">,</span><span style="color: #f09383;">2</span><span style="color: #c7c9cb; background-color: #232530;">,</span><span style="color: #f09383;">3</span><span style="color: #c7c9cb; background-color: #232530;">]</span>
+<span style="color: #e95678;">x</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #21bfc2;">in_array?</span><span style="color: #c7c9cb; background-color: #232530;">(</span>lst<span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #f09383;">3</span><span style="color: #c7c9cb; background-color: #232530;">)</span>
+<span style="color: #e95678;">y</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #21bfc2;">in_array?</span><span style="color: #c7c9cb; background-color: #232530;">(</span>lst<span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #f09383;">4</span><span style="color: #c7c9cb; background-color: #232530;">)</span>
+
+<span style="color: #c7c9cb; background-color: #232530;">[</span>x<span style="color: #c7c9cb; background-color: #232530;">,</span> y<span style="color: #c7c9cb; background-color: #232530;">]</span>
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">true</td>
+<td class="org-left">false</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf375872">
+<h2 id="orgf375872">Questions</h2>
+<aside class="notes">
+<p>
+Most of the questions will ask you to read psudo code or like some of these
+identify code constructs. It will also ask you to write some of your own
+psudocode so keep that in mind
+</p>
+
+</aside>
+</section>
+<section id="slide-orgacf0c39">
+<h3 id="orgacf0c39">Tell me the code structures</h3>
+<div class="outline-text-3" id="text-orgacf0c39">
+</div>
+</section>
+<section id="slide-org22cf892">
+<h4 id="org22cf892">What loop should you use when you need to loop through an array?</h4>
+</section>
+<section id="slide-org3ae65b5">
+<h4 id="org3ae65b5">What structure decides which path to take depending on a boolean expression?</h4>
+</section>
+<section id="slide-orga130a5b">
+<h4 id="orga130a5b">What structure should you use when you need to check a variable against multiple expressions</h4>
+</section>
+<section id="slide-org9c7181b">
+<h3 id="org9c7181b">Question 1</h3>
+
+<div id="org3b05634" class="figure">
+<p><img src="code-structures1.png" alt="code-structures1.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgafd5908">
+<h3 id="orgafd5908">Question 2</h3>
+
+<div id="org6032af7" class="figure">
+<p><img src="code-structures2.png" alt="code-structures2.png" />
+</p>
+</div>
+</section>
+<section id="slide-org3ea9cb0">
+<h3 id="org3ea9cb0">Question 3</h3>
+
+<div id="org6a23a67" class="figure">
+<p><img src="code-structures3.png" alt="code-structures3.png" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
