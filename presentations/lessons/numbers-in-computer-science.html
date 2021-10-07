@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Numbers In Computer Science</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Numbers In Computer Science</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>units, converting back and forth and some maths</i></h3><p>Press s for speaker notes</p>
+</section>
+
+<section>
+<section id="slide-org7617cc0">
+<h2 id="org7617cc0">The Units</h2>
+<aside class="notes">
+<p>
+There are some units you need to know
+</p>
+<ul>
+<li>bit</li>
+<li>nibble (4 bits)</li>
+<li>byte (8 bits, 2 nibbles)</li>
+<li>kilobyte (1000 <b>bytes</b>)</li>
+<li>megabyte (1000 <b>kilobytes</b>)</li>
+<li>gigabyte</li>
+<li>terabyte</li>
+<li>petabyte</li>
+
+</ul>
+
+</aside>
+
+<ul>
+<li>bit</li>
+<li>nibble (4 bits)</li>
+<li>byte (8 bits, 2 nibbles)</li>
+<li>kilobyte (1000 <b>bytes</b>)</li>
+<li>megabyte (1000 <b>kilobytes</b>)</li>
+<li>gigabyte</li>
+<li>terabyte</li>
+<li>petabyte</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org5ecb5a1">
+<h2 id="org5ecb5a1">Why we use what we use</h2>
+<div class="outline-text-2" id="text-org5ecb5a1">
+</div>
+</section>
+<section id="slide-org39df462">
+<h3 id="org39df462">Binary</h3>
+<aside class="notes">
+<p>
+Computers use binary (other words base 2) as it uses electrical signals for its computation.
+a 0 is an off state while a 1 is an on state.
+</p>
+
+</aside>
+</section>
+<section id="slide-org237681b">
+<h3 id="org237681b">Hexadecimal</h3>
+<aside class="notes">
+<p>
+we use hexadecimal as one digit of hex can represent one nibble or half a byte.
+this means that the 8 characters used by a single byte can be reduced to two
+characters. this makes it much more compact making it a convenient short hand
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org16d4303">
+<h2 id="org16d4303">Converting between</h2>
+<div class="outline-text-2" id="text-org16d4303">
+</div>
+</section>
+<section id="slide-org40de272">
+<h3 id="org40de272">the basics ob binary</h3>
+<aside class="notes">
+<p>
+lets start by what a binary digit is.
+the placement of a diget corresponds to a power of 2
+this is like base 10.
+</p>
+
+</aside>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">&#x2026;</th>
+<th scope="col" class="org-right">10<sup>3</sup></th>
+<th scope="col" class="org-right">10<sup>2</sup></th>
+<th scope="col" class="org-right">10<sup>1</sup></th>
+<th scope="col" class="org-right">10<sup>0</sup></th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">1000</th>
+<th scope="col" class="org-right">100</th>
+<th scope="col" class="org-right">10</th>
+<th scope="col" class="org-right">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">2<sup>7</sup></td>
+<td class="org-left">2<sup>6</sup></td>
+<td class="org-left">2<sup>5</sup></td>
+<td class="org-left">2<sup>4</sup></td>
+<td class="org-right">2<sup>3</sup></td>
+<td class="org-right">2<sup>2</sup></td>
+<td class="org-right">2<sup>1</sup></td>
+<td class="org-right">2<sup>0</sup></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">128</td>
+<td class="org-left">64</td>
+<td class="org-left">32</td>
+<td class="org-left">16</td>
+<td class="org-right">8</td>
+<td class="org-right">4</td>
+<td class="org-right">2</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="slide-orgebbdae7">
+<h4 id="orgebbdae7">Denary to Binary</h4>
+<aside class="notes">
+<p>
+to convert from deneray to binary we use a simple table
+where the first row is the powers of two.
+</p>
+
+<p>
+we take the number and work left to right taking away every number that fits
+so in this case 128, 64, 32 and 16 don&rsquo;t fit so they get represented with zero&rsquo;s
+8 does fit so we take it away.
+a one is put in the 8 column
+4 does not fit into our new total but 2 does so we put a 1 in the two column
+we contine until our total is zero
+</p>
+
+</aside>
+<p>
+we want to convert 10
+</p>
+<ul>
+<li>10 - 8 = 2</li>
+<li>2 - 2 = 0</li>
+
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">128</td>
+<td class="org-right">64</td>
+<td class="org-right">32</td>
+<td class="org-right">16</td>
+<td class="org-right">8</td>
+<td class="org-right">4</td>
+<td class="org-right">2</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table>
+
+<pre class="example">
+00001010
+</pre>
+</section>
+<section id="slide-orgc39aa47">
+<h4 id="orgc39aa47">Binary to Denary</h4>
+<aside class="notes">
+<p>
+for the reverse we again put our binary number into the table add up all of the
+powers of 2 which have a one in there column
+</p>
+
+</aside>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">128</td>
+<td class="org-right">64</td>
+<td class="org-right">32</td>
+<td class="org-right">16</td>
+<td class="org-right">8</td>
+<td class="org-right">4</td>
+<td class="org-right">2</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+8 + 2 = 10
+</p>
+
+</section>
+<section id="slide-org8f71ca1">
+<h3 id="org8f71ca1">The basics of Hexadecimal</h3>
+<aside class="notes">
+<p>
+Hexadecimal is base 16 we can use the same techniqe as before but its easier to
+just use this trick (both are valid in the exam except one is much faster)
+</p>
+
+<p>
+we also need to talk about symbols
+as hex is base 16 we need some more symbols to represent all the digits
+so if we wanted to represent 16 it would actually be 10.
+<b>count up in hex</b>
+</p>
+
+</aside>
+<ul>
+<li>A = 10</li>
+<li>B = 11</li>
+<li>C = 12</li>
+<li>D = 13</li>
+<li>E = 14</li>
+<li>F = 15</li>
+
+</ul>
+</section>
+<section id="slide-org9b6003b">
+<h3 id="org9b6003b">Binary to Hex</h3>
+<aside class="notes">
+<p>
+for this example we need to first split the byte in half.
+lets take another example 26
+00011010
+</p>
+
+</aside>
+<ul>
+<li>we have the binary number 26
+00011010</li>
+<li>so that we have 2 <i>nibbles</i>
+0001  1010</li>
+
+<li>we then convert them to denary (usually in our heads.) and convert it to hex</li>
+<li>digits</li>
+<li>1   10</li>
+<li>1   A</li>
+
+</ul>
+
+<p>
+our hex digit is 1A
+</p>
+</section>
+<section id="slide-org60c443f">
+<h3 id="org60c443f">Hex to Binary</h3>
+<aside class="notes">
+<p>
+to do the reverse we just reverse the process
+ note I don&rsquo;t discuss converting from denary to Hex as I would recommend you
+ convert to binary before converting to Hex.
+ You need to be careful as it may seem there is a shortcut but it can be
+ deceptive
+</p>
+
+</aside>
+<p>
+we want to convert 1A
+</p>
+
+<ul>
+<li>split it
+1  A</li>
+<li>convert to denary
+1  10</li>
+<li>convert the denary to binary
+0001  1010</li>
+<li>put them together
+00011010</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgda74dcb">
+<h2 id="orgda74dcb">Maths using binary</h2>
+<div class="outline-text-2" id="text-orgda74dcb">
+</div>
+</section>
+<section id="slide-orgd5f6d44">
+<h3 id="orgd5f6d44">Addition</h3>
+<aside class="notes">
+<p>
+You need to be able to add 2 binary numbers together.
+<b>use whiteboard</b>
+</p>
+
+</aside>
+
+</section>
+<section id="slide-orgbd3e094">
+<h4 id="orgbd3e094">Overflow errors</h4>
+<aside class="notes">
+<p>
+as there are only 8 bits when we add 2 numbers that will lead to a number bigger
+than one that can be represented as an overflow
+</p>
+
+</aside>
+</section>
+<section id="slide-org6b13dbc">
+<h3 id="org6b13dbc">Binary shifts</h3>
+<aside class="notes">
+<p>
+a binary shift <b>shifts</b> all the bits left and right by a certain amount.
+it essentually performs a multiplication and division in multiples of 2
+</p>
+
+<p>
+we have an analogy in base 10. its called multiplication and division by 10
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org2af3a65">
+<h2 id="org2af3a65">Questions</h2>
+<div class="outline-text-2" id="text-org2af3a65">
+</div>
+</section>
+<section id="slide-orgde28d7b">
+<h3 id="orgde28d7b">Convert 137 to binary</h3>
+<aside class="notes">
+<p>
+A: 1000 1001
+</p>
+
+</aside>
+</section>
+<section id="slide-orge7f154a">
+<h3 id="orge7f154a">Convert 95 to hex</h3>
+<aside class="notes">
+<p>
+A: 5F
+</p>
+
+</aside>
+</section>
+<section id="slide-orgb917367">
+<h3 id="orgb917367">what does 1000100 + 10010001</h3>
+<aside class="notes">
+<p>
+A: 11010101
+</p>
+
+</aside>
+<ul>
+<li>what kind of error does it raise?</li>
+
+</ul>
+</section>
+<section id="slide-orgc150156">
+<h3 id="orgc150156">Binary shift 00111000 once to the left.</h3>
+<aside class="notes">
+<p>
+01110000
+56
+112
+</p>
+
+</aside>
+<ul>
+<li>what is the number before and after?</li>
+
+</ul>
+</section>
+<section id="slide-orgb12ebe1">
+<h3 id="orgb12ebe1">Exam questions</h3>
+
+<div id="orgcc9908a" class="figure">
+<p><img src="numbers1.png" alt="numbers1.png" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

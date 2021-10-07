@@ -62,6 +62,6 @@ linearSearch(list, toFind)
 Write an implementation of the linear search algorithm using psuedocode
 #+end_src
 * simple example
-   [[file:simple_example.png]]
+   [[file:pseudocode1.png]]
 * harder
 * practice
