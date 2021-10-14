@@ -1,0 +1,157 @@
+#+TITLE: Data Representation
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>how to store and represent different kinds of data</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* Data Storage and Representation
+#+begin_notes
+All data on a computer is stored in binary, sets of 0's and 1's.
+this is because a computer uses electrical signals to do its processing so you
+can only have on or off.
+#+end_notes
+* The Units
+#+begin_notes
+There are some units you need to know
+- bit
+- nibble (4 bits)
+- byte (8 bits, 2 nibbles)
+- kilobyte (1000 *bytes*)
+- megabyte (1000 *kilobytes*)
+- gigabyte
+- terabyte
+- petabyte
+#+end_notes
+
+#+ATTR_REVEAL: frag(roll-in)
+- bit
+- nibble (4 bits)
+- byte (8 bits, 2 nibbles)
+- kilobyte (1000 *bytes*)
+- megabyte (1000 *kilobytes*)
+- gigabyte
+- terabyte
+- petabyte
+* Types of Data
+** Characters
+#+begin_notes
+characters are represented using codes, more formally ascii codes.
+essentially a number is assigned to a character and when that character is come
+across the computer knows to replace that code with the symbol or character
+https://www.asciitable.com/
+
+note that the amount of characters available is limited by the amount of bits
+available, back when the standard was written it used 7 bits so only 128
+characters could be represented. this was ok for a while but then some new
+symbols were needed so another bit was added (making a total of 8 bits) which
+brought the around of symbols that could be represented to 256.
+
+In your exam your character codes will use 8 bits this can also be represented
+in hexadecimal. so for example 6A represents lowercase j and 4A is uppercase J
+#+end_notes
+
+*** Unicode
+#+begin_notes
+Unicode can use anything from 8 bits to 32 bits, so it can represent characters
+from languages from all around the world and then some.
+
+Its a common encoding used on the web and used by organizations where they need
+to communicate in many different languages.
+
+Some of the disadvantages include that it will take up more size if you use a
+language that is not english
+#+end_notes
+** Images
+#+begin_notes
+Images can be represented 2 ways, either as a set of pixels or as a set of
+mathematically equations which can then be rendered. these are called bitmaps
+and vectors respectfully
+
+There are 2 factors when it comes to image quality, the colour depth and the
+resolution of the image.
+
+#+end_notes
+
+*** Vector images
+#+begin_notes
+a vector image is a set of shapes and lines which use coordinates and equations
+to represent an image. this has the nice benift of having the ability to scale
+to any size without loosing quality, with the downside being it does not capture
+as much detail (as natural things are harder to represent using a mathamatical formula)
+#+end_notes
+
+*** Colour Depth
+#+begin_notes
+Colour depth is the measure of the amount of colours a pixel can represent. as
+there are three sub pixels and each has a set of bits.
+
+lets forget about other colours
+if there is a one bit depth that means you can 2 colours
+If there is a 2 bit depth then there are 4 colours
+you can work out the amount of colours for one pixel by raising 2 to the power
+to the number of bits.
+2^1 is 2 and 2^3 = 8
+you cna then multiply this by three to work out the amount of colours with three
+sub pixels
+
+in your exam you will be using 8 bit colour, this means each pixel will have 256
+colour combinations
+
+In other words colour depths means how many colours per pixel
+#+end_notes
+*** Resolution
+#+begin_notes
+Resolution is a lot easier to understand. It is the density of pixels. measured
+in pixel per inch. the higher the PPI the more detailed it will be but also the
+more space it will take up.
+#+end_notes
+*** Metadata
+#+begin_notes
+Metadata is data about the data (about the image.) Its used to make the jobs of
+other programs (and the viewer easier)
+things that can be metadata can include
+- the file format (.jpg, .png ...)
+- the dimensions
+- the resolution
+- the colour depth
+- a time stamp
+- settings when the photo was taken
+- maybe the location
+#+end_notes
+** Sound
+#+begin_notes
+sound has two metrics the sampling rate, the duration and the bit depth.
+#+end_notes
+*** Sampling rate
+#+begin_notes
+the sampling rate is how many times per second is a measurement is taken. *use
+board*
+#+end_notes
+*** Bit rate
+#+begin_notes
+Bit rate is the size of the sample. the higher the number the higher the high
+notes you can capture.
+
+this does mean that the higher bit rate will lead to a higher sound quality but
+also does means a larger file size.
+#+end_notes
+*** Calculating the size of a file
+#+begin_notes
+You can calculate the bitrate by multiplying the sample rate (the amount of
+samples) with the bit depth (the size of each sample).
+
+you can then multiply is with the duration (in seconds) to work out the file
+size
+#+end_notes
+* Questions
+** Question 1
+[[file:data-rep1.png]]
+** Question 2
+[[file:data-rep2.png]]
+** Question 3
+[[file:data-rep-3.png]]

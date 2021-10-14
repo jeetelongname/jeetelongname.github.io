@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Data Representation</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Data Representation</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>how to store and represent different kinds of data</i></h3><p>Press s for speaker notes</p>
+</section>
+
+<section>
+<section id="slide-orgf3ddf45">
+<h2 id="orgf3ddf45">Data Storage and Representation</h2>
+<aside class="notes">
+<p>
+All data on a computer is stored in binary, sets of 0&rsquo;s and 1&rsquo;s.
+this is because a computer uses electrical signals to do its processing so you
+can only have on or off.
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org579dc8c">
+<h2 id="org579dc8c">The Units</h2>
+<aside class="notes">
+<p>
+There are some units you need to know
+</p>
+<ul>
+<li>bit</li>
+<li>nibble (4 bits)</li>
+<li>byte (8 bits, 2 nibbles)</li>
+<li>kilobyte (1000 <b>bytes</b>)</li>
+<li>megabyte (1000 <b>kilobytes</b>)</li>
+<li>gigabyte</li>
+<li>terabyte</li>
+<li>petabyte</li>
+
+</ul>
+
+</aside>
+
+<ul>
+<li>bit</li>
+<li>nibble (4 bits)</li>
+<li>byte (8 bits, 2 nibbles)</li>
+<li>kilobyte (1000 <b>bytes</b>)</li>
+<li>megabyte (1000 <b>kilobytes</b>)</li>
+<li>gigabyte</li>
+<li>terabyte</li>
+<li>petabyte</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org4a44144">
+<h2 id="org4a44144">Types of Data</h2>
+<div class="outline-text-2" id="text-org4a44144">
+</div>
+</section>
+<section id="slide-orgf631c72">
+<h3 id="orgf631c72">Characters</h3>
+<aside class="notes">
+<p>
+characters are represented using codes, more formally ascii codes.
+essentially a number is assigned to a character and when that character is come
+across the computer knows to replace that code with the symbol or character
+<a href="https://www.asciitable.com/">https://www.asciitable.com/</a>
+</p>
+
+<p>
+note that the amount of characters available is limited by the amount of bits
+available, back when the standard was written it used 7 bits so only 128
+characters could be represented. this was ok for a while but then some new
+symbols were needed so another bit was added (making a total of 8 bits) which
+brought the around of symbols that could be represented to 256.
+</p>
+
+<p>
+In your exam your character codes will use 8 bits this can also be represented
+in hexadecimal. so for example 6A represents lowercase j and 4A is uppercase J
+</p>
+
+</aside>
+
+</section>
+<section id="slide-org0ba9520">
+<h4 id="org0ba9520">Unicode</h4>
+<aside class="notes">
+<p>
+Unicode can use anything from 8 bits to 32 bits, so it can represent characters
+from languages from all around the world and then some.
+</p>
+
+<p>
+Its a common encoding used on the web and used by organizations where they need
+to communicate in many different languages.
+</p>
+
+<p>
+Some of the disadvantages include that it will take up more size if you use a
+language that is not english
+</p>
+
+</aside>
+</section>
+<section id="slide-org0aaf5e8">
+<h3 id="org0aaf5e8">Images</h3>
+<aside class="notes">
+<p>
+Images can be represented 2 ways, either as a set of pixels or as a set of
+mathematically equations which can then be rendered. these are called bitmaps
+and vectors respectfully
+</p>
+
+<p>
+There are 2 factors when it comes to image quality, the colour depth and the
+resolution of the image.
+</p>
+
+</aside>
+
+</section>
+<section id="slide-orga1df4de">
+<h4 id="orga1df4de">Vector images</h4>
+<aside class="notes">
+<p>
+a vector image is a set of shapes and lines which use coordinates and equations
+to represent an image. this has the nice benift of having the ability to scale
+to any size without loosing quality, with the downside being it does not capture
+as much detail (as natural things are harder to represent using a mathamatical formula)
+</p>
+
+</aside>
+
+</section>
+<section id="slide-org9cefd52">
+<h4 id="org9cefd52">Colour Depth</h4>
+<aside class="notes">
+<p>
+Colour depth is the measure of the amount of colours a pixel can represent. as
+there are three sub pixels and each has a set of bits.
+</p>
+
+<p>
+lets forget about other colours
+if there is a one bit depth that means you can 2 colours
+If there is a 2 bit depth then there are 4 colours
+you can work out the amount of colours for one pixel by raising 2 to the power
+to the number of bits.
+2<sup>1</sup> is 2 and 2<sup>3</sup> = 8
+you cna then multiply this by three to work out the amount of colours with three
+sub pixels
+</p>
+
+<p>
+in your exam you will be using 8 bit colour, this means each pixel will have 256
+colour combinations
+</p>
+
+<p>
+In other words colour depths means how many colours per pixel
+</p>
+
+</aside>
+</section>
+<section id="slide-org76e7937">
+<h4 id="org76e7937">Resolution</h4>
+<aside class="notes">
+<p>
+Resolution is a lot easier to understand. It is the density of pixels. measured
+in pixel per inch. the higher the PPI the more detailed it will be but also the
+more space it will take up.
+</p>
+
+</aside>
+</section>
+<section id="slide-org29343d1">
+<h4 id="org29343d1">Metadata</h4>
+<aside class="notes">
+<p>
+Metadata is data about the data (about the image.) Its used to make the jobs of
+other programs (and the viewer easier)
+things that can be metadata can include
+</p>
+<ul>
+<li>the file format (.jpg, .png &#x2026;)</li>
+<li>the dimensions</li>
+<li>the resolution</li>
+<li>the colour depth</li>
+<li>a time stamp</li>
+<li>settings when the photo was taken</li>
+<li>maybe the location</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-org67b484c">
+<h3 id="org67b484c">Sound</h3>
+<aside class="notes">
+<p>
+sound has two metrics the sampling rate, the duration and the bit depth.
+</p>
+
+</aside>
+</section>
+<section id="slide-org1ea26a0">
+<h4 id="org1ea26a0">Sampling rate</h4>
+<aside class="notes">
+<p>
+the sampling rate is how many times per second is a measurement is taken. <b>use
+board</b>
+</p>
+
+</aside>
+</section>
+<section id="slide-org3ce6566">
+<h4 id="org3ce6566">Bit rate</h4>
+<aside class="notes">
+<p>
+Bit rate is the size of the sample. the higher the number the higher the high
+notes you can capture.
+</p>
+
+<p>
+this does mean that the higher bit rate will lead to a higher sound quality but
+also does means a larger file size.
+</p>
+
+</aside>
+</section>
+<section id="slide-orgb5303a9">
+<h4 id="orgb5303a9">Calculating the size of a file</h4>
+<aside class="notes">
+<p>
+You can calculate the bitrate by multiplying the sample rate (the amount of
+samples) with the bit depth (the size of each sample).
+</p>
+
+<p>
+you can then multiply is with the duration (in seconds) to work out the file
+size
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-orgbeb9afb">
+<h2 id="orgbeb9afb">Questions</h2>
+<div class="outline-text-2" id="text-orgbeb9afb">
+</div>
+</section>
+<section id="slide-orgb52872c">
+<h3 id="orgb52872c">Question 1</h3>
+
+<div id="org2f88b3b" class="figure">
+<p><img src="data-rep1.png" alt="data-rep1.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgb3c9582">
+<h3 id="orgb3c9582">Question 2</h3>
+
+<div id="org811db2a" class="figure">
+<p><img src="data-rep2.png" alt="data-rep2.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgb67e31d">
+<h3 id="orgb67e31d">Question 3</h3>
+
+<div id="orgf42fe90" class="figure">
+<p><img src="data-rep-3.png" alt="data-rep-3.png" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
