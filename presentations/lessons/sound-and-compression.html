@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Sound And Compression</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Sound And Compression</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>Finishing off from last week</i></h3><p>Press s for speaker notes</p>
+</section>
+
+
+<section>
+<section id="slide-orgbccdbd4">
+<h2 id="orgbccdbd4">Sound</h2>
+<aside class="notes">
+<p>
+sound has two metrics the sampling rate, the duration and the bit depth.
+</p>
+
+</aside>
+</section>
+<section id="slide-org7322ae3">
+<h3 id="org7322ae3">Sampling rate</h3>
+<aside class="notes">
+<p>
+the sampling rate is how many times per second is a measurement is taken. <b>use
+board</b>
+</p>
+
+</aside>
+</section>
+<section id="slide-org6b0e35b">
+<h3 id="org6b0e35b">Bit rate</h3>
+<aside class="notes">
+<p>
+Bit rate is the size of the sample. the higher the number the higher the high
+notes you can capture.
+</p>
+
+<p>
+this does mean that the higher bit rate will lead to a higher sound quality but
+also does means a larger file size.
+</p>
+
+</aside>
+</section>
+<section id="slide-orgb1236b1">
+<h3 id="orgb1236b1">Calculating the size of a file</h3>
+<aside class="notes">
+<p>
+You can calculate the bitrate by multiplying the sample rate (the amount of
+samples) with the bit depth (the size of each sample).
+</p>
+
+<p>
+you can then multiply is with the duration (in seconds) to work out the file
+size
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org1f00f4f">
+<h2 id="org1f00f4f">Compression</h2>
+<aside class="notes">
+<p>
+Why do we need compression?
+Well space is not infinite and some files are much larger than we need them to
+be. We still need to keep them but they can be inconvenient for some reasons
+such as backing up and transmitting data over the internet
+</p>
+
+</aside>
+</section>
+<section id="slide-org05cfe92">
+<h3 id="org05cfe92">Lossy</h3>
+<aside class="notes">
+<p>
+Lossy Compression is shrinking the file size using destructive means. this means
+that some data is lost o shrink file size. this may be reducing the resolution
+or colour depth of an image for example or removing some of the more extreme
+notes in a sound track
+</p>
+
+<p>
+Some examples of lossy standards are
+</p>
+<ul>
+<li>jpeg which works like this in principal (but is more complex in the
+background) on images</li>
+<li>mpeg is similar but works for audio and video making it more suitable for
+streaming and sending media over the internet</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-orgf94747b">
+<h3 id="orgf94747b">Lossless</h3>
+<aside class="notes">
+<p>
+Lossless compression on the other hand shrinks file size in a way that allows
+for the data to be reconstructed. This is useful for formats that can&rsquo;t use
+lossy compression. for example text files, spreadsheets, emails and so on.
+This is great for backups as you get a file shrinkage and still have the full
+quality file. though the file reduction will be smaller compared to a lossy
+compression format
+Some formats include
+</p>
+<ul>
+<li>pdf</li>
+<li>GIF</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-orgb6ca901">
+<h4 id="orgb6ca901">Run length encoding</h4>
+<aside class="notes">
+<p>
+This is an example of an lossless compression we can use run length encoding.
+essentially you group together any lengths of data that are the same (Show on
+board)
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org8d8859d">
+<h2 id="org8d8859d">Questions</h2>
+<div class="outline-text-2" id="text-org8d8859d">
+</div>
+</section>
+<section id="slide-org2288f97">
+<h3 id="org2288f97">Question 1</h3>
+
+<div id="org1357edc" class="figure">
+<p><img src="data-rep2.png" alt="data-rep2.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgdaf1247">
+<h3 id="orgdaf1247">Question 2</h3>
+
+<div id="orge75b40c" class="figure">
+<p><img src="soun&amp;comp.png" alt="soun&amp;comp.png" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
