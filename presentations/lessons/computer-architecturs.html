@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>The CPU</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>The CPU</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>Ie the Central Processing Unit</i></h3><p>Press s for speaker notes</p>
+</section>
+
+<section>
+<section id="slide-org06b0be1">
+<h2 id="org06b0be1">The CPU</h2>
+<aside class="notes">
+<p>
+The CPU is the central core of the computer. it is what processes everything you
+do. we will look in a little detail how it does that and how it works
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org29aae1e">
+<h2 id="org29aae1e">The Main Components</h2>
+<div class="outline-text-2" id="text-org29aae1e">
+</div>
+</section>
+<section id="slide-org7407351">
+<h3 id="org7407351">ALU</h3>
+<aside class="notes">
+<p>
+ALU stands for arithmetic logic unit. it is what performs the calculations. the
+output of which is stored in the accumulator
+</p>
+
+</aside>
+</section>
+<section id="slide-org31b2c92">
+<h3 id="org31b2c92">CU</h3>
+<aside class="notes">
+<p>
+CU or control unit controls the flow of the CPU it will send out write and read
+instructions to the memory and is the brain of the brain
+</p>
+
+</aside>
+</section>
+<section id="slide-orgb8dcfcc">
+<h3 id="orgb8dcfcc">Cache</h3>
+<aside class="notes">
+<p>
+cache is a tiny block of memory right on the CPU. its super fast but super smol
+used for storing the most used instructions
+</p>
+
+</aside>
+</section>
+<section id="slide-org1fd70fa">
+<h3 id="org1fd70fa">Registers</h3>
+<aside class="notes">
+<p>
+Registers are even smaller pieces of memory that are very specialised for
+specific jobs withing the cpu cycle.
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-orgb6855e8">
+<h2 id="orgb6855e8">The Fetch Execute cycle</h2>
+<aside class="notes">
+<p>
+the fetch execute cycle how the cpu runs through the instructions
+they will fetch the instructions from memory
+the cpu (control unit) decodes the instruction
+the cpu executes the instruction
+we continue until we have no instructions left
+</p>
+
+</aside>
+</section>
+<section id="slide-orga9ba85f">
+<h3 id="orga9ba85f">Von Neumann</h3>
+<aside class="notes">
+<p>
+The Von Neuman architecture is the main architecture used by most CPU&rsquo;s it keeps
+data and instructions in the same space which makes it much more memory
+efficient. but means that you need to decode the instructions on the CPU which
+is less performant
+</p>
+
+</aside>
+</section>
+<section id="slide-orgbfb2390">
+<h4 id="orgbfb2390">Program Counter</h4>
+<aside class="notes">
+<p>
+program counter
+</p>
+
+<p>
+increments every cycle
+</p>
+
+</aside>
+</section>
+<section id="slide-orgeb93661">
+<h4 id="orgeb93661">MAR</h4>
+<aside class="notes">
+<p>
+Memory address register
+</p>
+
+<p>
+holds the adress for the next instuction
+</p>
+
+</aside>
+</section>
+<section id="slide-org0d0b169">
+<h4 id="org0d0b169">Address bus</h4>
+<aside class="notes">
+<p>
+Address bus
+</p>
+
+<p>
+stores the address of the next instruction
+</p>
+
+</aside>
+</section>
+<section id="slide-orgb3f7700">
+<h4 id="orgb3f7700">MDR</h4>
+<aside class="notes">
+<p>
+Memory data register
+</p>
+
+<p>
+stores the result of that request
+</p>
+
+</aside>
+</section>
+<section id="slide-orgbedfa22">
+<h4 id="orgbedfa22">CIR</h4>
+<aside class="notes">
+<p>
+Current instruction register
+</p>
+
+<p>
+holds the instruction as its being decoded
+</p>
+
+<p>
+passes it to the ALU
+</p>
+
+</aside>
+</section>
+<section id="slide-org8a644e8">
+<h4 id="org8a644e8">CU</h4>
+<aside class="notes">
+<p>
+Control unit
+</p>
+
+<p>
+coordinates the CPU.
+sends read and write instruction to memory
+decodes the instruction into opcode (the instruction) and operand which is the
+data
+</p>
+
+</aside>
+</section>
+<section id="slide-org1181612">
+<h4 id="org1181612">Accumulator</h4>
+<aside class="notes">
+<p>
+accumulator
+</p>
+
+<p>
+stores the result of the acc
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org9d7c6cf">
+<h2 id="org9d7c6cf">Questions</h2>
+<aside class="notes">
+<p>
+<a href="http://www.gcsecs.com/fetch-decode-execute-cycle.html">http://www.gcsecs.com/fetch-decode-execute-cycle.html</a>
+</p>
+
+</aside>
+</section>
+<section id="slide-org9516fe6">
+<h3 id="org9516fe6">Question 1</h3>
+
+<div id="org6c684e2" class="figure">
+<p><img src="cpu3.png" alt="cpu3.png" />
+</p>
+</div>
+</section>
+<section id="slide-org19b6b7c">
+<h3 id="org19b6b7c">Question 2</h3>
+
+<div id="org8bfbf73" class="figure">
+<p><img src="cp1.png" alt="cp1.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgcd730e7">
+<h3 id="orgcd730e7">Question 3</h3>
+
+<div id="org652d2c1" class="figure">
+<p><img src="cpu2.png" alt="cpu2.png" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

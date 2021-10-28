@@ -1,0 +1,110 @@
+#+TITLE: The CPU
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>Ie the Central Processing Unit</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* The CPU
+#+begin_notes
+The CPU is the central core of the computer. it is what processes everything you
+do. we will look in a little detail how it does that and how it works
+#+end_notes
+* The Main Components
+** ALU
+#+begin_notes
+ALU stands for arithmetic logic unit. it is what performs the calculations. the
+output of which is stored in the accumulator
+#+end_notes
+** CU
+#+begin_notes
+CU or control unit controls the flow of the CPU it will send out write and read
+instructions to the memory and is the brain of the brain
+#+end_notes
+** Cache
+#+begin_notes
+cache is a tiny block of memory right on the CPU. its super fast but super smol
+used for storing the most used instructions
+#+end_notes
+** Registers
+#+begin_notes
+Registers are even smaller pieces of memory that are very specialised for
+specific jobs withing the cpu cycle.
+#+end_notes
+* The Fetch Execute cycle
+#+begin_notes
+the fetch execute cycle how the cpu runs through the instructions
+they will fetch the instructions from memory
+the cpu (control unit) decodes the instruction
+the cpu executes the instruction
+we continue until we have no instructions left
+
+#+end_notes
+** Von Neumann
+#+begin_notes
+The Von Neuman architecture is the main architecture used by most CPU's it keeps
+data and instructions in the same space which makes it much more memory
+efficient. but means that you need to decode the instructions on the CPU which
+is less performant
+#+end_notes
+*** Program Counter
+#+begin_notes
+program counter
+
+increments every cycle
+#+end_notes
+*** MAR
+#+begin_notes
+Memory address register
+
+holds the adress for the next instuction
+#+end_notes
+*** Address bus
+#+begin_notes
+Address bus
+
+stores the address of the next instruction
+#+end_notes
+*** MDR
+#+begin_notes
+Memory data register
+
+stores the result of that request
+#+end_notes
+*** CIR
+#+begin_notes
+Current instruction register
+
+holds the instruction as its being decoded
+
+passes it to the ALU
+#+end_notes
+*** CU
+#+begin_notes
+Control unit
+
+coordinates the CPU.
+sends read and write instruction to memory
+decodes the instruction into opcode (the instruction) and operand which is the
+data
+#+end_notes
+*** Accumulator
+#+begin_notes
+accumulator
+
+stores the result of the acc
+#+end_notes
+* Questions
+#+begin_notes
+http://www.gcsecs.com/fetch-decode-execute-cycle.html
+#+end_notes
+** Question 1
+[[file:cpu3.png]]
+** Question 2
+[[file:cp1.png]]
+** Question 3
+[[file:cpu2.png]]
