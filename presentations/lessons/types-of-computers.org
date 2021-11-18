@@ -1,0 +1,69 @@
+#+TITLE: Types Of Computers
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>Performance Characterists and Embedded systems</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* Performance Characteristics of A CPU
+#+begin_notes
+Why do we need to worry about performace? Well different CPU's are better for
+different application's
+#+end_notes
+** Clock Speed
+#+begin_notes
+The clock speed is how many instructions can be processed in a second.
+for each clock cycle the CPU fetches and executes 1 instruction.
+this is measured in cycles with a unit of Hz (cycles per second).
+an increase in clock speed can lead to an increase in instructions processed in a
+second and a faster experience overall .
+
+current CPU's run at 4GHz or 4 billion cycles per second. so that's 4 Billion
+Instructions processed per second (well more for the next couple of reasons).
+#+end_notes
+** Cores
+#+begin_notes
+Cores are how many compute nodes you have on the CPU. You can think about them
+like lanes on a road. the more amount of instructions can be processed in one
+cycle. adding another core doubles the amount of instructions
+#+end_notes
+** Cache
+#+begin_notes
+Cache is little bits of memory embedded on the CPU. its very fast but also much
+smaller so its used to store the most recently used instructions. this means
+that the CPU does not have to go all the way main memory to get data.
+
+more cache more speed.
+#+end_notes
+* Embedded systems
+** What is an embedded system?
+#+begin_notes
+an embedded systems is a computer embedded in a larger device. they power most
+things we use in everyday life such as washing machines ovens and televisions.
+they are simple computers that can't be programmed by and end user
+(maybe ask for examples?)
+#+end_notes
+** Why is an embedded system?
+#+begin_notes
+Why do we use embedded systems
+(ask why?)
+
+As a the machine in question is very specialised it does not need more general
+components that a general purpose computer requires. this also means that
+modularity is not really needed and everything is integrated directly onto the
+CPU. they are also usually much smaller cheaper and slower as they do not need
+to perform the many billions of calculations that modern general purpose cpu's
+can do
+#+end_notes
+* Questions
+** Question 1
+[[file:typesofcomp1.png]]
+** Question 2
+[[file:typesofcomp2.png]]
+** Question 3
+[[file:typesofcomp3.png]]

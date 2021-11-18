@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Types Of Computers</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Types Of Computers</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>Performance Characterists and Embedded systems</i></h3><p>Press s for speaker notes</p>
+</section>
+
+<section>
+<section id="slide-org6c36895">
+<h2 id="org6c36895">Performance Characteristics of A CPU</h2>
+<aside class="notes">
+<p>
+Why do we need to worry about performace? Well different CPU&rsquo;s are better for
+different application&rsquo;s
+</p>
+
+</aside>
+</section>
+<section id="slide-org9f46f98">
+<h3 id="org9f46f98">Clock Speed</h3>
+<aside class="notes">
+<p>
+The clock speed is how many instructions can be processed in a second.
+for each clock cycle the CPU fetches and executes 1 instruction.
+this is measured in cycles with a unit of Hz (cycles per second).
+an increase in clock speed can lead to an increase in instructions processed in a
+second and a faster experience overall .
+</p>
+
+<p>
+current CPU&rsquo;s run at 4GHz or 4 billion cycles per second. so that&rsquo;s 4 Billion
+Instructions processed per second (well more for the next couple of reasons).
+</p>
+
+</aside>
+</section>
+<section id="slide-orgaf3bb40">
+<h3 id="orgaf3bb40">Cores</h3>
+<aside class="notes">
+<p>
+Cores are how many compute nodes you have on the CPU. You can think about them
+like lanes on a road. the more amount of instructions can be processed in one
+cycle. adding another core doubles the amount of instructions
+</p>
+
+</aside>
+</section>
+<section id="slide-org08c3e51">
+<h3 id="org08c3e51">Cache</h3>
+<aside class="notes">
+<p>
+Cache is little bits of memory embedded on the CPU. its very fast but also much
+smaller so its used to store the most recently used instructions. this means
+that the CPU does not have to go all the way main memory to get data.
+</p>
+
+<p>
+more cache more speed.
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org738256b">
+<h2 id="org738256b">Embedded systems</h2>
+<div class="outline-text-2" id="text-org738256b">
+</div>
+</section>
+<section id="slide-orgc433902">
+<h3 id="orgc433902">What is an embedded system?</h3>
+<aside class="notes">
+<p>
+an embedded systems is a computer embedded in a larger device. they power most
+things we use in everyday life such as washing machines ovens and televisions.
+they are simple computers that can&rsquo;t be programmed by and end user
+(maybe ask for examples?)
+</p>
+
+</aside>
+</section>
+<section id="slide-org30ad742">
+<h3 id="org30ad742">Why is an embedded system?</h3>
+<aside class="notes">
+<p>
+Why do we use embedded systems
+(ask why?)
+</p>
+
+<p>
+As a the machine in question is very specialised it does not need more general
+components that a general purpose computer requires. this also means that
+modularity is not really needed and everything is integrated directly onto the
+CPU. they are also usually much smaller cheaper and slower as they do not need
+to perform the many billions of calculations that modern general purpose cpu&rsquo;s
+can do
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-orgda98975">
+<h2 id="orgda98975">Questions</h2>
+<div class="outline-text-2" id="text-orgda98975">
+</div>
+</section>
+<section id="slide-org4cb9b0c">
+<h3 id="org4cb9b0c">Question 1</h3>
+
+<div id="orgfd5cc13" class="figure">
+<p><img src="typesofcomp1.png" alt="typesofcomp1.png" />
+</p>
+</div>
+</section>
+<section id="slide-org0f48d49">
+<h3 id="org0f48d49">Question 2</h3>
+
+<div id="org11cf4fb" class="figure">
+<p><img src="typesofcomp2.png" alt="typesofcomp2.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgc01e6e5">
+<h3 id="orgc01e6e5">Question 3</h3>
+
+<div id="orgab839fe" class="figure">
+<p><img src="typesofcomp3.png" alt="typesofcomp3.png" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
