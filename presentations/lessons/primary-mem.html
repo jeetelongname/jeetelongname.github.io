@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Primary Memory</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Primary Memory</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>RAM ROM and the bar</i></h3><p>Press s for speaker notes</p>
+</section>
+
+<section>
+<section id="slide-org803b51e">
+<h2 id="org803b51e">Why do we need primary storage</h2>
+<aside class="notes">
+<p>
+primary storage is the main storage the computer uses, Its used for anything
+that needs to be accessed quickly, this means any open program, start up
+instructions, the operating system, open files and so on.
+</p>
+
+<p>
+The main types are RAM and ROM
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-orga5f2b0e">
+<h2 id="orga5f2b0e">RAM</h2>
+<aside class="notes">
+<p>
+RAM stands for random access memory, its the main kind of primary storage used
+in general computing, its very fast compared to secondary storage but is
+volatile meaning it needs electrical power to operate and all data is wiped
+after the computer is turned off.
+</p>
+
+<p>
+the CPu can read and write to it (this is important for later).
+</p>
+
+</aside>
+<ul>
+<li>Fast</li>
+<li>Volatile</li>
+<li>can be read from and written to</li>
+
+</ul>
+</section>
+<section id="slide-org42f3756">
+<h3 id="org42f3756">The Purpose</h3>
+<aside class="notes">
+<p>
+As we have touched on before its purpose is to make processing faster (without
+it computers would be unusably slow). they are part of the of the data access
+chain. and its where most of your programs and files are stored when you open
+them
+</p>
+
+</aside>
+
+
+<div id="org1cb8e59" class="figure">
+<p><img src="primary-mem-diag1.png" alt="primary-mem-diag1.png" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgf111afa">
+<h2 id="orgf111afa">ROM</h2>
+<aside class="notes">
+<p>
+ROM or read only memory its usually used to provide the starting instructions
+for the CPU loading and handing off control to the operating system, It can only
+be read by the end user and requires special processes to overwrite. its non
+volatile.
+</p>
+
+</aside>
+<ul>
+<li>Non Volatile</li>
+<li>read only</li>
+
+</ul>
+
+</section>
+<section id="slide-orga47158c">
+<h3 id="orga47158c">The Purpose</h3>
+<aside class="notes">
+<p>
+As mentioned its used to store instructions to then boot up the computer, its
+also allows for computers to be turned off as its non volitile which makes them
+more useful.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org8a87baa">
+<h2 id="org8a87baa">The differences</h2>
+<aside class="notes">
+<p>
+<b>ask if she can same some</b>
+</p>
+
+<ul>
+<li>Ram Is volatile while ROM is not</li>
+<li>RAM can be read from and written to while rom can only be read from</li>
+<li>RAM holds the OS and active programs while ROM holds the data and instructions
+required to start the computer</li>
+
+</ul>
+
+</aside>
+<ul>
+<li class="fragment roll-in">Ram Is volatile while ROM is not</li>
+<li class="fragment roll-in">RAM can be read from and written to while rom can only be read from</li>
+<li class="fragment roll-in">RAM holds the OS and active programs while ROM holds the data and instructions
+required to start the computer</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org4b5af89">
+<h2 id="org4b5af89">Virtual Memory</h2>
+<aside class="notes">
+<p>
+A question arises from all of this, what happens when we run out of RAM? <b>ask</b>
+</p>
+
+<p>
+Well this is dependent on OS, Windows stops allowing programs to ask for more
+memory, while on linux is will kill programs using too much, this is not ideal
+in a lot of cases and for the most part we don&rsquo;t need all programs to be in
+memory at a time, if we are playing a game for example our word processor is
+pretty inactive, that being said we don&rsquo;t want to lose our progress so thats
+where virtual memory comes into place. we essentaially allocate parts of
+secondary storage to act like RAM, We select parts of RAM that are inactive and
+transfer them, and if they are needed by the CPU they are transfered back.
+</p>
+
+<p>
+This only happens when RAM is full though as it can slow down a system by a lot,
+Secondary storage is much slower and doing all of those reads and writes blocks
+the rest of the system from running
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-orgf5063a3">
+<h2 id="orgf5063a3">Questions</h2>
+<div class="outline-text-2" id="text-orgf5063a3">
+</div>
+</section>
+<section id="slide-org43ce799">
+<h3 id="org43ce799">State 2 differences between RAM and ROM?</h3>
+</section>
+<section id="slide-orgda7c4df">
+<h3 id="orgda7c4df">What is held in RAM when the computer is running?</h3>
+</section>
+<section id="slide-org15be4ab">
+<h3 id="org15be4ab">How might installing more RAM affect the use of virtual memory?</h3>
+</section>
+<section id="slide-org91d39c0">
+<h3 id="org91d39c0">Question 4</h3>
+
+<div id="org03a8879" class="figure">
+<p><img src="primary-mem-quest1.png" alt="primary-mem-quest1.png" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+#+TITLE: Primary Memory
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>RAM ROM and the bar</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* Why do we need primary storage
+#+begin_notes
+primary storage is the main storage the computer uses, Its used for anything
+that needs to be accessed quickly, this means any open program, start up
+instructions, the operating system, open files and so on.
+
+The main types are RAM and ROM
+#+end_notes
+* RAM
+#+begin_notes
+RAM stands for random access memory, its the main kind of primary storage used
+in general computing, its very fast compared to secondary storage but is
+volatile meaning it needs electrical power to operate and all data is wiped
+after the computer is turned off.
+
+the CPu can read and write to it (this is important for later).
+#+end_notes
+- Fast
+- Volatile
+- can be read from and written to
+** The Purpose
+#+begin_notes
+As we have touched on before its purpose is to make processing faster (without
+it computers would be unusably slow). they are part of the of the data access
+chain. and its where most of your programs and files are stored when you open
+them
+#+end_notes
+
+[[file:primary-mem-diag1.png]]
+* ROM
+#+begin_notes
+ROM or read only memory its usually used to provide the starting instructions
+for the CPU loading and handing off control to the operating system, It can only
+be read by the end user and requires special processes to overwrite. its non
+volatile.
+#+end_notes
+- Non Volatile
+- read only
+
+** The Purpose
+#+begin_notes
+As mentioned its used to store instructions to then boot up the computer, its
+also allows for computers to be turned off as its non volitile which makes them
+more useful.
+#+end_notes
+
+* The differences
+#+begin_notes
+*ask if she can same some*
+
+- Ram Is volatile while ROM is not
+- RAM can be read from and written to while rom can only be read from
+- RAM holds the OS and active programs while ROM holds the data and instructions
+  required to start the computer
+#+end_notes
+#+ATTR_REVEAL: :frag (roll-in)
+- Ram Is volatile while ROM is not
+- RAM can be read from and written to while rom can only be read from
+- RAM holds the OS and active programs while ROM holds the data and instructions
+  required to start the computer
+* Virtual Memory
+#+begin_notes
+A question arises from all of this, what happens when we run out of RAM? *ask*
+
+Well this is dependent on OS, Windows stops allowing programs to ask for more
+memory, while on linux is will kill programs using too much, this is not ideal
+in a lot of cases and for the most part we don't need all programs to be in
+memory at a time, if we are playing a game for example our word processor is
+pretty inactive, that being said we don't want to lose our progress so thats
+where virtual memory comes into place. we essentaially allocate parts of
+secondary storage to act like RAM, We select parts of RAM that are inactive and
+transfer them, and if they are needed by the CPU they are transfered back.
+
+This only happens when RAM is full though as it can slow down a system by a lot,
+Secondary storage is much slower and doing all of those reads and writes blocks
+the rest of the system from running
+#+end_notes
+* Questions
+** State 2 differences between RAM and ROM?
+** What is held in RAM when the computer is running?
+** How might installing more RAM affect the use of virtual memory?
+** Question 4
+[[file:primary-mem-quest1.png]]
