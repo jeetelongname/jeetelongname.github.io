@@ -1,0 +1,138 @@
+#+TITLE: Secondary Storage
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>Where all fun stuff is stored</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* What is secondary storage
+#+begin_notes
+What is secondary storage,
+
+its the main storage on the system. its where the operating system, programs and
+files are stored.
+#+end_notes
+* The need for secondary storage
+#+begin_notes
+computers would not be very useful if we lost all information everytime they
+lost power. we would not be able to have things like laptops and phones (well
+maybe).
+
+we also need to look at what we are storing. operating systems are not small
+things (well they can be but anyway) and we need to store other stuff like
+programs and files and +shit+ stuff. secondary storage allows us to store a lot
+of this stuff so we need a low cost high storage medium
+#+end_notes
+* The factors
+#+begin_notes
+Different mediums have different storage requirements
+*ask what they may be?*
+- Capacity
+  How much data can the medium hold
+- Speed
+  How fast can the data be accessed
+- Portability
+  How easy is it to move the data medium
+- Durability
+  How strong is the medium? will it get damaged when moved around?
+- Reliability
+  Can the medium be used over and over again without fail?
+- Cost
+  How expensive is the medium
+
+  we will see how each of these factors affect each medium
+#+end_notes
+
+#+attr_reveal: :frag (roll-in)
+- Capacity
+- Speed
+- Portability
+- Durability
+- Reliability
+- Cost
+* The types!
+** Magnetic
+#+begin_notes
+The two main forms are hard disks (HDDs) and magnetic tape. they work using
+magnatism to represent bits.
+- There size is mesured in the terabytes (millions of megabytes)
+- They are not very fast compared to other storage mediums
+- The disks themseves are large and are not as easy to trasnport (of course you
+  can throw pretty much any of these medums in a backpack and it will be fine
+  but its not as suitable)
+- They are not that durable. as they are moving components you can damage them
+  by moving them when operational. or by bringing them close to a magnetic or
+  electric field
+- They are infact very reliable. and magnetic tape is used for archival purposes
+- they are not very expensive compared to other mediums
+
+  another disadvantage is disk fragmentation *explain on board*
+
+Uses. we have already mentioned archival but they are also used as the main
+storage for computers and for laptops, they are also used in data centers due to
+there cost to storage ratio
+#+end_notes
+** Solid State Storage
+#+begin_notes
+solid state storage
+Solid state storage does not have moving parts, they are much newer than hdd's.
+its also know as flash memory.
+- The size is usually less than HDD's (this is less true now)
+- They are much faster than HDD's but not as fast as primary memory
+  this is mainly due to the lack of moving parts
+- they are much smaller and can be made into things like sd cards and pen drives
+  making them very portable. the full versions are also much smaller and lighter
+  than full hdd's making them more portable
+- They are much more durable than hdd's as they don't have moving parts.
+- They are as reiable though it should be said when they do fail they fail all
+  in one go while hdd's have warning signs
+- they are usually much more expensive (for your exam anyway)
+
+they are used mainly in devices where size is important, thin laptops, tablets
+and phones, they can also be used in a hybrid context, so you use an ssd as a
+boot drive while you have a hdd for files and games and such (less frequently
+used files)
+
+#+end_notes
+** Optical Storage
+#+begin_notes
+Optical Storage is an older type of storage mainly used to move things around,
+they are usually disks with little etches on them that are then read by a laser
+- they are much smaller than both SSD's and HDD's the biggest topping out at 50
+  gigs and most cheap ones holding only megabytes
+- they are nor very fast.
+  this is because they reintroduce a moving part
+- they are portable.
+  there small
+- they are not very durable, they snap easily and one scratch can corrupt all
+  the data
+- They are somewhat reliable
+- they are very cheap.
+  though fro some the cost to storage ratio is very low
+
+  to add to this there are certain types. so
+  the CD is the oldest and stores the least. its in the megabytes. these are
+  read only
+  there is the DVD which can store a couple of gigabytes. the come in read only
+  and read and write configurations
+  there is blue ray which is only read only and can store 25 to 50 gigabytes of
+  storage they are the most expensive but are also the most used. for games and
+  movies and such
+#+end_notes
+* Which one to use?
+#+begin_notes
+Give scenario's and ask which will be the best
+#+end_notes
+** Home computer
+** Server in a data center
+** giving photos to a friend
+** storing a movie
+* Questions
+** Advantages of solid state storage over magnetic?
+** What are some of the reasons someone would choose a hard disk over a ssd?
+** What is the most suitable medium for distributing large files?
+** Identify and describe factors to consider when choosing secondary storage media and device
