@@ -1,0 +1,147 @@
+#+TITLE: Legal Ethical Moral
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>the fun 6 markers</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* Impact of technology on wider society
+** Ethical Issues
+#+begin_notes
+Ethical issues discuss the idea of right and wrong, while most people agree on
+what is right and what is wrong there is not always a definitive definition.
+
+the ethical way to use computers is to do so in a way that does not cause harm.
+Do note however that just because something is immoral does not necessarily make
+it illegal. breaking your mothers computer on purpose is immoral but not illegal
+(tho if you did that to a business then it may in fact be illegal).
+However is should be said a good legal system is grounded in good ethics
+
+Ethics can be a very personal thing but can also be set out as a standard by a
+group. the British Computer Science Society sets out some standards for all
+computer professionals to follow, they include only doing work within there
+capability and not taking bribes and not bringing the profession into disrepute
+#+end_notes
+*** The idea of stake holders
+#+begin_notes
+A stakeholder is someone who may have an interest in or maybe affected by a
+particular use of technology, for an example someone maybe a stakeholder in
+google because they use there technology, even tho I have not actually got any
+money spent in google, we are all a stake holder in webex as we have to use it
+to conduct our lessons. stakeholders may have differing opinions on what an
+eithical use of technology making somethings a moral grey area
+#+end_notes
+*** the use of cctv in public places
+#+begin_notes
+CCTV is one example of this, to business owners and the police its a positive
+thing as
+- its a form of security that can be used to solve crime
+- it can be used to identify and locate criminals faster
+- It can reduce insurance premiums
+while to some citizens who live in the area
+- its an invasion of privacy
+- it can be considered overreach by businesses and government
+#+end_notes
+
+#+ATTR_REVEAL: :frag (roll-in)
+- its a form of security that can be used to solve crime
+- it can be used to identify and locate criminals faster
+- It can reduce insurance premiums
+#+ATTR_REVEAL: :frag (roll-in)
+while to some citizens who live in the area
+- its an invasion of privacy
+- it can be considered overreach by businesses and government
+*** logging activities and the use of computers and phones in the workplace
+#+begin_notes
+Computer logging in the workplace is another example,
+to you bosses
+- enables them to monitor the effectivness of an employee
+- reduces the risk of employees using the organisations faciliies for illgal or
+  unacceptable purposes (like surfing social media)
+to the employee
+- its an invasion of there privacy
+- forces them to be working constantly
+#+end_notes
+** Legal issues
+#+begin_notes
+The legal impact will be discussed next week but the basic gist of it is that
+the proliferation of computers have opened a can of worms that the law needs to
+keep up with, there are many rules we are computer users must face but we shall
+discuss that in more detail next week
+#+end_notes
+** Cultural issues
+#+begin_notes
+Culture discusses the ideas, behavios and values of a group. the use of
+computers has and continues to have a widespread impact.
+some of which include.
+- mobile devices changing the way we interact with people and organisations like
+  banks
+- almost every industry has been disrupted, look at the film industry, now some
+  movies don't even have releases in cinmas and come staight to our devices in
+  the form of streaming services
+
+  ask of any others
+- the change in teaching from being most if not entirely in person to becoming
+  either fully online or blended.
+- the proliferation of online shopping leading to the decline of the highstreet
+- the use of automation in work places making people redundant
+#+end_notes
+*** The internet and censorship
+#+begin_notes
+the web has become a place where anyone can post anything but at the same time
+its become a place where companies and government's have a lot of control.
+
+access to some websites and pages are blacklisted meaning people can't actually
+view certain discussions. the extent to which this happens varys country to
+country, buisnesses and goverments differ in what is acceptable.
+
+this brings into question where to draw a line between protecting the public and
+infringing on peoples right to freedom of speech
+
+at a local level schools will blacklist websites that are unsutable for
+children. at a national level some contries impose national level restrictions
+on what can be seen to prevent public discourse
+#+end_notes
+** Environmental issues
+#+begin_notes
+- computers consume a lot of energy, data centers all across the world will
+  consume about 2% of world energy, similar to airlines
+- consumer electronics need rare earth metals, the extraction of which can be
+  damaging to the enviroment
+- old computers are shipped off to land fills in developing countries that can
+  then be picked by children to make some money, the improper disposing of it
+  can lead to exposing them to harmful poisons.
+
+
+this is not to say they are all bad
+- they reduce the amount of paper used
+- they allow people to work from home reducing CO2 emmissions from commuters
+- they allow people to develop new forms of renewble enerhy as well as in there
+  use
+- they can be used to optimise energy use in a home with smart meters and the
+  such
+
+#+end_notes
+** privacy issues
+#+begin_notes
+the problems with data collection
+- A lot of companies collect data both willingly and unwillingly leading to
+  false perceptions on what is being shared about them
+- data collection is all around us
+  - proctoring software as an example
+  - CCTV
+  - work place logging
+  - mobile phones
+#+end_notes
+* Questions
+** A distributing warehouse collects data on its workforce describe 2 ways the management would collect that data? [4 marks]
+** discuss the environmental impacts of computer usage [6 marks]
+** write down two advantages and disadvantages of using social media everyday [4 marks]
+** Identify 2 ways people are monitored every day [2 marks]
+** Question 5
+[[file:legal-ethical-moral.png]]
