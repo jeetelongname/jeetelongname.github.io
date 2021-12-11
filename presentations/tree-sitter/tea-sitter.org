@@ -1,0 +1,56 @@
+#+TITLE: Tea Sitter
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>I am still salty that the vc module stole my joke</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* What is Tree Sitter?
+#+begin_notes
+Tree sitter is a parser generator and incremental parsing library that allows
+programs to become syntax aware of the programs they are editing.
+#+end_notes
+* ... What does that mean?
+#+begin_notes
+Great question lets break that down
+#+end_notes
+** Parser Generation
+#+begin_notes
+- Provide some example
+
+essentially a parser generator takes in a context free representation of some
+code and then generates some object that can then be used for parsing.
+
+In tree sitters case these grammer are a javascript file that is then compiled
+by the tree-sitter cli tool into a c shared library which can then be
+dynamically loaded by libtree-sitter
+#+end_notes
+** Incremental Parsing
+* Ok thats really cool! why should I care?
+#+begin_notes
+well there are many reasons!
+#+end_notes
+* Ok so what does all of this look like?
+#+begin_notes
+- Switch to editor
+  - show off cool things like structural text objects,
+  - cool syntax highlighting
+  - debug mode/ playground :/
+  - structural folding
+#+end_notes
+* Whats next?
+#+begin_notes
+- road map
+- Language support
+#+end_notes
+* Some other cool resources
+#+begin_notes
+Ethans talk on tree edit
+the strange loop talk on tree sitter
+ublontons talk on emacs tree sitter
+#+end_notes
+* Any Questions?
