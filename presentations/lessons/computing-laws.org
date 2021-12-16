@@ -1,0 +1,230 @@
+#+TITLE: Computing Laws
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>a bunch of faff</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+
+* Data Protection act of 2018
+#+begin_notes
+The data protection act is a law to protect user data
+
+Computers can contain a lot of data and with the rise of the internet
+organisations can and will abuse that. The Data protection act is legislation
+that protects users from some of this. its the UK's implementation of GDPR and
+it tackles quite a few different aspects.
+#+end_notes
+** Lawfulness, Fairness and transparency
+#+begin_notes
+- There must be a valid reasons to collect data
+- You must not breach any laws with this data
+- Data can only be used in ways that are fair, so it must be processed in a way
+  that is not damaging, unexpected or misleading
+- the collection must be open and honest from the start, it must say how they
+  will use the data.
+#+end_notes
+#+ATTR_REVEAL: :frag (roll-in)
+- There must be a valid reasons to collect data
+- You must not breach any laws with this data
+- Data can only be used in ways that are fair, so it must be processed in a way
+  that is not damaging, unexpected or misleading
+- the collection must be open and honest from the start, it must say how they
+  will use the data.
+** Purpose Limitation
+#+begin_notes
+- the purpose of processing this data must be clear from the beginning.
+- the purpose must be documented and specified in privacy information that is
+  communicated to individuals
+- Data must not be used for a new purpose unless its compatible with the old
+  one. if needed new consent must be taken for this new use case
+#+end_notes
+#+ATTR_REVEAL: :frag (roll-in)
+- the purpose of processing this data must be clear from the beginning.
+- the purpose must be documented and specified in privacy information that is
+  communicated to individuals
+- Data must not be used for a new purpose unless its compatible with the old
+  one. if needed new consent must be taken for this new use case
+** Data minimisation
+#+begin_notes
+the Data in question needs to be
+- Adequate
+- relevant
+- Limited (to what is needed)
+#+end_notes
+the Data in question needs to be
+#+ATTR_REVEAL: :frag (roll-in)
+- adequate
+- relevant
+- limited (to what is needed)
+** Accuracy of held data
+#+begin_notes
+- All reasonable steps must be taken to ensure data is correct and not
+  misleading
+- Data must be kept up to date
+- if data is incorrect it needs to be corrected or erased asap
+- any challenges to the accuracy of this data must be considered
+#+end_notes
+#+ATTR_REVEAL: :frag (roll-in)
+- All reasonable steps must be taken to ensure data is correct and not
+  misleading
+- Data must be kept up to date
+- if data is incorrect it needs to be corrected or erased asap
+- any challenges to the accuracy of this data must be considered
+** Storage limitations
+#+begin_notes
+- if data is no longer needed it should not be kept
+- how long data is kept for must be justified and specified in a policy
+  statement
+- there needs to be a periodic review of the data in hand and any not needed
+  should be erased or anonymised.
+- If a user requests data erasure that means organisations need to comply (its a
+  right for the consumer)
+- Data can be kept for longer only if its kept in for public interest archiving,
+  scientific or historical research, or stats purposes
+#+end_notes
+
+#+ATTR_REVEAL: :frag (roll-in)
+- if data is no longer needed it should not be kept
+- how long data is kept for must be justified and specified in a policy
+  statement
+- there needs to be a periodic review of the data in hand and any not needed
+  should be erased or anonymised.
+- If a user requests data erasure that means organisations need to comply (its a
+  right for the consumer)
+- Data can be kept for longer only if its kept in for public interest archiving,
+  scientific or historical research, or stats purposes
+
+** Security measures
+#+begin_notes
+there must be adequate security measures in place to protect the data from bad
+actors
+#+end_notes
+** Accountability
+#+begin_notes
+If something does go wrong the org needs to take responsibility for there
+actions in accordance to the data protection act
+#+end_notes
+
+** Questions!
+#+begin_notes
+these are just some quick fire questions to check some understanding
+#+end_notes
+*** Name one principal of the data protection act.
+*** Which one of these is *NOT* a principal of the data protection act
+#+begin_notes
+d
+#+end_notes
+#+ATTR_REVEAL: :frag (roll-in)
+a. Security
+b. Accountability
+c. Data minimisation
+d. Integrity
+*** Which of these is a sub principal of *Purpose limitation*
+#+begin_notes
+c
+#+end_notes
+#+ATTR_REVEAL: :frag (roll-in)
+a. there must be a valid reason to collect the data
+b. All reasonable steps must be taken to ensure data is correct and not
+   misleading
+c. the purpose of processing this data must be clear from the beginning.
+d. Data must be kept up to date
+
+* Computer Misuse act of 1990
+#+begin_notes
+The computer misuse act is a little more straight forward.
+it makes it certain things criminal offences to make any unauthorised access to
+computer material.
+- with intent to commit further criminal offences (for example extortion or blackmail)
+- with intent to modify computer material (for example a virus)
+
+that first clause is targeted towards hacking (more formaly known as
+unauthorised access)
+the second clause refers to anything that impairs computer performance. a virus
+may be one but another one may be a bitcoin miner
+#+end_notes
+* Copyright, Designs and Patents Act 1988 (CDPA)
+#+begin_notes
+Under this law it is illegal to copy, modify or distribute software and other
+intellectual property without the relevant permissions (we will discuss that in
+the next slide).
+
+this is to protect the intellectual property of individuals and organisations.
+this is not only for software but for audio, video books and so on.
+
+TLDR, using the internet to download intellectual property (see 2 seconds ago)
+without paying or attributing the work is illegal as said money or attribution
+has not been passed along.
+#+end_notes
+* Software Licensing.
+** Proprietary Licensing
+#+begin_notes
+Much of the code written by companies is written to make a profit, The source is
+kept secret and versions are distributed as opaque executable, the user cannot
+modify the source and to do so is illegal under which law? (the CDPA). You should
+pay some money and hopefully in return they will provide support, updates and
+bug fixes.
+#+end_notes
+** Open Source Licensing
+#+begin_notes
+Open Source Licensing is antithetical to proprietary software, Its source code is
+freely available for anyone to use modify and distribute. its often regularly
+updated by a community of very skilled developers who regularly test and send
+out releases. these are then usually made available to anyone and everyone for
+little to no cost. this is not to say that open source software is always free,
+people do sell there open source software or provide support services or hosting
+services to pay for the development.
+
+Some downsides include, the developer may abandon the project on a whim,
+and if there is a fault in the software they may or may not get fixed depending
+on the developers (there may be no one to blame). this can be mitigated with
+foundations and Charity which can act like a company and provide a line of
+discussion.
+
+Some examples of Open source software
+(maybe ask?)
+- the Linux Operating system
+- The python programming languages
+- Most mainstream programming languages
+- Libre Office (a free and open source version of ms office)
+
+There are no prescribed users for either. Amazon uses open source software and
+proprietary software when needed.
+
+that being said for the individual while the lower cost may be a benefit the
+some what specialised forms of support challenging to use and may find the
+proprietary support systems invaluable
+
+--- Not needed
+Some examples of Open software licensing is the MIT Licence or the Gnu General
+Public Licence
+#+end_notes
+** Creative Commons
+#+begin_notes
+Creative commons does not really apply to software but to other assets like
+Videos and books and music. it allows for work to be released under less
+restrictive terms, default copyright prevents people from copying, distributing
+or building on any work. in some cases its better to retain some rights then
+reserve all rights as given by the CPDA
+some examples of less restrictive works include.
+- Public Domain, which has no restrictions and can be used by anyone for
+  anything
+- Attribution, which requires the original creator to be credited but is
+  otherwise fair game
+- Attribution, non commercial, the work in question can be used by individuals
+  but not for commercial purposes (this usually entails companies but can be
+  stretched to mean any money making enterprise)
+#+end_notes
+* Questions (2)
+** WHat are the seven principal's of the data protection act
+** What is the purpose of the computer misuse act
+** Describe creative commons
+** What licence should someone use if they wanted to put a picture on the internet but does not want companies to use it
+** Name 2 differences between proprietary and open source software.
+** Exam question.
+[[file:comp-laws1.png]]
