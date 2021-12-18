@@ -59,9 +59,10 @@ well there are many reasons!
 
   this allows us to play with our code structurally and manipulate in terms of
   functions, statements and expressions which is something historically was a
-  privalage only lisp has had.
+  privilege only lisp has had.
 #+end_notes
-- Well now we have an ast to play with...
+#+ATTR_REVEAL: :frag roll-in
+  Well now we have an ast to play with...
 * Ok so what does all of this look like?
 #+begin_notes
 - Switch to editor
@@ -69,6 +70,7 @@ well there are many reasons!
   - show off cool things like structural text objects,
   - debug mode/ playground :/
   - structural folding
+  - lispy like editing
 #+end_notes
 * Whats next?
 #+begin_notes
@@ -80,7 +82,10 @@ well there are many reasons!
 * Some other cool resources
 #+begin_notes
 Ethans talk on tree edit
+https://www.youtube.com/watch?v=FwDsuz0waIY
 the strange loop talk on tree sitter
+https://www.youtube.com/watch?v=Jes3bD6P0To
 ublontons talk on emacs tree sitter
+https://www.youtube.com/watch?v=ZwibVdNtFjs
 #+end_notes
 * Any Questions?
