@@ -19,8 +19,8 @@
 </section>
 
 <section>
-<section id="slide-org84173d0">
-<h2 id="org84173d0">What is Tree Sitter?</h2>
+<section id="slide-org6236dc2">
+<h2 id="org6236dc2">What is Tree Sitter?</h2>
 <aside class="notes">
 <p>
 Tree sitter is a parser generator and incremental parsing library that allows
@@ -31,8 +31,8 @@ programs to become syntax aware of the programs they are editing.
 </section>
 </section>
 <section>
-<section id="slide-orge1d299c">
-<h2 id="orge1d299c">&#x2026; What does that mean?</h2>
+<section id="slide-orgc686144">
+<h2 id="orgc686144">&#x2026; What does that mean?</h2>
 <aside class="notes">
 <p>
 Great question lets break that down
@@ -40,8 +40,8 @@ Great question lets break that down
 
 </aside>
 </section>
-<section id="slide-orgff5658b">
-<h3 id="orgff5658b">Parser Generation</h3>
+<section id="slide-org1a1dce4">
+<h3 id="org1a1dce4">Parser Generation</h3>
 <aside class="notes">
 <ul>
 <li>Provide some example</li>
@@ -54,37 +54,82 @@ code and then generates some object that can then be used for parsing.
 </p>
 
 <p>
-In tree sitters case these grammer are a javascript file that is then compiled
-by the tree-sitter cli tool into a c shared library which can then be
+In tree sitters case these grammer are a javascript object <b>explain</b>
+that is then compiled by the tree-sitter cli tool into a c shared library which can then be
 dynamically loaded by libtree-sitter
 </p>
 
 </aside>
+
+<div class="org-src-container">
+
+<pre class="src src-js"><span style="color: #b877db;">module</span><span style="color: #c7c9cb; background-color: #232530;">.</span><span style="color: #e95678; font-style: italic;">exports</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #21bfc2;">grammar</span><span style="color: #c7c9cb; background-color: #232530;">({</span>
+  <span style="color: #e95678;">name</span>: <span style="color: #fab795;">'hello example'</span><span style="color: #c7c9cb; background-color: #232530;">,</span>
+
+  <span style="color: #e95678;">rules</span>: <span style="color: #c7c9cb; background-color: #232530;">{</span>
+    <span style="color: #6c6f93; background-color: #292b36; font-style: italic;">// </span><span style="color: #27d797; background-color: #292b36; font-weight: bold; font-style: italic;">TODO:</span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;"> add the actual grammar rules</span>
+    <span style="color: #87ceeb;">source_file</span>: <span style="color: #e95678;">$</span> <span style="color: #b877db; font-style: italic;">=&gt;</span> $<span style="color: #c7c9cb; background-color: #232530;">.</span><span style="color: #f09383; font-style: italic;">hello</span><span style="color: #c7c9cb; background-color: #232530;">,</span>
+    <span style="color: #87ceeb;">hello</span>: <span style="color: #e95678;">$</span> <span style="color: #b877db; font-style: italic;">=&gt;</span> <span style="color: #fab795;">"hello rigor"</span>
+  <span style="color: #c7c9cb; background-color: #232530;">}</span>
+<span style="color: #c7c9cb; background-color: #232530;">})</span><span style="color: #c7c9cb; background-color: #232530;">;</span>
+</pre>
+</div>
 </section>
-<section id="slide-orgef4d80b">
-<h3 id="orgef4d80b">Incremental Parsing</h3>
-</section>
-</section>
-<section>
-<section id="slide-orga0349a9">
-<h2 id="orga0349a9">Ok thats really cool! why should I care?</h2>
+<section id="slide-orgd4a613e">
+<h3 id="orgd4a613e">Incremental Parsing</h3>
 <aside class="notes">
 <p>
-well there are many reasons!
+With the parser generated we can now do some cool shit.
+I will not be going into a lot of detail how but in essence it starts off by
+parsing the tree, it uses a generalised form of LR parsing (which allows it to
+deal with ambiguty as well as its robust error handling).
+</p>
+
+<p>
+after the first parse it does not need to reparse the tree, instead it will walk
+the tree and only change the nodes affected. its pretty cool like that (and also
+makes it really bloddy fast)
 </p>
 
 </aside>
 </section>
 </section>
 <section>
-<section id="slide-orgf29c1af">
-<h2 id="orgf29c1af">Ok so what does all of this look like?</h2>
+<section id="slide-org51fb5da">
+<h2 id="org51fb5da">Ok that&rsquo;s really cool! why should I care?</h2>
+<aside class="notes">
+<p>
+well there are many reasons!
+</p>
+<ul>
+<li><p>
+Well now we have an ast to play with
+</p>
+
+<p>
+this allows us to play with our code structurally and manipulate in terms of
+functions, statements and expressions which is something historically was a
+privalage only lisp has had.
+</p></li>
+
+</ul>
+
+</aside>
+<ul>
+<li>Well now we have an ast to play with&#x2026;</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgfc1430b">
+<h2 id="orgfc1430b">Ok so what does all of this look like?</h2>
 <aside class="notes">
 <ul>
 <li>Switch to editor
 <ul>
-<li>show off cool things like structural text objects,</li>
 <li>cool syntax highlighting</li>
+<li>show off cool things like structural text objects,</li>
 <li>debug mode/ playground :/</li>
 <li>structural folding</li>
 
@@ -96,12 +141,14 @@ well there are many reasons!
 </section>
 </section>
 <section>
-<section id="slide-orgfdc4013">
-<h2 id="orgfdc4013">Whats next?</h2>
+<section id="slide-org294f43e">
+<h2 id="org294f43e">Whats next?</h2>
 <aside class="notes">
 <ul>
 <li>road map</li>
 <li>Language support</li>
+<li>Tree edit</li>
+<li>maybe a utils package.</li>
 
 </ul>
 
@@ -109,8 +156,8 @@ well there are many reasons!
 </section>
 </section>
 <section>
-<section id="slide-org308c53b">
-<h2 id="org308c53b">Some other cool resources</h2>
+<section id="slide-org8b6e02b">
+<h2 id="org8b6e02b">Some other cool resources</h2>
 <aside class="notes">
 <p>
 Ethans talk on tree edit
@@ -122,8 +169,8 @@ ublontons talk on emacs tree sitter
 </section>
 </section>
 <section>
-<section id="slide-org096b91c">
-<h2 id="org096b91c">Any Questions?</h2>
+<section id="slide-org3a8ec83">
+<h2 id="org3a8ec83">Any Questions?</h2>
 </section>
 </section>
 </div>

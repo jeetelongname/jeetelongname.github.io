@@ -25,20 +25,48 @@ Great question lets break that down
 essentially a parser generator takes in a context free representation of some
 code and then generates some object that can then be used for parsing.
 
-In tree sitters case these grammer are a javascript file that is then compiled
-by the tree-sitter cli tool into a c shared library which can then be
+In tree sitters case these grammer are a javascript object *explain*
+that is then compiled by the tree-sitter cli tool into a c shared library which can then be
 dynamically loaded by libtree-sitter
 #+end_notes
+
+#+begin_src js
+module.exports = grammar({
+  name: 'hello example',
+
+  rules: {
+    // TODO: add the actual grammar rules
+    source_file: $ => $.hello,
+    hello: $ => "hello rigor"
+  }
+});
+#+end_src
 ** Incremental Parsing
-* Ok thats really cool! why should I care?
+#+begin_notes
+With the parser generated we can now do some cool shit.
+I will not be going into a lot of detail how but in essence it starts off by
+parsing the tree, it uses a generalised form of LR parsing (which allows it to
+deal with ambiguty as well as its robust error handling).
+
+after the first parse it does not need to reparse the tree, instead it will walk
+the tree and only change the nodes affected. its pretty cool like that (and also
+makes it really bloddy fast)
+#+end_notes
+* Ok that's really cool! why should I care?
 #+begin_notes
 well there are many reasons!
+- Well now we have an ast to play with
+
+  this allows us to play with our code structurally and manipulate in terms of
+  functions, statements and expressions which is something historically was a
+  privalage only lisp has had.
 #+end_notes
+- Well now we have an ast to play with...
 * Ok so what does all of this look like?
 #+begin_notes
 - Switch to editor
-  - show off cool things like structural text objects,
   - cool syntax highlighting
+  - show off cool things like structural text objects,
   - debug mode/ playground :/
   - structural folding
 #+end_notes
@@ -46,6 +74,8 @@ well there are many reasons!
 #+begin_notes
 - road map
 - Language support
+- Tree edit
+- maybe a utils package.
 #+end_notes
 * Some other cool resources
 #+begin_notes
