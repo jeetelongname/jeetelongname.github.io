@@ -1,0 +1,73 @@
+#+TITLE: Exam questions and a recap
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>Its just exam questions</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* What did we cover this year?
+** pseudocode
+** representing numbers
+** representing other data
+** Sound and compression
+** computer architecture
+** primary memory
+** secondary storage
+** Legal, Ethical, Enviromental
+** Computer laws
+* Questions
+** Pseudocode
+#+begin_notes
+paper 1 2019
+#+end_notes
+[[file:pseudocode.png]]
+** reprensenting numbers
+#+begin_notes
+paper 2 2019
+#+end_notes
+[[file:numbers.png]]
+** representing other data
+#+begin_notes
+
+#+end_notes
+[[file:images.png]]
+** Sound and compression
+#+begin_notes
+2019 comp thinking ocr
+#+end_notes
+[[file:sound.png]]
+** computer architecture
+#+begin_notes
+june 2018 ocr
+#+end_notes
+[[file:cpu.png]]
+** primary memory
+#+begin_notes
+paper 2 2018
+#+end_notes
+[[file:storage.png]]
+** secondary storage
+#+begin_notes
+paper 2 2018
+#+end_notes
+[[file:software-and-hardware.png]]
+** Legal, Ethical, Enviromental
+#+begin_notes
+paper 2 2018
+#+end_notes
+[[file:legal6marker.png]]
+** Computer laws
+#+begin_notes
+
+#+end_notes
+[[file:laws-and-embeded.png]]
+** 8 marker
+#+begin_notes
+ocr paper 1 2018
+#+end_notes
+[[file:Screenshot from 2021-12-23 18-50-53.png]]
