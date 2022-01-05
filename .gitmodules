@@ -1,3 +1,7 @@
 [submodule "presentations/reveal.js"]
 	path = presentations/reveal.js
 	url = https://github.com/hakimel/reveal.js.git
+
+[submodule "blog-hugo/themes/hugo-ink"]
+	path = blog-hugo/themes/hugo-ink
+	url = https://github.com/knadh/hugo-ink
