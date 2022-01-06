@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Operating Systems</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Operating Systems</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i></i></h3><p>Press s for speaker notes</p>
+</section>
+
+<section>
+<section id="slide-org9c51b9b">
+<h2 id="org9c51b9b">What is an Operating system</h2>
+<aside class="notes">
+<p>
+<b>Ask first</b>
+Operating system is the main program that handles the <i>operation</i> of a computer
+it provides a set of tools that allow users and programs to communicate
+effectively.
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-orgc59417b">
+<h2 id="orgc59417b">What an operating system provides</h2>
+<aside class="notes">
+<p>
+An operating system manages the hardware and the software, its the middle man
+that talks to both sides of the computer and is essential for its function
+</p>
+
+</aside>
+</section>
+<section id="slide-org9bfa449">
+<h3 id="org9bfa449">User interface</h3>
+<aside class="notes">
+<p>
+A user interface allows the user to interact with the system, this does not need
+to be a graphical interface like the one most operating systems provide today, it can
+be an entire text based interface like a terminal.
+</p>
+
+<p>
+In a command line interface you need to learn commands for certain operations
+and how to compose them.
+</p>
+
+<p>
+In Windows you can still access a CLI using command prompts and in linux you
+use a terminal program.
+</p>
+
+<p>
+You can combine commands into larger programs using a script file, Batch on
+windows and a shell script on linux.
+</p>
+
+<p>
+even today they are still used mainly by people who want to avoid the gui for
+certain tasks (either its slower or it does not provide the features needed.),
+Its also used as its easier to script using a command line rather than a GUI
+</p>
+
+</aside>
+</section>
+<section id="slide-orgfff2fc4">
+<h4 id="orgfff2fc4">Text User Interface</h4>
+
+<div id="org76dc46c" class="figure">
+<p><img src="text-based-interface.png" alt="text-based-interface.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgfa45d83">
+<h4 id="orgfa45d83">Graphical User Interface</h4>
+
+<div id="org446b64c" class="figure">
+<p><img src="gui.png" alt="gui.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgb2e52ad">
+<h3 id="orgb2e52ad">Memory management</h3>
+<aside class="notes">
+<p>
+Any program you use needs to be loaded up into memory, this means that the
+operating system needs to manage memory effectively, it needs to allocate memory
+effectively and load the first instruction of the program onto the CPU&rsquo;s program
+counter. If the process requests more memory it needs to provide it or throw an
+error (if the computer is out of memory for example) and then reclaim the
+processes memory when its done.
+</p>
+
+<p>
+Applications can only accept the memory that has been alocated to them, this is
+a security feature that prevents snooping.
+</p>
+
+<p>
+The OS Can also use a temporary buffer to store temporray data (for example a
+program may spit out some data which needs to be used in a new process. this can
+be stored in this temp buffer)
+</p>
+
+<p>
+There is also a concept of multi tasking, on old operating systems you could
+only have one program loaded into memory at a time, this was inconvienent so
+multi taskers allowed for multiple programs be loaded into memory (they are
+known as processes.) its then up to the OS to allocate CPU time to these
+processes, this can allow for the illusion of concurency (processes running at
+the same time) when in fact only one program (probably the one you are using) is
+active.
+</p>
+
+</aside>
+</section>
+<section id="slide-org30708e1">
+<h3 id="org30708e1">Peripheral management</h3>
+<aside class="notes">
+<p>
+A computer is useless if we can&rsquo;t hook up keyboards and mice and things, thats
+why the operating system also manages pheripherals,
+</p>
+
+<p>
+a pheripheral is any piece of hardware that is not the CPU, so things like
+monitors, keyboards, webcams, usb sticks and so on.
+</p>
+
+<p>
+each of these devices have to have some kind of device driver, it essentially
+acts like a translator turning operating system requests into low level signals
+the device uses. without these drivers a computer would not be able to send and
+receive data, each device has to have its own driver made for that device though most times generic
+drivers can be included in the operating system directly as standards and best
+practices have become more common (this makes devices plug and play)
+</p>
+
+</aside>
+</section>
+<section id="slide-org362e08f">
+<h3 id="org362e08f">User management</h3>
+<aside class="notes">
+<p>
+On a computer you will have differnet users, not all of them need full access,
+thats why the operating system will make sure only certain users can access
+certain things and do certain actions, for example you may have an admin account
+that can install software and access all files, but then there are some basic
+user accounts that only need to see there files and only use those same
+programs, this is called access rights. the Operating system handles all of this
+from creation to deletion of the user, promoting and demoting users, attaching
+permisions to files and so on.
+</p>
+
+</aside>
+</section>
+<section id="slide-orgaf1d35f">
+<h3 id="orgaf1d35f">File management</h3>
+<aside class="notes">
+<p>
+File manangemt handles the storage and permisons of files, a special program
+called a file system is used to create directory structures, manage the names,
+locations of files and allocates the space for new files and so on. It keeps
+track of the location of all of these files (as drives are flat and don&rsquo;t have
+as sense of folders), it can also determine the file type (whether its binary,
+text or some other format.)
+</p>
+
+<p>
+When  computer is attached to a network its also used to control permisions of
+who can access, write to or execute (run) a file. its a security measure to keep
+a system secure.
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org09d0b99">
+<h2 id="org09d0b99">Questions</h2>
+<div class="outline-text-2" id="text-org09d0b99">
+</div>
+</section>
+<section id="slide-orgd8b761f">
+<h3 id="orgd8b761f">State 2 functions of an Operating System</h3>
+</section>
+<section id="slide-orgcbdb8f4">
+<h3 id="orgcbdb8f4">Explain what is meant by a device driver</h3>
+</section>
+<section id="slide-orgb38dd3d">
+<h3 id="orgb38dd3d">Explain how an operating system manages memory [2 marks]</h3>
+</section>
+<section id="slide-org182c4a7">
+<h3 id="org182c4a7">Explain why is file managment used</h3>
+</section>
+<section id="slide-org7f8264b">
+<h3 id="org7f8264b">Exam Question</h3>
+
+<div id="org2c026b7" class="figure">
+<p><img src="os1.png" alt="os1.png" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

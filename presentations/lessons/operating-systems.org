@@ -1,0 +1,116 @@
+#+TITLE: Operating Systems
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i></i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* What is an Operating system
+#+begin_notes
+*Ask first*
+Operating system is the main program that handles the /operation/ of a computer
+it provides a set of tools that allow users and programs to communicate
+effectively.
+#+end_notes
+* What an operating system provides
+#+begin_notes
+An operating system manages the hardware and the software, its the middle man
+that talks to both sides of the computer and is essential for its function
+#+end_notes
+** User interface
+#+begin_notes
+A user interface allows the user to interact with the system, this does not need
+to be a graphical interface like the one most operating systems provide today, it can
+be an entire text based interface like a terminal.
+
+In a command line interface you need to learn commands for certain operations
+and how to compose them.
+
+In Windows you can still access a CLI using command prompts and in linux you
+use a terminal program.
+
+You can combine commands into larger programs using a script file, Batch on
+windows and a shell script on linux.
+
+even today they are still used mainly by people who want to avoid the gui for
+certain tasks (either its slower or it does not provide the features needed.),
+Its also used as its easier to script using a command line rather than a GUI
+#+end_notes
+*** Text User Interface
+[[file:text-based-interface.png]]
+*** Graphical User Interface
+[[file:gui.png]]
+** Memory management
+#+begin_notes
+Any program you use needs to be loaded up into memory, this means that the
+operating system needs to manage memory effectively, it needs to allocate memory
+effectively and load the first instruction of the program onto the CPU's program
+counter. If the process requests more memory it needs to provide it or throw an
+error (if the computer is out of memory for example) and then reclaim the
+processes memory when its done.
+
+Applications can only accept the memory that has been alocated to them, this is
+a security feature that prevents snooping.
+
+The OS Can also use a temporary buffer to store temporray data (for example a
+program may spit out some data which needs to be used in a new process. this can
+be stored in this temp buffer)
+
+There is also a concept of multi tasking, on old operating systems you could
+only have one program loaded into memory at a time, this was inconvienent so
+multi taskers allowed for multiple programs be loaded into memory (they are
+known as processes.) its then up to the OS to allocate CPU time to these
+processes, this can allow for the illusion of concurency (processes running at
+the same time) when in fact only one program (probably the one you are using) is
+active.
+#+end_notes
+** Peripheral management
+#+begin_notes
+A computer is useless if we can't hook up keyboards and mice and things, thats
+why the operating system also manages pheripherals,
+
+a pheripheral is any piece of hardware that is not the CPU, so things like
+monitors, keyboards, webcams, usb sticks and so on.
+
+each of these devices have to have some kind of device driver, it essentially
+acts like a translator turning operating system requests into low level signals
+the device uses. without these drivers a computer would not be able to send and
+receive data, each device has to have its own driver made for that device though most times generic
+drivers can be included in the operating system directly as standards and best
+practices have become more common (this makes devices plug and play)
+#+end_notes
+** User management
+#+begin_notes
+On a computer you will have differnet users, not all of them need full access,
+thats why the operating system will make sure only certain users can access
+certain things and do certain actions, for example you may have an admin account
+that can install software and access all files, but then there are some basic
+user accounts that only need to see there files and only use those same
+programs, this is called access rights. the Operating system handles all of this
+from creation to deletion of the user, promoting and demoting users, attaching
+permisions to files and so on.
+#+end_notes
+** File management
+#+begin_notes
+File manangemt handles the storage and permisons of files, a special program
+called a file system is used to create directory structures, manage the names,
+locations of files and allocates the space for new files and so on. It keeps
+track of the location of all of these files (as drives are flat and don't have
+as sense of folders), it can also determine the file type (whether its binary,
+text or some other format.)
+
+When  computer is attached to a network its also used to control permisions of
+who can access, write to or execute (run) a file. its a security measure to keep
+a system secure.
+#+end_notes
+* Questions
+** State 2 functions of an Operating System
+** Explain what is meant by a device driver
+** Explain how an operating system manages memory [2 marks]
+** Explain why is file managment used
+** Exam Question
+[[file:os1.png]]
