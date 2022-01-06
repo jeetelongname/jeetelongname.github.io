@@ -1,16 +1,14 @@
-% Created 2021-06-10 Thu 09:19
+% Created 2022-01-06 Thu 20:01
 % Intended LaTeX compiler: pdflatex
 \documentclass[a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
-\usepackage{grffile}
 \usepackage{longtable}
 \usepackage{wrapfig}
 \usepackage{rotating}
 \usepackage[normalem]{ulem}
 \usepackage{amsmath}
-\usepackage{textcomp}
 \usepackage{amssymb}
 \usepackage{capt-of}
 \usepackage{hyperref}
@@ -19,90 +17,81 @@
 \date{\today}
 \title{The Git version control system}
 \hypersetup{
-	pdfauthor={Jeetaditya Chatterjee},
-	pdftitle={The Git version control system},
-	pdfkeywords={},
-	pdfsubject={},
-	pdfcreator={Emacs 28.0.50 (Org mode 9.5)},
-	pdflang={English}}
+ pdfauthor={Jeetaditya Chatterjee},
+ pdftitle={The Git version control system},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 28.0.50 (Org mode 9.6)}, 
+ pdflang={English}}
 \begin{document}
 
 \maketitle
 
 
 \section*{What is version control?}
-\label{sec:org1805b0b}
+\label{sec:orged824a8}
 \begin{notes}
-	version control is a way to manage and back up source code
-	It is the industry standard practice to keep code under some kind of version
-	control and the most widly used VCS is called git. you have probably heard of it
-	from services such as github and gitlab.
-
-	\begin{itemize}
-		\item breaking code changes into revisions or ``commits'' each identifyable using a
-		      uniqe hash.
-		\item allowing for people to non destructivly make copys of the code and merge them
-		      in when developed
-		\item facilitating the ability to checkout and roll back commits
-		\item push the source code to a remote for backups
-	\end{itemize}
+version control is a way to manage and back up source code
+It is the industry standard practice to keep code under some kind of version
+control and the most widely used VCS is called git. you have probably heard of it
+from services such as github and gitlab.
 \end{notes}
 
 \begin{itemize}
-	\item \textbf{Some features of Version control:}
-	\item breaking code changes into revisions or ``commits'' each identifiable using a
-	      unique hash.
-	\item allowing for people to non destructively make copies of the code and merge them
-	      in when developed.
-	\item facilitating the ability to checkout and roll back commits thorughout gits
-	      history
-	\item push the source code to a remote for backups and easy sharing of the source
-	      code.
+\item \textbf{Some features of Version control:}
+\item breaking code changes into revisions or ``commits'' each identifiable using a
+unique hash.
+\item allowing for people to non destructively make copies of the code and merge them
+in when developed.
+\item facilitating the ability to checkout and roll back commits throughout gits
+history
+\item push the source code to a remote for backups and easy sharing of the source
+code.
 \end{itemize}
 
 \section*{Why use Version control? (git)}
-\label{sec:org8fede77}
+\label{sec:org2bf8fb5}
 \begin{notes}
-	other than it being the industry standard it also has a lot of benefits such as
-	\begin{itemize}
-		\item Breaking up code revisions into smaller chunks called ``commits''
-		      which makes it easier to see how the code base changed over time
-		\item Allowing you to roll back commits for whatever reason
-		      git also provides tools to find the last good commit called bisecting
-		\item Allowing you to change your code base without affecting a master copy of your
-		      code
-		      Meaning you can add features and merge them in when they are ready while also
-		      shipping a stable version
-		\item making it easier to collaborate and scale your code base to include more people
-		\item as well as other benefits
-	\end{itemize}
+other than it being the industry standard it also has a lot of benefits such as
+\begin{itemize}
+\item Breaking up code revisions into smaller chunks called ``commits''
+which makes it easier to see how the code base changed over time
+\item Allowing you to roll back commits for whatever reason
+git also provides tools to find the last good commit called bisecting
+\item Allowing you to change your code base without affecting a master copy of your
+code
+Meaning you can add features and merge them in when they are ready while also
+shipping a stable version
+\item making it easier to collaborate and scale your code base to include more people
+\item as well as other benefits
+\end{itemize}
 \end{notes}
 
 \begin{itemize}
-	\item Breaking up code revisions into smaller chunks called ``commits''
-	\item Allowing you to roll back commits for whatever reason
-	\item Allowing you to change your code base without affecting a master copy of your
-	\item Making it easier to collaborate and scale your code base to include more people
+\item Breaking up code revisions into smaller chunks called ``commits''
+\item Allowing you to roll back commits for whatever reason
+\item Allowing you to change your code base without affecting a master copy of your
+\item Making it easier to collaborate and scale your code base to include more people
 \end{itemize}
 
 \section*{Some concepts}
-\label{sec:orgf57a2f8}
+\label{sec:orgfba4793}
 \subsection*{Starting off}
-\label{sec:orgddcaaa3}
+\label{sec:org5c8ea41}
 \subsubsection*{init}
-\label{sec:org16b4633}
+\label{sec:org34a9433}
 \begin{notes}
-	Lets say you need to start a project you can just do a git init to initialise an
-	empty git repository
+Lets say you need to start a project you can just do a git init to initialise an
+empty git repository
 \end{notes}
 \begin{verbatim}
 $ git init
 \end{verbatim}
 \subsubsection*{clone}
-\label{sec:org890cd74}
+\label{sec:orge51be95}
 \begin{notes}
-	If you need to work on some other project or reclone one you have already
-	started then you can use the clone command
+If you need to work on some other project or reclone one you have already
+started then you can use the clone command
 \end{notes}
 
 \begin{verbatim}
@@ -111,10 +100,10 @@ $ git clone https://some.website/repo.git
 $ git clone https://github.com/jeetelongname/example.git # you can actually clone this
 \end{verbatim}
 \subsubsection*{status}
-\label{sec:orgf6b7056}
+\label{sec:orge4f2862}
 \begin{notes}
-	git status tells you what is happening in your repository. it will tell you what
-	is staged what needs commiting and so on
+git status tells you what is happening in your repository. it will tell you what
+is staged what needs committing and so on
 \end{notes}
 
 \begin{verbatim}
@@ -122,21 +111,21 @@ git status
 \end{verbatim}
 
 \subsection*{Staging}
-\label{sec:org8261356}
+\label{sec:org7fc1ef0}
 \begin{notes}
-	Staging is the git term for getting files ready for commits. When you need to
-	add new changes you need to add the file to the stage before commiting it. This
-	may seem tedios but means you don't need to commit all of your changes by one go
-	and commit based on the task you are completing.
+Staging is the git term for getting files ready for commits. When you need to
+add new changes you need to add the file to the stage before committing it. This
+may seem tedious but means you don't need to commit all of your changes by one go
+and commit based on the task you are completing.
 \end{notes}
 \subsubsection*{add}
-\label{sec:org98019d8}
+\label{sec:org703effe}
 \begin{notes}
-	To add a file / your changes to a file you use the git add command you specify
-	the file you want to add.
+To add a file / your changes to a file you use the git add command you specify
+the file you want to add.
 
-	too add all of your changes you can use the . symbol (which stands for the
-	current directory as we discussed from our last lesson)
+too add all of your changes you can use the . symbol (which stands for the
+current directory as we discussed from our last lesson)
 \end{notes}
 \begin{verbatim}
 git add file
@@ -145,13 +134,13 @@ git add .
 \end{verbatim}
 
 \subsubsection*{restore}
-\label{sec:orgc1bb853}
+\label{sec:org9399b84}
 \begin{notes}
-	To remove a file you can use the restore command. provide it with a file and it
-	will unstage the file. to unstage all files you use dot like before. be careful
-	as without the --staged flag you would delete your changes which is not fun. You
-	can set an alias for it tho which would probably make your life easier to make a
-	git alias
+To remove a file you can use the restore command. provide it with a file and it
+will unstage the file. to unstage all files you use dot like before. be careful
+as without the --staged flag you would delete your changes which is not fun. You
+can set an alias for it tho which would probably make your life easier to make a
+git alias
 \end{notes}
 
 \begin{verbatim}
@@ -167,30 +156,30 @@ git unstage file
 \end{verbatim}
 
 \subsection*{Commits}
-\label{sec:org2b90356}
+\label{sec:org5b0f106}
 \begin{notes}
-	We have discussed the precursor to commiting so now we need to actually commit
-	to it
+We have discussed the precursor to committing so now we need to actually commit
+to it
 
-	A git commit is a collection of changes that will be added to your git history.
-	commits represent the backbone of git and its important you make your commits
-	small and to the point. don't try and stuff too many features into one commit as
-	you lose a lot of the benefits of git. (as a rule of thumb try and keep each
-	commit down to one fix or feature. eg a small bug fix or the addition of a
-	function)
+A git commit is a collection of changes that will be added to your git history.
+commits represent the backbone of git and its important you make your commits
+small and to the point. don't try and stuff too many features into one commit as
+you lose a lot of the benefits of git. (as a rule of thumb try and keep each
+commit down to one fix or feature. eg a small bug fix or the addition of a
+function)
 \end{notes}
 \subsubsection*{commit}
-\label{sec:orgea6b3ef}
+\label{sec:orgec0c747}
 \begin{notes}
-	To create a commit you call the \texttt{commit} command. this will open up an editor for
-	you to then type in a commit message. I won't go deep into commit etiquette but I
-	recommend you search conventional commits as it provides a good framework for
-	commit messages
+To create a commit you call the \texttt{commit} command. this will open up an editor for
+you to then type in a commit message. I won't go deep into commit etiquette but I
+recommend you search conventional commits as it provides a good framework for
+commit messages
 
-	There are 2 flags that are useful but not recommended for proper projects
-	the -a flag which commits all changes in the current directory
-	and the -m flag which will allow you to type a message inline without using an
-	editor.
+There are 2 flags that are useful but not recommended for proper projects
+the -a flag which commits all changes in the current directory
+and the -m flag which will allow you to type a message inline without using an
+editor.
 \end{notes}
 
 \begin{verbatim}
@@ -200,29 +189,29 @@ git commit -a # commit all changes
 git commit -m "commit message provided here"
 \end{verbatim}
 \subsection*{Branches}
-\label{sec:orgc5eecf3}
+\label{sec:org8b8ce90}
 \begin{notes}
-	Branching is another really powerful feature of git. It allows you to make
-	sweeping changes to your code without damaging the master copy of your code.
+Branching is another really powerful feature of git. It allows you to make
+sweeping changes to your code without damaging the master copy of your code.
 
-	Branches are cheap to make (taking up very little space) meaning you have no
-	reason to use them!
+Branches are cheap to make (taking up very little space) meaning you have no
+reason to use them!
 
-	The main use of branches is to separate stable code from new features or bug
-	fixes. This allows you to change the code to your hearts content without
-	damaging your main copy
+The main use of branches is to separate stable code from new features or bug
+fixes. This allows you to change the code to your hearts content without
+damaging your main copy
 \end{notes}
 \subsubsection*{branch}
-\label{sec:org31454ae}
+\label{sec:orgd91dfe5}
 \begin{notes}
-	creating branches is quite easy. you just call the branch command and it will
-	create a branch starting at the current branch. You can speify a different
-	branch by providing it
+creating branches is quite easy. you just call the branch command and it will
+create a branch starting at the current branch. You can specify a different
+branch by providing it
 
-	to delete a branch you add the -d flag
+to delete a branch you add the -d flag
 
-	If there are unmerged changes and the branch is not backed up you will need to
-	force git by using the -D flag
+If there are unmerged changes and the branch is not backed up you will need to
+force git by using the -D flag
 \end{notes}
 
 \begin{verbatim}
@@ -236,13 +225,13 @@ git branch -d <branch_name>
 git branch -D <branch_name>
 \end{verbatim}
 \subsubsection*{checkout}
-\label{sec:org971b1e7}
+\label{sec:org26d3591}
 \begin{notes}
-	We have created branches but now we need to use them so we use the checkout
-	command
+We have created branches but now we need to use them so we use the checkout
+command
 
-	git actually has a shortcut to create a new branch and switch to it. by adding
-	the -b flag to the checkout command you can create a new branch there and then
+git actually has a shortcut to create a new branch and switch to it. by adding
+the -b flag to the checkout command you can create a new branch there and then
 \end{notes}
 
 \begin{verbatim}
@@ -251,24 +240,24 @@ git checkout <branch_name> # switch to that branch
 git checkout -b <new_branch_name>
 \end{verbatim}
 \subsection*{Merging}
-\label{sec:org4eeca31}
+\label{sec:org6d05186}
 \begin{notes}
-	Now that we have these branches we need to actually do somthing with them.. we
-	discussed deleting them but thats not that useful. We need a way to merge them
-	and update them as time goes on
+Now that we have these branches we need to actually do something with them.. we
+discussed deleting them but that's not that useful. We need a way to merge them
+and update them as time goes on
 \end{notes}
 \subsubsection*{merge}
-\label{sec:org97b5d50}
+\label{sec:org7b786be}
 \begin{notes}
-	merging takes the commits of the provided beach and \emph{merges} them into the current
-	branch by making a merge commit. this tells git what commits have been merged
-	into the current branch. As its a commit if you are not happy with the merge you
-	can rollback the commit like any other. This is also known as non destructive
-	merging
+merging takes the commits of the provided beach and \emph{merges} them into the current
+branch by making a merge commit. this tells git what commits have been merged
+into the current branch. As its a commit if you are not happy with the merge you
+can rollback the commit like any other. This is also known as non destructive
+merging
 
-	the problem here is that there will be a commit everytime you merge the branch
-	which can make the history of the branch messy and not that great. that is where
-	the next kind of merging comes into play
+the problem here is that there will be a commit every time you merge the branch
+which can make the history of the branch messy and not that great. that is where
+the next kind of merging comes into play
 \end{notes}
 
 \begin{verbatim}
@@ -279,22 +268,22 @@ git merge master feature # merge feature into master
 \end{verbatim}
 
 \subsubsection*{rebase}
-\label{sec:orgc35e888}
+\label{sec:orgcb05308}
 \begin{notes}
-	rebasing rewrites the history of the current branch to incorporate the changes
-	of the merging branch. this changes the history of the branch which is pretty
-	dangerous that being said it also makes the code history much more readable
-	and makes the project history linear. there are no forks to contend with making
-	it much easier to follow a projects history.
+rebasing rewrites the history of the current branch to incorporate the changes
+of the merging branch. this changes the history of the branch which is pretty
+dangerous that being said it also makes the code history much more readable
+and makes the project history linear. there are no forks to contend with making
+it much easier to follow a projects history.
 
-	This comes at the cost of safety you are rewriting your history which every time
-	travel show I have watched has said is a really dangerous thing to do. You also
-	lose some context provided by the merge commit
+This comes at the cost of safety you are rewriting your history which every time
+travel show I have watched has said is a really dangerous thing to do. You also
+lose some context provided by the merge commit
 
-	as for where to use which. I
-	reccomend you rebase your main branch onto your feature branches and merge your
-	feature branches into your main. This is what I see happen a lot but this is not
-	a hard and fast rule
+as for where to use which. I
+recommended you rebase your main branch onto your feature branches and merge your
+feature branches into your main. This is what I see happen a lot but this is not
+a hard and fast rule
 \end{notes}
 
 \begin{verbatim}
@@ -305,25 +294,25 @@ git rebase feature master # samething but one line
 \end{verbatim}
 
 \subsection*{Remotes}
-\label{sec:org1e144d5}
+\label{sec:org058bd15}
 \begin{notes}
-	We have reached another conundrum all of this code is local. We need a way to
-	get it out into the world. We could put all of this code in a drop box folder
-	and share that but I think you know that i am going to show you how to use git
-	to do that
+We have reached another conundrum all of this code is local. We need a way to
+get it out into the world. We could put all of this code in a drop box folder
+and share that but I think you know that i am going to show you how to use git
+to do that
 \end{notes}
 \subsubsection*{remote}
-\label{sec:org9b2103c}
+\label{sec:orgd460ae6}
 \begin{notes}
-	A remote is an online location for your code. people upload there code to github
-	or gitlab some people even host there own server. but all are valid remotes
+A remote is an online location for your code. people upload there code to github
+or gitlab some people even host there own server. but all are valid remotes
 
-	to add one you call the remote add command and provide it with a name and the
-	url
+to add one you call the remote add command and provide it with a name and the
+url
 
-	to change the url call the set-url command
+to change the url call the set-url command
 
-	and then rename and remove are self explanatory
+and then rename and remove are self explanatory
 \end{notes}
 
 \begin{verbatim}
@@ -339,14 +328,14 @@ git remote remove upstream
 \end{verbatim}
 
 \subsubsection*{push}
-\label{sec:org4fba459}
+\label{sec:org189212c}
 \begin{notes}
-	To send your changes to your new fangled remote you use the push command. it
-	takes the argument of the remote and the branch to push. when pushing the branch
-	for the first time you should add the -u flag which tracks the branch
+To send your changes to your new fangled remote you use the push command. it
+takes the argument of the remote and the branch to push. when pushing the branch
+for the first time you should add the -u flag which tracks the branch
 
-	You may need to also overwirte the remote for some reason this is risky as you
-	could lose work other people push.
+You may need to also overwrite the remote for some reason this is risky as you
+could lose work other people push.
 \end{notes}
 
 \begin{verbatim}
@@ -356,15 +345,15 @@ git push origin master --force # overwrite the remote
 \end{verbatim}
 
 \subsubsection*{fetch}
-\label{sec:orgca3483c}
+\label{sec:org2190dd3}
 \begin{notes}
-	git fetch will download the files from a remote without doing anything with
-	them. This allows you to look at what other people are doing without
-	affecting your local copy. you can then merge it into your local copy later if
-	you wish.
+git fetch will download the files from a remote without doing anything with
+them. This allows you to look at what other people are doing without
+affecting your local copy. you can then merge it into your local copy later if
+you wish.
 
-	note when you check out \texttt{some-branch} you will be in a detached head state which
-	means that you can edit all of this and it will not affect your history
+note when you check out \texttt{some-branch} you will be in a detached head state which
+means that you can edit all of this and it will not affect your history
 \end{notes}
 
 \begin{verbatim}
@@ -374,12 +363,12 @@ git fetch origin some-branch
 git checkout some-branch
 \end{verbatim}
 \subsubsection*{pull}
-\label{sec:org0dc8f2a}
+\label{sec:orgf881a41}
 \begin{notes}
-	pull is used to update your local branch with the changes of upstream. this is
-	used a lot when working in a group and you need to get the changes from
-	upstream. It fetches from upstream and then merges it into your code. If you
-	want to rebase instead of merge you can use -r.
+pull is used to update your local branch with the changes of upstream. this is
+used a lot when working in a group and you need to get the changes from
+upstream. It fetches from upstream and then merges it into your code. If you
+want to rebase instead of merge you can use -r.
 \end{notes}
 
 \begin{verbatim}
@@ -388,35 +377,35 @@ git pull -r origin master # rebases
 \end{verbatim}
 
 \subsection*{Reverting}
-\label{sec:orgc113ac0}
+\label{sec:orged5cb86}
 \begin{notes}
-	Oh no we made a mistake in one of our commits and now we have angered all of the
-	customers. We need to get back to a working commit. first we need to find the
-	commit and then revert back to it
+Oh no we made a mistake in one of our commits and now we have angered all of the
+customers. We need to get back to a working commit. first we need to find the
+commit and then revert back to it
 \end{notes}
 \subsubsection*{log}
-\label{sec:orgaff0ee5}
+\label{sec:orgecca796}
 \begin{notes}
-	the log command shows you a timeline of your code on the commit level you can
-	then look through and get the unique hash for you to then pass onto the next
-	command
+the log command shows you a timeline of your code on the commit level you can
+then look through and get the unique hash for you to then pass onto the next
+command
 
-	the -p flag provides a ``diff'' which shows you the changes in each commit
+the -p flag provides a ``diff'' which shows you the changes in each commit
 \end{notes}
 \subsubsection*{revert}
-\label{sec:org0c12900}
+\label{sec:orgf1e085a}
 \begin{notes}
-	revert takes a hash (or the amount of commits you want to go back from) and will
-	make a new commit with those changes applied. essentially rolling back to that
-	commit.
+revert takes a hash (or the amount of commits you want to go back from) and will
+make a new commit with those changes applied. essentially rolling back to that
+commit.
 
-	also note you don't need to paste in the entire commit hash you can get away
-	with the first 5 terms and git will figure out the rest
+also note you don't need to paste in the entire commit hash you can get away
+with the first 5 terms and git will figure out the rest
 
-	If that is still too much work you can then use some special syntax to roll back
-	a certain amount of commits from the current one or the HEAD commit
-	All its saying is roll back one commit behind head. we can put any number there
-	but its not really a good solution if you need to go back to a specific commit
+If that is still too much work you can then use some special syntax to roll back
+a certain amount of commits from the current one or the HEAD commit
+All its saying is roll back one commit behind head. we can put any number there
+but its not really a good solution if you need to go back to a specific commit
 \end{notes}
 
 \begin{verbatim}
@@ -427,17 +416,17 @@ git revert b4e73 # also works
 git revert HEAD~1 # roll back one commit
 \end{verbatim}
 \section*{What do you do now?}
-\label{sec:org87c7100}
+\label{sec:orga63d8b9}
 \begin{notes}
-	Well you need to use git. I recommend you try and use git with any and every one
-	of your projects. I actually used git for my NEA and it helped keep a record of
-	what I have done and how long it took.
+Well you need to use git. I recommend you try and use git with any and every one
+of your projects. I actually used git for my NEA and it helped keep a record of
+what I have done and how long it took.
 
-	And this is not the only way to use git. most text editors worth there salt have
-	some sort of git integration and there are usually 3rd party front ends that can
-	make using git much nicer and faster.
+And this is not the only way to use git. most text editors worth there salt have
+some sort of git integration and there are usually 3rd party front ends that can
+make using git much nicer and faster.
 \end{notes}
 
 \section*{Any Questions?}
-\label{sec:org2835661}
+\label{sec:org0d709e1}
 \end{document}

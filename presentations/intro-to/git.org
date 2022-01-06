@@ -14,15 +14,8 @@
 #+begin_notes
 version control is a way to manage and back up source code
 It is the industry standard practice to keep code under some kind of version
-control and the most widly used VCS is called git. you have probably heard of it
+control and the most widely used VCS is called git. you have probably heard of it
 from services such as github and gitlab.
-
-- breaking code changes into revisions or "commits" each identifyable using a
-  uniqe hash.
-- allowing for people to non destructivly make copys of the code and merge them
-  in when developed
-- facilitating the ability to checkout and roll back commits
-- push the source code to a remote for backups
 #+end_notes
 
 #+ATTR_REVEAL: :frag (roll-in)
@@ -31,7 +24,7 @@ from services such as github and gitlab.
   unique hash.
 - allowing for people to non destructively make copies of the code and merge them
   in when developed.
-- facilitating the ability to checkout and roll back commits thorughout gits
+- facilitating the ability to checkout and roll back commits throughout gits
   history
 - push the source code to a remote for backups and easy sharing of the source
   code.
@@ -81,7 +74,7 @@ $ git clone https://github.com/jeetelongname/example.git # you can actually clon
 *** status
 #+begin_notes
 git status tells you what is happening in your repository. it will tell you what
-is staged what needs commiting and so on
+is staged what needs committing and so on
 #+end_notes
 
 #+begin_src bash
@@ -91,8 +84,8 @@ git status
 ** Staging
 #+begin_notes
 Staging is the git term for getting files ready for commits. When you need to
-add new changes you need to add the file to the stage before commiting it. This
-may seem tedios but means you don't need to commit all of your changes by one go
+add new changes you need to add the file to the stage before committing it. This
+may seem tedious but means you don't need to commit all of your changes by one go
 and commit based on the task you are completing.
 #+end_notes
 *** add
@@ -134,7 +127,7 @@ git unstage file
 
 ** Commits
 #+begin_notes
-We have discussed the precursor to commiting so now we need to actually commit
+We have discussed the precursor to committing so now we need to actually commit
 to it
 
 A git commit is a collection of changes that will be added to your git history.
@@ -178,7 +171,7 @@ damaging your main copy
 *** branch
 #+begin_notes
 creating branches is quite easy. you just call the branch command and it will
-create a branch starting at the current branch. You can speify a different
+create a branch starting at the current branch. You can specify a different
 branch by providing it
 
 to delete a branch you add the -d flag
@@ -213,8 +206,8 @@ git checkout -b <new_branch_name>
 #+end_src
 ** Merging
 #+begin_notes
-Now that we have these branches we need to actually do somthing with them.. we
-discussed deleting them but thats not that useful. We need a way to merge them
+Now that we have these branches we need to actually do something with them.. we
+discussed deleting them but that's not that useful. We need a way to merge them
 and update them as time goes on
 #+end_notes
 *** merge
@@ -225,7 +218,7 @@ into the current branch. As its a commit if you are not happy with the merge you
 can rollback the commit like any other. This is also known as non destructive
 merging
 
-the problem here is that there will be a commit everytime you merge the branch
+the problem here is that there will be a commit every time you merge the branch
 which can make the history of the branch messy and not that great. that is where
 the next kind of merging comes into play
 #+end_notes
@@ -250,7 +243,7 @@ travel show I have watched has said is a really dangerous thing to do. You also
 lose some context provided by the merge commit
 
 as for where to use which. I
-reccomend you rebase your main branch onto your feature branches and merge your
+recommended you rebase your main branch onto your feature branches and merge your
 feature branches into your main. This is what I see happen a lot but this is not
 a hard and fast rule
 #+end_notes
@@ -300,7 +293,7 @@ To send your changes to your new fangled remote you use the push command. it
 takes the argument of the remote and the branch to push. when pushing the branch
 for the first time you should add the -u flag which tracks the branch
 
-You may need to also overwirte the remote for some reason this is risky as you
+You may need to also overwrite the remote for some reason this is risky as you
 could lose work other people push.
 #+end_notes
 
