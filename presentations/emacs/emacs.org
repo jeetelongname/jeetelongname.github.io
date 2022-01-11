@@ -17,8 +17,7 @@ development in that time frame. this has lead it to become one of the most
 powerful and unique editors of our time and one that is extremely addicting to
 use.
 #+end_notes
-** A brief history
-*** The first emacs
+** The Humble beginings
 #+begin_notes
 the first emacs was a set of macros on top of the TECO editor, this was not
 macro's in the keybind or vim sense but more a kind of program to tell the
@@ -39,24 +38,16 @@ came to the table?
 #+end_notes
 ** Cults help
 #+begin_notes
-Emacs has an almost cult like following, its hard to describe but in a word
-emacs is addicting for reasons ill expand on
+Emacs has an almost cult like following this is for good reason as emacs is
+excellent for editing text, people start off wanting to program, then miss the
+those tools when writing up an email or a blog post, suddenly they want those
+keybinds when surfing the web and the spiral out from there
 
 but there are people out there who use emacs for everything (some for good reason, some for
 less).
 things like,
-#+end_notes
 
-#+attr_reveal: :frag (roll-in)
-- emacs terminals
-- emacs shells
-- emacs browsers
-- emacs window managers
-- emacs web browsers (as in they embed a full web browser)
-- emacs init system...
 
-** For a very long time its was the most advanced editor of its time
-#+begin_notes
 a version of Emacs has been around since the 1976, most people in this room were either not
 born or playing with rattles or Atari's
 In all that time its only grown in power, spear heading a lot of early concepts
@@ -70,13 +61,23 @@ features came from emacs's latex-mode and later a plugin called auxtex (a plugin
 I use to this day and can say is still kinda best in class)
 #+end_notes
 
-*** also in some places, still kinda is...
+#+attr_reveal: :frag (roll-in)
+- emacs terminals
+- emacs shells
+- emacs browsers
+- emacs window managers
+- emacs web browsers (as in they embed a full web browser)
+- emacs init system...
+
+** also in some places, still kinda is...
 #+begin_notes
 Things like an infinite clipboard which instead of clobbering the last item its
-pushed onto a stack, which can then be traversed, this is really bloody useful
-for when you need to find that one snippet you cut over 10 motions ago.
+pushed onto a stack, which can then be traversed
 
-plus if you want to get into certain languages such as common lisp,
+A tree based undo system which as well can be traversed and allows you to lean
+into many time travel metaphors
+
+and if you want to get into certain languages such as common lisp,
 Clojure and racket the emacs experience is very hard to beat.
 #+end_notes
 
