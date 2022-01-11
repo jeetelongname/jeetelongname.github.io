@@ -1,7 +1,7 @@
 #+TITLE: Emacs: The Editor For The Next 40 Years
 #+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
 #+REVEAL_ROOT: ../reveal.js
-#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>I have the software tastes of a 50 year old man</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>I have the software tastes of a 60 year old man</i></h3><p>Press s for speaker notes</p>
 #+REVEAL_THEME: black
 #+REVEAL_TRANS: slide
 
@@ -28,31 +28,10 @@ very powerful for its time.
 tho let it be known this was not an editor like we have today, it was a line
 editor which means you literally had to type commands to move up and down in the
 line, a command to insert lines and if you messed up, you started again.
-#+end_notes
-*** The age of many clones
-#+begin_notes
-After emacs was taken up many other implementations came up for other platforms,
-each with there own quirks and what not. Some of the bigger ones were EINE (EINE
-is not emacs), ZWEI (ZWEI was EINE initially), most curiosly James Gosling (as
-in the guy who invented JAVA and cursed this industry) also wrote his own
-implementation of emacs named after himself.
 
-to cut a long story short Gnu emacs won out over all of them in no small part to
-the fact that UniPress (a company Gosling sold his emacs to) was charging like
-$300 for a licenece while also banking on the fact that a community run fork
-would die quickly, Oh how wrong they were.
+After that there were some clones (most notably one by James Gosling (the
+creator of Java)) but none of them would last
 #+end_notes
-*** The age of acceptance
-#+begin_notes
-After that small spat gnu emacs became the standard unix text editor and with
-the only other noticable fork being Lucide Emacs (being developed by Lucid inc)
-it was based on gnu emacs 19 but diverged and then slowly died. (this was in
-response to a slowing down of gnu emacs developent).
-
-Now its the only real Emacs left with other programs being based on or being
-inspired by emacs to some degree.
-#+end_notes
-
 * How has emacs has survived this long?
 #+begin_notes
 In other words why has it not gone the way of netbeans after more modern editors
@@ -98,10 +77,10 @@ pushed onto a stack, which can then be traversed, this is really bloody useful
 for when you need to find that one snippet you cut over 10 motions ago.
 
 plus if you want to get into certain languages such as common lisp,
-clojour and racket the emacs experience is very hard to beat.
+Clojure and racket the emacs experience is very hard to beat.
 #+end_notes
 
-** Hack ability
+** Hackability
 #+begin_notes
 emacs has a very low barrier of entry to get working on it, unlike a lot of
 editors today the smallest unit of extension is not a package or project, but a
@@ -110,7 +89,7 @@ small tweaks, setting variables and whatnot.
 
 Emacs is not structured like editors today, as in there is little structure too
 it, even packages are more a collection of forms using a convention rather than
-some strict heirarchy of statements talking through an api.
+some strict hierarchy of statements talking through an api.
 
 this means that pretty much everything is up for grabs (except maybe some c
 special forms). This leads into the next couple of points where most parts of
@@ -123,11 +102,11 @@ be run like the user wants every time its called, this is extremely powerful.
 #+end_notes
 #+ATTR_REVEAL: :frag (roll-in)
 - It has a low barrier to extension
-- Most if not all things can be extended / modified
-- Most things are implemented in emacs lisp (meaning most things are fungible by
-  the user)
+- Most if not all things can be extended / modified as most things are
+  implemented in emacs lisp
 - you can advise functions to do exactly what you want
 - and so much more...
+
 ** Its extremely introspect able
 #+begin_notes
 every function, variable and special form is documented and easily accessible and
@@ -137,6 +116,7 @@ weeks I never need to look something up. add to that a very strong documentation
 culture and I can really look into the guts of how my editor works and actually
 fiddle with it.
 #+end_notes
+
 ** the ecosystem
 #+begin_notes
 all of this allows for an extremely interesting ecosystem to pop up, as its easy

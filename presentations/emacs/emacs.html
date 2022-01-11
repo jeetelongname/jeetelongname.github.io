@@ -15,12 +15,12 @@
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h1>Emacs: The Editor For The Next 40 Years</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>I have the software tastes of a 50 year old man</i></h3><p>Press s for speaker notes</p>
+<h1>Emacs: The Editor For The Next 40 Years</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>I have the software tastes of a 60 year old man</i></h3><p>Press s for speaker notes</p>
 </section>
 
 <section>
-<section id="slide-org9eca1b6">
-<h2 id="org9eca1b6">What is emacs</h2>
+<section id="slide-orgcebf6f8">
+<h2 id="orgcebf6f8">What is emacs</h2>
 <aside class="notes">
 <p>
 Emacs at is core is not a text editor but a lisp vm that specialises in doing
@@ -32,13 +32,13 @@ use.
 
 </aside>
 </section>
-<section id="slide-orgceb2bec">
-<h3 id="orgceb2bec">A brief history</h3>
-<div class="outline-text-3" id="text-orgceb2bec">
+<section id="slide-org6a2c47c">
+<h3 id="org6a2c47c">A brief history</h3>
+<div class="outline-text-3" id="text-org6a2c47c">
 </div>
 </section>
-<section id="slide-orgd50176c">
-<h4 id="orgd50176c">The first emacs</h4>
+<section id="slide-org485f729">
+<h4 id="org485f729">The first emacs</h4>
 <aside class="notes">
 <p>
 the first emacs was a set of macros on top of the TECO editor, this was not
@@ -53,50 +53,17 @@ editor which means you literally had to type commands to move up and down in the
 line, a command to insert lines and if you messed up, you started again.
 </p>
 
-</aside>
-</section>
-<section id="slide-org5842a61">
-<h4 id="org5842a61">The age of many clones</h4>
-<aside class="notes">
 <p>
-After emacs was taken up many other implementations came up for other platforms,
-each with there own quirks and what not. Some of the bigger ones were EINE (EINE
-is not emacs), ZWEI (ZWEI was EINE initially), most curiosly James Gosling (as
-in the guy who invented JAVA and cursed this industry) also wrote his own
-implementation of emacs named after himself.
-</p>
-
-<p>
-to cut a long story short Gnu emacs won out over all of them in no small part to
-the fact that UniPress (a company Gosling sold his emacs to) was charging like
-$300 for a licenece while also banking on the fact that a community run fork
-would die quickly, Oh how wrong they were.
+After that there were some clones (most notably one by James Gosling (the
+creator of Java)) but none of them would last
 </p>
 
 </aside>
-</section>
-<section id="slide-org856d826">
-<h4 id="org856d826">The age of acceptance</h4>
-<aside class="notes">
-<p>
-After that small spat gnu emacs became the standard unix text editor and with
-the only other noticable fork being Lucide Emacs (being developed by Lucid inc)
-it was based on gnu emacs 19 but diverged and then slowly died. (this was in
-response to a slowing down of gnu emacs developent).
-</p>
-
-<p>
-Now its the only real Emacs left with other programs being based on or being
-inspired by emacs to some degree.
-</p>
-
-</aside>
-
 </section>
 </section>
 <section>
-<section id="slide-orgaf23fbc">
-<h2 id="orgaf23fbc">How has emacs has survived this long?</h2>
+<section id="slide-org28e1203">
+<h2 id="org28e1203">How has emacs has survived this long?</h2>
 <aside class="notes">
 <p>
 In other words why has it not gone the way of netbeans after more modern editors
@@ -105,8 +72,8 @@ came to the table?
 
 </aside>
 </section>
-<section id="slide-org1e24fc9">
-<h3 id="org1e24fc9">Cults help</h3>
+<section id="slide-orgd52f3d0">
+<h3 id="orgd52f3d0">Cults help</h3>
 <aside class="notes">
 <p>
 Emacs has an almost cult like following, its hard to describe but in a word
@@ -132,8 +99,8 @@ things like,
 </ul>
 
 </section>
-<section id="slide-orga453e5c">
-<h3 id="orga453e5c">For a very long time its was the most advanced editor of its time</h3>
+<section id="slide-orgd122040">
+<h3 id="orgd122040">For a very long time its was the most advanced editor of its time</h3>
 <aside class="notes">
 <p>
 a version of Emacs has been around since the 1976, most people in this room were either not
@@ -154,8 +121,8 @@ I use to this day and can say is still kinda best in class)
 </aside>
 
 </section>
-<section id="slide-org9d001af">
-<h4 id="org9d001af">also in some places, still kinda is&#x2026;</h4>
+<section id="slide-org1d61f2e">
+<h4 id="org1d61f2e">also in some places, still kinda is&#x2026;</h4>
 <aside class="notes">
 <p>
 Things like an infinite clipboard which instead of clobbering the last item its
@@ -165,14 +132,14 @@ for when you need to find that one snippet you cut over 10 motions ago.
 
 <p>
 plus if you want to get into certain languages such as common lisp,
-clojour and racket the emacs experience is very hard to beat.
+Clojure and racket the emacs experience is very hard to beat.
 </p>
 
 </aside>
 
 </section>
-<section id="slide-org664df70">
-<h3 id="org664df70">Hack ability</h3>
+<section id="slide-org63f1374">
+<h3 id="org63f1374">Hackability</h3>
 <aside class="notes">
 <p>
 emacs has a very low barrier of entry to get working on it, unlike a lot of
@@ -184,7 +151,7 @@ small tweaks, setting variables and whatnot.
 <p>
 Emacs is not structured like editors today, as in there is little structure too
 it, even packages are more a collection of forms using a convention rather than
-some strict heirarchy of statements talking through an api.
+some strict hierarchy of statements talking through an api.
 </p>
 
 <p>
@@ -201,16 +168,16 @@ be run like the user wants every time its called, this is extremely powerful.
 </aside>
 <ul>
 <li class="fragment roll-in">It has a low barrier to extension</li>
-<li class="fragment roll-in">Most if not all things can be extended / modified</li>
-<li class="fragment roll-in">Most things are implemented in emacs lisp (meaning most things are fungible by
-the user)</li>
+<li class="fragment roll-in">Most if not all things can be extended / modified as most things are
+implemented in emacs lisp</li>
 <li class="fragment roll-in">you can advise functions to do exactly what you want</li>
 <li class="fragment roll-in">and so much more&#x2026;</li>
 
 </ul>
+
 </section>
-<section id="slide-org3794f31">
-<h3 id="org3794f31">Its extremely introspect able</h3>
+<section id="slide-org14893f1">
+<h3 id="org14893f1">Its extremely introspect able</h3>
 <aside class="notes">
 <p>
 every function, variable and special form is documented and easily accessible and
@@ -222,9 +189,10 @@ fiddle with it.
 </p>
 
 </aside>
+
 </section>
-<section id="slide-orgc76ebf7">
-<h3 id="orgc76ebf7">the ecosystem</h3>
+<section id="slide-orgdfa65a0">
+<h3 id="orgdfa65a0">the ecosystem</h3>
 <aside class="notes">
 <p>
 all of this allows for an extremely interesting ecosystem to pop up, as its easy
@@ -234,24 +202,24 @@ place, some quick examples include
 
 </aside>
 </section>
-<section id="slide-org04f3bab">
-<h4 id="org04f3bab">its git interface</h4>
+<section id="slide-org8085924">
+<h4 id="org8085924">its git interface</h4>
 </section>
-<section id="slide-org09251d7">
-<h4 id="org09251d7">org mode</h4>
+<section id="slide-orge63afdb">
+<h4 id="orge63afdb">org mode</h4>
 </section>
-<section id="slide-orgb427974">
-<h4 id="orgb427974">the mail client</h4>
+<section id="slide-orgf01b148">
+<h4 id="orgf01b148">the mail client</h4>
 </section>
 </section>
 <section>
-<section id="slide-orgf3c8da2">
-<h2 id="orgf3c8da2">Why it will outlast current editors</h2>
-<div class="outline-text-2" id="text-orgf3c8da2">
+<section id="slide-orgaf2189c">
+<h2 id="orgaf2189c">Why it will outlast current editors</h2>
+<div class="outline-text-2" id="text-orgaf2189c">
 </div>
 </section>
-<section id="slide-org2d87e79">
-<h3 id="org2d87e79">Its pragmatic but not stagnant</h3>
+<section id="slide-orgcfd1981">
+<h3 id="orgcfd1981">Its pragmatic but not stagnant</h3>
 <aside class="notes">
 <p>
 Emacs is slower to pick up trends but this is not really a problem as
@@ -268,8 +236,8 @@ implemented out side of emacs core and work really well).
 
 </aside>
 </section>
-<section id="slide-org5c65418">
-<h3 id="org5c65418">Its very backwards compatible!</h3>
+<section id="slide-org0a51c75">
+<h3 id="org0a51c75">Its very backwards compatible!</h3>
 <aside class="notes">
 <p>
 When a new feature is added it usually sticks around for a very long time. this
@@ -280,8 +248,8 @@ good because&#x2026;
 
 </aside>
 </section>
-<section id="slide-org3632c2e">
-<h3 id="org3632c2e">Its got a community with no where else to go&#x2026;</h3>
+<section id="slide-org622f2a0">
+<h3 id="org622f2a0">Its got a community with no where else to go&#x2026;</h3>
 <aside class="notes">
 <p>
 Emacs is pretty much unique in this space, no where else can you find a lisp
@@ -294,8 +262,8 @@ a community of addicts that will happily maintain and update it as time goes on.
 </section>
 </section>
 <section>
-<section id="slide-orgb002896">
-<h2 id="orgb002896">Thanks!</h2>
+<section id="slide-org0aa9d04">
+<h2 id="org0aa9d04">Thanks!</h2>
 </section>
 </section>
 </div>
