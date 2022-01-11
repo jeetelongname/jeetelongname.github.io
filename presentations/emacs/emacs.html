@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Emacs: The Editor For The Next 40 Years</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Emacs: The Editor For The Next 40 Years</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>I have the software tastes of a 50 year old man</i></h3><p>Press s for speaker notes</p>
+</section>
+
+<section>
+<section id="slide-org9eca1b6">
+<h2 id="org9eca1b6">What is emacs</h2>
+<aside class="notes">
+<p>
+Emacs at is core is not a text editor but a lisp vm that specialises in doing
+textual work, the current incarnation is (gnu emacs) 36 years old, almost seeing constant
+development in that time frame. this has lead it to become one of the most
+powerful and unique editors of our time and one that is extremely addicting to
+use.
+</p>
+
+</aside>
+</section>
+<section id="slide-orgceb2bec">
+<h3 id="orgceb2bec">A brief history</h3>
+<div class="outline-text-3" id="text-orgceb2bec">
+</div>
+</section>
+<section id="slide-orgd50176c">
+<h4 id="orgd50176c">The first emacs</h4>
+<aside class="notes">
+<p>
+the first emacs was a set of macros on top of the TECO editor, this was not
+macro&rsquo;s in the keybind or vim sense but more a kind of program to tell the
+editor to do, like emacs TECO was an interpreter for its own language, it was
+very powerful for its time.
+</p>
+
+<p>
+tho let it be known this was not an editor like we have today, it was a line
+editor which means you literally had to type commands to move up and down in the
+line, a command to insert lines and if you messed up, you started again.
+</p>
+
+</aside>
+</section>
+<section id="slide-org5842a61">
+<h4 id="org5842a61">The age of many clones</h4>
+<aside class="notes">
+<p>
+After emacs was taken up many other implementations came up for other platforms,
+each with there own quirks and what not. Some of the bigger ones were EINE (EINE
+is not emacs), ZWEI (ZWEI was EINE initially), most curiosly James Gosling (as
+in the guy who invented JAVA and cursed this industry) also wrote his own
+implementation of emacs named after himself.
+</p>
+
+<p>
+to cut a long story short Gnu emacs won out over all of them in no small part to
+the fact that UniPress (a company Gosling sold his emacs to) was charging like
+$300 for a licenece while also banking on the fact that a community run fork
+would die quickly, Oh how wrong they were.
+</p>
+
+</aside>
+</section>
+<section id="slide-org856d826">
+<h4 id="org856d826">The age of acceptance</h4>
+<aside class="notes">
+<p>
+After that small spat gnu emacs became the standard unix text editor and with
+the only other noticable fork being Lucide Emacs (being developed by Lucid inc)
+it was based on gnu emacs 19 but diverged and then slowly died. (this was in
+response to a slowing down of gnu emacs developent).
+</p>
+
+<p>
+Now its the only real Emacs left with other programs being based on or being
+inspired by emacs to some degree.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-orgaf23fbc">
+<h2 id="orgaf23fbc">How has emacs has survived this long?</h2>
+<aside class="notes">
+<p>
+In other words why has it not gone the way of netbeans after more modern editors
+came to the table?
+</p>
+
+</aside>
+</section>
+<section id="slide-org1e24fc9">
+<h3 id="org1e24fc9">Cults help</h3>
+<aside class="notes">
+<p>
+Emacs has an almost cult like following, its hard to describe but in a word
+emacs is addicting for reasons ill expand on
+</p>
+
+<p>
+but there are people out there who use emacs for everything (some for good reason, some for
+less).
+things like,
+</p>
+
+</aside>
+
+<ul>
+<li class="fragment roll-in">emacs terminals</li>
+<li class="fragment roll-in">emacs shells</li>
+<li class="fragment roll-in">emacs browsers</li>
+<li class="fragment roll-in">emacs window managers</li>
+<li class="fragment roll-in">emacs web browsers (as in they embed a full web browser)</li>
+<li class="fragment roll-in">emacs init system&#x2026;</li>
+
+</ul>
+
+</section>
+<section id="slide-orga453e5c">
+<h3 id="orga453e5c">For a very long time its was the most advanced editor of its time</h3>
+<aside class="notes">
+<p>
+a version of Emacs has been around since the 1976, most people in this room were either not
+born or playing with rattles or Atari&rsquo;s
+In all that time its only grown in power, spear heading a lot of early concepts
+that then get reinvented later to become mainstream (usually becoming less
+powerful in the process). things like jumping to errors, early ide / shell
+interfaces, in editor debugger interfaces and so on all have a history of being
+written in emacs lisp first.
+</p>
+
+<p>
+also for the people who used latex editors in the early 90&rsquo;s a lot of those
+features came from emacs&rsquo;s latex-mode and later a plugin called auxtex (a plugin
+I use to this day and can say is still kinda best in class)
+</p>
+
+</aside>
+
+</section>
+<section id="slide-org9d001af">
+<h4 id="org9d001af">also in some places, still kinda is&#x2026;</h4>
+<aside class="notes">
+<p>
+Things like an infinite clipboard which instead of clobbering the last item its
+pushed onto a stack, which can then be traversed, this is really bloody useful
+for when you need to find that one snippet you cut over 10 motions ago.
+</p>
+
+<p>
+plus if you want to get into certain languages such as common lisp,
+clojour and racket the emacs experience is very hard to beat.
+</p>
+
+</aside>
+
+</section>
+<section id="slide-org664df70">
+<h3 id="org664df70">Hack ability</h3>
+<aside class="notes">
+<p>
+emacs has a very low barrier of entry to get working on it, unlike a lot of
+editors today the smallest unit of extension is not a package or project, but a
+function in most cases though most of the time you can configure it with
+small tweaks, setting variables and whatnot.
+</p>
+
+<p>
+Emacs is not structured like editors today, as in there is little structure too
+it, even packages are more a collection of forms using a convention rather than
+some strict heirarchy of statements talking through an api.
+</p>
+
+<p>
+this means that pretty much everything is up for grabs (except maybe some c
+special forms). This leads into the next couple of points where most parts of
+the editor are written emacs lisp and every function / special form can be
+&ldquo;advised&rdquo; at runtime. its similar to python decorators in the way they
+manipulate a function in some certain way but with the key
+difference is that they don&rsquo;t need to be called where  the function is defined. this
+means a user can edit any function to act in the exact way they want and it will
+be run like the user wants every time its called, this is extremely powerful.
+</p>
+
+</aside>
+<ul>
+<li class="fragment roll-in">It has a low barrier to extension</li>
+<li class="fragment roll-in">Most if not all things can be extended / modified</li>
+<li class="fragment roll-in">Most things are implemented in emacs lisp (meaning most things are fungible by
+the user)</li>
+<li class="fragment roll-in">you can advise functions to do exactly what you want</li>
+<li class="fragment roll-in">and so much more&#x2026;</li>
+
+</ul>
+</section>
+<section id="slide-org3794f31">
+<h3 id="org3794f31">Its extremely introspect able</h3>
+<aside class="notes">
+<p>
+every function, variable and special form is documented and easily accessible and
+checked, either by pressing a key-bind on the form or by searching for it in a
+help lookup. this again makes it way to easy to hack on it as there are entire
+weeks I never need to look something up. add to that a very strong documentation
+culture and I can really look into the guts of how my editor works and actually
+fiddle with it.
+</p>
+
+</aside>
+</section>
+<section id="slide-orgc76ebf7">
+<h3 id="orgc76ebf7">the ecosystem</h3>
+<aside class="notes">
+<p>
+all of this allows for an extremely interesting ecosystem to pop up, as its easy
+to iterate on designs, interesting UI concepts can and do pop up all over the
+place, some quick examples include
+</p>
+
+</aside>
+</section>
+<section id="slide-org04f3bab">
+<h4 id="org04f3bab">its git interface</h4>
+</section>
+<section id="slide-org09251d7">
+<h4 id="org09251d7">org mode</h4>
+</section>
+<section id="slide-orgb427974">
+<h4 id="orgb427974">the mail client</h4>
+</section>
+</section>
+<section>
+<section id="slide-orgf3c8da2">
+<h2 id="orgf3c8da2">Why it will outlast current editors</h2>
+<div class="outline-text-2" id="text-orgf3c8da2">
+</div>
+</section>
+<section id="slide-org2d87e79">
+<h3 id="org2d87e79">Its pragmatic but not stagnant</h3>
+<aside class="notes">
+<p>
+Emacs is slower to pick up trends but this is not really a problem as
+the community can implement it
+when it is implemented its usually vetted and documented very well and in a way
+other people can build off it.
+</p>
+
+<p>
+As time marches on it also plans to add lsp support (the thing that makes
+vscodes completion go brrr) and tree sitter support (both of which have been
+implemented out side of emacs core and work really well).
+</p>
+
+</aside>
+</section>
+<section id="slide-org5c65418">
+<h3 id="org5c65418">Its very backwards compatible!</h3>
+<aside class="notes">
+<p>
+When a new feature is added it usually sticks around for a very long time. this
+means that configs need minimal tweaking, sometimes none, this leads to people
+using the same config for decades without having to edit much. this is really
+good because&#x2026;
+</p>
+
+</aside>
+</section>
+<section id="slide-org3632c2e">
+<h3 id="org3632c2e">Its got a community with no where else to go&#x2026;</h3>
+<aside class="notes">
+<p>
+Emacs is pretty much unique in this space, no where else can you find a lisp
+machine that self documents as you edit it on the fly. its old and wise and with
+a community of addicts that will happily maintain and update it as time goes on.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb002896">
+<h2 id="orgb002896">Thanks!</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
