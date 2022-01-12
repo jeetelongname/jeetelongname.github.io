@@ -33,6 +33,8 @@ line, a command to insert lines and if you messed up, you started again.
 After that there were some clones (most notably one by James Gosling (the
 creator of Java)) but none of them would last
 #+end_notes
+#+reveal: split
+[[file:teco_EP.gif]]
 * How has emacs has survived this long?
 #+begin_notes
 In other words why has it not gone the way of netbeans after more modern editors
@@ -45,8 +47,9 @@ excellent for editing text, people start off wanting to program, then miss the
 those tools when writing up an email or a blog post, suddenly they want those
 keybinds when surfing the web and the spiral out from there
 
-but there are people out there who use emacs for everything (some for good reason, some for
-less).
+There is a running joke in the emacs community about everything going into
+emacs, the problem is that some people heard that joke and was like "yeah that
+would be nice."
 things like,
 
 ----------------------------------
@@ -65,15 +68,15 @@ I use to this day and can say is still kinda best in class)
 #+end_notes
 #+attr_reveal: :frag (roll-in)
 - emacs terminals
-- emacs shells
+- emacs shells (as in a shell implemented in emacs lisp)
 - emacs window managers
 - emacs web browsers (as in they embed a full web browser)
-- emacs init system...
+- emacs init systems...
 
-** also in some places, still kinda is...
+** also in some places its still more advanced than most editors
 #+begin_notes
 Things like an infinite clipboard which instead of clobbering the last item its
-pushed onto a stack, which can then be traversed
+pushed onto a stack, which can then be traversed.
 
 A tree based undo system which as well can be traversed and allows you to lean
 into many time travel metaphors
@@ -90,7 +93,7 @@ function in most cases though most of the time you can configure it with
 small tweaks, setting variables and whatnot.
 
 Emacs is not structured like editors today, as in there is little structure too
-it, even packages are more a collection of forms using a convention rather than
+it at all, even packages are more a collection of forms using a convention rather than
 some strict hierarchy of statements talking through an api.
 
 this means that pretty much everything is up for grabs (except maybe some c
@@ -134,9 +137,15 @@ all of this allows for an extremely interesting ecosystem to pop up, as its easy
 to iterate on designs, interesting UI concepts can and do pop up all over the
 place, some quick examples include
 #+end_notes
-*** the git interface
 *** org mode
-*** the mail client
+#+begin_notes
+show off the agenda and the ability to generate other files, it makes my life
+easier as its so maliable
+#+end_notes
+*** the git interface
+#+begin_notes
+its a like an interactive version of the cli.
+#+end_notes
 *** so
 *** many
 *** more
@@ -145,8 +154,9 @@ place, some quick examples include
 #+begin_notes
 Emacs is slower to pick up trends but this is not really a problem as
 the community can implement it
+
 when it is implemented its usually vetted and documented very well and in a way
-other people can build off it.
+other people can build off it. this makes it much easier to hack on it.
 
 As time marches on it also plans to add lsp support (the thing that makes
 vscodes completion go brrr) and tree sitter support (both of which have been
@@ -167,4 +177,9 @@ machine that self documents as you edit it on the fly. its old and wise and with
 a community of addicts that will happily maintain and update it as time goes on.
 #+end_notes
 
-* Thanks!
+* Conclusion
+#+begin_notes
+emacs is cool
+#+end_notes
+
+* Thanks
