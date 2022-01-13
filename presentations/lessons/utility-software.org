@@ -1,0 +1,60 @@
+#+TITLE: Utility Software
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>The stuff that you use</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* What is utility software?
+#+begin_notes
+Its a collection of programs that does some kind of maintenance task, most
+computers come with some kind of utility software to keep the computer
+maintained
+#+end_notes
+
+* Types of software
+#+begin_notes
+ask first
+#+end_notes
+** Encryption software
+#+begin_notes
+most modern operating systems contain some kind of encryption software too make
+sure users can't access un authorised files.
+
+encryption software scrambles a file into cipher text which can then be
+reconstructed by the user when some secret key is provided.
+
+some examples of encryption software is gpg on linux, bitlocker on Windows and
+file vault on macos, these systems automatically decrypt files usually on login
+so the user does not even need to think about it.
+
+This is very important for laptops as they can be easily stolen which leads can
+lead to data breaches and all the fun things that entails (see the GDPR laws)
+#+end_notes
+** Defragmentation software
+#+begin_notes
+Defragmentation software has been discussed but usually comes with the OS,
+essentially it brings blocks of data that have been separated by just general use
+closer together to improve read and write performance
+
+its important to note that users should not defragment an ssd as it has no
+benefits and causes unnecessary read and write operations degrading the disk
+#+end_notes
+** Data Compression
+#+begin_notes
+Data compression is the act of making files smaller through some process, there
+are 2 types, lossy and lossless, the latter shrinking destructively and the
+former using algorithms which can then be used to expand the file back out.
+#+end_notes
+* Questions
+** Define what is meant by utility software
+** State one problem using a fragmented disk
+** identify 2 places where data compression may be used
+** explain why encryption software is used
+** Exam Question
+[[file:util-soft1.png]]
