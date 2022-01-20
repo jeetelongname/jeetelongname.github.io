@@ -20,8 +20,60 @@
 
 
 <section>
-<section id="slide-orga15898c">
-<h2 id="orga15898c">Variables</h2>
+<section id="slide-org0c061c9">
+<h2 id="org0c061c9">Basic overview of pseudocode</h2>
+<aside class="notes">
+<p>
+psudocode is not a language but representation of code that does not have to use
+any standard syntax.
+</p>
+
+<p>
+its a way of planning out code without having to worry about syntax or language
+specific details.
+</p>
+
+<p>
+Its good practice to write out some psudsocode before going into the actual
+implementation of a program
+</p>
+
+</aside>
+
+<pre class="example">
+name &lt;- input "what is your name?"
+hello &lt;- "Hi "
+print hello + name
+</pre>
+</section>
+</section>
+<section>
+<section id="slide-orgfeb16ac">
+<h2 id="orgfeb16ac">talk about notation</h2>
+<aside class="notes">
+<p>
+now while syntax is not important. the main exam boards have a sense of syntax
+for the sake of making sure the question is readable. the notation is provided
+and is usually common sense.
+</p>
+
+<p>
+Do note that when you need to write pseudocode you don&rsquo;t need to use the
+notation but it makes sense to do so to make sure the marker does not confuse
+the code meaning (but as long as your answer makes logical sense it will be
+marked.)
+</p>
+
+<p>
+<a href="https://filestore.aqa.org.uk/resources/computing/AQA-8525-NG-PC.PDF">https://filestore.aqa.org.uk/resources/computing/AQA-8525-NG-PC.PDF</a>
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-orga06e22b">
+<h2 id="orga06e22b">Variables</h2>
 <aside class="notes">
 <p>
 Vaiables are a way to store values that can then be accessed later using the
@@ -32,17 +84,13 @@ passed around like any other value and can be changed as the program is run
 
 </aside>
 
-<p>
-Puts is just print in this context
-</p>
 <div class="org-src-container">
 
-<pre class="src src-ruby"><span style="color: #e95678;">x</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">10</span>
+<pre class="src src-python"><span style="color: #e95678;">x</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">10</span>
+<span style="color: #b877db;">print</span>(x)
 
-<span style="color: #21bfc2;">puts</span><span style="color: #c7c9cb; background-color: #232530;">(</span><span style="color: #f09383;">10</span><span style="color: #c7c9cb; background-color: #232530;">)</span>
 <span style="color: #e95678;">x</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">20</span>
-
-<span style="color: #21bfc2;">puts</span><span style="color: #c7c9cb; background-color: #232530;">(</span>x<span style="color: #c7c9cb; background-color: #232530;">)</span>
+<span style="color: #b877db;">print</span>(x)
 </pre>
 </div>
 
@@ -50,21 +98,51 @@ Puts is just print in this context
 10
 20
 </pre>
+</section>
+</section>
+<section>
+<section id="slide-orgca1b3ab">
+<h2 id="orgca1b3ab">Input and output</h2>
+<div class="outline-text-2" id="text-orgca1b3ab">
+</div>
+</section>
+<section id="slide-org1f81d6a">
+<h3 id="org1f81d6a">Input</h3>
+<p>
+to take input from the user you use the <code>input</code> function
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">x</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #b877db;">input</span>(<span style="color: #fab795;">"some prompt: "</span>)
+</pre>
+</div>
+
+</section>
+<section id="slide-orgb1a12d0">
+<h3 id="orgb1a12d0">Output</h3>
+<p>
+we use the <code>print</code> function to output
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db;">print</span>(<span style="color: #fab795;">"some cool string"</span>)
+</pre>
+</div>
 
 </section>
 </section>
 <section>
-<section id="slide-org92cf471">
-<h2 id="org92cf471">Flow control</h2>
+<section id="slide-orgbef2cb3">
+<h2 id="orgbef2cb3">Selection and Iteration</h2>
 <aside class="notes">
 <p>
-flow control is a way to
+flow control is a way to control which statements do and don&rsquo;t run
 </p>
 
 </aside>
 </section>
-<section id="slide-orga10d184">
-<h3 id="orga10d184">If statements</h3>
+<section id="slide-orgbd2aa5f">
+<h3 id="orgbd2aa5f">If statements</h3>
 <aside class="notes">
 <p>
 if statements allow you to run a certain set of code if a boolean expression
@@ -76,17 +154,19 @@ will run the else case.
 
 <div class="org-src-container">
 
-<pre class="src src-ruby"><span style="color: #e95678;">something</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">false</span>
-<span style="color: #b877db; font-style: italic;">if</span> something == <span style="color: #f09383;">true</span>
-  <span style="color: #fab795;">"something is true"</span>
+<pre class="src src-ruby"><span style="color: #e95678;">something</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #fab795;">"a string"</span>
+<span style="color: #b877db; font-style: italic;">if</span> something == <span style="color: #fab795;">"a string"</span> <span style="color: #b877db; font-style: italic;">then</span>
+  <span style="color: #fab795;">"something is a string"</span>
+<span style="color: #b877db; font-style: italic;">elsif</span> something == <span style="color: #fab795;">"a number"</span> <span style="color: #b877db; font-style: italic;">then</span>
+  <span style="color: #fab795;">"something is a number"</span>
 <span style="color: #b877db; font-style: italic;">else</span>
-  <span style="color: #fab795;">"something is false"</span>
+  <span style="color: #fab795;">"something is not a string"</span>
 <span style="color: #b877db; font-style: italic;">end</span>
 </pre>
 </div>
 
 <pre class="example">
-something is false
+something is a string
 </pre>
 
 
@@ -116,8 +196,8 @@ something is false
 </pre>
 
 </section>
-<section id="slide-org7d7164f">
-<h3 id="org7d7164f">Switch statements</h3>
+<section id="slide-org48a34b8">
+<h3 id="org48a34b8">Switch statements</h3>
 <aside class="notes">
 <p>
 switch statements are like big if else blocks but they check a variable is equal
@@ -132,15 +212,15 @@ you can also add an else clause
 
 <div class="org-src-container">
 
-<pre class="src src-ruby"><span style="color: #e95678;">something</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">3</span>
-<span style="color: #b877db; font-style: italic;">case</span> something
-<span style="color: #b877db; font-style: italic;">when</span> <span style="color: #f09383;">1</span>
+<pre class="src src-fortran">something = <span style="color: #f09383; font-weight: bold;">3</span>
+switch something:
+    <span style="color: #b877db; font-style: italic;">case</span> <span style="color: #f09383; font-weight: bold;">1</span>:
   <span style="color: #fab795;">"something = 1"</span>
-<span style="color: #b877db; font-style: italic;">when</span> <span style="color: #f09383;">2</span>
+    <span style="color: #b877db; font-style: italic;">case</span> <span style="color: #f09383; font-weight: bold;">2</span>:
   <span style="color: #fab795;">"something = 2"</span>
-<span style="color: #b877db; font-style: italic;">when</span> <span style="color: #f09383;">3</span>
+    <span style="color: #b877db; font-style: italic;">case</span> <span style="color: #f09383; font-weight: bold;">3</span>:
   <span style="color: #fab795;">"something = 3"</span>
-<span style="color: #b877db; font-style: italic;">end</span>
+<span style="color: #b877db; font-style: italic;">end</span> switch
 </pre>
 </div>
 
@@ -149,8 +229,8 @@ something = 3
 </pre>
 
 </section>
-<section id="slide-orgcc758d5">
-<h3 id="orgcc758d5">Conditional loops</h3>
+<section id="slide-org2a210de">
+<h3 id="org2a210de">Conditional loops</h3>
 <aside class="notes">
 <p>
 there are 2 kinds of conditional loops a while loop and a do while loop.
@@ -203,9 +283,25 @@ count = 0
 <pre class="example">
 count = 1
 </pre>
+
+
 </section>
-<section id="slide-org1a4d935">
-<h3 id="org1a4d935">for loops</h3>
+<section>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">count</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">0</span>
+<span style="color: #b877db; font-style: italic;">while</span> count <span style="color: #b877db; font-style: italic;">!=</span> <span style="color: #f09383;">0</span>:
+    <span style="color: #e95678;">count</span> <span style="color: #b877db; font-style: italic;">+=</span> <span style="color: #f09383;">1</span>  <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># count = count + 1</span>
+
+<span style="color: #b877db; font-style: italic;">while</span> <span style="color: #b877db;">True</span>:
+    <span style="color: #e95678;">count</span> <span style="color: #b877db; font-style: italic;">+=</span> <span style="color: #f09383;">1</span>
+    <span style="color: #b877db; font-style: italic;">if</span> count <span style="color: #b877db; font-style: italic;">!=</span> <span style="color: #f09383;">0</span>:
+        <span style="color: #b877db; font-style: italic;">break</span>
+</pre>
+</div>
+</section>
+<section id="slide-org13774ca">
+<h3 id="org13774ca">for loops</h3>
 <aside class="notes">
 <p>
 A for loop is a defined loop. It will run for a set amount of iterations before
@@ -222,14 +318,12 @@ element of an array
 
 <div class="org-src-container">
 
-<pre class="src src-ruby"><span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #c7c9cb; background-color: #232530;">[</span><span style="color: #f09383;">1</span><span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #f09383;">2</span><span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #f09383;">3</span><span style="color: #c7c9cb; background-color: #232530;">]</span>
-<span style="color: #b877db; font-style: italic;">for</span> i <span style="color: #b877db; font-style: italic;">in</span> <span style="color: #f09383;">0</span>..<span style="color: #f09383;">3</span>
-  <span style="color: #21bfc2;">puts</span> lst<span style="color: #c7c9cb; background-color: #232530;">[</span>i<span style="color: #c7c9cb; background-color: #232530;">]</span>
-<span style="color: #b877db; font-style: italic;">end</span>
+<pre class="src src-python"><span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> [<span style="color: #f09383;">1</span>, <span style="color: #f09383;">2</span>, <span style="color: #f09383;">3</span>]
+<span style="color: #b877db; font-style: italic;">for</span> <span style="color: #e95678;">i</span> <span style="color: #b877db; font-style: italic;">in</span> <span style="color: #b877db;">range</span>(<span style="color: #f09383;">3</span>):
+  <span style="color: #b877db;">print</span>(lst[i])
 
-<span style="color: #b877db; font-style: italic;">for</span> i <span style="color: #b877db; font-style: italic;">in</span> lst
-  <span style="color: #21bfc2;">puts</span> i
-<span style="color: #b877db; font-style: italic;">end</span>
+<span style="color: #b877db; font-style: italic;">for</span> <span style="color: #e95678;">i</span> <span style="color: #b877db; font-style: italic;">in</span> lst:
+  <span style="color: #b877db;">print</span>(i)
 </pre>
 </div>
 
@@ -237,7 +331,10 @@ element of an array
 1
 2
 3
+</pre>
 
+
+<pre class="example">
 1
 2
 3
@@ -246,19 +343,19 @@ element of an array
 </section>
 </section>
 <section>
-<section id="slide-orgca64197">
-<h2 id="orgca64197">A side note on the difference between expressions and statements</h2>
+<section id="slide-orgb9b6106">
+<h2 id="orgb9b6106">A side note on the difference between expressions and statements</h2>
 <aside class="notes">
 <p>
 an expression in simple terms is a set of code that returns a value. you can
-think of this intuitvly by thinking of if you can store the output in a variable
+think of this intuitively by thinking of if you can store the output in a variable
 </p>
 
 <p>
 some examples of expressions include (but are not limited too)
 </p>
 <ul>
-<li>use of mathamatical operators (plus/minus/multiply and divide) they return a
+<li>use of mathematical operators (plus/minus/multiply and divide) they return a
 number</li>
 <li>comparison operators (<code>=, !</code>, &lt;, &gt;) and so on. they will return true or false</li>
 <li>functions that will return a value</li>
@@ -274,11 +371,13 @@ be covering.
 
 <div class="org-src-container">
 
-<pre class="src src-ruby"><span style="color: #e95678;">x</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">1</span> <span style="color: #b877db; font-style: italic;">+</span> <span style="color: #f09383;">1</span>
-<span style="color: #e95678;">y</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">2</span> &gt; <span style="color: #f09383;">1</span>
-<span style="color: #e95678;">z</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #87ceeb;">Math</span><span style="color: #c7c9cb; background-color: #232530;">.</span><span style="color: #21bfc2;">sqrt</span><span style="color: #c7c9cb; background-color: #232530;">(</span><span style="color: #f09383;">4</span><span style="color: #c7c9cb; background-color: #232530;">)</span>
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">import</span> math
 
-<span style="color: #c7c9cb; background-color: #232530;">[</span>x<span style="color: #c7c9cb; background-color: #232530;">,</span> y<span style="color: #c7c9cb; background-color: #232530;">,</span> z<span style="color: #c7c9cb; background-color: #232530;">]</span>
+<span style="color: #e95678;">x</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">1</span> <span style="color: #b877db; font-style: italic;">+</span> <span style="color: #f09383;">1</span>
+<span style="color: #e95678;">y</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">2</span> <span style="color: #b877db; font-style: italic;">&gt;</span> <span style="color: #f09383;">1</span>
+<span style="color: #e95678;">z</span> <span style="color: #b877db; font-style: italic;">=</span> math.<span style="color: #21bfc2; font-style: italic;">sqrt</span>(<span style="color: #f09383;">4</span>)
+
+<span style="color: #b877db; font-style: italic;">return</span> [x, y, z]
 </pre>
 </div>
 
@@ -295,7 +394,7 @@ be covering.
 <tbody>
 <tr>
 <td class="org-right">2</td>
-<td class="org-left">true</td>
+<td class="org-left">True</td>
 <td class="org-right">2.0</td>
 </tr>
 </tbody>
@@ -304,8 +403,8 @@ be covering.
 </section>
 </section>
 <section>
-<section id="slide-orgce29d92">
-<h2 id="orgce29d92">procedures and functions</h2>
+<section id="slide-org122ce35">
+<h2 id="org122ce35">procedures and functions</h2>
 <aside class="notes">
 <p>
 procedures and functions are two types of sub programs.
@@ -327,19 +426,16 @@ around)
 
 <div class="org-src-container">
 
-<pre class="src src-ruby"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">in_array?</span><span style="color: #c7c9cb; background-color: #232530;">(</span><span style="color: #e95678;">array</span><span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #e95678;">to_find</span><span style="color: #c7c9cb; background-color: #232530;">)</span>
-  <span style="color: #b877db; font-style: italic;">for</span> i <span style="color: #b877db; font-style: italic;">in</span> array
-    <span style="color: #b877db; font-style: italic;">if</span> i == to_find
-      <span style="color: #b877db; font-style: italic;">return</span> <span style="color: #f09383;">true</span>
-    <span style="color: #b877db; font-style: italic;">end</span>
-  <span style="color: #b877db; font-style: italic;">end</span>
-  <span style="color: #b877db; font-style: italic;">return</span> <span style="color: #f09383;">false</span>
-<span style="color: #b877db; font-style: italic;">end</span>
-<span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #c7c9cb; background-color: #232530;">[</span><span style="color: #f09383;">1</span><span style="color: #c7c9cb; background-color: #232530;">,</span><span style="color: #f09383;">2</span><span style="color: #c7c9cb; background-color: #232530;">,</span><span style="color: #f09383;">3</span><span style="color: #c7c9cb; background-color: #232530;">]</span>
-<span style="color: #e95678;">x</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #21bfc2;">in_array?</span><span style="color: #c7c9cb; background-color: #232530;">(</span>lst<span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #f09383;">3</span><span style="color: #c7c9cb; background-color: #232530;">)</span>
-<span style="color: #e95678;">y</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #21bfc2;">in_array?</span><span style="color: #c7c9cb; background-color: #232530;">(</span>lst<span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #f09383;">4</span><span style="color: #c7c9cb; background-color: #232530;">)</span>
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">in_array</span>(<span style="color: #e95678;">array</span>, <span style="color: #e95678;">to_find</span>):
+  <span style="color: #b877db; font-style: italic;">for</span> <span style="color: #e95678;">i</span> <span style="color: #b877db; font-style: italic;">in</span> array:
+    <span style="color: #b877db; font-style: italic;">if</span> i <span style="color: #b877db; font-style: italic;">==</span> to_find:
+      <span style="color: #b877db; font-style: italic;">return</span> <span style="color: #b877db;">True</span>
+  <span style="color: #b877db; font-style: italic;">return</span> <span style="color: #b877db;">False</span>
+<span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> [<span style="color: #f09383;">1</span>,<span style="color: #f09383;">2</span>,<span style="color: #f09383;">3</span>]
+<span style="color: #e95678;">x</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #21bfc2;">in_array</span>(lst, <span style="color: #f09383;">3</span>)
+<span style="color: #e95678;">y</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #21bfc2;">in_array</span>(lst, <span style="color: #f09383;">4</span>)
 
-<span style="color: #c7c9cb; background-color: #232530;">[</span>x<span style="color: #c7c9cb; background-color: #232530;">,</span> y<span style="color: #c7c9cb; background-color: #232530;">]</span>
+[x, y]
 </pre>
 </div>
 
@@ -358,12 +454,93 @@ around)
 </tr>
 </tbody>
 </table>
+</section>
+</section>
+<section>
+<section id="slide-orgcb0a0a7">
+<h2 id="orgcb0a0a7">Other misc stuff</h2>
+<div class="outline-text-2" id="text-orgcb0a0a7">
+</div>
+</section>
+<section id="slide-orgef7462d">
+<h3 id="orgef7462d">Casting</h3>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># its just a function</span>
+<span style="color: #e95678;">x</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #b877db;">str</span>(<span style="color: #f09383;">7</span>)
+<span style="color: #e95678;">y</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #b877db;">int</span>(<span style="color: #fab795;">"7"</span>)
+</pre>
+</div>
+
+</section>
+<section id="slide-orga8dd1ba">
+<h3 id="orga8dd1ba">String handling</h3>
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #e95678;">string</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #fab795;">"string"</span>
+string<span style="color: #c7c9cb; background-color: #232530;">.</span><span style="color: #21bfc2;">length</span>
+
+<span style="color: #e95678;">startPos</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">1</span>
+<span style="color: #e95678;">numberOfChars</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">3</span>
+string<span style="color: #c7c9cb; background-color: #232530;">.</span><span style="color: #21bfc2;">subString</span><span style="color: #c7c9cb; background-color: #232530;">(</span>startPos<span style="color: #c7c9cb; background-color: #232530;">,</span> numberOfChars<span style="color: #c7c9cb; background-color: #232530;">)</span>
+
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">6</td>
+<td class="org-left">&ldquo;tri&rdquo;</td>
+</tr>
+</tbody>
+</table>
 
 </section>
 </section>
 <section>
-<section id="slide-orgf375872">
-<h2 id="orgf375872">Questions</h2>
+<section id="slide-org24b3d2a">
+<h2 id="org24b3d2a">types of questions</h2>
+<aside class="notes">
+<p>
+there will be 2 kinds of questions. write psudeo code and read psudo code.
+</p>
+
+
+<p>
+SUBROUTINE linearSearch(list, toFind)
+    FOR i &lt;- 0 TO LEN(list)
+        IF list[i] == toFind
+            RETURN true
+        ENDIF
+    ENDFOR
+    RETURN false
+ENDSUBROUTINE
+</p>
+
+<p>
+list &lt;- [2, 3 , 5 , 6]
+toFind &lt;- 5
+linearSearch(list, toFind)
+</p>
+
+</aside>
+
+<pre class="example">
+Write an implementation of the linear search algorithm using psuedocode
+</pre>
+</section>
+</section>
+<section>
+<section id="slide-org9c9ebae">
+<h2 id="org9c9ebae">Questions</h2>
 <aside class="notes">
 <p>
 Most of the questions will ask you to read psudo code or like some of these
@@ -373,41 +550,49 @@ psudocode so keep that in mind
 
 </aside>
 </section>
-<section id="slide-orgacf0c39">
-<h3 id="orgacf0c39">Tell me the code structures</h3>
-<div class="outline-text-3" id="text-orgacf0c39">
+<section id="slide-orgaebbb4d">
+<h3 id="orgaebbb4d">Tell me the code structures</h3>
+<div class="outline-text-3" id="text-orgaebbb4d">
 </div>
 </section>
-<section id="slide-org22cf892">
-<h4 id="org22cf892">What loop should you use when you need to loop through an array?</h4>
+<section id="slide-org5a934d4">
+<h4 id="org5a934d4">What loop should you use when you need to loop through an array?</h4>
 </section>
-<section id="slide-org3ae65b5">
-<h4 id="org3ae65b5">What structure decides which path to take depending on a boolean expression?</h4>
+<section id="slide-orgfe4232c">
+<h4 id="orgfe4232c">What structure decides which path to take depending on a boolean expression?</h4>
 </section>
-<section id="slide-orga130a5b">
-<h4 id="orga130a5b">What structure should you use when you need to check a variable against multiple expressions</h4>
+<section id="slide-orgef0fe96">
+<h4 id="orgef0fe96">What structure should you use when you need to check a variable against multiple expressions</h4>
 </section>
-<section id="slide-org9c7181b">
-<h3 id="org9c7181b">Question 1</h3>
+<section id="slide-orge9bfb38">
+<h3 id="orge9bfb38">Question 1</h3>
 
-<div id="org3b05634" class="figure">
+<div id="org6b52099" class="figure">
 <p><img src="code-structures1.png" alt="code-structures1.png" />
 </p>
 </div>
 </section>
-<section id="slide-orgafd5908">
-<h3 id="orgafd5908">Question 2</h3>
+<section id="slide-org1630354">
+<h3 id="org1630354">Question 2</h3>
 
-<div id="org6032af7" class="figure">
+<div id="org829a67b" class="figure">
 <p><img src="code-structures2.png" alt="code-structures2.png" />
 </p>
 </div>
 </section>
-<section id="slide-org3ea9cb0">
-<h3 id="org3ea9cb0">Question 3</h3>
+<section id="slide-org4a7514b">
+<h3 id="org4a7514b">Question 3</h3>
 
-<div id="org6a23a67" class="figure">
+<div id="org5f9ef91" class="figure">
 <p><img src="code-structures3.png" alt="code-structures3.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgcbe034a">
+<h3 id="orgcbe034a">Question 4</h3>
+
+<div id="orge7e44ba" class="figure">
+<p><img src="pseudocode1.png" alt="pseudocode1.png" />
 </p>
 </div>
 </section>
