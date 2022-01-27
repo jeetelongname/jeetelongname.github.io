@@ -1,0 +1,60 @@
+#+TITLE: Comp Thinking
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>Now we think like programmers</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* Basics of computational thinking
+** Decomposition
+#+begin_notes
+Decomposition means to break down a problem into smaller sub problems
+#+end_notes
+** Abstraction
+#+begin_notes
+abstraction is to remove not important details from a problem / hide them away
+so you can only focus on the important parts of a problem.
+#+end_notes
+** Algorithms
+#+begin_notes
+is the actual writing of instructions and asking what desisions the computer
+needs to take. this is where using predefined algo's are important as they
+usually have a better time complexity (something we will discuss later in the
+course)
+#+end_notes
+* Designing programs
+** Identifying inputs processes and outputs
+#+begin_notes
+A program is defined as simply a set of inputs, processes and outputs, its an
+example of decomposition and is part of top down design
+#+end_notes
+** Top down design
+#+begin_notes
+Top down design is a matter of decomposing an abstract problem into smaller sub
+problems in a structured way *get out board*
+#+end_notes
+** Flow charts
+#+begin_notes
+basics of flow charts
+the symbols and why its used.
+
+similar to pseudocode but diagrammy
+
+- terminals
+- processes
+- IO
+- Questions
+- Arrows
+#+end_notes
+[[file:flowchart.svg]]
+* Questions
+** Define abstraction
+** Decompose the program idea "a program to send and receive encrypted mail"
+** Explain why Abstraction is useful
+** Exam Question, use a flow chart
+[[file:comp-thinking.png]]
