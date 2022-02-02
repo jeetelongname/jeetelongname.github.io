@@ -4,20 +4,16 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>How to get started with Hugo and GitHub - Jeet&#39;s Blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta itemprop="name" content="How to get started with Hugo and GitHub">
-<meta itemprop="description" content="There are 5 word sentences that every person will say &#39;lets start a band&#39; &#39;we should open a bar&#39; and &#39;I can write a blog&#39;. I hope to help with the last one">
-<meta itemprop="datePublished" content="2020-07-31T00:00:00+00:00" />
+<meta itemprop="description" content="There are 5 word sentences that every person will say &#39;lets start a band&#39; &#39;we should open a bar&#39; and &#39;I can write a blog&#39;. I hope to help with the last one"><meta itemprop="datePublished" content="2020-07-31T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-07-31T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1190">
-
-
-
-<meta itemprop="keywords" content="Hugo,Tech,Guides,Blogs," />
-<meta property="og:title" content="How to get started with Hugo and GitHub" />
+<meta itemprop="keywords" content="hugo,tech,guides,blogs," /><meta property="og:title" content="How to get started with Hugo and GitHub" />
 <meta property="og:description" content="There are 5 word sentences that every person will say &#39;lets start a band&#39; &#39;we should open a bar&#39; and &#39;I can write a blog&#39;. I hope to help with the last one" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jeetelongname.github.io/blog/posts/post1/" />
+<meta property="og:url" content="https://jeetelongname.github.io/blog/posts/post1/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-07-31T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-07-31T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to get started with Hugo and GitHub"/>
 <meta name="twitter:description" content="There are 5 word sentences that every person will say &#39;lets start a band&#39; &#39;we should open a bar&#39; and &#39;I can write a blog&#39;. I hope to help with the last one"/>
@@ -43,7 +39,7 @@
 	
 	<h1 class="site-title"><a href="https://jeetelongname.github.io/blog/">Jeet&#39;s Blog</a></h1>
 	<div class="site-description"><p>Ramblings on linux and cooking (and other stuff)</p><nav class="nav social">
-			<ul class="flat"><li><a href="https://github.com/jeetelongname" title="Github"><i data-feather="github"></i></a></li><li><a href="http://twitter.com/jeetaditya3" title="Twitter"><i data-feather="twitter"></i></a></li><li><a href="https://www.linkedin.com/in/jeetaditya-chatterjee-138792192/" title="linkedin"><i data-feather="linkedin"></i></a></li><li><a href="/blog/posts/index.xml" title="RSS"><i data-feather="rss"></i></a></li><span class="scheme-toggle"><a href="#" id="scheme-toggle"></a></ul>
+			<ul class="flat"><li><a href="https://github.com/jeetelongname" title="Github"><i data-feather="github"></i></a></li><li><a href="http://twitter.com/jeetaditya3" title="Twitter"><i data-feather="twitter"></i></a></li><li><a href="https://www.linkedin.com/in/jeetaditya-chatterjee-138792192/" title="linkedin"><i data-feather="linkedin"></i></a></li><li><a href="/blog/posts/index.xml" title="RSS"><i data-feather="rss"></i></a></li><li><a href="#" class="scheme-toggle" id="scheme-toggle"></a></li></ul>
 		</nav>
 	</div>
 
@@ -107,7 +103,7 @@ I ended up settling on <a href="https://github.com/knadh/hugo-ink/">Ink</a> by k
 <h2 id="getting-started">Getting started.</h2>
 <hr>
 <ol>
-<li>start by making a repository for your website. title it  <em>yourusername</em>.github.io. This will be the repo that will hold all of your posts and your theme. I won&rsquo;t go into detail on how to make a repository but you will find details <a href="https://docs.github.com/en/github/getting-started-with-github/create-a-repo">here</a></li>
+<li>start by making a repository for your website. title it <em>yourusername</em>.github.io. This will be the repo that will hold all of your posts and your theme. I won&rsquo;t go into detail on how to make a repository but you will find details <a href="https://docs.github.com/en/github/getting-started-with-github/create-a-repo">here</a></li>
 </ol>
 <p>You need to consider</p>
 <ul>
@@ -115,34 +111,35 @@ I ended up settling on <a href="https://github.com/knadh/hugo-ink/">Ink</a> by k
 <li>you need Initialise with A README. We will then clone the repository and work on it</li>
 </ul>
 <ol start="2">
-<li>We will now clone the repository using</li>
+<li><input disabled="" type="checkbox"> We will now clone the repository using</li>
 </ol>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/*yourusername*/*yourusername*.github.io
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/*yourusername*/*yourusername*.github.io
 cd *yourusername*.github.io
 </code></pre></div><p>if you have hugo installed you should now run (if you don&rsquo;t you should really install it now)</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo new site *your blog name*
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo new site *your blog name*
 </code></pre></div><p>this will create a bunch of directories and a &ldquo;config.toml&rdquo; file. We will be using this file now.
 <img src="/blog/post1/dirstructure1.png" alt="An example directory structure" title="An example directory structure"></p>
 <h2 id="configuration">Configuration</h2>
 <p>We will now be editing our config.toml to take our theme. when you open it in in
 your config.toml it will look something like this</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"></code></pre></div><p>Not to fear! all we need to do is add some declarations and all will be ok!
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">
+</code></pre></div><p>Not to fear! all we need to do is add some declarations and all will be ok!
 first lets add our base url</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">baseurl = <span style="color:#a31515">&#34;https://yoururl.org&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">baseurl = <span style="color:#a31515">&#34;https://yoururl.org&#34;</span>
 </code></pre></div><p>this can also be set to a sub folder of your website using</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">baseurl = <span style="color:#a31515">&#34;https://yoururl.org/blog&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">baseurl = <span style="color:#a31515">&#34;https://yoururl.org/blog&#34;</span>
 </code></pre></div><p>just note that if you follow this guide to the letter, in this case your links
 to files (such as images or any static asset) will need to start with your
 sub folder</p>
 <p>eg</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">![*An example*](/blog/dirstructure1.png)
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">![*An example*](/blog/dirstructure1.png)
 </code></pre></div><p>where as a normal
 scenario would be</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">![*An example*](dirstructure1.png)
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">![*An example*](dirstructure1.png)
 </code></pre></div><p>This is all dependant on your use case and it will all be explained as we go
 further.</p>
 <p>lets now set some more variables.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">languageCode = <span style="color:#a31515">&#34;en-gb&#34;</span> <span style="color:#008000"># sets the language for your site</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">languageCode = <span style="color:#a31515">&#34;en-gb&#34;</span> <span style="color:#008000"># sets the language for your site</span>
 title = <span style="color:#a31515">&#34;My New Hugo Site&#34;</span> <span style="color:#008000"># your site title</span>
 </code></pre></div><p>these are quite self explanatory but are still required</p>
 <p>the theme var is important. this will dictate how your entire website will look.
@@ -150,7 +147,7 @@ If you have chosen a theme then all you need to do is put your theme as is in
 the theme folder. this should look like this</p>
 <p><code>./themes/yourtheme/*files*</code></p>
 <p>you can then set your chosen theme by using its directory name</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">theme = <span style="color:#a31515">&#34;yourtheme&#34;</span> 
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">theme = <span style="color:#a31515">&#34;yourtheme&#34;</span>
 </code></pre></div><p>This is where you have to part ways as every theme handles its interface
 differently. all themes on <a href="https://themes.gohugo.io">the hugo website</a> will have
 an example site which you can use as a base. If you use the Ink theme you can
@@ -164,11 +161,11 @@ directory structure"></p>
 <p>Now you have your thing all set up you now need to push it to your site! If you
 are using github pages you need to link the public folder a sub folder of your
 site you can do this by using the command</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ln -s path/to/public path/to/the/subfolder
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ln -s path/to/public path/to/the/subfolder
 </code></pre></div><p>This would look something like this (all of this took place in the root of the project)</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ln -s blog-hugo/public blog/
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ln -s blog-hugo/public blog/
 </code></pre></div><p>remember to build your site</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo -v
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo -v
 </code></pre></div><p>you need to do this every time you make a change or add a post</p>
 <p>now you can push all of your files!</p>
 <p>if you have never used git that&rsquo;s fine Ill give you all the commands</p>
@@ -176,16 +173,16 @@ site you can do this by using the command</p>
 <p>Now you have written it all out you now need to push it to your
 site!</p>
 <p>first you need to add all of your files to the git tree</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git add . 
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git add .
 </code></pre></div><p>the dot represents all the files in your folder that have not been added.</p>
 <p>now that we have added them we need to commit the files. (you can always revert
 a commit so don&rsquo;t worry if you need to roll back)</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git commit -a -m <span style="color:#a31515">&#34;Inital commit&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git commit -a -m <span style="color:#a31515">&#34;Inital commit&#34;</span>
 </code></pre></div><p>the <code>-a</code> flag tells git to commit all files. the <code>-m</code> flag is the commit message
 flag. this is where you will title your commit. This is nothing special just
 keep it simple and relevant
 Now you can run</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push
 </code></pre></div><p>after this, if all goes well your site will be built and you will be go to it!
 If it does not you can do some trouble shooting steps</p>
 <h3 id="troubleshooting">Troubleshooting</h3>
@@ -201,7 +198,7 @@ file structure and see if your post shows up then</li>
 practice will go a long way. here is a great
 <a href="https://www.markdownguide.org/cheat-sheet">cheatsheet</a></p>
 <p>While you are writing you can get a preview using the</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo server
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo server
 </code></pre></div><p>If you use the <code>-D</code> flag it will also render drafts
 once you have started the server you can access it by going to <code>localhost:1313</code>
 in your web browser</p>
@@ -210,11 +207,11 @@ in your web browser</p>
 file structure you have set up. When you have written it you need to do a
 similar process to your first git commit.</p>
 <p>There will be a build</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo -v
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo -v
 </code></pre></div><p>an add</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git add .
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git add .
 </code></pre></div><p>and a commit</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git commit -a -m <span style="color:#a31515">&#34;your commit message&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git commit -a -m <span style="color:#a31515">&#34;your commit message&#34;</span>
 </code></pre></div><p>Do this every time you write a file or change a post.</p>
 <h2 id="finishing-up">Finishing up</h2>
 <p>This covers the basics of git hugo and markdown. I hope this guide was helpful
@@ -228,13 +225,13 @@ liked It share this guide around or shoot me an <a href="mailto:jeetelongname@gm
 					
 						<ul class="flat">
 							
-							<li><a href="/blog/tags/hugo">Hugo</a></li>
+							<li><a href="/blog/tags/hugo">hugo</a></li>
 							
-							<li><a href="/blog/tags/tech">Tech</a></li>
+							<li><a href="/blog/tags/tech">tech</a></li>
 							
-							<li><a href="/blog/tags/guides">Guides</a></li>
+							<li><a href="/blog/tags/guides">guides</a></li>
 							
-							<li><a href="/blog/tags/blogs">Blogs</a></li>
+							<li><a href="/blog/tags/blogs">blogs</a></li>
 							
 						</ul>
 					
@@ -243,7 +240,7 @@ liked It share this guide around or shoot me an <a href="mailto:jeetelongname@gm
 	</div>
 	<div class="footer wrapper">
 	<nav class="nav">
-		<div>2020  copyright © Jeetaditya Chatterjee 2020-2020 |  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+		<div>2022  copyright © Jeetaditya Chatterjee 2020-2020 |  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
 	</nav>
 </div>
 

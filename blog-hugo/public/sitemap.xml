@@ -1,103 +1,63 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://jeetelongname.github.io/blog/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/posts/post4/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/tags/lists/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/posts/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/tags/programming/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/tags/python/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/tags/ruby/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/tags/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/tags/cooking/</loc>
     <lastmod>2020-12-15T22:01:11+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/tags/quick/</loc>
     <lastmod>2020-12-15T22:01:11+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/posts/post2/</loc>
     <lastmod>2020-12-15T22:01:11+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/tags/simple/</loc>
     <lastmod>2020-12-15T22:01:11+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/tags/vegetables/</loc>
     <lastmod>2020-12-15T22:01:11+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/tags/blogs/</loc>
     <lastmod>2020-07-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/tags/guides/</loc>
     <lastmod>2020-07-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/posts/post1/</loc>
     <lastmod>2020-07-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/tags/hugo/</loc>
     <lastmod>2020-07-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/tags/tech/</loc>
     <lastmod>2020-07-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/about/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jeetelongname.github.io/blog/categories/</loc>
   </url>
-  
 </urlset>

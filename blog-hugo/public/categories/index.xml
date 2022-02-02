@@ -6,10 +6,6 @@
     <description>Recent content in Categories on Jeet&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <copyright>copyright © Jeetaditya Chatterjee 2020-2020</copyright>
-    
-	<atom:link href="https://jeetelongname.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>copyright © Jeetaditya Chatterjee 2020-2020</copyright><atom:link href="https://jeetelongname.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
