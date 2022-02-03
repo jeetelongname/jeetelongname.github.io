@@ -33,7 +33,7 @@ paper 2 2019
 [[file:numbers.png]]
 ** representing other data
 #+begin_notes
-
+paper 2 2018
 #+end_notes
 [[file:images.png]]
 ** Sound and compression
