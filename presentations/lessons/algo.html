@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Algorithms</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Algorithms</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>Sorting and searching</i></h3><p>Press s for speaker notes</p>
+</section>
+
+
+<section>
+<section id="slide-org13d055a">
+<h2 id="org13d055a">Searching algorithms</h2>
+<aside class="notes">
+<p>
+A search algo searchs for some item in a list
+</p>
+
+</aside>
+</section>
+<section id="slide-org9e75b5b">
+<h3 id="org9e75b5b">Linear Search</h3>
+<aside class="notes">
+<p>
+Linear search iterates through a list. it can work with unordered list.
+It will take much longer depending on the size of the list.
+(hint at Big O notation)
+O(N)
+</p>
+
+</aside>
+</section>
+<section id="slide-org338715c">
+<h3 id="org338715c">Binary Search</h3>
+<aside class="notes">
+<p>
+Binary search will take the midpoint of a list. check if the value is == lower
+or higher if its lower it will take the midpoint of the lower list, doing the
+same if the value is higher, so on.
+</p>
+
+<p>
+this only works on sorted lists. tho.
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">binary_search</span>(<span style="color: #e95678;">list</span>, <span style="color: #e95678;">item</span>):
+    <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># low and high keep track of which part of the list you'll search in.</span>
+    <span style="color: #e95678;">low</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">0</span>
+    <span style="color: #e95678;">high</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #b877db;">len</span>(list) <span style="color: #b877db; font-style: italic;">-</span> <span style="color: #f09383;">1</span>
+
+    <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># While you haven't narrowed it down to one element ...</span>
+    <span style="color: #b877db; font-style: italic;">while</span> low <span style="color: #b877db; font-style: italic;">&lt;=</span> high:
+      <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># ... check the middle element</span>
+      <span style="color: #e95678;">mid</span> <span style="color: #b877db; font-style: italic;">=</span> (low <span style="color: #b877db; font-style: italic;">+</span> high) <span style="color: #b877db; font-style: italic;">//</span> <span style="color: #f09383;">2</span>
+      <span style="color: #e95678;">guess</span> <span style="color: #b877db; font-style: italic;">=</span> list[mid]
+      <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># Found the item.</span>
+      <span style="color: #b877db; font-style: italic;">if</span> guess <span style="color: #b877db; font-style: italic;">==</span> item:
+        <span style="color: #b877db; font-style: italic;">return</span> mid
+      <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># The guess was too high.</span>
+      <span style="color: #b877db; font-style: italic;">if</span> guess <span style="color: #b877db; font-style: italic;">&gt;</span> item:
+        <span style="color: #e95678;">high</span> <span style="color: #b877db; font-style: italic;">=</span> mid <span style="color: #b877db; font-style: italic;">-</span> <span style="color: #f09383;">1</span>
+      <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># The guess was too low.</span>
+      <span style="color: #b877db; font-style: italic;">else</span>:
+        <span style="color: #e95678;">low</span> <span style="color: #b877db; font-style: italic;">=</span> mid <span style="color: #b877db; font-style: italic;">+</span> <span style="color: #f09383;">1</span>
+
+    <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># Item doesn't exist</span>
+    <span style="color: #b877db; font-style: italic;">return</span> <span style="color: #b877db;">None</span>
+
+<span style="color: #b877db; font-style: italic;">return</span> <span style="color: #21bfc2;">binary_search</span>([<span style="color: #f09383;">1</span>, <span style="color: #f09383;">2</span>, <span style="color: #f09383;">3</span>, <span style="color: #f09383;">4</span>, <span style="color: #f09383;">5</span>], <span style="color: #f09383;">4</span>)  <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># returns the positon</span>
+</pre>
+</div>
+
+<pre class="example">
+3
+</pre>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org027b3e4">
+<h2 id="org027b3e4">Sorting algorithm</h2>
+<div class="outline-text-2" id="text-org027b3e4">
+</div>
+</section>
+<section id="slide-org2ea0436">
+<h3 id="org2ea0436">Bubble sort</h3>
+<aside class="notes">
+<p>
+Bubble sort is a method of sorting its called bubble sort because values bubble
+through the list.
+</p>
+
+<p>
+it will compare a pair of value&rsquo;s and if they are not in the correct order they
+are swapped.
+</p>
+
+<p>
+here is an example of one pass.
+the things in parens are whats being compared, they are swapped
+</p>
+
+<p>
+only when no swaps have taken place will the algorithm stop and the list is
+guaranteed to be sorted.
+</p>
+
+</aside>
+<ul>
+<li class="fragment roll-in">[(5, 2), 7, 4, 3]</li>
+<li class="fragment roll-in">[2, (5, 7), 4, 3]</li>
+<li class="fragment roll-in">[2, 5, (7, 4), 3]</li>
+<li class="fragment roll-in">[2, 5, 4, (7, 3)]</li>
+<li class="fragment roll-in" id="[2, 5, 4, 3, 7]">start again as there were swaps</li>
+
+</ul>
+
+</section>
+<section id="slide-org7f48a75">
+<h3 id="org7f48a75">Merge sort</h3>
+<aside class="notes">
+<p>
+merge sort is a divide and conquer algorithm. it will divide the list into many
+smaller lists and then merge them back together sorted.
+</p>
+
+<p>
+the first stage is division, each list is subdivided untill each list has one
+elem, then they are merged by comparing each element, the first elements are
+compared then the next and so on putting them in the correct order.
+</p>
+
+</aside>
+
+<div id="orgb046711" class="figure">
+<p><img src="mergesort.png" alt="mergesort.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-org58864a0">
+<h3 id="org58864a0">insertion sort</h3>
+<aside class="notes">
+<p>
+insertion sort splits the list into a sorted and unsorted inserting lists into
+there place as it iterates through the unsorted list.
+</p>
+
+</aside>
+<ul>
+<li class="fragment roll-in">[5, 2, 7, 4, 3]</li>
+<li class="fragment roll-in">[5] [2, 7, 4, 3]</li>
+<li class="fragment roll-in">[2, 5] [7, 4, 3]</li>
+<li class="fragment roll-in">so on&#x2026;</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org38d3a13">
+<h2 id="org38d3a13">Questions</h2>
+<div class="outline-text-2" id="text-org38d3a13">
+</div>
+</section>
+<section id="slide-orgfd7a993">
+<h3 id="orgfd7a993">merge sort is an example of a divde and conquer algorithm, what happens in the divide stage?</h3>
+</section>
+<section id="slide-orgf15edcb">
+<h3 id="orgf15edcb">explain the steps of a bubble sort</h3>
+</section>
+<section id="slide-org6a493b9">
+<h3 id="org6a493b9">When you have a sorted list, which algorim is faster, Linear or Binary search?</h3>
+</section>
+<section id="slide-org78453a6">
+<h3 id="org78453a6">exam question.</h3>
+
+<div id="orge30aa20" class="figure">
+<p><img src="algo1.png" alt="algo1.png" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

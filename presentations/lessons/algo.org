@@ -1,0 +1,112 @@
+#+TITLE: Algorithms
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>Sorting and searching</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+#+LATEX_HEADER: \usepackage{forest}
+
+
+* Searching algorithms
+#+begin_notes
+A search algo searchs for some item in a list
+#+end_notes
+** Linear Search
+#+begin_notes
+Linear search iterates through a list. it can work with unordered list.
+It will take much longer depending on the size of the list.
+(hint at Big O notation)
+O(N)
+#+end_notes
+** Binary Search
+#+begin_notes
+Binary search will take the midpoint of a list. check if the value is == lower
+or higher if its lower it will take the midpoint of the lower list, doing the
+same if the value is higher, so on.
+
+this only works on sorted lists. tho.
+#+end_notes
+#+begin_src python
+def binary_search(list, item):
+    # low and high keep track of which part of the list you'll search in.
+    low = 0
+    high = len(list) - 1
+
+    # While you haven't narrowed it down to one element ...
+    while low <= high:
+      # ... check the middle element
+      mid = (low + high) // 2
+      guess = list[mid]
+      # Found the item.
+      if guess == item:
+        return mid
+      # The guess was too high.
+      if guess > item:
+        high = mid - 1
+      # The guess was too low.
+      else:
+        low = mid + 1
+
+    # Item doesn't exist
+    return None
+
+return binary_search([1, 2, 3, 4, 5], 4)  # returns the positon
+#+end_src
+
+: 3
+
+
+* Sorting algorithm
+** Bubble sort
+#+begin_notes
+Bubble sort is a method of sorting its called bubble sort because values bubble
+through the list.
+
+it will compare a pair of value's and if they are not in the correct order they
+are swapped.
+
+here is an example of one pass.
+the things in parens are whats being compared, they are swapped
+
+only when no swaps have taken place will the algorithm stop and the list is
+guaranteed to be sorted.
+#+end_notes
+#+ATTR_REVEAL: :frag (roll-in)
+- [(5, 2), 7, 4, 3]
+- [2, (5, 7), 4, 3]
+- [2, 5, (7, 4), 3]
+- [2, 5, 4, (7, 3)]
+- [2, 5, 4, 3, 7] :: start again as there were swaps
+
+** Merge sort
+#+begin_notes
+merge sort is a divide and conquer algorithm. it will divide the list into many
+smaller lists and then merge them back together sorted.
+
+the first stage is division, each list is subdivided untill each list has one
+elem, then they are merged by comparing each element, the first elements are
+compared then the next and so on putting them in the correct order.
+#+end_notes
+[[file:mergesort.png]]
+
+** insertion sort
+#+begin_notes
+insertion sort splits the list into a sorted and unsorted inserting lists into
+there place as it iterates through the unsorted list.
+#+end_notes
+#+ATTR_REVEAL: :frag (roll-in)
+- [5, 2, 7, 4, 3]
+- [5] [2, 7, 4, 3]
+- [2, 5] [7, 4, 3]
+- so on...
+
+* Questions
+** merge sort is an example of a divde and conquer algorithm, what happens in the divide stage?
+** explain the steps of a bubble sort
+** When you have a sorted list, which algorim is faster, Linear or Binary search?
+** exam question.
+[[file:algo1.png]]
