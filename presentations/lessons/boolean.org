@@ -1,0 +1,90 @@
+#+TITLE: Boolean
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>Just truths (and falses)</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+#+LATEX_HEADER: \usepackage{circuitikz}
+
+* what is a boolean?
+#+begin_notes
+*ask*
+
+True and false also known as Boolean are a data type that only consist of those
+2 things. it matches up quite nicely with the base 2 number system computer as
+we will explore in a bit
+
+True = 1
+False = 0
+#+end_notes
+* Boolean structures
+#+begin_notes
+there are three types of boolean operations you need to know of.
+#+end_notes
+* Boolean operations
+#+begin_notes
+These concepts can be represented as gates, these are then used in actual
+computers to do stuff
+#+end_notes
+** not gate
+#+begin_notes
+flip the thing
+not true so it must be false
+
+There is also a bit of notation.
+#+end_notes
+#+Attr_reveal: :frag (roll-in)
+- A¬ or A'
+[[file:not gate.svg]]
+** or gate
+#+begin_notes
+it can either be true or false. the way to think about this is that if there is
+a true in the statement it evaluates to true.
+
+True or False.
+#+end_notes
+#+Attr_reveal: :frag (roll-in)
+- I have a dog *or* A cat
+- A + B
+
+[[file:or gate.svg]]
+** And gate
+#+begin_notes
+Every input has to be true for the output to be true
+All or nothing, everything has to be true for this expression to be true.
+
+True and true,
+
+another way to think about this is that if there is a false in the statement
+then the expression is false
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+- I have a dog *and* a cat
+- A * B or AB
+[[file:and gate.svg]]
+* truth tables
+#+begin_notes
+A truth table is a way to work out the output of a circut from its input
+Use white board
+
+for and
+| Input A | Input B | out |
+|---------+---------+-----|
+|       0 |       0 |   0 |
+|       0 |       1 |   0 |
+|       1 |       0 |   0 |
+|       1 |       1 |   1 |
+#+end_notes
+* Questions
+** Write out the truth table for an or gate
+** Draw out a circuit that matches this expression
+p = A AND (B OR C)
+** Write down in words this circuit
+[[file:example gate diagam.svg]]
+** Exam Question
+[[file:boolean1.png]]

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Boolean</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Boolean</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>Just truths (and falses)</i></h3><p>Press s for speaker notes</p>
+</section>
+
+<section>
+<section id="slide-org66e9d22">
+<h2 id="org66e9d22">what is a boolean?</h2>
+<aside class="notes">
+<p>
+<b>ask</b>
+</p>
+
+<p>
+True and false also known as Boolean are a data type that only consist of those
+2 things. it matches up quite nicely with the base 2 number system computer as
+we will explore in a bit
+</p>
+
+<p>
+True = 1
+False = 0
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org80e99e6">
+<h2 id="org80e99e6">Boolean structures</h2>
+<aside class="notes">
+<p>
+there are three types of boolean operations you need to know of.
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org19acc60">
+<h2 id="org19acc60">Boolean operations</h2>
+<aside class="notes">
+<p>
+These concepts can be represented as gates, these are then used in actual
+computers to do stuff
+</p>
+
+</aside>
+</section>
+<section id="slide-org5d9b828">
+<h3 id="org5d9b828">not gate</h3>
+<aside class="notes">
+<p>
+flip the thing
+not true so it must be false
+</p>
+
+<p>
+There is also a bit of notation.
+</p>
+
+</aside>
+<ul>
+<li class="fragment roll-in">A¬ or A&rsquo;</li>
+
+</ul>
+
+<div id="org0e63028" class="figure">
+<p><img src="not gate.svg" alt="not gate.svg" class="org-svg" />
+</p>
+</div>
+</section>
+<section id="slide-org0612f0e">
+<h3 id="org0612f0e">or gate</h3>
+<aside class="notes">
+<p>
+it can either be true or false. the way to think about this is that if there is
+a true in the statement it evaluates to true.
+</p>
+
+<p>
+True or False.
+</p>
+
+</aside>
+<ul>
+<li class="fragment roll-in">I have a dog <b>or</b> A cat</li>
+<li class="fragment roll-in">A + B</li>
+
+</ul>
+
+
+<div id="orgb20f53d" class="figure">
+<p><img src="or gate.svg" alt="or gate.svg" class="org-svg" />
+</p>
+</div>
+</section>
+<section id="slide-orgc486a11">
+<h3 id="orgc486a11">And gate</h3>
+<aside class="notes">
+<p>
+Every input has to be true for the output to be true
+All or nothing, everything has to be true for this expression to be true.
+</p>
+
+<p>
+True and true,
+</p>
+
+<p>
+another way to think about this is that if there is a false in the statement
+then the expression is false
+</p>
+
+</aside>
+<ul>
+<li class="fragment roll-in">I have a dog <b>and</b> a cat</li>
+<li class="fragment roll-in">A * B or AB</li>
+
+</ul>
+
+<div id="org45af0e4" class="figure">
+<p><img src="and gate.svg" alt="and gate.svg" class="org-svg" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org17c9c7f">
+<h2 id="org17c9c7f">truth tables</h2>
+<aside class="notes">
+<p>
+A truth table is a way to work out the output of a circut from its input
+Use white board
+</p>
+
+<p>
+for and
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Input A</th>
+<th scope="col" class="org-right">Input B</th>
+<th scope="col" class="org-right">out</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org392fe2f">
+<h2 id="org392fe2f">Questions</h2>
+<div class="outline-text-2" id="text-org392fe2f">
+</div>
+</section>
+<section id="slide-org9ebf0f1">
+<h3 id="org9ebf0f1">Write out the truth table for an or gate</h3>
+</section>
+<section id="slide-orgbbc00f3">
+<h3 id="orgbbc00f3">Draw out a circuit that matches this expression</h3>
+<p>
+p = A AND (B OR C)
+</p>
+</section>
+<section id="slide-orgcff28c6">
+<h3 id="orgcff28c6">Write down in words this circuit</h3>
+
+<div id="org0c8706d" class="figure">
+<p><img src="example gate diagam.svg" alt="example gate diagam.svg" class="org-svg" />
+</p>
+</div>
+</section>
+<section id="slide-org43c3792">
+<h3 id="org43c3792">Exam Question</h3>
+
+<div id="org15853b2" class="figure">
+<p><img src="boolean1.png" alt="boolean1.png" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
