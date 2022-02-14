@@ -2,62 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jeetelongname.github.io/blog/</loc>
+    <loc>https://www.jeetelongname.net/blog/posts/</loc>
+    <lastmod>2021-04-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/posts/post4/</loc>
+    <loc>https://www.jeetelongname.net/blog/posts/post4/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/tags/lists/</loc>
+    <loc>https://www.jeetelongname.net/blog/tags/lists/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/posts/</loc>
+    <loc>https://www.jeetelongname.net/blog/tags/programming/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/tags/programming/</loc>
+    <loc>https://www.jeetelongname.net/blog/tags/python/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/tags/python/</loc>
+    <loc>https://www.jeetelongname.net/blog/tags/ruby/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/tags/ruby/</loc>
+    <loc>https://www.jeetelongname.net/blog/tags/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/tags/</loc>
-    <lastmod>2021-04-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jeetelongname.github.io/blog/tags/cooking/</loc>
+    <loc>https://www.jeetelongname.net/blog/tags/cooking/</loc>
     <lastmod>2020-12-15T22:01:11+00:00</lastmod>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/tags/quick/</loc>
+    <loc>https://www.jeetelongname.net/blog/tags/quick/</loc>
     <lastmod>2020-12-15T22:01:11+00:00</lastmod>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/posts/post2/</loc>
+    <loc>https://www.jeetelongname.net/blog/posts/post2/</loc>
     <lastmod>2020-12-15T22:01:11+00:00</lastmod>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/tags/simple/</loc>
+    <loc>https://www.jeetelongname.net/blog/tags/simple/</loc>
     <lastmod>2020-12-15T22:01:11+00:00</lastmod>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/tags/vegetables/</loc>
+    <loc>https://www.jeetelongname.net/blog/tags/vegetables/</loc>
     <lastmod>2020-12-15T22:01:11+00:00</lastmod>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/tags/blogs/</loc>
+    <loc>https://www.jeetelongname.net/blog/tags/blogs/</loc>
     <lastmod>2020-07-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/tags/guides/</loc>
+    <loc>https://www.jeetelongname.net/blog/tags/guides/</loc>
     <lastmod>2020-07-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/posts/post1/</loc>
+    <loc>https://www.jeetelongname.net/blog/posts/post1/</loc>
     <lastmod>2020-07-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/tags/hugo/</loc>
+    <loc>https://www.jeetelongname.net/blog/tags/hugo/</loc>
     <lastmod>2020-07-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/tags/tech/</loc>
+    <loc>https://www.jeetelongname.net/blog/tags/tech/</loc>
     <lastmod>2020-07-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/about/</loc>
+    <loc>https://www.jeetelongname.net/blog/work/</loc>
+    <priority>0</priority>
   </url><url>
-    <loc>https://jeetelongname.github.io/blog/categories/</loc>
+    <loc>https://www.jeetelongname.net/blog/about/</loc>
   </url>
 </urlset>

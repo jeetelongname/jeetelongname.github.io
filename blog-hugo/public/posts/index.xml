@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Jeet&#39;s Blog</title>
-    <link>https://jeetelongname.github.io/blog/posts/</link>
-    <description>Recent content in Posts on Jeet&#39;s Blog</description>
+    <title>Jeet&#39;s Blog</title>
+    <link>https://www.jeetelongname.net/blog/posts/</link>
+    <description>Recent content on Jeet&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <copyright>copyright © Jeetaditya Chatterjee 2020-2020</copyright>
-    <lastBuildDate>Wed, 07 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jeetelongname.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy 2022 Jeetaditya Chatterjee</copyright>
+    <lastBuildDate>Wed, 07 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jeetelongname.net/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>List manipulation into madness</title>
-      <link>https://jeetelongname.github.io/blog/posts/post4/</link>
+      <link>https://www.jeetelongname.net/blog/posts/post4/</link>
       <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://jeetelongname.github.io/blog/posts/post4/</guid>
+      <guid>https://www.jeetelongname.net/blog/posts/post4/</guid>
       <description>It all started from a joke.. A friend sent me a code snippet in an effort to prank meme. To bad for him I know that url by heart and was not fooled by his petty gambit. But this got me thinking about ways of shrinking his solution and ended up with me finding different ways to manipulate the same list into doing the same thing. I hope you find this journey as interesting as I did!</description>
     </item>
     
     <item>
       <title>Roasted vegetables. A retrospective</title>
-      <link>https://jeetelongname.github.io/blog/posts/post2/</link>
+      <link>https://www.jeetelongname.net/blog/posts/post2/</link>
       <pubDate>Tue, 15 Dec 2020 22:01:11 +0000</pubDate>
       
-      <guid>https://jeetelongname.github.io/blog/posts/post2/</guid>
+      <guid>https://www.jeetelongname.net/blog/posts/post2/</guid>
       <description>Roasting Vegetables is great! its a great way to get rid of those lingering vegetables and its simple and quick to do! I see it as a fridge cleaner and an easy way to make a simple side. (but i end up eating them on its own!)
 Prerequisites There are no hard and fast rules when it comes to this. But i like to add in
   At least one onion like vegetables.</description>
@@ -30,10 +30,10 @@ Prerequisites There are no hard and fast rules when it comes to this. But i like
     
     <item>
       <title>How to get started with Hugo and GitHub</title>
-      <link>https://jeetelongname.github.io/blog/posts/post1/</link>
+      <link>https://www.jeetelongname.net/blog/posts/post1/</link>
       <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jeetelongname.github.io/blog/posts/post1/</guid>
+      <guid>https://www.jeetelongname.net/blog/posts/post1/</guid>
       <description>I am no expert I should start this by saying I started this website a good year ago and did nothing with it. I was adamant that I would do everything in wrought HTML ,lets just say that was a massive mistake. I ended up settling on a simple home page with a hugo blog to power the back-end. After multiple hiccups with finding a theme i had settled on Tokiwa for a while and all was well&amp;hellip; that was until i tried blogging.</description>
     </item>
     

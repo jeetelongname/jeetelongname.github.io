@@ -7,4 +7,4 @@
 	url = https://github.com/knadh/hugo-ink
 [submodule "blog-hugo/themes/manis-hugo-theme"]
 	path = blog-hugo/themes/manis-hugo-theme
-	url = https://github.com/yursan9/manis-hugo-theme
+	url = https://github.com/jeetelongname/manis-hugo-theme
