@@ -14,7 +14,7 @@ pygmentscodefencesguesssyntax = true
 
 [params]
     tagline = "Ramblings on linux and cooking (and other stuff)"
-    description = "Sweet little Hugo's theme for personal website or blog."
+    description = "Don't expect anything anytime soon"
     themeAttrib = true
     mainSections = ["posts"]
     head404 = "Sorry, I can't find what you want."
