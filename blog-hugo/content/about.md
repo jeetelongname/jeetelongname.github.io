@@ -17,13 +17,3 @@ more of my thoughts.
 I use Linux, and I cook, this is what I will write about when I find the time.
 I am constantly experimenting with new pieces of software and will probably
 write about them at some point.
-
-I am a big proponet of a decentralied internet using services such as
-[matrix](https://matrix.org/) and
-[mastadon](https://en.wikipedia.org/wiki/Mastodon_%28software%29)
-
-## How can I berate you about how you are wrong?
-
-you can berate me [here!](mailto:jeetlongname@gmail.com) or if its about one of
-my projects you can make and issue on my
-[github](https://github.com/jeetelongname)

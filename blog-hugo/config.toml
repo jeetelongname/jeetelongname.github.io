@@ -1,54 +1,68 @@
-baseURL = "https://jeetelongname.github.io/blog/"
+baseURL = "https://www.jeetelongname.net/blog/"
 languageCode = "en-gb"
 title = "Jeet's Blog"
-theme ="hugo-ink"
-paginate = 5
-copyright = "copyright © Jeetaditya Chatterjee 2020-2020"
+theme ="manis-hugo-theme"
+paginate = 10
+copyright = "&copy 2022 Jeetaditya Chatterjee"
 pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
-[params]
-    subtitle = "Ramblings on linux and cooking (and other stuff)"
-    featherIconsCDN = true
-    mode = "auto"
-    avatar = "https://avatars1.githubusercontent.com/u/49886197?s=460&u=c72546bdc6260023241f7a8c204b78fcca5ca20a&v=4"
-[[menu.main]]
-name = "Home"
-url = ".."
-weight = 1
-
-[[menu.main]]
-name = "All posts"
-url = "/posts"
-weight = 2
-
-[[menu.main]]
-name = "About"
-url = "/about"
-weight = 3
-
-[[menu.main]]
-name = "Tags"
-url = "/tags"
-weight = 4
-
-[[params.social]]
-name = "Github"
-icon = "github"
-url = "https://github.com/jeetelongname"
-[[params.social]]
-name = "Twitter"
-icon = "twitter"
-url = "http://twitter.com/jeetaditya3"
-[[params.social]]
-name = "linkedin"
-icon = "linkedin"
-url = "https://www.linkedin.com/in/jeetaditya-chatterjee-138792192/"
-[[params.social]]
-name = "RSS"
-icon = "rss"
-url = "/blog/posts/index.xml"
 
 [taxonomies]
    tag = "tags"
-   category = "categories"
+   # category = "categories"
+
+[params]
+    tagline = "Ramblings on linux and cooking (and other stuff)"
+    description = "Sweet little Hugo's theme for personal website or blog."
+    themeAttrib = true
+    mainSections = ["posts"]
+    head404 = "Sorry, I can't find what you want."
+    sub404 = "Back to <a href='/'>Home</a>."
+	latestCount = 5
+    highlightJs = true
+	highlightJsStyle = "ocean"
+    prefix = "/blog"
+
+	# Social Links
+	email = "jeetelongname@gmail.com"
+	github = "https://github.com/jeetelongname"
+    # avatar = "https://avatars1.githubusercontent.com/u/49886197?s=460&u=c72546bdc6260023241f7a8c204b78fcca5ca20a&v=4"
+
+[menu]
+    [[menu.main]]
+    name = "Home"
+    url = ".."
+
+    [[menu.main]]
+    name = "Archive"
+    url = "/posts"
+    # weight = 2
+
+    [[menu.main]]
+    name = "About"
+    url = "/about"
+    # weight = 3
+
+    [[menu.main]]
+    name = "Tags"
+    url = "/tags"
+    # weight = 4
+
+# [[params.social]]
+# name = "Github"
+# icon = "github"
+# url = "https://github.com/jeetelongname"
+# [[params.social]]
+# name = "Twitter"
+# icon = "twitter"
+# url = "http://twitter.com/jeetaditya3"
+# [[params.social]]
+# name = "linkedin"
+# icon = "linkedin"
+# url = "https://www.linkedin.com/in/jeetaditya-chatterjee-138792192/"
+# [[params.social]]
+# name = "RSS"
+# icon = "rss"
+# url = "/blog/posts/index.xml"
+
