@@ -1,0 +1,17 @@
+#+HUGO_BASE_DIR: ~/code/web/website/blog-hugo
+#+HUGO_SECTION: posts
+#+hugo_front_matter_format: yaml
+* Posts
+** TODO Some Post :hugo:opinion:
+:PROPERTIES:
+:EXPORT_FILE_NAME: some-post
+:EXPORT_DATE: 2022-02-14
+:END:
+*** Some top level heading
+wow this is cool
+
+* COMMENT Local Variables                          :ARCHIVE:
+# Local Variables:
+# org-export-with-author: nil
+# eval: (org-hugo-auto-export-mode)
+# End:
