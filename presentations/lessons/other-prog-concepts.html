@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Other Prog Concepts</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Other Prog Concepts</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>A little bit of tying up loose ends</i></h3><p>Press s for speaker notes</p>
+</section>
+
+<section>
+<section id="slide-org015b044">
+<h2 id="org015b044">These are just some other programming concepts that you need to know</h2>
+<aside class="notes">
+<p>
+this is just a grab bag of stuff that I am not sure I have covered??
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org9acbf22">
+<h2 id="org9acbf22">String Manipulation</h2>
+<aside class="notes">
+<p>
+there are some methods that you need to know
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #e95678;">string</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #fab795;">"ComputerScience"</span>
+
+<span style="color: #21bfc2;">puts</span> string<span style="color: #c7c9cb; background-color: #232530;">.</span><span style="color: #21bfc2;">length</span>
+
+<span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># sub strings</span>
+<span style="color: #e95678;">startingIndex</span><span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #e95678;">amountOfChars</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">0</span><span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #f09383;">4</span>
+<span style="color: #21bfc2;">print</span> string<span style="color: #c7c9cb; background-color: #232530;">.</span><span style="color: #21bfc2;">sub</span><span style="color: #c7c9cb; background-color: #232530;">(</span>startingIndex<span style="color: #c7c9cb; background-color: #232530;">,</span> amountOfChars<span style="color: #c7c9cb; background-color: #232530;">)</span>
+<span style="color: #21bfc2;">print</span> string<span style="color: #c7c9cb; background-color: #232530;">.</span><span style="color: #21bfc2;">left</span><span style="color: #c7c9cb; background-color: #232530;">(</span><span style="color: #f09383;">4</span><span style="color: #c7c9cb; background-color: #232530;">)</span> <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># get first 4 chars</span>
+<span style="color: #21bfc2;">print</span> string<span style="color: #c7c9cb; background-color: #232530;">.</span><span style="color: #21bfc2;">right</span><span style="color: #c7c9cb; background-color: #232530;">(</span><span style="color: #f09383;">4</span><span style="color: #c7c9cb; background-color: #232530;">)</span> <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># get last 4 chars</span>
+
+<span style="color: #21bfc2;">print</span> string <span style="color: #b877db; font-style: italic;">+</span> <span style="color: #fab795;">" IsLove"</span>
+<span style="color: #21bfc2;">print</span> string<span style="color: #c7c9cb; background-color: #232530;">.</span><span style="color: #21bfc2;">upper</span>
+<span style="color: #21bfc2;">print</span> string<span style="color: #c7c9cb; background-color: #232530;">.</span><span style="color: #21bfc2;">lower</span>
+
+<span style="color: #21bfc2;">asc</span><span style="color: #c7c9cb; background-color: #232530;">(</span><span style="color: #fab795;">'A'</span><span style="color: #c7c9cb; background-color: #232530;">)</span> <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># =&gt; 65</span>
+<span style="color: #21bfc2;">chr</span><span style="color: #c7c9cb; background-color: #232530;">(</span><span style="color: #f09383;">97</span><span style="color: #c7c9cb; background-color: #232530;">)</span> <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># =&gt; 'a'</span>
+
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgacbb83a">
+<h2 id="orgacbb83a">File handling</h2>
+<aside class="notes">
+<p>
+
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre class="src src-python">
+<span style="color: #e95678;">file</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #b877db;">open</span>(<span style="color: #fab795;">"name/of/file"</span>)
+
+<span style="color: #b877db;">print</span>(file.<span style="color: #21bfc2; font-style: italic;">readLine</span>())
+
+file.<span style="color: #21bfc2; font-style: italic;">writeLine</span>(<span style="color: #fab795;">"some nice line</span><span style="color: #b877db; font-style: italic;">\n</span><span style="color: #fab795;">"</span>)
+<span style="color: #b877db;">print</span>(file.<span style="color: #21bfc2; font-style: italic;">readLine</span>())
+
+<span style="color: #b877db; font-style: italic;">while</span> <span style="color: #b877db; font-style: italic;">not</span> file.<span style="color: #21bfc2; font-style: italic;">endOfFile</span>():
+    <span style="color: #b877db;">print</span>(file.<span style="color: #21bfc2; font-style: italic;">readLine</span>())
+
+file.<span style="color: #21bfc2; font-style: italic;">close</span>()
+
+<span style="color: #21bfc2;">newFile</span>(<span style="color: #fab795;">"some/new/file"</span>)
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org33e8dc4">
+<h2 id="org33e8dc4">Records</h2>
+<aside class="notes">
+<p>
+A record is a way to store things in a named way
+</p>
+
+</aside>
+<pre class="example">
+record = {:name, :phone_ex}
+
+listVer = ["Jim", "034"]
+
+recordVer = {:name "Jim", :phone_ex "034"}
+
+# get name
+
+listVer[0]
+
+recordVer.name
+</pre>
+</section>
+</section>
+<section>
+<section id="slide-org777f08a">
+<h2 id="org777f08a">basic SQL</h2>
+<aside class="notes">
+<p>
+
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-sql"><span style="color: #b877db; font-style: italic;">select</span> <span style="color: #b877db; font-style: italic;">name</span> <span style="color: #b877db; font-style: italic;">from</span> students;
+
+<span style="color: #b877db; font-style: italic;">select</span> <span style="color: #b877db; font-style: italic;">name</span> <span style="color: #b877db; font-style: italic;">from</span> students <span style="color: #b877db; font-style: italic;">where</span> age &gt; <span style="color: #f09383; font-weight: bold;">10</span>;
+
+<span style="color: #b877db; font-style: italic;">select</span> * <span style="color: #b877db; font-style: italic;">from</span> students <span style="color: #b877db; font-style: italic;">where</span> fname = "Jim" <span style="color: #b877db; font-style: italic;">or</span> lname = "Harrison";
+
+<span style="color: #b877db; font-style: italic;">select</span> fname, email <span style="color: #b877db; font-style: italic;">from</span> students <span style="color: #b877db; font-style: italic;">where</span> yearGroup = <span style="color: #f09383; font-weight: bold;">10</span>;
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org7857a3b">
+<h2 id="org7857a3b">Questions</h2>
+<div class="outline-text-2" id="text-org7857a3b">
+</div>
+</section>
+<section id="slide-org343f89c">
+<h3 id="org343f89c">Exam 1</h3>
+
+<div id="org16d21f8" class="figure">
+<p><img src="sql.png" alt="sql.png" />
+</p>
+</div>
+</section>
+<section id="slide-org92d4356">
+<h3 id="org92d4356">Exam 2</h3>
+
+<div id="org2255258" class="figure">
+<p><img src="substring.png" alt="substring.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgbc0c65e">
+<h3 id="orgbc0c65e">Exam 3</h3>
+
+<div id="org68ac925" class="figure">
+<p><img src="switch.png" alt="switch.png" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

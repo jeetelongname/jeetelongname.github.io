@@ -1,0 +1,99 @@
+#+TITLE: Other Prog Concepts
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>A little bit of tying up loose ends</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* These are just some other programming concepts that you need to know
+#+begin_notes
+this is just a grab bag of stuff that I am not sure I have covered??
+#+end_notes
+* String Manipulation
+#+begin_notes
+there are some methods that you need to know
+#+end_notes
+#+begin_src ruby :result output
+string = "ComputerScience"
+
+puts string.length
+
+# sub strings
+startingIndex, amountOfChars = 0, 4
+print string.sub(startingIndex, amountOfChars)
+print string.left(4) # get first 4 chars
+print string.right(4) # get last 4 chars
+
+print string + " IsLove"
+print string.upper
+print string.lower
+
+asc('A') # => 65
+chr(97) # => 'a'
+
+#+end_src
+
+* File handling
+#+begin_notes
+
+#+end_notes
+#+begin_src python
+
+file = open("name/of/file")
+
+print(file.readLine())
+
+file.writeLine("some nice line\n")
+print(file.readLine())
+
+while not file.endOfFile():
+    print(file.readLine())
+
+file.close()
+
+newFile("some/new/file")
+#+end_src
+
+* Records
+#+begin_notes
+A record is a way to store things in a named way
+#+end_notes
+#+begin_src
+record = {:name, :phone_ex}
+
+listVer = ["Jim", "034"]
+
+recordVer = {:name "Jim", :phone_ex "034"}
+
+# get name
+
+listVer[0]
+
+recordVer.name
+#+end_src
+* basic SQL
+#+begin_notes
+
+#+end_notes
+
+#+begin_src sql
+select name from students;
+
+select name from students where age > 10;
+
+select * from students where fname = "Jim" or lname = "Harrison";
+
+select fname, email from students where yearGroup = 10;
+#+end_src
+* Questions
+** Exam 1
+[[file:sql.png]]
+** Exam 2
+[[file:substring.png]]
+** Exam 3
+[[file:switch.png]]
