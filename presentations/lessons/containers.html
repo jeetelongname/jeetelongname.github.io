@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Containers</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Containers</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i></i></h3><p>Press s for speaker notes</p>
+</section>
+
+
+<section>
+<section id="slide-orgf6118b5">
+<h2 id="orgf6118b5">Arrays (fixed length)</h2>
+<aside class="notes">
+<p>
+A fixed length array is one that only contains a set size that size is defined
+when the array is declared, they also can only contain one data type
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #21bfc2;">array</span> students<span style="color: #c7c9cb; background-color: #232530;">[</span><span style="color: #f09383;">4</span><span style="color: #c7c9cb; background-color: #232530;">]</span>
+students<span style="color: #c7c9cb; background-color: #232530;">[</span><span style="color: #f09383;">0</span><span style="color: #c7c9cb; background-color: #232530;">]</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #fab795;">"Jim"</span>
+students<span style="color: #c7c9cb; background-color: #232530;">[</span><span style="color: #f09383;">1</span><span style="color: #c7c9cb; background-color: #232530;">]</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #fab795;">"Pam"</span>
+students<span style="color: #c7c9cb; background-color: #232530;">[</span><span style="color: #f09383;">2</span><span style="color: #c7c9cb; background-color: #232530;">]</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #fab795;">"Jeff"</span>
+students<span style="color: #c7c9cb; background-color: #232530;">[</span><span style="color: #f09383;">3</span><span style="color: #c7c9cb; background-color: #232530;">]</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">1</span>       <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># will raise an error</span>
+students<span style="color: #c7c9cb; background-color: #232530;">[</span><span style="color: #f09383;">4</span><span style="color: #c7c9cb; background-color: #232530;">]</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #fab795;">"Sally"</span> <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># will cause an error</span>
+</pre>
+</div>
+</section>
+<section id="slide-org31d8c17">
+<h3 id="org31d8c17">2d arrays</h3>
+<aside class="notes">
+<p>
+Arrays can also contain other arrays, these are known as 2d arrays as when drawn
+out they look like a 2d grid. again they can only contain one data type.
+</p>
+
+<p>
+This is useful for storing a large amount of data but there is a problem, there
+is no semantic meaning between the index and the data stored.
+</p>
+
+<p>
+You could easily swap the role and name and it would be hard to spot.
+</p>
+
+<p>
+this is where records come in.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #21bfc2;">array</span> staff<span style="color: #c7c9cb; background-color: #232530;">[</span><span style="color: #f09383;">3</span><span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #f09383;">4</span><span style="color: #c7c9cb; background-color: #232530;">]</span>
+
+staff<span style="color: #c7c9cb; background-color: #232530;">[</span><span style="color: #f09383;">0</span><span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #f09383;">0</span><span style="color: #c7c9cb; background-color: #232530;">]</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #fab795;">"Jim"</span> <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># name</span>
+staff<span style="color: #c7c9cb; background-color: #232530;">[</span><span style="color: #f09383;">0</span><span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #f09383;">1</span><span style="color: #c7c9cb; background-color: #232530;">]</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #fab795;">"Receptionist"</span> <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># role</span>
+staff<span style="color: #c7c9cb; background-color: #232530;">[</span><span style="color: #f09383;">0</span><span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #f09383;">2</span><span style="color: #c7c9cb; background-color: #232530;">]</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #fab795;">"1/02/2002"</span> <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># Join date</span>
+
+staff<span style="color: #c7c9cb; background-color: #232530;">[</span><span style="color: #f09383;">1</span><span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #f09383;">0</span><span style="color: #c7c9cb; background-color: #232530;">]</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #fab795;">"Pam"</span>
+staff<span style="color: #c7c9cb; background-color: #232530;">[</span><span style="color: #f09383;">1</span><span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #f09383;">1</span><span style="color: #c7c9cb; background-color: #232530;">]</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #fab795;">"Manager"</span>
+staff<span style="color: #c7c9cb; background-color: #232530;">[</span><span style="color: #f09383;">1</span><span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #f09383;">2</span><span style="color: #c7c9cb; background-color: #232530;">]</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #fab795;">'1/03/2001'</span>
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org77deb8b">
+<h2 id="org77deb8b">Records (or tables)</h2>
+<aside class="notes">
+<p>
+A record is a kind of 2d array that allows for field names to identify a type of
+data. this allows our data to have that semantic meaning I was discussing.
+</p>
+
+<p>
+its essentially a table.
+</p>
+
+</aside>
+<p>
+Staff table
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">fname</th>
+<th scope="col" class="org-left">staff<sub>Role</sub></th>
+<th scope="col" class="org-left">start<sub>date</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&ldquo;Jim&rdquo;</td>
+<td class="org-left">&ldquo;Receptionist&rdquo;</td>
+<td class="org-left">&ldquo;1/02/2002&rdquo;</td>
+</tr>
+
+<tr>
+<td class="org-left">&ldquo;Pam&rdquo;</td>
+<td class="org-left">&ldquo;Manager&rdquo;</td>
+<td class="org-left">&ldquo;1/03/2001&rdquo;</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section>
+<section id="slide-org9bfda82">
+<h2 id="org9bfda82">Using SQL to extract information from records</h2>
+<aside class="notes">
+<p>
+Tho the added complexity means that getting data out of it is a little more
+complex.
+</p>
+
+<p>
+this is where SQL or structured query language comes into play.
+</p>
+
+<p>
+using a select statement we can extract what we need from the table.
+</p>
+
+<p>
+We select theese fields from this record.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-sql"><span style="color: #b877db; font-style: italic;">SELECT</span> fname, staff_role, start_date <span style="color: #b877db; font-style: italic;">FROM</span> staff_table;
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">fname</th>
+<th scope="col" class="org-left">staff<sub>Role</sub></th>
+<th scope="col" class="org-left">start<sub>date</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&ldquo;Jim&rdquo;</td>
+<td class="org-left">&ldquo;Receptionist&rdquo;</td>
+<td class="org-left">&ldquo;1/02/2002&rdquo;</td>
+</tr>
+
+<tr>
+<td class="org-left">&ldquo;Pam&rdquo;</td>
+<td class="org-left">&ldquo;Manager&rdquo;</td>
+<td class="org-left">&ldquo;1/03/2001&rdquo;</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="slide-org5fb76dd">
+<h3 id="org5fb76dd">the <code>*</code> field</h3>
+<aside class="notes">
+<p>
+there is a short hand for extracting all of the fields from a table
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre class="src src-sql"><span style="color: #b877db; font-style: italic;">SELECT</span> * <span style="color: #b877db; font-style: italic;">FROM</span> staff_table
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">fname</th>
+<th scope="col" class="org-left">staff<sub>Role</sub></th>
+<th scope="col" class="org-left">start<sub>date</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&ldquo;Jim&rdquo;</td>
+<td class="org-left">&ldquo;Receptionist&rdquo;</td>
+<td class="org-left">&ldquo;1/02/2002&rdquo;</td>
+</tr>
+
+<tr>
+<td class="org-left">&ldquo;Pam&rdquo;</td>
+<td class="org-left">&ldquo;Manager&rdquo;</td>
+<td class="org-left">&ldquo;1/03/2001&rdquo;</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section id="slide-org7a6fac7">
+<h3 id="org7a6fac7">the WHERE clause</h3>
+<aside class="notes">
+<p>
+you can add a where clause to check which data to take out as well!
+</p>
+
+<p>
+you can use all kinds of comparison operators such as more than or less than,
+you can even check many things with the <code>and</code> and <code>or</code> keywords
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-sql"><span style="color: #b877db; font-style: italic;">SELECT</span> fname, staff_role <span style="color: #b877db; font-style: italic;">FROM</span> staff_table
+<span style="color: #b877db; font-style: italic;">WHERE</span> fname = "Pam"
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">fname</th>
+<th scope="col" class="org-left">staff<sub>Role</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&ldquo;Pam&rdquo;</td>
+<td class="org-left">&ldquo;Manager&rdquo;</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section>
+<section id="slide-orgf2c8ba1">
+<h2 id="orgf2c8ba1">Questions</h2>
+<div class="outline-text-2" id="text-orgf2c8ba1">
+</div>
+</section>
+<section id="slide-org6cbe6ef">
+<h3 id="org6cbe6ef">Question 1</h3>
+
+<div id="orge1905f5" class="figure">
+<p><img src="containers1.png" alt="containers1.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgcc71730">
+<h3 id="orgcc71730">Question 2</h3>
+
+<div id="org0c88a8b" class="figure">
+<p><img src="containers2.png" alt="containers2.png" />
+</p>
+</div>
+</section>
+<section id="slide-org36d6777">
+<h3 id="org36d6777">Question 3</h3>
+
+<div id="orga61e894" class="figure">
+<p><img src="containers3.png" alt="containers3.png" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

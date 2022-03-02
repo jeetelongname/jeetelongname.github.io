@@ -1,0 +1,119 @@
+#+TITLE: Containers
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i></i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+
+* Arrays (fixed length)
+#+begin_notes
+A fixed length array is one that only contains a set size that size is defined
+when the array is declared, they also can only contain one data type
+#+end_notes
+#+begin_src ruby
+array students[4]
+students[0] = "Jim"
+students[1] = "Pam"
+students[2] = "Jeff"
+students[3] = 1       # will raise an error
+students[4] = "Sally" # will cause an error
+#+end_src
+** 2d arrays
+#+begin_notes
+Arrays can also contain other arrays, these are known as 2d arrays as when drawn
+out they look like a 2d grid. again they can only contain one data type.
+
+This is useful for storing a large amount of data but there is a problem, there
+is no semantic meaning between the index and the data stored.
+
+You could easily swap the role and name and it would be hard to spot.
+
+this is where records come in.
+#+end_notes
+
+#+begin_src ruby
+array staff[3, 4]
+
+staff[0, 0] = "Jim" # name
+staff[0, 1] = "Receptionist" # role
+staff[0, 2] = "1/02/2002" # Join date
+
+staff[1, 0] = "Pam"
+staff[1, 1] = "Manager"
+staff[1, 2] = '1/03/2001'
+#+end_src
+* Records (or tables)
+#+begin_notes
+A record is a kind of 2d array that allows for field names to identify a type of
+data. this allows our data to have that semantic meaning I was discussing.
+
+its essentially a table.
+#+end_notes
+Staff table
+| fname | staff_Role     | start_date  |
+|-------+----------------+-------------|
+| "Jim" | "Receptionist" | "1/02/2002" |
+| "Pam" | "Manager"      | "1/03/2001" |
+* Using SQL to extract information from records
+#+begin_notes
+Tho the added complexity means that getting data out of it is a little more
+complex.
+
+this is where SQL or structured query language comes into play.
+
+using a select statement we can extract what we need from the table.
+
+We select theese fields from this record.
+#+end_notes
+
+#+begin_src sql
+SELECT fname, staff_role, start_date FROM staff_table;
+#+end_src
+
+| fname | staff_Role     | start_date  |
+|-------+----------------+-------------|
+| "Jim" | "Receptionist" | "1/02/2002" |
+| "Pam" | "Manager"      | "1/03/2001" |
+** the =*= field
+#+begin_notes
+there is a short hand for extracting all of the fields from a table
+#+end_notes
+#+begin_src sql
+SELECT * FROM staff_table
+#+end_src
+
+| fname | staff_Role     | start_date  |
+|-------+----------------+-------------|
+| "Jim" | "Receptionist" | "1/02/2002" |
+| "Pam" | "Manager"      | "1/03/2001" |
+
+** the WHERE clause
+#+begin_notes
+you can add a where clause to check which data to take out as well!
+
+you can use all kinds of comparison operators such as more than or less than,
+you can even check many things with the =and= and =or= keywords
+#+end_notes
+
+#+begin_src sql
+SELECT fname, staff_role FROM staff_table
+WHERE fname = "Pam"
+#+end_src
+
+| fname | staff_Role |
+|-------+------------|
+| "Pam" | "Manager"  |
+* Questions
+** Question 1
+
+[[file:containers1.png]]
+** Question 2
+[[file:containers2.png]]
+** Question 3
+[[file:containers3.png]]
