@@ -3,11 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.jeetelongname.net/blog/posts/</loc>
-    <lastmod>2021-04-07T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url><url>
+    <loc>https://www.jeetelongname.net/blog/posts/2am-paella/</loc>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/tags/cheap/</loc>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/tags/cooking/</loc>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/tags/easy/</loc>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.jeetelongname.net/blog/</loc>
-    <lastmod>2021-04-07T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/tags/</loc>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.jeetelongname.net/blog/posts/post4/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
@@ -23,12 +38,6 @@
   </url><url>
     <loc>https://www.jeetelongname.net/blog/tags/ruby/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.jeetelongname.net/blog/tags/</loc>
-    <lastmod>2021-04-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.jeetelongname.net/blog/tags/cooking/</loc>
-    <lastmod>2020-12-15T22:01:11+00:00</lastmod>
   </url><url>
     <loc>https://www.jeetelongname.net/blog/tags/quick/</loc>
     <lastmod>2020-12-15T22:01:11+00:00</lastmod>
@@ -56,6 +65,8 @@
   </url><url>
     <loc>https://www.jeetelongname.net/blog/tags/tech/</loc>
     <lastmod>2020-07-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/posts/blog/</loc>
   </url><url>
     <loc>https://www.jeetelongname.net/blog/work/</loc>
     <priority>0</priority>

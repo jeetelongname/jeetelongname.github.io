@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>&amp;copy 2022 Jeetaditya Chatterjee</copyright>
-    <lastBuildDate>Wed, 07 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jeetelongname.net/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jeetelongname.net/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2am paella</title>
+      <link>https://www.jeetelongname.net/blog/posts/2am-paella/</link>
+      <pubDate>Thu, 03 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jeetelongname.net/blog/posts/2am-paella/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Its 2am and your hungry, but you look in the noodle cupboard and you realise
+your out of instant ramen 😱.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>List manipulation into madness</title>
       <link>https://www.jeetelongname.net/blog/posts/post4/</link>
@@ -35,6 +46,16 @@ Prerequisites There are no hard and fast rules when it comes to this. But i like
       
       <guid>https://www.jeetelongname.net/blog/posts/post1/</guid>
       <description>I am no expert I should start this by saying I started this website a good year ago and did nothing with it. I was adamant that I would do everything in wrought HTML ,lets just say that was a massive mistake. I ended up settling on a simple home page with a hugo blog to power the back-end. After multiple hiccups with finding a theme i had settled on Tokiwa for a while and all was well&amp;hellip; that was until i tried blogging.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.jeetelongname.net/blog/posts/blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jeetelongname.net/blog/posts/blog/</guid>
+      <description>Posts  2am paella&amp;#xa0;&amp;#xa0;&amp;#xa0;cooking&amp;#xa0;cheap&amp;#xa0;easy  Introduction  Its 2am and your hungry, but you look in the noodle cupboard and you realise your out of instant ramen 😱.
+Here is a quick way to eat some vegetables, prep some soul filling food and have nummies done in 20ish minutes (which is not bad for something from scratch). This is not a traditional recipe, It kinda is similar but its not authentic in any way, shape or form.</description>
     </item>
     
   </channel>

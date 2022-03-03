@@ -73,10 +73,3 @@ something I like looking at and using. something I have fun writing in,
 something that keeps me learning. this will take time, time I am
 willing to spend if it means I can write more about the things I actually care
 about.
-
-## Conclusion
-
-This was less something useful and more a stream of consciousness that i wanted
-to get out, a half hastily made autopsy of the dead corps that was is my
-blogging aspiration. but maybe there is some poor sod out there that uses this
-and sees a way out of there runt. A man can dream any way.
