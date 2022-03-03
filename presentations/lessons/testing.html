@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Testing</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Testing</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3></h3><p>Press s for speaker notes</p>
+</section>
+
+
+<section>
+<section id="slide-org7856a0d">
+<h2 id="org7856a0d">What is testing?</h2>
+<aside class="notes">
+<p>
+testing is the process of making sure our program is correct. its used in many
+forms all over the industry but here are the basics
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org8a849b8">
+<h2 id="org8a849b8">What are the types of testing?</h2>
+<div class="outline-text-2" id="text-org8a849b8">
+</div>
+</section>
+<section id="slide-orgc703b87">
+<h3 id="orgc703b87">Iterative</h3>
+<aside class="notes">
+<p>
+happens while the program is being developed usually testing one bit of
+functionality
+</p>
+
+</aside>
+</section>
+<section id="slide-org6e1aa5a">
+<h3 id="org6e1aa5a">Final or black box</h3>
+<aside class="notes">
+<p>
+This happens near the end of a programs development. this is to test the program
+in its whole to catch any bugs iterative testing missed, its also known as black
+box testing as we are not worried about what the program is doing inside the box
+just that it does work
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-orgfcb107b">
+<h2 id="orgfcb107b">Types of errors</h2>
+<div class="outline-text-2" id="text-orgfcb107b">
+</div>
+</section>
+<section id="slide-org0916337">
+<h3 id="org0916337">Syntax errors</h3>
+<aside class="notes">
+<p>
+These are usually caught by the language itself. for example this is a syntax
+error in python. these are easy to catch and easy to solve (in this case we need
+to just close the paren)
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre class="src src-python">print(<span style="color: #fab795;">"hello world"</span>
+</pre>
+</div>
+
+</section>
+<section id="slide-org43f258e">
+<h3 id="org43f258e">Logic errors</h3>
+<aside class="notes">
+<p>
+logic errors are harder as its otherwise valid code. here is an example
+</p>
+
+<p>
+this is why external testing is important as its easy to catch these errors if
+you know what you are looking for.
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">add2</span>(<span style="color: #e95678;">x</span>, <span style="color: #e95678;">y</span>):
+    <span style="color: #b877db; font-style: italic;">return</span> x <span style="color: #b877db; font-style: italic;">*</span> y
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org452815a">
+<h2 id="org452815a">Types of test data</h2>
+<div class="outline-text-2" id="text-org452815a">
+</div>
+</section>
+<section id="slide-org3506873">
+<h3 id="org3506873">Normal</h3>
+<aside class="notes">
+<p>
+this is the normal data expected, if this fails you have a big problems
+</p>
+
+</aside>
+</section>
+<section id="slide-org270eb7b">
+<h3 id="org270eb7b">Boundary</h3>
+<aside class="notes">
+<p>
+this is data on the edge of what is acceptable, lets say you need to take in a
+date to show that people are over the age of 18. you would need to discard dates
+after 3rd march 2004 but that date is also valid and needs to be checked.
+</p>
+
+</aside>
+</section>
+<section id="slide-orga894158">
+<h3 id="orga894158">invalid</h3>
+<aside class="notes">
+<p>
+this is data that is of the same type (so in this example a date) but is
+otherwise wrong
+</p>
+
+</aside>
+</section>
+<section id="slide-org4711b37">
+<h3 id="org4711b37">erroneous</h3>
+<aside class="notes">
+<p>
+this is data that is of the wrong type and should be discarded always
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-orgcc4fac9">
+<h2 id="orgcc4fac9">Refining algorithms</h2>
+<aside class="notes">
+<p>
+this is usually in realtion to fining things that are wrong and correcting them
+but can also relate to makeing algo&rsquo;s more efficent
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org60083ed">
+<h2 id="org60083ed">Questions</h2>
+<div class="outline-text-2" id="text-org60083ed">
+</div>
+</section>
+<section id="slide-org98d67d2">
+<h3 id="org98d67d2">What i meant by normal test data?</h3>
+</section>
+<section id="slide-org378947f">
+<h3 id="org378947f">How is Boundary data different from erroneous data</h3>
+</section>
+<section id="slide-orgec4b18e">
+<h3 id="orgec4b18e">Exam question</h3>
+
+<div id="orgb7c3512" class="figure">
+<p><img src="testing.png" alt="testing.png" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

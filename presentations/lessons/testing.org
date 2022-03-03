@@ -1,0 +1,83 @@
+#+TITLE: Testing
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+
+* What is testing?
+#+begin_notes
+testing is the process of making sure our program is correct. its used in many
+forms all over the industry but here are the basics
+#+end_notes
+* What are the types of testing?
+** Iterative
+#+begin_notes
+happens while the program is being developed usually testing one bit of
+functionality
+#+end_notes
+** Final or black box
+#+begin_notes
+This happens near the end of a programs development. this is to test the program
+in its whole to catch any bugs iterative testing missed, its also known as black
+box testing as we are not worried about what the program is doing inside the box
+just that it does work
+#+end_notes
+* Types of errors
+** Syntax errors
+#+begin_notes
+These are usually caught by the language itself. for example this is a syntax
+error in python. these are easy to catch and easy to solve (in this case we need
+to just close the paren)
+#+end_notes
+#+begin_src python
+print("hello world"
+#+end_src
+
+** Logic errors
+#+begin_notes
+logic errors are harder as its otherwise valid code. here is an example
+
+this is why external testing is important as its easy to catch these errors if
+you know what you are looking for.
+#+end_notes
+#+begin_src python
+def add2(x, y):
+    return x * y
+#+end_src
+* Types of test data
+** Normal
+#+begin_notes
+this is the normal data expected, if this fails you have a big problems
+#+end_notes
+** Boundary
+#+begin_notes
+this is data on the edge of what is acceptable, lets say you need to take in a
+date to show that people are over the age of 18. you would need to discard dates
+after 3rd march 2004 but that date is also valid and needs to be checked.
+#+end_notes
+** invalid
+#+begin_notes
+this is data that is of the same type (so in this example a date) but is
+otherwise wrong
+#+end_notes
+** erroneous
+#+begin_notes
+this is data that is of the wrong type and should be discarded always
+#+end_notes
+* Refining algorithms
+#+begin_notes
+this is usually in realtion to fining things that are wrong and correcting them
+but can also relate to makeing algo's more efficent
+#+end_notes
+* Questions
+** What i meant by normal test data?
+** How is Boundary data different from erroneous data
+** Exam question
+[[file:testing.png]]
