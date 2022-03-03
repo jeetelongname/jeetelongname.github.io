@@ -4,16 +4,10 @@ date: "2020-7-30"
 type: "page"
 ---
 
-## Hi I am Jeet!
+## Hi i am Jeet!
 
-I am a Student that is studying computer science
-This is my Blog!
-
-Hopefully when I do get the time Ill write up some of my recipies and include
+I am a student that is studying computer science, this is my blog.
+Hopefully when i do get the time ill write up some of my recipes and include
 more of my thoughts.
 
-## Thats well and good but whats it about?
-
-I use Linux, and I cook, this is what I will write about when I find the time.
-I am constantly experimenting with new pieces of software and will probably
-write about them at some point.
+There is more to come here eventually...

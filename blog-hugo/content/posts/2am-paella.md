@@ -23,11 +23,11 @@ authentic in any way, shape or form.
 
 #### Ingredience {#ingredience}
 
-some rice
+rice, about a cup
 : this is the base and pretty non negotiable, pasta may work in a
     pinch but it will throw off some ratios and be harder to manage.
 
-some vegetables
+vegetables
 : this can be anything, except maybe lettuce, here is what I
     used.
     -   mushrooms of some kind.
