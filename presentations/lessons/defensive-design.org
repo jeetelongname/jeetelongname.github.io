@@ -1,0 +1,134 @@
+#+TITLE: defensive design
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i></i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* Defensive design
+#+begin_notes
+when designing systems we need to think about how it could be abused by bad
+actors. we as designers need to think about things
+#+end_notes
+** Anticipating misuse
+#+begin_notes
+one thing we need to discuss is the idea of misuse of systems.
+we have a banking system, we need to make sure a person does not over withdraw
+
+In this system a user can take out more than there balance, we need some kind of
+check to make sure that this kind of abuse can't happen. in this case add in a
+check.
+#+end_notes
+
+#+begin_src python
+balance = 100
+withdraw = input("enter the amount to withdraw: ")
+
+balance = balance - withdraw
+
+print("balance is now", balance)
+#+end_src
+
+#+reveal: split
+
+#+begin_src python :results output
+balance = 100
+withdraw = 120
+
+temp_balance = balance - withdraw
+
+if temp_balance > 0:
+    balance = temp_balance
+    print("balance is now", balance)
+else:
+    print("error")
+
+
+
+
+#+end_src
+
+: error
+** Authentication
+#+begin_notes
+another thing we need to consider is the fact that some people do not need
+access, sometimes only one person needs access to a certain reasource, this is
+where authentication comes in. there are three main methods.
+
+
+- pins, usernames and passwords
+- an authentocator key / phone
+- a finger print scan, biometrics
+
+using 2 of these menthods greatly increases security (at the short fall of
+convienice)
+#+end_notes
+- What someone knows
+- What someone has
+- What someone is
+
+* Input validation
+#+begin_notes
+when taking input from the user we need to make sure its correct. for example
+its within a proper bound. if we go back to the banking example we need to make
+sure the input is not negative. in other cases we may need to check if a string
+is of the correct type.
+#+end_notes
+
+#+begin_src python :results output
+withdraw = -100
+
+if withdraw < 0:
+    print("error: Invalid value")
+
+#+end_src
+
+#+RESULTS:
+: Invalid value
+
+* Maintainablitly
+#+begin_notes
+as our programs grow we need to think about the overall structure and
+cleanlyness of our code.
+#+end_notes
+** Using subprograms
+#+begin_notes
+If your code is repeating in a set way, it makes sense to use subprograms and
+loops to make our code much smaller. this is known as making our code DRY (do
+not repeat yourself)
+#+end_notes
+
+#+begin_src python
+price1 = 100 * 1.5
+price2 = 80 * 1.5
+price3 = 70 * 1.5
+
+print(...)
+#+end_src
+
+#+reveal: split
+
+#+begin_src python
+
+def calc_price(price):
+    print(price * 1.5)
+
+
+calc_price(100)
+calc_price(80)
+calc_price(70)
+#+end_src
+** Naming conventions
+** indentation
+** commenting
+* Questions
+** Why is maintainablily important
+** What is meant by 2 factor authentication
+** What is meant by validation.
+** Why would someones name be hard to validate
+** Make up 2 rules for sensible naming conventions

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>defensive design</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>defensive design</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i></i></h3><p>Press s for speaker notes</p>
+</section>
+
+<section>
+<section id="slide-org8649420">
+<h2 id="org8649420">Defensive design</h2>
+<aside class="notes">
+<p>
+when designing systems we need to think about how it could be abused by bad
+actors. we as designers need to think about things
+</p>
+
+</aside>
+</section>
+<section id="slide-org7ec6aed">
+<h3 id="org7ec6aed">Anticipating misuse</h3>
+<aside class="notes">
+<p>
+one thing we need to discuss is the idea of misuse of systems.
+we have a banking system, we need to make sure a person does not over withdraw
+</p>
+
+<p>
+In this system a user can take out more than there balance, we need some kind of
+check to make sure that this kind of abuse can&rsquo;t happen. in this case add in a
+check.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">balance</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">100</span>
+<span style="color: #e95678;">withdraw</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #b877db;">input</span>(<span style="color: #fab795;">"enter the amount to withdraw: "</span>)
+
+<span style="color: #e95678;">balance</span> <span style="color: #b877db; font-style: italic;">=</span> balance <span style="color: #b877db; font-style: italic;">-</span> withdraw
+
+<span style="color: #b877db;">print</span>(<span style="color: #fab795;">"balance is now"</span>, balance)
+</pre>
+</div>
+
+</section>
+<section>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">balance</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">100</span>
+<span style="color: #e95678;">withdraw</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">120</span>
+
+<span style="color: #e95678;">temp_balance</span> <span style="color: #b877db; font-style: italic;">=</span> balance <span style="color: #b877db; font-style: italic;">-</span> withdraw
+
+<span style="color: #b877db; font-style: italic;">if</span> temp_balance <span style="color: #b877db; font-style: italic;">&gt;</span> <span style="color: #f09383;">0</span>:
+    <span style="color: #e95678;">balance</span> <span style="color: #b877db; font-style: italic;">=</span> temp_balance
+    <span style="color: #b877db;">print</span>(<span style="color: #fab795;">"balance is now"</span>, balance)
+<span style="color: #b877db; font-style: italic;">else</span>:
+    <span style="color: #b877db;">print</span>(<span style="color: #fab795;">"error"</span>)
+
+
+
+
+</pre>
+</div>
+
+<pre class="example">
+error
+</pre>
+</section>
+<section id="slide-org46c3dd9">
+<h3 id="org46c3dd9">Authentication</h3>
+<aside class="notes">
+<p>
+another thing we need to consider is the fact that some people do not need
+access, sometimes only one person needs access to a certain reasource, this is
+where authentication comes in. there are three main methods.
+</p>
+
+
+<ul>
+<li>pins, usernames and passwords</li>
+<li>an authentocator key / phone</li>
+<li>a finger print scan, biometrics</li>
+
+</ul>
+
+<p>
+using 2 of these menthods greatly increases security (at the short fall of
+convienice)
+</p>
+
+</aside>
+<ul>
+<li>What someone knows</li>
+<li>What someone has</li>
+<li>What someone is</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orge34a25e">
+<h2 id="orge34a25e">Input validation</h2>
+<aside class="notes">
+<p>
+when taking input from the user we need to make sure its correct. for example
+its within a proper bound. if we go back to the banking example we need to make
+sure the input is not negative. in other cases we may need to check if a string
+is of the correct type.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">withdraw</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #b877db; font-style: italic;">-</span><span style="color: #f09383;">100</span>
+
+<span style="color: #b877db; font-style: italic;">if</span> withdraw <span style="color: #b877db; font-style: italic;">&lt;</span> <span style="color: #f09383;">0</span>:
+    <span style="color: #b877db;">print</span>(<span style="color: #fab795;">"error: Invalid value"</span>)
+
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgbd521d1">
+<h2 id="orgbd521d1">Maintainablitly</h2>
+<aside class="notes">
+<p>
+as our programs grow we need to think about the overall structure and
+cleanlyness of our code.
+</p>
+
+</aside>
+</section>
+<section id="slide-org2f676bd">
+<h3 id="org2f676bd">Using subprograms</h3>
+<aside class="notes">
+<p>
+If your code is repeating in a set way, it makes sense to use subprograms and
+loops to make our code much smaller. this is known as making our code DRY (do
+not repeat yourself)
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">price1</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">100</span> <span style="color: #b877db; font-style: italic;">*</span> <span style="color: #f09383;">1.5</span>
+<span style="color: #e95678;">price2</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">80</span> <span style="color: #b877db; font-style: italic;">*</span> <span style="color: #f09383;">1.5</span>
+<span style="color: #e95678;">price3</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">70</span> <span style="color: #b877db; font-style: italic;">*</span> <span style="color: #f09383;">1.5</span>
+
+<span style="color: #b877db;">print</span>(...)
+</pre>
+</div>
+
+</section>
+<section>
+
+<div class="org-src-container">
+
+<pre class="src src-python">
+<span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">calc_price</span>(<span style="color: #e95678;">price</span>):
+    <span style="color: #b877db;">print</span>(price <span style="color: #b877db; font-style: italic;">*</span> <span style="color: #f09383;">1.5</span>)
+
+
+<span style="color: #21bfc2;">calc_price</span>(<span style="color: #f09383;">100</span>)
+<span style="color: #21bfc2;">calc_price</span>(<span style="color: #f09383;">80</span>)
+<span style="color: #21bfc2;">calc_price</span>(<span style="color: #f09383;">70</span>)
+</pre>
+</div>
+</section>
+<section id="slide-org7d50df3">
+<h3 id="org7d50df3">Naming conventions</h3>
+</section>
+<section id="slide-org89735b8">
+<h3 id="org89735b8">indentation</h3>
+</section>
+<section id="slide-org3a5a06e">
+<h3 id="org3a5a06e">commenting</h3>
+</section>
+</section>
+<section>
+<section id="slide-orgc5cadc2">
+<h2 id="orgc5cadc2">Questions</h2>
+<div class="outline-text-2" id="text-orgc5cadc2">
+</div>
+</section>
+<section id="slide-org268b4df">
+<h3 id="org268b4df">Why is maintainablily important</h3>
+</section>
+<section id="slide-org12a87a7">
+<h3 id="org12a87a7">What is meant by 2 factor authentication</h3>
+</section>
+<section id="slide-org73a8f5c">
+<h3 id="org73a8f5c">What is meant by validation.</h3>
+</section>
+<section id="slide-org44b864e">
+<h3 id="org44b864e">Why would someones name be hard to validate</h3>
+</section>
+<section id="slide-org3b02d6d">
+<h3 id="org3b02d6d">Make up 2 rules for sensible naming conventions</h3>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
