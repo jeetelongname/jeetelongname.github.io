@@ -21,15 +21,17 @@ template = <<~HEAD
 
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
+        <!-- <link rel="stylesheet" href="../../css/presentation.css" type=
+                    "text/css" media="screen"> -->
 
   </head>
   <body>
+  <h1> Lessons </h1>
   <ul>
   % lessons.each do |lesson|
           <li> <a href="<%= lesson.join(".") %>"> <%= lesson[0].gsub("-", " ") %> </a> </li>
   % end
-  </ul>
-  </body>
+  </ul>  </body>
   <html>
 HEAD
 
