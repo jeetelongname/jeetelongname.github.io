@@ -1,6 +1,7 @@
 #+HUGO_BASE_DIR: ~/code/web/website/blog-hugo
 #+HUGO_SECTION: posts
 #+hugo_front_matter_format: yaml
+
 * Posts
 ** 2am paella :cooking:cheap:easy:
 :PROPERTIES:
@@ -61,7 +62,7 @@ authentic in any way, shape or form.
 This is a fun little dish that acts as a blank canvas. chuck in whatever you
 have and let it simmer for a bit and your done!
 
-* COMMENT Local Variables                          :ARCHIVE:
+* COMMENT Local Variables :ARCHIVE:
 # Local Variables:
 # org-export-with-author: nil
 # eval: (org-hugo-auto-export-mode)
