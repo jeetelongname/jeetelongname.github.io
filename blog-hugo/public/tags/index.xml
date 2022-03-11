@@ -36,6 +36,33 @@
     </item>
     
     <item>
+      <title>blogs</title>
+      <link>https://www.jeetelongname.net/blog/tags/blogs/</link>
+      <pubDate>Wed, 02 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jeetelongname.net/blog/tags/blogs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://www.jeetelongname.net/blog/tags/hugo/</link>
+      <pubDate>Wed, 02 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jeetelongname.net/blog/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opinion</title>
+      <link>https://www.jeetelongname.net/blog/tags/opinion/</link>
+      <pubDate>Wed, 02 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jeetelongname.net/blog/tags/opinion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>lists</title>
       <link>https://www.jeetelongname.net/blog/tags/lists/</link>
       <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
@@ -99,29 +126,11 @@
     </item>
     
     <item>
-      <title>blogs</title>
-      <link>https://www.jeetelongname.net/blog/tags/blogs/</link>
-      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jeetelongname.net/blog/tags/blogs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>guides</title>
       <link>https://www.jeetelongname.net/blog/tags/guides/</link>
       <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.jeetelongname.net/blog/tags/guides/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://www.jeetelongname.net/blog/tags/hugo/</link>
-      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jeetelongname.net/blog/tags/hugo/</guid>
       <description></description>
     </item>
     

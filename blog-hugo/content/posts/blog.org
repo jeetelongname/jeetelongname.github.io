@@ -61,6 +61,17 @@ authentic in any way, shape or form.
 *** Finishing thoughts
 This is a fun little dish that acts as a blank canvas. chuck in whatever you
 have and let it simmer for a bit and your done!
+** TODO ox-hugo is pretty nice :hugo:blogs:org:
+:PROPERTIES:
+:EXPORT_FILE_NAME: ox-hugo
+:EXPORT_DATE: 2022-03-11
+:END:
+I have been meaning to move over to using org for my blogging and ox-hugo is a
+pretty nice, there are some snags but they are pretty minor and now its pretty
+seamless and quite enjoyable.
+*** The Problem
+As I discussed in my post on why I don't write as much, one problem I had was
+markdown, for anything non trivial its kinda a pain and I would rather be in org
 
 * COMMENT Local Variables :ARCHIVE:
 # Local Variables:
