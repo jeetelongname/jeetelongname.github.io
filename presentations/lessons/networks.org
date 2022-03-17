@@ -1,0 +1,73 @@
+#+TITLE: Networks
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>Intercommunications and stuff</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* What is a network
+#+begin_notes
+Networks are a way to connect many computers together to allow for
+intercommunications. this basically allows for the sharing of resources.
+
+it also allows for easier communication's like we are doing now.
+#+end_notes
+
+* Types of Networks
+** LAN
+#+begin_notes
+A lan or local area network is a network that covers a small geographic area.
+This is usually things like homes, businesses and schools.
+#+end_notes
+*** Hardware
+#+begin_notes
+to support this we need some special hardware, things like routers to connect
+two different types of networks, more specifically the internet, switches and
+hubs to route in network traffic and WAP's to give us wifi.
+
+other than that a device also needs a network interface card. or NIC in each and
+every device this is to facilitate communications between the device (it has a
+driver).
+#+end_notes
+*** Cabling
+#+begin_notes
+now of course we need a medium to transfer the information. There are 2 cabels
+we need to worry about.
+
+- Copper cable is great for short runs as its cheap and fast (depending on the
+cable). it has a capacity ranging from 100 mb to a 1 gb. but can only be run up
+to 100 meters
+
+- Fibre is made up of thin glass strands and transmits data as pulses of light.
+  it has a much higher bandwith, 100 TB per second. and has a length of 100km
+  very good for WAN's and the massive cabled under the ocean that carry the
+  internet.
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+- Copper cable
+- Fibre Cable
+** WAN
+#+begin_notes
+A WAN connects many LAN's together, its for organisations that are spread over a
+wide area. (Uni's banks and so on.) the internet itself is one big WAN.
+#+end_notes
+* Performance
+#+begin_notes
+
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+- Bandwidth
+- Number of Users
+- Transmission media
+- Error Rate
+* Questions.
+** What is meant by Bandwidth?
+** What are another 2 factors of network performance?
+** What are 2 differences between a LAN and a Wan?
+** What is the purpose of a NIC?
+** What is the purpose of a router at home?
