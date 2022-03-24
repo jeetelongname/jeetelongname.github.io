@@ -1,0 +1,111 @@
+#+TITLE: Network Communication & Typologies
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>Shapes and signals</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+
+* Client Server Vs Peer to Peer
+** Client Server networks
+#+begin_notes
+A Client Server networks is one where resources are centralised into one place
+(known as a server.) Servers are usually high end computers that are meant to
+provide a resources. some examples
+#+end_notes
+- File Server :: Stores user documents and files
+- Authentication Servers :: Checks whether a user can log in and control the
+  resources they can access
+- Application Servers :: Provides an application that can run over the network
+- Print Servers :: Manages Printing over a network
+- Mail Servers :: Stores and handles emails.
+*** Advantages
+- Easier to Secure
+- Means that no one client is required for the function of the network
+- Things like Backups, security and admin are centrally managed
+*** Disadvantages
+- If a server goes down, the entire network goes down
+- If a server gets overwhelmed then the entire network is affected.
+- Servers are more expensive than regular clients
+- If there is an attack on the network then only the server needs to be attacked
+** Peer to Peer
+#+begin_notes
+A Peer to Peer network connects every node to every other node. its
+decentralises resources. They are used for small businesses that only need
+#+end_notes
+*** Advantages
+- Easy to set up
+- There is no single point of failure
+- No expensive hardware.
+*** Disadvantages
+- Without a central server there is no easy central management
+- No Central backups
+- If a device is not online that means the resources they share are not
+  available
+* Typologies
+#+begin_notes
+A topology is a way to organise nodes in a network
+#+end_notes
+** Ring
+#+begin_notes
+A ring network connects network in a ring.
+#+end_notes
+*** Advantages
+- Easy to set up
+- Easy to add too
+*** Disadvantages
+- If one node is offline the entire network is offline
+- Can lead to data collisions
+** Bus
+#+begin_notes
+A central line connects networks together with terminators on each end
+#+end_notes
+*** Advantages
+- Easy to set up
+*** Disadvantages
+- Hard to add too (as you need to splice in a cable)
+- Lots of data collisions
+** Star
+#+begin_notes
+A central re sending node (such as a switch or hub) will broadcast packages.
+This is the network used by most networks
+#+end_notes
+*** Advantages
+- No network collisions
+- No downtime when adding new nodes
+*** Disadvantages
+- Central point of failure
+- Expensive kit
+** Mesh
+#+begin_notes
+Every node is connected to every other node.
+#+end_notes
+*** Advantages
+- No single point of failure
+- No single data line to overwhelm
+- No special hardware
+*** Disadvantages
+- Lots of wiring
+- Lots of connections to maintain and lots of small things to do.
+# * The Internet
+# #+begin_notes
+# The internet is a massive WAN. it has its own protocol IP with each computer
+# connected having there own IP Address.
+# Every website has there own IP address which is used to access the
+# #+end_notes
+# ** IP addresses
+# ** DNS
+# ** Hosting
+# ** The Cloud
+# ** Web servers and Clients
+* Questions
+** What is a network topology
+** Describe a star topology
+** What are 2 advantages and 2 disadvantages of client server networks
+** What is a disadvantage of mesh network
+** What are some of the servers used in a client server network (name 3)

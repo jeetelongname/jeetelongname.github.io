@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Network Communication &amp; Typologies</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Network Communication &amp; Typologies</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>Shapes and signals</i></h3><p>Press s for speaker notes</p>
+</section>
+
+
+<section>
+<section id="slide-org8d6d5fa">
+<h2 id="org8d6d5fa">Client Server Vs Peer to Peer</h2>
+<div class="outline-text-2" id="text-org8d6d5fa">
+</div>
+</section>
+<section id="slide-org25a16c1">
+<h3 id="org25a16c1">Client Server networks</h3>
+<aside class="notes">
+<p>
+A Client Server networks is one where resources are centralised into one place
+(known as a server.) Servers are usually high end computers that are meant to
+provide a resources. some examples
+</p>
+
+</aside>
+<dl>
+<dt>File Server</dt><dd>Stores user documents and files</dd>
+<dt>Authentication Servers</dt><dd>Checks whether a user can log in and control the
+resources they can access</dd>
+<dt>Application Servers</dt><dd>Provides an application that can run over the network</dd>
+<dt>Print Servers</dt><dd>Manages Printing over a network</dd>
+<dt>Mail Servers</dt><dd>Stores and handles emails.</dd>
+
+</dl>
+</section>
+<section id="slide-org162bb39">
+<h4 id="org162bb39">Advantages</h4>
+<ul>
+<li>Easier to Secure</li>
+<li>Means that no one client is required for the function of the network</li>
+<li>Things like Backups, security and admin are centrally managed</li>
+
+</ul>
+</section>
+<section id="slide-orga276be5">
+<h4 id="orga276be5">Disadvantages</h4>
+<ul>
+<li>If a server goes down, the entire network goes down</li>
+<li>If a server gets overwhelmed then the entire network is affected.</li>
+<li>Servers are more expensive than regular clients</li>
+<li>If there is an attack on the network then only the server needs to be attacked</li>
+
+</ul>
+</section>
+<section id="slide-org1929536">
+<h3 id="org1929536">Peer to Peer</h3>
+<aside class="notes">
+<p>
+A Peer to Peer network connects every node to every other node. its
+decentralises resources. They are used for small businesses that only need
+</p>
+
+</aside>
+</section>
+<section id="slide-org8a55e2a">
+<h4 id="org8a55e2a">Advantages</h4>
+<ul>
+<li>Easy to set up</li>
+<li>There is no single point of failure</li>
+<li>No expensive hardware.</li>
+
+</ul>
+</section>
+<section id="slide-org8b91d90">
+<h4 id="org8b91d90">Disadvantages</h4>
+<ul>
+<li>Without a central server there is no easy central management</li>
+<li>No Central backups</li>
+<li>If a device is not online that means the resources they share are not
+available</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org01e6966">
+<h2 id="org01e6966">Typologies</h2>
+<aside class="notes">
+<p>
+A topology is a way to organise nodes in a network
+</p>
+
+</aside>
+</section>
+<section id="slide-org9b7d377">
+<h3 id="org9b7d377">Ring</h3>
+<aside class="notes">
+<p>
+A ring network connects network in a ring.
+</p>
+
+</aside>
+</section>
+<section id="slide-orgf72357f">
+<h4 id="orgf72357f">Advantages</h4>
+<ul>
+<li>Easy to set up</li>
+<li>Easy to add too</li>
+
+</ul>
+</section>
+<section id="slide-org4000a4f">
+<h4 id="org4000a4f">Disadvantages</h4>
+<ul>
+<li>If one node is offline the entire network is offline</li>
+<li>Can lead to data collisions</li>
+
+</ul>
+</section>
+<section id="slide-org6f3d7e9">
+<h3 id="org6f3d7e9">Bus</h3>
+<aside class="notes">
+<p>
+A central line connects networks together with terminators on each end
+</p>
+
+</aside>
+</section>
+<section id="slide-org5509fc6">
+<h4 id="org5509fc6">Advantages</h4>
+<ul>
+<li>Easy to set up</li>
+
+</ul>
+</section>
+<section id="slide-org5cee430">
+<h4 id="org5cee430">Disadvantages</h4>
+<ul>
+<li>Hard to add too (as you need to splice in a cable)</li>
+<li>Lots of data collisions</li>
+
+</ul>
+</section>
+<section id="slide-org8d81c6c">
+<h3 id="org8d81c6c">Star</h3>
+<aside class="notes">
+<p>
+A central re sending node (such as a switch or hub) will broadcast packages.
+This is the network used by most networks
+</p>
+
+</aside>
+</section>
+<section id="slide-org749c95c">
+<h4 id="org749c95c">Advantages</h4>
+<ul>
+<li>No network collisions</li>
+<li>No downtime when adding new nodes</li>
+
+</ul>
+</section>
+<section id="slide-orgbf5319c">
+<h4 id="orgbf5319c">Disadvantages</h4>
+<ul>
+<li>Central point of failure</li>
+<li>Expensive kit</li>
+
+</ul>
+</section>
+<section id="slide-orgb94bb33">
+<h3 id="orgb94bb33">Mesh</h3>
+<aside class="notes">
+<p>
+Every node is connected to every other node.
+</p>
+
+</aside>
+</section>
+<section id="slide-org592cfc5">
+<h4 id="org592cfc5">Advantages</h4>
+<ul>
+<li>No single point of failure</li>
+<li>No single data line to overwhelm</li>
+<li>No special hardware</li>
+
+</ul>
+</section>
+<section id="slide-orgada93c6">
+<h4 id="orgada93c6">Disadvantages</h4>
+<ul>
+<li>Lots of wiring</li>
+<li>Lots of connections to maintain and lots of small things to do.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgf174fbb">
+<h2 id="orgf174fbb">Questions</h2>
+<div class="outline-text-2" id="text-orgf174fbb">
+</div>
+</section>
+<section id="slide-org042a8c9">
+<h3 id="org042a8c9">What is a network topology</h3>
+</section>
+<section id="slide-org1af8f55">
+<h3 id="org1af8f55">Describe a star topology</h3>
+</section>
+<section id="slide-org0c2a8b9">
+<h3 id="org0c2a8b9">What are 2 advantages and 2 disadvantages of client server networks</h3>
+</section>
+<section id="slide-org44f0811">
+<h3 id="org44f0811">What is a disadvantage of mesh network</h3>
+</section>
+<section id="slide-org45b03bc">
+<h3 id="org45b03bc">What are some of the servers used in a client server network (name 3)</h3>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
