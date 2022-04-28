@@ -1,0 +1,44 @@
+#+title: Network Threats
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i></i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+
+* What are network threats?
+#+begin_notes
+Ask
+
+Anything that can penetrate the network to do malicious things such as steal
+data, cause slow downs and other not fun things. they can come from internal or
+external sources and come in two types. Malware (ie programs) and Social
+engineering (ie tricking humans). in reality there are usually a mix of both
+#+end_notes
+* Malware
+#+begin_notes
+there are many types of malware. some require trickery some don't
+#+end_notes
+** Virus
+** Wroms
+** Trojans
+** Ransomware
+** Spyware
+** Pharming
+* Data interception and theft
+** Packet sniffing
+** man in the middle attacks
+** sql injection
+* Social Engineering
+** Phishing
+** Pretexting
+** Shouldering
+* Others
+** Brute force attacks
+** Denial of Service attacs
+* Questions

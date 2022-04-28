@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>The Internet</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>The Internet</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>What would we be without this</i></h3><p>Press s for speaker notes</p>
+</section>
+
+<section>
+<section id="slide-orge566ee1">
+<h2 id="orge566ee1">The Internet</h2>
+<aside class="notes">
+<p>
+The internet is a massive WAN. it has its own protocol IP with each computer
+connected having there own IP Address.
+Every website has there own IP address which is used to access the
+</p>
+
+</aside>
+</section>
+<section id="slide-orgd91d9ff">
+<h3 id="orgd91d9ff">IP addresses</h3>
+<aside class="notes">
+<p>
+IP or internet protocol is the main way we identify computers on the Internet.
+</p>
+
+<p>
+each computer including the one your using has a unique IP address. this is used
+to send data packets to your computer. Like how a mac address is used on a LAN.
+</p>
+
+<p>
+the problem is this is not easy to memorise, try rememeberin 64.233.160.0 vs
+google.com. to facilitate the last bit we use DNS
+</p>
+
+</aside>
+
+</section>
+<section id="slide-orgaa43711">
+<h3 id="orgaa43711">DNS</h3>
+<aside class="notes">
+<p>
+DNS or domain name service is the main way to resolve URL&rsquo;s (uniform reasource
+locatiors) to actual IP addresses. what happens is that when you type in an URL
+is that it will send that to a known <b>dns server</b> which will then look up the IP
+address in a big table, if there is a match then it will return the IP address
+to the computer that requests it, if it cannot find it then it will pass the
+request onto a bigger dns server its connected too, this will be passed up the
+chain untill its been found or untill the last DNS server does not have a
+reccord, when that happens is an error is passed back down to the User.
+</p>
+
+<p>
+when the IP is returned to the user the computer then makes the reqest and the
+process continues
+</p>
+
+</aside>
+</section>
+<section id="slide-orgba26eae">
+<h3 id="orgba26eae">Hosting</h3>
+<aside class="notes">
+<p>
+We can now communicate but we need things to communicate too, Hosting is the act
+performed by an internet host to run servers prividing different content. this
+included
+</p>
+
+<ul>
+<li>file hosting</li>
+<li>web hosting</li>
+<li>email hosting</li>
+
+</ul>
+<p>
+and so on.
+</p>
+
+<p>
+This in theory should then be accessable by any device on the internet.
+</p>
+
+<p>
+This is funded by a sall fee but some provide free teirs.
+</p>
+
+</aside>
+</section>
+<section id="slide-org0580b94">
+<h3 id="org0580b94">The Cloud</h3>
+<aside class="notes">
+<p>
+The Cloud is a generic term for services and applications accessed over the
+internet. this is used in contrast to apps used on your computer.
+</p>
+
+<p>
+These are usually a network of servers, some that do file storage, some that do
+applications, usually in large data centers. this is
+</p>
+
+<p>
+examples include
+google drive
+google docs
+amazon web services
+</p>
+
+</aside>
+</section>
+<section id="slide-org73f4b08">
+<h4 id="org73f4b08">Advantages</h4>
+<ul>
+<li>Can be accessed on any computer, anywhere in the world</li>
+<li>No need to worry about updates</li>
+<li>Storage is usually much more flexible and can be bought for a little extra a
+month</li>
+<li>the hosting company is responsible for the files meaning they are usually
+backed up and safe</li>
+<li>easy to share</li>
+
+</ul>
+</section>
+<section id="slide-orge134615">
+<h4 id="orge134615">Disadvantages</h4>
+<ul>
+<li>Requires an internet connection to access it</li>
+<li>Security concerns as a data center is a bigger target than your computer</li>
+<li>Cloud providers have a lot of control about how you use the software and can
+change pricing</li>
+
+</ul>
+</section>
+<section id="slide-org276604a">
+<h3 id="org276604a">Web servers and Clients</h3>
+<div class="outline-text-3" id="text-org276604a">
+</div>
+</section>
+<section id="slide-org265f854">
+<h4 id="org265f854">Servers</h4>
+<aside class="notes">
+<p>
+Every Website is hosted on a <b>web server</b> this is a dedicated computer on the
+internet that provides the website when requested. anyone can run there own
+webserver but usually they go to a web hosting provider.
+</p>
+
+<p>
+Anyone can write there own web server as long as they talk the same language
+(usually https)
+</p>
+
+</aside>
+</section>
+<section id="slide-org10d8fad">
+<h4 id="org10d8fad">Clients</h4>
+<aside class="notes">
+<p>
+Clients request the files from the server, when you visit a website the browser
+is making a request for the website files. they are then downloaded onto your
+computer and rendered
+</p>
+
+</aside>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

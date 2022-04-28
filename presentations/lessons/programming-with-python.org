@@ -1,0 +1,253 @@
+#+title: Programming With Python
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>Time for a real programming language</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* What is python
+#+begin_notes
+Python is a high level interpreted language that is used all over the place, its
+used to develop servers, as a scripting and glue language, in data science and
+as a learning tool because on its face its a simple and easy to use language.
+
+We are going to learning about it in terms of the pseudocode you do know which
+should make the transisiton easier /i hope/
+#+end_notes
+
+* Variables
+#+begin_notes
+Variables in python are assigned using the = operator like in your pseudo code
+#+end_notes
+
+#+begin_src python :results output
+x = 10
+print(x)
+
+x = 20
+print(x)
+#+end_src
+
+: 10
+: 20
+
+* Input and output
+** Input
+to take input from the user you use the ~input~ function
+#+begin_src python
+x = input("some prompt: ")
+#+end_src
+
+** Output
+we use the ~print~ function to output
+#+begin_src python
+print("some cool string")
+#+end_src
+
+* Selection and iteration
+** Boolean operations
+#+begin_notes
+The boolean operations of python are similar to the ones you know
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+    - ==== :: equality
+    - =!== :: not equal
+    - =<= :: less than
+    - =>= :: more than
+    - =<== :: less than or equal
+    - =>== :: more than or equal
+    - =and= :: logical and operator
+    - =or= :: logical or operator
+    - =not= ::  logical not operator
+    - =is= :: identity operator
+** If statements
+#+begin_notes
+if statements take that boolean expression and then use it to select something
+
+notice the lack of end markers, python uses indentation as a way to describe
+where a block starts and ends
+#+end_notes
+
+#+begin_src python :results output
+if True and False:
+    print("True")
+else:
+    print("False")
+#+end_src
+
+: False
+
+#+reveal: split
+
+#+begin_src python
+if True and False:
+    print("True")
+elif 1 < 2:
+    print("Ok maths works")
+else:
+    print("False")
+#+end_src
+** Loops
+#+begin_notes
+There are two kinds of loops in python, While or conditional loops and for or
+definite loops
+#+end_notes
+*** While
+#+begin_notes
+here I use pass to signify an empty block, do nothing and continue
+#+end_notes
+#+begin_src python
+while some_condition:
+    pass
+
+#+end_src
+
+*** For
+#+begin_notes
+in python a for loop is used to loop over collections, now this can be used
+traditionally but rarely is, in this case range produces a collection we loop
+over. we can actually use some special functions to loop over both the index and
+the element
+#+end_notes
+
+#+begin_src python :results output
+for index in range(1, 10):
+    print(index)
+#+end_src
+
+: 1
+: 2
+: 3
+: 4
+: 5
+: 6
+: 7
+: 8
+: 9
+
+#+reveal: split
+
+#+begin_src python :results output
+for element in [1, 2, 3]:
+    print(element)
+#+end_src
+
+: 1
+: 2
+: 3
+
+#+reveal: split
+
+#+begin_src python :results output
+for index, element in enumerate(["hey", "ho", "lets", "go"]):
+    print(f"{index = }, {element = }")
+
+#+end_src
+
+: index = 0, element = 'hey'
+: index = 1, element = 'ho'
+: index = 2, element = 'lets'
+: index = 3, element = 'go'
+*** Breaking flow
+#+begin_notes
+there are two keywords that allow you to break or continue loops while its
+going. they are called break and continue
+#+end_notes
+
+#+begin_src python :results output
+for elem in [1,2,3]:
+    if elem == 2:
+        break
+    else:
+        print(elem)
+#+end_src
+
+: 1
+
+#+reveal: split
+
+#+begin_src python :results output
+for elem in [1,2,3]:
+    if elem == 2:
+        continue
+    else:
+        print(elem)
+#+end_src
+
+: 1
+: 3
+
+
+* Functions
+#+begin_notes
+In python all types of procedures are defined using the =def= keyword
+
+there is little difference between the procediure and functions
+#+end_notes
+
+#+begin_src python :results output
+def print_something(argument):
+    print(f"{argument = }")
+
+
+print_something("hey this is a string")
+
+#+end_src
+
+: argument = 'hey this is a string'
+** Return values
+#+begin_notes
+to return a value you have to use the return keyword, this stops the flow of
+execution within the function
+#+end_notes
+
+#+begin_src python :results output
+def return_value(arg):
+    print("hey!")
+    return arg
+    print("I will never be reached!")
+
+
+print(return_value(1))
+#+end_src
+
+#+RESULTS:
+: hey!
+: 1
+
+* Project
+Simply, code the game rock paper scissors
+
+What you need to do is,
+1. take input from the user, it has to be r, p or s for rock paper scissors
+   respectively
+2. generate a random number using the random library, you can use it by using
+   the =import= keyword shown below
+3. print out whether the user has won the game or not.
+
+4. an extra, ask the user if they want to play again.
+
+If you need help contact me over whatsapp
+
+#+begin_src python :results output
+import random
+
+# from there you can use the functions provided by calling them with a random. infront
+
+for i in range(5):
+    print(random.randint(1,10))
+
+#+end_src
+
+: 1
+: 5
+: 7
+: 4
+: 10
+* Footnotes
+

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Programming With Python</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Programming With Python</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>Time for a real programming language</i></h3><p>Press s for speaker notes</p>
+</section>
+
+<section>
+<section id="slide-orga83bfc8">
+<h2 id="orga83bfc8">What is python</h2>
+<aside class="notes">
+<p>
+Python is a high level interpreted language that is used all over the place, its
+used to develop servers, as a scripting and glue language, in data science and
+as a learning tool because on its face its a simple and easy to use language.
+</p>
+
+<p>
+We are going to learning about it in terms of the pseudocode you do know which
+should make the transisiton easier <i>i hope</i>
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org7339e2b">
+<h2 id="org7339e2b">Variables</h2>
+<aside class="notes">
+<p>
+Variables in python are assigned using the = operator like in your pseudo code
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">x</span> = <span style="color: #f09383; font-weight: bold;">10</span>
+<span style="color: #b877db; font-style: italic;">print</span>(x)
+
+<span style="color: #e95678;">x</span> = <span style="color: #f09383; font-weight: bold;">20</span>
+<span style="color: #b877db; font-style: italic;">print</span>(x)
+</pre>
+</div>
+
+<pre class="example">
+10
+20
+</pre>
+
+</section>
+</section>
+<section>
+<section id="slide-org22c6179">
+<h2 id="org22c6179">Input and output</h2>
+<div class="outline-text-2" id="text-org22c6179">
+</div>
+</section>
+<section id="slide-org767fa9e">
+<h3 id="org767fa9e">Input</h3>
+<p>
+to take input from the user you use the <code>input</code> function
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">x</span> = <span style="color: #b877db;">input</span>(<span style="color: #fab795;">"some prompt: "</span>)
+</pre>
+</div>
+
+</section>
+<section id="slide-orgebe2c2d">
+<h3 id="orgebe2c2d">Output</h3>
+<p>
+we use the <code>print</code> function to output
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">print</span>(<span style="color: #fab795;">"some cool string"</span>)
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org2819e01">
+<h2 id="org2819e01">Selection and iteration</h2>
+<div class="outline-text-2" id="text-org2819e01">
+</div>
+</section>
+<section id="slide-org2570bab">
+<h3 id="org2570bab">Boolean operations</h3>
+<aside class="notes">
+<p>
+The boolean operations of python are similar to the ones you know
+</p>
+
+</aside>
+<dl>
+<dt class="fragment roll-in"><code>==</code></dt><dd class="fragment roll-in">equality</dd>
+<dt class="fragment roll-in"><code>!=</code></dt><dd class="fragment roll-in">not equal</dd>
+<dt class="fragment roll-in"><code>&lt;</code></dt><dd class="fragment roll-in">less than</dd>
+<dt class="fragment roll-in"><code>&gt;</code></dt><dd class="fragment roll-in">more than</dd>
+<dt class="fragment roll-in"><code>&lt;=</code></dt><dd class="fragment roll-in">less than or equal</dd>
+<dt class="fragment roll-in"><code>&gt;=</code></dt><dd class="fragment roll-in">more than or equal</dd>
+<dt class="fragment roll-in"><code>and</code></dt><dd class="fragment roll-in">logical and operator</dd>
+<dt class="fragment roll-in"><code>or</code></dt><dd class="fragment roll-in">logical or operator</dd>
+<dt class="fragment roll-in"><code>not</code></dt><dd class="fragment roll-in">logical not operator</dd>
+<dt class="fragment roll-in"><code>is</code></dt><dd class="fragment roll-in">identity operator</dd>
+
+</dl>
+</section>
+<section id="slide-org3530a69">
+<h3 id="org3530a69">If statements</h3>
+<aside class="notes">
+<p>
+if statements take that boolean expression and then use it to select something
+</p>
+
+<p>
+notice the lack of end markers, python uses indentation as a way to describe
+where a block starts and ends
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">if</span> <span style="color: #f09383;">True</span> <span style="color: #b877db; font-style: italic;">and</span> <span style="color: #f09383;">False</span>:
+    <span style="color: #b877db; font-style: italic;">print</span>(<span style="color: #fab795;">"True"</span>)
+<span style="color: #b877db; font-style: italic;">else</span>:
+    <span style="color: #b877db; font-style: italic;">print</span>(<span style="color: #fab795;">"False"</span>)
+</pre>
+</div>
+
+<pre class="example">
+False
+</pre>
+
+
+</section>
+<section>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">if</span> <span style="color: #f09383;">True</span> <span style="color: #b877db; font-style: italic;">and</span> <span style="color: #f09383;">False</span>:
+    <span style="color: #b877db; font-style: italic;">print</span>(<span style="color: #fab795;">"True"</span>)
+<span style="color: #b877db; font-style: italic;">elif</span> <span style="color: #f09383; font-weight: bold;">1</span> &lt; <span style="color: #f09383; font-weight: bold;">2</span>:
+    <span style="color: #b877db; font-style: italic;">print</span>(<span style="color: #fab795;">"Ok maths works"</span>)
+<span style="color: #b877db; font-style: italic;">else</span>:
+    <span style="color: #b877db; font-style: italic;">print</span>(<span style="color: #fab795;">"False"</span>)
+</pre>
+</div>
+</section>
+<section id="slide-org252860a">
+<h3 id="org252860a">Loops</h3>
+<aside class="notes">
+<p>
+There are two kinds of loops in python, While or conditional loops and for or
+definite loops
+</p>
+
+</aside>
+</section>
+<section id="slide-orgf6229fa">
+<h4 id="orgf6229fa">While</h4>
+<aside class="notes">
+<p>
+here I use pass to signify an empty block, do nothing and continue
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">while</span> some_condition:
+    <span style="color: #b877db; font-style: italic;">pass</span>
+
+</pre>
+</div>
+
+</section>
+<section id="slide-org46a8abf">
+<h4 id="org46a8abf">For</h4>
+<aside class="notes">
+<p>
+in python a for loop is used to loop over collections, now this can be used
+traditionally but rarely is, in this case range produces a collection we loop
+over. we can actually use some special functions to loop over both the index and
+the element
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">for</span> index <span style="color: #b877db; font-style: italic;">in</span> <span style="color: #b877db;">range</span>(<span style="color: #f09383; font-weight: bold;">1</span>, <span style="color: #f09383; font-weight: bold;">10</span>):
+    <span style="color: #b877db; font-style: italic;">print</span>(index)
+</pre>
+</div>
+
+<pre class="example">
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre>
+
+
+</section>
+<section>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">for</span> element <span style="color: #b877db; font-style: italic;">in</span> [<span style="color: #f09383; font-weight: bold;">1</span>, <span style="color: #f09383; font-weight: bold;">2</span>, <span style="color: #f09383; font-weight: bold;">3</span>]:
+    <span style="color: #b877db; font-style: italic;">print</span>(element)
+</pre>
+</div>
+
+<pre class="example">
+1
+2
+3
+</pre>
+
+
+</section>
+<section>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">for</span> index, element <span style="color: #b877db; font-style: italic;">in</span> <span style="color: #b877db;">enumerate</span>([<span style="color: #fab795;">"hey"</span>, <span style="color: #fab795;">"ho"</span>, <span style="color: #fab795;">"lets"</span>, <span style="color: #fab795;">"go"</span>]):
+    <span style="color: #b877db; font-style: italic;">print</span>(f<span style="color: #fab795;">"</span>{index = }<span style="color: #fab795;">, </span>{element = }<span style="color: #fab795;">"</span>)
+
+</pre>
+</div>
+
+<pre class="example">
+index = 0, element = 'hey'
+index = 1, element = 'ho'
+index = 2, element = 'lets'
+index = 3, element = 'go'
+</pre>
+</section>
+<section id="slide-org692bf29">
+<h4 id="org692bf29">Breaking flow</h4>
+<aside class="notes">
+<p>
+there are two keywords that allow you to break or continue loops while its
+going. they are called break and continue
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">for</span> elem <span style="color: #b877db; font-style: italic;">in</span> [<span style="color: #f09383; font-weight: bold;">1</span>,<span style="color: #f09383; font-weight: bold;">2</span>,<span style="color: #f09383; font-weight: bold;">3</span>]:
+    <span style="color: #b877db; font-style: italic;">if</span> elem == <span style="color: #f09383; font-weight: bold;">2</span>:
+        <span style="color: #b877db; font-style: italic;">break</span>
+    <span style="color: #b877db; font-style: italic;">else</span>:
+        <span style="color: #b877db; font-style: italic;">print</span>(elem)
+</pre>
+</div>
+
+<pre class="example">
+1
+</pre>
+
+
+</section>
+<section>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">for</span> elem <span style="color: #b877db; font-style: italic;">in</span> [<span style="color: #f09383; font-weight: bold;">1</span>,<span style="color: #f09383; font-weight: bold;">2</span>,<span style="color: #f09383; font-weight: bold;">3</span>]:
+    <span style="color: #b877db; font-style: italic;">if</span> elem == <span style="color: #f09383; font-weight: bold;">2</span>:
+        <span style="color: #b877db; font-style: italic;">continue</span>
+    <span style="color: #b877db; font-style: italic;">else</span>:
+        <span style="color: #b877db; font-style: italic;">print</span>(elem)
+</pre>
+</div>
+
+<pre class="example">
+1
+3
+</pre>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgee1c1c2">
+<h2 id="orgee1c1c2">Functions</h2>
+<aside class="notes">
+<p>
+In python all types of procedures are defined using the <code>def</code> keyword
+</p>
+
+<p>
+there is little difference between the procediure and functions
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">print_something</span>(argument):
+    <span style="color: #b877db; font-style: italic;">print</span>(f<span style="color: #fab795;">"</span>{argument = }<span style="color: #fab795;">"</span>)
+
+
+print_something(<span style="color: #fab795;">"hey this is a string"</span>)
+
+</pre>
+</div>
+
+<pre class="example">
+argument = 'hey this is a string'
+</pre>
+</section>
+<section id="slide-orge48afde">
+<h3 id="orge48afde">Return values</h3>
+<aside class="notes">
+<p>
+to return a value you have to use the return keyword, this stops the flow of
+execution within the function
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">return_value</span>(arg):
+    <span style="color: #b877db; font-style: italic;">print</span>(<span style="color: #fab795;">"hey!"</span>)
+    <span style="color: #b877db; font-style: italic;">return</span> arg
+    <span style="color: #b877db; font-style: italic;">print</span>(<span style="color: #fab795;">"I will never be reached!"</span>)
+
+
+<span style="color: #b877db; font-style: italic;">print</span>(return_value(<span style="color: #f09383; font-weight: bold;">1</span>))
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf1c91b3">
+<h2 id="orgf1c91b3">Project</h2>
+<p>
+Simply, code the game rock paper scissors
+</p>
+
+<p>
+What you need to do is,
+</p>
+<ol>
+<li>take input from the user, it has to be r, p or s for rock paper scissors
+respectively</li>
+<li>generate a random number using the random library, you can use it by using
+the <code>import</code> keyword shown below</li>
+<li>print out whether the user has won the game or not.</li>
+
+<li>an extra, ask the user if they want to play again.</li>
+
+</ol>
+
+<p>
+If you need help contact me over whatsapp
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">import</span> random
+
+<span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">from there you can use the functions provided by calling them with a random. infront</span>
+
+<span style="color: #b877db; font-style: italic;">for</span> i <span style="color: #b877db; font-style: italic;">in</span> <span style="color: #b877db;">range</span>(<span style="color: #f09383; font-weight: bold;">5</span>):
+    <span style="color: #b877db; font-style: italic;">print</span>(random.randint(<span style="color: #f09383; font-weight: bold;">1</span>,<span style="color: #f09383; font-weight: bold;">10</span>))
+
+</pre>
+</div>
+
+<pre class="example">
+1
+5
+7
+4
+10
+</pre>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

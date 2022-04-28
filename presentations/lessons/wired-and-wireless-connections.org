@@ -1,0 +1,109 @@
+#+title: Wired And Wireless Connections
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i></i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* Wired connections
+#+begin_notes
+A wired connection is just that. a wire. when communicating over a wire a
+protocol needs to be used. in this case ethernet is usually the protocol that
+people use for it.
+it defines how data should be physically transfered and how data collisions are
+handled
+#+end_notes
+* Wireless connections
+#+begin_notes
+Wireless is a bit more complex as there is more to it.
+#+end_notes
+** Wifi
+#+begin_notes
+wifi is a set of
+protocols that defines how to communicate wirelessly, there are protocols which
+define what frequency to use, data transmission rates and how devices should
+authenticate
+#+end_notes
+** Bluetooth
+#+begin_notes
+Another form of communication is bluetooth used to mainly connect to wireless
+pheripherals such as headhones. its used over short distances using an ultra
+high frequency.
+
+uses include
+- wireless sound devices
+- connecting to car hifi systems
+- sharing files between devices
+#+end_notes
+* Pros and cons of each
+** Ethernet
+*** Pro's
+- Stable
+- more secure
+- faster
+- better signal quality
+*** Cons
+- more expensive
+- needs to physically wire up new devices
+- devices are teathered to one location
+** Wifi
+*** Pros
+- Cheap to set up
+- more flexible to move around
+- can connect extra devices without extra hardware
+- less wireing
+- can move around
+*** Cons
+- More vunreble to hacking
+- Signal quality will be reduced with obstructions
+- prone to interfereance
+- connection can be unstable
+- slower than a wired connection
+** Bluetooth
+*** Pros
+- Free to use if both devices have capability
+- Quick to pair
+- More secure compared to open wifi
+- avoids inerference from other devices
+*** Cons
+- only works over short distances
+- lower bandwidth compared to wifi
+* Encryption
+#+begin_notes
+Encryping data is needed for a private wifi connection. when a device wants to
+connect to a secure network you need to put in a password. this not only allows
+you to connect but is used as an encryption key to scramble and destacramble
+data packets
+#+end_notes
+* Standards and protocols
+#+begin_notes
+A standard is a shared set of rules used in many parts of computing, for example
+there are standards for operating systems called posix and to be called
+compliant you need to implement all of the standard (or a subset to be called
+compliant.)
+
+Other standards include the w3 standards which describes what is needed to make
+a compliant web browser or the many pdf standards which describe what is needed
+to properly display PDF files.
+#+end_notes
+** Protocols
+#+begin_notes
+A protocol is simply just a set of rules used when comunicating, its not a
+program unto itself but many programs all of which can speak the same language.
+
+Think of it like english, when we communicate we are not the same person but can
+because we learned all the same rules of communication. some examples include
+#+end_notes
+- HTTP :: Hyper Text Transfer Protocol
+- HTTPS :: Hyper Text Transfer Protocol Secure
+- FTP :: File Transfer protocol
+- POP :: Post office protocol
+- IMAP :: Internet message access protocol
+- SMTP :: Simple mail transfer protocol
+- TCP/IP :: Transmission control protocol / internet protocol
+* Questions
