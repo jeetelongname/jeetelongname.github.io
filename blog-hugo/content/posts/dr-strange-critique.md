@@ -12,7 +12,7 @@ fun as having to deal with the ire of my family, as I was the one who chose the
 movie...
 
 BTW this is an adaptation from a long discord message I posted in the [doom emacs
-discord server](https://doomemacs.org/discord) so... Hi Legion! I guess.
+discord server](https://doomemacs.org/discord) so... Hi Lejon! I guess.
 
 
 #### **Spoilers ahead, you have been warned** {#spoilers-ahead-you-have-been-warned}
