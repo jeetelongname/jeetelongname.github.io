@@ -1,6 +1,7 @@
 #+HUGO_BASE_DIR: ~/code/web/website/blog-hugo
 #+HUGO_SECTION: posts
 #+hugo_front_matter_format: yaml
+#+STARTUP: content
 
 * Posts
 ** 2am paella :cooking:cheap:easy:
@@ -64,17 +65,217 @@ have and let it simmer for a bit and your done!
 ** TODO ox-hugo is pretty nice :hugo:blogs:org:
 :PROPERTIES:
 :EXPORT_FILE_NAME: ox-hugo
-:EXPORT_DATE: 2022-03-11
+:EXPORT_DATE: 2022-03-03
 :END:
-I have been meaning to move over to using org for my blogging and ox-hugo is a
+I _have_ been meaning to move over to using org for my blogging and ox-hugo is a
 pretty nice, there are some snags but they are pretty minor and now its pretty
-seamless and quite enjoyable.
+seamless and quite _enjoyable_.
 *** The Problem
 As I discussed in my post on why I don't write as much, one problem I had was
 markdown, for anything non trivial its kinda a pain and I would rather be in org
+** TODO The privacy of public transport
+:PROPERTIES:
+:EXPORT_FILE_NAME: privacy_public_transport
+:EXPORT_DATE: 2022-04-13
+:END:
+We as a world need to pick up public transport. Not only are they usually leagues
+better for the environment compared to cars they are also more space efficient
+and lead to quieter, safer and nicer cities.
+
+But this comes at the cost of a few things (some of which can be fixed with
+funding and time) but one of them seems almost un refutable. The idea of privacy
+on transport. Now while in a theoretical sense this is true you are essentially
+in a crowed of people any of which could approach you, in practice its one of
+the more private experiences I have had.
+
+*** The Car
+The car is meant to be the epitome of freedom and privacy, go wherever you want
+with no need to interact with people. But in this case there is the lack of
+something. Either you are the driver in which case you are not free to do things
+like work, read or sleep and in a sense the time is wasted driving. Or you are
+a passenger in which case you are also not free (unless you are being driven
+around which is out of the reach of 90% of the population). You are attached to
+the social graces that come with human interaction in a confined space or are in
+an even more mundane situation where you are the navigator or other auxiliary
+function within the journey.
+
+In either sense your not free to use that time in
+some kind of productive manner and this will only get worse with more people in
+this confined space, I say this as someone who has had one to many packed road
+trips and dead butt cheeks.
+
+*** Public Transport
+With public transport I don't have this to worry about. When I am travelling
+alone (which is most of the time). I am free to do what I want. I usually read
+but am free to do some light work, free to rest to some degree as well. In reality I do
+not have to talk to people other than the bus driver or odd ticket collector.
+Other people are not a problem as they don't want to talk to me as much as I
+don't want to talk to them. This is much more private and much more free,
+especially with the ability to buy tickets on my phone the amount of interaction
+with other human life goes down to near zero. And the interaction that does
+happen is quick or pleasant enough that I enjoy it.
+
+This being said this is not a blanket privacy, you can't break down on a train
+the same way you can in a car, nor could you use a train as a home when camping
+or when times are tough. Its not a private compartment but it is a nice social
+interaction bubble which in a lot of contexts is all people need.
+
+*** Conclusion
+Public Transport is similar to a cafe. When you sit down at a table even though
+you are in a crowd you are alone, and unless you are being loud or (for lack of
+a better term) /weird/ then you are left alone for the most part. This privacy
+in public in a way is freeing and something that becomes a nice to use after a
+while.
+** TODO My reading habits sucked, here is how I fixed it :reading:books:habits:
+:PROPERTIES:
+:EXPORT_FILE_NAME: reading-habits
+:EXPORT_DATE: 2022-05-22
+:END:
+*** The Problem
+
+** TODO Pacific Rim, Mecha and Charm :movies:opinion:
+:PROPERTIES:
+:EXPORT_DATE: 2022-05-27
+:EXPORT_FILE_NAME: pacific-rim-op-ed
+:END:
+Pacific Rim is one of my favorite movies, not because it says something deep
+about society, or the human soul, not because its even that well made. But
+because its a direct, witty, campy movie that opens up my inner 9 year old in
+more ways than one. Its a deeply fun and interesting movie that almost forces
+you back to being that child that loves the carnal pleasure of citys being
+destroyed by biggest baddest robot fighting the biggest baddest robots.
+
+*** The babble
+and boy does this movie have a lot. Its a massive word soup that is thrown at
+you hot and fast.
+#+begin_quote
+Solid iron hull, no alloys.
+Forty engine blocks per muscle strand.
+Hyper-torque driver for every limb
+and a new fluid synapse system.
+#+end_quote
+This almost forces you to just let your mind run wild, there is nothing to
+compare it against so we are forced to run with the discriptors, we start going
+to bigger numbers cooler words and in essence, we dumb down our thought. This
+does not stop mind you. We are bombarded with it throughout the movie. It is
+never meant to be focused on, this is not a technical movie that wants to build
+a technical world. but its use makes us
+
+*** The Mechs
+Or Jaegers as they are known. meaning Hunter in German they are less
+*** The Characters
+*** The Charm
+** Dr Strange: Movie of madness :movies:opinion:spoilers:
+:PROPERTIES:
+:EXPORT_FILE_NAME: dr-strange-critique
+:EXPORT_DATE: 2022-05-31
+:END:
+I recently, like a lot of people, watched the new Dr Strange movie. I found
+it... underwhelming to say the least. Even though it looked great I left that
+movie hall feeling like I just watched an underused mess. It was almost not as
+fun as having to deal with the ire of my family, as I was the one who chose the
+movie...
+
+BTW this is an adaptation from a long discord message I posted in the [[https://doomemacs.org/discord][doom emacs
+discord server]] so... Hi Legion! I guess.
+
+***** *Spoilers ahead, you have been warned*
+
+*** The movie
+In a word felt like an underused cobbled together mess.
+I watched it in 2D, this meant that I did not get the face punching 3d affects
+and most of the spectacle of the story was squarely on the story (though the
+movie still looked great). I think with better writing not only would the themes
+and concepts have felt more solid but we would have more use (and proper use) of
+characters.
+
+The villain introduction relied on you watching Wanda Vision for the arc to make
+sense, otherwise if your a casual, coming straight from endgame it felt very
+much out of left field,
+
+Characters that were teased at in the first Dr Strange, principally Mordo, A
+character who was teased as the villain for the sequel was not even shown, we
+instead get a Mordo that is not the one that has been built up and is then
+thrown away after a mild fist fight with little resolution to what he means to
+Strange. This lack of continuity from its principal prequel felt like a pressure
+release valve going off, All bets are off and all tension is cut, This will not
+translate over to any third movie as it would have been too long, The first
+movie was release in 2016... 6 years ago. another movie will not be coming for a
+while and by that time at least my psyche would have moved on. Mordo and his
+build up would have been wasted.
+
+The Illuminati (why the illuminati??) present in universe 838 was comprised of the
+first cannon introductions of both the Fantastic Four and the Xmen in the MCU
+(M?) both of which were over very quickly on screen, it felt like "oh this is a
+thing that will be coming in the later movies but we want to tease it now". Then
+you also have Peggy Carter as Captain Britain (or whatever), principally a call
+back to What If but if you did not watch that, it was a gag. A lesser example of
+the problem I had with Wanda's arc.
+
+*** Themes from a box
+
+Themes are presented such as happiness, motherhood, loss and confidence.
+none of these felt explored in any satisfactory way.
+Happiness was not really dealt with, Strange was just kinda asked "are you
+happy?" and lied through his teeth, this then came up near the end as well when
+evil Strange number 3 asked the same question and then they started fighting
+with music notes. It was kinda resolved with the monologue to 838 Christine but
+in a cheesy way, not in anything that felt good for the character. It felt like
+the cliche line and a cliche theme that did not do much for our character. I
+feel like the movie would not have been different if it was not included.
+
+Motherhood was better in this regard. It gave Wanda's sacrifice weight in a
+sense and was played in little bits though out the movie, as she dreamed and dream
+walked, It added to her ending seeing her actions come to ahead and see how she
+will never be a mother to any child she abducts, it was a good scene and a good
+theme.
+
+Confidence on the other hand while being intertwined with happyness also takes a
+lot of traits from it (not really but the parralels are there). it did not feel
+dealt with in any real sense thoughout the movie and it just came to the head
+that was the power of friendship ending where the protagonist learns to believe
+in themselves and then girlbosses scarlet witch. It felt rushed with no real
+build up.
+
+*** Multiverse of... not much?
+
+The concept of multiverse was very much underused with us not getting a chance
+to really see it. This does not mean I want to see a massive amount of
+universies but want to see /the concept/. otherwise it does not become a
+distinct thing, a concept the movie plays with. but a plot device that does
+nothing but give our characters reason to move, as well as fuel this power of
+love story ending (I know its not actually a power of love ending, I am taking a
+little bit of piss)
+some may say It was never explained in any real way which reflects
+the unknown nature of it to our protagonists, but even still with this it does
+not feel distinct in any meaningful way
+*** What this says about the MCU
+
+This speaks to a bigger problem I saw in endgame but think this movie
+exemplifies, The MCU has gotten too big to be cohesive. most of the movie felt
+like callbacks, teasers and set up with actual substance being lost. It leads to
+a movie that felt hollow in many senses, gravity has been lost and points of
+interest have become little more than lore points for the overall arc in
+phase 5. As it grows if you want to stay in the loop and understand most movies
+fully, you need to watch everything that comes before, its getting to the point
+where there are entire sub markets writing up plot summaries so that you can
+understand the movie. This essentially excludes the casual from the franchises
+they enjoy, People may only tune in for the movies they care about (for me those
+being the spiderman and Dr Strange and maybe Thor) they are left out. Now I
+could go on about how this is all to drive up profit and coerce people into
+going to every movie and watching all the shows on disney+ but that's for another
+day.
+
+Part of the magic of the first set of movies was that it was a small rag tag
+team that had there own introductions, each movie added context but also did not
+become required reading to understand in full.
+
+Endgame was the beginning of this, This movie is the beginning of the end.
+
 
 * COMMENT Local Variables :ARCHIVE:
 # Local Variables:
 # org-export-with-author: nil
+# org-log-done: 'time
 # eval: (org-hugo-auto-export-mode)
 # End:
