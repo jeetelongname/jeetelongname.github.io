@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>&amp;copy 2022 Jeetaditya Chatterjee</copyright>
-    <lastBuildDate>Thu, 03 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jeetelongname.net/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jeetelongname.net/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dr Strange: Movie of madness</title>
+      <link>https://www.jeetelongname.net/blog/posts/dr-strange-critique/</link>
+      <pubDate>Tue, 31 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jeetelongname.net/blog/posts/dr-strange-critique/</guid>
+      <description>I recently, like a lot of people, watched the new Dr Strange movie. I found it&amp;hellip; underwhelming to say the least. Even though it looked great I left that movie hall feeling like I just watched an underused mess. It was almost not as fun as having to deal with the ire of my family, as I was the one who chose the movie&amp;hellip;
+BTW this is an adaptation from a long discord message I posted in the doom emacs discord server so&amp;hellip; Hi Legion!</description>
+    </item>
+    
     <item>
       <title>2am paella</title>
       <link>https://www.jeetelongname.net/blog/posts/2am-paella/</link>
@@ -25,7 +35,7 @@ your out of instant ramen 😱.&lt;/p&gt;</description>
       <pubDate>Wed, 02 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.jeetelongname.net/blog/posts/why-i-have-not-written/</guid>
-      <description>This blog has been a bit quiet. I enjoy writing about things, I have many things to write about. but I never do. why is that? This is a kind of rambling dive into some of the reasons I have noticed.
+      <description>This blog has been a bit quiet. I enjoy writing about things, I have many things to write about, but I never do. Why is that? This is a kind of rambling dive into some of the reasons I have noticed.
 My tools I dislike the blogging system I have chosen. Hugo is a fine piece of work don&amp;rsquo;t get me wrong, but for me it feels incomplete in a certain sense.</description>
     </item>
     
