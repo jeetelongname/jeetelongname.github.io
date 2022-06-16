@@ -34,7 +34,7 @@ wiggle GNOME into running a login shell, it seems its allergic to running in a
 Wayland session. I am not sure of the black magic GNOME does to start its
 Wayland session but its above my pay grade.
 That being said I have tried most things from fiddling with the xsession file to
-pass in a `-l` argument too making my own slightly modified `gnome-session`
+pass in a `-l` argument, to making my own slightly modified `gnome-session`
 start up script. They either did not spawn a Wayland session, or did not load my
 `.profile` (or in one entertaining case did not launch GNOME at all, I just had
 a bare x display server). In any sense it did not work and it made me sad.
@@ -47,7 +47,7 @@ rut I was in, and inspiration from the [doom env command](https://github.com/doo
 Instead of trying to force GNOME into the login shell, bring my login shell
 (more specifically my environment) to GNOME!
 
-This is where I ask you to flash back too 20 seconds ago
+This is where I ask you to flash back to 20 seconds ago
 where I mentioned the `environment.d/*.conf` files. Well all we are doing is setting
 environment variables with our `.profile`, if we could capture all of the
 environment variables my `.profile` sets and pipe that into a conf file We would
@@ -60,7 +60,7 @@ be done! In a nice list it would take three things:
 The first and last are actually handled by the `env` command!  Just call it with
 the `-i` flag and it starts with and empty environment! Then call it at the end
 to get my list! Now to read my .profile.
-Turns out we can just call `sh` with the `-l` flag to start a login shell, lik I
+Turns out we can just call `sh` with the `-l` flag to start a login shell, like I
 have been wanting to do with GNOME! This leads to this very nice one liner which
 I can then redirect into a `.conf` file like so.
 
@@ -68,7 +68,7 @@ I can then redirect into a `.conf` file like so.
 env -i HOME=/home/jeet sh -l -c env > ~/.config/environment.d/profile.conf
 ```
 
-I don't even have to do any parsing as its already in the syntax the
+I don't even have to do any parsing as it's already in the syntax the
 `environment.d` expects!
 And that was it! Just that one liner and a log out and I can finally use Wayland!
 Its such a simple hack in retrospect. All I would need to do now is hook this

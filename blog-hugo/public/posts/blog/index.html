@@ -516,7 +516,7 @@ wiggle GNOME into running a login shell, it seems its allergic to running in a
 Wayland session. I am not sure of the black magic GNOME does to start its
 Wayland session but its above my pay grade.
 That being said I have tried most things from fiddling with the xsession file to
-pass in a <code>-l</code> argument too making my own slightly modified <code>gnome-session</code>
+pass in a <code>-l</code> argument, to making my own slightly modified <code>gnome-session</code>
 start up script. They either did not spawn a Wayland session, or did not load my
 <code>.profile</code> (or in one entertaining case did not launch GNOME at all, I just had
 a bare x display server). In any sense it did not work and it made me sad.</p>
@@ -530,7 +530,7 @@ rut I was in, and inspiration from the <a href="https://github.com/doomemacs/doo
 Instead of trying to force GNOME into the login shell, bring my login shell
 (more specifically my environment) to GNOME!</p>
 <p>
-This is where I ask you to flash back too 20 seconds ago
+This is where I ask you to flash back to 20 seconds ago
 where I mentioned the <code>environment.d/*.conf</code> files. Well all we are doing is setting
 environment variables with our <code>.profile</code>, if we could capture all of the
 environment variables my <code>.profile</code> sets and pipe that into a conf file We would
@@ -543,14 +543,14 @@ be done! In a nice list it would take three things:</p>
 <p>The first and last are actually handled by the <code>env</code> command!  Just call it with
 the <code>-i</code> flag and it starts with and empty environment! Then call it at the end
 to get my list! Now to read my .profile.
-Turns out we can just call <code>sh</code> with the <code>-l</code> flag to start a login shell, lik I
+Turns out we can just call <code>sh</code> with the <code>-l</code> flag to start a login shell, like I
 have been wanting to do with GNOME! This leads to this very nice one liner which
 I can then redirect into a <code>.conf</code> file like so.</p>
 <div class="src src-shell">
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">env -i HOME=/home/jeet sh -l -c env &gt; ~/.config/environment.d/profile.conf</code></pre></div>
 </div>
 <p>
-I don&#39;t even have to do any parsing as its already in the syntax the
+I don&#39;t even have to do any parsing as it&#39;s already in the syntax the
 <code>environment.d</code> expects!
 And that was it! Just that one liner and a log out and I can finally use Wayland!
 Its such a simple hack in retrospect. All I would need to do now is hook this
