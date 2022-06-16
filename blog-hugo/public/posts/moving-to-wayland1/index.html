@@ -4,9 +4,9 @@
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="generator" content="Hugo 0.92.2" />
-		<title>Moving to wayland! Login shell lambasting - Jeet&#39;s Blog</title>
+		<title>Moving to Wayland! Login shell lambasting - Jeet&#39;s Blog</title>
 
-		<meta name="description" content="The problem I have been trying to move to wayland for the past year. The call of gestures, less artifacting and just the hype had me spell bound. The problem was, GNOME, my DE of choice, decided to make what I think is the asinine choice to not start the DE in a login shell. All this meant was my .profile never runs and my nix environment never get set up.">
+		<meta name="description" content="The problem I have been trying to move to Wayland for the past year. The call of gestures, less artifacting and just the hype had me spell bound. The problem was, GNOME, my DE of choice, decided to make what I think is the asinine choice to not start the DE in a login shell. All this meant was my .profile never runs and my nix environment never get set up.">
 
 
 		
@@ -49,20 +49,29 @@
 
 <article>
 	<header><hgroup id="brand">
-	<h1>Moving to wayland! Login shell lambasting</h1>
+	<h1>Moving to Wayland! Login shell lambasting</h1>
 	<h5>
 		
 		<time datetime="2022-06-16 00:00:00 &#43;0000 UTC">Jun 16, 2022</time>
 		<span class="no-print">
 			
-			<span>
+			-
+				
+				<a href="/blog/tags/gnome">gnome</a>
+				
+				<a href="/blog/tags/wayland">wayland</a>
+				
+				<a href="/blog/tags/fix">fix</a>
+				
+				<a href="/blog/tags/hack">hack</a>
+				<span>
 	</h5>
 	
 </hgroup>
 <hr class="sep" />
 </header>
 	<h2 id="the-problem">The problem</h2>
-<p>I have been trying to move to wayland for the past year. The call of gestures,
+<p>I have been trying to move to Wayland for the past year. The call of gestures,
 less artifacting and just the <em>hype</em> had me spell bound. The problem was,
 GNOME, my DE of choice, decided to make what I think is the asinine choice to not
 start the DE in a login shell. All this meant was my <code>.profile</code> never runs and my nix
@@ -70,45 +79,46 @@ environment never get set up. This is a deal breaker for me because I have
 programs I use every day (principally emacs) which I can now not access.</p>
 <p>This is not a problem though! GNOME has thought of everything! you can now
 <em>declarativly</em> declare all the environment variables you want with an
-<code>environment.d/*.conf</code> file! Oh wait. I can&rsquo;t run shell scripts with that&hellip; Thats
-the reason nix &ldquo;broke&rdquo;, it sets its environment using a set of external shell
+<code>environment.d/*.conf</code> file!.. Oh wait. I can&rsquo;t run shell scripts with that&hellip;
+That&rsquo;s
+the reason I could not use my nix programs, nix sets its environment using a set of external shell
 scripts that can and do change as nix installs and removes packages. This is not
 a problem for a login shell as it just runs them like any normal sourced file.
-but you can&rsquo;t run scripts in this conf file meaning nix stays broken.</p>
-<h2 id="what-was-my-solutions">What was my solutions?</h2>
-<p>Well my first port of call was of course to force gnome to start a wayland
-session in a login shell. After all thats how other people get other wayland
+But you can&rsquo;t run scripts in this conf file meaning nix stays unusable.</p>
+<h2 id="what-was-my-solution-then">What was my solution then?</h2>
+<p>Well my first port of call was of course to force GNOME to start a Wayland
+session in a login shell. After all thats how other people get other Wayland
 environments to respect there <code>.profiles</code>. Ez slap a <code>-l</code> in the exec call of
-whatever program starts gnome and we are golden right&hellip; Well no. While you can
-wiggle it into running a login shell, it seems its allergic to running in a
-wayland session. I am not sure of the black magic GNOME does to start its
-wayland session but its above my pay grade.
+whatever program starts GNOME and we are golden right&hellip; Well no. While you can
+wiggle GNOME into running a login shell, it seems its allergic to running in a
+Wayland session. I am not sure of the black magic GNOME does to start its
+Wayland session but its above my pay grade.
 That being said I have tried most things from fiddling with the xsession file to
-pass in a <code>-l</code> argument too making my own slighlty modified <code>gnome-session</code>
-start up script. They either did not spawn a wayland session, or did not load my
+pass in a <code>-l</code> argument too making my own slightly modified <code>gnome-session</code>
+start up script. They either did not spawn a Wayland session, or did not load my
 <code>.profile</code> (or in one entertaining case did not launch GNOME at all, I just had
 a bare x display server). In any sense it did not work and it made me sad.</p>
 <h3 id="the-actual-solution">The actual solution</h3>
 <p>But thanks to Flat on the doom emacs discord server, for breaking me out of the
-rut I was in. and inspration from the <a href="https://github.com/doomemacs/doomemacs">doom env command for some inspiration</a>
-Instead of trying to force GNOME into the login shell, bring my login shell (its
-environment) to GNOME!</p>
+rut I was in, and inspiration from the <a href="https://github.com/doomemacs/doomemacs">doom env command</a>
+Instead of trying to force GNOME into the login shell, bring my login shell
+(more specifically my environment) to GNOME!</p>
 <p>This is where I ask you to flash back too 20 seconds ago
-where I mentioned the <code>environment.d/*.conf</code>. Well all we are doing is setting
-environment variables, if we could capture all of the environment variables my
-<code>.profile</code> sets and pipe that into a conf file We would be done!
-In a nice list it would take three things:</p>
+where I mentioned the <code>environment.d/*.conf</code> files. Well all we are doing is setting
+environment variables with our <code>.profile</code>, if we could capture all of the
+environment variables my <code>.profile</code> sets and pipe that into a conf file We would
+be done! In a nice list it would take three things:</p>
 <ul>
-<li>a command to print all the set environment variables</li>
-<li>A command to run my .profile</li>
 <li>an empty environment to actually see <em>exactly</em> what is being set</li>
+<li>A command to run my .profile</li>
+<li>a command to print all the set environment variables</li>
 </ul>
-<p>the first and last are actually handled by the <code>env</code> command! Which makes my life
-easier. Just call it with the <code>-i</code> flag and it starts with and empty
-environment! Then call it at the end to get my list! Now to read my .profile.
-Turns out we can just call <code>sh</code> with the <code>-l</code> flag like I have been wanting to
-do with GNOME! This leads to this very nice one liner which I can then redirect
-into a <code>.conf</code> file like so.</p>
+<p>The first and last are actually handled by the <code>env</code> command!  Just call it with
+the <code>-i</code> flag and it starts with and empty environment! Then call it at the end
+to get my list! Now to read my .profile.
+Turns out we can just call <code>sh</code> with the <code>-l</code> flag to start a login shell, lik I
+have been wanting to do with GNOME! This leads to this very nice one liner which
+I can then redirect into a <code>.conf</code> file like so.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">env -i HOME=/home/jeet sh -l -c env &gt; ~/.config/environment.d/profile.conf
 </code></pre></div><p>I don&rsquo;t even have to do any parsing as its already in the syntax the
 <code>environment.d</code> expects!
@@ -122,8 +132,10 @@ I can understand why the devs would want to move to a more intergrated system in
 a sense. Does not stop me from being mad I had to wait a year to be able to use
 Wayland full time. Or that I have had to spend so much time trying to figure out
 how to wiggle <em>my not unpopular use case</em> into something usable. In any case the fix is
-there and I can move onto bigger things! This may be the beginning of a set of
-posts about Wayland and my adaptations to it so stay tuned!</p>
+there, even if its not preferred, and I can move onto bigger things! This may be
+the beginning of a set of posts about Wayland and my adaptations to it so stay tuned!</p>
+<p>And if you did manage to actually get a GNOME Wayland session to start in a login
+shell though please do reach out!</p>
 
 </article>
 <nav class="no-print post-nav">
