@@ -1,4 +1,4 @@
-#+TITLE: Legal Ethical Moral
+#+TITLE: Legal Ethical Environmental
 
 #+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
 #+REVEAL_ROOT: ../reveal.js

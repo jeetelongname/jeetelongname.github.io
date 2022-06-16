@@ -19,8 +19,8 @@
 </section>
 
 <section>
-<section id="slide-org8649420">
-<h2 id="org8649420">Defensive design</h2>
+<section id="slide-orga937d0e">
+<h2 id="orga937d0e">Defensive design</h2>
 <aside class="notes">
 <p>
 when designing systems we need to think about how it could be abused by bad
@@ -29,8 +29,8 @@ actors. we as designers need to think about things
 
 </aside>
 </section>
-<section id="slide-org7ec6aed">
-<h3 id="org7ec6aed">Anticipating misuse</h3>
+<section id="slide-org22340ed">
+<h3 id="org22340ed">Anticipating misuse</h3>
 <aside class="notes">
 <p>
 one thing we need to discuss is the idea of misuse of systems.
@@ -47,12 +47,12 @@ check.
 
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #e95678;">balance</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">100</span>
-<span style="color: #e95678;">withdraw</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #b877db;">input</span>(<span style="color: #fab795;">"enter the amount to withdraw: "</span>)
+<pre class="src src-python"><span style="color: #e95678;">balance</span> = <span style="color: #f09383; font-weight: bold;">100</span>
+<span style="color: #e95678;">withdraw</span> = <span style="color: #b877db;">input</span>(<span style="color: #fab795;">"enter the amount to withdraw: "</span>)
 
-<span style="color: #e95678;">balance</span> <span style="color: #b877db; font-style: italic;">=</span> balance <span style="color: #b877db; font-style: italic;">-</span> withdraw
+balance = balance - withdraw
 
-<span style="color: #b877db;">print</span>(<span style="color: #fab795;">"balance is now"</span>, balance)
+<span style="color: #b877db; font-style: italic;">print</span>(<span style="color: #fab795;">"balance is now"</span>, balance)
 </pre>
 </div>
 
@@ -61,16 +61,16 @@ check.
 
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #e95678;">balance</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">100</span>
-<span style="color: #e95678;">withdraw</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">120</span>
+<pre class="src src-python"><span style="color: #e95678;">balance</span> = <span style="color: #f09383; font-weight: bold;">100</span>
+<span style="color: #e95678;">withdraw</span> = <span style="color: #f09383; font-weight: bold;">120</span>
 
-<span style="color: #e95678;">temp_balance</span> <span style="color: #b877db; font-style: italic;">=</span> balance <span style="color: #b877db; font-style: italic;">-</span> withdraw
+<span style="color: #e95678;">temp_balance</span> = balance - withdraw
 
-<span style="color: #b877db; font-style: italic;">if</span> temp_balance <span style="color: #b877db; font-style: italic;">&gt;</span> <span style="color: #f09383;">0</span>:
-    <span style="color: #e95678;">balance</span> <span style="color: #b877db; font-style: italic;">=</span> temp_balance
-    <span style="color: #b877db;">print</span>(<span style="color: #fab795;">"balance is now"</span>, balance)
+<span style="color: #b877db; font-style: italic;">if</span> temp_balance &gt; <span style="color: #f09383; font-weight: bold;">0</span>:
+    <span style="color: #e95678;">balance</span> = temp_balance
+    <span style="color: #b877db; font-style: italic;">print</span>(<span style="color: #fab795;">"balance is now"</span>, balance)
 <span style="color: #b877db; font-style: italic;">else</span>:
-    <span style="color: #b877db;">print</span>(<span style="color: #fab795;">"error"</span>)
+    <span style="color: #b877db; font-style: italic;">print</span>(<span style="color: #fab795;">"error"</span>)
 
 
 
@@ -82,8 +82,8 @@ check.
 error
 </pre>
 </section>
-<section id="slide-org46c3dd9">
-<h3 id="org46c3dd9">Authentication</h3>
+<section id="slide-org490c296">
+<h3 id="org490c296">Authentication</h3>
 <aside class="notes">
 <p>
 another thing we need to consider is the fact that some people do not need
@@ -115,8 +115,8 @@ convienice)
 </section>
 </section>
 <section>
-<section id="slide-orge34a25e">
-<h2 id="orge34a25e">Input validation</h2>
+<section id="slide-org26ffcf3">
+<h2 id="org26ffcf3">Input validation</h2>
 <aside class="notes">
 <p>
 when taking input from the user we need to make sure its correct. for example
@@ -129,10 +129,10 @@ is of the correct type.
 
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #e95678;">withdraw</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #b877db; font-style: italic;">-</span><span style="color: #f09383;">100</span>
+<pre class="src src-python"><span style="color: #e95678;">withdraw</span> = -<span style="color: #f09383; font-weight: bold;">100</span>
 
-<span style="color: #b877db; font-style: italic;">if</span> withdraw <span style="color: #b877db; font-style: italic;">&lt;</span> <span style="color: #f09383;">0</span>:
-    <span style="color: #b877db;">print</span>(<span style="color: #fab795;">"error: Invalid value"</span>)
+<span style="color: #b877db; font-style: italic;">if</span> withdraw &lt; <span style="color: #f09383; font-weight: bold;">0</span>:
+    <span style="color: #b877db; font-style: italic;">print</span>(<span style="color: #fab795;">"error: Invalid value"</span>)
 
 </pre>
 </div>
@@ -140,8 +140,8 @@ is of the correct type.
 </section>
 </section>
 <section>
-<section id="slide-orgbd521d1">
-<h2 id="orgbd521d1">Maintainablitly</h2>
+<section id="slide-org9593c00">
+<h2 id="org9593c00">Maintainablitly</h2>
 <aside class="notes">
 <p>
 as our programs grow we need to think about the overall structure and
@@ -150,8 +150,8 @@ cleanlyness of our code.
 
 </aside>
 </section>
-<section id="slide-org2f676bd">
-<h3 id="org2f676bd">Using subprograms</h3>
+<section id="slide-org0afafc5">
+<h3 id="org0afafc5">Using subprograms</h3>
 <aside class="notes">
 <p>
 If your code is repeating in a set way, it makes sense to use subprograms and
@@ -163,11 +163,11 @@ not repeat yourself)
 
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #e95678;">price1</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">100</span> <span style="color: #b877db; font-style: italic;">*</span> <span style="color: #f09383;">1.5</span>
-<span style="color: #e95678;">price2</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">80</span> <span style="color: #b877db; font-style: italic;">*</span> <span style="color: #f09383;">1.5</span>
-<span style="color: #e95678;">price3</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #f09383;">70</span> <span style="color: #b877db; font-style: italic;">*</span> <span style="color: #f09383;">1.5</span>
+<pre class="src src-python"><span style="color: #e95678;">price1</span> = <span style="color: #f09383; font-weight: bold;">100</span> * <span style="color: #f09383; font-weight: bold;">1.5</span>
+<span style="color: #e95678;">price2</span> = <span style="color: #f09383; font-weight: bold;">80</span> * <span style="color: #f09383; font-weight: bold;">1.5</span>
+<span style="color: #e95678;">price3</span> = <span style="color: #f09383; font-weight: bold;">70</span> * <span style="color: #f09383; font-weight: bold;">1.5</span>
 
-<span style="color: #b877db;">print</span>(...)
+<span style="color: #b877db; font-style: italic;">print</span>(...)
 </pre>
 </div>
 
@@ -177,46 +177,46 @@ not repeat yourself)
 <div class="org-src-container">
 
 <pre class="src src-python">
-<span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">calc_price</span>(<span style="color: #e95678;">price</span>):
-    <span style="color: #b877db;">print</span>(price <span style="color: #b877db; font-style: italic;">*</span> <span style="color: #f09383;">1.5</span>)
+<span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">calc_price</span>(price):
+    <span style="color: #b877db; font-style: italic;">print</span>(price * <span style="color: #f09383; font-weight: bold;">1.5</span>)
 
 
-<span style="color: #21bfc2;">calc_price</span>(<span style="color: #f09383;">100</span>)
-<span style="color: #21bfc2;">calc_price</span>(<span style="color: #f09383;">80</span>)
-<span style="color: #21bfc2;">calc_price</span>(<span style="color: #f09383;">70</span>)
+calc_price(<span style="color: #f09383; font-weight: bold;">100</span>)
+calc_price(<span style="color: #f09383; font-weight: bold;">80</span>)
+calc_price(<span style="color: #f09383; font-weight: bold;">70</span>)
 </pre>
 </div>
 </section>
-<section id="slide-org7d50df3">
-<h3 id="org7d50df3">Naming conventions</h3>
+<section id="slide-orgf9850ea">
+<h3 id="orgf9850ea">Naming conventions</h3>
 </section>
-<section id="slide-org89735b8">
-<h3 id="org89735b8">indentation</h3>
+<section id="slide-orgaa70e0a">
+<h3 id="orgaa70e0a">indentation</h3>
 </section>
-<section id="slide-org3a5a06e">
-<h3 id="org3a5a06e">commenting</h3>
+<section id="slide-orgdbd7a42">
+<h3 id="orgdbd7a42">commenting</h3>
 </section>
 </section>
 <section>
-<section id="slide-orgc5cadc2">
-<h2 id="orgc5cadc2">Questions</h2>
-<div class="outline-text-2" id="text-orgc5cadc2">
+<section id="slide-org72be3be">
+<h2 id="org72be3be">Questions</h2>
+<div class="outline-text-2" id="text-org72be3be">
 </div>
 </section>
-<section id="slide-org268b4df">
-<h3 id="org268b4df">Why is maintainablily important</h3>
+<section id="slide-org44ec427">
+<h3 id="org44ec427">Why is maintainablily important</h3>
 </section>
-<section id="slide-org12a87a7">
-<h3 id="org12a87a7">What is meant by 2 factor authentication</h3>
+<section id="slide-orgb63a1d5">
+<h3 id="orgb63a1d5">What is meant by 2 factor authentication</h3>
 </section>
-<section id="slide-org73a8f5c">
-<h3 id="org73a8f5c">What is meant by validation.</h3>
+<section id="slide-org978676a">
+<h3 id="org978676a">What is meant by validation.</h3>
 </section>
-<section id="slide-org44b864e">
-<h3 id="org44b864e">Why would someones name be hard to validate</h3>
+<section id="slide-org56ece40">
+<h3 id="org56ece40">Why would someones name be hard to validate</h3>
 </section>
-<section id="slide-org3b02d6d">
-<h3 id="org3b02d6d">Make up 2 rules for sensible naming conventions</h3>
+<section id="slide-org11b433c">
+<h3 id="org11b433c">Make up 2 rules for sensible naming conventions</h3>
 </section>
 </section>
 </div>
