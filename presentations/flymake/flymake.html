@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Flymake</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Flymake</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>fly me to the <strike>moon</strike> bug</i></h3><p>Press s for speaker notes</p>
+</section>
+
+<section>
+<section id="slide-org5a51b5d">
+<h2 id="org5a51b5d">What is flymake?</h2>
+<aside class="notes">
+<p>
+Good place to start. flymake is a generic package that provides diagnostics in a
+buffer. its included in emacs by default and is a drop in replacement for the
+main diagnostic package we all use, flycheck.
+</p>
+
+</aside>
+</section>
+<section id="slide-org8e63756">
+<h3 id="org8e63756">Ok&#x2026; whats a diagnostic?</h3>
+<aside class="notes">
+<p>
+Now this may seem a little tedious but its worth going over. in short a
+Diagnostic is a piece of information tied to a part of your text. The main
+example of this is a syntax error. displayed through your linter. but it can be
+anything. From style guides, to spelling mistakes to your managers nagging
+encoded into a command line application.
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-orga1a26a3">
+<h2 id="orga1a26a3">Why replace flycheck then?</h2>
+<aside class="notes">
+<p>
+Well&#x2026; in reality if flycheck works then there can be little reason to switch.
+that being said some of the reasons to switch include
+</p>
+<ul>
+<li>Its built in
+That means there is less to install and it will be maintained for the
+forceable future.</li>
+<li>It composes nicely
+what I mean by that is that instead of reinventing the wheel and creating its
+own system of activation. Instead of specially registering modes to diagnostic
+checkers. you add your &ldquo;flymake backends&rdquo; (a function) to
+<code>flymake-diagnostic-functions</code>. If you want to make it mode local you just add
+it to a local hook (an example will be shown later)</li>
+<li>It basically does not need to be configured
+For this point we shall channel our inner taco and learn to love the defaults.
+I kid but its basically true, for the most part this is my config</li>
+
+</ul>
+
+</aside>
+
+<ul>
+<li class="fragment roll-in">Its built in</li>
+<li class="fragment roll-in">It &ldquo;composes&rdquo; nicely</li>
+<li class="fragment roll-in">It basically does not need to be configured</li>
+
+</ul>
+
+</section>
+<section>
+<aside class="notes">
+<p>
+All of this should be pretty understandable. And for the most part that&rsquo;s it. if
+you use lsp-mode it should all work pretty magically. and because diagnostics
+are pretty simple in there nature most people can do this without obstructing
+there workflow!
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp"><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">;; </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">Activate ~flymake-mode~ by default</span>
+<span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">add-hook!</span> <span style="color: #6c6f93;">(</span><span style="color: #f09383;">prog-mode</span> text-mode<span style="color: #6c6f93;">)</span> <span style="color: #87ceeb;">#'</span><span style="color: #e95678;">flymake-mode</span><span style="color: #21bfc2;">)</span>
+
+<span style="color: #6c6f93; background-color: #292b36; font-style: italic;">;; </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">Tell lsp-mode we /really/ want to use ~flymake~</span>
+<span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">after!</span> <span style="color: #e95678;">lsp-mode</span>
+  <span style="color: #6c6f93;">(</span><span style="color: #b877db; font-style: italic;">setq</span> <span style="color: #e95678;">lsp-diagnostics-provider</span> <span style="color: #b877db;">:flymake</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span>
+
+<span style="color: #6c6f93; background-color: #292b36; font-style: italic;">;; </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">put the indicators in the right (-&gt;) fringe</span>
+<span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">after!</span> flymake
+  <span style="color: #6c6f93;">(</span><span style="color: #b877db; font-style: italic;">setq</span> <span style="color: #e95678;">flymake-fringe-indicator-position</span> <span style="color: #87ceeb;">'</span><span style="color: #87ceeb;">right-fringe</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span>
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgd3e319c">
+<h2 id="orgd3e319c">Actually using the thing</h2>
+<aside class="notes">
+<p>
+Now for the most part using flymake is no different from using flycheck, all
+your favorite commands automagically fallback to flymake thanks to Henrik and
+co&rsquo;s foresight. Diagnostic descriptions do show up in the echo area by default
+but its simple to fix
+</p>
+
+<p>
+things like jumping between errors, <code>SPC c x</code> and other functions all work out
+of the box. And should be a simple matter for the vanilla users in the audience
+(ie setting the <code>next-error-function</code> and switching to call <code>consult-flymake</code>).
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org0145053">
+<h2 id="org0145053">Adding your own backends</h2>
+<aside class="notes">
+<p>
+Simple
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp"><span style="color: #21bfc2;">(</span><span style="color: #f09383;">add-hook</span> <span style="color: #87ceeb;">'</span><span style="color: #e95678;">flymake-diagnostic-functions</span> <span style="color: #87ceeb;">#'</span><span style="color: #87ceeb;">your-flymake-backend</span><span style="color: #21bfc2;">)</span>
+</pre>
+</div>
+</section>
+<section>
+<aside class="notes">
+<p>
+or if you only want it in certain modes.
+</p>
+
+<p>
+The nice thing is that all of this is transparent and simple, its all just hooks
+which I like.
+</p>
+
+<p>
+this patten is so common that most backends come with a load function that
+encapsulates this.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp"><span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">add-hook!</span> MAJOR-MODE
+  <span style="color: #6c6f93;">(</span><span style="color: #b877db; font-style: italic;">add-hook!</span> <span style="color: #87ceeb;">'</span><span style="color: #e95678;">flymake-diagnostic-functions</span> <span style="color: #b877db;">:local</span> <span style="color: #87ceeb;">#'</span><span style="color: #87ceeb;">your-flymake-backend</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span>
+
+<span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">add-hook!</span> MAJOR-MODE <span style="color: #87ceeb;">#'</span><span style="color: #87ceeb;">your-flymake-backend-load</span><span style="color: #21bfc2;">)</span>
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orge4186db">
+<h2 id="orge4186db">Writing your own</h2>
+<aside class="notes">
+<p>
+If you want a better example the manual has an real world backend, its overall pretty
+simple to grok.
+</p>
+
+<p>
+but the basic jist is that your backend function will recieve a report function
+and some args
+</p>
+
+<p>
+you process the buffer asyncronoysly (usually using a process)) and then create a
+bunch of diagnostic overlays. which you then pass back to the report function
+which takes over.
+</p>
+
+<p>
+again this is a very high level overview, so check out the manual!
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp"><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">;; </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">this is pseudocode</span>
+<span style="color: #21bfc2;">(</span><span style="color: #b877db; font-style: italic;">defun</span> <span style="color: #87ceeb;">your-flymake-backend</span> <span style="color: #6c6f93;">(</span>report-fn <span style="color: #87ceeb;">&amp;rest</span> args<span style="color: #6c6f93;">)</span>
+  <span style="color: #6c6f93; background-color: #292b36; font-style: italic;">;; </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">imagine I am using a process</span>
+  <span style="color: #6c6f93;">(</span><span style="color: #b877db; font-style: italic;">let*</span> <span style="color: #09f7a0;">(</span><span style="color: #b877db;">(</span>parsed-buffer <span style="color: #21bfc2;">(</span>parse-buffer<span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span>
+         <span style="color: #b877db;">(</span>diagnostics-list <span style="color: #21bfc2;">(</span><span style="color: #87ceeb;">seq-map</span> <span style="color: #6c6f93;">(</span><span style="color: #b877db; font-style: italic;">pcase-lambda</span> <span style="color: #09f7a0;">(</span><span style="color: #87ceeb;">`</span><span style="color: #b877db;">(</span>,buffer ,beg ,end ,type ,msg<span style="color: #b877db;">)</span><span style="color: #09f7a0;">)</span>
+                                      <span style="color: #09f7a0;">(</span><span style="color: #f09383;">flymake-make-diagnostic</span> buffer beg end type msg<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span>
+                                    parsed-buffer<span style="color: #21bfc2;">)</span><span style="color: #b877db;">)</span><span style="color: #09f7a0;">)</span>
+    <span style="color: #09f7a0;">(</span><span style="color: #f09383;">funcall</span> report-fun diagnostic-list<span style="color: #09f7a0;">)</span><span style="color: #6c6f93;">)</span><span style="color: #21bfc2;">)</span>
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org8fa7c46">
+<h2 id="org8fa7c46">The downsides</h2>
+<aside class="notes">
+<p>
+Before I start the flycheck team has put up a comparison on there site. in short
+this is propaganda by big flycheck. that being said there are a few things
+</p>
+
+<ul>
+<li>unlike flycheck you have to write that function by hand, that being said there
+<b>can</b> be an interface but it would be an external package. an example would be
+flymake-easy</li>
+<li>all backends are run in whatever order and report back async so there is no
+&ldquo;next-checker&rdquo;, Personally I have never used that so I would not miss it but
+its worth considering</li>
+<li>This is probably the biggest one. a lot of diagnostics may freeze up emacs
+(though the threshold for that may be high for some, I have over 50
+diagnostics in this buffer and its fine)</li>
+
+</ul>
+
+</aside>
+
+<ul>
+<li class="fragment roll-in">No declarative interface</li>
+<li class="fragment roll-in">No concept of dependent checkers</li>
+<li class="fragment roll-in">It uses overlays to hold diagnostics</li>
+<li class="fragment roll-in">something else I am prob forgetting.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org14d41dc">
+<h2 id="org14d41dc">Finally a call to action</h2>
+<aside class="notes">
+<p>
+basically I don&rsquo;t want anyone to think about it, find me backends I can add to
+doomemacs/doomemacs#6660.
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-orgd2f9ad0">
+<h2 id="orgd2f9ad0">Fin</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

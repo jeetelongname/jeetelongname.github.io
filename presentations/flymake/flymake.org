@@ -1,0 +1,158 @@
+#+title: Flymake
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>fly me to the <strike>moon</strike> bug</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* What is flymake?
+#+begin_notes
+Good place to start. flymake is a generic package that provides diagnostics in a
+buffer. its included in emacs by default and is a drop in replacement for the
+main diagnostic package we all use, flycheck.
+#+end_notes
+** Ok... whats a diagnostic?
+#+begin_notes
+Now this may seem a little tedious but its worth going over. in short a
+Diagnostic is a piece of information tied to a part of your text. The main
+example of this is a syntax error. displayed through your linter. but it can be
+anything. From style guides, to spelling mistakes to your managers nagging
+encoded into a command line application.
+#+end_notes
+* Why replace flycheck then?
+#+begin_notes
+Well... in reality if flycheck works then there can be little reason to switch.
+that being said some of the reasons to switch include
+- Its built in
+  That means there is less to install and it will be maintained for the
+  forceable future.
+- It composes nicely
+  what I mean by that is that instead of reinventing the wheel and creating its
+  own system of activation. Instead of specially registering modes to diagnostic
+  checkers. you add your "flymake backends" (a function) to
+  ~flymake-diagnostic-functions~. If you want to make it mode local you just add
+  it to a local hook (an example will be shown later)
+- It basically does not need to be configured
+  For this point we shall channel our inner taco and learn to love the defaults.
+  I kid but its basically true, for the most part this is my config
+  #+end_notes
+
+#+attr_reveal: :frag (roll-in)
+- Its built in
+- It "composes" nicely
+- It basically does not need to be configured
+
+#+reveal: split
+#+begin_notes
+All of this should be pretty understandable. And for the most part that's it. if
+you use lsp-mode it should all work pretty magically. and because diagnostics
+are pretty simple in there nature most people can do this without obstructing
+there workflow!
+#+end_notes
+#+begin_src emacs-lisp
+;; Activate ~flymake-mode~ by default
+(add-hook! (prog-mode text-mode) #'flymake-mode)
+
+;; Tell lsp-mode we /really/ want to use ~flymake~
+(after! lsp-mode
+  (setq lsp-diagnostics-provider :flymake))
+
+;; put the indicators in the right (->) fringe
+(after! flymake
+  (setq flymake-fringe-indicator-position 'right-fringe))
+#+end_src
+* Actually using the thing
+#+begin_notes
+Now for the most part using flymake is no different from using flycheck, all
+your favorite commands automagically fallback to flymake thanks to Henrik and
+co's foresight. Diagnostic descriptions do show up in the echo area by default
+but its simple to fix
+
+things like jumping between errors, ~SPC c x~ and other functions all work out
+of the box. And should be a simple matter for the vanilla users in the audience
+(ie setting the ~next-error-function~ and switching to call ~consult-flymake~).
+#+end_notes
+* Adding your own backends
+#+begin_notes
+Simple
+#+end_notes
+
+#+begin_src emacs-lisp
+(add-hook 'flymake-diagnostic-functions #'your-flymake-backend)
+#+end_src
+#+reveal: split
+#+begin_notes
+or if you only want it in certain modes.
+
+The nice thing is that all of this is transparent and simple, its all just hooks
+which I like.
+
+this patten is so common that most backends come with a load function that
+encapsulates this.
+#+end_notes
+
+#+begin_src emacs-lisp
+(add-hook! MAJOR-MODE
+  (add-hook! 'flymake-diagnostic-functions :local #'your-flymake-backend))
+
+(add-hook! MAJOR-MODE #'your-flymake-backend-load)
+#+end_src
+* Writing your own
+#+begin_notes
+If you want a better example the manual has an real world backend, its overall pretty
+simple to grok.
+
+but the basic jist is that your backend function will recieve a report function
+and some args
+
+you process the buffer asyncronoysly (usually using a process)) and then create a
+bunch of diagnostic overlays. which you then pass back to the report function
+which takes over.
+
+again this is a very high level overview, so check out the manual!
+#+end_notes
+
+#+begin_src emacs-lisp
+;; this is pseudocode
+(defun your-flymake-backend (report-fn &rest args)
+  ;; imagine I am using a process
+  (let* ((parsed-buffer (parse-buffer))
+         (diagnostics-list (seq-map (pcase-lambda (`(,buffer ,beg ,end ,type ,msg))
+                                      (flymake-make-diagnostic buffer beg end type msg))
+                                    parsed-buffer)))
+    (funcall report-fun diagnostic-list)))
+#+end_src
+* The downsides
+#+begin_notes
+Before I start the flycheck team has put up a comparison on there site. in short
+this is propaganda by big flycheck. that being said there are a few things
+
+- unlike flycheck you have to write that function by hand, that being said there
+  *can* be an interface but it would be an external package. an example would be
+  flymake-easy
+- all backends are run in whatever order and report back async so there is no
+  "next-checker", Personally I have never used that so I would not miss it but
+  its worth considering
+- This is probably the biggest one. a lot of diagnostics may freeze up emacs
+  (though the threshold for that may be high for some, I have over 50
+  diagnostics in this buffer and its fine)
+
+#+end_notes
+
+#+ATTR_REVEAL: :frag (roll-in)
+- No declarative interface
+- No concept of dependent checkers
+- It uses overlays to hold diagnostics
+- something else I am prob forgetting.
+
+* Finally a call to action
+#+begin_notes
+basically I don't want anyone to think about it, find me backends I can add to
+doomemacs/doomemacs#6660.
+#+end_notes
+* Fin

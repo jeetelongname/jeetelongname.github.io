@@ -1,0 +1,89 @@
+% Created 2022-08-13 Sat 01:33
+% Intended LaTeX compiler: pdflatex
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+\author{Jeetaditya Chatterjee}
+\date{\today}
+\title{Flymake}
+\hypersetup{
+ pdfauthor={Jeetaditya Chatterjee},
+ pdftitle={Flymake},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.0.50 (Org mode 9.6)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\section*{What is flymake?}
+\label{sec:org423a754}
+\begin{notes}
+Good place to start. flymake is a generic package that provides diagnostics in a
+buffer. its included in emacs by default and is a drop in replacement for the
+main diagnostic package we all use, flycheck.
+\end{notes}
+\subsection*{Ok\ldots{} whats a diagnostic?}
+\label{sec:org86dea48}
+\begin{notes}
+Now this may seem a little tedious but its worth going over. in short a
+Diagnostic is a piece of information tied to a part of your text. The main
+example of this is a syntax error. displayed through your linter. but it can be
+anything. From style guides, to spelling mistakes to your managers nagging
+encoded into a command line application.
+\end{notes}
+\section*{Why replace flycheck then?}
+\label{sec:orgc997eda}
+\begin{notes}
+Well\ldots{} in reality if flycheck works then there can be little reason to switch.
+that being said some of the reasons to switch include
+\begin{itemize}
+\item Its built in
+That means there is less to install and it will be maintained for the
+forceable future.
+\item It composes nicely
+what I mean by that is that instead of reinventing the wheel and creating its
+own system of activation. Instead of specially registering modes to diagnostic
+checkers. you add your ``flymake backends'' (a function) to
+\texttt{flymake-diagnostic-functions}. If you want to make it mode
+\item It basically does not need to be configured
+For this point we shall channel our inner taco and learn to love the defaults.
+I kid but its basically true, for the most part this is my config
+\end{itemize}
+\end{notes}
+
+\begin{itemize}
+\item Its built in
+\item It ``composes'' nicely
+\item It basically does not need to be configured
+\end{itemize}
+\begin{notes}
+All of this should be pretty understandable. And for the most part that's it. if
+you use lsp-mode it should all work pretty magically. and because diagnostics
+are pretty simple in there nature most people can do this without obstructing
+there workflow!
+\end{notes}
+\begin{verbatim}
+;; Activate ~flymake-mode~ by default
+(add-hook! (prog-mode text-mode) #'flymake-mode)
+
+;; Tell lsp-mode we /really/ want to use ~flymake~
+(after! lsp-mode
+  (setq lsp-diagnostics-provider :flymake))
+
+;; put the indicators in the right (->) fringe
+(after! flymake
+  (setq flymake-fringe-indicator-position 'right-fringe))
+\end{verbatim}
+\end{document}
