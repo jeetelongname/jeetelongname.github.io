@@ -1,0 +1,59 @@
+#+title: Introduction
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>A start from the very begining</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* Hello
+#+begin_notes
+Before we begin what are all of your names
+
+I am Jeet. I am currently studying computer science and university
+#+end_notes
+* How these lessons will work
+#+begin_notes
+We have an hour and a half here. 6:30 to 8pm.
+I have split it in twain, 45 minutes of "structured" teaching, 45 minutes for
+you to ask questions, for us to explore a topic, for you to sit in silence and
+do some work.
+Do bring questions. I will try and answer them the best I can, and If I cannot I
+will get an answer too you through our communication channels.
+Nothing is too stupid to ask.
+
+The lessons themselves wil consist of slides, interactive whiteboards and other
+small things. I will try and make them interactive so be ready to answer
+questions! but if its not working for you, tell me! I am more than happy to work
+another way if it means you guys understand!
+You can also ask clarifying questions as I am moving
+
+The homework I will set will be small but good practice. I will try and mark it
+in a timely manner but tease me if I do not.
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+- 6:30pm to 8pm
+- 45 minutes on teaching
+- 45 minutes for you to ask questions.
+* Topics we will cover
+#+begin_notes
+We will be covering everything on your course. but we will also go a little
+further to try and build a solid computing base.
+
+This means learning extra python concepts that you will not need but are helpful
+for understanding. going a little further, or going off the spec. this is to
+hopefully not only get you to pass to pass but hopefully to build up a good
+understanding of what is happening.
+#+end_notes
+* We are begining with algorithms and python.
+#+begin_notes
+We are starting here as topics can and do blend into one another. Its a good
+place to begin. From these topics we can then disucuss core topics in terms of
+the last. which should hopefully form connections and make things more clear in
+the long run.
+#+end_notes
+* Any Questions?

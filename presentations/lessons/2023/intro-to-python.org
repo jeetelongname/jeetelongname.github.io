@@ -1,0 +1,131 @@
+#+title: Intro To Python
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>SSSSSS</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* What is python
+#+begin_notes
+Python is a dynamic general purpose programming language.
+Its used for many things including learning!
+#+end_notes
+* Programming with python.
+#+begin_notes
+you can go to python.org and install all the tools but an easier and nicer way
+is to use replit.com. its pretty simple.
+
+When you sign up, you can create a new python project, for the moment thats all
+we need
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+- https://python.org
+- https://replit.com
+* The first program
+#+begin_notes
+The first program everyone begins with is
+#+end_notes
+#+begin_src python  :results output
+print("hello world")
+#+end_src
+
+#+RESULTS:
+: hello world
+
+** Now lets break down what we did
+#+begin_notes
+it may seem silly but it makes sense to do so
+
+There are two main parts.
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+- ~print~
+= ="hello world"=
+* Giving names to things
+#+begin_notes
+In python we can produce variables. we do this by using = operator
+#+end_notes
+
+#+begin_src python :results output
+a = 1
+
+print(a)
+#+end_src
+
+#+RESULTS:
+: 1
+* Maths
+#+begin_notes
+Some basic maths operatiosn are as such
+#+end_notes
+
+#+begin_src python  :results output
+a = 1 + 2
+b = 1 - 2
+c = 1 / 2
+d = 1 * 2
+
+print(a, b, c, d)
+#+end_src
+
+#+RESULTS:
+: 3 -1 0.5 2
+* A reminder
+* Expressions
+#+begin_notes
+Before we move on let us discuss what an expression is,
+What do people know about expressions?
+
+They are bits of code that resolve to a value. In other words it any code you
+can assign a name too
+
+This is different from statements which tell the code what too do. We will
+encounter some. but an example would be the varible assignment. Thats not
+resolving to a value but telling python what to do (in this case assigning a
+name to a value)
+
+so for example
+
+These are valid in any place that can take in a variable. In a sense variables
+are also expressions.
+#+end_notes
+
+#+attr_reveal: :frag (roll-in)
+- ~1 + 1 => 2~
+- ~1 != 2 => True~
+- ~True is True => True~
+- ~math.sqrt(4) => 2~
+** Boolean expression
+#+begin_notes
+Boolean expressions are expressions that return true or false. You have probably
+used them before. there are a few you need to know
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+- ~==~
+- ~!=~
+- ~< and >=~
+- ~> and <=~
+- ~is~
+- ~in~
+
+* If statements
+#+begin_notes
+Now we are getting into flow control
+#+end_notes
+* Types
+#+begin_notes
+
+#+end_notes
+* Lists
+* Loops
+** While loops
+** For loops
+* Strings
+* Functions
+* Files
+* Classes
