@@ -119,12 +119,113 @@ Now we are getting into flow control
 #+end_notes
 * Types
 #+begin_notes
+Types are what a variable is, it allows us to define operations on entire
+classes of values, for example numbers can use the + operator and functions from
+the ~math~ library. Strings have there own operations, other data types such as
+dates or even your own types (which we will have an entire lesson on!)
 
+The types you need to know of are...
+
+You can convert between these types if there is something to convert.
 #+end_notes
+#+attr_reveal: :frag (roll-in)
+- Characters
+- Strings
+- Ints
+- Floats
+- Booleans
+- Lists
 * Lists
+#+begin_notes
+Lists are what are known as a composite data type. You cannot /just/ have a
+list. you must have a list of /something/ (unless the list is empty).
+for example you can have a list of any type.
+
+In python we can mix and match types as well. Though in your spec it may say
+that they can only have one type (and in many languages which check your types
+more strongly, you will get an error.)
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+- [1, 2, 3]
+- ['a', 'b', 'c']
+- [True, False, True]
+- [1, 'a', False]
+
 * Loops
-** While loops
+#+begin_notes
+Its all well and good to have a collection of values, but what if we want to use
+this collection? maybe print it out?.
+or more generally, how do we write code that will be run many times?
+
+This is where loops come in. Loops are a statement that allows us to run code
+many times, either a definite amount of times (for ten iterations as an example) or while a
+value remains true.
+#+end_notes
 ** For loops
+#+begin_notes
+There are 2 kinds of for loop you need to know about. The count controled loop
+and the collection loop
+#+end_notes
+*** Count Controlled
+#+begin_notes
+Lets say we want to iterate 10 times we can use the range construct.
+This gives us a range we can move over.
+#+end_notes
+#+begin_src python :results output
+for i in range(10):
+    print(i)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+#+end_example
+*** Adding in some more details
+#+begin_notes
+We can also add in an optional start value and a step, like so
+#+end_notes
+#+begin_src python :results output
+for i in range(start := 2, stop := 12, step := 2):
+    print(i)
+#+end_src
+
+#+RESULTS:
+: 2
+: 4
+: 6
+: 8
+: 10
+
+** While loops
+#+begin_notes
+While loops are simpler, they just need a boolean expression
+These loops can run for an indefinite amount of time, because the boolean
+expression may never become false
+#+end_notes
+#+begin_src python :results output
+a = 0
+while a != 10:
+    print(a)
+    a += 1
+#+end_src
+
+#+reveal_split:
+#+begin_src python
+a = 0
+while a != 10:
+    print(a)
+# NOTE: I am not changing a
+#+end_src
+
 * Strings
 * Functions
 * Files
