@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>&amp;copy 2022 Jeetaditya Chatterjee</copyright>
-    <lastBuildDate>Thu, 16 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jeetelongname.net/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Nov 2022 05:53:00 +0000</lastBuildDate><atom:link href="https://www.jeetelongname.net/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>haskell</title>
+      <link>https://www.jeetelongname.net/blog/tags/haskell/</link>
+      <pubDate>Wed, 23 Nov 2022 05:53:00 +0000</pubDate>
+      
+      <guid>https://www.jeetelongname.net/blog/tags/haskell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://www.jeetelongname.net/blog/tags/programming/</link>
+      <pubDate>Wed, 23 Nov 2022 05:53:00 +0000</pubDate>
+      
+      <guid>https://www.jeetelongname.net/blog/tags/programming/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>fix</title>
       <link>https://www.jeetelongname.net/blog/tags/fix/</link>
@@ -122,15 +140,6 @@
       <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.jeetelongname.net/blog/tags/lists/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>https://www.jeetelongname.net/blog/tags/programming/</link>
-      <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jeetelongname.net/blog/tags/programming/</guid>
       <description></description>
     </item>
     

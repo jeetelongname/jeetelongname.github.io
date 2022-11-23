@@ -1,13 +1,13 @@
 ---
 title: "ox-hugo is pretty nice"
-date: 2022-03-11
+date: 2022-03-03
 tags: ["hugo", "blogs", "org"]
 draft: true
 ---
 
-I have been meaning to move over to using org for my blogging and ox-hugo is a
+I <span class="underline">have</span> been meaning to move over to using org for my blogging and ox-hugo is a
 pretty nice, there are some snags but they are pretty minor and now its pretty
-seamless and quite enjoyable.
+seamless and quite <span class="underline">enjoyable</span>.
 
 
 ## The Problem {#the-problem}

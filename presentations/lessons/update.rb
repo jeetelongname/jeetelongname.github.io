@@ -14,7 +14,6 @@ html = ERB.new(DATA.read, trim_mode: '%<>')
 File.write('index.html', html.result)
 
 __END__
-
 <html class="no-js" lang="">
   <head>
       <meta charset="utf-8">

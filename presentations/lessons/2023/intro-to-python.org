@@ -227,6 +227,262 @@ while a != 10:
 #+end_src
 
 * Strings
+#+begin_notes
+Strings are a list of characters. They can act like lists but have a few of
+there own operations. these include
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+- STRING.lower()
+- String.upper()
+- String.substring() (this one has a different syntax)
+- ord (convert character to ascii number)
+- chr (convert ascii number to character)
 * Functions
+#+begin_notes
+Functions allow us to encapsulate and abstract away code. this allows us to
+reuse code and abstract away implementation details.
+ Here is a small example
+#+end_notes
+
+#+reveal: split
+#+begin_src python :results output
+def add(x, y):
+    return x + y
+
+print(add(2, 3))
+#+end_src
+
+#+RESULTS:
+: 5
+
 * Files
+#+begin_notes
+We have learned how to interact with values within python but what about values
+outside python? Things such as files or getting input from the user?
+When working with files we need to be able to
+read from them
+write to them
+
+There is also a special case of writing where we will want to append to a file.
+
+
+#+end_notes
+
+#+attr_reveal: :frag (roll-in)
+- read from them
+- Write to them
+- Append to them
+
+** Reading files
+#+begin_src python :results output
+file = open("fileName.txt", "r")
+file.read() # return one string of the entire file
+file.seek(0) # go back to the start
+
+# iterate through the file line by line
+for line in file:
+    print("line", line)
+file.seek(0)
+
+# get a list of lines to process
+lines = file.readlines()
+
+file.close() #remember to close the file after
+
+# we cannot read from it after, we will get an error
+#+end_src
+
+: line 1
+:
+: line 2
+:
+: line 3
+:
+
+** Writing to files
+#+begin_src python :results output
+print("before write")
+readable = open("fileName.txt", "r")
+print(readable.read())
+readable.close()
+
+writable = open("fileName.txt", "w")
+writable.write("4")
+writable.close()
+
+print("after write")
+readable = open("fileName.txt", "r")
+print(readable.read())
+readable.close()
+#+end_src
+
+: before write
+: 1
+: 2
+: 3
+:
+: after write
+: 4
+
+: before write
+: 1
+: 2
+: 3
+:
+: before after write
+: 4
+
+** Appending to files
+#+begin_src python :results output
+print("before write")
+readable = open("fileName.txt", "r")
+print(readable.read())
+readable.close()
+
+appendable = open("fileName.txt", "a")
+appendable.write("4\n")
+appendable.close()
+
+print("after write")
+readable = open("fileName.txt", "r")
+print(readable.read())
+readable.close()
+#+end_src
+
+#+begin_example
+before write
+1
+2
+3
+
+before after write
+1
+2
+3
+4
+#+end_example
+
+** The with statement
+#+begin_src python :results output
+with open("fileName.txt", "r") as file:
+    print(file.read())
+#+end_src
+
+: 1
+: 2
+: 3
+:
+
 * Classes
+#+begin_notes
+We have disucssed a lot of things, If you cast your mind back we discussed
+types, Those types have operations to them whether its add for numbers or the
+.upper() operation for strings
+
+Let us discuss a thought experiment.
+Lets say we want to model a bin. The Bin has a few features. It tells us how
+full it is. what it can store.
+
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+What do we need to model this bin?
+** Well we need to be able to create a bin.
+#+begin_notes
+make a bin
+add trash to the bin
+empty the bin
+#+end_notes
+so lets make a =make_bin= function!
+#+reveal: split
+#+begin_src python
+def make_bin(type_of_bin):
+    return [0, type_of_bin]
+#+end_src
+#+reveal: split
+#+begin_src python
+def add_rubbish(bin, rubish_type):
+    if bin[1] == rubish_type:
+        bin[0] += 1
+    else:
+        print("Use a different bin!")
+    return bin
+#+end_src
+
+#+reveal: split
+#+begin_src python
+def empty_bin(bin):
+    bin[0] = 0
+    return bin
+#+end_src
+
+#+reveal: split
+now lets use this!
+#+begin_src python
+bin = make_bin("glass")
+bin = add_rubbish(bin, "glass")
+bin = add_rubbish(bin, "plastic")
+bin = empty_bin(bin)
+#+end_src
+
+#+begin_notes
+Whats the problem with this?
+
+We have to manually pass in the bin and capture it again.
+None of these functions are connected.
+If we pass in a thing that looks like a bin it will still work which is a
+problem because it may break our system.
+
+What we want is a new /type/ that encapsulates this nice and cleanly
+- this may be a problem
+#+end_notes
+*** A class for our bin
+#+begin_notes
+to create a new type we need to use the class keyword.
+#+end_notes
+#+begin_src python
+class Name:
+    # ur stuff goes here...
+    pass
+#+end_src
+#+reveal: split
+#+begin_src python
+# this is similar to our make bin function
+class Bin:
+   def __init__(self, bin_type):
+       self.ammount = 0
+       self.bin_type = bin_type
+#+end_src
+
+#+begin_src python
+class Bin:
+   def __init__(self, bin_type):
+       self.ammount = 0
+       self.bin_type = bin_type
+
+   def add_rubbish(self, rubbish_type):
+       if self.bin_type == rubbish_type:
+          self.ammount += 1
+       else:
+          print("Use a different bin!")
+
+   def empty_bin(self):
+      self.ammount = 0
+
+#+end_src
+
+Using this now we can
+* Project!
+#+begin_notes
+We are going to do a story, The basic idea is that we will parse a file with the
+story lines, then ask the user yes and no questions, from these questions we may
+do something like pick out a new story line, do some work.
+we should end up covering these skills
+/switch to replit/
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+    - File handling
+    - Functions for abstraction
+    - taking input, printing output
+    - Classes for our own datatype
+    - String handling
+    - loops

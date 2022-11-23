@@ -165,7 +165,7 @@ a technical world. but its use makes us
 Or Jaegers as they are known. meaning Hunter in German they are less
 *** The Characters
 *** The Charm
-** Dr Strange: Movie of madness :movies:opinion:spoilers:
+** DONE Dr Strange: Movie of madness :movies:opinion:spoilers:
 :PROPERTIES:
 :EXPORT_FILE_NAME: dr-strange-critique
 :EXPORT_DATE: 2022-05-31
@@ -273,7 +273,7 @@ become required reading to understand in full.
 
 Endgame was the beginning of this. This movie is the beginning of the end.
 
-** Moving to Wayland! Login shell lambasting :gnome:wayland:fix:hack:
+** DONE Moving to Wayland! Login shell lambasting :gnome:wayland:fix:hack:
 :PROPERTIES:
 :EXPORT_FILE_NAME: moving-to-wayland1
 :EXPORT_DATE: 2022-06-16
@@ -354,7 +354,302 @@ the beginning of a set of posts about Wayland and my adaptations to it so stay t
 And if you did manage to actually get a GNOME Wayland session to start in a login
 shell though please do reach out!
 
+** TODO Ruby Scripting and making OOP fun :ruby:opinion:programming:
+** TODO Doom, Emacs and Communication
+:PROPERTIES:
+:EXPORT_FILE_NAME: doom-communication
+:EXPORT_DATE: 2022-08-20
+:END:
+Recently Protesilaos, also known as Prot, wrote a blog post detailing [[https://protesilaos.com/codelog/2022-08-04-doom-git-gutter-modus-themes/][how Dooms
+configuration of Git Gutter constituted a soft fork]] in so far it broke his modus
+themes. I will not detail what happened here as Prot does a fine job of that
+([[https://github.com/doomemacs/doomemacs/commit/cd9bc5a1fdaacc41b7e0f05012509ba2814cef89][and as it was addressed upstream]]).
+The problem with what happened here is that nowhere in this process the doom
+project was informed of this problem. In this case instead of notifying the doom
+project It was diagnosed and documented in the manual. The doom project finally
+came to know when said blog post was posted and steps were taken within a timely
+manner. With more steps being worked on to address the problems stated.
 
+This then happens again in the release of [[https://protesilaos.com/codelog/2022-08-19-modus-themes-2-6-0/][modus themes 2.6.0]] Where the theme
+drops support for [[https://github.com/hlissner/emacs-solaire-mode][solaire mode]] on the grounds that doom users opt into using the
+package without knowing, thus leading to the themes being sub par out of the box
+(again I recommend reading the release log linked above). This is not to suggest
+that themes need to support solaire mode ([[https://github.com/hlissner/emacs-solaire-mode/commit/56f6d9ea9cfa3f3fd5d64d995381fdb0da898b28][and solaire works in such a way to
+deactivate when a theme does not support it]]) but again neither the doom
+project or the maintainer of solaire (in this case the same person) got
+notified and again found out through this code log.
+
+In a word this is not a good way to act. The doom project cannot stay on top of
+how every package in the emacs ecosystem will interact with doom and to ask of
+that is silly.
+
+I can empathise with package maintainers, getting issues they
+can't diagnose because the problem is not with there package but with how that
+package interacts with doom. But the solution here is not to silently move on
+(only for it to resurface later on) but to talk to the project. If a problem is
+coming up then make an issue on the bug tracker, discourse or shoot a message to
+us in the discord . From there we can work to a solution that both parties
+can accept, In the former example it was a simple matter of gating the
+config. The latter could have either been solved on the solaire side or on the
+doom side (in this case its the same maintainer). The solutions are to be had
+if only the community talked with us about these issues.
+
+*** Dooms relationship to the wider community
+It makes sense to discuss how doom relates to the rest of the community as it's
+special in this regard.
+In a phrase doom is a middle man, taking packages and
+configuring them for end users. This means for us that we need to have
+relationships with both sides of this equation, and to some degree we do. We
+have package maintainers who discuss problems with us as we develop modules
+using there packages. We also have doom users who also maintain packages that
+then get put back into doom!.
+
+
+*** Who the forums are for
+In a word, Everyone. This is an area of active improvement for us as we
+introduce new constructs to make sure that maintainers can voice there /things/
+with us in a constructive manner. But this should not stop maintainers talking
+to us, if your package is interacting badly with doom, raise it on the discourse
+or github. If you want to discuss something indepth, join us on the discord
+(eventually there will also be a matrix room if thats more your style). The key
+here being the forums are for everyone and not just users.
+
+** DONE I finally understand monads and now I will write about it :haskell:programming:
+CLOSED: [2022-11-23 Wed 05:53]
+:PROPERTIES:
+:EXPORT_DATE: 2022-11-07
+:EXPORT_FILE_NAME: understanding-monads
+:END:
+After A lot of struggle I finally understand monads and why they are useful.
+This is less an explainer and more of a write up of my understanding. In any
+case Let us get started.
+
+*** So what is a monad?
+A monad is a datatype that can use =>>==, You can call it ~bind~ or ~then~ with
+the latter name leading into what it does.
+Here is its type.
+#+begin_src haskell
+(>>=) :: m a -> (a -> m b) -> m b
+#+end_src
+This function takes in a context of =m a=, then a function which transforms that
+inner value, returning that transformed value in the same context.
+#+begin_src haskell :results output
+print $ Just 1 >>= return . (+1)
+print $ Just 2 >>= return . (+1)
+#+end_src
+
+: Just 2
+: Just 3
+
+This allows for many operations to be chained together, as the return value of
+the first becomes the input of the next.
+
+#+begin_src haskell
+print $ Just 1 >>= return . (+1) >>= return . (+1)
+#+end_src
+
+: Just 3
+
+**** Do notation
+This chaining of operations looks a lot like imperative programming. This is in
+part why ~do~ notation exists. If we were to use IO (which is a value
+contained in the context that it came from an input output system.)
+This
+#+begin_src haskell
+print "Hello, what is your name?" >>= \_ -> getLine >>= \name -> print $ "Hello " ++ name
+#+end_src
+Turns into
+#+begin_src haskell :results output
+main = do
+  print "Hello, what is your name?"
+  name <- getLine
+  print ("Hello " ++ name)
+#+end_src
+Which should look pretty familiar to you.
+Here is what the python looks like
+#+begin_src python
+def main():
+    print("Hello, what is your name?")
+    name = input()
+    print("Hello " + name)
+#+end_src
+
+*** Okay this is cool and all, but why do we need to implement functor and applicative??
+Well when you look at what we are doing, =>>== hides a lot from us.
+When we have a look at what functor and applicative add to the
+equation we can hopefully see why we need them as well.
+
+*** Functors
+A functor is a datatype where we can (f)map the inner value without losing the
+outer context.
+It gives us the =<$>= operator, otherwise know as fmap.
+Its type is
+
+#+begin_src haskell
+(<$>) :: (a -> b) -> f a -> f b
+#+end_src
+
+This operation takes a function that transforms type a into type b, and then
+a functor of type a, it transforms it into a functor of type b.
+Simple enough.
+
+One little side note, /haskell is curried/ meaning that we can write
+something like this =(f <$>)= Which returns a function that takes a functor of
+type a.
+If we say for demonstration that =f= is a function that takes an =Int= and
+returns a =String=, our types would look like this.
+#+begin_src haskell
+f :: Int -> String
+(f <$>) :: f Int -> f String
+#+end_src
+Essentially we have transformed our lowly f that can only work on simple types
+into a function that works on functors. This is known as a /lift/ operation.
+This is important for later.
+
+*** Applicatives
+Applictives add a few more operations to the mix, notably =pure= and =<*>=
+Here are the types
+#+begin_src haskell
+pure :: a -> f a
+(<*>) :: f (a -> b) -> f a -> f b
+#+end_src
+Pure is simple enough. It takes a value and "wraps" it into an applicative. This
+raises a value and allows us to use it in the applicative space.
+=<*>= takes a function wrapped in an applicative and compose it with another
+applicative. If you compare its type to that of =<$>= we can see that they are
+similar but =<*>= allows us to use a function in a context! this makes it a more
+general version of functor.
+
+Also note that
+#+begin_src haskell
+(f <$>) ::  f Int -> f String
+(pure f <*>) :: f Int -> String
+#+end_src
+
+**** Why is this useful
+Well these operations allow us to compose contexts together, something that was
+not possible with just =<$>=
+For example lets take =(min <$>)= as an example
+#+begin_src haskell
+min :: a -> a -> a
+(min <$>) :: f a -> f (a -> a)
+#+end_src
+Here we are using a function that takes two arguments rather than one and here
+we can see our problem. We have a function wrapped in a context. /If only there/
+/was an operation that allowed us to compose contexts together/.
+As we can see the left hand side of this equation has the type of =f (a -> a)=,
+the right has the type of =f a= these, which then combine and come to the correct
+result.
+#+begin_src haskell
+min <$> Just 1 <*> Just 2
+#+end_src
+
+This scales. Here is a function which takes in three arguments and adds them.
+Here we lift f then apply one context. We get back a value which takes in
+another context and returns a function within that same context [fn:1] which we can continue to
+chain with other values using =<*>=
+#+begin_src haskell
+f :: a -> a -> a -> a
+f a b c = a + b + c
+
+(f <$>) :: f a -> f (a -> a -> a)
+(f <$> Just 1 <*>) :: f a -> f (a -> a)
+(f <$> Just 1 <*> Just 1 <*>) :: f a -> f a
+#+end_src
+
+*** Bringing this all together
+So we have the ability to transform the inner value of a context, we have the
+ability to compose two or more contexts together. The problem arises when we want to
+compute the next context based on the result of the previous. Look again at the
+type of =<*>=
+#+begin_src haskell
+(<*>) :: f (a -> b) -> f a -> f b
+#+end_src
+we know the end goal of this computation as all =<*>= is doing is satsfying the contexed
+function. This limits us to computations where we can reason about the end
+result. What about a computation where we can't, where we need to think about the
+last computation before we move on. This is a power monads have.
+
+Lets revist the type of =>>==
+#+begin_src haskell
+(>>=) :: m a -> (a -> m b) -> m b
+#+end_src
+The first argument is a contexted value, You can reason about it like its some
+kind of computation. This computation is then "unwrapped" and passed into a
+function which crucially /can decide what to do/. We do not need to think about
+whatever end goal we want right at the beginning, we can go as the wind tells us,
+so to speak. This is useful in places we need to parse some kind of context, for
+example a context filled language such as some markup languages, [[https://orgmode.org/][including the
+one I am currently writing this post in]].
+*** A monad in plain sight
+So we have discussed what all of these things are but lets discuss a real world
+monad, One that you probably have already used. The Async Monad!
+
+Yes if you have done Async programming then you have used a monad. Lets
+have a look at an example.
+#+begin_src js
+fetch(`http://localhost:8080/some-data`).then(response => {
+    if (response.ok) {
+        response.text().then(text => JSON.parse(text))
+    }
+})
+#+end_src
+Here we receive a promised response from fetch. We then unwrap its inner value and
+get our response object. After playing with it, we extract out the text (which
+is a Promised string) and parse it into a json object. This entire expression
+returns a Promised JSON object.
+
+In this case we take a context, unwrap it, then return back the same context
+with a transformed value.
+
+We decide as we go, Our next computation is dependent on the value of the last.
+
+Note how =async await= is basically do notation in this case
+#+begin_src js
+const getData = async (idx) => {
+    let response = await fetch('http://localhost:8080/some-data');
+    if (response.ok) {
+        let text = await response.text();
+        return JSON.parse(text);
+    } else {
+        throw new Error("An error has occured")
+    }
+};
+#+end_src
+
+=async= = =do=
+
+=await= = =<-=
+
+*** Why did I write this?
+This is an explainer I have done, less because I want to try and be the one to
+tackle the monad fallacy but because its fun and a good way to help me solidify
+what I know. Plus it may start to
+help build intuitions on these types. Though it must be said
+
+#+begin_quote
+There is no royal road to Haskell. —Euclid
+#+end_quote
+
+The best way to learn is to get your hands on them and play with them. No amount
+of theory will do you any good unless you put these ideas into practice. Once
+you do you start to see the patterns and then you can really get into the meat
+of them and become an epik haskeller.
+Some of the resources I really like include [[https://wiki.haskell.org/Typeclassopedia][The Typeclassopedia]], [[https://www.youtube.com/watch?v=fCoQb-zqYDI][This video on
+the IO monad,]] this [[https://www.youtube.com/watch?v=N9RUqGYuGfw][video implementing a json parser in haskell]] and [[https://www.cis.upenn.edu/~cis1940/spring13/lectures.html][this course
+from the University of Pennsylvania]].
+Though it did not really begin to click until I started playing with Async in
+Dart.
+
+Hopefully this is helpful and or interesting. If I have made a mistake or you
+want to discuss this [[mailto:jeetelongname@gmail.com][my email is here!]]
+*** Footnotes
+[fn:1] =g <$> Just 1= will return a function with the rest of the inputs wrapped
+in a context. We need to remember that haskell is curried by default.
+So if we have a type like this =g :: a -> a -> a -> a= we /really/ mean
+=g :: a -> (a -> (a -> a))=. So when we reflect on the type of =<$> :: (a -> b)
+-> f a -> f b= we can see that the rest of our function will be "swallowed"
+b thus we get the type =g <$> :: f a -> f (a -> a -> a)=
 * COMMENT Local Variables :ARCHIVE:
 # Local Variables:
 # org-export-with-author: nil

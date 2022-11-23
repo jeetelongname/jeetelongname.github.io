@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.105.0">
+		<title>I finally understand monads and now I will write about it - Jeet&#39;s Blog</title>
+
+		<meta name="description" content="After A lot of struggle I finally understand monads and why they are useful. This is less an explainer and more of a write up of my understanding. In any case Let us get started.
+So what is a monad? A monad is a datatype that can use &gt;&gt;=, You can call it bind or then with the latter name leading into what it does. Here is its type.
+(&gt;&gt;=) :: m a -&gt; (a -&gt; m b) -&gt; m b This function takes in a context of m a, then a function which transforms that inner value, returning that transformed value in the same context.">
+
+
+		
+	
+		
+
+
+
+
+<link rel="stylesheet" href="/blog/css/ui.css">
+
+	
+		
+
+		<script defer src="/blog/js/dark-mode.js"></script>
+		<link disabled id="dark-mode-theme" rel="stylesheet" href="/blog/css/dark.css">
+		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
+
+		
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/mono-blue.min.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/haskell.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/python.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/ruby.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/text.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/js.min.js"></script>
+		
+		
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="..">
+				<img class="icon-text" src="/blog/img/prev.svg"/>
+			</a>
+		</li><li><img class="icon-text" id="dark-mode-toggle" src="/blog/img/moon.svg" alt="Toggle Dark Mode"></a></li><li><a href="/blog/about">About</a></li><li><a href="/blog/posts">Archive</a></li><li><a href="..">Home</a></li><li><a href="/blog/tags">Tags</a></li></ul>
+</nav>
+
+	</div>
+</header>
+<main class="container">
+
+<article>
+	<header><hgroup id="brand">
+	<h1>I finally understand monads and now I will write about it</h1>
+	<h5>
+		
+		<time datetime="2022-11-23 05:53:00 &#43;0000 GMT">Nov 23, 2022</time>
+		<span class="no-print">
+			
+			-
+				
+				<a href="/blog/tags/haskell">haskell</a>
+				
+				<a href="/blog/tags/programming">programming</a>
+				<span>
+	</h5>
+	
+</hgroup>
+<hr class="sep" />
+</header>
+	<p>After A lot of struggle I finally understand monads and why they are useful.
+This is less an explainer and more of a write up of my understanding. In any
+case Let us get started.</p>
+<h2 id="so-what-is-a-monad">So what is a monad?</h2>
+<p>A monad is a datatype that can use <code>&gt;&gt;=</code>, You can call it <code>bind</code> or <code>then</code> with
+the latter name leading into what it does.
+Here is its type.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(&gt;&gt;=) <span style="color:#00f">::</span> m a <span style="color:#00f">-&gt;</span> (a <span style="color:#00f">-&gt;</span> m b) <span style="color:#00f">-&gt;</span> m b
+</span></span></code></pre></div><p>This function takes in a context of <code>m a</code>, then a function which transforms that
+inner value, returning that transformed value in the same context.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>print $ <span style="color:#2b91af">Just</span> 1 &gt;&gt;= return . (+1)
+</span></span><span style="display:flex;"><span>print $ <span style="color:#2b91af">Just</span> 2 &gt;&gt;= return . (+1)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Just 2
+</span></span><span style="display:flex;"><span>Just 3
+</span></span></code></pre></div><p>This allows for many operations to be chained together, as the return value of
+the first becomes the input of the next.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>print $ <span style="color:#2b91af">Just</span> 1 &gt;&gt;= return . (+1) &gt;&gt;= return . (+1)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Just 3
+</span></span></code></pre></div><h3 id="do-notation">Do notation</h3>
+<p>This chaining of operations looks a lot like imperative programming. This is in
+part why <code>do</code> notation exists. If we were to use IO (which is a value
+contained in the context that it came from an input output system.)
+This</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>print <span style="color:#a31515">&#34;Hello, what is your name?&#34;</span> &gt;&gt;= \<span style="color:#00f">_</span> <span style="color:#00f">-&gt;</span> getLine &gt;&gt;= \name <span style="color:#00f">-&gt;</span> print $ <span style="color:#a31515">&#34;Hello &#34;</span> ++ name
+</span></span></code></pre></div><p>Turns into</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>main <span style="color:#00f">=</span> <span style="color:#00f">do</span>
+</span></span><span style="display:flex;"><span>  print <span style="color:#a31515">&#34;Hello, what is your name?&#34;</span>
+</span></span><span style="display:flex;"><span>  name <span style="color:#00f">&lt;-</span> getLine
+</span></span><span style="display:flex;"><span>  print (<span style="color:#a31515">&#34;Hello &#34;</span> ++ name)
+</span></span></code></pre></div><p>Which should look pretty familiar to you.
+Here is what the python looks like</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00f">def</span> main():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#a31515">&#34;Hello, what is your name?&#34;</span>)
+</span></span><span style="display:flex;"><span>    name = input()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#a31515">&#34;Hello &#34;</span> + name)
+</span></span></code></pre></div><h2 id="okay-this-is-cool-and-all-but-why-do-we-need-to-implement-functor-and-applicative">Okay this is cool and all, but why do we need to implement functor and applicative??</h2>
+<p>Well when you look at what we are doing, <code>&gt;&gt;=</code> hides a lot from us.
+When we have a look at what functor and applicative add to the
+equation we can hopefully see why we need them as well.</p>
+<h2 id="functors">Functors</h2>
+<p>A functor is a datatype where we can (f)map the inner value without losing the
+outer context.
+It gives us the <code>&lt;$&gt;</code> operator, otherwise know as fmap.
+Its type is</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(&lt;$&gt;) <span style="color:#00f">::</span> (a <span style="color:#00f">-&gt;</span> b) <span style="color:#00f">-&gt;</span> f a <span style="color:#00f">-&gt;</span> f b
+</span></span></code></pre></div><p>This operation takes a function that transforms type a into type b, and then
+a functor of type a, it transforms it into a functor of type b.
+Simple enough.</p>
+<p>One little side note, <em>haskell is curried</em> meaning that we can write
+something like this <code>(f &lt;$&gt;)</code> Which returns a function that takes a functor of
+type a.
+If we say for demonstration that <code>f</code> is a function that takes an <code>Int</code> and
+returns a <code>String</code>, our types would look like this.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>f <span style="color:#00f">::</span> <span style="color:#2b91af">Int</span> <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">String</span>
+</span></span><span style="display:flex;"><span>(f &lt;$&gt;) <span style="color:#00f">::</span> f <span style="color:#2b91af">Int</span> <span style="color:#00f">-&gt;</span> f <span style="color:#2b91af">String</span>
+</span></span></code></pre></div><p>Essentially we have transformed our lowly f that can only work on simple types
+into a function that works on functors. This is known as a <em>lift</em> operation.
+This is important for later.</p>
+<h2 id="applicatives">Applicatives</h2>
+<p>Applictives add a few more operations to the mix, notably <code>pure</code> and <code>&lt;*&gt;</code>
+Here are the types</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>pure <span style="color:#00f">::</span> a <span style="color:#00f">-&gt;</span> f a
+</span></span><span style="display:flex;"><span>(&lt;*&gt;) <span style="color:#00f">::</span> f (a <span style="color:#00f">-&gt;</span> b) <span style="color:#00f">-&gt;</span> f a <span style="color:#00f">-&gt;</span> f b
+</span></span></code></pre></div><p>Pure is simple enough. It takes a value and &ldquo;wraps&rdquo; it into an applicative. This
+raises a value and allows us to use it in the applicative space.
+<code>&lt;*&gt;</code> takes a function wrapped in an applicative and compose it with another
+applicative. If you compare its type to that of <code>&lt;$&gt;</code> we can see that they are
+similar but <code>&lt;*&gt;</code> allows us to use a function in a context! this makes it a more
+general version of functor.</p>
+<p>Also note that</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(f &lt;$&gt;) <span style="color:#00f">::</span>  f <span style="color:#2b91af">Int</span> <span style="color:#00f">-&gt;</span> f <span style="color:#2b91af">String</span>
+</span></span><span style="display:flex;"><span>(pure f &lt;*&gt;) <span style="color:#00f">::</span> f <span style="color:#2b91af">Int</span> <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">String</span>
+</span></span></code></pre></div><h3 id="why-is-this-useful">Why is this useful</h3>
+<p>Well these operations allow us to compose contexts together, something that was
+not possible with just <code>&lt;$&gt;</code>
+For example lets take <code>(min &lt;$&gt;)</code> as an example</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>min <span style="color:#00f">::</span> a <span style="color:#00f">-&gt;</span> a <span style="color:#00f">-&gt;</span> a
+</span></span><span style="display:flex;"><span>(min &lt;$&gt;) <span style="color:#00f">::</span> f a <span style="color:#00f">-&gt;</span> f (a <span style="color:#00f">-&gt;</span> a)
+</span></span></code></pre></div><p>Here we are using a function that takes two arguments rather than one and here
+we can see our problem. We have a function wrapped in a context. <em>If only there</em>
+<em>was an operation that allowed us to compose contexts together</em>.
+As we can see the left hand side of this equation has the type of <code>f (a -&gt; a)</code>,
+the right has the type of <code>f a</code> these, which then combine and come to the correct
+result.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>min &lt;$&gt; <span style="color:#2b91af">Just</span> 1 &lt;*&gt; <span style="color:#2b91af">Just</span> 2
+</span></span></code></pre></div><p>This scales. Here is a function which takes in three arguments and adds them.
+Here we lift f then apply one context. We get back a value which takes in
+another context and returns a function within that same context <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> which we can continue to
+chain with other values using <code>&lt;*&gt;</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>f <span style="color:#00f">::</span> a <span style="color:#00f">-&gt;</span> a <span style="color:#00f">-&gt;</span> a <span style="color:#00f">-&gt;</span> a
+</span></span><span style="display:flex;"><span>f a b c <span style="color:#00f">=</span> a + b + c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(f &lt;$&gt;) <span style="color:#00f">::</span> f a <span style="color:#00f">-&gt;</span> f (a <span style="color:#00f">-&gt;</span> a <span style="color:#00f">-&gt;</span> a)
+</span></span><span style="display:flex;"><span>(f &lt;$&gt; <span style="color:#2b91af">Just</span> 1 &lt;*&gt;) <span style="color:#00f">::</span> f a <span style="color:#00f">-&gt;</span> f (a <span style="color:#00f">-&gt;</span> a)
+</span></span><span style="display:flex;"><span>(f &lt;$&gt; <span style="color:#2b91af">Just</span> 1 &lt;*&gt; <span style="color:#2b91af">Just</span> 1 &lt;*&gt;) <span style="color:#00f">::</span> f a <span style="color:#00f">-&gt;</span> f a
+</span></span></code></pre></div><h2 id="bringing-this-all-together">Bringing this all together</h2>
+<p>So we have the ability to transform the inner value of a context, we have the
+ability to compose two or more contexts together. The problem arises when we want to
+compute the next context based on the result of the previous. Look again at the
+type of <code>&lt;*&gt;</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(&lt;*&gt;) <span style="color:#00f">::</span> f (a <span style="color:#00f">-&gt;</span> b) <span style="color:#00f">-&gt;</span> f a <span style="color:#00f">-&gt;</span> f b
+</span></span></code></pre></div><p>we know the end goal of this computation as all <code>&lt;*&gt;</code> is doing is satsfying the contexed
+function. This limits us to computations where we can reason about the end
+result. What about a computation where we can&rsquo;t, where we need to think about the
+last computation before we move on. This is a power monads have.</p>
+<p>Lets revist the type of <code>&gt;&gt;=</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(&gt;&gt;=) <span style="color:#00f">::</span> m a <span style="color:#00f">-&gt;</span> (a <span style="color:#00f">-&gt;</span> m b) <span style="color:#00f">-&gt;</span> m b
+</span></span></code></pre></div><p>The first argument is a contexted value, You can reason about it like its some
+kind of computation. This computation is then &ldquo;unwrapped&rdquo; and passed into a
+function which crucially <em>can decide what to do</em>. We do not need to think about
+whatever end goal we want right at the beginning, we can go as the wind tells us,
+so to speak. This is useful in places we need to parse some kind of context, for
+example a context filled language such as some markup languages, <a href="https://orgmode.org/">including the
+one I am currently writing this post in</a>.</p>
+<h2 id="a-monad-in-plain-sight">A monad in plain sight</h2>
+<p>So we have discussed what all of these things are but lets discuss a real world
+monad, One that you probably have already used. The Async Monad!</p>
+<p>Yes if you have done Async programming then you have used a monad. Lets
+have a look at an example.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>fetch(<span style="color:#a31515">`http://localhost:8080/some-data`</span>).then(response =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">if</span> (response.ok) {
+</span></span><span style="display:flex;"><span>        response.text().then(text =&gt; JSON.parse(text))
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><p>Here we receive a promised response from fetch. We then unwrap its inner value and
+get our response object. After playing with it, we extract out the text (which
+is a Promised string) and parse it into a json object. This entire expression
+returns a Promised JSON object.</p>
+<p>In this case we take a context, unwrap it, then return back the same context
+with a transformed value.</p>
+<p>We decide as we go, Our next computation is dependent on the value of the last.</p>
+<p>Note how <code>async await</code> is basically do notation in this case</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#00f">const</span> getData = <span style="color:#00f">async</span> (idx) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">let</span> response = <span style="color:#00f">await</span> fetch(<span style="color:#a31515">&#39;http://localhost:8080/some-data&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">if</span> (response.ok) {
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">let</span> text = <span style="color:#00f">await</span> response.text();
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">return</span> JSON.parse(text);
+</span></span><span style="display:flex;"><span>    } <span style="color:#00f">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">throw</span> <span style="color:#00f">new</span> Error(<span style="color:#a31515">&#34;An error has occured&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p><code>async</code> = <code>do</code></p>
+<p><code>await</code> = <code>&lt;-</code></p>
+<h2 id="why-did-i-write-this">Why did I write this?</h2>
+<p>This is an explainer I have done, less because I want to try and be the one to
+tackle the monad fallacy but because its fun and a good way to help me solidify
+what I know. Plus it may start to
+help build intuitions on these types. Though it must be said</p>
+<blockquote>
+<p>There is no royal road to Haskell. —Euclid</p>
+</blockquote>
+<p>The best way to learn is to get your hands on them and play with them. No amount
+of theory will do you any good unless you put these ideas into practice. Once
+you do you start to see the patterns and then you can really get into the meat
+of them and become an epik haskeller.
+Some of the resources I really like include <a href="https://wiki.haskell.org/Typeclassopedia">The Typeclassopedia</a>, <a href="https://www.youtube.com/watch?v=fCoQb-zqYDI">This video on
+the IO monad,</a> this <a href="https://www.youtube.com/watch?v=N9RUqGYuGfw">video implementing a json parser in haskell</a> and <a href="https://www.cis.upenn.edu/~cis1940/spring13/lectures.html">this course
+from the University of Pennsylvania</a>.
+Though it did not really begin to click until I started playing with Async in
+Dart.</p>
+<p>Hopefully this is helpful and or interesting. If I have made a mistake or you
+want to discuss this <a href="mailto:jeetelongname@gmail.com">my email is here!</a></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><code>g &lt;$&gt; Just 1</code> will return a function with the rest of the inputs wrapped
+in a context. We need to remember that haskell is curried by default.
+So if we have a type like this <code>g :: a -&gt; a -&gt; a -&gt; a</code> we <em>really</em> mean
+<code>g :: a -&gt; (a -&gt; (a -&gt; a))</code>. So when we reflect on the type of <code>&lt;$&gt; :: (a -&gt; b) -&gt; f a -&gt; f b</code> we can see that the rest of our function will be &ldquo;swallowed&rdquo;
+b thus we get the type <code>g &lt;$&gt; :: f a -&gt; f (a -&gt; a -&gt; a)</code>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</article>
+<nav class="no-print post-nav">
+
+	<a class="prev-post" href="https://www.jeetelongname.net/blog/posts/moving-to-wayland1/">
+		<img class="icon-text" src="/blog/img/prev.svg"/>Moving to Wayland! Login shell lambasting</a>
+
+
+</nav>
+
+
+<section id="related">
+  <h4>See Also</h4>
+  <ul>
+    
+  	<li><a href="/blog/posts/post4/">List manipulation into madness</a></li>
+  	
+  </ul>
+</section>
+
+
+
+
+			<hr class="sep" />
+		</main>
+		<footer class="container no-print">
+			<div class="u-footer">
+				
+
+<a href="mailto:jeetelongname@gmail.com"><img class="icon-social" src="/blog/img/email.svg" alt="Email Me!"/></a>
+
+
+<a href="https://github.com/jeetelongname"><img class="icon-social" src="/blog/img/github.svg" alt="Github"/></a>
+
+
+<a href="https://www.jeetelongname.net/blog/index.xml" target="_blank"><img class="icon-social" src="/blog/img/feed.svg" alt="Feed"></a>
+
+
+				<p>
+					
+					Theme used: <a href="https://github.com/yursan9/manis-hugo-theme">Manis</a><br>
+					
+					
+					&copy 2022 Jeetaditya Chatterjee
+					
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/blog/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+	</body>
+</html>
+

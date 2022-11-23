@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="generator" content="Hugo 0.92.2" />
+		<meta name="generator" content="Hugo 0.105.0">
 		<title> - Jeet&#39;s Blog</title>
 
-		<meta name="description" content="Posts  2am paella&#xa0;&#xa0;&#xa0;cooking&#xa0;cheap&#xa0;easy  Introduction  Its 2am and your hungry, but you look in the noodle cupboard and you realise your out of instant ramen 😱.
+		<meta name="description" content="Posts 2am paella&#xa0;&#xa0;&#xa0;cooking&#xa0;cheap&#xa0;easy Introduction Its 2am and your hungry, but you look in the noodle cupboard and you realise your out of instant ramen 😱.
 Here is a quick way to eat some vegetables, prep some soul filling food and have nummies done in 20ish minutes (which is not bad for something from scratch). This is not a traditional recipe, It kinda is similar but its not authentic in any way, shape or form.">
 
 
@@ -27,8 +27,18 @@ Here is a quick way to eat some vegetables, prep some soul filling food and have
 		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
 
 		
-		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/mono-blue.min.css">
 		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/haskell.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/python.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/ruby.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/text.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/js.min.js"></script>
 		
 		
 	</head>
@@ -345,6 +355,7 @@ The Charm
 </div>
 <div id="outline-container-headline-22" class="outline-3">
 <h3 id="headline-22">
+<span class="todo">DONE</span>
 Dr Strange: Movie of madness&#xa0;&#xa0;&#xa0;<span class="tags"><span>movies</span>&#xa0;<span>opinion</span>&#xa0;<span>spoilers</span></span>
 </h3>
 <div id="outline-text-headline-22" class="outline-text-3">
@@ -478,6 +489,7 @@ Endgame was the beginning of this. This movie is the beginning of the end.</p>
 </div>
 <div id="outline-container-headline-28" class="outline-3">
 <h3 id="headline-28">
+<span class="todo">DONE</span>
 Moving to Wayland! Login shell lambasting&#xa0;&#xa0;&#xa0;<span class="tags"><span>gnome</span>&#xa0;<span>wayland</span>&#xa0;<span>fix</span>&#xa0;<span>hack</span></span>
 </h3>
 <div id="outline-text-headline-28" class="outline-text-3">
@@ -547,7 +559,7 @@ Turns out we can just call <code>sh</code> with the <code>-l</code> flag to star
 have been wanting to do with GNOME! This leads to this very nice one liner which
 I can then redirect into a <code>.conf</code> file like so.</p>
 <div class="src src-shell">
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">env -i HOME=/home/jeet sh -l -c env &gt; ~/.config/environment.d/profile.conf</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>env -i HOME=/home/jeet sh -l -c env &gt; ~/.config/environment.d/profile.conf</span></span></code></pre></div>
 </div>
 <p>
 I don&#39;t even have to do any parsing as it&#39;s already in the syntax the
@@ -579,12 +591,386 @@ shell though please do reach out!</p>
 </div>
 </div>
 </div>
+<div id="outline-container-headline-33" class="outline-3">
+<h3 id="headline-33">
+<span class="todo">TODO</span>
+Ruby Scripting and making OOP fun&#xa0;&#xa0;&#xa0;<span class="tags"><span>ruby</span>&#xa0;<span>opinion</span>&#xa0;<span>programming</span></span>
+</h3>
+</div>
+<div id="outline-container-headline-34" class="outline-3">
+<h3 id="headline-34">
+<span class="todo">TODO</span>
+Doom, Emacs and Communication
+</h3>
+<div id="outline-text-headline-34" class="outline-text-3">
+<p>Recently Protesilaos, also known as Prot, wrote a blog post detailing <a href="https://protesilaos.com/codelog/2022-08-04-doom-git-gutter-modus-themes/">how Dooms
+configuration of Git Gutter constituted a soft fork</a> in so far it broke his modus
+themes. I will not detail what happened here as Prot does a fine job of that
+(<a href="https://github.com/doomemacs/doomemacs/commit/cd9bc5a1fdaacc41b7e0f05012509ba2814cef89">and as it was addressed upstream</a>).
+The problem with what happened here is that nowhere in this process the doom
+project was informed of this problem. In this case instead of notifying the doom
+project It was diagnosed and documented in the manual. The doom project finally
+came to know when said blog post was posted and steps were taken within a timely
+manner. With more steps being worked on to address the problems stated.</p>
+<p>
+This then happens again in the release of <a href="https://protesilaos.com/codelog/2022-08-19-modus-themes-2-6-0/">modus themes 2.6.0</a> Where the theme
+drops support for <a href="https://github.com/hlissner/emacs-solaire-mode">solaire mode</a> on the grounds that doom users opt into using the
+package without knowing, thus leading to the themes being sub par out of the box
+(again I recommend reading the release log linked above). This is not to suggest
+that themes need to support solaire mode (<a href="https://github.com/hlissner/emacs-solaire-mode/commit/56f6d9ea9cfa3f3fd5d64d995381fdb0da898b28">and solaire works in such a way to
+deactivate when a theme does not support it</a>) but again neither the doom
+project or the maintainer of solaire (in this case the same person) got
+notified and again found out through this code log.</p>
+<p>
+In a word this is not a good way to act. The doom project cannot stay on top of
+how every package in the emacs ecosystem will interact with doom and to ask of
+that is silly.</p>
+<p>
+I can empathise with package maintainers, getting issues they
+can&#39;t diagnose because the problem is not with there package but with how that
+package interacts with doom. But the solution here is not to silently move on
+(only for it to resurface later on) but to talk to the project. If a problem is
+coming up then make an issue on the bug tracker, discourse or shoot a message to
+us in the discord . From there we can work to a solution that both parties
+can accept, In the former example it was a simple matter of gating the
+config. The latter could have either been solved on the solaire side or on the
+doom side (in this case its the same maintainer). The solutions are to be had
+if only the community talked with us about these issues.</p>
+<div id="outline-container-headline-35" class="outline-4">
+<h4 id="headline-35">
+Dooms relationship to the wider community
+</h4>
+<div id="outline-text-headline-35" class="outline-text-4">
+<p>It makes sense to discuss how doom relates to the rest of the community as it&#39;s
+special in this regard.
+In a phrase doom is a middle man, taking packages and
+configuring them for end users. This means for us that we need to have
+relationships with both sides of this equation, and to some degree we do. We
+have package maintainers who discuss problems with us as we develop modules
+using there packages. We also have doom users who also maintain packages that
+then get put back into doom!.</p>
 </div>
 </div>
-<div id="outline-container-headline-33" class="outline-2">
-<h2 id="headline-33">
+<div id="outline-container-headline-36" class="outline-4">
+<h4 id="headline-36">
+Who the forums are for
+</h4>
+<div id="outline-text-headline-36" class="outline-text-4">
+<p>In a word, Everyone. This is an area of active improvement for us as we
+introduce new constructs to make sure that maintainers can voice there <em>things</em>
+with us in a constructive manner. But this should not stop maintainers talking
+to us, if your package is interacting badly with doom, raise it on the discourse
+or github. If you want to discuss something indepth, join us on the discord
+(eventually there will also be a matrix room if thats more your style). The key
+here being the forums are for everyone and not just users.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-37" class="outline-3">
+<h3 id="headline-37">
+<span class="todo">DONE</span>
+I finally understand monads and now I will write about it&#xa0;&#xa0;&#xa0;<span class="tags"><span>haskell</span>&#xa0;<span>programming</span></span>
+</h3>
+<div id="outline-text-headline-37" class="outline-text-3">
+<p>CLOSED: [2022-11-23 Wed 05:53]</p>
+<p>After A lot of struggle I finally understand monads and why they are useful.
+This is less an explainer and more of a write up of my understanding. In any
+case Let us get started.</p>
+<div id="outline-container-headline-38" class="outline-4">
+<h4 id="headline-38">
+So what is a monad?
+</h4>
+<div id="outline-text-headline-38" class="outline-text-4">
+<p>A monad is a datatype that can use <code class="verbatim">&gt;&gt;=</code>, You can call it <code>bind</code> or <code>then</code> with
+the latter name leading into what it does.
+Here is its type.</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(&gt;&gt;=) <span style="color:#00f">::</span> m a <span style="color:#00f">-&gt;</span> (a <span style="color:#00f">-&gt;</span> m b) <span style="color:#00f">-&gt;</span> m b</span></span></code></pre></div>
+</div>
+<p>This function takes in a context of <code class="verbatim">m a</code>, then a function which transforms that
+inner value, returning that transformed value in the same context.</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>print $ <span style="color:#2b91af">Just</span> 1 &gt;&gt;= return . (+1)
+</span></span><span style="display:flex;"><span>print $ <span style="color:#2b91af">Just</span> 2 &gt;&gt;= return . (+1)</span></span></code></pre></div>
+</div>
+<pre class="example">
+Just 2
+Just 3
+</pre>
+<p>
+This allows for many operations to be chained together, as the return value of
+the first becomes the input of the next.</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>print $ <span style="color:#2b91af">Just</span> 1 &gt;&gt;= return . (+1) &gt;&gt;= return . (+1)</span></span></code></pre></div>
+</div>
+<pre class="example">
+Just 3
+</pre>
+<div id="outline-container-headline-39" class="outline-5">
+<h5 id="headline-39">
+Do notation
+</h5>
+<div id="outline-text-headline-39" class="outline-text-5">
+<p>This chaining of operations looks a lot like imperative programming. This is in
+part why <code>do</code> notation exists. If we were to use IO (which is a value
+contained in the context that it came from an input output system.)
+This</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>print <span style="color:#a31515">&#34;Hello, what is your name?&#34;</span> &gt;&gt;= \<span style="color:#00f">_</span> <span style="color:#00f">-&gt;</span> getLine &gt;&gt;= \name <span style="color:#00f">-&gt;</span> print $ <span style="color:#a31515">&#34;Hello &#34;</span> ++ name</span></span></code></pre></div>
+</div>
+<p>Turns into</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>main <span style="color:#00f">=</span> <span style="color:#00f">do</span>
+</span></span><span style="display:flex;"><span>  print <span style="color:#a31515">&#34;Hello, what is your name?&#34;</span>
+</span></span><span style="display:flex;"><span>  name <span style="color:#00f">&lt;-</span> getLine
+</span></span><span style="display:flex;"><span>  print (<span style="color:#a31515">&#34;Hello &#34;</span> ++ name)</span></span></code></pre></div>
+</div>
+<p>Which should look pretty familiar to you.
+Here is what the python looks like</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00f">def</span> main():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#a31515">&#34;Hello, what is your name?&#34;</span>)
+</span></span><span style="display:flex;"><span>    name = input()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#a31515">&#34;Hello &#34;</span> + name)</span></span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-40" class="outline-4">
+<h4 id="headline-40">
+Okay this is cool and all, but why do we need to implement functor and applicative??
+</h4>
+<div id="outline-text-headline-40" class="outline-text-4">
+<p>Well when you look at what we are doing, <code class="verbatim">&gt;&gt;=</code> hides a lot from us.
+When we have a look at what functor and applicative add to the
+equation we can hopefully see why we need them as well.</p>
+</div>
+</div>
+<div id="outline-container-headline-41" class="outline-4">
+<h4 id="headline-41">
+Functors
+</h4>
+<div id="outline-text-headline-41" class="outline-text-4">
+<p>A functor is a datatype where we can (f)map the inner value without losing the
+outer context.
+It gives us the <code class="verbatim">&lt;$&gt;</code> operator, otherwise know as fmap.
+Its type is</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(&lt;$&gt;) <span style="color:#00f">::</span> (a <span style="color:#00f">-&gt;</span> b) <span style="color:#00f">-&gt;</span> f a <span style="color:#00f">-&gt;</span> f b</span></span></code></pre></div>
+</div>
+<p>
+This operation takes a function that transforms type a into type b, and then
+a functor of type a, it transforms it into a functor of type b.
+Simple enough.</p>
+<p>
+One little side note, <em>haskell is curried</em> meaning that we can write
+something like this <code class="verbatim">(f &lt;$&gt;)</code> Which returns a function that takes a functor of
+type a.
+If we say for demonstration that <code class="verbatim">f</code> is a function that takes an <code class="verbatim">Int</code> and
+returns a <code class="verbatim">String</code>, our types would look like this.</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>f <span style="color:#00f">::</span> <span style="color:#2b91af">Int</span> <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">String</span>
+</span></span><span style="display:flex;"><span>(f &lt;$&gt;) <span style="color:#00f">::</span> f <span style="color:#2b91af">Int</span> <span style="color:#00f">-&gt;</span> f <span style="color:#2b91af">String</span></span></span></code></pre></div>
+</div>
+<p>Essentially we have transformed our lowly f that can only work on simple types
+into a function that works on functors. This is known as a <em>lift</em> operation.
+This is important for later.</p>
+</div>
+</div>
+<div id="outline-container-headline-42" class="outline-4">
+<h4 id="headline-42">
+Applicatives
+</h4>
+<div id="outline-text-headline-42" class="outline-text-4">
+<p>Applictives add a few more operations to the mix, notably <code class="verbatim">pure</code> and <code class="verbatim">&lt;*&gt;</code>
+Here are the types</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>pure <span style="color:#00f">::</span> a <span style="color:#00f">-&gt;</span> f a
+</span></span><span style="display:flex;"><span>(&lt;*&gt;) <span style="color:#00f">::</span> f (a <span style="color:#00f">-&gt;</span> b) <span style="color:#00f">-&gt;</span> f a <span style="color:#00f">-&gt;</span> f b</span></span></code></pre></div>
+</div>
+<p>Pure is simple enough. It takes a value and &#34;wraps&#34; it into an applicative. This
+raises a value and allows us to use it in the applicative space.
+<code class="verbatim">&lt;*&gt;</code> takes a function wrapped in an applicative and compose it with another
+applicative. If you compare its type to that of <code class="verbatim">&lt;$&gt;</code> we can see that they are
+similar but <code class="verbatim">&lt;*&gt;</code> allows us to use a function in a context! this makes it a more
+general version of functor.</p>
+<p>
+Also note that</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(f &lt;$&gt;) <span style="color:#00f">::</span>  f <span style="color:#2b91af">Int</span> <span style="color:#00f">-&gt;</span> f <span style="color:#2b91af">String</span>
+</span></span><span style="display:flex;"><span>(pure f &lt;*&gt;) <span style="color:#00f">::</span> f <span style="color:#2b91af">Int</span> <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">String</span></span></span></code></pre></div>
+</div>
+<div id="outline-container-headline-43" class="outline-5">
+<h5 id="headline-43">
+Why is this useful
+</h5>
+<div id="outline-text-headline-43" class="outline-text-5">
+<p>Well these operations allow us to compose contexts together, something that was
+not possible with just <code class="verbatim">&lt;$&gt;</code>
+For example lets take <code class="verbatim">(min &lt;$&gt;)</code> as an example</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>min <span style="color:#00f">::</span> a <span style="color:#00f">-&gt;</span> a <span style="color:#00f">-&gt;</span> a
+</span></span><span style="display:flex;"><span>(min &lt;$&gt;) <span style="color:#00f">::</span> f a <span style="color:#00f">-&gt;</span> f (a <span style="color:#00f">-&gt;</span> a)</span></span></code></pre></div>
+</div>
+<p>Here we are using a function that takes two arguments rather than one and here
+we can see our problem. We have a function wrapped in a context. <em>If only there</em>
+<em>was an operation that allowed us to compose contexts together</em>.
+As we can see the left hand side of this equation has the type of <code class="verbatim">f (a -&gt; a)</code>,
+the right has the type of <code class="verbatim">f a</code> these, which then combine and come to the correct
+result.</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>min &lt;$&gt; <span style="color:#2b91af">Just</span> 1 &lt;*&gt; <span style="color:#2b91af">Just</span> 2</span></span></code></pre></div>
+</div>
+<p>
+This scales. Here is a function which takes in three arguments and adds them.
+Here we lift f then apply one context. We get back a value which takes in
+another context and returns a function within that same context <sup class="footnote-reference"><a id="footnote-reference-1" href="#footnote-1">1</a></sup> which we can continue to
+chain with other values using <code class="verbatim">&lt;*&gt;</code></p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>f <span style="color:#00f">::</span> a <span style="color:#00f">-&gt;</span> a <span style="color:#00f">-&gt;</span> a <span style="color:#00f">-&gt;</span> a
+</span></span><span style="display:flex;"><span>f a b c <span style="color:#00f">=</span> a + b + c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(f &lt;$&gt;) <span style="color:#00f">::</span> f a <span style="color:#00f">-&gt;</span> f (a <span style="color:#00f">-&gt;</span> a <span style="color:#00f">-&gt;</span> a)
+</span></span><span style="display:flex;"><span>(f &lt;$&gt; <span style="color:#2b91af">Just</span> 1 &lt;*&gt;) <span style="color:#00f">::</span> f a <span style="color:#00f">-&gt;</span> f (a <span style="color:#00f">-&gt;</span> a)
+</span></span><span style="display:flex;"><span>(f &lt;$&gt; <span style="color:#2b91af">Just</span> 1 &lt;*&gt; <span style="color:#2b91af">Just</span> 1 &lt;*&gt;) <span style="color:#00f">::</span> f a <span style="color:#00f">-&gt;</span> f a</span></span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-44" class="outline-4">
+<h4 id="headline-44">
+Bringing this all together
+</h4>
+<div id="outline-text-headline-44" class="outline-text-4">
+<p>So we have the ability to transform the inner value of a context, we have the
+ability to compose two or more contexts together. The problem arises when we want to
+compute the next context based on the result of the previous. Look again at the
+type of <code class="verbatim">&lt;*&gt;</code></p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(&lt;*&gt;) <span style="color:#00f">::</span> f (a <span style="color:#00f">-&gt;</span> b) <span style="color:#00f">-&gt;</span> f a <span style="color:#00f">-&gt;</span> f b</span></span></code></pre></div>
+</div>
+<p>we know the end goal of this computation as all <code class="verbatim">&lt;*&gt;</code> is doing is satsfying the contexed
+function. This limits us to computations where we can reason about the end
+result. What about a computation where we can&#39;t, where we need to think about the
+last computation before we move on. This is a power monads have.</p>
+<p>
+Lets revist the type of <code class="verbatim">&gt;&gt;=</code></p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(&gt;&gt;=) <span style="color:#00f">::</span> m a <span style="color:#00f">-&gt;</span> (a <span style="color:#00f">-&gt;</span> m b) <span style="color:#00f">-&gt;</span> m b</span></span></code></pre></div>
+</div>
+<p>The first argument is a contexted value, You can reason about it like its some
+kind of computation. This computation is then &#34;unwrapped&#34; and passed into a
+function which crucially <em>can decide what to do</em>. We do not need to think about
+whatever end goal we want right at the beginning, we can go as the wind tells us,
+so to speak. This is useful in places we need to parse some kind of context, for
+example a context filled language such as some markup languages, <a href="https://orgmode.org/">including the
+one I am currently writing this post in</a>.</p>
+</div>
+</div>
+<div id="outline-container-headline-45" class="outline-4">
+<h4 id="headline-45">
+A monad in plain sight
+</h4>
+<div id="outline-text-headline-45" class="outline-text-4">
+<p>So we have discussed what all of these things are but lets discuss a real world
+monad, One that you probably have already used. The Async Monad!</p>
+<p>
+Yes if you have done Async programming then you have used a monad. Lets
+have a look at an example.</p>
+<div class="src src-js">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>fetch(<span style="color:#a31515">`http://localhost:8080/some-data`</span>).then(response =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">if</span> (response.ok) {
+</span></span><span style="display:flex;"><span>        response.text().then(text =&gt; JSON.parse(text))
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>})</span></span></code></pre></div>
+</div>
+<p>Here we receive a promised response from fetch. We then unwrap its inner value and
+get our response object. After playing with it, we extract out the text (which
+is a Promised string) and parse it into a json object. This entire expression
+returns a Promised JSON object.</p>
+<p>
+In this case we take a context, unwrap it, then return back the same context
+with a transformed value.</p>
+<p>
+We decide as we go, Our next computation is dependent on the value of the last.</p>
+<p>
+Note how <code class="verbatim">async await</code> is basically do notation in this case</p>
+<div class="src src-js">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#00f">const</span> getData = <span style="color:#00f">async</span> (idx) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">let</span> response = <span style="color:#00f">await</span> fetch(<span style="color:#a31515">&#39;http://localhost:8080/some-data&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">if</span> (response.ok) {
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">let</span> text = <span style="color:#00f">await</span> response.text();
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">return</span> JSON.parse(text);
+</span></span><span style="display:flex;"><span>    } <span style="color:#00f">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">throw</span> <span style="color:#00f">new</span> Error(<span style="color:#a31515">&#34;An error has occured&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};</span></span></code></pre></div>
+</div>
+<p>
+<code class="verbatim">async</code> = <code class="verbatim">do</code></p>
+<p>
+<code class="verbatim">await</code> = <code class="verbatim">&lt;-</code></p>
+</div>
+</div>
+<div id="outline-container-headline-46" class="outline-4">
+<h4 id="headline-46">
+Why did I write this?
+</h4>
+<div id="outline-text-headline-46" class="outline-text-4">
+<p>This is an explainer I have done, less because I want to try and be the one to
+tackle the monad fallacy but because its fun and a good way to help me solidify
+what I know. Plus it may start to
+help build intuitions on these types. Though it must be said</p>
+<blockquote>
+<p>There is no royal road to Haskell. —Euclid</p>
+</blockquote>
+<p>
+The best way to learn is to get your hands on them and play with them. No amount
+of theory will do you any good unless you put these ideas into practice. Once
+you do you start to see the patterns and then you can really get into the meat
+of them and become an epik haskeller.
+Some of the resources I really like include <a href="https://wiki.haskell.org/Typeclassopedia">The Typeclassopedia</a>, <a href="https://www.youtube.com/watch?v=fCoQb-zqYDI">This video on
+the IO monad,</a> this <a href="https://www.youtube.com/watch?v=N9RUqGYuGfw">video implementing a json parser in haskell</a> and <a href="https://www.cis.upenn.edu/~cis1940/spring13/lectures.html">this course
+from the University of Pennsylvania</a>.
+Though it did not really begin to click until I started playing with Async in
+Dart.</p>
+<p>
+Hopefully this is helpful and or interesting. If I have made a mistake or you
+want to discuss this <a href="mailto:jeetelongname@gmail.com">my email is here!</a></p>
+</div>
+</div>
+<div id="outline-container-headline-47" class="outline-4">
+<h4 id="headline-47">
+Footnotes
+</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-48" class="outline-2">
+<h2 id="headline-48">
 COMMENT Local Variables&#xa0;&#xa0;&#xa0;<span class="tags"><span>ARCHIVE</span></span>
 </h2>
+</div>
+<div class="footnotes">
+<hr class="footnotes-separatator">
+<div class="footnote-definitions">
+<div class="footnote-definition">
+<sup id="footnote-1"><a href="#footnote-reference-1">1</a></sup>
+<div class="footnote-body">
+<p><code class="verbatim">g &lt;$&gt; Just 1</code> will return a function with the rest of the inputs wrapped
+in a context. We need to remember that haskell is curried by default.
+So if we have a type like this <code class="verbatim">g :: a -&gt; a -&gt; a -&gt; a</code> we <em>really</em> mean
+<code class="verbatim">g :: a -&gt; (a -&gt; (a -&gt; a))</code>. So when we reflect on the type of <code class="verbatim">&lt;$&gt; :: (a -&gt; b)
+-&gt; f a -&gt; f b</code> we can see that the rest of our function will be &#34;swallowed&#34;
+b thus we get the type <code class="verbatim">g &lt;$&gt; :: f a -&gt; f (a -&gt; a -&gt; a)</code></p>
+</div>
+</div>
+</div>
 </div>
 
 </article>

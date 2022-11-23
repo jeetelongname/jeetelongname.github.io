@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="generator" content="Hugo 0.92.2" />
+		<meta name="generator" content="Hugo 0.105.0">
 		<title>List manipulation into madness - Jeet&#39;s Blog</title>
 
 		<meta name="description" content="mind.map { |n| n.append &#39;Ruby this Ruby that&#39; }">
@@ -26,8 +26,18 @@
 		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
 
 		
-		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/mono-blue.min.css">
 		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/haskell.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/python.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/ruby.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/text.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/js.min.js"></script>
 		
 		
 	</head>
@@ -78,44 +88,44 @@ different ways to manipulate the same list into doing the same thing.
 I hope you find this journey as interesting as I did!</p>
 <p>This is the data set I used and will be compatible with all of these examples
 (including the ruby ones (or python ones depending on where you came from))</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    print(a([47961, 58081, 58081, 54756, 57121, 18496, 13689, 13689, 60516, 60516, 60516, 13225, 62500, 53824, 59049, 58081, 59049, 43264, 45796, 13225, 44100, 53824, 51984, 13689, 60516, 42849, 58081, 44100, 47961, 21025, 59536, 20164, 44944, 31684, 60516, 15876, 60516, 18225, 35721, 47089, 36100, 44100, 31684,])
-</code></pre></div><h2 id="python">Python</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    print(a([47961, 58081, 58081, 54756, 57121, 18496, 13689, 13689, 60516, 60516, 60516, 13225, 62500, 53824, 59049, 58081, 59049, 43264, 45796, 13225, 44100, 53824, 51984, 13689, 60516, 42849, 58081, 44100, 47961, 21025, 59536, 20164, 44944, 31684, 60516, 15876, 60516, 18225, 35721, 47089, 36100, 44100, 31684,])
+</span></span></code></pre></div><h2 id="python">Python</h2>
 <p>All this snippet is doing is decoding all the numbers in a list according to how my friend
 encoded them and concatenating the decoded value to the variable <code>c</code> then
 returning said value <code>c</code></p>
 <p>Its a fine solution but lacks panache and it uses 3 lines which is not the most terse way
 too put it</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#00f">def</span> a(b, c=<span style="color:#a31515">&#34;&#34;</span>):
-        <span style="color:#00f">for</span> d <span style="color:#00f">in</span> b:
-            c += chr(round(((d ** (1 / 2)) * (5 / 9)) - 18))
-        <span style="color:#00f">return</span> c
-</code></pre></div><p>We can of course move the body onto the same line but its not really that inventive
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#00f">def</span> a(b, c=<span style="color:#a31515">&#34;&#34;</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">for</span> d <span style="color:#00f">in</span> b:
+</span></span><span style="display:flex;"><span>            c += chr(round(((d ** (1 / 2)) * (5 / 9)) - 18))
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">return</span> c
+</span></span></code></pre></div><p>We can of course move the body onto the same line but its not really that inventive
 (Its also the form my friend sent too me for maximum illegibility) but it is
 starting to look a lot like list comprehension&hellip;</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#00f">def</span> a(b, c=<span style="color:#a31515">&#34;&#34;</span>):
-        <span style="color:#00f">for</span> d <span style="color:#00f">in</span> b: c += chr(round(((d ** (1 / 2)) * (5 / 9)) - 18))
-        <span style="color:#00f">return</span> c
-</code></pre></div><p>This is where I come to my first new example in which I do everything in one line.
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#00f">def</span> a(b, c=<span style="color:#a31515">&#34;&#34;</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">for</span> d <span style="color:#00f">in</span> b: c += chr(round(((d ** (1 / 2)) * (5 / 9)) - 18))
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">return</span> c
+</span></span></code></pre></div><p>This is where I come to my first new example in which I do everything in one line.
 All I am doing here is using <a href="https://www.w3schools.com/python/python_lists_comprehension.asp">list
 comprehension</a>
 to manipulate the entire array. I then join the entire array to an empty string
 using the <code>join</code> method.
 I was pretty happy with this. but this started feeling a lot like a map function
 (I guess it is) and I thought why not use the one in python?</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#00f">def</span> a(b):
-        <span style="color:#00f">return</span> <span style="color:#a31515">&#34;&#34;</span>.join([chr(round(((d ** (1 / 2)) * (5 / 9)) - 18)) <span style="color:#00f">for</span> d <span style="color:#00f">in</span> b])
-</code></pre></div><p>With the map function all we need too do is provide it with a <em>reference</em> to a function (which
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#00f">def</span> a(b):
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">return</span> <span style="color:#a31515">&#34;&#34;</span>.join([chr(round(((d ** (1 / 2)) * (5 / 9)) - 18)) <span style="color:#00f">for</span> d <span style="color:#00f">in</span> b])
+</span></span></code></pre></div><p>With the map function all we need too do is provide it with a <em>reference</em> to a function (which
 will perform our transformation) and an iterable (in this case a list). I then
 <code>join</code> the list like I did last time</p>
 <p>This was my first use of the map function in python. Now <em>its readable</em> and its
 <em>useful</em> but its not cool, fun or small which are the more important tenants when
 programming. So to ruby we go!</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#00f">def</span> decrypt(d):
-        <span style="color:#00f">return</span> chr(round(((d ** (1 / 2)) * (5 / 9)) - 18))
-
-    <span style="color:#00f">def</span> a(b):
-        <span style="color:#00f">return</span> <span style="color:#a31515">&#34;&#34;</span>.join(map(decrypt, b))
-</code></pre></div><h2 id="ruby">Ruby</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#00f">def</span> decrypt(d):
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">return</span> chr(round(((d ** (1 / 2)) * (5 / 9)) - 18))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">def</span> a(b):
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">return</span> <span style="color:#a31515">&#34;&#34;</span>.join(map(decrypt, b))
+</span></span></code></pre></div><h2 id="ruby">Ruby</h2>
 <p>In ruby the map method takes a function inline using a <code>block</code>. A block is just
 an anonymous function that a method can take as an argument. You see them all
 over the place in ruby code.
@@ -126,20 +136,20 @@ turn our array into a string which we then return (in ruby the return is implied
 regard (and another reason I love ruby!))</p>
 <p>Not only is this smaller its a lot nicer too look at then the <em>python map
 function</em></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    <span style="color:#00f">def</span> a(b)
-      b.map { |i| (i ** 0.5 * 5 / 9 - 18).round.chr }.join
-    <span style="color:#00f">end</span>
-</code></pre></div><p>Now that we have come this far I thought it would be fun too go back the other
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#00f">def</span> a(b)
+</span></span><span style="display:flex;"><span>      b.map { |i| (i ** 0.5 * 5 / 9 - 18).round.chr }.join
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">end</span>
+</span></span></code></pre></div><p>Now that we have come this far I thought it would be fun too go back the other
 way and see what the ruby versions of the other methods we discussed look like</p>
 <p>Ruby does not have formal list comprehension as we can use the <code>select</code> and
 <code>collect</code> methods to &ldquo;emulate it&rdquo;. Select in this case would not help us as it
 is more similar to the <a href="https://en.wikipedia.org/wiki/Filter_%28higher-order_function%29">filter higher order
 function</a> but
 we can try and rewrite it using collect</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    <span style="color:#00f">def</span> a(b)
-        b.collect { |x| (x ** 0.5 * 5 / 9 - 18).round.chr }.join
-    <span style="color:#00f">end</span>
-</code></pre></div><p>as we can see that we can just substitute in <code>map</code> and have the exact same
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#00f">def</span> a(b)
+</span></span><span style="display:flex;"><span>        b.collect { |x| (x ** 0.5 * 5 / 9 - 18).round.chr }.join
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">end</span>
+</span></span></code></pre></div><p>as we can see that we can just substitute in <code>map</code> and have the exact same
 solution. So why use it over map? Well you don&rsquo;t need to at all, turns out there
 the same function but since ruby wants its small talk users to feel at home they
 added in this <code>collect</code> alias.</p>
@@ -148,34 +158,32 @@ move over to using an iterator to solve this problem. as we can see the iterator
 is so much more clunky than the other solutions. We are having to instantiate c,
 then manipulate it <em>linearly</em> and then return it explicitly. This is not only
 more lines of code but lines of <em>boring code</em></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#00f">def</span> a(b)
-    c = <span style="color:#a31515">&#34;&#34;</span>
-    b.each <span style="color:#00f">do</span> |x|
-        c +=  (x ** 0.5 * 5 / 9 - 18).round.chr
-    <span style="color:#00f">end</span>
-    c
-<span style="color:#00f">end</span>
-
-</code></pre></div><p>We can of course move it onto one line</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#00f">def</span> a(b)
-    c = <span style="color:#a31515">&#34;&#34;</span>; b.each { |x| c +=  (x ** 0.5 * 5 / 9 - 18).round.chr };c
-<span style="color:#00f">end</span>
-
-</code></pre></div><p>but it does not have the same charm as using one of the previous higher order
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#00f">def</span> a(b)
+</span></span><span style="display:flex;"><span>    c = <span style="color:#a31515">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    b.each <span style="color:#00f">do</span> |x|
+</span></span><span style="display:flex;"><span>        c +=  (x ** 0.5 * 5 / 9 - 18).round.chr
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">end</span>
+</span></span><span style="display:flex;"><span>    c
+</span></span><span style="display:flex;"><span><span style="color:#00f">end</span>
+</span></span></code></pre></div><p>We can of course move it onto one line</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#00f">def</span> a(b)
+</span></span><span style="display:flex;"><span>    c = <span style="color:#a31515">&#34;&#34;</span>; b.each { |x| c +=  (x ** 0.5 * 5 / 9 - 18).round.chr };c
+</span></span><span style="display:flex;"><span><span style="color:#00f">end</span>
+</span></span></code></pre></div><p>but it does not have the same charm as using one of the previous higher order
 functions
 (on a side note this example also uses a higher order function called <code>each</code> its
 actually the main iterator of the language which is pretty cool (but its still
 clunky!))</p>
 <p>If you are more of a <code>for</code> fanatic then we can also use that but it loses a lot
 of the charm that any of the other solutions gave us</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#00f">def</span> a(b)
-    c = <span style="color:#a31515">&#34;&#34;</span>
-    <span style="color:#00f">for</span> x <span style="color:#00f">in</span> b
-        c +=  (x ** 0.5 * 5 / 9 - 18).round.chr
-    <span style="color:#00f">end</span>
-    c
-<span style="color:#00f">end</span>
-</code></pre></div><h1 id="takeways-from-this-article">Takeways from this article</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#00f">def</span> a(b)
+</span></span><span style="display:flex;"><span>    c = <span style="color:#a31515">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">for</span> x <span style="color:#00f">in</span> b
+</span></span><span style="display:flex;"><span>        c +=  (x ** 0.5 * 5 / 9 - 18).round.chr
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">end</span>
+</span></span><span style="display:flex;"><span>    c
+</span></span><span style="display:flex;"><span><span style="color:#00f">end</span>
+</span></span></code></pre></div><h1 id="takeways-from-this-article">Takeways from this article</h1>
 <ol>
 <li>Higher order functions can make your code much more elegant</li>
 <li>List Comprehension is pretty cool and combines the <code>map</code> and <code>filter</code> Higher
@@ -196,12 +204,12 @@ touch!</a></p>
 <p>Going back to the python map solution one way we could shrink it is by using
 <code>lambda</code> to bring the function inline (Thanks Dan for coming up with what is in
 hind sight a super simple way too shrink this down)</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00f">def</span> a(b):
-    <span style="color:#00f">return</span> <span style="color:#a31515">&#34;&#34;</span>.join(map(<span style="color:#00f">lambda</span> d: chr(round(((d ** (1 / 2)) * (5 / 9)) - 18)), b))
-</code></pre></div><p>Dan then goes the extra step of removing the function definition all together by
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00f">def</span> a(b):
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">return</span> <span style="color:#a31515">&#34;&#34;</span>.join(map(<span style="color:#00f">lambda</span> d: chr(round(((d ** (1 / 2)) * (5 / 9)) - 18)), b))
+</span></span></code></pre></div><p>Dan then goes the extra step of removing the function definition all together by
 using another lambda.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a = <span style="color:#00f">lambda</span> b: <span style="color:#a31515">&#34;&#34;</span>.join(map(<span style="color:#00f">lambda</span> d: chr(round(((d ** (1 / 2)) * (5 / 9)) - 18)), b))
-</code></pre></div><p>This is probably the most unreadable solution but Dan loves it so I love it too</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a = <span style="color:#00f">lambda</span> b: <span style="color:#a31515">&#34;&#34;</span>.join(map(<span style="color:#00f">lambda</span> d: chr(round(((d ** (1 / 2)) * (5 / 9)) - 18)), b))
+</span></span></code></pre></div><p>This is probably the most unreadable solution but Dan loves it so I love it too</p>
 
 </article>
 <nav class="no-print post-nav">
