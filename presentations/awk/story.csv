@@ -1,0 +1,42 @@
+are you new to programming?,41,1,yes I am a noob,no I am old
+Do you know functional programming?,3,2,yes I am a nerd,yes I am normal
+Do you know what a type is?,4,5,what type of qusestion is that? (yes),no
+Do you know what a monad is?,4,5,yes,no
+do you want a separation of code and data?,20,9,yes,not fussed
+Do you know what a class is?,4,6,yes,no
+Are you sure your not a noob?,7,41,yes,no
+Answer this question to prove it: a for loop in python; loops over a collection,8,41,True,False
+Ok maybe I am wrong; sorry,9,9,-,-
+What do you usually develop?,11,10,Some kind of web development,something else
+What kind of application,11,32,a programming language,some kind of user software
+backend or frontend?,22,21,backend,frontend
+Why are you making this programming language?,34,13,to solve a problem,to be a general purpose tool
+does the programming language need to be fast,14,18,yes,no
+do you know how to write a fast programming language?,15,18,yes,no
+do you like functional programming?,17,16,yes,no
+do you like purely functional programming,39,19,yes,no
+do you want high level abstractions,36,38,yes,no
+do you like a lot of parens in your language,34,41,yes,no
+do you need fancy monadic tooling?,39,35,heck yeah!,heck no!
+Do you like your types explicity declared or more fast and loose?,31,40,explicit,fast and loose
+your doing backend now,22,22,-,-
+what kind of website?,23,25,single page,multipage
+is it a static site?,24,30,yes,no
+Why are you taking this quiz? go use java because your a pain,37,37,-,-
+How many batteries do you need included?,26,27,as few as possible,ALL the batteries
+is this for enterprise?,28,30,yes,no
+out of all the batteries; do you need to go overboard with things like an intergrated admin panel?,29,30,heck yeah!,heck no!
+Use the spring framework,37,37,-,-
+Use the django framework,41,41,-,-
+Use the Phoenix framework,40,40,-,-
+Imperative or purely functional programming,38,39,imperative,functional
+I am gunna be honest cheif I forgot about this so just go use racket,33,33,-,-
+its great; its got like a gui library and theorem provers and graphic librarys built in,34,34,-,-
+racket is the language you should use,-8,-8,empty,empty
+rust is the language you should use,-7,-7,empty,empty
+c++ is the language you should use,-6,-6,empty,empty
+Java is the language you should use (not really),-5,-5,empty,empty
+C is the language you should use,-4,-4,empty,empty
+Haskell is the language you should use,-3,-3,empty,empty
+Elixir is the language you should use,-2,-2,empty,empty
+Python is the language you should use,-1,-1,empty,empty

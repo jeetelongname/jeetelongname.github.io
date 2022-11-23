@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Awk: a shell tool for manipulating Text</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Awk: a shell tool for manipulating Text</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i></i></h3><p>Press s for speaker notes</p> <p><a href="https://jeetelongname.net/presentations/awk/awk.html">https://jeetelongname.net/presentations/awk/awk.html</a></p>
+</section>
+
+<section>
+<section id="slide-org9fed02f">
+<h2 id="org9fed02f"><code>echo "Awk: a shell tool for manipulating columns of data" | awk '{print $2 " t" $1}'</code></h2>
+</section>
+</section>
+<section>
+<section id="slide-org4cbc964">
+<h2 id="org4cbc964">a tAwk:</h2>
+</section>
+</section>
+<section>
+<section id="slide-orgabe44b6">
+<h2 id="orgabe44b6">HaHa so what is awk</h2>
+<aside class="notes">
+<p>
+Awk is a shell tool and programming language, its been named the swiss army
+knife of text processing because for that tool its awesome.
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org56272ce">
+<h2 id="org56272ce">A small example</h2>
+<aside class="notes">
+<p>
+Here is an example of how you would probably have used awk (and how you will use
+awk most of the time)
+</p>
+
+<p>
+For those who are not sure what we are doing here.
+</p>
+
+<p>
+Lets disect whats happening here.
+</p>
+
+<p>
+Awk will read in the file, it will split the files on lines and then split those
+lines on a field seperator, by default space.
+</p>
+
+<p>
+it will then loop through all of those lines calling your code (this will become
+more apparent later).
+</p>
+
+<p>
+This leads to a oneline solution for what would be multiple in python.
+</p>
+
+<p>
+This implicit behavior on what is usually what most of us are doing is extremely
+useful.
+</p>
+
+<p>
+Note that awk will concat all files passed in in argv which mean
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="fragment roll-in"> awk <span style="color: #fab795;">'{print $1}'</span> someFile.txt
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="fragment roll-in"><span style="color: #b877db; font-style: italic;">from</span> sys <span style="color: #b877db; font-style: italic;">import</span> argv
+
+<span style="color: #b877db; font-style: italic;">with</span> <span style="color: #b877db;">open</span>(argv[<span style="color: #f09383;">1</span>]) <span style="color: #b877db; font-style: italic;">as</span> f:
+    <span style="color: #b877db; font-style: italic;">for</span> <span style="color: #e95678;">line</span> <span style="color: #b877db; font-style: italic;">in</span> f:
+        <span style="color: #b877db;">print</span>(line.<span style="color: #21bfc2; font-style: italic;">split</span>(<span style="color: #fab795;">" "</span>)[<span style="color: #f09383;">0</span>])
+
+<span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># Shell command</span>
+<span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># python script.py someFile.txt</span>
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org0eaa19e">
+<h2 id="org0eaa19e">The structure of an Awk program</h2>
+<aside class="notes">
+<p>
+Awk does a lot more than just split lines. awk programs are composed of Patters
+and Actions
+</p>
+
+<p>
+You can think of it like a switch case on the level of a program
+</p>
+
+<p>
+If a line matches on a regex you then process it on an action. it then moves
+onto the next line.
+</p>
+
+<p>
+Note you can print the full line by just using a bare print.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-awk"><span style="color: #b877db; font-style: italic;">BEGIN</span> <span style="color: #21bfc2;">{</span>
+    <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">some construction code</span>
+<span style="color: #21bfc2;">}</span>
+
+<span style="color: #fab795;">/Regex1/</span> <span style="color: #21bfc2;">{</span>
+    <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">action on the line when regex 1 matches</span>
+<span style="color: #21bfc2;">}</span>
+
+<span style="color: #fab795;">/Regex2/</span> <span style="color: #21bfc2;">{</span>
+    <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">action on the line when regex 2 matches</span>
+<span style="color: #21bfc2;">}</span>
+
+<span style="color: #b877db; font-style: italic;">END</span> <span style="color: #21bfc2;">{</span>
+    <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">Cleanup code</span>
+<span style="color: #21bfc2;">}</span>
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org7f03f72">
+<h2 id="org7f03f72">A worked example</h2>
+<aside class="notes">
+<p>
+Let me set the scene. Some dumbass (me) decided to be smart and try and minimise
+the amount of data in this CSV (show csv). now with my course work I needed to
+turn this into a set of sql statements. Awk with its implicit behaviours makes
+this really simple. if not readable or what not
+</p>
+
+<p>
+Here we have a small script.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-awk"><span style="color: #b877db; font-style: italic;">BEGIN</span> <span style="color: #21bfc2;">{</span>
+    <span style="color: #e95678;">FS</span>=<span style="color: #fab795;">","</span>
+    <span style="color: #e95678;">OFS</span> = <span style="color: #fab795;">","</span>
+    id=<span style="color: #f09383; font-weight: bold;">0</span>
+    <span style="color: #87ceeb; font-weight: bold;">print</span> <span style="color: #fab795;">"CREATE TABLE questions ("</span>
+    <span style="color: #87ceeb; font-weight: bold;">print</span> <span style="color: #fab795;">"id INTEGER NOT NULL PRIMARY KEY,"</span>
+    <span style="color: #87ceeb; font-weight: bold;">print</span> <span style="color: #fab795;">"storyLine VARCHAR(100) NOT NULL,"</span>
+    <span style="color: #87ceeb; font-weight: bold;">print</span> <span style="color: #fab795;">"pathOne INTEGER NOT NULL,"</span>
+    <span style="color: #87ceeb; font-weight: bold;">print</span> <span style="color: #fab795;">"pathTwo INTEGER NOT NULL,"</span>
+    <span style="color: #87ceeb; font-weight: bold;">print</span> <span style="color: #fab795;">"pathOneText VARCHAR(100) NOT NULL,"</span>
+    <span style="color: #87ceeb; font-weight: bold;">print</span> <span style="color: #fab795;">"pathTwoText VARCHAR(100) NOT NULL,"</span>
+    <span style="color: #87ceeb; font-weight: bold;">print</span> <span style="color: #fab795;">"buffer BOOLEAN NOT NULL,"</span>
+    <span style="color: #87ceeb; font-weight: bold;">print</span> <span style="color: #fab795;">"ending BOOLEAN NOT NULL"</span>
+    <span style="color: #87ceeb; font-weight: bold;">print</span> <span style="color: #fab795;">");"</span>
+
+    <span style="color: #87ceeb; font-weight: bold;">print</span> <span style="color: #fab795;">"insert into questions (id, storyLine pathOne, pathTwo, pathOneText, pathTwoText, buffer, ending ) values"</span>
+<span style="color: #21bfc2;">}</span>
+
+$2 == $3 &amp;&amp; $2 &lt; <span style="color: #f09383; font-weight: bold;">0</span> <span style="color: #21bfc2;">{</span>
+    <span style="color: #87ceeb; font-weight: bold;">print</span> <span style="color: #fab795;">"("</span> id <span style="color: #fab795;">","</span> $0 <span style="color: #fab795;">",true,true),"</span>;
+    id++
+    <span style="color: #b877db; font-style: italic;">next</span>
+<span style="color: #21bfc2;">}</span>
+
+$2 == $3 <span style="color: #21bfc2;">{</span>
+    <span style="color: #87ceeb; font-weight: bold;">print</span> <span style="color: #fab795;">"("</span> id <span style="color: #fab795;">","</span> $0 <span style="color: #fab795;">",true,false ),"</span>
+    id++
+    <span style="color: #b877db; font-style: italic;">next</span>
+<span style="color: #21bfc2;">}</span>
+
+
+<span style="color: #21bfc2;">{</span>
+    <span style="color: #87ceeb; font-weight: bold;">print</span> <span style="color: #fab795;">"("</span> id <span style="color: #fab795;">","</span> $0 <span style="color: #fab795;">",true,true),"</span>
+    id++
+    <span style="color: #b877db; font-style: italic;">next</span>
+<span style="color: #21bfc2;">}</span>
+
+<span style="color: #b877db; font-style: italic;">END</span> <span style="color: #21bfc2;">{</span>
+    <span style="color: #87ceeb; font-weight: bold;">print</span> <span style="color: #fab795;">";"</span>
+<span style="color: #21bfc2;">}</span>
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org2d4e819">
+<h2 id="org2d4e819">The affects of awk on programming languages</h2>
+<aside class="notes">
+<p>
+Awk has influenced a lot of languages, providing abstractions that can get close
+to what awk does by default. Its regex syntax is ubiqutous in a lot of
+languages.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="fragment roll-in"><span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># THERE IS A PYTHON THING</span>
+
+<span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># python script.py FILE1 FILE2 FILE3</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="fragment roll-in"><span style="color: #b877db; font-style: italic;">while</span> (<span style="color: #b877db; font-style: italic;">my</span> $<span style="color: #e95678;">line</span> = &lt;&gt;) {
+    print $<span style="color: #e95678;">line</span>
+}
+
+<span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># </span><span style="color: #6c6f93; background-color: #292b36; font-style: italic;">perl script.pl FILE1 FILE2 FILE3</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="fragment roll-in"><span style="color: #87ceeb;">ARGF</span><span style="color: #c7c9cb; background-color: #232530;">.</span><span style="color: #21bfc2;">each</span> <span style="color: #b877db; font-style: italic;">do</span> |<span style="color: #e95678;">line</span>|
+  <span style="color: #21bfc2;">puts</span> line
+<span style="color: #b877db; font-style: italic;">end</span>
+
+<span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># ruby script.rb FILE1 FILE2 FILE3</span>
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org08ba67e">
+<h2 id="org08ba67e">Why you should use awk</h2>
+<aside class="notes">
+<p>
+Awk is ubiqutous,
+Its part of the posix spec
+its easy and its useful. Its impact has been massive on the
+industry and there is probably some poor sod has to maintain a 10000 awk sript
+that holds the internet together.
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-orgc3236a1">
+<h2 id="orgc3236a1">End</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+#+title: Awk: a shell tool for manipulating Text
+
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i></i></h3><p>Press s for speaker notes</p> <p><a href="%u">%u</a></p>
+
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+#+REVEAL_TALK_URL: https://jeetelongname.net/presentations/awk/awk.html
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* ~echo "Awk: a shell tool for manipulating columns of data" | awk '{print $2 " t" $1}'~
+* a tAwk:
+* HaHa so what is awk
+#+begin_notes
+Awk is a shell tool and programming language, its been named the swiss army
+knife of text processing because for that tool its awesome.
+#+end_notes
+* A small example
+#+begin_notes
+Here is an example of how you would probably have used awk (and how you will use
+awk most of the time)
+
+For those who are not sure what we are doing here.
+
+Lets disect whats happening here.
+
+Awk will read in the file, it will split the files on lines and then split those
+lines on a field seperator, by default space.
+
+it will then loop through all of those lines calling your code (this will become
+more apparent later).
+
+This leads to a oneline solution for what would be multiple in python.
+
+This implicit behavior on what is usually what most of us are doing is extremely
+useful.
+
+Note that awk will concat all files passed in in argv which mean
+#+end_notes
+
+#+attr_reveal: :frag roll-in
+    #+begin_src shell
+ awk '{print $1}' someFile.txt
+    #+end_src
+
+#+attr_reveal: :frag roll-in
+    #+begin_src python
+from sys import argv
+
+with open(argv[1]) as f:
+    for line in f:
+        print(line.split(" ")[0])
+
+# Shell command
+# python script.py someFile.txt
+    #+end_src
+
+* The structure of an Awk program
+#+begin_notes
+Awk does a lot more than just split lines. awk programs are composed of Patters
+and Actions
+
+You can think of it like a switch case on the level of a program
+
+If a line matches on a regex you then process it on an action. it then moves
+onto the next line.
+
+Note you can print the full line by just using a bare print.
+#+end_notes
+
+#+begin_src awk
+BEGIN {
+    # some construction code
+}
+
+/Regex1/ {
+    # action on the line when regex 1 matches
+}
+
+/Regex2/ {
+    # action on the line when regex 2 matches
+}
+
+END {
+    # Cleanup code
+}
+#+end_src
+* A worked example
+#+begin_notes
+Let me set the scene. Some dumbass (me) decided to be smart and try and minimise
+the amount of data in this CSV (show csv). now with my course work I needed to
+turn this into a set of sql statements. Awk with its implicit behaviours makes
+this really simple. if not readable or what not
+
+Here we have a small script.
+#+end_notes
+
+#+begin_src awk :tangle test.awk
+BEGIN {
+    FS=","
+    OFS = ","
+    id=0
+    print "CREATE TABLE questions ("
+    print "id INTEGER NOT NULL PRIMARY KEY,"
+    print "storyLine VARCHAR(100) NOT NULL,"
+    print "pathOne INTEGER NOT NULL,"
+    print "pathTwo INTEGER NOT NULL,"
+    print "pathOneText VARCHAR(100) NOT NULL,"
+    print "pathTwoText VARCHAR(100) NOT NULL,"
+    print "buffer BOOLEAN NOT NULL,"
+    print "ending BOOLEAN NOT NULL"
+    print ");"
+
+    print "insert into questions (id, storyLine pathOne, pathTwo, pathOneText, pathTwoText, buffer, ending ) values"
+}
+
+$2 == $3 && $2 < 0 {
+    print "(" id "," $0 ",true,true),";
+    id++
+    next
+}
+
+$2 == $3 {
+    print "(" id "," $0 ",true,false ),"
+    id++
+    next
+}
+
+
+{
+    print "(" id "," $0 ",true,true),"
+    id++
+    next
+}
+
+END {
+    print ";"
+}
+#+end_src
+
+* The affects of awk on programming languages
+#+begin_notes
+Awk has influenced a lot of languages, providing abstractions that can get close
+to what awk does by default. Its regex syntax is ubiqutous in a lot of
+languages.
+#+end_notes
+
+#+attr_reveal: :frag roll-in
+    #+begin_src python
+# THERE IS A PYTHON THING
+
+# python script.py FILE1 FILE2 FILE3
+    #+end_src
+
+#+attr_reveal: :frag roll-in
+    #+begin_src perl
+while (my $line = <>) {
+    print $line
+}
+
+# perl script.pl FILE1 FILE2 FILE3
+    #+end_src
+
+#+attr_reveal: :frag roll-in
+    #+begin_src ruby
+ARGF.each do |line|
+  puts line
+end
+
+# ruby script.rb FILE1 FILE2 FILE3
+    #+end_src
+* Why you should use awk
+#+begin_notes
+Awk is ubiqutous,
+Its part of the posix spec
+its easy and its useful. Its impact has been massive on the
+industry and there is probably some poor sod has to maintain a 10000 awk sript
+that holds the internet together.
+#+end_notes
+* End
