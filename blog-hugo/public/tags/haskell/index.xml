@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>haskell on Jeet&#39;s Blog</title>
+    <link>https://www.jeetelongname.net/blog/tags/haskell/</link>
+    <description>Recent content in haskell on Jeet&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <copyright>&amp;copy 2022 Jeetaditya Chatterjee</copyright>
+    <lastBuildDate>Wed, 23 Nov 2022 05:53:00 +0000</lastBuildDate><atom:link href="https://www.jeetelongname.net/blog/tags/haskell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I finally understand monads and now I will write about it</title>
+      <link>https://www.jeetelongname.net/blog/posts/understanding-monads/</link>
+      <pubDate>Wed, 23 Nov 2022 05:53:00 +0000</pubDate>
+      
+      <guid>https://www.jeetelongname.net/blog/posts/understanding-monads/</guid>
+      <description>After A lot of struggle I finally understand monads and why they are useful. This is less an explainer and more of a write up of my understanding. In any case Let us get started.
+So what is a monad? A monad is a datatype that can use &amp;gt;&amp;gt;=, You can call it bind or then with the latter name leading into what it does. Here is its type.
+(&amp;gt;&amp;gt;=) :: m a -&amp;gt; (a -&amp;gt; m b) -&amp;gt; m b This function takes in a context of m a, then a function which transforms that inner value, returning that transformed value in the same context.</description>
+    </item>
+    
+  </channel>
+</rss>
