@@ -4,7 +4,7 @@
 #+STARTUP: content
 
 * Posts
-** 2am paella :cooking:cheap:easy:
+** DONE 2am paella :cooking:cheap:easy:
 :PROPERTIES:
 :EXPORT_FILE_NAME: 2am-paella
 :EXPORT_DATE: 2022-03-03
@@ -354,7 +354,6 @@ the beginning of a set of posts about Wayland and my adaptations to it so stay t
 And if you did manage to actually get a GNOME Wayland session to start in a login
 shell though please do reach out!
 
-** TODO Ruby Scripting and making OOP fun :ruby:opinion:programming:
 ** TODO Doom, Emacs and Communication
 :PROPERTIES:
 :EXPORT_FILE_NAME: doom-communication
@@ -420,9 +419,9 @@ CLOSED: [2022-11-23 Wed 05:53]
 :EXPORT_DATE: 2022-11-07
 :EXPORT_FILE_NAME: understanding-monads
 :END:
-After A lot of struggle I finally understand monads and why they are useful.
+After a lot of struggle I finally understand monads and why they are useful.
 This is less an explainer and more of a write up of my understanding. In any
-case Let us get started.
+case let us get started.
 
 *** So what is a monad?
 A monad is a datatype that can use =>>==, You can call it ~bind~ or ~then~ with
@@ -489,20 +488,20 @@ Its type is
 (<$>) :: (a -> b) -> f a -> f b
 #+end_src
 
-This operation takes a function that transforms type a into type b, and then
-a functor of type a, it transforms it into a functor of type b.
+This operation takes a function that transforms =type a= into =type b=, and then
+a functor of =type a=, it transforms it into a functor of =type=b.
 Simple enough.
 
 One little side note, /haskell is curried/ meaning that we can write
 something like this =(f <$>)= Which returns a function that takes a functor of
-type a.
+=type a=.
 If we say for demonstration that =f= is a function that takes an =Int= and
 returns a =String=, our types would look like this.
 #+begin_src haskell
 f :: Int -> String
 (f <$>) :: f Int -> f String
 #+end_src
-Essentially we have transformed our lowly f that can only work on simple types
+Essentially we have transformed our lowly =f= that can only work on simple types
 into a function that works on functors. This is known as a /lift/ operation.
 This is important for later.
 
@@ -557,7 +556,7 @@ f a b c = a + b + c
 (f <$> Just 1 <*> Just 1 <*>) :: f a -> f a
 #+end_src
 
-*** Bringing this all together
+*** +Bringing+ /Binding/ this all together
 So we have the ability to transform the inner value of a context, we have the
 ability to compose two or more contexts together. The problem arises when we want to
 compute the next context based on the result of the previous. Look again at the
@@ -578,7 +577,8 @@ The first argument is a contexted value, You can reason about it like its some
 kind of computation. This computation is then "unwrapped" and passed into a
 function which crucially /can decide what to do/. We do not need to think about
 whatever end goal we want right at the beginning, we can go as the wind tells us,
-so to speak. This is useful in places we need to parse some kind of context, for
+so to speak. This is useful in places we need to parse some kind of contextual
+information, for
 example a context filled language such as some markup languages, [[https://orgmode.org/][including the
 one I am currently writing this post in]].
 *** A monad in plain sight
@@ -650,6 +650,8 @@ So if we have a type like this =g :: a -> a -> a -> a= we /really/ mean
 =g :: a -> (a -> (a -> a))=. So when we reflect on the type of =<$> :: (a -> b)
 -> f a -> f b= we can see that the rest of our function will be "swallowed"
 b thus we get the type =g <$> :: f a -> f (a -> a -> a)=
+** TODO Web scripting with ruby :opinion:programming:ruby:
+
 * COMMENT Local Variables :ARCHIVE:
 # Local Variables:
 # org-export-with-author: nil

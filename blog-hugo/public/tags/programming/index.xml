@@ -14,7 +14,7 @@
       <pubDate>Wed, 23 Nov 2022 05:53:00 +0000</pubDate>
       
       <guid>https://www.jeetelongname.net/blog/posts/understanding-monads/</guid>
-      <description>After A lot of struggle I finally understand monads and why they are useful. This is less an explainer and more of a write up of my understanding. In any case Let us get started.
+      <description>After a lot of struggle I finally understand monads and why they are useful. This is less an explainer and more of a write up of my understanding. In any case let us get started.
 So what is a monad? A monad is a datatype that can use &amp;gt;&amp;gt;=, You can call it bind or then with the latter name leading into what it does. Here is its type.
 (&amp;gt;&amp;gt;=) :: m a -&amp;gt; (a -&amp;gt; m b) -&amp;gt; m b This function takes in a context of m a, then a function which transforms that inner value, returning that transformed value in the same context.</description>
     </item>

@@ -6,7 +6,7 @@
 		<meta name="generator" content="Hugo 0.105.0">
 		<title>I finally understand monads and now I will write about it - Jeet&#39;s Blog</title>
 
-		<meta name="description" content="After A lot of struggle I finally understand monads and why they are useful. This is less an explainer and more of a write up of my understanding. In any case Let us get started.
+		<meta name="description" content="After a lot of struggle I finally understand monads and why they are useful. This is less an explainer and more of a write up of my understanding. In any case let us get started.
 So what is a monad? A monad is a datatype that can use &gt;&gt;=, You can call it bind or then with the latter name leading into what it does. Here is its type.
 (&gt;&gt;=) :: m a -&gt; (a -&gt; m b) -&gt; m b This function takes in a context of m a, then a function which transforms that inner value, returning that transformed value in the same context.">
 
@@ -78,9 +78,9 @@ So what is a monad? A monad is a datatype that can use &gt;&gt;=, You can call i
 </hgroup>
 <hr class="sep" />
 </header>
-	<p>After A lot of struggle I finally understand monads and why they are useful.
+	<p>After a lot of struggle I finally understand monads and why they are useful.
 This is less an explainer and more of a write up of my understanding. In any
-case Let us get started.</p>
+case let us get started.</p>
 <h2 id="so-what-is-a-monad">So what is a monad?</h2>
 <p>A monad is a datatype that can use <code>&gt;&gt;=</code>, You can call it <code>bind</code> or <code>then</code> with
 the latter name leading into what it does.
@@ -123,17 +123,17 @@ outer context.
 It gives us the <code>&lt;$&gt;</code> operator, otherwise know as fmap.
 Its type is</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(&lt;$&gt;) <span style="color:#00f">::</span> (a <span style="color:#00f">-&gt;</span> b) <span style="color:#00f">-&gt;</span> f a <span style="color:#00f">-&gt;</span> f b
-</span></span></code></pre></div><p>This operation takes a function that transforms type a into type b, and then
-a functor of type a, it transforms it into a functor of type b.
+</span></span></code></pre></div><p>This operation takes a function that transforms <code>type a</code> into <code>type b</code>, and then
+a functor of <code>type a</code>, it transforms it into a functor of =type=b.
 Simple enough.</p>
 <p>One little side note, <em>haskell is curried</em> meaning that we can write
 something like this <code>(f &lt;$&gt;)</code> Which returns a function that takes a functor of
-type a.
+<code>type a</code>.
 If we say for demonstration that <code>f</code> is a function that takes an <code>Int</code> and
 returns a <code>String</code>, our types would look like this.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>f <span style="color:#00f">::</span> <span style="color:#2b91af">Int</span> <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">String</span>
 </span></span><span style="display:flex;"><span>(f &lt;$&gt;) <span style="color:#00f">::</span> f <span style="color:#2b91af">Int</span> <span style="color:#00f">-&gt;</span> f <span style="color:#2b91af">String</span>
-</span></span></code></pre></div><p>Essentially we have transformed our lowly f that can only work on simple types
+</span></span></code></pre></div><p>Essentially we have transformed our lowly <code>f</code> that can only work on simple types
 into a function that works on functors. This is known as a <em>lift</em> operation.
 This is important for later.</p>
 <h2 id="applicatives">Applicatives</h2>
@@ -173,7 +173,7 @@ chain with other values using <code>&lt;*&gt;</code></p>
 </span></span><span style="display:flex;"><span>(f &lt;$&gt;) <span style="color:#00f">::</span> f a <span style="color:#00f">-&gt;</span> f (a <span style="color:#00f">-&gt;</span> a <span style="color:#00f">-&gt;</span> a)
 </span></span><span style="display:flex;"><span>(f &lt;$&gt; <span style="color:#2b91af">Just</span> 1 &lt;*&gt;) <span style="color:#00f">::</span> f a <span style="color:#00f">-&gt;</span> f (a <span style="color:#00f">-&gt;</span> a)
 </span></span><span style="display:flex;"><span>(f &lt;$&gt; <span style="color:#2b91af">Just</span> 1 &lt;*&gt; <span style="color:#2b91af">Just</span> 1 &lt;*&gt;) <span style="color:#00f">::</span> f a <span style="color:#00f">-&gt;</span> f a
-</span></span></code></pre></div><h2 id="bringing-this-all-together">Bringing this all together</h2>
+</span></span></code></pre></div><h2 id="binding-this-all-together"><del>Bringing</del> <em>Binding</em> this all together</h2>
 <p>So we have the ability to transform the inner value of a context, we have the
 ability to compose two or more contexts together. The problem arises when we want to
 compute the next context based on the result of the previous. Look again at the
@@ -189,7 +189,8 @@ last computation before we move on. This is a power monads have.</p>
 kind of computation. This computation is then &ldquo;unwrapped&rdquo; and passed into a
 function which crucially <em>can decide what to do</em>. We do not need to think about
 whatever end goal we want right at the beginning, we can go as the wind tells us,
-so to speak. This is useful in places we need to parse some kind of context, for
+so to speak. This is useful in places we need to parse some kind of contextual
+information, for
 example a context filled language such as some markup languages, <a href="https://orgmode.org/">including the
 one I am currently writing this post in</a>.</p>
 <h2 id="a-monad-in-plain-sight">A monad in plain sight</h2>

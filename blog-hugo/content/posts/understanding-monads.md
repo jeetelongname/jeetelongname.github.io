@@ -5,9 +5,9 @@ tags: ["haskell", "programming"]
 draft: false
 ---
 
-After A lot of struggle I finally understand monads and why they are useful.
+After a lot of struggle I finally understand monads and why they are useful.
 This is less an explainer and more of a write up of my understanding. In any
-case Let us get started.
+case let us get started.
 
 
 ## So what is a monad? {#so-what-is-a-monad}
@@ -94,13 +94,13 @@ Its type is
 (<$>) :: (a -> b) -> f a -> f b
 ```
 
-This operation takes a function that transforms type a into type b, and then
-a functor of type a, it transforms it into a functor of type b.
+This operation takes a function that transforms `type a` into `type b`, and then
+a functor of `type a`, it transforms it into a functor of =type=b.
 Simple enough.
 
 One little side note, _haskell is curried_ meaning that we can write
 something like this `(f <$>)` Which returns a function that takes a functor of
-type a.
+`type a`.
 If we say for demonstration that `f` is a function that takes an `Int` and
 returns a `String`, our types would look like this.
 
@@ -109,7 +109,7 @@ f :: Int -> String
 (f <$>) :: f Int -> f String
 ```
 
-Essentially we have transformed our lowly f that can only work on simple types
+Essentially we have transformed our lowly `f` that can only work on simple types
 into a function that works on functors. This is known as a _lift_ operation.
 This is important for later.
 
@@ -176,7 +176,7 @@ f a b c = a + b + c
 ```
 
 
-## Bringing this all together {#bringing-this-all-together}
+## ~~Bringing~~ _Binding_ this all together {#binding-this-all-together}
 
 So we have the ability to transform the inner value of a context, we have the
 ability to compose two or more contexts together. The problem arises when we want to
@@ -202,7 +202,8 @@ The first argument is a contexted value, You can reason about it like its some
 kind of computation. This computation is then "unwrapped" and passed into a
 function which crucially _can decide what to do_. We do not need to think about
 whatever end goal we want right at the beginning, we can go as the wind tells us,
-so to speak. This is useful in places we need to parse some kind of context, for
+so to speak. This is useful in places we need to parse some kind of contextual
+information, for
 example a context filled language such as some markup languages, [including the
 one I am currently writing this post in](https://orgmode.org/).
 
