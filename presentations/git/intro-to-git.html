@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Intro To Git</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Intro To Git</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i>git commit -am "Totally a profesional developer"</i></h3><p>Press s for speaker notes</p>
+</section>
+
+<section>
+<section id="slide-org79d3387">
+<h2 id="org79d3387">What is git</h2>
+<aside class="notes">
+<p>
+Git is a version control system, It allows you to version your code simply and
+effectively as well as providing interfaces to look through and edit these
+versions.
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-org82e72ef">
+<h2 id="org82e72ef">Why use git</h2>
+<aside class="notes">
+<p>
+For large systems you need to have the ability to know where code comes from.
+The ability to collaborate on the system and see who wrote lines of code.
+Git provides tools for this in one cohesive package as well as many more to
+manage your code and any other plain text files you may have.
+</p>
+
+<p>
+In essenence its the automatic version of this process
+</p>
+
+<p>
+Its also the industry standard :shrug:
+</p>
+
+</aside>
+
+
+<div id="orge341a4c" class="figure">
+<p><img src="vcs.jpg" alt="vcs.jpg" class="fragment (roll-in)" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org5f18561">
+<h2 id="org5f18561">Some terms</h2>
+<div class="outline-text-2" id="text-org5f18561">
+</div>
+</section>
+<section id="slide-org19dda94">
+<h3 id="org19dda94">Repository</h3>
+<aside class="notes">
+<p>
+A repository is a folder that git tracks. This almost always be a project of
+some kind.
+</p>
+
+</aside>
+</section>
+<section id="slide-org2fefb36">
+<h3 id="org2fefb36">Commit</h3>
+<aside class="notes">
+<p>
+A commit is a set of changes that is saved to the history, this is the building
+block of many other constructs of git.
+</p>
+
+</aside>
+</section>
+<section id="slide-org59acae0">
+<h3 id="org59acae0">Branch</h3>
+<aside class="notes">
+<p>
+A branch is a set of commits. commits themselves have parent commits that form
+links, when two commits have the same parent they form a new &ldquo;branch&rdquo;. this
+Branch is seperate from the main and two or more can exist in the same repo,
+this is the way we usually introduce bigger changes into a code base
+</p>
+
+<p>
+the idea is, to branch off main, make a bunch of commits, then merge the change
+back
+</p>
+
+</aside>
+</section>
+<section id="slide-org186f4ed">
+<h3 id="org186f4ed">Pull request</h3>
+<aside class="notes">
+<p>
+A pull request is a request sent to a repositiory to <i>pull</i> in the changes
+someone has made.
+</p>
+
+<p>
+Back in the day this was an email. Today github has cooped this terminolgy for
+its interface of making changes
+</p>
+
+</aside>
+</section>
+<section id="slide-org43d6a23">
+<h3 id="org43d6a23">This is not all.</h3>
+<aside class="notes">
+<p>
+A full list of keywords can be found on the gits site, the link is here.
+Don&rsquo;t worry about noting it down, these slides are online and you can refer to
+them when needed
+</p>
+
+</aside>
+<p class="fragment (roll-in)">
+<a href="https://git-scm.com/docs/gitglossary" class="fragment (roll-in)">https://git-scm.com/docs/gitglossary</a>
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orge92c338">
+<h2 id="orge92c338">Cloning a repository</h2>
+<aside class="notes">
+<p>
+Now lets begin with the first way to start a repo, to clone someone elses work!
+</p>
+
+<p>
+to do this we use the git clone commmand!
+</p>
+
+<p>
+Lets discuss the anatomy of this, this is not an intro to the unix shell, thats
+another workshop.
+</p>
+
+<p>
+Discuss the overall structure of a git command <code>Super-M-d</code>
+</p>
+<ul>
+<li>the first part is the command</li>
+<li>the second is the sub command, this is how you tell git to do something
+specific in this case clone.</li>
+<li>Third is the location of the repository</li>
+<li>You can give a fourth thing which is the path to clone into, otherwise it will
+clone it into a new folder branching off the current one</li>
+
+</ul>
+
+</aside>
+<div class="org-src-container">
+
+<pre class="fragment (roll-in)"><span style="color: #87ceeb;">git</span> clone https://github.com/jeetelongname/git-workshop
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgc9b3304">
+<h2 id="orgc9b3304">Lets explore</h2>
+<div class="outline-text-2" id="text-orgc9b3304">
+</div>
+</section>
+<section id="slide-org5aee719">
+<h3 id="org5aee719">git status</h3>
+<aside class="notes">
+<p>
+Lets check the status of our current repo,
+It gives us the info about the head and whatever changes exist
+</p>
+
+</aside>
+</section>
+<section id="slide-org48128ce">
+<h3 id="org48128ce">git log</h3>
+<aside class="notes">
+<p>
+git log is the way we access the history of a git repo. It contains all the info
+about all the commits. Its how we familerise ourselves with what is going on
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org7678b15">
+<h2 id="org7678b15">What is a commit</h2>
+<aside class="notes">
+<p>
+As hinted too before a commit is a set of changes saved to the afformentioned
+history. To create one we must first stage a change
+</p>
+
+</aside>
+</section>
+<section id="slide-orgdc9a1eb">
+<h3 id="orgdc9a1eb">Staging</h3>
+<aside class="notes">
+<p>
+Before we can commit changes we must stage them, to do this we use the git add
+command.
+If we want to unstage a change we can use the
+git restore &#x2013;staged file
+note that without the restore you will delete the changes, from the file, this
+can sometimes be wanted but not always, be careful
+</p>
+
+<p>
+The question arises, why do we stage? In a lot of cases it seems silly, but when
+we have multiple changes we are working con courrently it makes sense only to
+stage the changes that are related to each other.
+</p>
+
+<p>
+This feeds into the idea that commits should only really contain one change. To
+include everything is bad form and leads to an unreadable history.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="fragment (roll-in)">    <span style="color: #87ceeb;">git</span> add &lt;change that needs to be added&gt;
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="fragment (roll-in)">    <span style="color: #87ceeb;">git</span> restore --staged file
+</pre>
+</div>
+</section>
+<section id="slide-org3c4cebf">
+<h3 id="org3c4cebf">Commiting</h3>
+<aside class="notes">
+<p>
+we have now staged the changes lets commit them. Its a simple matter of calling
+git commit.
+</p>
+
+<p>
+This will open up an editor, where you can write out a commit message, to finish
+you save the file and close the editor.
+</p>
+
+<p>
+If you only plan on writing one line you can add the message inline. you can add
+the -m flag.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-shell"><span style="color: #87ceeb;">git</span> commit
+<span style="color: #87ceeb;">git</span> commit -m <span style="color: #fab795;">"some commit message here"</span>
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org5f8fd19">
+<h2 id="org5f8fd19">Writing good commits</h2>
+<aside class="notes">
+<p>
+Note now the commit message may seem like a box to tick, but its important if
+you plan on reading the history back.
+This is why standards such as conventional commits exist. They semantically link
+commits together by what they are changing.
+</p>
+
+<p>
+show examples of shitty and good hisories
+</p>
+
+</aside>
+<ul>
+<li class="fragment roll-in"><a href="https://www.conventionalcommits.org/en/v1.0.0-beta.2/">https://www.conventionalcommits.org/en/v1.0.0-beta.2/</a></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org9447bd5">
+<h2 id="org9447bd5">Branches</h2>
+<div class="outline-text-2" id="text-org9447bd5">
+</div>
+</section>
+<section id="slide-orgf9258f2">
+<h3 id="orgf9258f2">Switching</h3>
+<aside class="notes">
+<p>
+To switch to a new branch we use the git branch command.
+We are now in an alternate timeline, anything we commit here will not affect
+other branches, we can merge them back in later if we so wish too.
+</p>
+
+<p>
+This should be used whenever you are doing a large change, for example a feature
+implementation. They are cheap to make so do not worry about making hundreds
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-shell"><span style="color: #87ceeb;">git</span> branch &lt;new branch name&gt;
+</pre>
+</div>
+</section>
+<section id="slide-orge849559">
+<h3 id="orge849559">Creating</h3>
+<aside class="notes">
+<p>
+we have created the branch but now we need to chekc it out. for that we use the
+checkout command
+</p>
+
+<p>
+Usually we git branch
+then git checkout,
+</p>
+
+<p>
+this is so common git has a short hand
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-shell"><span style="color: #87ceeb;">git</span> checkout &lt;branch name&gt;
+<span style="color: #87ceeb;">git</span> checkout -b &lt;branch name&gt;
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd6541ab">
+<h2 id="orgd6541ab">Creating a pull request!</h2>
+<div class="outline-text-2" id="text-orgd6541ab">
+</div>
+</section>
+<section id="slide-orgc97f9b2">
+<h3 id="orgc97f9b2">Forking using the github ui</h3>
+</section>
+<section id="slide-org4a67a5e">
+<h3 id="org4a67a5e">adding a remote on your computer</h3>
+</section>
+<section id="slide-orgb69db09">
+<h3 id="orgb69db09">Pushing</h3>
+</section>
+</section>
+<section>
+<section id="slide-org410159f">
+<h2 id="org410159f">Where to next</h2>
+<div class="outline-text-2" id="text-org410159f">
+</div>
+</section>
+<section id="slide-org91cc53f">
+<h3 id="org91cc53f">How to get your own help</h3>
+</section>
+<section id="slide-org4eef126">
+<h3 id="org4eef126">Other things to mention</h3>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

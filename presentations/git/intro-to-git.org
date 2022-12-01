@@ -1,0 +1,204 @@
+#+title: Intro To Git
+
+#+latex_compiler: lualatex
+#+beamer_header: \usepackage{pgfpages}
+#+beamer_header: \setbeameroption{show notes on second screen=right}
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i>git commit -am "Totally a profesional developer"</i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+* What is git
+#+begin_notes
+Git is a version control system, It allows you to version your code simply and
+effectively as well as providing interfaces to look through and edit these
+versions.
+#+end_notes
+* Why use git
+#+begin_notes
+For large systems you need to have the ability to know where code comes from.
+The ability to collaborate on the system and see who wrote lines of code.
+Git provides tools for this in one cohesive package as well as many more to
+manage your code and any other plain text files you may have.
+
+In essenence its the automatic version of this process
+
+Its also the industry standard :shrug:
+#+end_notes
+
+#+attr_reveal: :frag (roll-in)
+    [[file:vcs.jpg]]
+
+* Some terms
+** Repository
+#+begin_notes
+A repository is a folder that git tracks. This almost always be a project of
+some kind.
+#+end_notes
+** Commit
+#+begin_notes
+A commit is a set of changes that is saved to the history, this is the building
+block of many other constructs of git.
+#+end_notes
+** Branch
+#+begin_notes
+A branch is a set of commits. commits themselves have parent commits that form
+links, when two commits have the same parent they form a new "branch". this
+Branch is seperate from the main and two or more can exist in the same repo,
+this is the way we usually introduce bigger changes into a code base
+
+the idea is, to branch off main, make a bunch of commits, then merge the change
+back
+#+end_notes
+** Pull request
+#+begin_notes
+A pull request is a request sent to a repositiory to /pull/ in the changes
+someone has made.
+
+Back in the day this was an email. Today github has cooped this terminolgy for
+its interface of making changes
+#+end_notes
+** This is not all.
+#+begin_notes
+A full list of keywords can be found on the gits site, the link is here.
+Don't worry about noting it down, these slides are online and you can refer to
+them when needed
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+    https://git-scm.com/docs/gitglossary
+* Cloning a repository
+#+begin_notes
+Now lets begin with the first way to start a repo, to clone someone elses work!
+
+to do this we use the git clone commmand!
+
+Lets discuss the anatomy of this, this is not an intro to the unix shell, thats
+another workshop.
+
+Discuss the overall structure of a git command =Super-M-d=
+- the first part is the command
+- the second is the sub command, this is how you tell git to do something
+  specific in this case clone.
+- Third is the location of the repository
+- You can give a fourth thing which is the path to clone into, otherwise it will
+  clone it into a new folder branching off the current one
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+    #+begin_src shell
+git clone https://github.com/jeetelongname/git-workshop
+#+end_src
+* Lets explore
+** git status
+#+begin_notes
+Lets check the status of our current repo,
+It gives us the info about the head and whatever changes exist
+#+end_notes
+** git log
+#+begin_notes
+git log is the way we access the history of a git repo. It contains all the info
+about all the commits. Its how we familerise ourselves with what is going on
+#+end_notes
+
+* What is a commit
+#+begin_notes
+As hinted too before a commit is a set of changes saved to the afformentioned
+history. To create one we must first stage a change
+#+end_notes
+** Staging
+#+begin_notes
+Before we can commit changes we must stage them, to do this we use the git add
+command.
+If we want to unstage a change we can use the
+git restore --staged file
+note that without the restore you will delete the changes, from the file, this
+can sometimes be wanted but not always, be careful
+
+The question arises, why do we stage? In a lot of cases it seems silly, but when
+we have multiple changes we are working con courrently it makes sense only to
+stage the changes that are related to each other.
+
+This feeds into the idea that commits should only really contain one change. To
+include everything is bad form and leads to an unreadable history.
+#+end_notes
+
+#+attr_reveal: :frag (roll-in)
+    #+begin_src shell
+    git add <change that needs to be added>
+    #+end_src
+
+#+attr_reveal: :frag (roll-in)
+    #+begin_src shell
+    git restore --staged file
+    #+end_src
+
+    #+RESULTS:
+** Commiting
+#+begin_notes
+we have now staged the changes lets commit them. Its a simple matter of calling
+git commit.
+
+This will open up an editor, where you can write out a commit message, to finish
+you save the file and close the editor.
+
+If you only plan on writing one line you can add the message inline. you can add
+the -m flag.
+#+end_notes
+
+#+begin_src shell
+git commit
+git commit -m "some commit message here"
+#+end_src
+
+* Writing good commits
+#+begin_notes
+Note now the commit message may seem like a box to tick, but its important if
+you plan on reading the history back.
+This is why standards such as conventional commits exist. They semantically link
+commits together by what they are changing.
+
+show examples of shitty and good hisories
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+- https://www.conventionalcommits.org/en/v1.0.0-beta.2/
+* Branches
+** Switching
+#+begin_notes
+To switch to a new branch we use the git branch command.
+We are now in an alternate timeline, anything we commit here will not affect
+other branches, we can merge them back in later if we so wish too.
+
+This should be used whenever you are doing a large change, for example a feature
+implementation. They are cheap to make so do not worry about making hundreds
+#+end_notes
+
+#+begin_src shell
+git branch <new branch name>
+#+end_src
+** Creating
+#+begin_notes
+we have created the branch but now we need to chekc it out. for that we use the
+checkout command
+
+Usually we git branch
+then git checkout,
+
+this is so common git has a short hand
+#+end_notes
+
+#+begin_src shell
+git checkout <branch name>
+git checkout -b <branch name>
+#+end_src
+
+* Creating a pull request!
+** Forking using the github ui
+** adding a remote on your computer
+** Pushing
+* Where to next
+** How to get your own help
+** Other things to mention
+* Some final notes
+#+attr_reveal: :frag (roll-in)
+- Advent of code! Leaderboard here =2276043-49ed0278=
