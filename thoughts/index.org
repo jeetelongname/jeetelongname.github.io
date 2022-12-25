@@ -1,0 +1,17 @@
+#+title: Small thoughts and notes
+#+options: author:nil date:nil toc:nil num:nil html-postamble:nil html-self-link-headlines:t
+
+#+INFOJS_OPT: view:showall toc:nil path:org-info.js buttons:nil
+#+html_link_home: /
+#+html_link_up: /
+
+This is my microblog, Its just for small thoughs no more than a paragraph or so.
+Kinda like twitter but just for me :) Press =?= for keybinds, there are some neat
+ones.
+
+* CD to the last working directory
+cd can /cd/ to the last working directory using a =-= in it. pretty neat if your
+moving between projects.
+I also learned that [[https://www.gnu.org/software/emacs/manual/html_mono/eshell.html][eshell]] takes this up a notch. You can use ~cd =~
+to get a stack of all the directories you have visited as well as there place in
+the stack. You can then jump to these using =cd -<number>= pretty neat
