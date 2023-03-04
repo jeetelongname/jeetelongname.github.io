@@ -21,7 +21,7 @@ pygmentscodefencesguesssyntax = true
     sub404 = "Back to <a href='/'>Home</a>."
 	latestCount = 5
     highlightJs = true
-	highlightJsStyle = "mono-blue"
+	highlightJsStyle = "ocean"
 	highlightJsLanguages = [ "haskell", "python", "ruby", "text", "js"]
     prefix = "/blog"
 

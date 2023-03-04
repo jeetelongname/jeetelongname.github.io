@@ -1,7 +1,7 @@
 #+HUGO_BASE_DIR: ~/code/web/website/blog-hugo
 #+HUGO_SECTION: posts
 #+hugo_front_matter_format: yaml
-#+STARTUP: content
+#+STARTUP: show2levels
 
 * Posts
 ** DONE 2am paella :cooking:cheap:easy:
@@ -651,6 +651,94 @@ So if we have a type like this =g :: a -> a -> a -> a= we /really/ mean
 -> f a -> f b= we can see that the rest of our function will be "swallowed"
 b thus we get the type =g <$> :: f a -> f (a -> a -> a)=
 ** TODO Web scripting with ruby :opinion:programming:ruby:
+** TODO Recreating the JS object system in ruby :ruby:javascript:oop:hack:programming:
+:PROPERTIES:
+:EXPORT_FILE_NAME: js-oop-ruby
+:EXPORT_DATE: 2023-03-04
+:END:
+I had a funky idea, why not try and re create the js object system in ruby?
+Why? well because we can.
+This idea dawned on me when I realised I can add the functionality of property
+like accesses to hash values using method missing.
+#+begin_src ruby :tangle test.rb
+class Hash
+  def method_missing(prop, *args, &block)
+    self[prop]
+  end
+end
+
+hash = {
+  hello: "hello is not a method 😱",
+}
+
+puts hash.hello #=>  "hello is not a method 😱"
+#+end_src
+Ignoring the method definition this looks a lot like javascript. and now I want to
+see how far we can take it.
+
+*** Some expectations
+Now this will not lead to a full look alike of Javascripts object system. we can
+get close but we are still limited by rubys syntax. In any case I think we can
+create something that works a lot like the function and learn something along
+the way!
+
+*** Why javascripts object system is special
+Lets take a minute to discuss javascripts object system.
+JS is interesting because you do not need to go through classes to make objects.
+*** Properties
+Properties are our object attributes, they are our values, they can be read and
+written too
+#+begin_src rjsx
+obj = {
+    first: "Joe",
+    last: "mama"
+}
+
+console.log(obj.first) // => Joe
+obj.last = "Son"
+console.log(obj.last) // => Son
+#+end_src
+We can already get our properties, but we need to be able to set them.
+Now in a pitiful language we would be stumped but not in ruby. Here setting
+attributes is also a method that can be caught with ~method_missing~!
+
+#+begin_src ruby
+class Hash
+  def method_missing(prop, *args)
+    puts prop
+  end
+end
+
+hash = {hello: "hi"}
+hash.hello = "greetings" # => :hello=
+#+end_src
+as you can see, its just our method name with an equals sign appended too it.
+check for that and we can set the property in question
+
+#+begin_src ruby
+class Hash
+  def method_missing(prop, *args, &block)
+   if prop.to_s[-1] == '='
+     self[prop.to_s.delete_suffix('=').to_sym] = args.first
+   else
+     self[prop]
+   end
+  end
+end
+
+hash = {hello: "Hi"}
+puts hash.hello # => "Hi"
+hash.hello = "greetings"
+puts hash.hello # => "greetings"
+#+end_src
+
+and just like that we can now get and set properties.
+
+*** Methods
+Methods are functions that act on our object. they access the object using the
+special varaible of this
+**** Getters and Setters
+*** Prototypes
 
 * COMMENT Local Variables :ARCHIVE:
 # Local Variables:
