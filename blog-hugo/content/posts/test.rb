@@ -1,23 +1,19 @@
-# frozen_string_literal: true
-
-# Hash
 class Hash
-  def respond_to_missing?
-    true
-  end
-
-  def method_missing(accessor, *_args)
-    self[accessor]
+  def method_missing(prop, *args)
+    if prop.end_with? '=' # check if its a set
+      self[prop.to_s.delete_suffix('=').to_sym] = args.first
+    elsif (accessed_prop = self[prop]).instance_of? Proc
+      # curry the method and then call it with self.
+      # This returns another method which can take the rest of the arguments
+      accessed_prop.curry.call(self)
+    else
+      accessed_prop
+    end
   end
 end
 
-hash = {
-  hello: 'hello is not a method 😱',
-  my_method: lambda { |_that|
-    puts this.hello
-  }
-}
+hash = { hello: 'Hi',
+         greet: ->(this, name, l_name) { "#{this.hello}, #{name}, #{l_name}" } }
 
-puts hash.hello #=>  "hello is not a method 😱"
-puts this
-hash.my_method.call(:hello)
+hash.hello = 'greetings'
+puts hash.greet.call('Joe', 'Mama') # => "greetings, Joe Mama"
