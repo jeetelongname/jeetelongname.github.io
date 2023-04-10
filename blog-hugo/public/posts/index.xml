@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>&amp;copy 2022 Jeetaditya Chatterjee</copyright>
-    <lastBuildDate>Wed, 23 Nov 2022 05:53:00 +0000</lastBuildDate><atom:link href="https://www.jeetelongname.net/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Apr 2023 02:43:00 +0100</lastBuildDate><atom:link href="https://www.jeetelongname.net/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Reader Applicative and abstraction</title>
+      <link>https://www.jeetelongname.net/blog/posts/the-reader-monad-and-abstraction/</link>
+      <pubDate>Mon, 10 Apr 2023 02:43:00 +0100</pubDate>
+      
+      <guid>https://www.jeetelongname.net/blog/posts/the-reader-monad-and-abstraction/</guid>
+      <description>Now this is not a haskell blog site but this is the second interesting thing haskell has offered me.
+Today we are discussing the curious nature of the Reader monad (well the Reader applicative functor as I don&amp;rsquo;t plan on delving into the monad aspects a terrible amount)
+To do this we will be discussing this pairs function.
+pairs :: [a] -&amp;gt; [(a, a)] pairs = zip &amp;lt;*&amp;gt; tail On the surface its all weird and magical, but we will walk through the types and the implementations so that we can maybe pick up an intuition on how this works in general.</description>
+    </item>
+    
     <item>
       <title>I finally understand monads and now I will write about it</title>
       <link>https://www.jeetelongname.net/blog/posts/understanding-monads/</link>

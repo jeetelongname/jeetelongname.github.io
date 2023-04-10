@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.110.0">
+		<title>The Reader Applicative and abstraction - Jeet&#39;s Blog</title>
+
+		<meta name="description" content="Now this is not a haskell blog site but this is the second interesting thing haskell has offered me.
+Today we are discussing the curious nature of the Reader monad (well the Reader applicative functor as I don&rsquo;t plan on delving into the monad aspects a terrible amount)
+To do this we will be discussing this pairs function.
+pairs :: [a] -&gt; [(a, a)] pairs = zip &lt;*&gt; tail On the surface its all weird and magical, but we will walk through the types and the implementations so that we can maybe pick up an intuition on how this works in general.">
+
+
+		
+	
+		
+
+
+
+
+<link rel="stylesheet" href="/blog/css/ui.css">
+
+	
+		
+
+		<script defer src="/blog/js/dark-mode.js"></script>
+		<link disabled id="dark-mode-theme" rel="stylesheet" href="/blog/css/dark.css">
+		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
+
+		
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/mono-blue.min.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/haskell.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/python.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/ruby.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/text.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/js.min.js"></script>
+		
+		
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="..">
+				<img class="icon-text" src="/blog/img/prev.svg"/>
+			</a>
+		</li><li><img class="icon-text" id="dark-mode-toggle" src="/blog/img/moon.svg" alt="Toggle Dark Mode"></a></li><li><a href="/blog/about">About</a></li><li><a href="/blog/posts">Archive</a></li><li><a href="..">Home</a></li><li><a href="/blog/tags">Tags</a></li></ul>
+</nav>
+
+	</div>
+</header>
+<main class="container">
+
+<article>
+	<header><hgroup id="brand">
+	<h1>The Reader Applicative and abstraction</h1>
+	<h5>
+		
+		<time datetime="2023-04-10 02:43:00 &#43;0100 BST">Apr 10, 2023</time>
+		<span class="no-print">
+			
+			-
+				
+				<a href="/blog/tags/haskell">haskell</a>
+				
+				<a href="/blog/tags/programming">programming</a>
+				<span>
+	</h5>
+	
+</hgroup>
+<hr class="sep" />
+</header>
+	<p>Now this is not a haskell blog site but this is the second interesting thing
+haskell has offered me.</p>
+<p>Today we are discussing the curious nature of the Reader monad
+(well the Reader applicative functor as I don&rsquo;t plan on delving into the
+monad aspects a terrible amount)</p>
+<p>To do this we will be discussing this pairs function.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>pairs <span style="color:#00f">::</span> [a] <span style="color:#00f">-&gt;</span> [(a, a)]
+</span></span><span style="display:flex;"><span>pairs <span style="color:#00f">=</span> zip &lt;*&gt; tail
+</span></span></code></pre></div><p>On the surface its all weird and magical, but we will walk through the types and
+the implementations so that we can maybe pick up an intuition on how this works
+in general.</p>
+<p>Now this function takes in a list and constructs a list of pairs, where the
+second slot is the item over in the list from the first slot.
+We can define it like this.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>pairs lst <span style="color:#00f">=</span> zip lst (tail lst)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print $ [1..5]
+</span></span><span style="display:flex;"><span>print $ pairs [1..5]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[1,2,3,4,5]
+</span></span><span style="display:flex;"><span>[(1,2),(2,3),(3,4),(4,5)]
+</span></span></code></pre></div><p>Now the question becomes, how does the first become the second using the Reader
+applicative? How does the type work out in such a neat fashion? How does this really
+abstract thing turn into something so concrete and useful? Well fear not dear
+<em>reader</em> we will answer these questions in due course.</p>
+<h2 id="how-do-these-types-work-out">How do these types work out?</h2>
+<p>Lets start off with the types</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(&lt;*&gt;) <span style="color:#00f">::</span> <span style="color:#2b91af">Applicative</span> m <span style="color:#00f">=&gt;</span> m (a <span style="color:#00f">-&gt;</span> b) <span style="color:#00f">-&gt;</span> m a <span style="color:#00f">-&gt;</span> m b
+</span></span></code></pre></div><p>This is the general type of the <code>ap</code> operator but in this case we are working with
+the Reader applicative. In that case we need to see what it looks like when we
+collapse the constraint.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(&lt;*&gt;) <span style="color:#00f">::</span> (r <span style="color:#00f">-&gt;</span> (a <span style="color:#00f">-&gt;</span> b)) <span style="color:#008000">-- (1)</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#00f">-&gt;</span> (r <span style="color:#00f">-&gt;</span> a)        <span style="color:#008000">-- (2)</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#00f">-&gt;</span> (r <span style="color:#00f">-&gt;</span> b)        <span style="color:#008000">-- (3)</span>
+</span></span></code></pre></div><p>To anyone who has worked with haskell a little bit, this should be <em>readable</em>.</p>
+<ol>
+<li>is a function that takes in a value <code>r</code> and returns a function from <code>a</code> to <code>b</code></li>
+<li>is a function from <code>r</code> to <code>a</code></li>
+<li>is a function from <code>r</code> to <code>b</code>. This is our return value.</li>
+</ol>
+<p>where <code>r</code> <code>a</code> and <code>b</code> are type variables that will collapse as we apply arguments.
+Note how our context is this <code>(r -&gt; ...)</code> function. This means ours functions have
+to take in the same first argument. You can intuit this as an &ldquo;environment&rdquo;
+these functions take in, though we will discuss the uses of the Reader monad in
+a bit.</p>
+<p>We can actually clean this up a little bit, the <code>-&gt;</code> operator is right associative
+meaning <code>a -&gt; b -&gt; c -&gt; d</code> is the same as <code>a -&gt; (b -&gt; (c -&gt; d))</code>.
+With this knowledge in hand our type before turns into.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(&lt;*&gt;) <span style="color:#00f">::</span> (r <span style="color:#00f">-&gt;</span> a <span style="color:#00f">-&gt;</span> b)
+</span></span><span style="display:flex;"><span>      <span style="color:#00f">-&gt;</span> (r <span style="color:#00f">-&gt;</span> a)
+</span></span><span style="display:flex;"><span>      <span style="color:#00f">-&gt;</span> r
+</span></span><span style="display:flex;"><span>      <span style="color:#00f">-&gt;</span> b
+</span></span></code></pre></div><p>Here we can see something, our first argument is a function from <code>r</code> to <code>a</code> to <code>b</code>,
+our, second argument is a function from <code>r</code> to <code>a</code>, This suggests we will combine
+these functions so that the second argument to the first function is the result
+of the second function (wordy I known). We also see how the return type <code>b</code> in the
+first function is also the return type of the <code>ap</code> operator itself. This type is
+pretty good at hinting both what this function takes in, and also how its
+combining our arguments under the hood.</p>
+<p>Now lets have a look at the types of <code>zip</code> and <code>tail</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>zip <span style="color:#00f">::</span> [a&#39;] <span style="color:#00f">-&gt;</span> [b&#39;] <span style="color:#00f">-&gt;</span> [(a&#39;, b&#39;)]
+</span></span><span style="display:flex;"><span>tail <span style="color:#00f">::</span> [a&#39;] <span style="color:#00f">-&gt;</span> [a&#39;]
+</span></span></code></pre></div><p>We can see both of these functions take in an <code>[a']</code> and then do something with
+that. In other words our <code>[a']</code> becomes our <code>r</code>. We can continue this process of
+subbing types into our <code>ap</code> operator.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>zip <span style="color:#00f">::</span> [a&#39;] <span style="color:#00f">-&gt;</span> [b&#39;] <span style="color:#00f">-&gt;</span> [(a&#39;, b&#39;)]
+</span></span><span style="display:flex;"><span>  thus
+</span></span><span style="display:flex;"><span>    r <span style="color:#00f">::</span> [a&#39;]
+</span></span><span style="display:flex;"><span>    a <span style="color:#00f">::</span> [b&#39;]
+</span></span><span style="display:flex;"><span>    b <span style="color:#00f">::</span> [(a&#39;, b&#39;)]
+</span></span></code></pre></div><p>When we fill in our type with this information we can see our type popping out.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(zip &lt;*&gt;) <span style="color:#00f">::</span> ([a&#39;] <span style="color:#00f">-&gt;</span> [b&#39;]) <span style="color:#00f">-&gt;</span> [a&#39;] <span style="color:#00f">-&gt;</span> [(a&#39;, b&#39;)]
+</span></span></code></pre></div><p>adding <code>tail</code> into the mix constrains the type of <code>b'</code> even further</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>tail <span style="color:#00f">::</span> [a&#39;] <span style="color:#00f">-&gt;</span> [a&#39;]
+</span></span><span style="display:flex;"><span>  thus
+</span></span><span style="display:flex;"><span>     b&#39; <span style="color:#00f">::</span> a&#39;
+</span></span></code></pre></div><p>applying this gives us our final type.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(zip &lt;*&gt; tail) <span style="color:#00f">::</span> [a&#39;] <span style="color:#00f">-&gt;</span> [(a&#39;, a&#39;)]
+</span></span></code></pre></div><p>Congrats, we have now manually done the job of the haskell type checker.
+Hopefully now we now see how just by following the types and using abstractions
+we have come back to the <em>type</em> of thing we want to do. This is nice and all but
+what about the actual implementation? the type is useless if it does not follow
+our logic.</p>
+<h2 id="why-does-the-implementation-work-out">Why does the implementation work out?</h2>
+<p>the implementation of our <code>ap</code> operator for our Reader Applicative is as follows</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(&lt;*&gt;) <span style="color:#00f">::</span> (r <span style="color:#00f">-&gt;</span> a <span style="color:#00f">-&gt;</span> b) <span style="color:#00f">-&gt;</span> (r <span style="color:#00f">-&gt;</span> a) <span style="color:#00f">-&gt;</span> r <span style="color:#00f">-&gt;</span> b
+</span></span><span style="display:flex;"><span>(&lt;*&gt;) f g r <span style="color:#00f">=</span> f r (g r)
+</span></span></code></pre></div><p>If we sub in our functions, we see our implementation pop out.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(&lt;*&gt;) zip tail lst <span style="color:#00f">::</span> [(a, a)]
+</span></span><span style="display:flex;"><span>(&lt;*&gt;) zip tail lst <span style="color:#00f">=</span> zip lst (tail lst)
+</span></span></code></pre></div><p>This leads us back to <code>pairs = zip &lt;*&gt; tail</code>, which becomes our final implementation.</p>
+<h2 id="so-now-why-does-the-reader-monad-exist">So now why does the reader monad exist?</h2>
+<p>Before we delve into that, we need discuss why we use applicatives and monads.
+This was discussed in more detail in my <a href="/blog/posts/understanding-monads">understanding monads post</a>
+but here is a smaller run down.</p>
+<p>An applicative functor allows us to compose contexts together into larger ones,
+like we have seen. It allows for a lot of very interesting abstractions such as
+parser combinators <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> as well as many other use cases (note that all monads
+you have played with also are applicatives). We see here how we have taken two
+functions that take in the same first argument and use the reader applicative to
+combine them into something larger. This scales.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>zip3 <span style="color:#00f">::</span> [a] <span style="color:#00f">-&gt;</span> [b] <span style="color:#00f">-&gt;</span> [c] <span style="color:#00f">-&gt;</span> [(a, b, c)]
+</span></span><span style="display:flex;"><span>(zip3 &lt;*&gt;) <span style="color:#00f">::</span> ([a] <span style="color:#00f">-&gt;</span> [b]) <span style="color:#00f">-&gt;</span> [a] <span style="color:#00f">-&gt;</span> [c] <span style="color:#00f">-&gt;</span> [(a, b, c)]
+</span></span><span style="display:flex;"><span>(zip3 &lt;*&gt; map show) <span style="color:#00f">::</span> <span style="color:#2b91af">Show</span> a <span style="color:#00f">=&gt;</span> [a] <span style="color:#00f">-&gt;</span> [c] <span style="color:#00f">-&gt;</span> [(a, <span style="color:#2b91af">String</span>, c)]
+</span></span><span style="display:flex;"><span>(zip3 &lt;*&gt; map show &lt;*&gt; map even) <span style="color:#00f">::</span> (<span style="color:#2b91af">Show</span> a, <span style="color:#2b91af">Integral</span> a) <span style="color:#00f">=&gt;</span> [a] <span style="color:#00f">-&gt;</span> [(a, <span style="color:#2b91af">String</span>, <span style="color:#2b91af">Bool</span>)]
+</span></span></code></pre></div><p>Here we essentially collect transformations of a list of type <code>[a]</code> Each function
+on the left hand side receives this <code>[a]</code> but its the responsibility of the left
+most function to collect it all together. This is a small contrived example, yet
+the rules here would apply to any set of functions that take in the
+same first argument.</p>
+<p>Here we have a type with three parameters, we have functions that
+extract out the information from a single string.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#00f">data</span> <span style="color:#2b91af">Person</span> <span style="color:#00f">=</span> <span style="color:#2b91af">Person</span> {name <span style="color:#00f">::</span> <span style="color:#2b91af">String</span>, age <span style="color:#00f">::</span> <span style="color:#2b91af">Int</span>, job <span style="color:#00f">::</span> <span style="color:#2b91af">String</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>constructType <span style="color:#00f">::</span> <span style="color:#2b91af">String</span> <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">Person</span>
+</span></span><span style="display:flex;"><span>constructType str <span style="color:#00f">=</span> <span style="color:#2b91af">Person</span>
+</span></span><span style="display:flex;"><span>                        (extractName str)
+</span></span><span style="display:flex;"><span>                        (extractAge str)
+</span></span><span style="display:flex;"><span>                        (extractJob str)
+</span></span></code></pre></div><p>but now instead of passing in str manually we can use this Reader applicative to pass
+this &ldquo;environment&rdquo; implicitly.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>constructType <span style="color:#00f">::</span> <span style="color:#2b91af">String</span> <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">Person</span>
+</span></span><span style="display:flex;"><span>constructType <span style="color:#00f">=</span> <span style="color:#2b91af">Person</span> &lt;$&gt; extractName &lt;*&gt; extractAge &lt;*&gt; extractJob
+</span></span></code></pre></div><p>Again here follow the types. <code>&lt;$&gt;</code> is fmap, it lifts <code>Person</code> from a simple function
+to a function that works with our Reader applicative.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(<span style="color:#2b91af">Person</span> &lt;$&gt;) <span style="color:#00f">::</span> r <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">String</span> <span style="color:#00f">-&gt;</span> r <span style="color:#00f">-&gt;</span> (<span style="color:#2b91af">Int</span> <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">String</span> <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">Person</span>)
+</span></span></code></pre></div><p>We can then keep on adding functions with the use of our <code>&lt;*&gt;</code> operator like so</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(<span style="color:#2b91af">Person</span> &lt;$&gt;) <span style="color:#00f">::</span> r <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">String</span> <span style="color:#00f">-&gt;</span> r <span style="color:#00f">-&gt;</span> (<span style="color:#2b91af">Int</span> <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">String</span> <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">Person</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#2b91af">Person</span> &lt;$&gt; extractName &lt;*&gt;) <span style="color:#00f">::</span> r <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">Int</span> <span style="color:#00f">-&gt;</span> (<span style="color:#2b91af">String</span> <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">Person</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#2b91af">Person</span> &lt;$&gt; extractName &lt;*&gt; extractAge) <span style="color:#00f">::</span> r <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">String</span> <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">Person</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#2b91af">Person</span> &lt;$&gt; extractName &lt;*&gt; extractAge &lt;*&gt; extractJob) <span style="color:#00f">::</span> r <span style="color:#00f">-&gt;</span> <span style="color:#2b91af">Person</span>
+</span></span></code></pre></div><p>We take this further with monads, where we can use the latter computation to
+inform the next. It allows us to combine these computations together using
+context.</p>
+<p>Its why the IO monad works so nicely. With the Reader monad it allows us to
+compose together computations which all need some kind of shared read only state. Useful
+when passing around things like app configurations (Values such as database
+configuration or network settings that only become known at deploy time), or
+something like react props</p>
+<p>This post only really focused on the Reader applicative, If you want to see how
+the reader <em>monad</em> have a look at <a href="https://engineering.dollarshaveclub.com/the-reader-monad-example-motivation-542c54ccfaa8">this post from dollar shave club</a>.</p>
+<h2 id="the-neatness-of-abstraction-dot">The neatness of abstraction.</h2>
+<p>We have now used abstract tools to solve our concrete problems, Why is this
+neat? Well now that we have expressed our solution in terms of this abstraction,
+we can use all of the tools and types of this abstraction to aid us further.</p>
+<p>take for example the function <code>sequenceA</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>sequenceA <span style="color:#00f">::</span> (<span style="color:#2b91af">Traversable</span> t, <span style="color:#2b91af">Applicative</span> f) <span style="color:#00f">=&gt;</span> t (f a) <span style="color:#00f">-&gt;</span> f (t a)
+</span></span></code></pre></div><p>here we can see it essentially can turn a type inside out, Now this may not seem
+useful now but imagine what it would look like if we collapse the constraints.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>sequenceA <span style="color:#00f">::</span> [r <span style="color:#00f">-&gt;</span> a] <span style="color:#00f">-&gt;</span> r <span style="color:#00f">-&gt;</span> [a]
+</span></span></code></pre></div><p>Here we have a function that takes in a list of functions from <code>r</code> to <code>a</code> and then
+it returns a function from <code>r</code> to <code>[a]</code></p>
+<p>In other words, we can perform a set of transformations on a single value.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>sequenceA [(+1), (+2), (+3)] 1
+</span></span></code></pre></div><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>This may seem contrived but you can imagine use cases. We need to pass a user
+given value through a gauntlet of checks. or we take in a value and need multipe
+permutations of it and so on. I am sure that people are more creative than me.</p>
+<p>Just by re-framing our problem using this abstraction, we have turned
+something pretty manual and &ldquo;low level&rdquo; into something smaller, easier to extend
+and nicer, and thats pretty neat.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Hopefully now you have a small intuition on the Reader Applicitive, The Reader
+Monad is another beast but now you have the basics of the type out of the way
+you can pick up that a with a little less head scratching.</p>
+<p>Again this was not written to be useful but if you did find it useful feel free
+to email me, (its somewhere on this site).</p>
+<h2 id="appendix">Appendix</h2>
+<p>So there is actually another version of the <code>ap</code> operator that is implemented in
+terms of the Reader monad</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>pairs <span style="color:#00f">=</span> ap zip tail
+</span></span></code></pre></div><p>This is a historical artifact as Monads are older than Applicatives, but
+it means we now have another way of framing the problem. As the type is
+essentially the same (Just constrained to Monads) all of the type work we did
+still <em>applies</em> but the implementation and how we get back to our first solution
+is interesting.</p>
+<p>the implementation of ap is as follows</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>ap m1 m2 <span style="color:#00f">=</span> <span style="color:#00f">do</span> { x1 <span style="color:#00f">&lt;-</span> m1; x2 <span style="color:#00f">&lt;-</span> m2; return (x1 x2) }
+</span></span></code></pre></div><p>as do notation is syntax sugar for <code>&gt;&gt;=</code> lets get rid of it</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>ap m1 m2 <span style="color:#00f">=</span> m1 &gt;&gt;= (\x1 <span style="color:#00f">-&gt;</span> m2 &gt;&gt;= (\x2 <span style="color:#00f">-&gt;</span> return (x1 x2)))
+</span></span></code></pre></div><p>The implementation of <code>&gt;&gt;=</code> and <code>return</code> are as follows</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span>(&gt;&gt;=)  <span style="color:#00f">::</span> (r <span style="color:#00f">-&gt;</span> a) <span style="color:#00f">-&gt;</span> (a <span style="color:#00f">-&gt;</span> r <span style="color:#00f">-&gt;</span> b) <span style="color:#00f">-&gt;</span> r <span style="color:#00f">-&gt;</span> b
+</span></span><span style="display:flex;"><span>f &gt;&gt;= k <span style="color:#00f">=</span> \r <span style="color:#00f">-&gt;</span> k (f r) r
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>return <span style="color:#00f">::</span> a <span style="color:#00f">-&gt;</span> r <span style="color:#00f">-&gt;</span> a
+</span></span><span style="display:flex;"><span>return <span style="color:#00f">=</span> const
+</span></span></code></pre></div><p>With this we can start to sub</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#008000">-- return = const</span>
+</span></span><span style="display:flex;"><span>ap zip tail <span style="color:#00f">=</span> zip &gt;&gt;= (\x1 <span style="color:#00f">-&gt;</span> tail &gt;&gt;= (\x2 <span style="color:#00f">-&gt;</span> const (x1 x2)))
+</span></span><span style="display:flex;"><span><span style="color:#008000">-- sub inner &gt;&gt;=</span>
+</span></span><span style="display:flex;"><span>ap zip tail <span style="color:#00f">=</span> zip &gt;&gt;= (\x1 <span style="color:#00f">-&gt;</span> (\r2 <span style="color:#00f">-&gt;</span> (\x2 <span style="color:#00f">-&gt;</span> const (x1 x2)) (tail r2) r2)
+</span></span><span style="display:flex;"><span><span style="color:#008000">-- sub outer &gt;&gt;=</span>
+</span></span><span style="display:flex;"><span>ap zip tail <span style="color:#00f">=</span> (\r1 <span style="color:#00f">-&gt;</span> (\x1 <span style="color:#00f">-&gt;</span> (\r2 <span style="color:#00f">-&gt;</span> (\x2 <span style="color:#00f">-&gt;</span> const (x1 x2)) (tail r2) r2)) (zip r1) r1)
+</span></span><span style="display:flex;"><span><span style="color:#008000">-- move r1 to the left hand side</span>
+</span></span><span style="display:flex;"><span>ap zip tail r1 <span style="color:#00f">=</span> (\x1 <span style="color:#00f">-&gt;</span> (\r2 <span style="color:#00f">-&gt;</span> (\x2 <span style="color:#00f">-&gt;</span> const (x1 x2)) (tail r2) r2)) (zip r1) r1
+</span></span><span style="display:flex;"><span><span style="color:#008000">-- replace x1 with (zip r1)</span>
+</span></span><span style="display:flex;"><span>ap zip tail r1 <span style="color:#00f">=</span> (\r2 <span style="color:#00f">-&gt;</span> (\x2 <span style="color:#00f">-&gt;</span> const ((zip r1) x2)) (tail r2) r2) r1
+</span></span><span style="display:flex;"><span><span style="color:#008000">-- replace x2 with (tail r2)</span>
+</span></span><span style="display:flex;"><span>ap zip tail r1 <span style="color:#00f">=</span> (\r2 <span style="color:#00f">-&gt;</span> const ((zip r1) (tail r2)) r2) r1
+</span></span><span style="display:flex;"><span><span style="color:#008000">-- replace r2 with r1</span>
+</span></span><span style="display:flex;"><span>ap zip tail r1 <span style="color:#00f">=</span> const ((zip r1) (tail r1)) r1
+</span></span><span style="display:flex;"><span><span style="color:#008000">-- const x = (\y -&gt; x)</span>
+</span></span><span style="display:flex;"><span>ap zip tail r1 <span style="color:#00f">=</span> (\c1 <span style="color:#00f">-&gt;</span> ((zip r1) (tail r1))) r1
+</span></span><span style="display:flex;"><span><span style="color:#008000">-- replace c1 with r1</span>
+</span></span><span style="display:flex;"><span>ap zip tail r1 <span style="color:#00f">=</span> ((zip r1) (tail r1))
+</span></span><span style="display:flex;"><span><span style="color:#008000">-- clean up</span>
+</span></span><span style="display:flex;"><span>ap zip tail r <span style="color:#00f">=</span> (zip r) (tail r)
+</span></span></code></pre></div><p>Easy to read, I know. This took me a while to work out but playing with it
+helped quite a bit.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>For those out of the loop, Parser combinators is a way to build up a
+parser by composing smaller parsers together. <a href="https://www.youtube.com/watch?v=N9RUqGYuGfw">This video by the Tsoding really
+helped me pick it up</a>. Its also the basis for libraries such as <a href="https://hackage.haskell.org/package/parsec">Parsec</a> and
+other libraries that follow in its wake&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</article>
+<nav class="no-print post-nav">
+
+	<a class="prev-post" href="https://www.jeetelongname.net/blog/posts/understanding-monads/">
+		<img class="icon-text" src="/blog/img/prev.svg"/>I finally understand monads and now I will write about it</a>
+
+
+</nav>
+
+
+<section id="related">
+  <h4>See Also</h4>
+  <ul>
+    
+  	<li><a href="/blog/posts/understanding-monads/">I finally understand monads and now I will write about it</a></li>
+  	
+  	<li><a href="/blog/posts/post4/">List manipulation into madness</a></li>
+  	
+  </ul>
+</section>
+
+
+
+
+			<hr class="sep" />
+		</main>
+		<footer class="container no-print">
+			<div class="u-footer">
+				
+
+<a href="mailto:jeetelongname@gmail.com"><img class="icon-social" src="/blog/img/email.svg" alt="Email Me!"/></a>
+
+
+<a href="https://github.com/jeetelongname"><img class="icon-social" src="/blog/img/github.svg" alt="Github"/></a>
+
+
+<a href="https://www.jeetelongname.net/blog/index.xml" target="_blank"><img class="icon-social" src="/blog/img/feed.svg" alt="Feed"></a>
+
+
+				<p>
+					
+					Theme used: <a href="https://github.com/yursan9/manis-hugo-theme">Manis</a><br>
+					
+					
+					&copy 2022 Jeetaditya Chatterjee
+					
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/blog/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+	</body>
+</html>
+
