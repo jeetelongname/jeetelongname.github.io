@@ -1,0 +1,31 @@
+#+HUGO_BASE_DIR: ~/code/web/website/blog-hugo
+#+HUGO_SECTION: work
+#+hugo_front_matter_format: yaml
+#+STARTUP: show2levels
+
+* Posts
+** DONE No sleep :poem:
+CLOSED: [2023-05-23 Tue 17:41]
+:PROPERTIES:
+:EXPORT_DATE: 2023-05-22
+:EXPORT_FILE_NAME: no-sleep
+:END:
+A small poem on sleep deprivation
+#+begin_verse
+I watch the world defrost
+As i sit reading another note
+hear the birds begin to accost
+As I type out more bloat.
+
+My brain begins to close
+The fingers grow tired
+As the table falls to my nose
+and my body has fully retired
+#+end_verse
+
+* COMMENT Local Variables :ARCHIVE:
+# Local Variables:
+# org-export-with-author: nil
+# org-log-done: 'time
+# eval: (org-hugo-auto-export-mode)
+# End:

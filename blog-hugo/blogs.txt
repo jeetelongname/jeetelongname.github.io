@@ -1,0 +1,13 @@
+http://www.terminally-incoherent.com/blog/feed
+http://nullprogram.com/feed
+http://pragmaticemacs.com/feed/
+https://xenodium.com/rss.xml
+https://blog.tecosaur.com/tmio/rss.xml
+https://karthinks.com/index.xml
+https://jemma.dev/blog/published.xml
+https://briancallahan.net/blog/feed.xml
+https://blog.burntsushi.net/index.xml
+https://ianthehenry.com/feed.xml
+https://www.rousette.org.uk/index.xml
+https://a-blog-with.relevant-information.com/index.xml
+https://j3s.sh/feed.atom

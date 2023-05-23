@@ -2,6 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.jeetelongname.net/blog/work/</loc>
+    <lastmod>2023-05-23T17:41:00+01:00</lastmod>
+    <priority>0</priority>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/</loc>
+    <lastmod>2023-05-23T17:41:00+01:00</lastmod>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/work/no-sleep/</loc>
+    <lastmod>2023-05-23T17:41:00+01:00</lastmod>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/tags/poem/</loc>
+    <lastmod>2023-05-23T17:41:00+01:00</lastmod>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/tags/</loc>
+    <lastmod>2023-05-23T17:41:00+01:00</lastmod>
+  </url><url>
     <loc>https://www.jeetelongname.net/blog/posts/</loc>
     <lastmod>2023-04-10T02:43:00+01:00</lastmod>
     <priority>0</priority>
@@ -9,13 +25,7 @@
     <loc>https://www.jeetelongname.net/blog/tags/haskell/</loc>
     <lastmod>2023-04-10T02:43:00+01:00</lastmod>
   </url><url>
-    <loc>https://www.jeetelongname.net/blog/</loc>
-    <lastmod>2023-04-10T02:43:00+01:00</lastmod>
-  </url><url>
     <loc>https://www.jeetelongname.net/blog/tags/programming/</loc>
-    <lastmod>2023-04-10T02:43:00+01:00</lastmod>
-  </url><url>
-    <loc>https://www.jeetelongname.net/blog/tags/</loc>
     <lastmod>2023-04-10T02:43:00+01:00</lastmod>
   </url><url>
     <loc>https://www.jeetelongname.net/blog/posts/the-reader-monad-and-abstraction/</loc>
@@ -107,8 +117,7 @@
   </url><url>
     <loc>https://www.jeetelongname.net/blog/posts/blog/</loc>
   </url><url>
-    <loc>https://www.jeetelongname.net/blog/work/</loc>
-    <priority>0</priority>
+    <loc>https://www.jeetelongname.net/blog/work/work/</loc>
   </url><url>
     <loc>https://www.jeetelongname.net/blog/about/</loc>
   </url>

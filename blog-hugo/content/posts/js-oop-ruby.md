@@ -99,7 +99,7 @@ and just like that we can now get and set properties.
 ## Methods {#methods}
 
 Methods are a little more interesting, Methods are properties that are
-functions, they The way they access the object is through the use of the `this` keyword.
+functions. The way they access the object is through the use of the `this` keyword.
 
 ```js
 obj = {
@@ -148,6 +148,7 @@ using lambdas and currying.
 
 ```ruby
 class Hash
+
   def method_missing(prop, *args)
     if prop.end_with?("=") # check if its a set
       self[prop.to_s.delete_suffix('=').to_sym] = args.first
@@ -159,16 +160,16 @@ class Hash
       accessed_prop
     end
   end
+
 end
 
 hash = { hello: 'Hi',
-         greet: ->(this, name, l_name) { "#{this.hello}, #{name}, #{l_name}" } }
+         greet: ->(this, name, l_name) { puts "#{this.hello}, #{name}, #{l_name}" } }
+
 
 hash.hello = 'greetings'
 puts hash.greet.('Joe', 'Mama') # => "greetings, Joe Mama"
 ```
-
-This is nice and all but I want to have that magic variable.
 
 
 ### Getters and Setters {#getters-and-setters}

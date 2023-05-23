@@ -76,11 +76,8 @@ listVer[0]
 
 recordVer.name
 #+end_src
+
 * basic SQL
-#+begin_notes
-
-#+end_notes
-
 #+begin_src sql
 select name from students;
 

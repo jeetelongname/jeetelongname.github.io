@@ -62,17 +62,6 @@ authentic in any way, shape or form.
 *** Finishing thoughts
 This is a fun little dish that acts as a blank canvas. chuck in whatever you
 have and let it simmer for a bit and your done!
-** TODO ox-hugo is pretty nice :hugo:blogs:org:
-:PROPERTIES:
-:EXPORT_FILE_NAME: ox-hugo
-:EXPORT_DATE: 2022-03-03
-:END:
-I _have_ been meaning to move over to using org for my blogging and ox-hugo is a
-pretty nice, there are some snags but they are pretty minor and now its pretty
-seamless and quite _enjoyable_.
-*** The Problem
-As I discussed in my post on why I don't write as much, one problem I had was
-markdown, for anything non trivial its kinda a pain and I would rather be in org
 ** TODO The privacy of public transport
 :PROPERTIES:
 :EXPORT_FILE_NAME: privacy_public_transport
@@ -730,7 +719,7 @@ and just like that we can now get and set properties.
 
 *** Methods
 Methods are a little more interesting, Methods are properties that are
-functions, they The way they access the object is through the use of the ~this~ keyword.
+functions. The way they access the object is through the use of the ~this~ keyword.
 
 #+begin_src js
 obj = {
@@ -762,6 +751,7 @@ obj.full() == obj.full.call(obj) // => true
 This is visually similar to python. The only difference being that the
 method definitions need to take in an implicit self argument as there first
 positional argument.
+
 #+begin_src python
 class Person():
     def method(self, *args): # explit self argument
@@ -775,6 +765,7 @@ using lambdas and currying.
 
 #+begin_src ruby :tangle test.rb
 class Hash
+
   def method_missing(prop, *args)
     if prop.end_with?("=") # check if its a set
       self[prop.to_s.delete_suffix('=').to_sym] = args.first
@@ -786,15 +777,16 @@ class Hash
       accessed_prop
     end
   end
+
 end
 
 hash = { hello: 'Hi',
-         greet: ->(this, name, l_name) { "#{this.hello}, #{name}, #{l_name}" } }
+         greet: ->(this, name, l_name) { puts "#{this.hello}, #{name}, #{l_name}" } }
+
 
 hash.hello = 'greetings'
 puts hash.greet.('Joe', 'Mama') # => "greetings, Joe Mama"
 #+end_src
-This is nice and all but I want to have that magic variable.
 
 **** Getters and Setters
 *** Prototypes
@@ -1116,6 +1108,34 @@ helped quite a bit.
 parser by composing smaller parsers together. [[https://www.youtube.com/watch?v=N9RUqGYuGfw][This video by the Tsoding really
 helped me pick it up]]. Its also the basis for libraries such as [[https://hackage.haskell.org/package/parsec][Parsec]] and
 other libraries that follow in its wake
+** TODO Ox Hugo is pretty nice :blog:hugo:org:emacs:
+:PROPERTIES:
+:EXPORT_DATE: 2023-05-22
+:EXPORT_FILE_NAME: ox-hugo-testimonial
+:END:
+
+I have been using [[https://ox-hugo.scripter.co/][ox-hugo]] to write this blog for a little bit now, Not to spoil
+the review 😉 but its been a pretty smooth experience. I wanted to discuss some
+of the great aspects, some of the downsides and some of the tweaks to make it a
+seamless experience.
+
+*** The good
+Ox hugo has turned a mess of markdown files into a single neat org file (that
+then tangles to that mess of markdown files). In short it has made blogging fun
+again for me.
+**** Org
+The reason I like org is not really the syntax, though i also do prefer the
+syntax. Org has fantastic tooling an intergration with emacs that just makes it
+a joy to write. From its ability to guess the next opening syntax of things like
+headings, to the intuitive commands to manipulate those elements. This is not a
+review of org mode but to say its not part of the reason I switched would
+
+*** The eh
+*** The tweaks
+*** Conclusions
+
+*** Footnotes
+
 * COMMENT Local Variables :ARCHIVE:
 # Local Variables:
 # org-export-with-author: nil

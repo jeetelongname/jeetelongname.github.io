@@ -2,9 +2,10 @@
 	path = presentations/reveal.js
 	url = https://github.com/hakimel/reveal.js.git
 
-[submodule "blog-hugo/themes/hugo-ink"]
-	path = blog-hugo/themes/hugo-ink
-	url = https://github.com/knadh/hugo-ink
 [submodule "blog-hugo/themes/manis-hugo-theme"]
 	path = blog-hugo/themes/manis-hugo-theme
 	url = https://github.com/jeetelongname/manis-hugo-theme
+
+[submodule "openring"]
+	path = openring
+	url = https://git.sr.ht/~sircmpwn/openring
