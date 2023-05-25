@@ -24,16 +24,17 @@ __END__
 
       <link rel="apple-touch-icon" href="/apple-touch-icon.png">
       <!-- Place favicon.ico in the root directory -->
-      <!-- <link rel="stylesheet" href="../../css/presentation.css" type=
-                  "text/css" media="screen"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 
   </head>
   <body>
+    <main class="container">
     <h1> Lessons </h1>
-    <ul>
+      <ul>
 % lessons.each do |lesson|
         <li> <a href="<%= lesson.join(".") %>"> <%= lesson[0].gsub("-", " ") %> </a> </li>
 % end
-    </ul>
+      </ul>
+    </main>
   </body>
 <html>
