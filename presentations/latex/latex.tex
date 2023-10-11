@@ -1,0 +1,191 @@
+\documentclass[notes]{beamer}
+% \documentclass[notes=only]{beamer}
+
+\usepackage{minted}
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{latex.bib}
+\usetheme{default}
+\usecolortheme{seahorse}
+
+\title{A small introduction to \LaTeX{}}
+\subtitle{}
+\author{Jeetaditya Chatterjee (Jeet)}
+\institute{UoP IT Society}
+\date{}
+\logo{\includegraphics[width=2cm]{itsoc.png}}
+
+\begin{document}
+
+\begin{frame}
+	\titlepage{}
+\end{frame}
+\begin{frame}{What we will cover}
+	\tableofcontents
+\end{frame}
+\AtBeginSection
+{
+	\begin{frame}{Where are we?}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+\section{Why Stray From The Known?}%
+\label{sec:whystray}
+\begin{frame}{What are the problems with the current form?}
+	\begin{itemize}
+		\item Formatting is hard
+		\item Automatic is better than manual
+		\item Explicit is better than Implict
+		\item Declarative is better than Speculative
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Why Stray from the Known?}
+	\begin{itemize}
+		\item \LaTeX{} is designed to produce large technical documents
+		\item You can format once at the beginning and then focus on writing
+		\item You can break up large documents without having too worry about
+		      formatting
+		\item \LaTeX{} has been around forever and you can find a package or
+		      use case for most document preparation needs
+		\item Its the standard for academic and scientific writings, So much
+		      so the school of computing blesses its use for larger documents
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{How to get started with LaTeX}
+	\begin{center}
+		\url{https://www.overleaf.com}
+	\end{center}
+\end{frame}
+
+\section{The Basic Structure of A Document}
+\begin{frame}{A basic structure}
+	\LaTeX{} enforces structure, Headings, labels and paragraphs are not just
+	styled elements but provide meaning to the text. They will be picked up by
+	things such as the table of contents, In things such a headers and can be
+	directly referenced against labels are provided. for example: \ref{sec:whystray}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{The sections}
+\begin{minted}{latex}
+  \section
+  \subsection
+  \subsubsection
+  \paragraph
+\end{minted}
+\end{frame}
+
+\section{Formatting first and Once, The Preamble}%
+\begin{frame}{How we separate concerns}
+	\includegraphics[width=10cm]{Latex document style.png}
+\end{frame}
+\begin{frame}[fragile]{A real example}
+
+\begin{minted}[linenos]{latex}
+\documentclass{article}
+\usepackage[left=2.5cm, right=2.5cm]{geometry}
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{ccc3.bib}
+\usepackage[linktocpage=true,
+            colorlinks=true,
+            linkcolor=black,
+            urlcolor=blue,
+            citecolor=black]{hyperref}
+
+\title{Delegation in role based access control}
+\author{UP2063130}
+\date{}
+\end{minted}
+
+\end{frame}
+
+\section{Citations and reference management}%
+\begin{frame}{Citation management should not be painful}
+How many have had to cite things formally so far? How many have had to format
+inline citations by hand into your document, how many times have you had to
+change both the bibliography and the citation itself because you missed
+something? This is not fun, its actively painful.
+\end{frame}
+\begin{frame}{Getting citations}
+If you are getting citations use \url{https://zotero.org}.
+\autocite{ZoteroYourPersonal} Zotero can grab all the metadata it knows about
+on
+
+\begin{itemize}
+\item Individual papers on journals
+		\autocite{barkaFrameworkRolebasedDelegation2000}
+  \item News and magazine articles \autocite{104yearoldChicagoWoman2023}
+		\item even just random videos and websites \autocite{ZOMBO}
+\end{itemize}
+
+all with the click of a button!
+\end{frame}
+
+\begin{frame}[fragile]{Using citations}
+using citations is a matter of copying in a line of boiler plate and then using
+latex commands that actually deal with the formatting of these things.
+\begin{minted}{latex}
+% in the preamble
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{latex.bib}
+% ... in document
+% for regular referencing
+\autocite{CITEKEY}
+% for referencing inline
+\textcite{CITEKEY}
+% referencing other parts of the documents
+\ref{label}
+% Finally for adding a bibliography
+\printbibliography
+\end{minted}
+Thats about it! \ref{subsec:bib}
+\end{frame}
+
+\subsection{Bibliography}
+\label{subsec:bib}
+\begin{frame}[allowframebreaks]
+\frametitle{References}
+\printbibliography[heading=none]
+\end{frame}
+
+\section{The next steps}
+\begin{frame}{there is more to life \LaTeX{}!}
+\begin{itemize}
+  \item LaTeX is but one example of a markup language
+  \item there are lighter versions such as markdown
+  \item In a lot of cases you can use tools such as pandoc to convert from
+  simpler forms to larger ones
+  \item LaTeX as a tool is massive and learning as you go is a must!
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Where next?}
+  \begin{itemize}
+	\item make an account on \href{https://overleaf.com}{overleaf}, or install latex on your computer
+	\item check out \href{https://ctan.org/}{The comprehensive tex archive
+	  network}. It contaisn all of the packages you would want to use (Over 6000
+	of them!) as well as very well typeset documentation
+	\item the \href{https://tex.stackexchange.com/}{\TeX{} stack exchange is a
+	  great place to debug issues}
+	\item sites such as \href{https://latex-tutorial.com/}{latex
+	  tutorial} \href{https://latex-beamer.com/}{latex beamer}
+	and \href{https://www.overleaf.com/learn}{Overleaf's documentation} form a
+	back bone of documentation
+
+  \end{itemize}
+\end{frame}
+
+
+\section{We are done!}
+\begin{frame}
+	\begin{center}
+		\framebox{\huge{Any Questions?}}
+	\end{center}
+\end{frame}
+
+
+
+\end{document}
