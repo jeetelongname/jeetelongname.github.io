@@ -197,7 +197,8 @@ print(lst)
 
 #+reveal: split
 #+begin_notes
-The way we fix this is by making a copy of the list and then mutating that
+The way we fix this is by making a copy of the list and then mutating that, or
+using tuple operations...
 #+end_notes
 
 #+begin_src python :results output
@@ -217,6 +218,13 @@ print(f"{lst=}\n{new_lst=}\n{new_new_lst=}")
 : new_lst=['Joe']
 : new_new_lst=['Joe', 'Keiran']
 ** Exercise: Pure or not
+We are going to play a game where we guess if certain functions from the std
+library are pure, or if they do some kind of side effect.
+#+attr_reveal: :frag (roll-in)
+    - ~input()~
+    - ~reversed()~
+    - ~enumerate()~
+    - ~random.rand()~
 
 * Functions, First class girlies
 * Loops, Do not exist

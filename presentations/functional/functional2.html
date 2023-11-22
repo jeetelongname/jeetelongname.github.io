@@ -19,8 +19,8 @@
 </section>
 
 <section>
-<section id="slide-orge277186">
-<h2 id="orge277186">What is the norm?</h2>
+<section id="slide-org91e5065">
+<h2 id="org91e5065">What is the norm?</h2>
 <aside class="notes">
 <p>
 The
@@ -37,8 +37,8 @@ The
 </section>
 </section>
 <section>
-<section id="slide-org734045e">
-<h2 id="org734045e">How does functional programming differ from this?</h2>
+<section id="slide-org6044dbf">
+<h2 id="org6044dbf">How does functional programming differ from this?</h2>
 <ul>
 <li class="fragment roll-in">Code is made up of functions</li>
 <li class="fragment roll-in">Data is separate from the code that acts on it</li>
@@ -50,8 +50,8 @@ The
 </section>
 </section>
 <section>
-<section id="slide-org708fbdc">
-<h2 id="org708fbdc">Exercise: Opening an Editor</h2>
+<section id="slide-org7ac0d08">
+<h2 id="org7ac0d08">Exercise: Opening an Editor</h2>
 <aside class="notes">
 <p>
 I don&rsquo;t want to teach you all a language, Thus for this  though learning a functional language
@@ -71,8 +71,8 @@ really cool things they do. <b>talk about what they do</b>
 </section>
 </section>
 <section>
-<section id="slide-org7f8af2b">
-<h2 id="org7f8af2b">Data, Immutable and Separate</h2>
+<section id="slide-org2ba005b">
+<h2 id="org2ba005b">Data, Immutable and Separate</h2>
 <aside class="notes">
 <p>
 When we think about data, We think about performing actions on it and changing
@@ -119,8 +119,8 @@ x=(1, 2, 3)
 y=(1, 2)
 </pre>
 </section>
-<section id="slide-org2644dd9">
-<h3 id="org2644dd9">Exercise: programming with tuples</h3>
+<section id="slide-org183e13a">
+<h3 id="org183e13a">Exercise: programming with tuples</h3>
 <p>
 See if you can turn this code snippet from using a mutable list into using
 immutable tuples. Note I don&rsquo;t expect your entire code to be immutable just yet,
@@ -165,8 +165,8 @@ Just that
 </section>
 </section>
 <section>
-<section id="slide-orgd45605f">
-<h2 id="orgd45605f">Functions, Pure and Side effect free</h2>
+<section id="slide-org7b9fe97">
+<h2 id="org7b9fe97">Functions, Pure and Side effect free</h2>
 <aside class="notes">
 <p>
 Now Hopefully this is already not terrible for you. Next we move onto the idea
@@ -184,8 +184,8 @@ This means
 
 </ul>
 </section>
-<section id="slide-org905cd14">
-<h3 id="org905cd14">No Printing</h3>
+<section id="slide-org3d732ab">
+<h3 id="org3d732ab">No Printing</h3>
 <aside class="notes">
 <p>
 YES no printing, taking input is actually worse as that removes the
@@ -227,8 +227,8 @@ GOOD
 </pre>
 </div>
 </section>
-<section id="slide-org3556d81">
-<h3 id="org3556d81">No Mutating Outside Variables</h3>
+<section id="slide-orgb9bbad5">
+<h3 id="orgb9bbad5">No Mutating Outside Variables</h3>
 <p>
 BAD
 </p>
@@ -275,8 +275,8 @@ GOOD, kinda
 ['Joe', 'Keiran']
 </pre>
 </section>
-<section id="slide-orgfcecb05">
-<h3 id="orgfcecb05">No Mutating passed in variables</h3>
+<section id="slide-orgb142b0e">
+<h3 id="orgb142b0e">No Mutating passed in variables</h3>
 <aside class="notes">
 <p>
 Lets go back to that last example. python actually does something called &ldquo;pass
@@ -310,7 +310,8 @@ Pass by reference
 <section>
 <aside class="notes">
 <p>
-The way we fix this is by making a copy of the list and then mutating that
+The way we fix this is by making a copy of the list and then mutating that, or
+using tuple operations&#x2026;
 </p>
 
 </aside>
@@ -336,39 +337,50 @@ new_lst=['Joe']
 new_new_lst=['Joe', 'Keiran']
 </pre>
 </section>
-<section id="slide-orgf9edbab">
-<h3 id="orgf9edbab">Exercise: Pure or not</h3>
+<section id="slide-org0da5dcc">
+<h3 id="org0da5dcc">Exercise: Pure or not</h3>
+<p>
+We are going to play a game where we guess if certain functions from the std
+library are pure, or if they do some kind of side effect.
+</p>
+<ul>
+<li class="fragment roll-in"><code>input()</code></li>
+<li class="fragment roll-in"><code>reversed()</code></li>
+<li class="fragment roll-in"><code>enumerate()</code></li>
+<li class="fragment roll-in"><code>random.rand()</code></li>
+
+</ul>
 
 </section>
 </section>
 <section>
-<section id="slide-org3d94f3f">
-<h2 id="org3d94f3f">Functions, First class girlies</h2>
+<section id="slide-org9b51a8a">
+<h2 id="org9b51a8a">Functions, First class girlies</h2>
 </section>
 </section>
 <section>
-<section id="slide-org73db017">
-<h2 id="org73db017">Loops, Do not exist</h2>
+<section id="slide-org038c0a6">
+<h2 id="org038c0a6">Loops, Do not exist</h2>
 </section>
 </section>
 <section>
-<section id="slide-org5df2e29">
-<h2 id="org5df2e29">Lists, A lot of work done on them.</h2>
+<section id="slide-orgced68e9">
+<h2 id="orgced68e9">Lists, A lot of work done on them.</h2>
 </section>
 </section>
 <section>
-<section id="slide-org442f6be">
-<h2 id="org442f6be">What about side effects????!!&gt;!&gt;&gt;!&gt;1.1.1.1.1&gt;&gt;&gt;&gt;&gt;?????</h2>
+<section id="slide-org7cde158">
+<h2 id="org7cde158">What about side effects????!!&gt;!&gt;&gt;!&gt;1.1.1.1.1&gt;&gt;&gt;&gt;&gt;?????</h2>
 </section>
 </section>
 <section>
-<section id="slide-orged66fc8">
-<h2 id="orged66fc8">What about errors?????!&gt;?&gt;!&gt;!&gt;!&gt;!&gt;!&gt;</h2>
+<section id="slide-org769e12b">
+<h2 id="org769e12b">What about errors?????!&gt;?&gt;!&gt;!&gt;!&gt;!&gt;!&gt;</h2>
 </section>
 </section>
 <section>
-<section id="slide-org232604b">
-<h2 id="org232604b">Any Questions</h2>
+<section id="slide-org3f3d562">
+<h2 id="org3f3d562">Any Questions</h2>
 </section>
 </section>
 </div>
