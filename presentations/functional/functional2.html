@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Functional Programming, An interactive introduction</title>
+<meta name="author" content="Jeetaditya Chatterjee"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Functional Programming, An interactive introduction</h1><h3></h3><h2>By  Jeetaditya Chatterjee</h2><h3><i></i></h3><p>Press s for speaker notes</p>
+</section>
+
+<section>
+<section id="slide-orge277186">
+<h2 id="orge277186">What is the norm?</h2>
+<aside class="notes">
+<p>
+The
+</p>
+
+</aside>
+<ul>
+<li class="fragment roll-in">Imperative code</li>
+<li class="fragment roll-in">Object oriented code</li>
+<li class="fragment roll-in">State just floating around</li>
+<li class="fragment roll-in">No control over side effects.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org734045e">
+<h2 id="org734045e">How does functional programming differ from this?</h2>
+<ul>
+<li class="fragment roll-in">Code is made up of functions</li>
+<li class="fragment roll-in">Data is separate from the code that acts on it</li>
+<li class="fragment roll-in">Data cannot be mutated in place</li>
+<li class="fragment roll-in">Functions are values.</li>
+<li class="fragment roll-in">Side effects can <b>sometimes</b> be controlled</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org708fbdc">
+<h2 id="org708fbdc">Exercise: Opening an Editor</h2>
+<aside class="notes">
+<p>
+I don&rsquo;t want to teach you all a language, Thus for this  though learning a functional language
+such as clojure, elixir, haskell with these constraints really helps solidify
+these things and in the case of these languages allow you to leverage some
+really cool things they do. <b>talk about what they do</b>
+</p>
+
+</aside>
+<ul>
+<li class="fragment roll-in">Clojure</li>
+<li class="fragment roll-in">Elixir</li>
+<li class="fragment roll-in">Haskell</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org7f8af2b">
+<h2 id="org7f8af2b">Data, Immutable and Separate</h2>
+<aside class="notes">
+<p>
+When we think about data, We think about performing actions on it and changing
+it in place.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">x</span> <span style="color: #b877db; font-style: italic;">=</span> [<span style="color: #f09383;">1</span>, <span style="color: #f09383;">2</span>, <span style="color: #f09383;">3</span>]
+x.<span style="color: #21bfc2; font-style: italic;">pop</span>()
+<span style="color: #b877db;">print</span>(x)
+</pre>
+</div>
+
+<pre class="example">
+[1, 2]
+</pre>
+
+
+</section>
+<section>
+<aside class="notes">
+<p>
+In an immutable version we would use something like a tuple, when we do a
+similar operation on a tuple we see how x is unaffected.
+Python in this example we cannot add to or take an element out (though the
+elements inside can be mutated)
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">x</span> <span style="color: #b877db; font-style: italic;">=</span> (<span style="color: #f09383;">1</span>,<span style="color: #f09383;">2</span>,<span style="color: #f09383;">3</span>)
+<span style="color: #e95678;">y</span> <span style="color: #b877db; font-style: italic;">=</span> x[:<span style="color: #b877db; font-style: italic;">-</span><span style="color: #f09383;">1</span>]
+<span style="color: #b877db;">print</span>(<span style="color: #fab795;">f"</span><span style="color: #b877db; font-style: italic;">{</span><span style="color: #c7c9cb; background-color: #232530;">x</span><span style="color: #b877db; font-style: italic;">=</span><span style="color: #b877db; font-style: italic;">}</span><span style="color: #b877db; font-style: italic;">\n</span><span style="color: #b877db; font-style: italic;">{</span><span style="color: #c7c9cb; background-color: #232530;">y</span><span style="color: #b877db; font-style: italic;">=</span><span style="color: #b877db; font-style: italic;">}</span><span style="color: #fab795;">"</span>)
+</pre>
+</div>
+
+<pre class="example">
+x=(1, 2, 3)
+y=(1, 2)
+</pre>
+</section>
+<section id="slide-org2644dd9">
+<h3 id="org2644dd9">Exercise: programming with tuples</h3>
+<p>
+See if you can turn this code snippet from using a mutable list into using
+immutable tuples. Note I don&rsquo;t expect your entire code to be immutable just yet,
+Just that
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> []
+<span style="color: #b877db; font-style: italic;">for</span> <span style="color: #e95678;">num</span> <span style="color: #b877db; font-style: italic;">in</span> <span style="color: #b877db;">range</span>(<span style="color: #f09383;">5</span>):
+    lst.<span style="color: #21bfc2; font-style: italic;">append</span>(num) <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># this operation mutates the list in place &#128561;</span>
+    <span style="color: #b877db;">print</span>(lst)
+</pre>
+</div>
+
+<pre class="example">
+[0]
+[0, 1]
+[0, 1, 2]
+[0, 1, 2, 3]
+[0, 1, 2, 3, 4]
+</pre>
+
+</section>
+<section>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">tup</span> <span style="color: #b877db; font-style: italic;">=</span> ()
+<span style="color: #b877db; font-style: italic;">for</span> <span style="color: #e95678;">num</span> <span style="color: #b877db; font-style: italic;">in</span> <span style="color: #b877db;">range</span>(<span style="color: #f09383;">5</span>):
+    <span style="color: #e95678;">tup</span> <span style="color: #b877db; font-style: italic;">=</span> tup <span style="color: #b877db; font-style: italic;">+</span> (num,) <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># this operation creates a new tuple and reassigns it to the tup variable.</span>
+    <span style="color: #b877db;">print</span>(tup)
+</pre>
+</div>
+
+<pre class="example">
+(0,)
+(0, 1)
+(0, 1, 2)
+(0, 1, 2, 3)
+(0, 1, 2, 3, 4)
+</pre>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd45605f">
+<h2 id="orgd45605f">Functions, Pure and Side effect free</h2>
+<aside class="notes">
+<p>
+Now Hopefully this is already not terrible for you. Next we move onto the idea
+of <i>pure</i> functions. Pure functions do not do anything except take in an input and
+return some kind of output. These make our functions deterministic
+This means
+</p>
+
+</aside>
+<ul>
+<li class="fragment roll-in">No Printing</li>
+<li class="fragment roll-in">No Mutating outside variables</li>
+<li class="fragment roll-in">No mutating variables you receive</li>
+<li class="fragment roll-in">Nothing except reading in information and constructing a new value.</li>
+
+</ul>
+</section>
+<section id="slide-org905cd14">
+<h3 id="org905cd14">No Printing</h3>
+<aside class="notes">
+<p>
+YES no printing, taking input is actually worse as that removes the
+deterministic guarantee, a rule of thumb is that either a function prints, or a
+function returns a new value, not both.
+</p>
+
+</aside>
+
+<p>
+BAD
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">add_print</span>(<span style="color: #e95678;">x</span>, <span style="color: #e95678;">y</span>):
+    <span style="color: #e95678;">sum</span> <span style="color: #b877db; font-style: italic;">=</span> x <span style="color: #b877db; font-style: italic;">+</span> y
+    <span style="color: #b877db;">print</span>(<span style="color: #fab795;">f"</span><span style="color: #b877db; font-style: italic;">{</span><span style="color: #c7c9cb; background-color: #232530;">sum</span><span style="color: #b877db; font-style: italic;">=</span><span style="color: #b877db; font-style: italic;">}</span><span style="color: #fab795;">"</span>)
+    <span style="color: #b877db; font-style: italic;">return</span> sum
+
+<span style="color: #21bfc2;">add_print</span>(<span style="color: #f09383;">2</span>, <span style="color: #f09383;">3</span>)
+</pre>
+</div>
+
+</section>
+<section>
+
+<p>
+GOOD
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">add</span>(<span style="color: #e95678;">x</span>, <span style="color: #e95678;">y</span>):
+    <span style="color: #b877db; font-style: italic;">return</span> x <span style="color: #b877db; font-style: italic;">+</span> y
+
+<span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">print_val</span>(<span style="color: #e95678;">val</span>):
+    <span style="color: #b877db;">print</span>(<span style="color: #fab795;">f"</span><span style="color: #b877db; font-style: italic;">{</span><span style="color: #c7c9cb; background-color: #232530;">val</span><span style="color: #b877db; font-style: italic;">=</span><span style="color: #b877db; font-style: italic;">}</span><span style="color: #fab795;">"</span>)
+
+<span style="color: #21bfc2;">print_val</span>(<span style="color: #21bfc2;">add</span>(<span style="color: #f09383;">2</span>, <span style="color: #f09383;">3</span>))
+</pre>
+</div>
+</section>
+<section id="slide-org3556d81">
+<h3 id="org3556d81">No Mutating Outside Variables</h3>
+<p>
+BAD
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">names</span> <span style="color: #b877db; font-style: italic;">=</span> []
+
+<span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">add_names</span>(<span style="color: #e95678;">name</span>):
+    names.<span style="color: #21bfc2; font-style: italic;">append</span>(name)
+
+<span style="color: #21bfc2;">add_names</span>(<span style="color: #fab795;">"Joe"</span>)
+<span style="color: #21bfc2;">add_names</span>(<span style="color: #fab795;">"Keiran"</span>)
+
+<span style="color: #b877db;">print</span>(names)
+</pre>
+</div>
+
+<pre class="example">
+['Joe', 'Keiran']
+</pre>
+
+
+</section>
+<section>
+
+<p>
+GOOD, kinda
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">add_name</span>(<span style="color: #e95678;">lst</span>, <span style="color: #e95678;">name</span>):
+    lst.<span style="color: #21bfc2; font-style: italic;">append</span>(name)
+    <span style="color: #b877db; font-style: italic;">return</span> lst
+
+<span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> []
+<span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #21bfc2;">add_name</span>(lst, <span style="color: #fab795;">"Joe"</span>)
+<span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #21bfc2;">add_name</span>(lst, <span style="color: #fab795;">"Keiran"</span>)
+
+<span style="color: #b877db;">print</span>(lst)
+</pre>
+</div>
+
+<pre class="example">
+['Joe', 'Keiran']
+</pre>
+</section>
+<section id="slide-orgfcecb05">
+<h3 id="orgfcecb05">No Mutating passed in variables</h3>
+<aside class="notes">
+<p>
+Lets go back to that last example. python actually does something called &ldquo;pass
+by reference&rdquo;, instead of passing by value. this means instead of creating a new
+value we mutate the old on in place
+</p>
+
+</aside>
+<p class="fragment (roll-in)">
+Pass by reference
+</p>
+
+<div class="org-src-container">
+
+<pre class="fragment (roll-in)"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">add_name</span>(<span style="color: #e95678;">lst</span>, <span style="color: #e95678;">name</span>):
+    lst.<span style="color: #21bfc2; font-style: italic;">append</span>(name)
+
+<span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> []
+<span style="color: #21bfc2;">add_name</span>(lst, <span style="color: #fab795;">"Joe"</span>)
+<span style="color: #21bfc2;">add_name</span>(lst, <span style="color: #fab795;">"Keiran"</span>)
+
+<span style="color: #b877db;">print</span>(lst)
+</pre>
+</div>
+
+<p class="fragment (roll-in)">
+<code>['Joe', 'Keiran']</code>
+</p>
+
+</section>
+<section>
+<aside class="notes">
+<p>
+The way we fix this is by making a copy of the list and then mutating that
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">add_name</span>(<span style="color: #e95678;">lst</span>, <span style="color: #e95678;">name</span>):
+    <span style="color: #e95678;">new</span> <span style="color: #b877db; font-style: italic;">=</span> lst.<span style="color: #21bfc2; font-style: italic;">copy</span>()
+    new.<span style="color: #21bfc2; font-style: italic;">append</span>(name)
+    <span style="color: #b877db; font-style: italic;">return</span> new
+
+<span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> []
+<span style="color: #e95678;">new_lst</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #21bfc2;">add_name</span>(lst, <span style="color: #fab795;">"Joe"</span>)
+<span style="color: #e95678;">new_new_lst</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #21bfc2;">add_name</span>(new_lst, <span style="color: #fab795;">"Keiran"</span>)
+
+<span style="color: #b877db;">print</span>(<span style="color: #fab795;">f"</span><span style="color: #b877db; font-style: italic;">{</span><span style="color: #c7c9cb; background-color: #232530;">lst</span><span style="color: #b877db; font-style: italic;">=</span><span style="color: #b877db; font-style: italic;">}</span><span style="color: #b877db; font-style: italic;">\n</span><span style="color: #b877db; font-style: italic;">{</span><span style="color: #c7c9cb; background-color: #232530;">new_lst</span><span style="color: #b877db; font-style: italic;">=</span><span style="color: #b877db; font-style: italic;">}</span><span style="color: #b877db; font-style: italic;">\n</span><span style="color: #b877db; font-style: italic;">{</span><span style="color: #c7c9cb; background-color: #232530;">new_new_lst</span><span style="color: #b877db; font-style: italic;">=</span><span style="color: #b877db; font-style: italic;">}</span><span style="color: #fab795;">"</span>)
+</pre>
+</div>
+
+<pre class="example">
+lst=[]
+new_lst=['Joe']
+new_new_lst=['Joe', 'Keiran']
+</pre>
+</section>
+<section id="slide-orgf9edbab">
+<h3 id="orgf9edbab">Exercise: Pure or not</h3>
+
+</section>
+</section>
+<section>
+<section id="slide-org3d94f3f">
+<h2 id="org3d94f3f">Functions, First class girlies</h2>
+</section>
+</section>
+<section>
+<section id="slide-org73db017">
+<h2 id="org73db017">Loops, Do not exist</h2>
+</section>
+</section>
+<section>
+<section id="slide-org5df2e29">
+<h2 id="org5df2e29">Lists, A lot of work done on them.</h2>
+</section>
+</section>
+<section>
+<section id="slide-org442f6be">
+<h2 id="org442f6be">What about side effects????!!&gt;!&gt;&gt;!&gt;1.1.1.1.1&gt;&gt;&gt;&gt;&gt;?????</h2>
+</section>
+</section>
+<section>
+<section id="slide-orged66fc8">
+<h2 id="orged66fc8">What about errors?????!&gt;?&gt;!&gt;!&gt;!&gt;!&gt;!&gt;</h2>
+</section>
+</section>
+<section>
+<section id="slide-org232604b">
+<h2 id="org232604b">Any Questions</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js/plugin/search/search.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 1080,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

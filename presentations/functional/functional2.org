@@ -1,0 +1,226 @@
+#+title: Functional Programming, An interactive introduction
+
+#+OPTIONS: toc:nil reveal_width:1200 reveal_height:1080 num:nil
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_TITLE_SLIDE: <h1>%t</h1><h3>%s</h3><h2>By %A %a</h2><h3><i></i></h3><p>Press s for speaker notes</p>
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: slide
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
+
+* What is the norm?
+#+begin_notes
+The
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+ - Imperative code
+ - Object oriented code
+ - State just floating around
+ - No control over side effects.
+* How does functional programming differ from this?
+#+attr_reveal: :frag (roll-in)
+  - Code is made up of functions
+  - Data is separate from the code that acts on it
+  - Data cannot be mutated in place
+  - Functions are values.
+  - Side effects can *sometimes* be controlled
+* Exercise: Opening an Editor
+#+begin_notes
+I don't want to teach you all a language, Thus for this  though learning a functional language
+such as clojure, elixir, haskell with these constraints really helps solidify
+these things and in the case of these languages allow you to leverage some
+really cool things they do. *talk about what they do*
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+    - Clojure
+    - Elixir
+    - Haskell
+
+* Data, Immutable and Separate
+#+begin_notes
+When we think about data, We think about performing actions on it and changing
+it in place.
+#+end_notes
+
+#+begin_src python :results output
+x = [1, 2, 3]
+x.pop()
+print(x)
+#+end_src
+
+: [1, 2]
+
+#+reveal: split
+#+begin_notes
+In an immutable version we would use something like a tuple, when we do a
+similar operation on a tuple we see how x is unaffected.
+Python in this example we cannot add to or take an element out (though the
+elements inside can be mutated)
+#+end_notes
+
+#+begin_src python :results output
+x = (1,2,3)
+y = x[:-1]
+print(f"{x=}\n{y=}")
+#+end_src
+
+: x=(1, 2, 3)
+: y=(1, 2)
+** Exercise: programming with tuples
+See if you can turn this code snippet from using a mutable list into using
+immutable tuples. Note I don't expect your entire code to be immutable just yet,
+Just that
+#+begin_src python :results output
+lst = []
+for num in range(5):
+    lst.append(num) # this operation mutates the list in place 😱
+    print(lst)
+#+end_src
+
+: [0]
+: [0, 1]
+: [0, 1, 2]
+: [0, 1, 2, 3]
+: [0, 1, 2, 3, 4]
+#+reveal: split
+#+begin_src python :results output
+tup = ()
+for num in range(5):
+    tup = tup + (num,) # this operation creates a new tuple and reassigns it to the tup variable.
+    print(tup)
+#+end_src
+
+: (0,)
+: (0, 1)
+: (0, 1, 2)
+: (0, 1, 2, 3)
+: (0, 1, 2, 3, 4)
+
+* Functions, Pure and Side effect free
+#+begin_notes
+Now Hopefully this is already not terrible for you. Next we move onto the idea
+of /pure/ functions. Pure functions do not do anything except take in an input and
+return some kind of output. These make our functions deterministic
+This means
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+    - No Printing
+    - No Mutating outside variables
+    - No mutating variables you receive
+    - Nothing except reading in information and constructing a new value.
+** No Printing
+#+begin_notes
+YES no printing, taking input is actually worse as that removes the
+deterministic guarantee, a rule of thumb is that either a function prints, or a
+function returns a new value, not both.
+#+end_notes
+
+BAD
+#+begin_src python
+def add_print(x, y):
+    sum = x + y
+    print(f"{sum=}")
+    return sum
+
+add_print(2, 3)
+#+end_src
+
+#+reveal: split
+
+GOOD
+#+begin_src python
+def add(x, y):
+    return x + y
+
+def print_val(val):
+    print(f"{val=}")
+
+print_val(add(2, 3))
+#+end_src
+** No Mutating Outside Variables
+BAD
+#+begin_src python :results output
+names = []
+
+def add_names(name):
+    names.append(name)
+
+add_names("Joe")
+add_names("Keiran")
+
+print(names)
+#+end_src
+
+: ['Joe', 'Keiran']
+
+#+reveal: split
+
+GOOD, kinda
+#+begin_src python :results output
+def add_name(lst, name):
+    lst.append(name)
+    return lst
+
+lst = []
+lst = add_name(lst, "Joe")
+lst = add_name(lst, "Keiran")
+
+print(lst)
+#+end_src
+
+: ['Joe', 'Keiran']
+** No Mutating passed in variables
+#+begin_notes
+Lets go back to that last example. python actually does something called "pass
+by reference", instead of passing by value. this means instead of creating a new
+value we mutate the old on in place
+#+end_notes
+#+attr_reveal: :frag (roll-in)
+    Pass by reference
+
+#+attr_reveal: :frag (roll-in)
+    #+begin_src python :results output
+def add_name(lst, name):
+    lst.append(name)
+
+lst = []
+add_name(lst, "Joe")
+add_name(lst, "Keiran")
+
+print(lst)
+    #+end_src
+
+#+attr_reveal: :frag (roll-in)
+     ~['Joe', 'Keiran']~
+
+#+reveal: split
+#+begin_notes
+The way we fix this is by making a copy of the list and then mutating that
+#+end_notes
+
+#+begin_src python :results output
+def add_name(lst, name):
+    new = lst.copy()
+    new.append(name)
+    return new
+
+lst = []
+new_lst = add_name(lst, "Joe")
+new_new_lst = add_name(new_lst, "Keiran")
+
+print(f"{lst=}\n{new_lst=}\n{new_new_lst=}")
+#+end_src
+
+: lst=[]
+: new_lst=['Joe']
+: new_new_lst=['Joe', 'Keiran']
+** Exercise: Pure or not
+
+* Functions, First class girlies
+* Loops, Do not exist
+* Lists, A lot of work done on them.
+* What about side effects????!!>!>>!>1.1.1.1.1>>>>>?????
+* What about errors?????!>?>!>!>!>!>!>
+* Any Questions
