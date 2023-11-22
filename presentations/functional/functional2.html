@@ -19,8 +19,8 @@
 </section>
 
 <section>
-<section id="slide-org91e5065">
-<h2 id="org91e5065">What is the norm?</h2>
+<section id="slide-orgd941687">
+<h2 id="orgd941687">What is the norm?</h2>
 <aside class="notes">
 <p>
 The
@@ -37,8 +37,8 @@ The
 </section>
 </section>
 <section>
-<section id="slide-org6044dbf">
-<h2 id="org6044dbf">How does functional programming differ from this?</h2>
+<section id="slide-org4eb6cb1">
+<h2 id="org4eb6cb1">How does functional programming differ from this?</h2>
 <ul>
 <li class="fragment roll-in">Code is made up of functions</li>
 <li class="fragment roll-in">Data is separate from the code that acts on it</li>
@@ -50,8 +50,8 @@ The
 </section>
 </section>
 <section>
-<section id="slide-org7ac0d08">
-<h2 id="org7ac0d08">Exercise: Opening an Editor</h2>
+<section id="slide-org83c312b">
+<h2 id="org83c312b">Exercise: Opening an Editor</h2>
 <aside class="notes">
 <p>
 I don&rsquo;t want to teach you all a language, Thus for this  though learning a functional language
@@ -71,8 +71,8 @@ really cool things they do. <b>talk about what they do</b>
 </section>
 </section>
 <section>
-<section id="slide-org2ba005b">
-<h2 id="org2ba005b">Data, Immutable and Separate</h2>
+<section id="slide-org92bb033">
+<h2 id="org92bb033">Data, Immutable and Separate</h2>
 <aside class="notes">
 <p>
 When we think about data, We think about performing actions on it and changing
@@ -119,8 +119,8 @@ x=(1, 2, 3)
 y=(1, 2)
 </pre>
 </section>
-<section id="slide-org183e13a">
-<h3 id="org183e13a">Exercise: programming with tuples</h3>
+<section id="slide-org2bb07e1">
+<h3 id="org2bb07e1">Exercise: programming with tuples</h3>
 <p>
 See if you can turn this code snippet from using a mutable list into using
 immutable tuples. Note I don&rsquo;t expect your entire code to be immutable just yet,
@@ -165,8 +165,8 @@ Just that
 </section>
 </section>
 <section>
-<section id="slide-org7b9fe97">
-<h2 id="org7b9fe97">Functions, Pure and Side effect free</h2>
+<section id="slide-org92e5e5b">
+<h2 id="org92e5e5b">Functions, Pure and Side effect free</h2>
 <aside class="notes">
 <p>
 Now Hopefully this is already not terrible for you. Next we move onto the idea
@@ -184,8 +184,8 @@ This means
 
 </ul>
 </section>
-<section id="slide-org3d732ab">
-<h3 id="org3d732ab">No Printing</h3>
+<section id="slide-org07e52da">
+<h3 id="org07e52da">No Printing</h3>
 <aside class="notes">
 <p>
 YES no printing, taking input is actually worse as that removes the
@@ -227,8 +227,8 @@ GOOD
 </pre>
 </div>
 </section>
-<section id="slide-orgb9bbad5">
-<h3 id="orgb9bbad5">No Mutating Outside Variables</h3>
+<section id="slide-org4e6dd0c">
+<h3 id="org4e6dd0c">No Mutating Outside Variables</h3>
 <p>
 BAD
 </p>
@@ -275,8 +275,8 @@ GOOD, kinda
 ['Joe', 'Keiran']
 </pre>
 </section>
-<section id="slide-orgb142b0e">
-<h3 id="orgb142b0e">No Mutating passed in variables</h3>
+<section id="slide-org2eaf0f2">
+<h3 id="org2eaf0f2">No Mutating passed in variables</h3>
 <aside class="notes">
 <p>
 Lets go back to that last example. python actually does something called &ldquo;pass
@@ -337,50 +337,189 @@ new_lst=['Joe']
 new_new_lst=['Joe', 'Keiran']
 </pre>
 </section>
-<section id="slide-org0da5dcc">
-<h3 id="org0da5dcc">Exercise: Pure or not</h3>
+<section id="slide-orgb67db4a">
+<h3 id="orgb67db4a">Exercise: Pure or not</h3>
 <p>
 We are going to play a game where we guess if certain functions from the std
 library are pure, or if they do some kind of side effect.
 </p>
 <ul>
 <li class="fragment roll-in"><code>input()</code></li>
-<li class="fragment roll-in"><code>reversed()</code></li>
+<li class="fragment roll-in"><code>list.sort()</code></li>
+<li class="fragment roll-in"><code>sorted()</code></li>
+<li class="fragment roll-in"><code>next()</code></li>
 <li class="fragment roll-in"><code>enumerate()</code></li>
 <li class="fragment roll-in"><code>random.rand()</code></li>
 
 </ul>
 
+
 </section>
 </section>
 <section>
-<section id="slide-org9b51a8a">
-<h2 id="org9b51a8a">Functions, First class girlies</h2>
+<section id="slide-org5bd940c">
+<h2 id="org5bd940c">Functions, First class girlies (values)</h2>
+<aside class="notes">
+<p>
+Functions in many languages can be passed around like values.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">run_f</span>(<span style="color: #e95678;">f</span>):
+    <span style="color: #b877db;">print</span>(<span style="color: #fab795;">"before f"</span>)
+    <span style="color: #21bfc2;">f</span>()
+    <span style="color: #b877db;">print</span>(<span style="color: #fab795;">"after f"</span>)
+
+<span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">greeting</span>():
+    <span style="color: #b877db;">print</span>(<span style="color: #fab795;">"Hi GDSC!!"</span>)
+
+<span style="color: #21bfc2;">run_f</span>(greeting)
+</pre>
+</div>
+
+<pre class="example">
+before f
+Hi GDSC!!
+after f
+</pre>
+
+
+</section>
+<section>
+<aside class="notes">
+<p>
+When we inspect a function we can see a couple of interesting features.
+Functions are objects, stored in memory and garbage collected, these objects
+have a type. and these function objects have attributes on them. and we can add
+our own.
+</p>
+
+<p>
+We see here that functions are like any other value, just with some special
+syntax to define them and use them.
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">f</span>():
+    <span style="color: #b877db; font-style: italic;">pass</span>
+
+f.<span style="color: #e95678; font-style: italic;">my_sneaky_value</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #fab795;">"hahahahah"</span>
+<span style="color: #b877db;">print</span>(f)
+<span style="color: #b877db;">print</span>(<span style="color: #b877db;">type</span>(f))
+<span style="color: #b877db;">print</span>(f.<span style="color: #f09383; font-style: italic;">my_sneaky_value</span>)
+</pre>
+</div>
+
+<pre class="example">
+&lt;function f at 0x7f8e4f71a200&gt;
+&lt;class 'function'&gt;
+hahahahah
+</pre>
+
+</section>
+<section id="slide-org445854e">
+<h3 id="org445854e">Unnamed functions</h3>
+<aside class="notes">
+<p>
+At the moment all the functions we have used have been named. but we can create
+unnammed or anonymous functions. These are called lambdas in other languages.
+These can be passed around like any other value and have the same types and all
+that.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python">(
+    <span style="color: #b877db; font-style: italic;">lambda</span> <span style="color: #e95678;">x</span>: <span style="color: #b877db;">print</span>(<span style="color: #fab795;">f"</span><span style="color: #b877db; font-style: italic;">{</span><span style="color: #c7c9cb; background-color: #232530;">x</span><span style="color: #fab795;"> </span><span style="color: #b877db; font-style: italic;">=</span><span style="color: #fab795;"> </span><span style="color: #b877db; font-style: italic;">}</span><span style="color: #fab795;">"</span>)
+)(
+    <span style="color: #fab795;">"a value called from outside"</span>
+)
+</pre>
+</div>
+
+</section>
+<section>
+<aside class="notes">
+<p>
+Just to show that these are regular function values
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">f</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #b877db; font-style: italic;">lambda</span> <span style="color: #e95678;">x</span>: <span style="color: #b877db;">print</span>(x)
+
+f.<span style="color: #e95678; font-style: italic;">my_sneaky_value</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #fab795;">"hahahahah"</span>
+<span style="color: #b877db;">print</span>(f)
+<span style="color: #b877db;">print</span>(<span style="color: #b877db;">type</span>(f))
+<span style="color: #b877db;">print</span>(f.<span style="color: #f09383; font-style: italic;">my_sneaky_value</span>)
+</pre>
+</div>
+
+</section>
+<section id="slide-orgfaf1e42">
+<h3 id="orgfaf1e42">Why is this useful?</h3>
+<aside class="notes">
+<p>
+This is a question that people should have, especially when you see this for
+the first time.
+in essence when you want to allow for people to hook into the execution of a
+kind of process without prescribing some kind of preset operation.
+</p>
+
+<p>
+here in this example we essentially tell our web server whenever you hit the
+root run this function and send back some html
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="fragment (roll-in)"><span style="color: #b877db; font-style: italic;">let</span> <span style="color: #e95678;">app</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #b877db;">require</span><span style="color: #21bfc2; background-color: #232530;">(</span><span style="color: #fab795;">"express"</span><span style="color: #21bfc2; background-color: #232530;">)()</span>
+
+app<span style="color: #c7c9cb; background-color: #232530;">.</span><span style="color: #21bfc2; font-style: italic;">get</span><span style="color: #21bfc2; background-color: #232530;">(</span><span style="color: #fab795;">"/"</span><span style="color: #c7c9cb; background-color: #232530;">,</span> <span style="color: #b877db; font-style: italic;">function</span><span style="color: #6c6f93; background-color: #232530;">(</span>request<span style="color: #c7c9cb; background-color: #232530;">,</span> result<span style="color: #6c6f93; background-color: #232530;">)</span> <span style="color: #6c6f93; background-color: #232530;">{</span>
+  result<span style="color: #c7c9cb; background-color: #232530;">.</span><span style="color: #21bfc2; font-style: italic;">send</span><span style="color: #09f7a0; background-color: #232530;">(</span><span style="color: #fab795;">"some html ig"</span><span style="color: #09f7a0; background-color: #232530;">)</span>
+<span style="color: #6c6f93; background-color: #232530;">}</span><span style="color: #21bfc2; background-color: #232530;">)</span>
+</pre>
+</div>
+</section>
+<section id="slide-org452edbf">
+<h3 id="org452edbf">Exersize</h3>
+
 </section>
 </section>
 <section>
-<section id="slide-org038c0a6">
-<h2 id="org038c0a6">Loops, Do not exist</h2>
+<section id="slide-orga106743">
+<h2 id="orga106743">Loops, Do not exist</h2>
 </section>
 </section>
 <section>
-<section id="slide-orgced68e9">
-<h2 id="orgced68e9">Lists, A lot of work done on them.</h2>
+<section id="slide-orgd052951">
+<h2 id="orgd052951">Lists, A lot of work done on them.</h2>
 </section>
 </section>
 <section>
-<section id="slide-org7cde158">
-<h2 id="org7cde158">What about side effects????!!&gt;!&gt;&gt;!&gt;1.1.1.1.1&gt;&gt;&gt;&gt;&gt;?????</h2>
+<section id="slide-org151f078">
+<h2 id="org151f078">What about side effects????!!&gt;!&gt;&gt;!&gt;1.1.1.1.1&gt;&gt;&gt;&gt;&gt;?????</h2>
 </section>
 </section>
 <section>
-<section id="slide-org769e12b">
-<h2 id="org769e12b">What about errors?????!&gt;?&gt;!&gt;!&gt;!&gt;!&gt;!&gt;</h2>
+<section id="slide-org993a7ed">
+<h2 id="org993a7ed">What about errors?????!&gt;?&gt;!&gt;!&gt;!&gt;!&gt;!&gt;</h2>
 </section>
 </section>
 <section>
-<section id="slide-org3f3d562">
-<h2 id="org3f3d562">Any Questions</h2>
+<section id="slide-org2188962">
+<h2 id="org2188962">Any Questions</h2>
 </section>
 </section>
 </div>
