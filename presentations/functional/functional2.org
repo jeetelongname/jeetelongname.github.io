@@ -103,7 +103,7 @@ for num in range(5):
 Now Hopefully this is already not terrible for you. Next we move onto the idea
 of /pure/ functions. Pure functions do not do anything except take in an input and
 return some kind of output. These make our functions deterministic
-This means
+This means...
 #+end_notes
 #+attr_reveal: :frag (roll-in)
     - No Printing
@@ -148,12 +148,12 @@ def add_names(name):
     names.append(name)
 
 add_names("Joe")
-add_names("Keiran")
+add_names("Kieran")
 
 print(names)
 #+end_src
 
-: ['Joe', 'Keiran']
+: ['Joe', 'Kieran']
 
 #+reveal: split
 
@@ -165,12 +165,12 @@ def add_name(lst, name):
 
 lst = []
 lst = add_name(lst, "Joe")
-lst = add_name(lst, "Keiran")
+lst = add_name(lst, "Kieran")
 
 print(lst)
 #+end_src
 
-: ['Joe', 'Keiran']
+: ['Joe', 'Kieran']
 ** No Mutating passed in variables
 #+begin_notes
 Lets go back to that last example. python actually does something called "pass
@@ -187,13 +187,13 @@ def add_name(lst, name):
 
 lst = []
 add_name(lst, "Joe")
-add_name(lst, "Keiran")
+add_name(lst, "Kieran")
 
 print(lst)
     #+end_src
 
 #+attr_reveal: :frag (roll-in)
-     ~['Joe', 'Keiran']~
+     ~['Joe', 'Kieran']~
 
 #+reveal: split
 #+begin_notes
@@ -209,14 +209,14 @@ def add_name(lst, name):
 
 lst = []
 new_lst = add_name(lst, "Joe")
-new_new_lst = add_name(new_lst, "Keiran")
+new_new_lst = add_name(new_lst, "Kieran")
 
 print(f"{lst=}\n{new_lst=}\n{new_new_lst=}")
 #+end_src
 
 : lst=[]
 : new_lst=['Joe']
-: new_new_lst=['Joe', 'Keiran']
+: new_new_lst=['Joe', 'Kieran']
 ** Exercise: Pure or not
 We are going to play a game where we guess if certain functions from the std
 library are pure, or if they do some kind of side effect.
@@ -321,6 +321,9 @@ kind of process without prescribing some kind of preset operation.
 
 here in this example we essentially tell our web server whenever you hit the
 root run this function and send back some html
+
+Note in here I have not talked about returning functions or many function
+operations that are quite important and useful
 #+end_notes
 
 #+attr_reveal: :frag (roll-in)
@@ -331,10 +334,166 @@ app.get("/", function(request, result) {
   result.send("some html ig")
 })
     #+end_src
-** Exersize
+** Exercise
+#+begin_notes
+Here I am going to introduce the activity that should take us to the end as we
+go through the last couple of meaty slides.
+We are going to implement a stack! Now the core of our stack is going to be a
+tuple that we will make copies of. Our stack starts off as an empty tuple, a
+stack for those who don't know is a first in first out data structure (use a
+list to demo). we access an element using a pop operation, we add elements to it
+using the push. we will also introduce a transform function that does not touch
+the stack but takes off the top element and applys a function to it.
 
+In this case what we will do is not focus on the push and pop and put a dummy
+value into the stack.
+#+end_notes
+
+#+begin_src python :results output
+def mk_stack():
+    return (4,5,1)
+
+print(mk_stack())
+#+end_src
+
+: (4, 5, 1)
+
+#+reveal:split
+
+your function would look something like this
+#+begin_src python
+def transform(stk, transform_function):
+    pass
+#+end_src
 * Loops, Do not exist
+#+begin_notes
+Thats right, no more for or while loops. Why some of you may ask? well loops
+have implicit mutation. Lets break down what loops do.
+For loops are actually while loops that call the next method on an interator.
+The next method mutates its argument.
+Even with while loops the same values are updated in place. Reassigning to the
+same place is still mutation so we can't have loops.
+#+end_notes
+
+#+begin_src python
+lst = [1,2,3]
+
+for elem in lst:
+    print(elem)
+# is mostly equal too
+iterator = iter(lst)
+while True:
+   try:
+       elem = next(iterator)
+   except StopIteration:
+       break
+   # body
+   print(elem)
+
+#+end_src
+
+** Recursion to the rescue!!
+#+begin_notes
+Instead of using dirty, disgusting, loops which mutate there arguments, we can
+use functions instead! functions which call themselves!
+Because arguments are copied between function invoations we don't end up
+mutating anything,
+#+end_notes
+#+begin_src python :results output
+def print_list(lst):
+    if len(lst) == 0:
+        return
+    else:
+        elem, *tail = lst
+        print(f"{elem = }")
+        print_list(tail)
+
+lst = ["Mark", "Kieran", "Nikhil"]
+print_list(lst)
+print(lst)
+#+end_src
+
+#+RESULTS:
+: elem = 'Mark'
+: elem = 'Kieran'
+: elem = 'Nikhil'
+: ['Mark', 'Kieran', 'Nikhil']
+
+** Exercise
+#+begin_notes
+Our stack is looking less like a stack. but in any case I will ask yall to write
+a function that takes in a function and recursively goes down the stack
+transforming each element using the function
+#+end_notes
+
+#+begin_src python :results output
+def transform_stk(stk, transform_fn):
+    pass
+#+end_src
 * Lists, A lot of work done on them.
+#+begin_notes
+I want to think about everything we have done here. a lot of cases we are doing
+the same thing, recursing through lists manually not good and repeated code
+should be setting off alarm bells for all yall, Python actually provides some
+very useful operations
+#+end_notes
+** Map transform an entire list using a function
+#+begin_src python
+return list(map(lambda elem_from_list: 1 + elem_from_list, [1,2,3,4]))
+#+end_src
+
+#+RESULTS:
+| 2 | 3 | 4 | 5 |
+
+** filter, remove elements that don't meet some kind of condition
+#+begin_src python
+return list(filter(lambda elem: elem % 2 == 0, (1,2,3,4,)))
+#+end_src
+
+#+RESULTS:
+| 2 | 4 |
+
+** reduce, take a list and sum it up in a neat way.
+#+begin_notes
+reduce is the most powerful operation of these three, you can use reduce to
+actually implement map and filter. Reduce gives you two arguments, an
+accumulated value, and the current value. the return value is the new
+accumulator.
+#+end_notes
+
+We can do things like
+#+reveal: split
+sum up a list
+#+begin_src python
+from functools import reduce
+return reduce(lambda acc, elem: acc + elem, range(10), 0)
+#+end_src
+
+: 45
+
+#+reveal: split
+find the maximum element...
+#+begin_src python
+from functools import reduce
+return reduce(lambda max_elem, curr: max(max_elem, curr), [4, 5, 3, 12, 1, 2, 11], 0)
+#+end_src
+
+: 12
+
+#+reveal: split
+apply a transformation to each element...
+#+begin_src python :results output
+from functools import reduce
+print(reduce(lambda list_acc, curr: list_acc + [str(curr)], [4, 5, 4,  3], []))
+#+end_src
+
+#+RESULTS:
+: ['4', '5', '4', '3']
+so on...
+** Exercize
+Can we use reduce to push many elements onto a stack? at this point we should
+also implement pop and push?
+
 * What about side effects????!!>!>>!>1.1.1.1.1>>>>>?????
 * What about errors?????!>?>!>!>!>!>!>
 * Any Questions

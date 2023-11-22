@@ -19,8 +19,8 @@
 </section>
 
 <section>
-<section id="slide-orgd941687">
-<h2 id="orgd941687">What is the norm?</h2>
+<section id="slide-org89da512">
+<h2 id="org89da512">What is the norm?</h2>
 <aside class="notes">
 <p>
 The
@@ -37,8 +37,8 @@ The
 </section>
 </section>
 <section>
-<section id="slide-org4eb6cb1">
-<h2 id="org4eb6cb1">How does functional programming differ from this?</h2>
+<section id="slide-orge70eef5">
+<h2 id="orge70eef5">How does functional programming differ from this?</h2>
 <ul>
 <li class="fragment roll-in">Code is made up of functions</li>
 <li class="fragment roll-in">Data is separate from the code that acts on it</li>
@@ -50,8 +50,8 @@ The
 </section>
 </section>
 <section>
-<section id="slide-org83c312b">
-<h2 id="org83c312b">Exercise: Opening an Editor</h2>
+<section id="slide-orgec4e71f">
+<h2 id="orgec4e71f">Exercise: Opening an Editor</h2>
 <aside class="notes">
 <p>
 I don&rsquo;t want to teach you all a language, Thus for this  though learning a functional language
@@ -71,8 +71,8 @@ really cool things they do. <b>talk about what they do</b>
 </section>
 </section>
 <section>
-<section id="slide-org92bb033">
-<h2 id="org92bb033">Data, Immutable and Separate</h2>
+<section id="slide-org46df99b">
+<h2 id="org46df99b">Data, Immutable and Separate</h2>
 <aside class="notes">
 <p>
 When we think about data, We think about performing actions on it and changing
@@ -119,8 +119,8 @@ x=(1, 2, 3)
 y=(1, 2)
 </pre>
 </section>
-<section id="slide-org2bb07e1">
-<h3 id="org2bb07e1">Exercise: programming with tuples</h3>
+<section id="slide-org359c83d">
+<h3 id="org359c83d">Exercise: programming with tuples</h3>
 <p>
 See if you can turn this code snippet from using a mutable list into using
 immutable tuples. Note I don&rsquo;t expect your entire code to be immutable just yet,
@@ -165,14 +165,14 @@ Just that
 </section>
 </section>
 <section>
-<section id="slide-org92e5e5b">
-<h2 id="org92e5e5b">Functions, Pure and Side effect free</h2>
+<section id="slide-orgb6e8468">
+<h2 id="orgb6e8468">Functions, Pure and Side effect free</h2>
 <aside class="notes">
 <p>
 Now Hopefully this is already not terrible for you. Next we move onto the idea
 of <i>pure</i> functions. Pure functions do not do anything except take in an input and
 return some kind of output. These make our functions deterministic
-This means
+This means&#x2026;
 </p>
 
 </aside>
@@ -184,8 +184,8 @@ This means
 
 </ul>
 </section>
-<section id="slide-org07e52da">
-<h3 id="org07e52da">No Printing</h3>
+<section id="slide-orgaf6ee33">
+<h3 id="orgaf6ee33">No Printing</h3>
 <aside class="notes">
 <p>
 YES no printing, taking input is actually worse as that removes the
@@ -227,8 +227,8 @@ GOOD
 </pre>
 </div>
 </section>
-<section id="slide-org4e6dd0c">
-<h3 id="org4e6dd0c">No Mutating Outside Variables</h3>
+<section id="slide-org12d534d">
+<h3 id="org12d534d">No Mutating Outside Variables</h3>
 <p>
 BAD
 </p>
@@ -240,14 +240,14 @@ BAD
     names.<span style="color: #21bfc2; font-style: italic;">append</span>(name)
 
 <span style="color: #21bfc2;">add_names</span>(<span style="color: #fab795;">"Joe"</span>)
-<span style="color: #21bfc2;">add_names</span>(<span style="color: #fab795;">"Keiran"</span>)
+<span style="color: #21bfc2;">add_names</span>(<span style="color: #fab795;">"Kieran"</span>)
 
 <span style="color: #b877db;">print</span>(names)
 </pre>
 </div>
 
 <pre class="example">
-['Joe', 'Keiran']
+['Joe', 'Kieran']
 </pre>
 
 
@@ -265,18 +265,18 @@ GOOD, kinda
 
 <span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> []
 <span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #21bfc2;">add_name</span>(lst, <span style="color: #fab795;">"Joe"</span>)
-<span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #21bfc2;">add_name</span>(lst, <span style="color: #fab795;">"Keiran"</span>)
+<span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #21bfc2;">add_name</span>(lst, <span style="color: #fab795;">"Kieran"</span>)
 
 <span style="color: #b877db;">print</span>(lst)
 </pre>
 </div>
 
 <pre class="example">
-['Joe', 'Keiran']
+['Joe', 'Kieran']
 </pre>
 </section>
-<section id="slide-org2eaf0f2">
-<h3 id="org2eaf0f2">No Mutating passed in variables</h3>
+<section id="slide-org97a0209">
+<h3 id="org97a0209">No Mutating passed in variables</h3>
 <aside class="notes">
 <p>
 Lets go back to that last example. python actually does something called &ldquo;pass
@@ -296,14 +296,14 @@ Pass by reference
 
 <span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> []
 <span style="color: #21bfc2;">add_name</span>(lst, <span style="color: #fab795;">"Joe"</span>)
-<span style="color: #21bfc2;">add_name</span>(lst, <span style="color: #fab795;">"Keiran"</span>)
+<span style="color: #21bfc2;">add_name</span>(lst, <span style="color: #fab795;">"Kieran"</span>)
 
 <span style="color: #b877db;">print</span>(lst)
 </pre>
 </div>
 
 <p class="fragment (roll-in)">
-<code>['Joe', 'Keiran']</code>
+<code>['Joe', 'Kieran']</code>
 </p>
 
 </section>
@@ -325,7 +325,7 @@ using tuple operations&#x2026;
 
 <span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> []
 <span style="color: #e95678;">new_lst</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #21bfc2;">add_name</span>(lst, <span style="color: #fab795;">"Joe"</span>)
-<span style="color: #e95678;">new_new_lst</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #21bfc2;">add_name</span>(new_lst, <span style="color: #fab795;">"Keiran"</span>)
+<span style="color: #e95678;">new_new_lst</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #21bfc2;">add_name</span>(new_lst, <span style="color: #fab795;">"Kieran"</span>)
 
 <span style="color: #b877db;">print</span>(<span style="color: #fab795;">f"</span><span style="color: #b877db; font-style: italic;">{</span><span style="color: #c7c9cb; background-color: #232530;">lst</span><span style="color: #b877db; font-style: italic;">=</span><span style="color: #b877db; font-style: italic;">}</span><span style="color: #b877db; font-style: italic;">\n</span><span style="color: #b877db; font-style: italic;">{</span><span style="color: #c7c9cb; background-color: #232530;">new_lst</span><span style="color: #b877db; font-style: italic;">=</span><span style="color: #b877db; font-style: italic;">}</span><span style="color: #b877db; font-style: italic;">\n</span><span style="color: #b877db; font-style: italic;">{</span><span style="color: #c7c9cb; background-color: #232530;">new_new_lst</span><span style="color: #b877db; font-style: italic;">=</span><span style="color: #b877db; font-style: italic;">}</span><span style="color: #fab795;">"</span>)
 </pre>
@@ -334,11 +334,11 @@ using tuple operations&#x2026;
 <pre class="example">
 lst=[]
 new_lst=['Joe']
-new_new_lst=['Joe', 'Keiran']
+new_new_lst=['Joe', 'Kieran']
 </pre>
 </section>
-<section id="slide-orgb67db4a">
-<h3 id="orgb67db4a">Exercise: Pure or not</h3>
+<section id="slide-orgb92bffe">
+<h3 id="orgb92bffe">Exercise: Pure or not</h3>
 <p>
 We are going to play a game where we guess if certain functions from the std
 library are pure, or if they do some kind of side effect.
@@ -357,8 +357,8 @@ library are pure, or if they do some kind of side effect.
 </section>
 </section>
 <section>
-<section id="slide-org5bd940c">
-<h2 id="org5bd940c">Functions, First class girlies (values)</h2>
+<section id="slide-org0d98b49">
+<h2 id="org0d98b49">Functions, First class girlies (values)</h2>
 <aside class="notes">
 <p>
 Functions in many languages can be passed around like values.
@@ -422,8 +422,8 @@ hahahahah
 </pre>
 
 </section>
-<section id="slide-org445854e">
-<h3 id="org445854e">Unnamed functions</h3>
+<section id="slide-org0d225b7">
+<h3 id="org0d225b7">Unnamed functions</h3>
 <aside class="notes">
 <p>
 At the moment all the functions we have used have been named. but we can create
@@ -465,8 +465,8 @@ f.<span style="color: #e95678; font-style: italic;">my_sneaky_value</span> <span
 </div>
 
 </section>
-<section id="slide-orgfaf1e42">
-<h3 id="orgfaf1e42">Why is this useful?</h3>
+<section id="slide-org9e2b00f">
+<h3 id="org9e2b00f">Why is this useful?</h3>
 <aside class="notes">
 <p>
 This is a question that people should have, especially when you see this for
@@ -478,6 +478,11 @@ kind of process without prescribing some kind of preset operation.
 <p>
 here in this example we essentially tell our web server whenever you hit the
 root run this function and send back some html
+</p>
+
+<p>
+Note in here I have not talked about returning functions or many function
+operations that are quite important and useful
 </p>
 
 </aside>
@@ -492,34 +497,254 @@ app<span style="color: #c7c9cb; background-color: #232530;">.</span><span style=
 </pre>
 </div>
 </section>
-<section id="slide-org452edbf">
-<h3 id="org452edbf">Exersize</h3>
+<section id="slide-org80b1404">
+<h3 id="org80b1404">Exercise</h3>
+<aside class="notes">
+<p>
+Here I am going to introduce the activity that should take us to the end as we
+go through the last couple of meaty slides.
+We are going to implement a stack! Now the core of our stack is going to be a
+tuple that we will make copies of. Our stack starts off as an empty tuple, a
+stack for those who don&rsquo;t know is a first in first out data structure (use a
+list to demo). we access an element using a pop operation, we add elements to it
+using the push. we will also introduce a transform function that does not touch
+the stack but takes off the top element and applys a function to it.
+</p>
+
+<p>
+In this case what we will do is not focus on the push and pop and put a dummy
+value into the stack.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">mk_stack</span>():
+    <span style="color: #b877db; font-style: italic;">return</span> (<span style="color: #f09383;">4</span>,<span style="color: #f09383;">5</span>,<span style="color: #f09383;">1</span>)
+
+<span style="color: #b877db;">print</span>(<span style="color: #21bfc2;">mk_stack</span>())
+</pre>
+</div>
+
+<pre class="example">
+(4, 5, 1)
+</pre>
+
+
+</section>
+<section>
+
+<p>
+your function would look something like this
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">transform</span>(<span style="color: #e95678;">stk</span>, <span style="color: #e95678;">transform_function</span>):
+    <span style="color: #b877db; font-style: italic;">pass</span>
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgcede16a">
+<h2 id="orgcede16a">Loops, Do not exist</h2>
+<aside class="notes">
+<p>
+Thats right, no more for or while loops. Why some of you may ask? well loops
+have implicit mutation. Lets break down what loops do.
+For loops are actually while loops that call the next method on an interator.
+The next method mutates its argument.
+Even with while loops the same values are updated in place. Reassigning to the
+same place is still mutation so we can&rsquo;t have loops.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> [<span style="color: #f09383;">1</span>,<span style="color: #f09383;">2</span>,<span style="color: #f09383;">3</span>]
+
+<span style="color: #b877db; font-style: italic;">for</span> <span style="color: #e95678;">elem</span> <span style="color: #b877db; font-style: italic;">in</span> lst:
+    <span style="color: #b877db;">print</span>(elem)
+<span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># is mostly equal too</span>
+<span style="color: #e95678;">iterator</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #b877db;">iter</span>(lst)
+<span style="color: #b877db; font-style: italic;">while</span> <span style="color: #b877db;">True</span>:
+   <span style="color: #b877db; font-style: italic;">try</span>:
+       <span style="color: #e95678;">elem</span> <span style="color: #b877db; font-style: italic;">=</span> <span style="color: #b877db;">next</span>(iterator)
+   <span style="color: #b877db; font-style: italic;">except</span> <span style="color: #87ceeb;">StopIteration</span>:
+       <span style="color: #b877db; font-style: italic;">break</span>
+   <span style="color: #6c6f93; background-color: #292b36; font-style: italic;"># body</span>
+   <span style="color: #b877db;">print</span>(elem)
+
+</pre>
+</div>
+
+</section>
+<section id="slide-org0e05d6b">
+<h3 id="org0e05d6b">Recursion to the rescue!!</h3>
+<aside class="notes">
+<p>
+Instead of using dirty, disgusting, loops which mutate there arguments, we can
+use functions instead! functions which call themselves!
+Because arguments are copied between function invoations we don&rsquo;t end up
+mutating anything,
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">print_list</span>(<span style="color: #e95678;">lst</span>):
+    <span style="color: #b877db; font-style: italic;">if</span> <span style="color: #b877db;">len</span>(lst) <span style="color: #b877db; font-style: italic;">==</span> <span style="color: #f09383;">0</span>:
+        <span style="color: #b877db; font-style: italic;">return</span>
+    <span style="color: #b877db; font-style: italic;">else</span>:
+        <span style="color: #e95678;">elem</span>, <span style="color: #b877db; font-style: italic;">*</span>tail <span style="color: #b877db; font-style: italic;">=</span> lst
+        <span style="color: #b877db;">print</span>(<span style="color: #fab795;">f"</span><span style="color: #b877db; font-style: italic;">{</span><span style="color: #c7c9cb; background-color: #232530;">elem</span><span style="color: #fab795;"> </span><span style="color: #b877db; font-style: italic;">=</span><span style="color: #fab795;"> </span><span style="color: #b877db; font-style: italic;">}</span><span style="color: #fab795;">"</span>)
+        <span style="color: #21bfc2;">print_list</span>(tail)
+
+<span style="color: #e95678;">lst</span> <span style="color: #b877db; font-style: italic;">=</span> [<span style="color: #fab795;">"Mark"</span>, <span style="color: #fab795;">"Kieran"</span>, <span style="color: #fab795;">"Nikhil"</span>]
+<span style="color: #21bfc2;">print_list</span>(lst)
+<span style="color: #b877db;">print</span>(lst)
+</pre>
+</div>
+
+</section>
+<section id="slide-org9ce5541">
+<h3 id="org9ce5541">Exercise</h3>
+<aside class="notes">
+<p>
+Our stack is looking less like a stack. but in any case I will ask yall to write
+a function that takes in a function and recursively goes down the stack
+transforming each element using the function
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">def</span> <span style="color: #87ceeb;">transform_stk</span>(<span style="color: #e95678;">stk</span>, <span style="color: #e95678;">transform_fn</span>):
+    <span style="color: #b877db; font-style: italic;">pass</span>
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org6e19a63">
+<h2 id="org6e19a63">Lists, A lot of work done on them.</h2>
+<aside class="notes">
+<p>
+I want to think about everything we have done here. a lot of cases we are doing
+the same thing, recursing through lists manually not good and repeated code
+should be setting off alarm bells for all yall, Python actually provides some
+very useful operations
+</p>
+
+</aside>
+</section>
+<section id="slide-orgcc70307">
+<h3 id="orgcc70307">Map transform an entire list using a function</h3>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">return</span> <span style="color: #b877db;">list</span>(<span style="color: #b877db;">map</span>(<span style="color: #b877db; font-style: italic;">lambda</span> <span style="color: #e95678;">elem_from_list</span>: <span style="color: #f09383;">1</span> <span style="color: #b877db; font-style: italic;">+</span> elem_from_list, [<span style="color: #f09383;">1</span>,<span style="color: #f09383;">2</span>,<span style="color: #f09383;">3</span>,<span style="color: #f09383;">4</span>]))
+</pre>
+</div>
+
+</section>
+<section id="slide-orgaad7305">
+<h3 id="orgaad7305">filter, remove elements that don&rsquo;t meet some kind of condition</h3>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">return</span> <span style="color: #b877db;">list</span>(<span style="color: #b877db;">filter</span>(<span style="color: #b877db; font-style: italic;">lambda</span> <span style="color: #e95678;">elem</span>: elem <span style="color: #b877db; font-style: italic;">%</span> <span style="color: #f09383;">2</span> <span style="color: #b877db; font-style: italic;">==</span> <span style="color: #f09383;">0</span>, (<span style="color: #f09383;">1</span>,<span style="color: #f09383;">2</span>,<span style="color: #f09383;">3</span>,<span style="color: #f09383;">4</span>,)))
+</pre>
+</div>
+
+</section>
+<section id="slide-org0fa240c">
+<h3 id="org0fa240c">reduce, take a list and sum it up in a neat way.</h3>
+<aside class="notes">
+<p>
+reduce is the most powerful operation of these three, you can use reduce to
+actually implement map and filter. Reduce gives you two arguments, an
+accumulated value, and the current value. the return value is the new
+accumulator.
+</p>
+
+</aside>
+
+<p>
+We can do things like
+</p>
+</section>
+<section>
+<p>
+sum up a list
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">from</span> functools <span style="color: #b877db; font-style: italic;">import</span> reduce
+<span style="color: #b877db; font-style: italic;">return</span> <span style="color: #21bfc2;">reduce</span>(<span style="color: #b877db; font-style: italic;">lambda</span> <span style="color: #e95678;">acc</span>, <span style="color: #e95678;">elem</span>: acc <span style="color: #b877db; font-style: italic;">+</span> elem, <span style="color: #b877db;">range</span>(<span style="color: #f09383;">10</span>), <span style="color: #f09383;">0</span>)
+</pre>
+</div>
+
+<pre class="example">
+45
+</pre>
+
+
+</section>
+<section>
+<p>
+find the maximum element&#x2026;
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">from</span> functools <span style="color: #b877db; font-style: italic;">import</span> reduce
+<span style="color: #b877db; font-style: italic;">return</span> <span style="color: #21bfc2;">reduce</span>(<span style="color: #b877db; font-style: italic;">lambda</span> <span style="color: #e95678;">max_elem</span>, <span style="color: #e95678;">curr</span>: <span style="color: #b877db;">max</span>(max_elem, curr), [<span style="color: #f09383;">4</span>, <span style="color: #f09383;">5</span>, <span style="color: #f09383;">3</span>, <span style="color: #f09383;">12</span>, <span style="color: #f09383;">1</span>, <span style="color: #f09383;">2</span>, <span style="color: #f09383;">11</span>], <span style="color: #f09383;">0</span>)
+</pre>
+</div>
+
+<pre class="example">
+12
+</pre>
+
+
+</section>
+<section>
+<p>
+apply a transformation to each element&#x2026;
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #b877db; font-style: italic;">from</span> functools <span style="color: #b877db; font-style: italic;">import</span> reduce
+<span style="color: #b877db;">print</span>(<span style="color: #21bfc2;">reduce</span>(<span style="color: #b877db; font-style: italic;">lambda</span> <span style="color: #e95678;">list_acc</span>, <span style="color: #e95678;">curr</span>: list_acc <span style="color: #b877db; font-style: italic;">+</span> [<span style="color: #b877db;">str</span>(curr)], [<span style="color: #f09383;">4</span>, <span style="color: #f09383;">5</span>, <span style="color: #f09383;">4</span>,  <span style="color: #f09383;">3</span>], []))
+</pre>
+</div>
+<p>
+so on&#x2026;
+</p>
+</section>
+<section id="slide-orgd09c51d">
+<h3 id="orgd09c51d">Exercize</h3>
+<p>
+Can we use reduce to push many elements onto a stack? at this point we should
+also implement pop and push?
+</p>
 
 </section>
 </section>
 <section>
-<section id="slide-orga106743">
-<h2 id="orga106743">Loops, Do not exist</h2>
+<section id="slide-org1fe8ba5">
+<h2 id="org1fe8ba5">What about side effects????!!&gt;!&gt;&gt;!&gt;1.1.1.1.1&gt;&gt;&gt;&gt;&gt;?????</h2>
 </section>
 </section>
 <section>
-<section id="slide-orgd052951">
-<h2 id="orgd052951">Lists, A lot of work done on them.</h2>
+<section id="slide-org7448933">
+<h2 id="org7448933">What about errors?????!&gt;?&gt;!&gt;!&gt;!&gt;!&gt;!&gt;</h2>
 </section>
 </section>
 <section>
-<section id="slide-org151f078">
-<h2 id="org151f078">What about side effects????!!&gt;!&gt;&gt;!&gt;1.1.1.1.1&gt;&gt;&gt;&gt;&gt;?????</h2>
-</section>
-</section>
-<section>
-<section id="slide-org993a7ed">
-<h2 id="org993a7ed">What about errors?????!&gt;?&gt;!&gt;!&gt;!&gt;!&gt;!&gt;</h2>
-</section>
-</section>
-<section>
-<section id="slide-org2188962">
-<h2 id="org2188962">Any Questions</h2>
+<section id="slide-orgdeafaa1">
+<h2 id="orgdeafaa1">Any Questions</h2>
 </section>
 </section>
 </div>
