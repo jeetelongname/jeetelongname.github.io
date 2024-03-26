@@ -6,8 +6,17 @@
     <description>Recent content on Jeet&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <copyright>&amp;copy 2022 Jeetaditya Chatterjee</copyright>
-    <lastBuildDate>Mon, 10 Apr 2023 02:43:00 +0100</lastBuildDate><atom:link href="https://www.jeetelongname.net/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy 2024 Jeetaditya Chatterjee</copyright>
+    <lastBuildDate>Tue, 26 Mar 2024 00:54:00 +0000</lastBuildDate><atom:link href="https://www.jeetelongname.net/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Thoughts on the first sub book of Dune</title>
+      <link>https://www.jeetelongname.net/blog/posts/dune-first-book/</link>
+      <pubDate>Tue, 26 Mar 2024 00:54:00 +0000</pubDate>
+      
+      <guid>https://www.jeetelongname.net/blog/posts/dune-first-book/</guid>
+      <description>I have been reading Dune and finished the first sub book, its a wonderful book that has been somewhat spoiled for me in certain ways. Even still its a thoroughly interesting book. As a way to save space instead of typing up my thoughts directly into a discord post I am going to type it into a blog post. This will be shorter, less structured and somewhat akin to a conversation I am having by myself.</description>
+    </item>
+    
     <item>
       <title>The Reader Applicative and abstraction</title>
       <link>https://www.jeetelongname.net/blog/posts/the-reader-monad-and-abstraction/</link>
@@ -108,6 +117,16 @@ At least one onion like vegetables.</description>
       <guid>https://www.jeetelongname.net/blog/posts/blog/</guid>
       <description>Posts DONE 2am paella&amp;#xa0;&amp;#xa0;&amp;#xa0;cooking&amp;#xa0;cheap&amp;#xa0;easy Introduction Its 2am and your hungry, but you look in the noodle cupboard and you realise your out of instant ramen 😱.
 Here is a quick way to eat some vegetables, prep some soul filling food and have nummies done in 20ish minutes (which is not bad for something from scratch). This is not a traditional recipe, It kinda is similar but its not authentic in any way, shape or form.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.jeetelongname.net/blog/posts/org-hugo-reviw/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jeetelongname.net/blog/posts/org-hugo-reviw/</guid>
+      <description>I have been using ox-hugo to write this blog for a little bit now, Not to spoil the review 😉 but its been a pretty smooth experience. I wanted to discuss some of the great aspects, some of the downsides and some of the tweaks to make it a seamless experience.
+The good Ox hugo has turned a mess of markdown files into a single neat org file (that then tangles to that mess of markdown files).</description>
     </item>
     
   </channel>

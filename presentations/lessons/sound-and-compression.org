@@ -19,6 +19,10 @@ sound has two metrics the sampling rate, the duration and the bit depth.
 the sampling rate is how many times per second is a measurement is taken. *use
 board*
 #+end_notes
+** Bit depth
+#+begin_notes
+Bit detph is the size of each sample
+#+end_notes
 ** Bit rate
 #+begin_notes
 Bit rate is the size of the sample. the higher the number the higher the high

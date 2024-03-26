@@ -3,7 +3,7 @@ languageCode = "en-gb"
 title = "Jeet's Blog"
 theme ="manis-hugo-theme"
 paginate = 10
-copyright = "&copy 2022 Jeetaditya Chatterjee"
+copyright = "&copy 2024 Jeetaditya Chatterjee"
 pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
@@ -16,7 +16,7 @@ pygmentscodefencesguesssyntax = true
    # category = "categories"
 
 [params]
-    tagline = "Ramblings on linux and cooking (and other stuff)"
+    tagline = "Ramblings on things I see and do."
     description = "Don't expect anything anytime soon"
     themeAttrib = true
     mainSections = ["posts", "work"]

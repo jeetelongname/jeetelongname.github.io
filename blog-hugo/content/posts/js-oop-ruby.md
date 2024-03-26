@@ -136,11 +136,11 @@ method definitions need to take in an implicit self argument as there first
 positional argument.
 
 ```python
-class Person():
+class A():
     def method(self, *args): # explit self argument
         return args
 
-Person().method(1,2,3) # implict self passed in when called.
+A().method(1,2,3) # implict self passed in when called.
 ```
 
 We can actually implement the python style of "this passing" relatively simply,

@@ -626,6 +626,7 @@ Dart.
 Hopefully this is helpful and or interesting. If I have made a mistake or you
 want to discuss this [[mailto:jeetelongname@gmail.com][my email is here!]]
 *** Footnotes
+
 [fn:1] =g <$> Just 1= will return a function with the rest of the inputs wrapped
 in a context. We need to remember that haskell is curried by default.
 So if we have a type like this =g :: a -> a -> a -> a= we /really/ mean
@@ -753,11 +754,11 @@ method definitions need to take in an implicit self argument as there first
 positional argument.
 
 #+begin_src python
-class Person():
+class A():
     def method(self, *args): # explit self argument
         return args
 
-Person().method(1,2,3) # implict self passed in when called.
+A().method(1,2,3) # implict self passed in when called.
 #+end_src
 
 We can actually implement the python style of "this passing" relatively simply,
@@ -1108,33 +1109,340 @@ helped quite a bit.
 parser by composing smaller parsers together. [[https://www.youtube.com/watch?v=N9RUqGYuGfw][This video by the Tsoding really
 helped me pick it up]]. Its also the basis for libraries such as [[https://hackage.haskell.org/package/parsec][Parsec]] and
 other libraries that follow in its wake
-** TODO Ox Hugo is pretty nice :blog:hugo:org:emacs:
+** TODO Ox Hugo and brain computer interfaces :blog:hugo:org:emacs:writing:
 :PROPERTIES:
 :EXPORT_DATE: 2023-05-22
-:EXPORT_FILE_NAME: ox-hugo-testimonial
+:EXPORT_FILE_NAME: ox-hugo-and-writing
 :END:
+Originally this post was meant to be a review of [[https://ox-hugo.scripter.co/][ox hugo]] but in writing that
+review I realised that it has instead became a review of [[https://orgmode.org/][org mode]]. As I am in
+the habit of going on long tangents I wanted to discuss why org mode was such a
+good fit for writing prose (at least for me) and what actually constitutes a
+good brain computer interface. Do take what I say with a grain of salt as I am
+not a person trained in user experience or anything really. I am just a person
+with too much time on there hand.
 
-I have been using [[https://ox-hugo.scripter.co/][ox-hugo]] to write this blog for a little bit now, Not to spoil
-the review 😉 but its been a pretty smooth experience. I wanted to discuss some
-of the great aspects, some of the downsides and some of the tweaks to make it a
-seamless experience.
+*** What do I mean by the phrase brain computer interface?
+I use this phrase to highlight what programs are. They are an
+interface that turns thoughts in our brains into words (both in the textual and
+computing sense) on a computer. Doing so effectively differs from person to
+person with many settling for interfaces that, while allowing them to produce the
+material they want, are slow and cause the user to fight the interface instead
+of allowing them get there thoughts to flow.
 
-*** The good
-Ox hugo has turned a mess of markdown files into a single neat org file (that
-then tangles to that mess of markdown files). In short it has made blogging fun
-again for me.
-**** Org
-The reason I like org is not really the syntax, though i also do prefer the
-syntax. Org has fantastic tooling an intergration with emacs that just makes it
-a joy to write. From its ability to guess the next opening syntax of things like
-headings, to the intuitive commands to manipulate those elements. This is not a
-review of org mode but to say its not part of the reason I switched would
+*** Getting our thoughts out of our heads.
+Before the computer people still wanted to get thoughts out of there head and
+onto something that does not forget as easily. Most of us would think about
+paper and pen in this scenario but it goes back further. People carved graphems
+into stone, writing on palm leaves with ash based inks to animal skins and
+flattened reed stems [fn:1]. With all of these systems there is no organisation
+imposed by us from the medium itself (most of the time). We are free to add in
+things like drawings or change the orientation and style of text with different
+strokes of the pen. We can empty the stream of thoughts as fast as our hand can
+move. This free form writing system is freeing for prose as now we are able to
+include things like diagrams and pictures close to our minds imagination of
+them, allowing us to enunciate concepts in ways that are much more intuitive.
+This is a boon for writing and drafting as adding these little pictograms can
+usually be a better translation of our thoughts compared to the raw text.
 
-*** The eh
-*** The tweaks
-*** Conclusions
+The problems arise when we want to edit our work. When a scratch of pen has been
+planted on paper (try saying that five times fast) it becomes permanent. Even if you
+were to use pencil and an eraser marks still remain and the paper is never the
+same. Editing a work becomes a pain and means that revisions need to be written
+out instead of editing in place.
+*** Editing our thoughts after they are out.
+This is the advantage of computer systems. As these scratches are never
+permanent someone can edit the work in place and rehash parts without having to
+rewrite the whole. It saves time and energy.
+The problem is with the ability to edit documents quickly you now lose the free
+form structure of our documents before. Computers inherently impose structure as
+now they need to translate our inputs into a concrete set of instructions. This
+is not inherently bad, structure can be helpful. The problem becomes when the
+structure does not actively fit the ways we think
+*** Imposed structure.
+All computer writing tools have some structure to them. Markdown breaks things
+up into sections and paragraphs, HTML puts everything into nested elements which
+each carry there own attributes and semantics. LaTeX puts everything into
+environments, separating text with sections and chapter headings. These are
+pretty strict in that sense.
+
+Word and other WSYWYG editors on the surface do not impose these kinds of
+structure. You are free to write and include pictures anywhere you want. But
+this is at the price of not feeling like paper. To do things like bold text or
+edit how something looks you must use the mouse, in the case of bolding text
+highlighting the text you wish to then use the interface or the keybind. This in
+a word is not like paper. Its extra steps to do something simple. In a word its
+imposing structure not /in/ the text but in how we write it.
+
+This too me not a good compromise. Instead of imposing structure in what we are
+writing we are changing how we write. If I were to compare this to paper its
+like having to change tools to change the text on a page. This is fine if not
+desirable when you want to fine tune how a document works and looks. But for
+writing? For getting ideas out of our heads? Lets just say I do not bring an art
+pallet to my lectures...
+*** Imitating paper
+All of this to say the brain computer interface should pull the best concepts
+from pen on paper to become the best prose writing experience we can have. So
+what do I like about pen on paper.
+Well firstly I like that its all just one tool. the pen is an extension of me.
+If I want to change something I change the way I type.
+Paper is simple, It only has one mode of interaction. the Pen hitting the page.
+Paper enforces little structure. other than making sure the page does not rip I
+can do what I want with the format
+Paper is easy to get into... It may be silly to say but its important for the
+user experience.
+
+For me the interaction model is key.
 
 *** Footnotes
+[fn:1] In fact our writing systems are influenced by the
+medium we used. [[https://en.wikipedia.org/wiki/Tamil_script#History][Tamil script]] became a lot more curly because of the use of said
+Palm leaves. Hard horizontal lines can cause tears in the leaves used causing
+them to decay faster. So the language evolved more curls and less dots up until
+printing became more common.
+** TODO The Avatar Live Action Pissed Me Off :opinion:movies:spoilers:
+:PROPERTIES:
+:EXPORT_DATE: 2024-03-03
+:EXPORT_FILE_NAME: avatar-live-pissed-me-off
+:END:
+I recently finished the new live action show on netflix. You can re read the
+title to see what i thought of it. It pissed me off for many reasons and I can
+only think of one scene which was done better than the original.
+I always kinda knew it would fail to live up to my expectations because
+reshashing the same story twice almost never leads to a good product, but even
+still this one just missed so many of the marks that it left me feeling
+genuinely horrible after watching it.
+
+*** They don't understand the source material
+Straight up they don't. In a lot of cases they make mechanical mistakes in the
+writing. Foisting expositions instead of showing us through the action of the
+show. Removing struggles from the shows and giving our characters no space for
+growth.
+# Talk abour certain scenes
+*** They don't understand how to interpret source material
+I think this is more fundamental to what actually makes the show hard to watch.
+I could care less about them not including my favorite scenes or that they
+talked instead of performing my favorite actions. But the fact that in every
+episode they missed the mark feeds into how I think they read the show. Their
+analysis is at best skin deep, looking at each episode, each story as a set of
+static actions and words, Instead of understanding what each episode /says/.
+
+Each episode is not just the set of actions our gang of characters get into, but
+each action and word represents something else and feeds into the themes,
+messaging and narrative of the show. Each character is not some thinking feeling
+being but a representation of certain themes and emotions which will move
+fluidly with the needs of the story. This kind of reading between the lines is
+the basis of a lot of literary analysis and without this reading between the
+lines most of the meaning of the show, and what makes these shows special.
+The writers miss this in a lot of ways combining and contrasting elements that
+may work in time and space but not thematically.
+
+An example of this that really sticks out to me is the use of Kyoshi as Aangs
+first interaction with the avatar cycle. This makes some sense as Kyoshi Island
+is one of the first stops in the show and there is a temple to her there. But by
+introducing Aang to these concepts through Kyoshi suddenly introduces the avatar
+state with no context and no understanding of what it actually means now why the
+world is the way it is.
+
+*** The one scene that is good
+*** On the aesthetics.
+*** Final thoughts
+** DONE My Thoughts on the first sub book of Dune :opinion:dune:spoilers:books:fiction:
+CLOSED: [2024-03-26 Tue 00:54]
+:PROPERTIES:
+:EXPORT_DATE: 2024-03-25
+:EXPORT_FILE_NAME: dune-first-book
+:END:
+I have been reading Dune and finished the first sub book, its a wonderful book
+that has been somewhat spoiled for me in certain ways. Even still its a
+thoroughly interesting book.
+As a way to save space instead of typing up my thoughts directly into a discord
+post I am going to type it into a blog post. This will be shorter, less
+structured and somewhat akin to a conversation I am having by myself. So yeah.
+
+*SPOILERS AHEAD YOU HAVE BEEN WARNED*
+*** The structure and clarifying what terms mean
+Dune is large, Through the many books, sequels, adaptations and movies when you
+say the word "Dune" you in turn refer to every single entity and sub entity of
+this franchise. When I refer to the book Dune, I am referring to the first book
+in the series. When I am referring to the sub books of Dune, I am referring
+to the individual partitions within the book Dune. For me that is broken into
+"Book 1: Dune", "Book 2: Muad'Dib", "Book 3: The Prophet". Idk if this is the
+same or different in different publications but I will continue to refer to
+these as the sub books. I have finished the first sub book and this is the basis
+of most of what I am writing about
+
+*** The first book of Dune
+I don't know what it is about this book but Dune has gripped me and has not let
+go. This is my second time starting Dune (I will get onto why later) but in
+about a month I have powered through quite a bit of this book. In a lot of ways
+its dense with meaning, meaning that does not always reveal itself until later, Its
+descriptions are deep but do not drag. Its world is fleshed out but only as much
+as needed (witty comparison to a Fremen or something). In other words its well
+written.
+
+But to begin with it is also slow. Within the first 250 pages not a lot of
+action happens and this world is just being set up. Questions being asked and
+the future being foreshadowed. But this is not to say it never picks up. Our
+patience is rewarded as we finish this sub book where all of this set up pays
+off with a bang. This slowness though does not detract. The way Frank Herbert
+uses words is able to convey such rich emotion, that I felt like I was riding in
+that Thopter alongside Duke Leto, I could feel the weight that Barron Harkonens
+suspensors have to deal with, and feel actual disgust in his gluttony. It
+requires underlining how well this book is written.
+
+*** On spoilers
+Before I get into the actual content of this book, Some words on my experiences
+need to be mentioned as it will poision my thinkings
+
+I wish I could go into this book blind, but as I am writing this (March 2024)
+the world is picking up Dune en mass and talking about it. So through osmosis
+and my own stupidity I am learning things about the book I should not know. I am
+now going to figure out how to spoiler text in a blog post but I will list some
+of the small things I have seen. Also curse you Instagram reels.
+
+If you have not finished the first two books of the Dune series. Then do not
+open any of these. Don't open the last one unless you have finished the 6 books
+(I have no idea where it comes from)
+#+begin_details
+#+begin_summary
+Spoiler 1
+#+end_summary
+
+Apparently Paul Atredies is going to commit an intergalactic genocide? and will
+begin to lose our (the readers) support? This is sad for me as I will now be
+asking the question. When will Paul turn? and strings I would not connect to a
+genocide are now being connected, At this point in the book Paul is presented as
+a character we should be supporting. I guess its about the journey but still I
+wish that was a twist I would have discovered by myself. :(
+
+Funnily enough the presentation of this fact have been about the movies (as far
+as I am aware) and a lack of media literacy in people who think Paul is
+presented as this hero and all action's he does is by extension of that fact,
+justified.
+#+end_details
+#+begin_details
+#+begin_summary
+Spoiler 2
+#+end_summary
+
+The Sand worms are the source of spice.
+This is a detail I probably already knew as the character of Kynes hinted that
+the sand worms are a critical part of the spice systems on Arakkis but even still
+I hate how I did not get to discover this myself.
+#+end_details
+#+begin_details
+#+begin_summary
+Spoiler 3
+#+end_summary
+
+Apparently Paul Merges with a Sand worm????
+
+I am not sure of the context of this but this is one of those spoilers I can't
+forget and will bite me as I read more.
+#+end_details
+
+This is only a spoiler if you are like me and don't want any thoughts about the
+book to taint your experiences.
+#+begin_details
+#+begin_summary
+Thematic Spoiler
+#+end_summary
+The Fremen are this Islamic / Arab coded society and this entire book is a
+metaphor for Colonialism, Interventionism and US imperialism in West Asia.
+
+This is quite interesting to me as for the time being the book has not shown the
+natives in as much detail as I would have liked nor fleshed out the relationship
+between the settler population and the Fremen other than a few small scenes. It
+also means I get to see what the book /says/ as I can't figure out where these
+metaphores connect to the real world without more info.
+
+This is a point I will revist as I read more into the book, One I kinda new
+existed but would have rather derived myself almost.
+#+end_details
+
+In this sense these spoilers don't stop me from reading but still do /spoil/ the
+experience. I have had a few more paper cuts probably but ill add them as I
+remember
+# *** On the foreshadowing in Dune
+
+# *** On world building
+*** On this world and the characters of Dune
+Within this world we seem to have some kind of overarching flavor of destiny.
+Destiny for the desert plant of Arakis, Destiny for each character that attaches
+itself to this planet.
+
+For Leto it is death. "There is nothing for him" the Reverend Mother says. For
+Paul it is his roles as messiah. For the planet, illusions of a stable and
+prolific water cycle. Nothing in this world seems to come completely
+out of left field. There is always some kind of insight, some kind of
+foreshadowing for these events. In this sense every word is something to hang
+onto as if it leads to some kind of future event. This is not only something for
+the reader because it has an effect on our characters. We see them refer back to
+these prophecies as we continue through and work with the conclusions they come
+too. We see how the world shapes these characters as they pick up its
+mannerisms and movements.
+
+It brings me onto the details of this world. It is not only painted with large
+vistas but also with small details. One scene that sticks with me is when a
+Fremen comes into the Arakeen great hall and spits on the table. Everyone was
+ready to attack this person for disrespecting the Duke but in turn the person
+sent ahead stops them and thanks them for the gesture of sharing his moisture
+with the Duke, a great sign of respect on a planet where water is so very
+scarce. Through little devices like this an entire canvas is painted. A culture
+fleshed out and reinforcements of core ideas are shared.
+*** On the language of Dune
+I have heard from others that the language in this book required a glossary? To
+me this feels odd as the book has not failed to cover its tracks.
+
+Take for example the term "Mentat", This is refered to multiple times to
+describe our characters, some of them belong to this class and they seem to be
+made, but /what/ they are is never fully explained until Paul goes through this
+transformation near the end of this sub book and goes into detail through his
+emotion what makes a Mentat different. This applies to a couple more ideas and
+phrases. "Lisan Al-Gaib" is mentioned as some kind of messiah figure but then
+Kynes actually goes into detail about it as he sees Paul act like this messiah.
+
+Muad'Dib is mentioned, again and again and again at the beginning of each
+chapter. In reference to his selected writings or childrens guides or anything
+else by the Princess Irulan. But it only until we reach the end of this chapter
+that we see how its actually Paul who is this Muad'Dib and what it means. He is
+not only this messiah "Lisan Al-Gaib" but also this leader.
+
+This is not to say that if you were to use a glossary that the reading would be
+spoiled but to say that the language is not their by accident but will resolve
+itself as we move through this story.
+*** What I have learnt about myself while reading Dune
+I don't really have more to say about Dune the book. But while I have been
+reading this I have learnt a few things about myself.
+
+I can finish big books. With a little time before bed each day I can get through
+large sections of a book. and I can do it in reasonable times. But in this case
+I am helped by a few things
+
+Good typesetting is a must. If a book has not been well typeset then its harder
+to get through and I struggle to finish it. This is why I put dune down the
+first time. The (digital) copy I had was hard to read and hard to parse. Not in
+the sense the words were hard to read. but in the sense that different things
+should look different. In this case what added to my confusion is that chapters
+were not really separated and the chapter introductions by the Princess Irulan
+were really not separated from the main body of text. All of this adds up to a
+not great reading experience
+
+I need smaller chapters I can see the progress of. I am a person, who partly
+because of internet brain rot, needs smaller chapters I can see my progress in.
+50 pages in a chapter is too much for me to read comfortably without some kind
+of break. There are books where chapters represent hundreds of pages and you
+need to kinda just pick a point to put it down. This is not to say I can't read
+these books but like small chapters make it easy. This also feeds into
+typesetting as my e-reader can track how far I am into a chapter. I can see I am
+nearly done pretty quickly as a percentage and I can call it quits or keep going
+pretty neatly.
+*** Conclusions
+Dune is a good book, Ill come back when I finish sub book 2. All of this reads
+as almost a superficial understanding of the book of Dune. I think thats okay
+for the moment though as I have not gotten that deep into the book. Lets see how
+I feel after finishing sub book 2
 
 * COMMENT Local Variables :ARCHIVE:
 # Local Variables:

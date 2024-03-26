@@ -30,6 +30,7 @@ we need
 #+begin_notes
 The first program everyone begins with is
 #+end_notes
+
 #+begin_src python  :results output
 print("hello world")
 #+end_src

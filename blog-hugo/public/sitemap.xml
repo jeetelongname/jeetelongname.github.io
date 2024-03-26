@@ -2,11 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.jeetelongname.net/blog/work/</loc>
-    <lastmod>2023-05-23T17:41:00+01:00</lastmod>
-    <priority>0</priority>
+    <loc>https://www.jeetelongname.net/blog/posts/</loc>
+    <lastmod>2024-03-26T00:54:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/tags/books/</loc>
+    <lastmod>2024-03-26T00:54:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/tags/dune/</loc>
+    <lastmod>2024-03-26T00:54:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/tags/fiction/</loc>
+    <lastmod>2024-03-26T00:54:00+00:00</lastmod>
   </url><url>
     <loc>https://www.jeetelongname.net/blog/</loc>
+    <lastmod>2024-03-26T00:54:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/posts/dune-first-book/</loc>
+    <lastmod>2024-03-26T00:54:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/tags/opinion/</loc>
+    <lastmod>2024-03-26T00:54:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/tags/spoilers/</loc>
+    <lastmod>2024-03-26T00:54:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/tags/</loc>
+    <lastmod>2024-03-26T00:54:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/work/</loc>
     <lastmod>2023-05-23T17:41:00+01:00</lastmod>
   </url><url>
     <loc>https://www.jeetelongname.net/blog/work/no-sleep/</loc>
@@ -14,13 +37,6 @@
   </url><url>
     <loc>https://www.jeetelongname.net/blog/tags/poem/</loc>
     <lastmod>2023-05-23T17:41:00+01:00</lastmod>
-  </url><url>
-    <loc>https://www.jeetelongname.net/blog/tags/</loc>
-    <lastmod>2023-05-23T17:41:00+01:00</lastmod>
-  </url><url>
-    <loc>https://www.jeetelongname.net/blog/posts/</loc>
-    <lastmod>2023-04-10T02:43:00+01:00</lastmod>
-    <priority>0</priority>
   </url><url>
     <loc>https://www.jeetelongname.net/blog/tags/haskell/</loc>
     <lastmod>2023-04-10T02:43:00+01:00</lastmod>
@@ -53,12 +69,6 @@
     <lastmod>2022-05-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.jeetelongname.net/blog/tags/movies/</loc>
-    <lastmod>2022-05-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.jeetelongname.net/blog/tags/opinion/</loc>
-    <lastmod>2022-05-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.jeetelongname.net/blog/tags/spoilers/</loc>
     <lastmod>2022-05-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.jeetelongname.net/blog/posts/2am-paella/</loc>
@@ -116,6 +126,8 @@
     <lastmod>2020-07-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.jeetelongname.net/blog/posts/blog/</loc>
+  </url><url>
+    <loc>https://www.jeetelongname.net/blog/posts/org-hugo-reviw/</loc>
   </url><url>
     <loc>https://www.jeetelongname.net/blog/work/work/</loc>
   </url><url>
