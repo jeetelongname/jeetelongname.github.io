@@ -7,3 +7,4 @@
 /presentations/intro-to/indent.log
 /node_modules/
 /.cache/
+/blog-hugo/.hugo_build.lock

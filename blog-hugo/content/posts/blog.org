@@ -1247,13 +1247,13 @@ world is the way it is.
 *** The one scene that is good
 *** On the aesthetics.
 *** Final thoughts
-** DONE My Thoughts on the first sub book of Dune :opinion:dune:spoilers:books:fiction:
+** DONE My Thoughts on the first sub-book of Dune :opinion:dune:spoilers:books:fiction:
 CLOSED: [2024-03-26 Tue 00:54]
 :PROPERTIES:
 :EXPORT_DATE: 2024-03-25
 :EXPORT_FILE_NAME: dune-first-book
 :END:
-I have been reading Dune and finished the first sub book, its a wonderful book
+I have been reading Dune and finished the first sub-book, its a wonderful book
 that has been somewhat spoiled for me in certain ways. Even still its a
 thoroughly interesting book.
 As a way to save space instead of typing up my thoughts directly into a discord
@@ -1262,38 +1262,39 @@ structured and somewhat akin to a conversation I am having by myself. So yeah.
 
 *SPOILERS AHEAD YOU HAVE BEEN WARNED*
 *** The structure and clarifying what terms mean
-Dune is large, Through the many books, sequels, adaptations and movies when you
+Dune is large.
+Through the many books, sequels, adaptations, and movies. When you
 say the word "Dune" you in turn refer to every single entity and sub entity of
 this franchise. When I refer to the book Dune, I am referring to the first book
-in the series. When I am referring to the sub books of Dune, I am referring
+in the series. When I am referring to the sub-books of Dune, I am referring
 to the individual partitions within the book Dune. For me that is broken into
 "Book 1: Dune", "Book 2: Muad'Dib", "Book 3: The Prophet". Idk if this is the
 same or different in different publications but I will continue to refer to
-these as the sub books. I have finished the first sub book and this is the basis
+these as the sub-books. I have finished the first sub-book and this is the basis
 of most of what I am writing about
 
 *** The first book of Dune
 I don't know what it is about this book but Dune has gripped me and has not let
 go. This is my second time starting Dune (I will get onto why later) but in
 about a month I have powered through quite a bit of this book. In a lot of ways
-its dense with meaning, meaning that does not always reveal itself until later, Its
+its dense with meaning, meaning that does not always reveal itself until later. Its
 descriptions are deep but do not drag. Its world is fleshed out but only as much
-as needed (witty comparison to a Fremen or something). In other words its well
+as needed (witty comparison to a Fremen or something). In other words it's well
 written.
 
-But to begin with it is also slow. Within the first 250 pages not a lot of
+But to begin with, it is also slow. Within the first 250 pages not a lot of
 action happens and this world is just being set up. Questions being asked and
 the future being foreshadowed. But this is not to say it never picks up. Our
-patience is rewarded as we finish this sub book where all of this set up pays
-off with a bang. This slowness though does not detract. The way Frank Herbert
+patience is rewarded as we finish this sub-book where all of this set up pays
+off with a bang. This slowness does not detract however. The way Frank Herbert
 uses words is able to convey such rich emotion, that I felt like I was riding in
-that Thopter alongside Duke Leto, I could feel the weight that Barron Harkonens
+that Thopter alongside Duke Leto, I could feel the weight that Barron Harkonen's
 suspensors have to deal with, and feel actual disgust in his gluttony. It
 requires underlining how well this book is written.
 
 *** On spoilers
 Before I get into the actual content of this book, Some words on my experiences
-need to be mentioned as it will poision my thinkings
+need to be mentioned as it will poison my thinkings.
 
 I wish I could go into this book blind, but as I am writing this (March 2024)
 the world is picking up Dune en mass and talking about it. So through osmosis
@@ -1312,13 +1313,13 @@ Spoiler 1
 Apparently Paul Atredies is going to commit an intergalactic genocide? and will
 begin to lose our (the readers) support? This is sad for me as I will now be
 asking the question. When will Paul turn? and strings I would not connect to a
-genocide are now being connected, At this point in the book Paul is presented as
+genocide are now being connected. At this point in the book Paul is presented as
 a character we should be supporting. I guess its about the journey but still I
 wish that was a twist I would have discovered by myself. :(
 
 Funnily enough the presentation of this fact have been about the movies (as far
 as I am aware) and a lack of media literacy in people who think Paul is
-presented as this hero and all action's he does is by extension of that fact,
+presented as this hero and all actions he does is by extension of that fact,
 justified.
 #+end_details
 #+begin_details
@@ -1355,9 +1356,9 @@ This is quite interesting to me as for the time being the book has not shown the
 natives in as much detail as I would have liked nor fleshed out the relationship
 between the settler population and the Fremen other than a few small scenes. It
 also means I get to see what the book /says/ as I can't figure out where these
-metaphores connect to the real world without more info.
+metaphors connect to the real world without more info.
 
-This is a point I will revist as I read more into the book, One I kinda new
+This is a point I will revisit as I read more into the book, one I kinda new
 existed but would have rather derived myself almost.
 #+end_details
 
@@ -1369,7 +1370,7 @@ remember
 # *** On world building
 *** On this world and the characters of Dune
 Within this world we seem to have some kind of overarching flavor of destiny.
-Destiny for the desert plant of Arakis, Destiny for each character that attaches
+Destiny for the desert plant of Arakis, destiny for each character that attaches
 itself to this planet.
 
 For Leto it is death. "There is nothing for him" the Reverend Mother says. For
@@ -1395,22 +1396,23 @@ fleshed out and reinforcements of core ideas are shared.
 I have heard from others that the language in this book required a glossary? To
 me this feels odd as the book has not failed to cover its tracks.
 
-Take for example the term "Mentat", This is refered to multiple times to
+Take for example the term "Mentat". This is referred to multiple times to
 describe our characters, some of them belong to this class and they seem to be
 made, but /what/ they are is never fully explained until Paul goes through this
-transformation near the end of this sub book and goes into detail through his
-emotion what makes a Mentat different. This applies to a couple more ideas and
-phrases. "Lisan Al-Gaib" is mentioned as some kind of messiah figure but then
-Kynes actually goes into detail about it as he sees Paul act like this messiah.
+transformation near the end of this sub-book. Through his experiences of this
+transformation, we understand what makes a Mentat different from a person. This
+applies to a couple more ideas and phrases. "Lisan Al-Gaib" is mentioned as some
+kind of messiah figure but then Kynes actually goes into detail about it as he
+sees Paul act like this messiah.
 
-Muad'Dib is mentioned, again and again and again at the beginning of each
-chapter. In reference to his selected writings or childrens guides or anything
-else by the Princess Irulan. But it only until we reach the end of this chapter
-that we see how its actually Paul who is this Muad'Dib and what it means. He is
-not only this messiah "Lisan Al-Gaib" but also this leader.
+Muad'Dib is mentioned, again and again at the beginning of each chapter. Usually
+in the header, from excerpts of his selected writings or children's guides or
+other works by the Princess Irulan. But it is only until we reach the end of
+this chapter that we see how its actually Paul who is this Muad'Dib and what it
+means. He is not only this messiah "Lisan Al-Gaib" but also this leader.
 
 This is not to say that if you were to use a glossary that the reading would be
-spoiled but to say that the language is not their by accident but will resolve
+spoiled but to say that the language is not there by accident and will resolve
 itself as we move through this story.
 *** What I have learnt about myself while reading Dune
 I don't really have more to say about Dune the book. But while I have been
@@ -1423,7 +1425,7 @@ I am helped by a few things
 Good typesetting is a must. If a book has not been well typeset then its harder
 to get through and I struggle to finish it. This is why I put dune down the
 first time. The (digital) copy I had was hard to read and hard to parse. Not in
-the sense the words were hard to read. but in the sense that different things
+the sense the words were hard to read, but in the sense that different things
 should look different. In this case what added to my confusion is that chapters
 were not really separated and the chapter introductions by the Princess Irulan
 were really not separated from the main body of text. All of this adds up to a
@@ -1439,10 +1441,14 @@ typesetting as my e-reader can track how far I am into a chapter. I can see I am
 nearly done pretty quickly as a percentage and I can call it quits or keep going
 pretty neatly.
 *** Conclusions
-Dune is a good book, Ill come back when I finish sub book 2. All of this reads
-as almost a superficial understanding of the book of Dune. I think thats okay
+Dune is a good book, Ill come back when I finish sub-book 2. All of this reads
+as almost a superficial understanding of the book of Dune. I think that's okay
 for the moment though as I have not gotten that deep into the book. Lets see how
-I feel after finishing sub book 2
+I feel after finishing sub-book 2.
+
+Also thanks to Leo from [[https://a-blog-with.relevant-information.com/][A blog with relevant information]] for proof reading my
+work and suggesting some improvements. Hopefully next time the patch is a little
+smaller!
 
 * COMMENT Local Variables :ARCHIVE:
 # Local Variables:
