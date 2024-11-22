@@ -10,6 +10,18 @@
 #+LATEX_CLASS_OPTIONS: [a4paper]
 #+LATEX_HEADER: \usepackage[top=1cm,left=3cm,right=3cm]{geometry}
 
+* Why we use what we use
+** Binary
+#+begin_notes
+Computers use binary (other words base 2) as it uses electrical signals for its computation.
+a 0 is an off state while a 1 is an on state.
+#+end_notes
+** Hexadecimal
+#+begin_notes
+we use hexadecimal as one digit of hex can represent one nibble or half a byte.
+this means that the 8 characters used by a single byte can be reduced to two
+characters. this makes it much more compact making it a convenient short hand
+#+end_notes
 * The Units
 #+begin_notes
 There are some units you need to know
@@ -32,18 +44,6 @@ There are some units you need to know
 - gigabyte
 - terabyte
 - petabyte
-* Why we use what we use
-** Binary
-#+begin_notes
-Computers use binary (other words base 2) as it uses electrical signals for its computation.
-a 0 is an off state while a 1 is an on state.
-#+end_notes
-** Hexadecimal
-#+begin_notes
-we use hexadecimal as one digit of hex can represent one nibble or half a byte.
-this means that the 8 characters used by a single byte can be reduced to two
-characters. this makes it much more compact making it a convenient short hand
-#+end_notes
 * Converting between
 ** the basics ob binary
 #+begin_notes
